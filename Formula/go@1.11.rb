@@ -6,9 +6,10 @@ class GoAT111 < Formula
   sha256 "a96da1425dcbec094736033a8a416316547f8100ab4b72c31d4824d761d3e133"
 
   bottle do
-    sha256 "ea7bc6953386d6c918bc4cb04b2ae9b9c6630c408690abccf3a183b98121550f" => :mojave
-    sha256 "77ed9c049a790f3ab15d38051deca77b68f8666a225e881015fe5f56734ab6ec" => :high_sierra
-    sha256 "6010340eb598272a6b256e9e2287c6cfea2d2e20ff97d548d7aa1962237d7d56" => :sierra
+    rebuild 2
+    sha256 "7d444e90e02df64ca6763686ec4d5f101b6773e63ad29a3d21b396fcbe2a52e5" => :mojave
+    sha256 "4c4f77da4340781b2b950be37d612fa2ba45b41d8999ecb76166da80e11622a2" => :high_sierra
+    sha256 "65f35010e6ad1cf6fbf642e8cbac49b9d24e82d2fa8d3d78e0ade383a5000699" => :sierra
   end
 
   keg_only :versioned_formula
@@ -25,6 +26,24 @@ class GoAT111 < Formula
     url "https://storage.googleapis.com/golang/go1.7.darwin-amd64.tar.gz"
     version "1.7"
     sha256 "51d905e0b43b3d0ed41aaf23e19001ab4bc3f96c3ca134b48f7892485fc52961"
+  end
+
+  # Prevents Go from building malformed binaries. Fixed upstream, should
+  # be in a future release.
+  # https://github.com/golang/go/issues/32673
+  patch do
+    url "https://github.com/golang/go/commit/26954bde4443c4bfbfe7608f35584b6b810f3f2c.patch?full_index=1"
+    sha256 "25a361bd4aa1155be06e2239c1974aa9c59f971210f19e16a3b7b576b9d4f677"
+  end
+
+  patch do
+    url "https://github.com/golang/go/commit/0fe1986a72ea578390d4909988a1d7cb3a687544.patch?full_index=1"
+    sha256 "320c11208313fc74e0bba7f323791416e5316451b109c440f56be361df8306ea"
+  end
+
+  patch do
+    url "https://github.com/golang/go/commit/3f1422c799edb143303c86c0e875d44c3612df64.patch?full_index=1"
+    sha256 "d071f0415cd2712cbed373682c4a84661147df1aabf38bbc0f3179532a988a4f"
   end
 
   def install

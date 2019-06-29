@@ -2,28 +2,27 @@ class Fluxctl < Formula
   desc "Command-line tool to access Weave Flux, the Kubernetes GitOps operator"
   homepage "https://github.com/weaveworks/flux"
   url "https://github.com/weaveworks/flux.git",
-      :tag      => "1.12.3",
-      :revision => "5668c02251eb148b1cbc643946ce13e73b8dcb50"
+      :tag      => "1.13.1",
+      :revision => "b0cf5ec55ea207df1e184d929ab8879c8945b4c8"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "79f9657453f9dd81b483ace06cad364fce20a52e10c081b2758126bb51656ad8" => :mojave
-    sha256 "e2d047c737c5fb6426160612a36293c8abe30a37c7361a6fdc16f612bb250b34" => :high_sierra
-    sha256 "f203463fd088bc6b52788659cdab61970a70cab37869eb394365a7d192aab5f1" => :sierra
+    sha256 "aa9eb92a281e5dd733a3a0a8b76aeecb560609c50c1aa55af82ecda0e01c3324" => :mojave
+    sha256 "15b91c551509402ecbbd5a8e8cbbc2f89d1aeda692173e4b2e8d0025ecc875fc" => :high_sierra
+    sha256 "8e75282788fb6e088d9fc4ec6840a93c636d36059a391cac0fc419ae7da0f4b8" => :sierra
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
-    dir = buildpath/"src/github.com/weaveworks/flux"
-    dir.install buildpath.children - [buildpath/".brew_home"]
+    ENV["GO111MODULE"] = "on"
 
-    cd dir do
-      system "dep", "ensure", "-vendor-only"
-      system "make", "release-bins"
-      bin.install "build/fluxctl_darwin_amd64" => "fluxctl"
+    dir = buildpath/"src/github.com/weaveworks/flux"
+    dir.install buildpath.children
+
+    cd dir/"cmd/fluxctl" do
+      system "go", "build", "-ldflags", "-X main.version=#{version}", "-o", bin/"fluxctl"
       prefix.install_metafiles
     end
   end

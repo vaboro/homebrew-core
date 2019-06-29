@@ -2,21 +2,21 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-22.0.2.tar.gz"
-  sha256 "7a9869f5da85349ef21bd9fbc8feafe1a1f563504a65924ddb542deeb37af7cd"
+  url "https://github.com/erlang/otp/archive/OTP-22.0.4.tar.gz"
+  sha256 "71b2fe49ed5ac386ebc189dd2e5f4b95b11b4427936be0e3c5695a903ea9ffcd"
   head "https://github.com/erlang/otp.git"
 
   bottle do
     cellar :any
-    sha256 "f342938d37691065cfb6440f06875acada2ce869b1498f592dde47c7f7583c0f" => :mojave
-    sha256 "cd1fd39430c2c79f2cb968de220eadbb18b90e8801109d2649e208bbd5719b6b" => :high_sierra
-    sha256 "316d781057cb96b4c38d42d89f4b0d5bd085d98119320a64796616414dd4551b" => :sierra
+    sha256 "695794f1a88303bcea1a0ac6f775a1fbbdea5eabfe88dc31f791d975da023c1f" => :mojave
+    sha256 "aee965ebbbca68b9443ce0569693019efdc19c97aa03e9b139b44d25c8bac732" => :high_sierra
+    sha256 "91341a585154496f6c2991b4453447eb3da230f1034a9d0ec872104993ac58cd" => :sierra
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "wxmac" # for GUI apps like observer
 
   resource "man" do
@@ -50,7 +50,7 @@ class Erlang < Formula
       --enable-smp-support
       --enable-threads
       --enable-wx
-      --with-ssl=#{Formula["openssl"].opt_prefix}
+      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
       --without-javac
       --enable-darwin-64bit
     ]

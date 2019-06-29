@@ -1,20 +1,20 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.org/f/mariadb-10.3.15/source/mariadb-10.3.15.tar.gz"
-  sha256 "27f391a54d544f93850d4edfb3ef1b4cf24f8e27e61e51727b0e7d31bb4d6968"
+  url "https://downloads.mariadb.org/f/mariadb-10.4.6/source/mariadb-10.4.6.tar.gz"
+  sha256 "a270fe6169a1aaf6f2cbbc945de2c954d818c48e1a0fc02fbed92ecb94678e70"
 
   bottle do
-    sha256 "027144a69409be51ba2f425ce721e0242af6a54f8a9d3d6c640914ad763f17f4" => :mojave
-    sha256 "2e4bcb4e3df922ab27c353ba3a253cd15f1af4fc70a8b1c3612d1e27310f8d5d" => :high_sierra
-    sha256 "2efc24c26caa7817ccdceb46ab513c6be9032eed1a6989053c3bc6be73cadd8c" => :sierra
+    sha256 "8feb884d8e39b94822ea9ed6fa19239b1eea53f6a4496f932908562008a01e35" => :mojave
+    sha256 "b4466c2e19ab1e71f29f1b2a864869840c1ad1ff3c37a4e7a68573d503d30a00" => :high_sierra
+    sha256 "09e00953ff3e5d48e3cfb308d91dca128bec4a4354970666c0b9fe489fdb8ee0" => :sierra
   end
 
   depends_on "cmake" => :build
   depends_on "openssl"
 
   conflicts_with "mysql", "mysql-cluster", "percona-server",
-    :because => "mariadb, mysql, and percona install the same binaries."
+    :because => "mariadb, mysql, and percona install the same binaries"
   conflicts_with "mysql-connector-c",
     :because => "both install MySQL client libraries"
   conflicts_with "mytop", :because => "both install `mytop` binaries"

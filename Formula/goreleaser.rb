@@ -2,14 +2,14 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      :tag      => "v0.109.0",
-      :revision => "7ee486fc9b58171e70eec99ecdbeac4c99cc82d0"
+      :tag      => "v0.111.0",
+      :revision => "1cf34166b6128c5348ff75e6923d715251ab8c85"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c6113fcecd7bb129c406f6662d33a54e99b4d6f30cf77ae10fdf0e94a69cab27" => :mojave
-    sha256 "dc41b30dc63916c59c62ca91b7ab2b889489929305624015ad47fdddd3afde97" => :high_sierra
-    sha256 "cf9532e3c19697ef91bf206fe84b21aaee4fc0b0e31c94270fd000b0534156ac" => :sierra
+    sha256 "6e6bf760ed42023cb4f30fefb81a74d44ae38a953f7c158fea2118ebe465dd06" => :mojave
+    sha256 "f2da347f931cc39ceb4d30ad3d35330283256def936e7f2bd45cad197ab4bf6c" => :high_sierra
+    sha256 "33451401a27a9bb440f4ba87007612c1682c90a1ef48a0cb43038d3b32234931" => :sierra
   end
 
   depends_on "go" => :build

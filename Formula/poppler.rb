@@ -1,14 +1,14 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-0.76.1.tar.xz"
-  sha256 "e62cd4053f851eecc4a6aa2b81d739fbab1d67b3c60b31ebac7049483cc617b1"
+  url "https://poppler.freedesktop.org/poppler-0.77.0.tar.xz"
+  sha256 "7267eb4cbccd64a58244b8211603c1c1b6bf32c7f6a4ced2642865346102f36b"
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
 
   bottle do
-    sha256 "c3f719cf9953469114d3240c24da89e29bbbe149307e47fce1fecae04980513d" => :mojave
-    sha256 "3a15464e279d5d52580d8bc4fe0aa5918eba935eac0abb9cb4846bde334ef57a" => :high_sierra
-    sha256 "fe6ee9d74f3d2e5eaacb2756c16fed638ed2b3fad75cd3a9cba45caa77f53135" => :sierra
+    sha256 "6fdbb7ba9dd5ddcbd8b04588e5727dc7c7a17dcb69bdcf110be079cb1904ed78" => :mojave
+    sha256 "a372fe22be009db478c201e1f816ae14aa65c8fad3b3d78dee4d1527524968ad" => :high_sierra
+    sha256 "2571a987e534147d7b7ccad417dbd90664307d871d170ae2576fbcc597ac6305" => :sierra
   end
 
   depends_on "cmake" => :build

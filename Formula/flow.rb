@@ -1,15 +1,15 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flowtype.org/"
-  url "https://github.com/facebook/flow/archive/v0.100.0.tar.gz"
-  sha256 "cc4e3883f8b588cb3456901379c3bbd36a104bc56a8cbbc5936350953153ba33"
+  url "https://github.com/facebook/flow/archive/v0.102.0.tar.gz"
+  sha256 "752912317d263991c11b7d195e50260ac06685a4e9399fdc7c34074d4b0588b1"
   head "https://github.com/facebook/flow.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d9752993305fe730ad085aaac03213623f799d885cc726f448d0b955191b026f" => :mojave
-    sha256 "3967eabd3a2c91fdbafe288483b050dbed128a0754196fe83e677dba718a494c" => :high_sierra
-    sha256 "344e9fb3896dfb36bc694710c51f6f88292380edac56b712040733a52cc479d6" => :sierra
+    sha256 "9db80cbd9fae62994ed91e2fcf040f4dc3635f947d464f2760fa267b4b898417" => :mojave
+    sha256 "0004cc1704adf958559a05c652e6f6c2b0285df135190fc39ab9c12f6e791112" => :high_sierra
+    sha256 "f1323d852912bf1b758ab223f0d8048273c88f092ccfc2f76e12a1bea3726de7" => :sierra
   end
 
   depends_on "ocaml" => :build
