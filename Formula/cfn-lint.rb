@@ -3,6 +3,7 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
+<<<<<<< HEAD
   url "https://github.com/aws-cloudformation/cfn-python-lint/archive/v0.23.2.tar.gz"
   sha256 "eb6b6b41444f4255d742d91822fd516ec96192cead4f17bb57370c8fb1c5bcf6"
 
@@ -11,6 +12,16 @@ class CfnLint < Formula
     sha256 "b13f3308bf394cb46add11a659b489d3b378ab9d703cc5a625995451c3c7f976" => :mojave
     sha256 "035966464fcd78b03a42e55d02044f03cedc96abc4e01aff6d878d7275b8443e" => :high_sierra
     sha256 "7285030eb37db8239c97fb598e329d5a8eb871115709bcfc84b57855ff34dd33" => :sierra
+=======
+  url "https://github.com/aws-cloudformation/cfn-python-lint/archive/v0.24.1.tar.gz"
+  sha256 "c2fed29d0cf8d023d96b5a5baf029193e570210d6a8869d68341499cef08ed8a"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "8cd7906dc939421aa8fafe22456f96ddd5acc634f0bfcd5b67ffe0e8ff1be984" => :mojave
+    sha256 "aa73781a1e39c45187ed6fad9b284e6c4db68a8b429af9680a1f657483f8e488" => :high_sierra
+    sha256 "d4f3aadb3ef44844d8d992b7f89ce310ea1e62e8d0e5fbd78a468e640c7f39c2" => :sierra
+>>>>>>> upstream/master
   end
 
   depends_on "python"
