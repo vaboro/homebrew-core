@@ -1,9 +1,9 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://kripken.github.io/emscripten-site/"
-  revision 1
 
   stable do
+<<<<<<< HEAD
 <<<<<<< HEAD
     url "https://github.com/emscripten-core/emscripten/archive/1.38.41.tar.gz"
     sha256 "9e87e82799b7a26146333764c986b54274a2b75984bbb7112d9a08f0a1836a63"
@@ -11,20 +11,25 @@ class Emscripten < Formula
     url "https://github.com/emscripten-core/emscripten/archive/1.38.42.tar.gz"
     sha256 "a7547d6f36dc25f4bf431ad4d112a5604cc03e71ed05547acdf910c3cfcd8a8c"
 >>>>>>> upstream/master
+=======
+    url "https://github.com/emscripten-core/emscripten/archive/1.38.43.tar.gz"
+    sha256 "9f558fde1e8b06b36b562280d20ae135659493e54bc4f63ee75db0be6b715c43"
+>>>>>>> upstream/master
 
     resource "fastcomp" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.38.42.tar.gz"
-      sha256 "3a5b9690387c33dccbf2bd4faba7a97d80637cf85e480a56b2191a756bfd8822"
+      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.38.43.tar.gz"
+      sha256 "f304e6fbfad23c8970a57472e552da11cac9f6aa3814606588640ae739eb8293"
     end
 
     resource "fastcomp-clang" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.38.42.tar.gz"
-      sha256 "a815b4496565d7d260ff82681542fc86b2a407cf27ff8fa28b0a5b05da6468de"
+      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.38.43.tar.gz"
+      sha256 "d6551aefe7f62e89a5efbc6fae64cddd811ab02e5332ce7ebe2734de188c4586"
     end
   end
 
   bottle do
     cellar :any
+<<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "ee09e4fe76e73f15173595b699e47ad84f0bf64ec0e2e9828df530a3e120bf14" => :mojave
     sha256 "9a9a67b78002a571d37599ac549b6077624fce822389ead382c56398dd18eeed" => :high_sierra
@@ -33,6 +38,11 @@ class Emscripten < Formula
     sha256 "5656868253b6e951d14f867e4774dac829c3f77b0084dfc2da0fb8d1db55d633" => :mojave
     sha256 "28a7604f4172a745abcd45d74381be426daad67be58d8dea95105aeaf5206d82" => :high_sierra
     sha256 "e10fb143ed1d67ec0e6297d9df4afdfc4204bcf1a323429026e2b04235dd954c" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "5e505328f809b05324f19aaf431e2d4dcc7ba5e0117e533ec541824433e75c18" => :mojave
+    sha256 "a0ace11df2d442d629cc9f06d9f97dc93b7f20e444351b632075acfdfab52e79" => :high_sierra
+    sha256 "03dda9034b5a51462e3b46833666f2fc82e9811055fa4fde8f690134312aa508" => :sierra
 >>>>>>> upstream/master
   end
 

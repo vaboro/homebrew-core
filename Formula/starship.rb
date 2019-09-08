@@ -7,6 +7,7 @@ class Starship < Formula
 =======
   homepage "https://starship.rs"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/starship/starship/archive/v0.13.1.tar.gz"
   sha256 "990b0e418224900824179bc6c8fca89566696be79d68b8af191da107b7414f46"
   revision 1
@@ -15,10 +16,15 @@ class Starship < Formula
   url "https://github.com/starship/starship/archive/v0.14.1.tar.gz"
   sha256 "2847dcfb604ae1ba49b99310cc0d2a279e8f3f57d17806c219df9fb8c6196c49"
 >>>>>>> upstream/master
+=======
+  url "https://github.com/starship/starship/archive/v0.16.0.tar.gz"
+  sha256 "eadf8fc68134ed3c23b558ea0b6701054149ae23d9149613dfc8bed28cc7173d"
+>>>>>>> upstream/master
   head "https://github.com/starship/starship.git"
 
   bottle do
     cellar :any
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "0837814004ed18507f45b4282525001c4c5e407f216f778015718a4c385a778f" => :mojave
@@ -36,6 +42,11 @@ class Starship < Formula
     sha256 "99f3937318d4268fbb1d86bd1cb038d3ea2b306b6b34b9802a589499623c3339" => :mojave
     sha256 "0a6d97fe2680cdc67c378d5fd7829cd639d14dbefdeb885a992bd09c256bde53" => :high_sierra
     sha256 "be95c55fc90b20806b4f534c0bffa2d08fb7693b8cfc8b8f2c726b5b4ebb8b39" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "998ace27edf7926741168c3f7bb35503709a7a4046cccbaec1a283bbe31ac611" => :mojave
+    sha256 "829e17ff01ba74a13d05ee137d9b9594105ead917f0057d57d2f6195b9e0f435" => :high_sierra
+    sha256 "bb6a290c10cadf29972414bdf440fc3d2cd5256a9f0ccc0cd66c19d7a08c6940" => :sierra
 >>>>>>> upstream/master
   end
 
