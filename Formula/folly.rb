@@ -1,14 +1,14 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/v2019.09.02.00.tar.gz"
-  sha256 "371a118d759359f8b92a157303beabf5ebf1848f6ede05bf16bf05012a6e7f59"
+  url "https://github.com/facebook/folly/archive/v2019.09.09.00.tar.gz"
+  sha256 "1aac1bb5c2e22fea68780734069ee73188523c5ede8cd210e3fa81a1ae56bfe0"
   head "https://github.com/facebook/folly.git"
 
   bottle do
     cellar :any
-    sha256 "627c9d852efe9826ea4b3e62cbcd2b6ef217bfd52a19773b52dbf8e8e65df944" => :mojave
-    sha256 "af1614b967628bf96b8c778a37f3db6a7a65c82c6bc58095486dd370e57db301" => :high_sierra
+    sha256 "73b9a3c0cb1930890fb806959da294b6979b947a9445fc865e8aba1617789b02" => :mojave
+    sha256 "49272b33ded05162057b95c4837f56fd022da688503aa23bd7214af1984d6bf4" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,7 @@ class Folly < Formula
   # https://github.com/facebook/folly/issues/966
   depends_on :macos => :high_sierra
 
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "snappy"
   depends_on "xz"
   depends_on "zstd"

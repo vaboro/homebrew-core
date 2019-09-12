@@ -3,11 +3,12 @@ class Efl < Formula
   homepage "https://www.enlightenment.org"
   url "https://download.enlightenment.org/rel/libs/efl/efl-1.22.3.tar.xz"
   sha256 "7e7a4199b1e90d400dab2491db6032f8e0b26bab65ec19c9f8a97a82394331c8"
+  revision 1
 
   bottle do
-    sha256 "cc41782d191ea7e577fe4995866554f34830d84fde096a855596370c55e5e829" => :mojave
-    sha256 "d9abaa7b1d116bfe2e7e2447b525dbc8525ac15ef4f067c0c33b21970419cc8c" => :high_sierra
-    sha256 "ba1bc31c67edc971b9a81e99db98e4ddda8455bf215984c81f3545bc731e4c7e" => :sierra
+    sha256 "570e5899c94457cfb6ea3c6a81866777c618f8e80ae0a0fc36290d0441b9ca48" => :mojave
+    sha256 "2dd3a125808d8d485ddfe6973da7c34f2c0aaf682041303ecc03dade0a45710c" => :high_sierra
+    sha256 "d2ed5871fe88ef1c3ee3160b86d8bda95566d873a496a05b1495b4fb87f24230" => :sierra
   end
 
   depends_on "gettext" => :build
@@ -28,7 +29,7 @@ class Efl < Formula
   depends_on "libspectre"
   depends_on "libtiff"
   depends_on "luajit"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "poppler"
   depends_on "pulseaudio"
   depends_on "shared-mime-info"

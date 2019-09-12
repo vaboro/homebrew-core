@@ -12,11 +12,18 @@ class Php < Formula
 =======
   url "https://www.php.net/distributions/php-7.3.9.tar.xz"
   sha256 "4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd"
+  revision 1
 
   bottle do
+<<<<<<< HEAD
     sha256 "15d3d7caec038605cbc6abfb6692b03f59571443c76cfc7bd35f21bbc6c0baf3" => :mojave
     sha256 "3c250c361aff4d9c97450cf9b7c8883e1b480d515808347f0fd983b63dc60aeb" => :high_sierra
     sha256 "ed7c916c3c13dda6ddc0fe2bf951cbe7802a1ac8701409df3f87bf120fca09a9" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "4b6b3ea4704f2debd9d506e3c8820d2958b7e1eca6daece64796ca9a03e364d1" => :mojave
+    sha256 "8f77f9e4c05467a0464d41ecb5c47f4bd135ac95f320d59426710088615c9bc5" => :high_sierra
+    sha256 "814bd8c3f742749aac8c92cad5505ebfa6349aeb0a80308d3fb1bd2f4c9f7799" => :sierra
 >>>>>>> upstream/master
   end
 
@@ -40,7 +47,7 @@ class Php < Formula
   depends_on "libsodium"
   depends_on "libzip"
   depends_on "openldap"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "sqlite"
   depends_on "tidy-html5"
   depends_on "unixodbc"
@@ -148,7 +155,7 @@ class Php < Formula
       --with-mysql-sock=/tmp/mysql.sock
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
-      --with-openssl=#{Formula["openssl"].opt_prefix}
+      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd

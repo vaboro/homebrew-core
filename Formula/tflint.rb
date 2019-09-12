@@ -2,15 +2,15 @@ class Tflint < Formula
   desc "Linter for Terraform files"
   homepage "https://github.com/wata727/tflint"
   url "https://github.com/wata727/tflint.git",
-    :tag      => "v0.10.3",
-    :revision => "1ba6a7adf3128ebe4449f063519b22a821b462f1"
+    :tag      => "v0.11.1",
+    :revision => "1c31b742deb0a556520dec70ae9d4da5740f2b48"
   head "https://github.com/wata727/tflint.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18a8cb7708043553cfb34a7862a5ce92c49a2059bfc4c29b3017c98b2e1a7e05" => :mojave
-    sha256 "13a273b940bb2f5ab2478f7584003fcc861b839f56b7b6879291705cf33d3e33" => :high_sierra
-    sha256 "3ef5d2bde2f191cf1bf111cebd8e30a84acba5dd1b4c6c9be5bc566ecc99d961" => :sierra
+    sha256 "ceb2dfc4b77a86616be7babfddc013f3bdeae9b6fd60f4f318680c7fd133d8b4" => :mojave
+    sha256 "bca39eb983b366f3c16f6ce08e9cee1b39e584fed8338fef93eefbcb1565d3ea" => :high_sierra
+    sha256 "b20c9e9b857dd39b616e072b0ccadbc97ee0cbe4d657104bd9d145d9f543c51d" => :sierra
   end
 
   depends_on "go" => :build
@@ -34,6 +34,10 @@ class Tflint < Formula
         region = "${var.aws_region}"
       }
     EOS
-    assert_match "Awesome! Your code is following the best practices :)", shell_output("#{bin}/tflint test.tf")
+
+    # tflint returns exitstatus: 0 (no issues), 2 (errors occured), 3 (no errors but issues found)
+    assert_match "", shell_output("#{bin}/tflint test.tf")
+    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_match version.to_s, shell_output("#{bin}/tflint --version")
   end
 end

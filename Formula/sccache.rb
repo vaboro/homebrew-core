@@ -1,16 +1,22 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https://github.com/mozilla/sccache"
+<<<<<<< HEAD
   url "https://github.com/mozilla/sccache/archive/0.2.10.tar.gz"
   sha256 "e55813d2ca01ebf5704973bb5765a6b3bdf2d6f563be34441a278599579bb5e0"
 <<<<<<< HEAD
 =======
   revision 1
 >>>>>>> upstream/master
+=======
+  url "https://github.com/mozilla/sccache/archive/0.2.11.tar.gz"
+  sha256 "d72569789c4c54e5c8dc20bbde8e553b85497dbd9a3fdcc6d738a4df411dea46"
+>>>>>>> upstream/master
   head "https://github.com/mozilla/sccache.git"
 
   bottle do
     cellar :any_skip_relocation
+<<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "31bdf1b96a50e026c7ba90e29f5db9a14d1525ed418326fa9630e541e26940a7" => :mojave
     sha256 "6ef70150d5639a61368df3b2a4a166a038cd26fe3194ffaeb335d5f995085fa8" => :high_sierra
@@ -19,6 +25,11 @@ class Sccache < Formula
     sha256 "6c621b61c1ba1bfe016cb667b6393767563ae2c7cf56d9d69948193b8cb19809" => :mojave
     sha256 "23a85c09ccc988d05bfe83f69a7cd9c6f2936281641266ffde00efd4b700ad72" => :high_sierra
     sha256 "fc9d87826b46f183a010e98e954d2abc7b72d1211ef4cc947040bd82a23df50b" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "915be21657f33db3e030830e98a80cbc11b45d8777489774353274069825ff51" => :mojave
+    sha256 "1b0ba25e94540261cb3c2b4e51fd6e7bc4c5504ec7731ada2cb391b5c6d56159" => :high_sierra
+    sha256 "b478e2417a9aa5be0ff5c90de91ee4e810bca29966dca0d3e5b28a06dc6f182f" => :sierra
 >>>>>>> upstream/master
   end
 

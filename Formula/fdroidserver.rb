@@ -15,12 +15,19 @@ class Fdroidserver < Formula
 =======
   url "https://files.pythonhosted.org/packages/46/bd/9ad49a599625c838da94b39d98d9dc00427e12c2962aeab11865d01ed95a/fdroidserver-1.1.5.tar.gz"
   sha256 "14291cde4c663328a70e22305769171a79caefea2f1148d1628cb3cda8938fba"
+  revision 1
 
   bottle do
     cellar :any
+<<<<<<< HEAD
     sha256 "ace1c567ea6225df905233a8bdb7bc3e3043e47c628c017e8a07e15d89483767" => :mojave
     sha256 "aeb7069b13cbc39425fc01596564f920c22e63451b68f8d355c0d0b747fbcd3b" => :high_sierra
     sha256 "01424778113516b5a71d3b0f0ec6d9bc57b28f36d5e887cc72f3b5b89b7df7da" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "ad45cfa9f6e48be44bc6de975db7bb9fd1b1f7f63d1b003106903f1f6706d4de" => :mojave
+    sha256 "8dc42cea3f8b3ac0d5af85a6e8eaffdd175088db58ff1989ab254e132fca6214" => :high_sierra
+    sha256 "1c03c755b24210f97b851a676ab58dfc52fd39a47d934f5ba5b47baffd4dacd5" => :sierra
 >>>>>>> upstream/master
   end
 
@@ -28,7 +35,7 @@ class Fdroidserver < Formula
   depends_on "freetype"
   depends_on "jpeg"
   depends_on "libtiff"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "python"
   depends_on "s3cmd"
   depends_on "webp"

@@ -4,6 +4,7 @@ class Glooctl < Formula
   url "https://github.com/solo-io/gloo.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "v0.18.15",
       :revision => "523d8c54473de48660619863523976d344aef06e"
 =======
@@ -14,10 +15,15 @@ class Glooctl < Formula
       :tag      => "v0.18.37",
       :revision => "93fd7499b01bec5d1d29f4b06a8c67943ab7726d"
 >>>>>>> upstream/master
+=======
+      :tag      => "v0.18.40",
+      :revision => "47261575e46dd5740437980b84ad096e585c0159"
+>>>>>>> upstream/master
   head "https://github.com/solo-io/gloo.git"
 
   bottle do
     cellar :any_skip_relocation
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "16f3a3c0806b61aa398afc71473f7ad528813c5accc0ddff19f004de3f81fc4b" => :mojave
@@ -32,6 +38,11 @@ class Glooctl < Formula
     sha256 "6ba2c7132a53a57f6d6e2cf20b0592995ce421c358d3e59f8ebfb207d77fdbc0" => :mojave
     sha256 "d96adc9e42ebc8274ce60b22c805083f2542f48e1b02827115c38ef81af70091" => :high_sierra
     sha256 "c48c81e51049146d136a29c933511c5d11dd8328cae7edb2ddb4d4b397f53a19" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "5bd23f0016ca5cd765dadb70818b927bf100edb119f8b8d120031079faf96bfa" => :mojave
+    sha256 "ca5c4067824d715b3a4009b6b0c6b3cada63e397d7de0f7ee065feadfaa9e1d9" => :high_sierra
+    sha256 "31e2527a571e3255d20d93976a6db3f997c3fc0fa1e501387fff1044e80cf15d" => :sierra
 >>>>>>> upstream/master
   end
 

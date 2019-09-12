@@ -3,12 +3,12 @@ class Gdcm < Formula
   homepage "https://sourceforge.net/projects/gdcm/"
   url "https://github.com/malaterre/GDCM/archive/v3.0.1.tar.gz"
   sha256 "f1ee8ebda7a465281abada329b4dbca6e036a42ead6ad58070ff4f94da7819d9"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "ec1b971f84394205c21b0f1cd98cab36b2102213bed48ba562c539af6de920dc" => :mojave
-    sha256 "07b3e828a22110657f1c85d5816b7c520ad0acd6a4624910ab2d13198319aaeb" => :high_sierra
-    sha256 "b006365070186fa9e147dc5c2acf12670c4eadabc5fbc43c03dde36c31e62060" => :sierra
+    sha256 "6f4314bef2cd7c0849f04d6cd27a858ab6ced1f1b8987af52ccfc22461fe0759" => :mojave
+    sha256 "f4102a34b9787a50db114b97a9456e30bff18e26846ac3ad17fd0e48f0ecb192" => :high_sierra
+    sha256 "f74a4c29513115a9d6f9745abba1c33dfb1d93ecfd87e9f5f37563cbff2bce8a" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -16,7 +16,7 @@ class Gdcm < Formula
   depends_on "pkg-config" => :build
   depends_on "swig" => :build
   depends_on "openjpeg"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "python"
   depends_on "vtk"
 
