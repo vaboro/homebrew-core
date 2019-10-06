@@ -3,6 +3,7 @@ class Devspace < Formula
   homepage "https://devspace.cloud/docs"
   url "https://github.com/devspace-cloud/devspace.git",
 <<<<<<< HEAD
+<<<<<<< HEAD
     :tag      => "v3.5.15",
     :revision => "c8d66b7d7b2284b26c90b2c3411fe364faa61b05"
 
@@ -21,6 +22,16 @@ class Devspace < Formula
     sha256 "9f9a1382ad606c760a53326537bf35e132e00deeb2260cfe354d1724758eb44e" => :high_sierra
     sha256 "96d46840e94b1a40888f3c57833233892c57015909ad7ce97c9aaf39d393cbbf" => :sierra
 >>>>>>> upstream/master
+=======
+    :tag      => "v4.0.3",
+    :revision => "2743f0af1dd51cfd340497c7476b6a2abd341479"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "f20d9dfeea269010007a64eea502e571c2cacf07e7bbad176fb0347dc42b2b0b" => :catalina
+    sha256 "ed5c835a02ee2f9b5e9de0efd6743adbe8d449ac0de1e653e7c2bd041c568957" => :mojave
+    sha256 "c3f0b5cd3f43d2843ab1b3774c13805412ada682387fbc74223d7942af4e35dd" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
@@ -28,7 +39,6 @@ class Devspace < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on"
 
     dir = buildpath/"src/github.com/devspace-cloud/devspace"
     dir.install buildpath.children

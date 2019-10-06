@@ -5,6 +5,7 @@ class Glooctl < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "v0.18.15",
       :revision => "523d8c54473de48660619863523976d344aef06e"
 =======
@@ -19,10 +20,15 @@ class Glooctl < Formula
       :tag      => "v0.18.40",
       :revision => "47261575e46dd5740437980b84ad096e585c0159"
 >>>>>>> upstream/master
+=======
+      :tag      => "v0.20.2",
+      :revision => "2baeb8b540b949fdd5de94dda37a1b7da1ee201c"
+>>>>>>> upstream/master
   head "https://github.com/solo-io/gloo.git"
 
   bottle do
     cellar :any_skip_relocation
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,6 +49,11 @@ class Glooctl < Formula
     sha256 "5bd23f0016ca5cd765dadb70818b927bf100edb119f8b8d120031079faf96bfa" => :mojave
     sha256 "ca5c4067824d715b3a4009b6b0c6b3cada63e397d7de0f7ee065feadfaa9e1d9" => :high_sierra
     sha256 "31e2527a571e3255d20d93976a6db3f997c3fc0fa1e501387fff1044e80cf15d" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "e3237d02772d2836a1db68e0cffe4f2135d1004f44de2bddc1cf57363a543cde" => :catalina
+    sha256 "e97ce3a00158ee81f4ead59b2e07b416ab65897747af2d72620b2278cd8859b8" => :mojave
+    sha256 "3ba87b6dede9964ab61c2e7d7add71ee941f565d3fb97b9a10820f6b12f5b4d0" => :high_sierra
 >>>>>>> upstream/master
   end
 
@@ -65,8 +76,11 @@ class Glooctl < Formula
     run_output = shell_output("#{bin}/glooctl 2>&1")
     assert_match "glooctl is the unified CLI for Gloo.", run_output
 
-    version_output = shell_output("#{bin}/glooctl --version 2>&1")
-    assert_match "glooctl community edition version #{version}", version_output
+    version_output = shell_output("#{bin}/glooctl version 2>&1")
+    assert_match "Client: {\"version\":\"#{version}\"}", version_output
+
+    version_output = shell_output("#{bin}/glooctl version 2>&1")
+    assert_match "Server: version undefined", version_output
 
     # Should error out as it needs access to a Kubernetes cluster to operate correctly
     status_output = shell_output("#{bin}/glooctl get proxy 2>&1", 1)

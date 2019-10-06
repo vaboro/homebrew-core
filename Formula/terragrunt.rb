@@ -4,6 +4,7 @@ class Terragrunt < Formula
   url "https://github.com/gruntwork-io/terragrunt.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     :tag      => "v0.19.19",
     :revision => "a078396d44bac85abb37819fb83687ae67ba10d7"
 
@@ -31,6 +32,16 @@ class Terragrunt < Formula
     sha256 "e512fe3975242043c88688bf6434f250487e3b09ae029f9950adf457611ec512" => :mojave
     sha256 "30c9f70f865c06f55febc4c6d13775728779b9214918e6e65c21f58c1ff3039f" => :high_sierra
     sha256 "d66dc885cd177220458803897a69f491f02ee1ef5782769a84aa547c9e364320" => :sierra
+>>>>>>> upstream/master
+=======
+    :tag      => "v0.19.29",
+    :revision => "c5d252a82e47e5508455452ec93ac8dd516ed46d"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "730c42bb518b0134a62e8f2c9b0906f3f68a97b4d0c5474520e265e17cb0e260" => :catalina
+    sha256 "9211ce0fbec56905046f1ff748b47d556e322efc651d567f861bbde35b7d560f" => :mojave
+    sha256 "26432b8a23aa65631792298f709c65cfbbcb98ea5fd48c828fcd9e141f9dcb7b" => :high_sierra
 >>>>>>> upstream/master
   end
 

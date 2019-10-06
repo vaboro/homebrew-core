@@ -2,22 +2,21 @@ class Tflint < Formula
   desc "Linter for Terraform files"
   homepage "https://github.com/wata727/tflint"
   url "https://github.com/wata727/tflint.git",
-    :tag      => "v0.11.1",
-    :revision => "1c31b742deb0a556520dec70ae9d4da5740f2b48"
+    :tag      => "v0.12.0",
+    :revision => "013fedc107c0d6e1045952901041ab367f0f2a06"
   head "https://github.com/wata727/tflint.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ceb2dfc4b77a86616be7babfddc013f3bdeae9b6fd60f4f318680c7fd133d8b4" => :mojave
-    sha256 "bca39eb983b366f3c16f6ce08e9cee1b39e584fed8338fef93eefbcb1565d3ea" => :high_sierra
-    sha256 "b20c9e9b857dd39b616e072b0ccadbc97ee0cbe4d657104bd9d145d9f543c51d" => :sierra
+    sha256 "f5c626dad3ef2a5da7afd27c25ba949cb7601038e2127ea668e46064fabfa940" => :catalina
+    sha256 "76efb18b86366c93d87450c9109a7a6913ac270e4090a5eb8044b68ff6561317" => :mojave
+    sha256 "8c887a1d7d19a760eb1246fb1187726e85e01254fd323f4f75759bf47cc910bd" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on"
 
     dir = buildpath/"src/github.com/wata727/tflint"
     dir.install buildpath.children

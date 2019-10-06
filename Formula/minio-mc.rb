@@ -5,6 +5,7 @@ class MinioMc < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "RELEASE.2019-08-07T23-14-43Z",
       :revision => "fef437bdd6bdd65dbc51e3d069c2e7d0413bc143"
   version "20190807231443"
@@ -47,6 +48,17 @@ class MinioMc < Formula
     sha256 "7a8d082fa5024d44f37fc5c4af532ff8488b9d9358ea512f7fd859024ef602d1" => :high_sierra
     sha256 "daae2008ce5947b834ad499e91ae18f570539dba4737cf79567f3e8f77962b34" => :sierra
 >>>>>>> upstream/master
+=======
+      :tag      => "RELEASE.2019-10-02T19-41-02Z",
+      :revision => "26b9044a8676a8c5ff79a6054343e5be74c35135"
+  version "20191002194102"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0b81d4b1f5f97dce43fb77117a98ac7f10adc82146ed1b29dc657770366ab21d" => :catalina
+    sha256 "3a85394b3ca31a22fc3a897ff376d8a88fcfffaf0be8b2af66f1bc68914a9cd9" => :mojave
+    sha256 "f52d51b974009d99558a49490b0de689abd137eea2aa816bc4f285b4806a4640" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
@@ -55,7 +67,6 @@ class MinioMc < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on"
     src = buildpath/"src/github.com/minio/mc"
     src.install buildpath.children
     src.cd do

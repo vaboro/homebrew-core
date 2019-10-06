@@ -2,6 +2,7 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://www.php.net/distributions/php-7.3.8.tar.xz"
   sha256 "f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5"
 
@@ -24,6 +25,15 @@ class Php < Formula
     sha256 "4b6b3ea4704f2debd9d506e3c8820d2958b7e1eca6daece64796ca9a03e364d1" => :mojave
     sha256 "8f77f9e4c05467a0464d41ecb5c47f4bd135ac95f320d59426710088615c9bc5" => :high_sierra
     sha256 "814bd8c3f742749aac8c92cad5505ebfa6349aeb0a80308d3fb1bd2f4c9f7799" => :sierra
+>>>>>>> upstream/master
+=======
+  url "https://www.php.net/distributions/php-7.3.10.tar.xz"
+  sha256 "42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906"
+
+  bottle do
+    sha256 "7131f58e94e2330ad99e5a5e33f0e3f879c6624219ca8e0d4b6e7ac3e47a68d6" => :catalina
+    sha256 "ee9e72d83af831f2bc3db72b5232d1103480ad3e5a36865fcd1a961d0714744f" => :mojave
+    sha256 "604a1ecf696be0b784b20fc898c9b4913c0b64ed8a9367c20fcbed8afc9c29df" => :high_sierra
 >>>>>>> upstream/master
   end
 
@@ -189,9 +199,9 @@ class Php < Formula
 
     # Use OpenSSL cert bundle
     inreplace "php.ini-development", /; ?openssl\.cafile=/,
-      "openssl.cafile = \"#{HOMEBREW_PREFIX}/etc/openssl/cert.pem\""
+      "openssl.cafile = \"#{etc}/openssl@1.1/cert.pem\""
     inreplace "php.ini-development", /; ?openssl\.capath=/,
-      "openssl.capath = \"#{HOMEBREW_PREFIX}/etc/openssl/certs\""
+      "openssl.capath = \"#{etc}/openssl@1.1/certs\""
 
     # php 7.3 known bug
     # SO discussion: https://stackoverflow.com/a/53709484/791609

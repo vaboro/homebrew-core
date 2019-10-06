@@ -1,13 +1,14 @@
 class Evince < Formula
   desc "GNOME document viewer"
   homepage "https://wiki.gnome.org/Apps/Evince"
-  url "https://download.gnome.org/sources/evince/3.32/evince-3.32.0.tar.xz"
-  sha256 "f0d977216466ed2f5a6de64476ef7113dc7c7c9832336f1ff07f3c03c5324c40"
+  url "https://download.gnome.org/sources/evince/3.34/evince-3.34.0.tar.xz"
+  sha256 "3297d16d2d1426f72ea090749ba72424d08eb133fbe4101e52a0b84999ad2a51"
+  revision 1
 
   bottle do
-    sha256 "8d1fb23658da65d47d29adb98a07332168d5b5ec8be5d29069c43f88e1e55c64" => :mojave
-    sha256 "152c9214046e061a7d38ad88abe6dfde92b9e297993a459eed5ae5851be47381" => :high_sierra
-    sha256 "d46efcdeb3c0988bd477e83bcd67466c7f3000cb538e4d9fc9661bd8e3c0626d" => :sierra
+    sha256 "74452e248358bd45211011c77ec0103dd3c136293c01b87cb657c5b95d8ba651" => :catalina
+    sha256 "0bc52bf882f3f853871f31e01dbba7d3af03c3b6d58143e0e428323d929a59f2" => :mojave
+    sha256 "7c76bdef7f3f9960068d9055da070f1255329526be49ad2565a75a68c097409d" => :high_sierra
   end
 
   depends_on "appstream-glib" => :build
@@ -26,9 +27,6 @@ class Evince < Formula
   depends_on "libxml2"
   depends_on "poppler"
   depends_on "python"
-
-  # patch submitted upstream at https://gitlab.gnome.org/GNOME/evince/merge_requests/154
-  patch :DATA
 
   def install
     ENV["GETTEXTDATADIR"] = "#{Formula["appstream-glib"].opt_share}/gettext"
@@ -71,22 +69,3 @@ class Evince < Formula
     assert_match version.to_s, shell_output("#{bin}/evince --version")
   end
 end
-
-__END__
-diff --git a/libdocument/ev-document-factory.c b/libdocument/ev-document-factory.c
-index ca1aeeb..4f7f40b 100644
---- a/libdocument/ev-document-factory.c
-+++ b/libdocument/ev-document-factory.c
-@@ -58,8 +58,12 @@ get_backend_info_for_mime_type (const gchar *mime_type)
-                 guint i;
-
-                 for (i = 0; mime_types[i] != NULL; ++i) {
--                        if (g_content_type_is_mime_type (mime_type, mime_types[i]))
-+                        gchar *content_type = g_content_type_from_mime_type(mime_type);
-+                        if (g_content_type_is_mime_type (content_type, mime_types[i])) {
-+                                g_free(content_type);
-                                 return info;
-+                        }
-+                        g_free(content_type);
-                 }
-         }

@@ -2,6 +2,7 @@ class PhpAT72 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://www.php.net/distributions/php-7.2.21.tar.xz"
   sha256 "de06aff019d8f5079115795bd7d8eedd4cd03daecb62d58abb18f492dd995c95"
 
@@ -24,6 +25,15 @@ class PhpAT72 < Formula
     sha256 "abbcd1c105f315daa497b36bf45c57aaa8d53ce1dcd6b9de5deaebdadcba7fa7" => :mojave
     sha256 "aefa6b2c2c330300df716fc601c36d7ad91f996a8b081f84e066071b3c263488" => :high_sierra
     sha256 "753f7296d0d490c10b27d3e9e200da22b6d316f02ec3b4807e8e1a0c665aaaf5" => :sierra
+>>>>>>> upstream/master
+=======
+  url "https://www.php.net/distributions/php-7.2.23.tar.xz"
+  sha256 "74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14"
+
+  bottle do
+    sha256 "41a7fcfa4f3b1f127d920e8c19d099d1933e2881f496621092f1ed28c74c7982" => :catalina
+    sha256 "b326850a31a4819aea906491947bc9184e2c32750144b909c16969961268e84c" => :mojave
+    sha256 "c520fa257132cc96057f7bac4c966ed0e1b8f78b32189c96bc6a41ddf561624c" => :high_sierra
 >>>>>>> upstream/master
   end
 
@@ -195,9 +205,9 @@ class PhpAT72 < Formula
 
     # Use OpenSSL cert bundle
     inreplace "php.ini-development", /; ?openssl\.cafile=/,
-      "openssl.cafile = \"#{HOMEBREW_PREFIX}/etc/openssl/cert.pem\""
+      "openssl.cafile = \"#{etc}/openssl@1.1/cert.pem\""
     inreplace "php.ini-development", /; ?openssl\.capath=/,
-      "openssl.capath = \"#{HOMEBREW_PREFIX}/etc/openssl/certs\""
+      "openssl.capath = \"#{etc}/openssl@1.1/certs\""
 
     config_files = {
       "php.ini-development"   => "php.ini",

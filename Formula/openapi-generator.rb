@@ -3,6 +3,7 @@ class OpenapiGenerator < Formula
   homepage "https://openapi-generator.tech/"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/4.1.0/openapi-generator-cli-4.1.0.jar"
   sha256 "649accfdd325ef7aff03bd60cec15a39cf2b7f9f51ec1f5e4d29b930e15e715e"
 =======
@@ -12,6 +13,10 @@ class OpenapiGenerator < Formula
 =======
   url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar"
   sha256 "c4e3025ba2c82c24e26178ad451d0e00756ff0e151259ef3814e99feac9ec5a1"
+>>>>>>> upstream/master
+=======
+  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/4.1.3/openapi-generator-cli-4.1.3.jar"
+  sha256 "234cbbc5ec9b56e4b585199ec387b5ad3aefb3eda9424c30d35c849dd5950d2f"
 >>>>>>> upstream/master
 
   head do

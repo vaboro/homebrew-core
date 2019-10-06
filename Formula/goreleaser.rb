@@ -4,6 +4,7 @@ class Goreleaser < Formula
   url "https://github.com/goreleaser/goreleaser.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "v0.114.1",
       :revision => "36b190490f7b1716c9edb9ce96f243397b97abf3"
 
@@ -32,13 +33,22 @@ class Goreleaser < Formula
     sha256 "51acd8378f68914c2cf92f2e8db7e4357024b69f4ad1efec5edfe367bdc9cfe1" => :high_sierra
     sha256 "188cf53e7074a0efaf73c88b0af27e966cd44ff459fab3a2da27cdfe3e8054b9" => :sierra
 >>>>>>> upstream/master
+=======
+      :tag      => "v0.118.2",
+      :revision => "d1e97a3fd8bc8e0680329a5f45172c9788b6f057"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "839280137bcdcc14f29c892c01e7c465ccc36fe62b905e435bab008942260210" => :catalina
+    sha256 "8ef334862e473c30a273acc7eb552ec438bdfa126156032bbe85ac93b4c3ce8c" => :mojave
+    sha256 "28177e58ab866d7440b6c65b67485f6c1a21f9bf75cbf66e83476daf7f207e85" => :high_sierra
+>>>>>>> upstream/master
   end
 
-  depends_on "go@1.12" => :build
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on"
 
     dir = buildpath/"src/github.com/goreleaser/goreleaser"
     dir.install buildpath.children

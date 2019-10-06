@@ -2,6 +2,7 @@ class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://www.haproxy.org/download/2.0/src/haproxy-2.0.4.tar.gz"
   sha256 "e2680696032c8b957cd26fd948fff239d2cfc17b00964e6d2dc5adf8155fcef1"
 
@@ -20,6 +21,16 @@ class Haproxy < Formula
     sha256 "f656d34d07291a6738c647c9fdc07019ceeadeed3841c81d9604442bd527880e" => :mojave
     sha256 "6b2d7abae3dc8ccbd2d997d9966bd2086f37d38e3948456271c54b103c7ef5b8" => :high_sierra
     sha256 "93820d418a650dae699163f547940cb9c116287a385cc4fce54bf4f1651498b3" => :sierra
+>>>>>>> upstream/master
+=======
+  url "https://www.haproxy.org/download/2.0/src/haproxy-2.0.7.tar.gz"
+  sha256 "3873cd72028ed1bd2506dd174e01a92620e92683092f34234c96e067dcb113dc"
+
+  bottle do
+    cellar :any
+    sha256 "7d173ed59879d255c5bb8aef347caf75c6246b8203198c02e121175988fc2140" => :catalina
+    sha256 "7cbb2a35dfcc612a1c1ee5b0236a5427c87c4d76cb340f84e43c240a4d57c5e7" => :mojave
+    sha256 "a5f0c4b210ad14a0d4e3882560b7a78e4c5566f60f4914e1bbbcb4d1768d24d4" => :high_sierra
 >>>>>>> upstream/master
   end
 

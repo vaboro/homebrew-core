@@ -2,11 +2,16 @@ class Phpstan < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://github.com/phpstan/phpstan"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/phpstan/phpstan/releases/download/0.11.12/phpstan.phar"
   sha256 "2bb113875df5379b000e33f0aa703938f7bb8b308c58a4eb99431d874020678a"
 =======
   url "https://github.com/phpstan/phpstan/releases/download/0.11.15/phpstan.phar"
   sha256 "691093135f5856a42f935c9552832bded395957db36701afbf1291320b5e43b9"
+>>>>>>> upstream/master
+=======
+  url "https://github.com/phpstan/phpstan/releases/download/0.11.16/phpstan.phar"
+  sha256 "fa7b4db67d132c023e1f5ac22320e40dfc1adee1d405e57f7076c8c9e7094430"
 >>>>>>> upstream/master
 
   bottle :unneeded

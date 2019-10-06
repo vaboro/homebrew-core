@@ -1,13 +1,13 @@
 class Glib < Formula
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.62/glib-2.62.0.tar.xz"
-  sha256 "6c257205a0a343b662c9961a58bb4ba1f1e31c82f5c6b909ec741194abc3da10"
+  url "https://download.gnome.org/sources/glib/2.62/glib-2.62.1.tar.xz"
+  sha256 "3dd9024e1d0872a6da7ac509937ccf997161b11d7d35be337c7e829cbae0f9df"
 
   bottle do
-    sha256 "de1bacf18d547a429b058ce9fd3e98befe04158ac757d5e6de46a2589ab8b74f" => :mojave
-    sha256 "527dc608bd9204c39a54c2558d522ef392138950c1676a61100aef1bdc18170a" => :high_sierra
-    sha256 "e9aa21523883246876506367c7d40fd2badcaaa70296fe56695859ad0fd5b3ab" => :sierra
+    sha256 "0868afcbb10b19fb173ba859504510fbba8672ead539a89da8743973738d82c3" => :catalina
+    sha256 "2bddb0094d0ef4ef563d56a0a5961ef95dd22130ff38b81148f5285c29e8dc2a" => :mojave
+    sha256 "2370f23c9e8b7e1f4ad08ef557517745b93ed105682b60329a706f569559e085" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -18,8 +18,6 @@ class Glib < Formula
   depends_on "pcre"
   depends_on "python"
   uses_from_macos "util-linux" # for libmount.so
-
-  patch :DATA
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,
   # but needed to fix an assumption about the location of the d-bus machine
@@ -63,6 +61,17 @@ class Glib < Formula
       s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
               "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext}/include"
     end
+
+    # `pkg-config --print-requires-private gobject-2.0` includes libffi,
+    # but that package is keg-only so it needs to look for the pkgconfig file
+    # in libffi's opt path.
+    libffi = Formula["libffi"].opt_prefix
+    inreplace lib+"pkgconfig/gobject-2.0.pc" do |s|
+      s.gsub! "Requires.private: libffi",
+              "Requires.private: #{libffi}/lib/pkgconfig/libffi.pc"
+    end
+
+    bash_completion.install Dir["gio/completion/*"]
   end
 
   def post_install
@@ -90,24 +99,3 @@ class Glib < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/gmodule/meson.build b/gmodule/meson.build
-index d38ad2d..5fce96d 100644
---- a/gmodule/meson.build
-+++ b/gmodule/meson.build
-@@ -13,12 +13,12 @@ if host_system == 'windows'
- # dlopen() filepath must be of the form /path/libname.a(libname.so)
- elif host_system == 'aix'
-   g_module_impl = 'G_MODULE_IMPL_AR'
-+elif have_dlopen_dlsym
-+  g_module_impl = 'G_MODULE_IMPL_DL'
- # NSLinkModule (dyld) in system libraries (Darwin)
- elif cc.has_function('NSLinkModule')
-   g_module_impl = 'G_MODULE_IMPL_DYLD'
-   g_module_need_uscore = 1
--elif have_dlopen_dlsym
--  g_module_impl = 'G_MODULE_IMPL_DL'
- endif
-
- # additional checks for G_MODULE_IMPL_DL

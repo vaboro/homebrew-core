@@ -2,20 +2,20 @@ class Wtfutil < Formula
   desc "The personal information dashboard for your terminal"
   homepage "https://wtfutil.com"
   url "https://github.com/wtfutil/wtf.git",
-    :tag      => "v0.21.0",
-    :revision => "2612194f464b93dd06c17e299dfef54b8be45471"
+    :tag      => "v0.22.0",
+    :revision => "bb59d527eb5a60b2cefb8999972287742db729df"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8400e4e33198f4a87f54553ceb87cb8972ee7f3c1a83467fe4f19ecdb2658ebc" => :mojave
-    sha256 "f204d69304a8abcbcea3d55f14df92f183f90d291c31d31e7dfa80b6acca9b81" => :high_sierra
-    sha256 "95b5005a738cf2b78c410f0f04757865849ffb3dfacc9954bb129d22d4db3299" => :sierra
+    sha256 "b1001fc9292bc165d9fb2df04fd83a90d26ab19e11cb6fc89aa95a63f433d799" => :catalina
+    sha256 "68433b8dab63a55f63203de96d9a164e4a852f47466c0d37651a50b4fb7f7bdc" => :mojave
+    sha256 "ca949a320f6b6acf5870f1118a4923b2b153f6d688b3a51f871c95a4021d88cb" => :high_sierra
+    sha256 "379bb4e2f60cc0d2a63182324f3695681c738e6cd29ceeb9f4ac1fd3ad9e0e5b" => :sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GO111MODULE"] = "on"
     ENV["GOPATH"] = buildpath
     ENV["GOPROXY"] = "https://gocenter.io"
 

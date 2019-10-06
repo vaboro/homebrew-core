@@ -2,16 +2,22 @@ class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https://github.com/digitalocean/doctl"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/digitalocean/doctl/archive/v1.27.0.tar.gz"
   sha256 "a91e7d78da62bc965a9440cb087e5583d945ce10a3e59211992a304a16f26cad"
 =======
   url "https://github.com/digitalocean/doctl/archive/v1.30.0.tar.gz"
   sha256 "a7174919e0571a590076faa494b6dd7b251f4b27450c89a4bb285a3f2db2a125"
 >>>>>>> upstream/master
+=======
+  url "https://github.com/digitalocean/doctl/archive/v1.32.3.tar.gz"
+  sha256 "e6e60c3bd6c3638a71e7be610c662344bca240194cc3de826e78a51739ca546d"
+>>>>>>> upstream/master
   head "https://github.com/digitalocean/doctl.git"
 
   bottle do
     cellar :any_skip_relocation
+<<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "dc51495bdf2fccbc3a612bb786b650cf6678ea7a2ef7238fd8a99f0e2b07a814" => :mojave
     sha256 "8f4557ba7e80e279077cde38a9d507f70a3a2713b645880f5f06aa5c0dc46c61" => :high_sierra
@@ -21,12 +27,16 @@ class Doctl < Formula
     sha256 "35c6d57eb1344f9a8caa127323844a0977d7b3de84f573017a420e79da3aaffa" => :high_sierra
     sha256 "a51f712f1778fcf7f273702556bbb7bc406494b7044048db8029f06ada14ed94" => :sierra
 >>>>>>> upstream/master
+=======
+    sha256 "5466cd64e1e8927630df08c55385f227b823c7633e6b95ac140e746f4ada0552" => :catalina
+    sha256 "81d5c7d6d1b7adf883f3e027116320a09066419a0ff768c91c68c0ee8909c314" => :mojave
+    sha256 "aaf6b30417bc1a6c2351d26ab8ff603c780bfd846f648d6ac2963ef154dda3df" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GO111MODULE"] = "on"
     ENV["GOPATH"] = buildpath
 
     doctl_version = version.to_s.split(/\./)

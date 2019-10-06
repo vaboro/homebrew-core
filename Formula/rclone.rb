@@ -1,15 +1,15 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://github.com/ncw/rclone/archive/v1.49.2.tar.gz"
-  sha256 "72507c409eac49d716813639ed7e214c5130953cd5cce984b836e7c72c15a141"
+  url "https://github.com/ncw/rclone/archive/v1.49.5.tar.gz"
+  sha256 "f151f814436365ef92f6302c555efa3bd490a74a5dae26f325f61a7a7783838d"
   head "https://github.com/ncw/rclone.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "73e0d557a9345553ce68a17197958490baf9c0bc1fa51b47c8bc1909347fda54" => :mojave
-    sha256 "18a53d96f16d51cd4d11b85abb065aa84b5145e738f5e445235428814d9f2470" => :high_sierra
-    sha256 "a67f2d4655344dd7d6087c2514ec17ee6bc492b679fe15e995d968391d845ea6" => :sierra
+    sha256 "6351f1dd3c2e9c7c21882590be6a49cfb3dfff76282a0f353064361ef46421d3" => :catalina
+    sha256 "1c6e8d332cf4f102c1f0cee083d184f911afd429a0fec7ab3c1137f8db187ee1" => :mojave
+    sha256 "d8eacdcf8416c2df282acca4595d3175b5abec239ef81bf1bc55afeaed1ee128" => :high_sierra
   end
 
   depends_on "go" => :build

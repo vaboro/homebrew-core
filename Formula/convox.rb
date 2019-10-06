@@ -3,6 +3,7 @@ class Convox < Formula
   homepage "https://convox.com/"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/convox/rack/archive/20190808190811.tar.gz"
   sha256 "f2c6f4dadea44dd79714e4e8d34993a7010607c4cd3284f5ae23d10014ffaead"
 
@@ -30,6 +31,16 @@ class Convox < Formula
     sha256 "e9b0d97a54e2d619a879426cdb4811ecd14da62608765edec9468d3cbcb3068e" => :mojave
     sha256 "4dfacf3fc7ba14bb7d196f0422acb723b6b0f441240a376c7fc8456ed7415b00" => :high_sierra
     sha256 "e9fecd043541f924bb4ef659b447af1799e157447cabbc0c27c4f155a9bcdb8b" => :sierra
+>>>>>>> upstream/master
+=======
+  url "https://github.com/convox/rack/archive/20191001204055.tar.gz"
+  sha256 "05d33857621a209aed742d625789ca42f6a4b3e9508c6c0186bd6f3f07486288"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "a1a1c50b2b290b3ada7871ab8b18af2f02f55b5f169cdb7c07efcb1e068a5696" => :catalina
+    sha256 "215d38747544079f064c4d32757dc2e1248f580680811c67d58682d958822ffe" => :mojave
+    sha256 "087470ac0f18cb77a538ddb313fa96ce96b4d0b00be2d193244d42d988c83e18" => :high_sierra
 >>>>>>> upstream/master
   end
 

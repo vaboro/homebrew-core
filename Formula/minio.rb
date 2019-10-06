@@ -3,6 +3,7 @@ class Minio < Formula
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git",
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "RELEASE.2019-08-07T01-59-21Z",
       :revision => "930943f058f01f37cfbc2265d5f80ea7026ec55d"
   version "20190807015921"
@@ -23,13 +24,23 @@ class Minio < Formula
     sha256 "4087e5bd650645204c8f303f2e5845079436ad2f4fe2eff135198c144f21c9cb" => :high_sierra
     sha256 "18ca5c1f8c4705ab82c3c57f08ebf1aa17b6c5eea7b8cf91acae7e611221b3b6" => :sierra
 >>>>>>> upstream/master
+=======
+      :tag      => "RELEASE.2019-10-02T21-19-38Z",
+      :revision => "90bfa6260a8ac83199d522ed4c8fe1097dbd5153"
+  version "20191002211938"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "a3c06aa40a0338f8313294e99738201a7eb3ba35ea0c7e256a7fff5a62802a9e" => :catalina
+    sha256 "5ac5fff839ad066e7957f519b4a016f288cb382dc9890a24d58aabf428c0cf78" => :mojave
+    sha256 "3a2b1d0f5aa0e937bdf025d3941366acf0182ba14b3f18a438061478bdd1e0b3" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on"
     src = buildpath/"src/github.com/minio/minio"
     src.install buildpath.children
     src.cd do
