@@ -1,6 +1,7 @@
 class Libdc1394 < Formula
   desc "Provides API for IEEE 1394 cameras"
   homepage "https://damien.douxchamps.net/ieee1394/libdc1394/"
+  license "LGPL-2.1"
 
   stable do
     url "https://downloads.sourceforge.net/project/libdc1394/libdc1394-2/2.2.6/libdc1394-2.2.6.tar.gz"
@@ -15,8 +16,13 @@ class Libdc1394 < Formula
     end
   end
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
+    sha256 "57080908a5da9abb2c0d83d4ad25450a507de8140a812112d9e5751f4004e4d0" => :catalina
     sha256 "6cf02c5500f83fa2ccd1ff9b880f44f9652d68b0e90a2345d6c62fb92a988f0a" => :mojave
     sha256 "536cbd34a43886d63a3dba41e7877ed63ad0fbe1a5e21cde499bd2c9e1e37e52" => :high_sierra
     sha256 "ff1d7c6b07f21d8cd485574b10091eb21c2316390a7d4cfa84d29cccce8097e6" => :sierra

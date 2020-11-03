@@ -1,17 +1,34 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://github.com/micronaut-projects/micronaut-core/releases/download/v1.2.3/micronaut-1.2.3.zip"
-  sha256 "313af68543211d4ed6e914e216b6a5343d23238111de4c14ea5008b1f5f11bb0"
+  url "https://github.com/micronaut-projects/micronaut-starter/archive/v2.0.2.tar.gz"
+  sha256 "1c8972e4141a094da9e0d38de8678a525c4e5cab65e945f7fe08beded0dfca73"
+  license "Apache-2.0"
 
-  bottle :unneeded
+  livecheck do
+    url "https://github.com/micronaut-projects/micronaut-starter/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
-  depends_on :java => "1.8+"
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "9fe694abad9425a67180ccc2b24d8ea61425a799acd36f7b142e4150aec66692" => :catalina
+    sha256 "0ab865a56fe7dbdb08f3fb6a33271b4065ac3efeff6225e926dd39b6cbaba105" => :mojave
+    sha256 "a36edc278ee0c17e4ce4e9bc579418a30d5d72cd09570208de52b0f5f756747f" => :high_sierra
+  end
+
+  depends_on "gradle" => :build
+  depends_on "openjdk"
 
   def install
-    rm_f Dir["bin/*.bat"]
-    libexec.install %W[bin media cli-#{version}.jar]
-    bin.install_symlink libexec/"bin/mn"
+    system "gradle", "micronaut-cli:assemble", "-x", "test"
+
+    mkdir_p libexec/"bin"
+    mv "starter-cli/build/exploded/bin/mn", libexec/"bin/mn"
+    mv "starter-cli/build/exploded/lib", libexec/"lib"
+
+    bash_completion.install "starter-cli/build/exploded/bin/mn_completion"
+    (bin/"mn").write_env_script libexec/"bin/mn", Language::Java.overridable_java_home_env
   end
 
   test do

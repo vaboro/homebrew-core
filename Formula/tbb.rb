@@ -1,21 +1,29 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://www.threadingbuildingblocks.org/"
-  url "https://github.com/intel/tbb/archive/2019_U8.tar.gz"
-  version "2019_U8"
-  sha256 "7b1fd8caea14be72ae4175896510bf99c809cd7031306a1917565e6de7382fba"
+  url "https://github.com/intel/tbb/archive/v2020.2.tar.gz"
+  version "2020_U2"
+  sha256 "4804320e1e6cbe3a5421997b52199e3c1a3829b2ecb6489641da4b8e32faf500"
+  license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "ec92c2cfbc9f7b1309c0c4304a46f4fb6b253ae06d3e36bf9cd86003127ceb6a" => :catalina
-    sha256 "9f6f9d2a00fde898b8c221e4697ba83e8af8fb79bf8ab2bf7d69870b54d68bb2" => :mojave
-    sha256 "8361e033d207f88a44bbe398c39f6a250b4f7e75029dddefc985947185edcedc" => :high_sierra
-    sha256 "dc0cfc82511f54cd6a400c74e870cca91b56f34ec8561bfd6e57099b66899780" => :sierra
+    rebuild 1
+    sha256 "d601aa195a3baf397390550894de8d39e6602a082154fa5facdfcbe64e3abffc" => :catalina
+    sha256 "2e1004341c9ea81972212ce180a258bc162528b6eac46e67c8bc03538c3cfe40" => :mojave
+    sha256 "e1efb8aec2b87e2facdb824971718d6fa531caa5043b10e811dc86a6c5e1e797" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "swig" => :build
-  depends_on "python"
+  depends_on "python@3.8"
+
+  # Remove when upstream fix is released
+  # https://github.com/oneapi-src/oneTBB/pull/258
+  patch do
+    url "https://github.com/oneapi-src/oneTBB/commit/86f6dcdc17a8f5ef2382faaef860cfa5243984fe.diff?full_index=1"
+    sha256 "94d11e17f32efe6c3ffd1c610811b6d160c619e2a5da7debc5fd8eaca418d9aa"
+  end
 
   def install
     compiler = (ENV.compiler == :clang) ? "clang" : "gcc"
@@ -30,10 +38,11 @@ class Tbb < Formula
 
     cd "python" do
       ENV["TBBROOT"] = prefix
-      system "python3", *Language::Python.setup_install_args(prefix)
+      system Formula["python@3.8"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
     end
 
-    system "cmake", "-DINSTALL_DIR=lib/cmake/TBB",
+    system "cmake", *std_cmake_args,
+                    "-DINSTALL_DIR=lib/cmake/TBB",
                     "-DSYSTEM_NAME=Darwin",
                     "-DTBB_VERSION_FILE=#{include}/tbb/tbb_stddef.h",
                     "-P", "cmake/tbb_config_installer.cmake"

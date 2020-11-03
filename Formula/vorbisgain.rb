@@ -3,9 +3,11 @@ class Vorbisgain < Formula
   homepage "https://sjeng.org/vorbisgain.html"
   url "https://sjeng.org/ftp/vorbis/vorbisgain-0.37.tar.gz"
   sha256 "dd6db051cad972bcac25d47b4a9e40e217bb548a1f16328eddbb4e66613530ec"
+  license "LGPL-2.1"
 
   bottle do
     cellar :any
+    sha256 "b49eb04725bc5ab78fa94e261bb23598b4b4cacf1e8508a9ea543b0069947894" => :catalina
     sha256 "75aa0134fbe5f63549d0e9328f6ae2d3513670e74d5f35ca7c633917a9383aee" => :mojave
     sha256 "86d9a629d242005f13a1de8a591aee61455059b9072ab528afbebe63ecda9613" => :high_sierra
     sha256 "3572efe1e0741ee5b1f3cc0499325ae59acec5f9ab44df5987bab22312d9e3af" => :sierra

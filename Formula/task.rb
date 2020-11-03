@@ -3,9 +3,11 @@ class Task < Formula
   homepage "https://taskwarrior.org/"
   url "https://taskwarrior.org/download/task-2.5.1.tar.gz"
   sha256 "d87bcee58106eb8a79b850e9abc153d98b79e00d50eade0d63917154984f2a15"
-  head "https://github.com/GothenburgBitFactory/taskwarrior.git", :branch => "2.6.0", :shallow => false
+  license "MIT"
+  head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "2.6.0", shallow: false
 
   bottle do
+    sha256 "24c80011867aa34766864a4bbac071493fb45c93bd3e08b3e9979b3ba4780fa2" => :catalina
     sha256 "bba98b6bdfb3f79f1434229d8ade4b0622119320353da0eb8fec39809d66947d" => :mojave
     sha256 "6a651be957b736bef14633efedef011a81c49ee37178eae4d8ef863549d7c584" => :high_sierra
     sha256 "d1cb582ab9ee211ec154690634b5988f8058ead31000c74d5cdfa949d319d0ed" => :sierra
@@ -16,6 +18,10 @@ class Task < Formula
 
   depends_on "cmake" => :build
   depends_on "gnutls"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args

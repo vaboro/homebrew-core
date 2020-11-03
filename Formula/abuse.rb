@@ -5,8 +5,14 @@ class Abuse < Formula
   sha256 "0104db5fd2695c9518583783f7aaa7e5c0355e27c5a803840a05aef97f9d3488"
   head "svn://svn.zoy.org/abuse/abuse/trunk"
 
+  livecheck do
+    url "http://abuse.zoy.org/wiki/download"
+    regex(/href=.*?abuse[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any
+    sha256 "669679d60bb64b08d940f9f7c4b29faf340ff081d62b66f1764087db466fffe2" => :catalina
     sha256 "e2dd02d540aabb2943823051e4bf80ea1fbb80da1725462fb314f53a0c6800b2" => :mojave
     sha256 "3fdc2ccd00bf320b994747d982b5cbde4b73c45c094c9a0f89acf13aea3eb847" => :high_sierra
     sha256 "6971b6eebf4c00eaaed72a1104a49be63861eabc95d679a0c84040398e320059" => :sierra

@@ -3,10 +3,14 @@ class Squashfs < Formula
   homepage "https://github.com/plougher/squashfs-tools"
   url "https://github.com/plougher/squashfs-tools/archive/4.4.tar.gz"
   sha256 "a7fa4845e9908523c38d4acf92f8a41fdfcd19def41bd5090d7ad767a6dc75c3"
-  head "https://github.com/plougher/squashfs-tools", :using => :git, :commit => "52eb4c279cd283ed9802dd1ceb686560b22ffb67"
+  license "GPL-2.0"
+  head "https://github.com/plougher/squashfs-tools",
+    using:  :git,
+    commit: "52eb4c279cd283ed9802dd1ceb686560b22ffb67"
 
   bottle do
     cellar :any
+    sha256 "e8657da9ab4faa089486fd3af04a3f0b63b13e609cdde57be57d92336592297a" => :catalina
     sha256 "f3e200ecf28cf1fec5fb11e1cd210d8e935db314c39bda62095614e08d9e7477" => :mojave
     sha256 "855306e06f9eeaa7b3cb8960f0c75fe097921a2b99efe8064a6cc97c8b2f579b" => :high_sierra
     sha256 "e318da56d36a0edbf1095a795f4a797d4919f8f859116fc8dc2448088ea0dfe1" => :sierra
@@ -17,10 +21,13 @@ class Squashfs < Formula
   depends_on "xz"
   depends_on "zstd"
 
+  uses_from_macos "zlib"
+
   # Patch necessary to emulate the sigtimedwait process otherwise we get build failures.
   # Also clang fixes, extra endianness knowledge and a bundle of other macOS fixes.
+  # Original patchset: https://github.com/plougher/squashfs-tools/pull/69
   patch do
-    url "https://github.com/plougher/squashfs-tools/pull/69.patch?full_index=1"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/660ae1013be90a7ad70c862be60f9de87bbd25ca/squashfs/4.4.patch"
     sha256 "eb399705d259346473ebe5d43b886b278abc66d822ee4193b7c65b4a2ca903da"
   end
 
@@ -60,7 +67,8 @@ class Squashfs < Formula
     #   (Also tests that `xz` support is properly linked.)
     system "#{bin}/mksquashfs", "in/test1", "in/test2", "in/test3", "test.xz.sqsh", "-quiet", "-comp", "xz"
     assert_predicate testpath/"test.xz.sqsh", :exist?
-    assert_match "Found a valid SQUASHFS 4:0 superblock on test.xz.sqsh.", shell_output("#{bin}/unsquashfs -s test.xz.sqsh")
+    assert_match "Found a valid SQUASHFS 4:0 superblock on test.xz.sqsh.",
+      shell_output("#{bin}/unsquashfs -s test.xz.sqsh")
 
     # Test unsquashfs can extract files verbatim.
     system "#{bin}/unsquashfs", "-d", "out", "test.xz.sqsh"

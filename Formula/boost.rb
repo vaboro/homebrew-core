@@ -1,19 +1,43 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.bz2"
-  sha256 "d73a8da01e8bf8c7eda40b4c84915071a8c8a0df4a6734537ddde4a8580524ee"
+  url "https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2"
+  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_73_0.tar.bz2"
+  sha256 "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+  license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
+
+  livecheck do
+    url "https://www.boost.org/feed/downloads.rss"
+    regex(/>Version v?(\d+(?:\.\d+)+)</i)
+  end
 
   bottle do
     cellar :any
-    sha256 "a9e1a4a0b1f879b66015148dd89d306774f4f48a770e24dc8407d9e71872aaa4" => :catalina
-    sha256 "56088325bde433fa3c28e6f4d635d478b912e1b08e8ea4f40f54603e10c62e3b" => :mojave
-    sha256 "adde70aa5ce329425e325a58e01839de04624af419d011ba926c52b552e93507" => :high_sierra
-    sha256 "ee0588d8921d34dfd6fa3a7e8c4518c406520bf09bd59fa9a3affe23934fe802" => :sierra
+    rebuild 1
+    sha256 "21b7a8b746e98a39c299b5db595f97ff24cb498fee5c3c38be690bcc2510137b" => :catalina
+    sha256 "72159a6229ced562aa26100ce1c72f2ec3070cd6fe6e894e912abd9acc1b76bb" => :mojave
+    sha256 "f7e7f920d91f6b47a99f342a1414b992f012c49441e62b5587502d53cb31af7b" => :high_sierra
   end
 
   depends_on "icu4c"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  # Fix build on Xcode 11.4
+  patch do
+    url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
+    sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
+    directory "tools/build"
+  end
+
+  # Fix build on 64-bit arm
+  patch do
+    url "https://github.com/boostorg/build/commit/456be0b7ecca065fbccf380c2f51e0985e608ba0.patch?full_index=1"
+    sha256 "e7a78145452fc145ea5d6e5f61e72df7dcab3a6eebb2cade6b4cfae815687f3a"
+    directory "tools/build"
+  end
 
   def install
     # Force boost to compile with the desired compiler
@@ -39,8 +63,6 @@ class Boost < Formula
     bootstrap_args << "--without-libraries=#{without_libraries.join(",")}"
 
     # layout should be synchronized with boost-python and boost-mpi
-    #
-    # --no-cmake-config should be dropped if possible in next version
     args = %W[
       --prefix=#{prefix}
       --libdir=#{lib}
@@ -58,9 +80,7 @@ class Boost < Formula
     # Boost is using "clang++ -x c" to select C compiler which breaks C++14
     # handling using ENV.cxx14. Using "cxxflags" and "linkflags" still works.
     args << "cxxflags=-std=c++14"
-    if ENV.compiler == :clang
-      args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++"
-    end
+    args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     system "./bootstrap.sh", *bootstrap_args
     system "./b2", "headers"

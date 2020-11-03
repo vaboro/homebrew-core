@@ -1,35 +1,23 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
   homepage "https://github.com/segmentio/chamber"
-  url "https://github.com/segmentio/chamber/archive/v2.7.2.tar.gz"
-  sha256 "eb2255b45f3f951be9cd504294ff5ff122bd3e277e95ada5c578ee50dffb9ca1"
+  url "https://github.com/segmentio/chamber/archive/v2.8.2.tar.gz"
+  sha256 "7f471abf96c92c619641d7a3fed130cddbd815c9c15fe2f151e6c981f5706584"
+  license "MIT"
   head "https://github.com/segmentio/chamber.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "719cf1ff8a30bbb72e9d704d7e4e2f42cdd1c9c9b749c12460ab9dd522ef508c" => :catalina
-    sha256 "cd4a8685e1c1015625abae3db9d928d1b3b57473d97e24e1c927cac87bd573d4" => :mojave
-    sha256 "129584f05584be7a304edd108dfd520bb98e96e70e48ee457f11a7ed49e2700e" => :high_sierra
+    sha256 "8371eee8ce1d24a682597422a12b651ef6cdbabe3ef81c9678ee8f460401d063" => :catalina
+    sha256 "fe13b0ef1b110c43034f0e4ce3c414c68f199bcc5147ba2dda16608ab6673a05" => :mojave
+    sha256 "948c865eb11c46e8d662dad8db21f39d53476a99bfb5475aa1fdb68b5cd86201" => :high_sierra
   end
 
   depends_on "go" => :build
-  depends_on "govendor" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GOOS"] = "darwin"
-    ENV["GOARCH"] = "amd64"
-    ENV["CGO_ENABLED"] = "0"
-
-    path = buildpath/"src/github.com/segmentio/chamber"
-    path.install Dir["{*,.git}"]
-
-    cd "src/github.com/segmentio/chamber" do
-      system "govendor", "sync"
-      system "go", "build", "-o", bin/"chamber",
-                   "-ldflags", "-X main.Version=#{version}"
-      prefix.install_metafiles
-    end
+    system "go", "build", "-ldflags", "-s -w -X main.Version=v#{version}", "-trimpath", "-o", bin/"chamber"
+    prefix.install_metafiles
   end
 
   test do

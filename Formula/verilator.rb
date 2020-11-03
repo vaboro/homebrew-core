@@ -1,17 +1,23 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://www.veripool.org/ftp/verilator-4.018.tgz"
-  sha256 "98d52ec125d21b452a8b0bfddf336d8f792a53449db26798978f47885a430346"
+  url "https://www.veripool.org/ftp/verilator-4.040.tgz"
+  sha256 "6e1574924083922a4eb80ff22eedc866f4ce54e5fd6a34101b6af7aa29e5c0e3"
+  license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
+
+  livecheck do
+    url "https://github.com/verilator/verilator.git"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
-    sha256 "66754e828ca8b23ab4aadc78172915b9a8100c577a5e5974e95d3ce8d94c2eea" => :mojave
-    sha256 "90caf39e46aaeef978c8f403ecaf3f876d99473d4dc822df9cc83367f83390e7" => :high_sierra
-    sha256 "6c4d40b6ce3fdb1f24beb99d9d57e1471cbb40f4e8fbe3f6c90071f616e0789a" => :sierra
+    sha256 "f4f7abca35a5479c05aecdab7cd1a0e693a1e6a731663c175ade7b61dc017d10" => :catalina
+    sha256 "a74987a1eea55449a79c828b3c140e16f2c8272eddeb12b2fd3080256ef0cccb" => :mojave
+    sha256 "a0305efdbcd821ab55c49bcc3267c4a2a27567b85d1b2a21c001551ef1741d14" => :high_sierra
   end
 
   head do
-    url "https://git.veripool.org/git/verilator", :using => :git
+    url "https://git.veripool.org/git/verilator", using: :git
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end

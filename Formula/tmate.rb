@@ -1,15 +1,16 @@
 class Tmate < Formula
   desc "Instant terminal sharing"
   homepage "https://tmate.io/"
-  url "https://github.com/tmate-io/tmate/archive/2.3.0.tar.gz"
-  sha256 "f837514edbc19180d06b27713628466e68aba91654d748d6e65bfad308f5b00a"
+  url "https://github.com/tmate-io/tmate/archive/2.4.0.tar.gz"
+  sha256 "62b61eb12ab394012c861f6b48ba0bc04ac8765abca13bdde5a4d9105cb16138"
+  license "ISC"
   head "https://github.com/tmate-io/tmate.git"
 
   bottle do
     cellar :any
-    sha256 "92f51ef9496b1877391c008ae7f3a6a5a072ad2c0e5e52b2cebc85d9b98d9235" => :mojave
-    sha256 "fe9d988b1e3dbf7f3b2e1beecfdbc5ff25d2331118399331b1477f5b0f0efbb4" => :high_sierra
-    sha256 "75df441f4152ecb8f0e04276d7ecc1b2d348503efab8cda5296c2f02c6f38248" => :sierra
+    sha256 "a278bcb401068bed2434ec48bfb059a86d793a6daa4877574ac0ed7168cb1ebc" => :catalina
+    sha256 "7e5158460b898422b4c6e84390d0e8446e2ad52789a30f9942288c5c32acc8a1" => :mojave
+    sha256 "0f4f06d0ab7715adc7f6d33cf7d3c08fd057e7f038a666b360ac4ad6a3449ad9" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -19,6 +20,8 @@ class Tmate < Formula
   depends_on "libevent"
   depends_on "libssh"
   depends_on "msgpack"
+
+  uses_from_macos "ncurses"
 
   def install
     system "sh", "autogen.sh"

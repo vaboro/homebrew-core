@@ -3,9 +3,16 @@ class Ucl < Formula
   homepage "https://www.oberhumer.com/opensource/ucl/"
   url "https://www.oberhumer.com/opensource/ucl/download/ucl-1.03.tar.gz"
   sha256 "b865299ffd45d73412293369c9754b07637680e5c826915f097577cd27350348"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://www.oberhumer.com/opensource/ucl/download/"
+    regex(/href=.*?ucl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "5de2305d5da25469e7bf27d2e776a6e22b20806940ad1dea16d18b39a1125f7e" => :catalina
     sha256 "b676bbfb2ff44a3ff71e96a11bc8ae86ea2466029faea800427196d3ece8261e" => :mojave
     sha256 "95bba447faa9e980720b780e1db69bf59e72f026a19a965bbb1b18f3de9230de" => :high_sierra
     sha256 "b2019331517fea2505cb2d25eebbdf6ceb9a45378525d0e36a096ea3c45ad9a8" => :sierra
@@ -24,7 +31,7 @@ class Ucl < Formula
   test do
     (testpath/"test.c").write <<~EOS
       // simplified version of
-      // https://github.com/korczis/ucl/blob/master/examples/simple.c
+      // https://github.com/korczis/ucl/blob/HEAD/examples/simple.c
       #include <stdio.h>
       #include <ucl/ucl.h>
       #include <ucl/uclconf.h>

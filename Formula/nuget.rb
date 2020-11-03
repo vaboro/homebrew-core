@@ -1,15 +1,20 @@
 class Nuget < Formula
   desc "Package manager for Microsoft development platform including .NET"
   homepage "https://www.nuget.org/"
-  url "https://dist.nuget.org/win-x86-commandline/v5.2.0/nuget.exe"
-  sha256 "2865714c6588ef0770b4a04bdd20dac59bcb56756d001c040664c9966f1b835a"
+  url "https://dist.nuget.org/win-x86-commandline/v5.7.0/nuget.exe" # make sure libexec.install below matches case
+  sha256 "ae3bb02517b52a744833a4777e99d647cd80b29a62fd360e9aabaa34f09af59c"
+
+  livecheck do
+    url "https://dist.nuget.org/tools.json"
+    regex(%r{"url":\s*?"[^"]+/v?(\d+(?:\.\d+)+)/nuget\.exe",\s*?"stage":\s*?"ReleasedAndBlessed"}i)
+  end
 
   bottle :unneeded
 
   depends_on "mono"
 
   def install
-    libexec.install "NuGet.exe" => "nuget.exe"
+    libexec.install "nuget.exe" => "nuget.exe"
     (bin/"nuget").write <<~EOS
       #!/bin/bash
       mono #{libexec}/nuget.exe "$@"
@@ -17,6 +22,6 @@ class Nuget < Formula
   end
 
   test do
-    assert_match "NuGet.Protocol.Core.v3", shell_output("#{bin}/nuget list NuGet.Protocol.Core.v3")
+    assert_match "NuGet.Protocol.Core.v3", shell_output("#{bin}/nuget list packageid:NuGet.Protocol.Core.v3")
   end
 end

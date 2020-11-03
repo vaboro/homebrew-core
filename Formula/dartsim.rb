@@ -1,13 +1,14 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://github.com/dartsim/dart/archive/v6.9.2.tar.gz"
-  sha256 "7d46d23c04d74d3b78331f9fa7deb5ab32fd4b0c03b93548cd84a2d67771d816"
+  url "https://github.com/dartsim/dart/archive/v6.9.4.tar.gz"
+  sha256 "aefa13b9cb1c968373faa976288f29fde4d94110125ab14b4707c2e0c7280443"
+  license "BSD-2-Clause"
 
   bottle do
-    sha256 "c2df9e26f82353fffd3d45b0d456595171b5c19ba3f8bf20d2095cee4b80aa6f" => :mojave
-    sha256 "d951dd67d22f42007f0838f87bcbfa577aae151b718bbb55cb67385eeb847aad" => :high_sierra
-    sha256 "5f08e889901be74629e13c4f2973076831e17aa3c2d3b486ab34ee82a3e9134b" => :sierra
+    sha256 "bad657c56bb6d83b782b7a25e97e3bb60a042984255d05b85d1d50e9c50f830e" => :catalina
+    sha256 "a9c7a4c1aaf357f88bc389ced38816c4d5857cc44c2876933e8c12be3f5e4450" => :mojave
+    sha256 "9ff5943e7d6d6d055091e9e9318d230051379dd09dae3ec48a063a5a477ec78b" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -33,6 +34,9 @@ class Dartsim < Formula
     system "cmake", ".", "-DGLUT_glut_LIBRARY=/System/Library/Frameworks/GLUT.framework",
                          *std_cmake_args
     system "make", "install"
+
+    # Clean up the build file garbage that has been installed.
+    rm_r Dir["#{share}/doc/dart/**/CMakeFiles/"]
   end
 
   test do

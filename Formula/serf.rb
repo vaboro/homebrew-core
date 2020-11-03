@@ -2,50 +2,40 @@ class Serf < Formula
   desc "Service orchestration and management tool"
   homepage "https://serfdom.io/"
   url "https://github.com/hashicorp/serf.git",
-      :tag      => "v0.8.5",
-      :revision => "1d3fdf93bbe5002c5023da50402368a817488691"
+      tag:      "v0.9.4",
+      revision: "5383e2044544e9b33ced96fe75d157604c09be86"
+  license "MPL-2.0"
   head "https://github.com/hashicorp/serf.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9afe67fdeaf09ae3a801c700c25148e86da33f036d92f5260ce085fe95d4ac57" => :catalina
-    sha256 "591a05d111d305a1a20bf9e7971f5475206b737504aec9a72d0e7c64d86a4efb" => :mojave
-    sha256 "7cf67630dd3839a5e59eb92997c4cc9034bce06dbc72f1b75cf4e36a2b3cfe60" => :high_sierra
+    sha256 "7b232e24a80e1c0199e2b1b368f7c55e1f51ff840b450eb826b2688a2c6fab03" => :catalina
+    sha256 "04d4ea4e4c299ac0899a59f96381a7f382b91b16d6cc4b7eb69d97c446e66343" => :mojave
+    sha256 "22a8592c825ec0adb0e790be20dd0e24a8d5afb2b326d17df22a5266197a4148" => :high_sierra
   end
 
   depends_on "go" => :build
-  depends_on "govendor" => :build
-  depends_on "gox" => :build
+
+  uses_from_macos "zip" => :build
 
   def install
-    contents = Dir["*"]
-    gopath = buildpath/"gopath"
-    (gopath/"src/github.com/hashicorp/serf").install contents
+    ldflags = %W[
+      -X github.com/hashicorp/serf/version.Version=#{version}
+      -X github.com/hashicorp/serf/version.VersionPrerelease=
+    ].join(" ")
 
-    ENV["GOPATH"] = gopath
-    ENV["XC_ARCH"] = "amd64"
-    ENV["XC_OS"] = "darwin"
-
-    (gopath/"bin").mkpath
-
-    cd gopath/"src/github.com/hashicorp/serf" do
-      system "make", "bin"
-      bin.install "bin/serf"
-      prefix.install_metafiles
-    end
+    system "go", "build", *std_go_args, "-ldflags", ldflags, "./cmd/serf"
   end
 
   test do
-    begin
-      pid = fork do
-        exec "#{bin}/serf", "agent"
-      end
-      sleep 1
-      assert_match /:7946.*alive$/, shell_output("#{bin}/serf members")
-    ensure
-      system "#{bin}/serf", "leave"
-      Process.kill "SIGINT", pid
-      Process.wait pid
+    pid = fork do
+      exec "#{bin}/serf", "agent"
     end
+    sleep 1
+    assert_match /:7946.*alive$/, shell_output("#{bin}/serf members")
+  ensure
+    system "#{bin}/serf", "leave"
+    Process.kill "SIGINT", pid
+    Process.wait pid
   end
 end

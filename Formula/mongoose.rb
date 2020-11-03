@@ -1,20 +1,21 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https://github.com/cesanta/mongoose"
-  url "https://github.com/cesanta/mongoose/archive/6.15.tar.gz"
-  sha256 "ed9b44690f9660d25562e45472d486c086bcc916bf49f39f22e0a90444d44454"
-  revision 1
+  url "https://github.com/cesanta/mongoose/archive/6.17.tar.gz"
+  sha256 "5bff3cc70bb2248cf87d06a3543f120f3b29b9368d25a7715443cb10612987cc"
+  # license ["GPL-2.0", "Cesanta"] - pending https://github.com/Homebrew/brew/pull/7953
+  license "GPL-2.0"
 
   bottle do
     cellar :any
-    sha256 "b5030cf46705161bfedb5c7ab2381fdd6e5fae5fff949b88192890baebcb6799" => :mojave
-    sha256 "ee6d527c83cc3ceeaab865b57e252fa586ff688f7ad621d8f888f0099abdc620" => :high_sierra
-    sha256 "f8804407c6e9db55ff09309fefd98559564de2827d0240c7f26b6aa9d559c30c" => :sierra
+    sha256 "3eb55e73c26957e647dcc4f978fa7d4d5ae2b223fa631d208f07b341d26ac0d5" => :catalina
+    sha256 "cb43e1b9e539db8348d6038fbe56ca787b02428f3c585cd0528c3c4521a26222" => :mojave
+    sha256 "a65aaee3abb441a26728b8f08c5fa81845f5636d676fadaba5881da4da04ee71" => :high_sierra
   end
 
   depends_on "openssl@1.1"
 
-  conflicts_with "suite-sparse", :because => "suite-sparse vendors libmongoose.dylib"
+  conflicts_with "suite-sparse", because: "suite-sparse vendors libmongoose.dylib"
 
   def install
     # No Makefile but is an expectation upstream of binary creation

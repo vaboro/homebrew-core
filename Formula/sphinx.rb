@@ -3,21 +3,27 @@ class Sphinx < Formula
   homepage "https://sphinxsearch.com/"
   url "https://sphinxsearch.com/files/sphinx-2.2.11-release.tar.gz"
   sha256 "6662039f093314f896950519fa781bc87610f926f64b3d349229002f06ac41a9"
+  license "GPL-2.0"
   revision 3
   head "https://github.com/sphinxsearch/sphinx.git"
 
   bottle do
-    sha256 "94b90c69f874065f016d997d0116a5904fe08ac8971de6f853226beae7728d5f" => :mojave
-    sha256 "b2ebd3519b509a3afae2a915fe9744f4ef880a2a650820322c54ac27a07a0573" => :high_sierra
-    sha256 "848eb3db1c267231d5bff8bd8e6cc5b24fcef37acd977dd9be93c0716c6fdde2" => :sierra
+    rebuild 2
+    sha256 "f3d89ffcd2926373af5a35bb7ae6f16e59074699eeacfb4d358a0dc5742729cc" => :catalina
+    sha256 "61f1ae14e253c8c84f0e8a9f3a26833ca4a1da887d97c0df8ecebb6096222546" => :mojave
+    sha256 "3daf6e565c7c12803c13b6439a872e61335b3b27c06719ca6f8cec93dcd2176e" => :high_sierra
   end
 
-  depends_on "mysql"
+  depends_on "mysql@5.7"
   depends_on "openssl@1.1"
+
+  uses_from_macos "zlib"
+
+  conflicts_with "manticoresearch", because: "manticoresearch is a fork of sphinx"
 
   resource "stemmer" do
     url "https://github.com/snowballstem/snowball.git",
-        :revision => "9b58e92c965cd7e3208247ace3cc00d173397f3c"
+        revision: "9b58e92c965cd7e3208247ace3cc00d173397f3c"
   end
 
   def install

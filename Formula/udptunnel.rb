@@ -4,9 +4,11 @@ class Udptunnel < Formula
   url "https://web.archive.org/web/20161224191851/www.cs.columbia.edu/~lennox/udptunnel/udptunnel-1.1.tar.gz"
   mirror "https://ftp.nsysu.edu.tw/FreeBSD/ports/local-distfiles/leeym/udptunnel-1.1.tar.gz"
   sha256 "45c0e12045735bc55734076ebbdc7622c746d1fe4e6f7267fa122e2421754670"
+  license "BSD-3-Clause"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "c015b88af8ac3590aee162c50428bf931a8a15ab006589022bdace7bf665e32a" => :catalina
     sha256 "7923707e0f1851b728643b010aba4b2052e076f935467a1b0ec8ef05d0cbe54b" => :mojave
     sha256 "938663a675b5ef62316fa1f7f4f33895d1b28af656ee722c5f8cf6ba94123f4e" => :high_sierra
     sha256 "c129b87c78c3297365d7e78b77985b69deb4def8d030b029d812bb25610b8bb0" => :sierra

@@ -7,9 +7,16 @@ class Aacgain < Formula
   # See: https://github.com/Homebrew/homebrew/issues/16838
   url "https://aacgain.altosdesign.com/alvarez/aacgain-1.8.tar.bz2"
   sha256 "2bb8e27aa8f8434a4861fdbc70adb9cb4b47e1dfe472910d62d6042cb80a2ee1"
+  license "GPL-2.0-or-later"
+
+  livecheck do
+    url "https://aacgain.altosdesign.com/alvarez/"
+    regex(/href=.*?aacgain[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "a8ec07d22279b4bdd471ee7a307e6d365a906432ef49533afeca2de53add8d55" => :catalina
     sha256 "a6d9e4d4f20311e0a91bdbc6f42ef8894e6a6b9f4d8290938d14f02868821c0d" => :mojave
     sha256 "eda9c36cf9517c9f342031632b9fb38f77d8150cc2a7cf88b57e46f77395c96e" => :high_sierra
     sha256 "2d7ea587b06feb7ccb4f6dfaee3a6d7b329e041cc80af969afb8b5d1631997e8" => :sierra

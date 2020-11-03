@@ -1,15 +1,14 @@
 class Jasper < Formula
   desc "Library for manipulating JPEG-2000 images"
   homepage "https://www.ece.uvic.ca/~frodo/jasper/"
-  url "https://github.com/mdadams/jasper/archive/version-2.0.16.tar.gz"
-  sha256 "f1d8b90f231184d99968f361884e2054a1714fdbbd9944ba1ae4ebdcc9bbfdb1"
-  revision 1
+  url "https://github.com/mdadams/jasper/archive/version-2.0.20.tar.gz"
+  sha256 "d55843ce52afa9bfe90f30118329578501040f30d48a027459a68a962695e506"
+  license "JasPer-2.0"
 
   bottle do
-    sha256 "eb5d0888be36aa8afb0eccc43957eeda99ded64ec5a5531240a4ec99450ba183" => :catalina
-    sha256 "ed0856ff9b2429852401e658f4045c9e39cd05fa77b5ea7a6a3c2e21b4d8c460" => :mojave
-    sha256 "630b86c544fda0a769815637e37b34e587a6d070b26d642b0d50401f609c744f" => :high_sierra
-    sha256 "15ccd9ba448e5de3468d6be07c41106ed77e45d65adbea74a524c042e8791b06" => :sierra
+    sha256 "4b7e4326a5da0643c59c302cfd458444965771a769838607f78fc43ffa0791cc" => :catalina
+    sha256 "ecf0e6e6ce1ffb58c103965639d35b7f24e1634ad34944e9570a223a1ce1590b" => :mojave
+    sha256 "37cbb5fd71b38ca35fd60ba0523c7a1af80702bd7f04743d0a771661aee12d48" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -20,12 +19,19 @@ class Jasper < Formula
       # Make sure macOS's GLUT.framework is used, not XQuartz or freeglut
       # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
       glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
-      system "cmake", "..", "-DGLUT_glut_LIBRARY=#{glut_lib}", *std_cmake_args
+
+      system "cmake", "..",
+        "-DGLUT_glut_LIBRARY=#{glut_lib}",
+        "-DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false",
+        *std_cmake_args
       system "make"
-      system "make", "test"
       system "make", "install"
       system "make", "clean"
-      system "cmake", "..", "-DGLUT_glut_LIBRARY=#{glut_lib}", "-DJAS_ENABLE_SHARED=OFF", *std_cmake_args
+
+      system "cmake", "..",
+        "-DGLUT_glut_LIBRARY=#{glut_lib}",
+        "-DJAS_ENABLE_SHARED=OFF",
+        *std_cmake_args
       system "make"
       lib.install "src/libjasper/libjasper.a"
     end

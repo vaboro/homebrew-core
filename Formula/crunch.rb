@@ -3,10 +3,16 @@ class Crunch < Formula
   homepage "https://sourceforge.net/projects/crunch-wordlist/"
   url "https://downloads.sourceforge.net/project/crunch-wordlist/crunch-wordlist/crunch-3.6.tgz"
   sha256 "6a8f6c3c7410cc1930e6854d1dadc6691bfef138760509b33722ff2de133fe55"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "67570938790b20aaabcb31c8ac86d4356702b87ce2ae8ea01d19553f531397a6" => :catalina
     sha256 "ad3bd04ba230c46df88ab4ab7a74efa3182cd65b804b65a28a327f74700641e8" => :mojave
     sha256 "c59cb398b0ed4f28e8d56c49709991f5ea61b61bad4d672f1a481730948cdeb0" => :high_sierra
     sha256 "737d46b90aaa933abe03e111ece79e3f6a0ecb372cc1903b9dba3a33208111b9" => :sierra

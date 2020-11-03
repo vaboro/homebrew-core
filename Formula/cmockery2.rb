@@ -3,10 +3,17 @@ class Cmockery2 < Formula
   homepage "https://github.com/lpabon/cmockery2"
   url "https://github.com/lpabon/cmockery2/archive/v1.3.9.tar.gz"
   sha256 "c38054768712351102024afdff037143b4392e1e313bdabb9380cab554f9dbf2"
+  license "Apache-2.0"
   head "https://github.com/lpabon/cmockery2.git"
+
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     cellar :any
+    sha256 "dc794b321aa10ede37917259ba4491dc59271826f2921c5b652b1d67e744b961" => :catalina
     sha256 "a36cbb449fcca235226fcfa94439f2370f22d3d6f1986c710c1e640959f8a271" => :mojave
     sha256 "3651caa0ed8c5e2ec5dc0fe8932a53e20c2af28d3887161d1cdfe9c46fb9f220" => :high_sierra
     sha256 "661b4a8751a4dbe7e52b19cd9452d8b7dd61c929d73da27ac4fca5623a0dff6c" => :sierra

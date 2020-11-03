@@ -3,9 +3,11 @@ class GumboParser < Formula
   homepage "https://github.com/google/gumbo-parser"
   url "https://github.com/google/gumbo-parser/archive/v0.10.1.tar.gz"
   sha256 "28463053d44a5dfbc4b77bcf49c8cee119338ffa636cc17fc3378421d714efad"
+  license "Apache-2.0"
 
   bottle do
     cellar :any
+    sha256 "c922c8ec4425cef96e3283bace0ffda97cdd5f4946ca151da69045c6ce80ef06" => :catalina
     sha256 "aa6ed085625f40a65ecead082bd711dcb16af9aed6f74372edb7dc19e44fba5c" => :mojave
     sha256 "ed0957fe59981b55c1baf149022a5b0f3a163f1a6eb6e03e402da2f018406b9f" => :high_sierra
     sha256 "7c911b3f74827405abdf92cb6f6265cf7185043af4101d851eb68c5e69ea71e6" => :sierra

@@ -2,39 +2,29 @@ class Packer < Formula
   desc "Tool for creating identical machine images for multiple platforms"
   homepage "https://packer.io"
   url "https://github.com/hashicorp/packer.git",
-      :tag      => "v1.4.4",
-      :revision => "17d4e5494784739adad472058b98361a1b7083b6"
+      tag:      "v1.6.2",
+      revision: "e3ac7de9655b3de4b0b0e0f7563fcfc17d6f5150"
+  license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git"
+
+  livecheck do
+    url "https://releases.hashicorp.com/packer/"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9e2b93811b4fd1d17de065a84d1f9b1e52a4780b7bc63d893df9c933bc572124" => :catalina
-    sha256 "30dbbbc5cc7687aaf7fe5713c1a71552425e33d92e757588f4b13713609d8fe9" => :mojave
-    sha256 "af3eb375c67a665c52d7cc33aeeec57ca3795c9cc5dd9ec0e918f8ff15d0ce2e" => :high_sierra
+    sha256 "9065b04cb9f3c1f2277f29fc1ce9091db863dbeffd11e199581ec5e7af9a1b11" => :catalina
+    sha256 "0f4da45578851b73b22f981f5ddd45b1952f37c59a6ff36f572478ec30a76f74" => :mojave
+    sha256 "877c268bc9e608dd5a98124361e159e2c6321669ff24f24140edbe1e0a62db6f" => :high_sierra
   end
 
-  depends_on "coreutils" => :build
   depends_on "go" => :build
 
   def install
-    ENV["XC_OS"] = "darwin"
-    ENV["XC_ARCH"] = "amd64"
-    ENV["GOPATH"] = buildpath
-
-    packerpath = buildpath/"src/github.com/hashicorp/packer"
-    packerpath.install Dir["{*,.git}"]
-
-    cd packerpath do
-      (buildpath/"bin").mkpath
-      if build.head?
-        system "make", "bin"
-      else
-        system "make", "releasebin"
-      end
-      bin.install buildpath/"bin/packer"
-      zsh_completion.install "contrib/zsh-completion/_packer"
-      prefix.install_metafiles
-    end
+    system "go", "build", *std_go_args
+    zsh_completion.install "contrib/zsh-completion/_packer"
+    prefix.install_metafiles
   end
 
   test do

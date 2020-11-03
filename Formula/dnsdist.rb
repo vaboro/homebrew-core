@@ -1,33 +1,46 @@
 class Dnsdist < Formula
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-1.3.2.tar.bz2"
-  sha256 "0be7704e5a418a8ed6908fc110ecfb9bc23f270b5af8a5525f1fa934ef0e6bc4"
+  url "https://downloads.powerdns.com/releases/dnsdist-1.5.0.tar.bz2"
+  sha256 "2c07c4ef0c497f5223909ff181fe3ba7c6016962a2855cffe26b7f3609f27b58"
+  revision 2
+
+  livecheck do
+    url "https://downloads.powerdns.com/releases/"
+    regex(/href=.*?dnsdist[._-]v?(\d+(?:\.\d+)*)\.t/i)
+  end
 
   bottle do
-    sha256 "62320372f4328e35695e03165f4565a2a229ecbc6b9d4a9a8943fbe68a010ff9" => :high_sierra
-    sha256 "8665f0e58905c19d1270b14914b9373ba286abbc4891307f91c67e7ab1327e53" => :sierra
-    sha256 "02106300b645be33f32a0bd38dadabce717a5bea74a75dcd353854d3b629580c" => :el_capitan
+    sha256 "af611e19b436b9ba5e7175a5d6b168c4f3d5482f43115b84cbec4f83f028e632" => :catalina
+    sha256 "912836e3ebf6abb602985ecb5cf90ece2456c86ec8a703d696de27e8b9f91489" => :mojave
+    sha256 "a73eace72f0bbc6505ad44c84c2e3c67268325afb7a088d826751bbcf7ae0313" => :high_sierra
   end
 
   depends_on "boost" => :build
   depends_on "pkg-config" => :build
-  depends_on "lua"
+  depends_on "cdb"
+  depends_on "fstrm"
+  depends_on "h2o"
+  depends_on "libsodium"
+  depends_on "luajit"
+  depends_on "openssl@1.1"
+  depends_on "protobuf"
+  depends_on "re2"
+
+  uses_from_macos "libedit"
 
   def install
     # error: unknown type name 'mach_port_t'
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
-    if MacOS.version == :high_sierra
-      sdk = MacOS::CLT.installed? ? "" : MacOS.sdk_path
-      ENV["LIBEDIT_CFLAGS"] = "-I#{sdk}/usr/include -I#{sdk}/usr/include/editline"
-      ENV["LIBEDIT_LIBS"] = "-L/usr/lib -ledit -lcurses"
-    end
-
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--without-net-snmp",
+                          "--enable-dns-over-tls",
+                          "--enable-dns-over-https",
+                          "--enable-dnscrypt",
+                          "--with-re2",
                           "--sysconfdir=#{etc}/dnsdist"
     system "make", "install"
   end

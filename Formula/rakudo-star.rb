@@ -1,21 +1,32 @@
 class RakudoStar < Formula
-  desc "Perl 6 compiler"
+  desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://rakudostar.com/files/star/rakudo-star-2019.03.tar.gz"
-  sha256 "640a69de3a2b4f6c49e75a01040e8770de3650ea1d5bb61057e3dfa3c79cc008"
+  url "https://rakudo.org/dl/star/rakudo-star-2020.01.tar.gz"
+  sha256 "f1696577670d4ff5b464e572b1b0b8c390e6571e1fb8471cbf369fa39712c668"
+  license "Artistic-2.0"
+  revision 1
+
+  livecheck do
+    url "https://rakudo.org/dl/star/"
+    regex(/".*?rakudo-star[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
-    sha256 "0254663db2347c6002b4402ddbb7ed64bf29068b15e196e6fe011e9b027081ee" => :mojave
-    sha256 "dd67fdfc69505bae6b7e1a30f5c6908bba312e3673ca81c415d3a626387ed8be" => :high_sierra
-    sha256 "773b28e24f2893e23307c818b49f8517a6fb4a3af3be4eee468e4c2e1ff70555" => :sierra
+    rebuild 1
+    sha256 "3b278aad10dae56ebb623fecdc5cd8e044d1bb23021a48e4c4428554674cb89e" => :catalina
+    sha256 "c0ad291ef64244dec178ecb1c878ca8e921123c70e408b8f8f96dc64d2364248" => :mojave
+    sha256 "0938d963dc23119a1c4a2fa976d4b870f81d744c41986f122aad15858c0b9717" => :high_sierra
   end
 
   depends_on "gmp"
   depends_on "icu4c"
   depends_on "libffi"
   depends_on "pcre"
+  depends_on "readline"
 
+  conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
+  conflicts_with "rakudo"
 
   def install
     libffi = Formula["libffi"]

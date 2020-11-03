@@ -2,11 +2,13 @@ class Servus < Formula
   desc "Library and Utilities for zeroconf networking"
   homepage "https://github.com/HBPVIS/Servus"
   url "https://github.com/HBPVIS/Servus.git",
-      :tag      => "1.5.2",
-      :revision => "170bd93dbdd6c0dd80cf4dfc5926590cc5cef5ab"
+      tag:      "1.5.2",
+      revision: "170bd93dbdd6c0dd80cf4dfc5926590cc5cef5ab"
+  license "LGPL-3.0"
 
   bottle do
     cellar :any
+    sha256 "e0629cca8bee46595c540c2240ed1cc599c5f676527a21f951bfc89a0335c54e" => :catalina
     sha256 "65921c797c3a2bf7953cf692dee5852de3fd6c2b2466268221a9dfcb7eab960e" => :mojave
     sha256 "763042d70e605154698d686554d26f6bab46f30200df8a8c3af9c40faeffca64" => :high_sierra
     sha256 "bcfa24ee0545c044c32391ac72d54a5151de64170c777409163c0688cd9bf671" => :sierra

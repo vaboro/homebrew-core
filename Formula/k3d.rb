@@ -1,33 +1,48 @@
 class K3d < Formula
   desc "Little helper to run Rancher Lab's k3s in Docker"
   homepage "https://github.com/rancher/k3d"
-  url "https://github.com/rancher/k3d/archive/v1.3.2.tar.gz"
-  sha256 "c6f31d99a47f62f76e276f2ca5801602c95aec8969b263a8784589ead90a378c"
+  url "https://github.com/rancher/k3d/archive/v3.0.1.tar.gz"
+  sha256 "bcf9cf273033a81a97698c37cbf29146c17997f4bf3bedcd9fcf55db106b8db2"
+  license "MIT"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d174f38bc2bd4e0424a8f642bca6031181e8ea27379f91c6a2ca64c02efc3a39" => :catalina
-    sha256 "20e861256deba99823552a949b4ab55126a901c93575edbf75b0da9dc657edc2" => :mojave
-    sha256 "5d229d391480e3f1812a0ab9d2221866050c1283e971be2ecfb83cab7286940c" => :high_sierra
+    rebuild 1
+    sha256 "030e83d57d78de00e91a3384bdb33e3a3867284dcd21652edfc98a4df978987e" => :catalina
+    sha256 "556bbfae79432b1da4ede6c762a530f3e3eaa105e3a7675b49aa2e2a68282ce9" => :mojave
+    sha256 "3d0ba472925d3a2a5dc1e9a0f9bf1f3f548650192f5989bffba7d635188871fe" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GO111MODULE"] = "on"
-    ENV["GOPATH"] = buildpath
+    system "go", "build",
+           "-mod", "vendor",
+           "-ldflags", "-s -w -X github.com/rancher/k3d/v#{version.major}/version.Version=v#{version}"\
+           " -X github.com/rancher/k3d/v#{version.major}/version.K3sVersion=latest",
+           "-trimpath", "-o", bin/"k3d"
 
-    dir = buildpath/"src/github.com/rancher/k3d"
-    dir.install buildpath.children
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/k3d", "completion", "bash")
+    (bash_completion/"k3d").write output
 
-    cd dir do
-      system "go", "build", "-mod", "vendor", "-ldflags", "-X main.version=#{version}", "-o", bin/"k3d"
-      prefix.install_metafiles
-    end
+    # Install zsh completion
+    output = Utils.safe_popen_read("#{bin}/k3d", "completion", "zsh")
+    (zsh_completion/"_k3d").write output
   end
 
   test do
-    assert_match "k3d version dev", shell_output("#{bin}/k3d -v")
-    assert_match "Checking docker...", shell_output("#{bin}/k3d ct 2>&1", 1)
+    assert_match "k3d version v#{version}\nk3s version latest (default)", shell_output("#{bin}/k3d --version")
+    # Either docker is not present or it is, where the command will fail in the first case.
+    # In any case I wouldn't expect a cluster with name 6d6de430dbd8080d690758a4b5d57c86 to be present
+    # (which is the md5sum of 'homebrew-failing-test')
+    output = shell_output("#{bin}/k3d cluster get 6d6de430dbd8080d690758a4b5d57c86 2>&1", 1).split("\n").pop
+    assert_match output,
+      "\x1B\[31mFATA\x1B\[0m\[0000\]\ No\ nodes\ found\ for\ cluster\ '6d6de430dbd8080d690758a4b5d57c86'\ "
   end
 end

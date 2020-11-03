@@ -1,21 +1,26 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/lunaryorn/mdcat"
-  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.13.0.tar.gz"
-  sha256 "9528a0dedcb9db559c9973001787f474f87559366a2c7a2ff01148c5ab31eac1"
+  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.21.1.tar.gz"
+  sha256 "243fb64d72f4eee2350ab0db62c807b0e5092a4d39fb76f6d566c10687b723f1"
+  license "MPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "03a6092a5f1c29f6d603dcb70d65370df4c766636355c5ba4ad2eae5eb234c37" => :mojave
-    sha256 "8eaebefd87230851d0c79f6b40076225a5a6051c176cd44173b04fa785fe7464" => :high_sierra
-    sha256 "6f49eb3e6378bbcf315a0fece01f6eb67c2ba9166d60a6a2f15afe5efe1dabe9" => :sierra
+    sha256 "bbf17b1fc94228608891ac25e5d801ccec34e30a0d3ee420fa6b4d5a33ca7511" => :catalina
+    sha256 "792bbbc11b69fadf8d9b948cc554399e083c61d3b29f1f0f0ad338968214a366" => :mojave
+    sha256 "053256e4dab07e2ba6c44d4a10cb6e40033a9a89e9affbd559a9346eeef7f906" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

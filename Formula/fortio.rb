@@ -2,37 +2,33 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      :tag      => "v1.3.1",
-      :revision => "fd8f4a7177e9ea509f27105ae4e55e6c68ece6f7"
+      tag:      "v1.7.0",
+      revision: "ec8adab4d7c74553f01c9cfd6c98583a35b91baf"
+  license "Apache-2.0"
 
   bottle do
-    sha256 "467956dd9643ecb9b349ce87c854e847d3880afe1e71deb2eb50bf57a8af6e98" => :mojave
-    sha256 "638e50aa75d32f0a9aae6243061df73ed7660fb055a3fcc30b9ee0afc3b19f5b" => :high_sierra
-    sha256 "663aa97525d032d3de935b487183ee478e2d18f92a4c82737a72ac5ed6c648a9" => :sierra
+    sha256 "417add724f9ce2c25ecd4c9d51f5a2ea8c8f47aa3e0eee14073d8484aa63470c" => :catalina
+    sha256 "08641ce3940d51524eb1429008cbf27dec43d194799d99d4bb979b87dab00fc2" => :mojave
+    sha256 "227a5f28fb2ca38eb404cae9712b040da3c86d7449e921e20179f2d0dd086d85" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    (buildpath/"src/fortio.org/fortio").install buildpath.children
-    cd "src/fortio.org/fortio" do
-      system "make", "official-build", "OFFICIAL_BIN=#{bin}/fortio",
-             "LIB_DIR=#{lib}"
-      lib.install "ui/static", "ui/templates"
-      prefix.install_metafiles
-    end
+    system "make", "official-build", "OFFICIAL_BIN=#{bin}/fortio", "LIB_DIR=#{lib}"
+    lib.install "ui/static", "ui/templates"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fortio version -s")
+
+    port = free_port
     begin
       pid = fork do
-        exec bin/"fortio", "server", "-http-port", "8080"
+        exec bin/"fortio", "server", "-http-port", port.to_s
       end
       sleep 2
-      output = shell_output("#{bin}/fortio load http://localhost:8080/ 2>&1")
+      output = shell_output("#{bin}/fortio load http://localhost:#{port}/ 2>&1")
       assert_match /^All\sdone/, output.lines.last
     ensure
       Process.kill("SIGTERM", pid)

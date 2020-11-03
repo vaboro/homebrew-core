@@ -1,15 +1,18 @@
 class Gradio < Formula
   desc "GTK3 app for finding and listening to internet radio stations"
   homepage "https://github.com/haecker-felix/Gradio"
-  url "https://github.com/haecker-felix/Gradio/archive/v7.2.tar.gz"
-  sha256 "5a85d7d4afb1424e46c935114b268e4a65de2629d60f48eccd75d67ff4b113d2"
+  url "https://github.com/haecker-felix/Gradio/archive/v7.3.tar.gz"
+  sha256 "5c5afed83fceb9a9f8bc7414b8a200128b3317ccf1ed50a0e7321ca15cf19412"
+  license "GPL-3.0"
   revision 1
 
   bottle do
-    sha256 "fc72163c4714998d62ff4e51494e81fa6462677d99cb496a75f2b3c7fda0e5e3" => :mojave
-    sha256 "bc283cabff48ef33c8236e5bf308955fb06eae498f4c1633e6d50ac1ac29f029" => :high_sierra
-    sha256 "0681cb3d462521ea07ae53cc57ad83af345150916ea4302f0d9a2266ae93d746" => :sierra
+    sha256 "80de210e71cbf7bd18f125ed1b74c58939046418905bbbbe03892b1b7d4dc8ca" => :catalina
+    sha256 "afed2590e43bb873751bf147da70228edf518aaa4da9a47a8e74a339385e7407" => :mojave
+    sha256 "772bc7cd809b085f9eaf2419ae9ddae50e80cbaaace480fe1f3d23c26bd8f164" => :high_sierra
   end
+
+  deprecate! date: "2019-11-16", because: :repo_archived
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -24,13 +27,13 @@ class Gradio < Formula
   depends_on "hicolor-icon-theme"
   depends_on "json-glib"
   depends_on "libsoup"
-  depends_on "python"
+  depends_on "python@3.7"
 
   def install
     # stop meson_post_install.py from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = "/"
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", ".."
+      system "meson", *std_meson_args, ".."
       system "ninja"
       system "ninja", "install"
     end

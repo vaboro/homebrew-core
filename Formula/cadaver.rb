@@ -7,7 +7,13 @@ class Cadaver < Formula
   sha256 "fd4ce68a3230ba459a92bcb747fc6afa91e46d803c1d5ffe964b661793c13fca"
   revision 5
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?cadaver[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
+    sha256 "44367afa090d79665cfc760d44daa172e1489627aaf7b8a125af8701b2b813e4" => :catalina
     sha256 "57ebca208464b812e3bbb1df71e68369227d29005a15c990087f7de761007458" => :mojave
     sha256 "d828c3a7454ea82ec5e575aebc3f57911ee3f08e45ed64ae1293026fc0ee8380" => :high_sierra
     sha256 "2a80f1355db0d31d395596ab4941565af8f3d6dda36952c834e2ebeaadb9d65b" => :sierra

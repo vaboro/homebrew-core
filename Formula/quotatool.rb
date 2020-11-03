@@ -3,9 +3,11 @@ class Quotatool < Formula
   homepage "https://quotatool.ekenberg.se/"
   url "https://quotatool.ekenberg.se/quotatool-1.6.2.tar.gz"
   sha256 "e53adc480d54ae873d160dc0e88d78095f95d9131e528749fd982245513ea090"
+  license "GPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "b8787cedb9e50c5ea14b10fa2e6cf9ec948e7842a97d5e7212abef0ea87e26c6" => :catalina
     sha256 "2d2b6f53466ec7b211f44b0319966b7120e3bbf0e1d57c1f0ae3d272bc8f4ce4" => :mojave
     sha256 "bbf7543458972806f3c15b25bf7cd71276159b54ae1ada3beb12e6d29328ec0e" => :high_sierra
     sha256 "4d04c382c8cf8b0376b34ce12813be06e879fdf6b60711cf90643d08887304fb" => :sierra

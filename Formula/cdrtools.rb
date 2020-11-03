@@ -6,8 +6,14 @@ class Cdrtools < Formula
   sha256 "ed282eb6276c4154ce6a0b5dee0bdb81940d0cbbfc7d03f769c4735ef5f5860f"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/cdrtools[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     rebuild 1
+    sha256 "f0c2ea440dda7483202622453db62f883ce3872b86c325ba4de046ac44a5c53b" => :catalina
     sha256 "4a7ba59af434b1302056aafd200f273470e91d27c9ad2a19f05a834ee41dc3be" => :mojave
     sha256 "465c4ba80bc7733b2ac85a9d17ca7149a32072d453d750795374e8c2021e207b" => :high_sierra
     sha256 "f97ea5375a9dd443000397890ab8424905f02ea278ab8dd4568ff4c7288d038a" => :sierra
@@ -19,7 +25,7 @@ class Cdrtools < Formula
   depends_on "smake" => :build
 
   conflicts_with "dvdrtools",
-    :because => "both dvdrtools and cdrtools install binaries by the same name"
+    because: "both dvdrtools and cdrtools install binaries by the same name"
 
   patch do
     url "https://downloads.sourceforge.net/project/cdrtools/cdrtools-3.01-fix-20151126-mkisofs-isoinfo.patch"

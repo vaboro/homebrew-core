@@ -6,8 +6,20 @@ class Hping < Formula
   version "3.20051105"
   sha256 "f5a671a62a11dc8114fa98eade19542ed1c3aa3c832b0e572ca0eb1a5a4faee8"
 
+  # The first-party download page (http://www.hping.org/download.php) has
+  # removed links to any archive files, with a notice that Hping is no longer
+  # actively developed. There won't be any new releases and we can't check for
+  # any in this state, so it's appropriate to skip this. If the GitHub repo
+  # (https://github.com/antirez/hping) starts creating releases, then it would
+  # be appropriate to update this livecheckable but there are no releases at
+  # the time of writing this.
+  livecheck do
+    skip "No longer actively developed"
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "3cf96bb2d2dcc407aadab3bb2691937e2adc96008df65314b889914621ade865" => :catalina
     sha256 "dd0b27a1e3b858378a184dd2cca506bbed420d103a75bb98545a649890142ab9" => :mojave
     sha256 "088413e9a62fe7b67627f41b91d762c2b639ca6b5598175002616ceb234fe93a" => :high_sierra
     sha256 "e6b7a8ef4527b282da33e75fc9484dee752f365b34498849fd251146948f0e80" => :sierra

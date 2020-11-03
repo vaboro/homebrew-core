@@ -1,23 +1,30 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.30.tar.xz"
-  sha256 "e3fe0cb58b8a77f63fb1645c2f974b334f1614efdc834ec698ee7d861f1b12a3"
-  revision 2
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.39.tar.xz"
+  sha256 "64ebe320c2fbe4dfbff4461ceae730001841d06d48c4882d69f320912a0f11a8"
+  license "GPL-2.0-or-later"
 
-  bottle do
-    sha256 "7b3d786665c467062935bd484d37fa1781364040a48d83c1da17759615a26bc7" => :mojave
-    sha256 "5489be35a603c832514f87c7b1d1368a366abd133085968eb8f6eeaec8da08d4" => :high_sierra
-    sha256 "1e7ecbd504ea76bb826e32221e1c8d90135969c785a7ee90e32db77d09ca151e" => :sierra
+  livecheck do
+    url "https://www.musicpd.org/download/ncmpc/0/"
+    regex(/href=.*?ncmpc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    cellar :any
+    sha256 "9154c89589d332b2fb8060907fd0c6c6251ad1f91a59c0e8371ef99860f51005" => :catalina
+    sha256 "5106f3ed9cc57ff174e25e47f60e30a83c290c44d4dc01789a4e1f7a9bc71a86" => :mojave
+    sha256 "271706591422328a6a8a1a390cb11b3b53829f642519d4f36a780d24a30ceccc" => :high_sierra
+  end
+
+  depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "gcc" if DevelopmentTools.clang_build_version <= 800
   depends_on "gettext"
-  depends_on "glib"
   depends_on "libmpdclient"
+  depends_on "pcre"
 
   fails_with :clang do
     build 800
@@ -25,21 +32,8 @@ class Ncmpc < Formula
   end
 
   def install
-    sdk = MacOS.sdk_path_if_needed ? MacOS.sdk_path : ""
-
-    # Fix undefined symbols _COLORS, _COLS, etc.
-    # Reported 21 Sep 2017 https://github.com/MusicPlayerDaemon/ncmpc/issues/6
-    (buildpath/"ncurses.pc").write <<~EOS
-      Name: ncurses
-      Description: ncurses
-      Version: 5.4
-      Libs: -L/usr/lib -lncurses
-      Cflags: -I#{sdk}/usr/include
-    EOS
-    ENV.prepend_path "PKG_CONFIG_PATH", buildpath
-
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", ".."
+      system "meson", *std_meson_args, "-Dcolors=false", "-Dnls=disabled", ".."
       system "ninja", "install"
     end
   end

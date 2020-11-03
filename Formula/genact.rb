@@ -1,20 +1,21 @@
 class Genact < Formula
   desc "Nonsense activity generator"
   homepage "https://github.com/svenstaro/genact"
-  url "https://github.com/svenstaro/genact/archive/0.7.0.tar.gz"
-  sha256 "9bfb241d8d3e77dae63fa3f5c84ef67e459a03a8fc18ed4661e53765264288ce"
+  url "https://github.com/svenstaro/genact/archive/v0.10.0.tar.gz"
+  sha256 "c8db67ba56e7c327540cb5a883abcb0ab682378e9dacef79056502f32ad3c759"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fd5ef1de4fea2b1c08785d77eacaf40936764bf843e627977b2ab348f1c190ef" => :mojave
-    sha256 "efeb250335f9dc2ef86be2814243554933a99003a2f08aebf70339580917ff1d" => :high_sierra
-    sha256 "adeebbec88a70c4e06eece55a38b71e4d7031d85add9cf4069744f4a8b4cd395" => :sierra
+    sha256 "cda834ea05c4403ebf7555ff32233141eda5d6e1c05cf88c2c601e88d72e27f9" => :catalina
+    sha256 "a8e61aa9d3683aaedd59154030f154a8bfbfcc8fceec399a1b51b03ae37091d3" => :mojave
+    sha256 "d52830ec3b3744074df6193d3c714f9572472969bc610236813441ea257a8de6" => :high_sierra
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

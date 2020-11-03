@@ -1,19 +1,19 @@
 class Libdvdnav < Formula
   desc "DVD navigation library"
   homepage "https://www.videolan.org/developers/libdvdnav.html"
-  url "https://download.videolan.org/pub/videolan/libdvdnav/6.0.0/libdvdnav-6.0.0.tar.bz2"
-  sha256 "f0a2711b08a021759792f8eb14bb82ff8a3c929bf88c33b64ffcddaa27935618"
+  url "https://download.videolan.org/pub/videolan/libdvdnav/6.1.0/libdvdnav-6.1.0.tar.bz2"
+  sha256 "f697b15ea9f75e9f36bdf6ec3726308169f154e2b1e99865d0bbe823720cee5b"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "c85a5aeed3934b8ad8a017618509c248037c0ba2323c20e745cab4f3996042af" => :mojave
-    sha256 "82f7cf986d45b13b3cc57d121dc53d7fa43d628062f978e31723d49778ea8d22" => :high_sierra
-    sha256 "1a2a0a5b4f2c349574f830ae5e918ee2788ceb17d2f2856ec507e62226327e28" => :sierra
-    sha256 "379d6e135a9e97db494376c0f35e235bced3a3052e60a0fea2a5318730c5d900" => :el_capitan
+    sha256 "e20bd00c923e4e837a1eac6f89933377afd17957be74a175734d7896efceb27a" => :catalina
+    sha256 "6c13d8aa2220232e9a0e5317371bd52909ec55b0bb08ed7b591612b60814dc7a" => :mojave
+    sha256 "a9c90f8109ce908ffc4fc0b6972ff4869638de8f52787bedd2c471ce457e1edf" => :high_sierra
   end
 
   head do
-    url "https://git.videolan.org/git/libdvdnav.git"
+    url "https://code.videolan.org/videolan/libdvdnav.git"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build

@@ -3,9 +3,16 @@ class Lrzip < Formula
   homepage "http://lrzip.kolivas.org"
   url "http://ck.kolivas.org/apps/lrzip/lrzip-0.631.tar.bz2"
   sha256 "0d11e268d0d72310d6d73a8ce6bb3d85e26de3f34d8a713055f3f25a77226455"
+  license "GPL-2.0"
+
+  livecheck do
+    url "http://ck.kolivas.org/apps/lrzip"
+    regex(/href=.*?lrzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
+    sha256 "15f270984b1591a12a87dc8698edb9be86df691f8081f204307a6176325a2b96" => :catalina
     sha256 "c4fd1cfc9b09ab7f175bd056865c8712f9e6310c918cd03cfdf6e30f283c8761" => :mojave
     sha256 "97797937ad456c0658fe24399dc757f30771e971647395fe1fefaa227f615fea" => :high_sierra
     sha256 "b0c60e0773da9cf70d3164f362b3b527a7a87acd10b632291055d58ca2da7cfc" => :sierra
@@ -15,6 +22,9 @@ class Lrzip < Formula
 
   depends_on "pkg-config" => :build
   depends_on "lzo"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--disable-dependency-tracking",

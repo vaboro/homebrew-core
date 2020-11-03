@@ -3,10 +3,12 @@ class Bgrep < Formula
   homepage "https://github.com/tmbinc/bgrep"
   url "https://github.com/tmbinc/bgrep/archive/bgrep-0.2.tar.gz"
   sha256 "24c02393fb436d7a2eb02c6042ec140f9502667500b13a59795388c1af91f9ba"
+  license "BSD-2-Clause"
   head "https://github.com/tmbinc/bgrep.git"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "444a8dd0c2190e3a75574f8bee287895aee1d070d3e72e72fd7cda4c9cb77211" => :catalina
     sha256 "8a3633a884feda24b875005550fddbd613987c89edc9418dd23783b4c2f7e8af" => :mojave
     sha256 "c2357ea00756425fec65d8367e7b8653a4d6845b6aa044106b8952d8b8ead0ca" => :high_sierra
     sha256 "eaed7c05fd07c77cd5aeb6f1232abcf5c9678b86fdaf7e7daf5049476acc690c" => :sierra

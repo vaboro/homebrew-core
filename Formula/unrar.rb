@@ -1,15 +1,19 @@
 class Unrar < Formula
   desc "Extract, view, and test RAR archives"
   homepage "https://www.rarlab.com/"
-  url "https://www.rarlab.com/rar/unrarsrc-5.8.1.tar.gz"
-  sha256 "035f1f436f0dc2aea09aec146b9cc3e47ca2442f2c62b4ad9374c7c9cc20e632"
+  url "https://www.rarlab.com/rar/unrarsrc-5.9.4.tar.gz"
+  sha256 "3d010d14223e0c7a385ed740e8f046edcbe885e5c22c5ad5733d009596865300"
+
+  livecheck do
+    url "https://www.rarlab.com/rar_add.htm"
+    regex(/href=.*?unrarsrc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "9a911dbc68cc41ba3e74130101f8d04bb8c8aca91a667c5e16e867e73213e7c3" => :catalina
-    sha256 "1f1d54b2e35a4af3ca819d432670a6e84abc54d9da19aff0aef2aa5b4717ab67" => :mojave
-    sha256 "de7518a4d6465f000862af26c93ded6c699311045f5568965ff255bc6e8bef97" => :high_sierra
-    sha256 "6c848f3f5667c610f9add058c5945a7109768fdc9f2caeaabdfa5340fde1d6ef" => :sierra
+    sha256 "90e0f209046471dda292a622ded80ed410e237cb7fc8e1d2653f0d57c470fc6b" => :catalina
+    sha256 "a45568c9d67db8866971aec111e9e6d9d606549099f60240f2cf7c7096680270" => :mojave
+    sha256 "ca9a590d0bce2de6e35ce02fdc7a6bb2d32265a945949e278fb7ae4c8d3c2dca" => :high_sierra
   end
 
   def install
@@ -19,12 +23,12 @@ class Unrar < Formula
     inreplace "makefile", "libunrar.so", "libunrar.dylib"
 
     system "make"
+    bin.install "unrar"
+
     # Explicitly clean up for the library build to avoid an issue with an
     # apparent implicit clean which confuses the dependencies.
     system "make", "clean"
     system "make", "lib"
-
-    bin.install "unrar"
     lib.install "libunrar.dylib"
   end
 
@@ -34,7 +38,7 @@ class Unrar < Formula
     data =  "UmFyIRoHAM+QcwAADQAAAAAAAACaCHQggDIACQAAAAkAAAADtPej1LZwZE" \
             "QUMBIApIEAAGRpcmVjdG9yeVxmaWxlLnR4dEhvbWVicmV3CsQ9ewBABwA="
 
-    rarpath.write data.unpack("m").first
+    rarpath.write data.unpack1("m")
     assert_equal contentpath, `#{bin}/unrar lb #{rarpath}`.strip
     assert_equal 0, $CHILD_STATUS.exitstatus
 

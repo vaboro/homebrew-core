@@ -1,17 +1,23 @@
 class DitaOt < Formula
   desc "DITA Open Toolkit is an implementation of the OASIS DITA specification"
   homepage "https://www.dita-ot.org/"
-  url "https://github.com/dita-ot/dita-ot/releases/download/3.3.4/dita-ot-3.3.4.zip"
-  sha256 "738d4e1b94514b405888e60298a528c7d44c69c73d705c3665c889ef7a4128a9"
+  url "https://github.com/dita-ot/dita-ot/releases/download/3.5.3/dita-ot-3.5.3.zip"
+  sha256 "dffe64576fd78c14cd011b6cabcd022a2fe900a415c7fbe1e6f4f8fd921607b4"
+  license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle :unneeded
 
-  depends_on :java => "1.8+"
+  depends_on "openjdk"
 
   def install
     rm_f Dir["bin/*.bat", "config/env.bat", "startcmd.*"]
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/dita"
+    (bin/"dita").write_env_script libexec/"bin/dita", JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do

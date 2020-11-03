@@ -11,9 +11,11 @@ class LibbitcoinExplorer < Formula
     sha256 "63186c9185d9b5b3daad3188a5bff986b41d1b5e24b7770f62ad13f88ab94891" => :sierra
 =======
   sha256 "e1b3fa2723465f7366a6e8c55e14df53106e90b82cc977db638c78f9bc5c47db"
-  revision 2
+  license "AGPL-3.0"
+  revision 4
 
   bottle do
+<<<<<<< HEAD
 <<<<<<< HEAD
     sha256 "94d6e2dee3f840e3f34bfbbceeac8b96d96af59d82324dab06c64a23ba097b56" => :mojave
     sha256 "be77db655222b492d67542472f72d52921eccd05ff8c1726e10c0984e72196f2" => :high_sierra
@@ -23,6 +25,11 @@ class LibbitcoinExplorer < Formula
     sha256 "41848d34f2e61b546b6eddeaea5f2c78f807e550495704925c52b1d0cdec8039" => :mojave
     sha256 "1e7087e8f4468f9e5a23740dad4545a35fc94b255fbd2a8c2eefa4f60b6e2e09" => :high_sierra
     sha256 "d2b4d343f9bc7d7a09e481b2d26b7cf0283a8cc717d92e02266ca7c48fb4bf12" => :sierra
+>>>>>>> upstream/master
+=======
+    sha256 "75d106ae90e93f8b06f1db2e79bed2dac2cf2a8e1f0da5dc45844b7a531424f8" => :catalina
+    sha256 "b0ebcf8e94695fcc4f2acccd527dbdb8479e3d3942588c93f931d84ea93899e8" => :mojave
+    sha256 "76f237988d3dde9024eb66c5e98535017c717e610cbaae3e235b7938e0f29b3d" => :high_sierra
 >>>>>>> upstream/master
   end
 

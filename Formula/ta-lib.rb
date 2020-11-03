@@ -4,9 +4,14 @@ class TaLib < Formula
   url "https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz"
   sha256 "9ff41efcb1c011a4b4b6dfc91610b06e39b1d7973ed5d4dee55029a0ac4dc651"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     rebuild 1
+    sha256 "da70ac36643d428f0e4742c5bed21a674a9a5585765c764cf11e6e53a9086041" => :catalina
     sha256 "db4ba23b6c0a235b2478416040a2321e305fe2f57810e87d6b5400addc0c3eea" => :mojave
     sha256 "5d53fe57d49e5c60b8ea81e633e502e73569e191f16fa36aabb39085ffe2581a" => :high_sierra
     sha256 "0229a85f2bdaa14baabe840b12f50eed8eb88233d13bcdb0424c5ab6fc2a4a6c" => :sierra

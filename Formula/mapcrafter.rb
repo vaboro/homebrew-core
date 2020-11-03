@@ -3,10 +3,12 @@ class Mapcrafter < Formula
   homepage "https://mapcrafter.org"
   url "https://github.com/mapcrafter/mapcrafter/archive/v.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
+  license "GPL-3.0"
   revision 3
 
   bottle do
     cellar :any
+    sha256 "986224321f7be4d777cb1ac012a237535c2cbb44586e86327cf84589fe85c327" => :catalina
     sha256 "ef50257242f50111c034ddc97be5d592b8a91d255053a2bb50b6cb9ea791e930" => :mojave
     sha256 "f3ce96014ce5e35f2a40034bd0498a583d4c92fe27ecc5ed3039733c1b049757" => :high_sierra
     sha256 "f0e35d940f533e1a4a8a3575afafe567523c89c72e81dc7276679c39b173800b" => :sierra

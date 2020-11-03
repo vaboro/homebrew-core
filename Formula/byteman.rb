@@ -1,11 +1,12 @@
 class Byteman < Formula
   desc "Java bytecode manipulation tool for testing, monitoring and tracing"
   homepage "https://byteman.jboss.org/"
-  url "https://downloads.jboss.org/byteman/4.0.7/byteman-download-4.0.7-bin.zip"
-  sha256 "f6eb620c4a420e445eaf9889efc7c54becd0579fb1c1a30b41b1dd71f3f50b05"
+  url "https://downloads.jboss.org/byteman/4.0.12/byteman-download-4.0.12-bin.zip"
+  sha256 "7aebafd6877058a1406e725be4246bcafd8efd78fa583b7192e847cb5d6b27a5"
 
   bottle :unneeded
-  depends_on :java => "1.6+"
+
+  depends_on "openjdk"
 
   def install
     rm_rf Dir["bin/*.bat"]
@@ -13,7 +14,7 @@ class Byteman < Formula
     libexec.install ["bin", "lib", "contrib"]
     pkgshare.install ["sample"]
 
-    env = Language::Java.java_home_env("1.6+").merge(:BYTEMAN_HOME => libexec)
+    env = { JAVA_HOME: "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}", BYTEMAN_HOME: libexec }
     Pathname.glob("#{libexec}/bin/*") do |file|
       target = bin/File.basename(file, File.extname(file))
       # Drop the .sh from the scripts

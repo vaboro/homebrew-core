@@ -1,14 +1,15 @@
 class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
-  url "https://github.com/aliyun/aliyun-cli/archive/v3.0.26.tar.gz"
-  sha256 "fd5f9e32b408414f822468879d5926f264ce1d019ae7ab7c8732f0da89af64ca"
+  url "https://github.com/aliyun/aliyun-cli/archive/v3.0.56.tar.gz"
+  sha256 "2c8aa50d18702c8b8066b58272f143fc7c742d50335a25841ea319270be1135b"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "29d933e6b78c1a577cb0f099d4eb4d8d84b707dfb073ba6eaea3701dc96a835f" => :catalina
-    sha256 "adf31a680a4423aa113eba2c7ca1e5483c1710a26b0523b456657d06da344160" => :mojave
-    sha256 "b2b36c1d5d5acc31d0fee6a1999e68aa2aa20c0d590ff353d629ee8ab04e0384" => :high_sierra
+    sha256 "268ee78cc8af1c93a96cf6082f03bf627aa7f772058f17cf7e2129981c957a90" => :catalina
+    sha256 "e0df3220e590dd96a26947c6f5830a6dca22633e78c3eef1e51aa2a9cde3f422" => :mojave
+    sha256 "227461d864a15bf3217a177f00c1a80ce2c33490ee3b39cc776307421982e918" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -20,8 +21,8 @@ class AliyunCli < Formula
     (buildpath/"src/github.com/aliyun/aliyun-cli").install buildpath.children
     cd "src/github.com/aliyun/aliyun-cli" do
       system "make", "metas"
-      system "go", "build", "-o", bin/"aliyun", "-ldflags", "-X 'github.com/aliyun/aliyun-cli/cli.Version=#{version}'", "main/main.go"
-      prefix.install_metafiles
+      system "go", "build", "-o", bin/"aliyun", "-ldflags",
+                            "-X 'github.com/aliyun/aliyun-cli/cli.Version=#{version}'", "main/main.go"
     end
   end
 

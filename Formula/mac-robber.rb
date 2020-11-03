@@ -3,9 +3,15 @@ class MacRobber < Formula
   homepage "https://www.sleuthkit.org/mac-robber/"
   url "https://downloads.sourceforge.net/project/mac-robber/mac-robber/1.02/mac-robber-1.02.tar.gz"
   sha256 "5895d332ec8d87e15f21441c61545b7f68830a2ee2c967d381773bd08504806d"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "cb1d422835804b5ea784a2b9157ae77a0940902771397b235d4ad784b88f961a" => :catalina
     sha256 "e1fc7f112efeac70ca2583db78ad6436d5f6615a9959889f3e4c695aa72a27e8" => :mojave
     sha256 "20c99447899b82d2da937aa81a0b3afd2c865f67a97d2ca1183e01151fef9de0" => :high_sierra
     sha256 "160983c4988cb22bd68a0beeb48de91a8af3461722a42e65e523c4a6af08f444" => :sierra

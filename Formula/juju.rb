@@ -1,27 +1,46 @@
 class Juju < Formula
   desc "DevOps management tool"
   homepage "https://jujucharms.com/"
-  url "https://launchpad.net/juju/2.6/2.6.9/+download/juju-core_2.6.9.tar.gz"
-  sha256 "85c428a6c558432d24b9d29011f62fc2ed46961933cb3cbb5aba85cb9768a00c"
+  url "https://github.com/juju/juju.git",
+    tag:      "juju-2.8.2",
+    revision: "a44e6eb38430da695737f5e9f37819478b9587c3"
+  license "AGPL-3.0"
+  version_scheme 1
+
+  livecheck do
+    url :stable
+    regex(/^juju[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b65c4001d14903681602f80a625576323fa9786d57d444400776b66bafa0a043" => :catalina
-    sha256 "303e828a56d5c524bd42ce34231f85a2868a62fb7bee07e0eca44e35f4dc9495" => :mojave
-    sha256 "ad7e93a9fe152bbcd614b2ccdc6887174f64a1db867b2dd6764f51399d88b2a9" => :high_sierra
+    sha256 "ede2c6d02b753c3ae489bee462866874551e604a231ad97eb104849f49c950ef" => :catalina
+    sha256 "d819e9291de4c4ecfc04a0fbc20bbd7fbe91f0d96b2c9a03de83383d485ffdca" => :mojave
+    sha256 "d6cb117d7669062cae68a37db22febbb7d309df2581c788d5b8ed8c126b689db" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    system "go", "build", "github.com/juju/juju/cmd/juju"
-    system "go", "build", "github.com/juju/juju/cmd/plugins/juju-metadata"
-    bin.install "juju", "juju-metadata"
-    bash_completion.install "src/github.com/juju/juju/etc/bash_completion.d/juju"
+    git_commit = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
+    ld_flags = %W[
+      -s -w
+      -X version.GitCommit=#{git_commit}
+      -X version.GitTreeState=clean
+    ]
+    system "go", "build", *std_go_args,
+                 "-ldflags", ld_flags.join(" "),
+                 "./cmd/juju"
+    system "go", "build", *std_go_args,
+                 "-ldflags", ld_flags.join(" "),
+                 "-o", bin/"juju-metadata",
+                 "./cmd/plugins/juju-metadata"
+    bash_completion.install "etc/bash_completion.d/juju"
   end
 
   test do
     system "#{bin}/juju", "version"
+    assert_match "No controllers registered", shell_output("#{bin}/juju list-users 2>&1", 1)
+    assert_match "No controllers registered", shell_output("#{bin}/juju-metadata list-images 2>&1", 2)
   end
 end

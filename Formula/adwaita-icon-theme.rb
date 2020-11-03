@@ -1,15 +1,19 @@
 class AdwaitaIconTheme < Formula
   desc "Icons for the GNOME project"
   homepage "https://developer.gnome.org"
-  url "https://download.gnome.org/sources/adwaita-icon-theme/3.34/adwaita-icon-theme-3.34.0.tar.xz"
-  sha256 "40b7e91f8263552b64d0f9beff33150291b086618ce498c71bf10035e48c7c7f"
+  url "https://download.gnome.org/sources/adwaita-icon-theme/3.38/adwaita-icon-theme-3.38.0.tar.xz"
+  sha256 "6683a1aaf2430ccd9ea638dd4bfe1002bc92b412050c3dba20e480f979faaf97"
+  license any_of: ["LGPL-3.0-or-later", "CC-BY-SA-3.0"]
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f976bfb6dce673b6981c6d6ee0d563f99aafe3480f250a7f8676872297c24d74" => :catalina
-    sha256 "83bc78c3c946ba7ebd78d4bbe43087efa1c3c21d773d43507685779f87876935" => :mojave
-    sha256 "ade225cb36a388f23c5bf856aadd96a5c599caa0f84af7522f13afa909832b3a" => :high_sierra
-    sha256 "3d0711c8b0772ce382ce8e13bef7f5ac248e0c3aa5d9b6742f741fb905f57f57" => :sierra
+    sha256 "dece11e0f852fe42fc3d201caed23435be5a762ccabe0f4c539022aeb7104f63" => :catalina
+    sha256 "02bcde4cd5cc560a5ed65090904b7cd64bf334c06f77bbd351bf7cb77e33240d" => :mojave
+    sha256 "09957230244ec34e451a2d54e8a37875372afe74a3f9f7512b2c50eaccc5eff5" => :high_sierra
   end
 
   depends_on "gettext" => :build

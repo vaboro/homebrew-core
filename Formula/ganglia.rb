@@ -3,9 +3,16 @@ class Ganglia < Formula
   homepage "https://ganglia.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.7.2/ganglia-3.7.2.tar.gz"
   sha256 "042dbcaf580a661b55ae4d9f9b3566230b2232169a0898e91a797a4c61888409"
+  license "BSD-3-Clause"
   revision 3
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/ganglia[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
+    sha256 "3201c7b103ad74ed63d7e4cda74da894a3e71443a8b2e79353dcf22874580c96" => :catalina
     sha256 "ff01d1a7d5457e2572273e61463a7a9c0da1b8a6c12a998b4c4da157163110c8" => :mojave
     sha256 "d375f0a7bc5caff2ff825ac487530b0e78efb1521b8ea2b4ef7f15a002526941" => :high_sierra
     sha256 "c295e711dd78ca5a19e3b7f8c5534b049217664701c13312795bf035a3db2017" => :sierra
@@ -26,7 +33,7 @@ class Ganglia < Formula
   depends_on "pcre"
   depends_on "rrdtool"
 
-  conflicts_with "coreutils", :because => "both install `gstat` binaries"
+  conflicts_with "coreutils", because: "both install `gstat` binaries"
 
   def install
     if build.head?
@@ -55,22 +62,21 @@ class Ganglia < Formula
     (var/"lib/ganglia/rrds").mkpath
   end
 
-  def caveats; <<~EOS
-    If you didn't have a default config file, one was created here:
-      #{etc}/gmond.conf
-  EOS
+  def caveats
+    <<~EOS
+      If you didn't have a default config file, one was created here:
+        #{etc}/gmond.conf
+    EOS
   end
 
   test do
-    begin
-      pid = fork do
-        exec bin/"gmetad", "--pid-file=#{testpath}/pid"
-      end
-      sleep 2
-      assert_predicate testpath/"pid", :exist?
-    ensure
-      Process.kill "TERM", pid
-      Process.wait pid
+    pid = fork do
+      exec bin/"gmetad", "--pid-file=#{testpath}/pid"
     end
+    sleep 2
+    assert_predicate testpath/"pid", :exist?
+  ensure
+    Process.kill "TERM", pid
+    Process.wait pid
   end
 end

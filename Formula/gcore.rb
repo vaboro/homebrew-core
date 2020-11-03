@@ -8,6 +8,7 @@ class Gcore < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "3451656da696ce7bb47816bf409dd38f279a0dde973b5d7bc60eaec62edbee9a" => :catalina
     sha256 "86a6941a86863482eb97fd03e40749b83b74b7a93d7c7592db4dab6acb9c859a" => :mojave
     sha256 "b9e7e188bee51975ccfdb8f711101a7637f316be0e3aa6b8f80259f7b884f488" => :high_sierra
     sha256 "5fbccf36d0bd51cc4261859b7faf2cc15fe89244109b64abf83512ea73f3259f" => :sierra
@@ -15,7 +16,7 @@ class Gcore < Formula
     sha256 "e215d77d74b8c878a7d7449aada4817714b13024d6bfad78b2b700271e6218ec" => :yosemite
   end
 
-  keg_only :provided_by_macos if MacOS.version >= :sierra
+  keg_only :provided_by_macos
 
   def install
     system "make"

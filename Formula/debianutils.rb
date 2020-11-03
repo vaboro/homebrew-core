@@ -1,14 +1,20 @@
 class Debianutils < Formula
   desc "Miscellaneous utilities specific to Debian"
   homepage "https://packages.debian.org/sid/debianutils"
-  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_4.8.6.3.tar.xz"
-  sha256 "2cc7de3afc6df1cf6d00af9938efac7ee8f739228e548e512ddc186b6a7be221"
+  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_4.11.1.tar.xz"
+  sha256 "8be869f19c55c18d53d9f0414b68bb966a068b2154e9fbbfc6193827d6af983c"
+  license "GPL-2.0-or-later"
+
+  livecheck do
+    url "https://packages.qa.debian.org/d/debianutils.html"
+    regex(/href=.*?debianutils[._-]v?(\d+(?:.\d+)+).dsc/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "dcb0730027bed66729b843bf065c651c52c7edbfed0a46622c243866434b8d2b" => :mojave
-    sha256 "af74b43a11ee50e69a88a8e0a3af7a6bce7e545d27bbb98ced8db7ceb94a96e9" => :high_sierra
-    sha256 "567d6a92a370cd2b3d437c6fc6ba3d18047a2e8438d4e81c287ccd47beb635ec" => :sierra
+    sha256 "9467ace428a54b279c5c69472a1d83f4c2f62ba7adcf04222546a3f763e396b7" => :catalina
+    sha256 "22633540f57bd7b0757b086a5bb150703959941aae875b23875904f5ac3f2eb9" => :mojave
+    sha256 "c440b2a9b14c7f4b8b7315af4528ad7bd09b83890b7c40d67109a3a62031d5b5" => :high_sierra
   end
 
   def install

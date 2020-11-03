@@ -1,14 +1,15 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/yaz"
-  url "http://ftp.indexdata.dk/pub/yaz/yaz-5.27.1.tar.gz"
-  sha256 "2e3f0cd304f38b4ad315d70771b378d4efafab37e9a28d4d4d6cd634718c3025"
+  url "http://ftp.indexdata.dk/pub/yaz/yaz-5.30.3.tar.gz"
+  sha256 "f0497fd8420574efab4e5738ea3b70787a6e8042f585156baa30bdc1911ba552"
+  license "BSD-3-Clause"
 
   bottle do
     cellar :any
-    sha256 "aa9c87edc877f3ea95effc59017cf1a1dcd9d7eb9147c9a5181993a9a83dcdcd" => :mojave
-    sha256 "7cbc2a6c15f594956043d8986351690d606aa26ef8026257304ced7419d6d4aa" => :high_sierra
-    sha256 "89ea5a833cec87dfa71005748725fb5fe6e724ccceba6151d7894c56b66c7fe1" => :sierra
+    sha256 "3e99cfd562ae262f299752a7d92dbad3f9b67dd37726e90b1109684f0deac7d1" => :catalina
+    sha256 "0fb86a32e27613df4ef17bc76556364a85d220c9d044f6f2c515ca0bb2e94c6a" => :mojave
+    sha256 "a3dd5357b88bd5780a90dc1fb51c12943d3a8ba6ce69073fb262116c9b050b3e" => :high_sierra
   end
 
   head do
@@ -20,6 +21,8 @@ class Yaz < Formula
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
+
+  uses_from_macos "libxml2"
 
   def install
     system "./buildconf.sh" if build.head?

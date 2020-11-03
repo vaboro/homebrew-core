@@ -1,36 +1,43 @@
 class GstPython < Formula
   desc "Python overrides for gobject-introspection-based pygst bindings"
   homepage "https://gstreamer.freedesktop.org/modules/gst-python.html"
-  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.16.1.tar.xz"
-  sha256 "b469c8955126f41b8ce0bf689b7029f182cd305f422b3a8df35b780bd8347489"
+  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.18.0.tar.xz"
+  sha256 "76bfe8b85a9c4a6ddfb81874f2635fd0da38c3f39d9d2a0b175213218516dd45"
+  license "LGPL-2.1-or-later"
 
-  bottle do
-    cellar :any
-    sha256 "7f4d90b39aeb4236a2e5b11df72a4afb183e6b6439481ca17e12618ce92fc2b4" => :catalina
-    sha256 "62b52f79633253a42abb7741ac1699adfb803be04224b4e4b03853362f15ba37" => :mojave
-    sha256 "4e6ae3f15ec2c1faa3918e5bce6081abb8d6c7218bbe88001afd4741a4cced07" => :high_sierra
-    sha256 "2f32483af0e0e64beb71e8213744c5a36cbb2353120d69524fc6bf58e505e361" => :sierra
+  livecheck do
+    url "https://gstreamer.freedesktop.org/src/gst-python/"
+    regex(/href=.*?gst-python[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    sha256 "610decb902b40054564e797d73a470946baaa973b516f1b9ff983416a99c5564" => :catalina
+    sha256 "d23d7f107b550e85d0f87a43c2053a2f8f6039604c8f4bc249d539f7fb5a406e" => :mojave
+    sha256 "8d96ba5f03d17b0dc8dd6cf46f4534693de368e504f2eab732dfa1be7478e98a" => :high_sierra
+  end
+
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "gst-plugins-base"
   depends_on "pygobject3"
-  depends_on "python"
+  depends_on "python@3.8"
+
+  # See https://gitlab.freedesktop.org/gstreamer/gst-python/-/merge_requests/41
+  patch do
+    url "https://gitlab.freedesktop.org/gstreamer/gst-python/-/commit/3e752ede7ed6261681ef3831bc3dbb594f189e76.patch"
+    sha256 "734291a1468dff21c61598a36ffa84776d33c113313f5a8c420829ea67f55e78"
+  end
 
   def install
-    python_version = Language::Python.major_minor_version("python3")
-    # pygi-overrides-dir switch ensures files don't break out of sandbox.
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-pygi-overrides-dir=#{lib}/python#{python_version}/site-packages/gi/overrides",
-                          "PYTHON=python3"
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
+    end
   end
 
   test do
-    system "#{Formula["gstreamer"].opt_bin}/gst-inspect-1.0", "python"
-    # Without gst-python raises "TypeError: object() takes no parameters"
-    system "python3", "-c", <<~EOS
+    system Formula["python@3.8"].opt_bin/"python3", "-c", <<~EOS
       import gi
       gi.require_version('Gst', '1.0')
       from gi.repository import Gst

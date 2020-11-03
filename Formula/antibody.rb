@@ -1,29 +1,21 @@
 class Antibody < Formula
   desc "The fastest shell plugin manager"
   homepage "https://getantibody.github.io/"
-  url "https://github.com/getantibody/antibody/archive/v4.1.2.tar.gz"
-  sha256 "79e857c79cf51bff0bf42ef970a31341445911dc19cf24efb8faa01584855905"
+  url "https://github.com/getantibody/antibody/archive/v6.1.1.tar.gz"
+  sha256 "87bced5fba8cf5d587ea803d33dda72e8bcbd4e4c9991a9b40b2de4babbfc24f"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d85294b01d76ac4fae8c9ae9c331f4cd26d3c397a024f5edc2891b4a881fe6a8" => :mojave
-    sha256 "140c847a4b90705e0b2c4e84ab4a3998e0800b646f79034420679a63644d9154" => :high_sierra
-    sha256 "c7cbfedc71307426d7d83602be02d5f46f3ad8d53ec6c46cd6f26e07c226f641" => :sierra
+    sha256 "572351da6247daf6bf29afbdcc8ff10c4fe47e9e413c2ae0df0dd249e855599d" => :catalina
+    sha256 "c33467a9d42a9c767bd2d3382937e9f1dcf9bce2cb45fe3de6adb736ae2d6e89" => :mojave
+    sha256 "7af2bd8779f129597713ebd6155d493616f4ed4b2344cac9db84191b01f3110c" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/antibody/antibody"
-    dir.install buildpath.children
-
-    cd dir do
-      system "go", "mod", "vendor"
-      system "go", "build", "-ldflags", "-X main.version=#{version}"
-      bin.install "antibody"
-    end
+    system "go", "build", "-ldflags", "-s -w -X main.version=#{version}", "-trimpath", "-o", bin/"antibody"
   end
 
   test do

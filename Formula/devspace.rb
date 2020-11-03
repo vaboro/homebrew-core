@@ -4,6 +4,7 @@ class Devspace < Formula
   url "https://github.com/devspace-cloud/devspace.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     :tag      => "v3.5.15",
     :revision => "c8d66b7d7b2284b26c90b2c3411fe364faa61b05"
 
@@ -32,21 +33,26 @@ class Devspace < Formula
     sha256 "ed5c835a02ee2f9b5e9de0efd6743adbe8d449ac0de1e653e7c2bd041c568957" => :mojave
     sha256 "c3f0b5cd3f43d2843ab1b3774c13805412ada682387fbc74223d7942af4e35dd" => :high_sierra
 >>>>>>> upstream/master
+=======
+    tag:      "v5.0.3",
+    revision: "f2ef0c9191efdf98a9edb11c0d8c6309ad5f8d49"
+  license "Apache-2.0"
+
+  bottle do
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "7e34605b33a5b4207ca8757878ed6e49ea76c513995348b52f9b923482660163" => :catalina
+    sha256 "d10b4661b145afecce14f386d102518610146c35f2cf631301948d72f87cdc78" => :mojave
+    sha256 "c95ac98533d5005970701e3a3f605565745800bfee61097fa6a0927a5e5a8b6e" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/devspace-cloud/devspace"
-    dir.install buildpath.children
-
-    cd dir do
-      system "go", "build", "-o", bin/"devspace"
-      prefix.install_metafiles
-    end
+    system "go", "build", "-ldflags",
+    "-s -w -X main.commitHash=#{stable.specs[:revision]} -X main.version=#{stable.specs[:tag]}", *std_go_args
   end
 
   test do

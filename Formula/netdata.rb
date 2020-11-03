@@ -1,21 +1,53 @@
 class Netdata < Formula
-  desc "Distributed real-time performance and health monitoring"
-  homepage "https://my-netdata.io/"
-  url "https://github.com/netdata/netdata/releases/download/v1.17.1/netdata-v1.17.1.tar.gz"
-  sha256 "fce02e4b2d9d6d050bc5eac0c30c802124af29f6d8dbb9196331ad9284ae894c"
+  desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
+  homepage "https://netdata.cloud/"
+  url "https://github.com/netdata/netdata/releases/download/v1.25.0/netdata-v1.25.0.tar.gz"
+  sha256 "3315e9daee052d961ac0eb2cd86a249c877619dd6c3b44701957180fd956a19c"
+  license "GPL-3.0-or-later"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
-    sha256 "41344f785165c7fe8c0d9b7d7da355e7688d4ea4ede71a4f48451a908f6c1546" => :mojave
-    sha256 "d7a808e24ce6327e8be7f39ee26834bb802120442eabca8168365264bb905449" => :high_sierra
-    sha256 "36dfa8970a83de43101e138e591e840a736ff57d371c9e1050c97c59d9098da6" => :sierra
+    sha256 "e7e259b56d6ea0c105fdd4615fc145adb8afc425632d2265629bca33b7326f8e" => :catalina
+    sha256 "f87dd60958a01b747c07c57678e9451b913f8445ce48b4742ec800d1599b6e75" => :mojave
+    sha256 "0fa96dbd7bfbba64435fab9b084136731fb1f16807f4788cd7b90591d2081298" => :high_sierra
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1" if MacOS.version <= :sierra
+  depends_on "json-c"
+  depends_on "libuv"
+  depends_on "lz4"
+  depends_on "openssl@1.1"
+
+  resource "judy" do
+    url "https://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz"
+    sha256 "d2704089f85fdb6f2cd7e77be21170ced4b4375c03ef1ad4cf1075bd414a63eb"
+  end
 
   def install
+    # We build judy as static library, so we don't need to install it
+    # into the real prefix
+    judyprefix = "#{buildpath}/resources/judy"
+
+    resource("judy").stage do
+      system "./configure", "--disable-debug", "--disable-dependency-tracking",
+          "--disable-shared", "--prefix=#{judyprefix}"
+
+      # Parallel build is broken
+      ENV.deparallelize do
+        system "make", "-j1", "install"
+      end
+    end
+
+    ENV["PREFIX"] = prefix
+    ENV.append "CFLAGS", "-I#{judyprefix}/include"
+    ENV.append "LDFLAGS", "-L#{judyprefix}/lib"
+
     system "autoreconf", "-ivf"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
@@ -25,6 +57,7 @@ class Netdata < Formula
                           "--libexecdir=#{libexec}",
                           "--with-math",
                           "--with-zlib",
+                          "--enable-dbengine",
                           "--with-user=netdata",
                           "UUID_CFLAGS=-I/usr/include",
                           "UUID_LIBS=-lc"
@@ -40,37 +73,40 @@ class Netdata < Formula
       s.gsub!(/web files owner = .*/, "web files owner = #{ENV["USER"]}")
       s.gsub!(/web files group = .*/, "web files group = #{Etc.getgrgid(prefix.stat.gid).name}")
     end
+    (var/"cache/netdata/unittest-dbengine/dbengine").mkpath
+    (var/"lib/netdata/registry").mkpath
+    (var/"log/netdata").mkpath
     (var/"netdata").mkpath
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/sbin/netdata -D"
+  plist_options manual: "#{HOMEBREW_PREFIX}/sbin/netdata -D"
 
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>ProgramArguments</key>
-        <array>
-            <string>#{opt_sbin}/netdata</string>
-            <string>-D</string>
-        </array>
-        <key>WorkingDirectory</key>
-        <string>#{var}</string>
-      </dict>
-    </plist>
-  EOS
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>ProgramArguments</key>
+          <array>
+              <string>#{opt_sbin}/netdata</string>
+              <string>-D</string>
+          </array>
+          <key>WorkingDirectory</key>
+          <string>#{var}</string>
+        </dict>
+      </plist>
+    EOS
   end
 
   test do
     system "#{sbin}/netdata", "-W", "set", "registry", "netdata unique id file",
                               "#{testpath}/netdata.unittest.unique.id",
                               "-W", "set", "registry", "netdata management api key file",
-                              "#{testpath}/netdata.api.key",
-                              "-W", "unittest"
+                              "#{testpath}/netdata.api.key"
   end
 end

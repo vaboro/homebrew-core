@@ -3,10 +3,12 @@ class Stormlib < Formula
   homepage "http://www.zezula.net/en/mpq/stormlib.html"
   url "https://github.com/ladislav-zezula/StormLib/archive/v9.22.tar.gz"
   sha256 "7ed583aae5549ba1abc68a8fc9a642b28323cdf835941bd9b2b549a7b623e53d"
+  license "MIT"
   head "https://github.com/ladislav-zezula/StormLib.git"
 
   bottle do
     cellar :any
+    sha256 "27c5056c5f0001e3a0445b31de2361583b8f19b4fde60658f8075383a82bb7ff" => :catalina
     sha256 "c550620a6b13ac72d11763612582483514156a4ffdb1cf5a602b71ae186cc588" => :mojave
     sha256 "b76d57a2af0971b96c0cc46b3e24078486f732131b6845e92cbd776b4d5c20c7" => :high_sierra
     sha256 "aa27fedf8877032a52c85f9a7a57a94149e9fd2c18f25351fd6a61203e5a797d" => :sierra

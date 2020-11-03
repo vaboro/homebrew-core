@@ -1,15 +1,20 @@
 class Nspr < Formula
   desc "Platform-neutral API for system-level and libc-like functions"
   homepage "https://developer.mozilla.org/docs/Mozilla/Projects/NSPR"
-  url "https://archive.mozilla.org/pub/nspr/releases/v4.22/src/nspr-4.22.tar.gz"
-  sha256 "c9e4b6cc24856ec93202fe13704b38b38ba219f0f2aeac93090ce2b6c696d430"
+  url "https://archive.mozilla.org/pub/nspr/releases/v4.28/src/nspr-4.28.tar.gz"
+  sha256 "63defc8e19a80b6f98fcc7d5a89e84ea703c0b50aa6bc13bf7ad071adf433b56"
+  license "MPL-2.0"
+
+  livecheck do
+    url "https://ftp.mozilla.org/pub/nspr/releases/"
+    regex(/v(\d+(?:\.\d+)*)/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "bf4d5e07f501ef6ac4b5c5fd64451ffc2110ff9256b6fd76614a7e6310e464fe" => :catalina
-    sha256 "44b8d6ae65760da94e14b9bb742378c81b72821abd6ac4bb0be88c218234210a" => :mojave
-    sha256 "5a466d443e42a227e6c6d972725558068a2121ee69a2807af993837281c0bcd1" => :high_sierra
-    sha256 "f8e389b885ebef82929c0b6afc8b0ffbccbebb98f7267d81cad3e0d6d177f8c0" => :sierra
+    sha256 "2ffd322e6891ff5f1dd608f0f71af699bffed06a6fa6f2a098bd64b2964e7e51" => :catalina
+    sha256 "c429d78187edc727796ed385cd1f48b8aa4f8b297b22fcb4c5a9600f9eac988d" => :mojave
+    sha256 "22b4c5397d3d8edcdf98f9bc8954345bf94421dbc0fa3dba8a23c15bf212dd2c" => :high_sierra
   end
 
   def install

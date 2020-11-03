@@ -3,9 +3,11 @@ class Libilbc < Formula
   homepage "https://github.com/TimothyGu/libilbc"
   url "https://github.com/TimothyGu/libilbc/releases/download/v2.0.2/libilbc-2.0.2.tar.gz"
   sha256 "84d5c99087a35bda3463bcb993245b4f8c28c04fe037215a5ec56570f68ce519"
+  license "BSD-3-Clause"
 
   bottle do
     cellar :any
+    sha256 "3a8caa126466fcf7cde71363a4423e709b249f0a7318a22e5bd545d3d5382ea3" => :catalina
     sha256 "cbb71770ab1bc1647e719d9b084d710c8c5c4e37a0b1a70e53650b3fb24cda62" => :mojave
     sha256 "63df659558f7961f6e04c347dad5ef6508578e86e0c13b15d39fb267dcc440db" => :high_sierra
     sha256 "421757bd970d1ba1d0c1fe2eff208cc0b44f8a75bbf9a09344ba504ad377750f" => :sierra

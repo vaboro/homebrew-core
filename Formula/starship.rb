@@ -9,6 +9,7 @@ class Starship < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/starship/starship/archive/v0.13.1.tar.gz"
   sha256 "990b0e418224900824179bc6c8fca89566696be79d68b8af191da107b7414f46"
   revision 1
@@ -57,20 +58,37 @@ class Starship < Formula
 =======
   url "https://github.com/starship/starship/archive/v0.21.0.tar.gz"
   sha256 "01c6141d1fb922ddbe595a2141c267059a1b46acf1a22fdb77caa96c53930f40"
+=======
+  url "https://github.com/starship/starship/archive/v0.44.0.tar.gz"
+  sha256 "b002fa0e2b34ad59330a543461a51648751db4ae8d439d58065a3b9656772fe3"
+  license "ISC"
+  revision 1
+>>>>>>> upstream/master
   head "https://github.com/starship/starship.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1fbc88c44889ecb2beaa0298b2e1b12c0103d8cdb3517e4c7aaa3d67acc997a7" => :catalina
-    sha256 "c90a8ffd25a82d80a5e55d50d1a579d5efda83e4a2cd30fc2ee35808ded7a03c" => :mojave
-    sha256 "39170ca815e8895a6a0a2eb754485fe918271dc5263fdd4425aa2ddc69c3c8b0" => :high_sierra
+    sha256 "a2d50878f224a8af2e0ab1e990d90166f7b4a02a82ebedc9acaa0a0443e04e4a" => :catalina
+    sha256 "ff2ec8fa902206c5514b384db12bc36558987d55b335aeb3fddeafae416b5168" => :mojave
+    sha256 "7955bc1b29268a4975f23d1312216cf71f50a9e05a82360cfb12a199831496d9" => :high_sierra
   end
 
   depends_on "rust" => :build
 >>>>>>> upstream/master
 
+  uses_from_macos "zlib"
+
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
+
+    bash_output = Utils.safe_popen_read("#{bin}/starship", "completions", "bash")
+    (bash_completion/"starship").write bash_output
+
+    zsh_output = Utils.safe_popen_read("#{bin}/starship", "completions", "zsh")
+    (zsh_completion/"_starship").write zsh_output
+
+    fish_output = Utils.safe_popen_read("#{bin}/starship", "completions", "fish")
+    (fish_completion/"starship.fish").write fish_output
   end
 
   test do

@@ -3,9 +3,11 @@ class ContainerDiff < Formula
   homepage "https://github.com/GoogleContainerTools/container-diff"
   url "https://github.com/GoogleContainerTools/container-diff/archive/v0.15.0.tar.gz"
   sha256 "4bdd73a81b6f7a988cf270236471016525d0541f5fe04286043f3db28e4b250c"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "8baffc25effb624f5882d57055512921276b4bc2e9067ed76b19e152f0109b59" => :catalina
     sha256 "31af3976b5c63927f934d3155de81d6b6a241bae7244d103012d0d7cbfbeded7" => :mojave
     sha256 "6002efa7d3d475f95c9bec04896e338a99da5bd333f6fc0ccd20ca80eb6e9726" => :high_sierra
     sha256 "20eeaca03031026c546e493be1fc57560f9495f621526dae1c07fd4ac5f5d189" => :sierra

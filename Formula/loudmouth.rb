@@ -3,10 +3,12 @@ class Loudmouth < Formula
   homepage "https://mcabber.com"
   url "https://mcabber.com/files/loudmouth/loudmouth-1.5.3.tar.bz2"
   sha256 "54329415cb1bacb783c20f5f1f975de4fc460165d0d8a1e3b789367b5f69d32c"
+  license "LGPL-2.1"
   revision 2
 
   bottle do
     cellar :any
+    sha256 "88dfcc04d5dec8056ce00c91d881a31b01044f5eb4084da599df451b5a700471" => :catalina
     sha256 "43052aa18cefe00338ba03fe866badd2b2f17cb6766ae2a1203bdcd54cf2ca6b" => :mojave
     sha256 "28635ff511d03492181d4b2c9f4cfe5b65600f512bc4ed8dc02611ff1c4b1b56" => :high_sierra
     sha256 "72854a1ff4e2492f0b90d1f435c523ae3801e1ea60d65e033909043081004db0" => :sierra

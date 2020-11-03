@@ -3,15 +3,16 @@ class Mujs < Formula
   homepage "https://www.mujs.com/"
   # use tag not tarball so the version in the pkg-config file isn't blank
   url "https://github.com/ccxvii/mujs.git",
-      :tag      => "1.0.6",
-      :revision => "14dc9355bd71818cf01c1c690c1c91a0978ea9b8"
+      tag:      "1.0.8",
+      revision: "6a9eedea88d4194407f8c0a578e4458f73b7364d"
+  license "ISC"
   head "https://github.com/ccxvii/mujs.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f72a17230b0e05824d76d355ea9d6950411194955af3322a908146601516baa9" => :mojave
-    sha256 "82a44b3406b0bdbf9f0aaa895c7dc6b1a0f2b31c423317c148b7da5c3c973ff8" => :high_sierra
-    sha256 "de680f18725e4e787cdd6a22d0a7e2ba2e2fc818171726b50068075624e8eb8e" => :sierra
+    sha256 "3b78a1dd9611f016c24fd19bcd764031cbd7a514e156ff04b9a5b0c75d2bfe44" => :catalina
+    sha256 "94cfe788bc39fb1f5042ab6ce565fbaa98568362698d6fc2441487a3a79f27e5" => :mojave
+    sha256 "b074364d9806ef46e750c685f27368882185592c5cb3f825da345c05340845ed" => :high_sierra
   end
 
   def install

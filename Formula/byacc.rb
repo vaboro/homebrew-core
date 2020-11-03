@@ -1,14 +1,20 @@
 class Byacc < Formula
   desc "(Arguably) the best yacc variant"
   homepage "https://invisible-island.net/byacc/"
-  url "https://invisible-mirror.net/archives/byacc/byacc-20190617.tgz"
-  sha256 "f87868167b920bf2cb30fc32b62f63ae15671181ef329226d1063100be02518d"
+  url "https://invisible-mirror.net/archives/byacc/byacc-20200910.tgz"
+  sha256 "0a5906073aeaf23ddc20aaac0ea61cb5ccc18572870b113375dec4ffe85ecf30"
+  license :public_domain
+
+  livecheck do
+    url "https://invisible-mirror.net/archives/byacc/"
+    regex(/href=.*?byacc[._-]v?(\d{6,8})\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f5081b555e8e1c282cf5c3218cbaae6bbd69b5f8eef4108d4a6f04e04812f751" => :mojave
-    sha256 "7f9c858f27a7dd7b42c8ba78829f86acd03378c35f48dbe76db1728a65ec3254" => :high_sierra
-    sha256 "420f0b93cba45fc71a1d328787b660eca13b997976ec05d7c868cd1d413724f5" => :sierra
+    sha256 "57aeaa751341ad11d735626ad343aaae7dbb9401697c917a4c7268241751e435" => :catalina
+    sha256 "552cd6f3ad41dc11ddb8535b495594e7c63e9208e594f9bef29d317669512d6a" => :mojave
+    sha256 "f8ea7c1fea86a6814bf332b8a35e81a19a28f380c4beb28d7bf0eabebe96cf78" => :high_sierra
   end
 
   def install

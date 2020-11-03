@@ -5,9 +5,15 @@ class Zip < Formula
   version "3.0"
   sha256 "f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/v?(\d+(?:\.\d+)+)/zip\d+\.(?:t|zip)}i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "0c942307306bb96e68bb0aba70d253b37ed1e519a882ba778c42d8ac9fd230f9" => :catalina
     sha256 "b76c061fa0a226fb5b484fc790582bb07e5138648738f35726fa278ab5e8a612" => :mojave
     sha256 "d218e0b7d82c7864a1ead12186b5bc09b43c2aa3749651008ac8dbcf32ec0d7c" => :high_sierra
     sha256 "be282c3dfde4da608ab090910b3fe3cbec914d435122854f17acc0f718cc3a15" => :sierra

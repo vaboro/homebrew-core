@@ -1,14 +1,18 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://www.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.13-4/source/tarball/percona-server-8.0.13-4.tar.gz"
-  sha256 "0a42a0e51e3c27fa1fb2eb3e8d057a33e3ef77691f651b92b5ba6c9fe2890b9b"
-  revision 1
+  url "https://www.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.19-10/source/tarball/percona-server-8.0.19-10.tar.gz"
+  sha256 "b819d81b9cdef497dd5fd1044ddb033d222b986cf610cb5d4bb1fa5010dba580"
+
+  livecheck do
+    url "https://www.percona.com/downloads/Percona-Server-LATEST/"
+    regex(/value=.*?Percona-Server[._-]v?(\d+(?:\.\d+)+-\d+)["' >]/i)
+  end
 
   bottle do
-    sha256 "b9c1caebe201916cc335ea1c6bf7febd7ef6c246919f0c63075bba0d821c5637" => :mojave
-    sha256 "b2eee30e6a099b054261ca3d908fcf1e6365eb033de1ffe899d1d8886adb1265" => :high_sierra
-    sha256 "18ac0d1f2f3ab54720e30d0687e44dfdf135a1b464c854390e1e6aa9e32d90ef" => :sierra
+    sha256 "c6ad05c52e82f419f65a46bd627c784fec43dfb8545e68fb4939995fb5fefed2" => :catalina
+    sha256 "cae8782ea16aa5fdfebe4ccac3189d2e7fbdc0d6290c0b8fda6ab46792f956eb" => :mojave
+    sha256 "30719045c2ee376f8cf269e12fcd307f7d0313338b59b6e1c24861207177b287" => :high_sierra
   end
 
   pour_bottle? do
@@ -17,19 +21,12 @@ class PerconaServer < Formula
   end
 
   depends_on "cmake" => :build
-
-  # https://github.com/Homebrew/homebrew-core/issues/1475
-  # Needs at least Clang 3.3, which shipped alongside Lion.
-  # Note: MySQL themselves don't support anything below Sierra.
-  depends_on :macos => :yosemite
   depends_on "openssl@1.1"
 
   conflicts_with "mariadb", "mysql",
-    :because => "percona, mariadb, and mysql install the same binaries."
-  conflicts_with "mysql-connector-c",
-    :because => "both install MySQL client libraries"
-  conflicts_with "mariadb-connector-c",
-    :because => "both install plugins"
+    because: "percona, mariadb, and mysql install the same binaries"
+  conflicts_with "protobuf",
+    because: "both install libprotobuf(-lite) libraries"
 
   # https://bugs.mysql.com/bug.php?id=86711
   # https://github.com/Homebrew/homebrew-core/pull/20538
@@ -39,8 +36,8 @@ class PerconaServer < Formula
   end
 
   resource "boost" do
-    url "https://downloads.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.bz2"
-    sha256 "2684c972994ee57fc5632e03bf044746f6eb45d4920c343937a465fd67a5adba"
+    url "https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2"
+    sha256 "430ae8354789de4fd19ee52f3b1f739e1fba576f0aded0897c3c2bc00fb38778"
   end
 
   # Where the database files should be located. Existing installs have them
@@ -53,6 +50,7 @@ class PerconaServer < Formula
   def install
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
+      -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_0900_ai_ci
@@ -61,7 +59,7 @@ class PerconaServer < Formula
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MANDIR=share/man
       -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DINSTALL_PLUGINDIR=lib/plugin
+      -DINSTALL_PLUGINDIR=lib/percona-server/plugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DWITH_SSL=yes
@@ -135,7 +133,7 @@ class PerconaServer < Formula
       To connect run:
           mysql -uroot
     EOS
-    if my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x }
+    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
       s += <<~EOS
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
         server starting up correctly.
@@ -144,49 +142,48 @@ class PerconaServer < Formula
     s
   end
 
-  plist_options :manual => "mysql.server start"
+  plist_options manual: "mysql.server start"
 
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-      <key>KeepAlive</key>
-      <true/>
-      <key>Label</key>
-      <string>#{plist_name}</string>
-      <key>ProgramArguments</key>
-      <array>
-        <string>#{opt_bin}/mysqld_safe</string>
-        <string>--datadir=#{datadir}</string>
-      </array>
-      <key>RunAtLoad</key>
-      <true/>
-      <key>WorkingDirectory</key>
-      <string>#{datadir}</string>
-    </dict>
-    </plist>
-  EOS
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>KeepAlive</key>
+        <true/>
+        <key>Label</key>
+        <string>#{plist_name}</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>#{opt_bin}/mysqld_safe</string>
+          <string>--datadir=#{datadir}</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>WorkingDirectory</key>
+        <string>#{datadir}</string>
+      </dict>
+      </plist>
+    EOS
   end
 
   test do
-    begin
-      # Expects datadir to be a completely clean dir, which testpath isn't.
-      dir = Dir.mktmpdir
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-      "--basedir=#{prefix}", "--datadir=#{dir}", "--tmpdir=#{dir}"
+    # Expects datadir to be a completely clean dir, which testpath isn't.
+    dir = Dir.mktmpdir
+    system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+    "--basedir=#{prefix}", "--datadir=#{dir}", "--tmpdir=#{dir}"
 
-      pid = fork do
-        exec bin/"mysqld", "--bind-address=127.0.0.1", "--datadir=#{dir}"
-      end
-      sleep 2
-
-      output = shell_output("curl 127.0.0.1:3306")
-      output.force_encoding("ASCII-8BIT") if output.respond_to?(:force_encoding)
-      assert_match version.to_s, output
-    ensure
-      Process.kill(9, pid)
-      Process.wait(pid)
+    pid = fork do
+      exec bin/"mysqld", "--bind-address=127.0.0.1", "--datadir=#{dir}"
     end
+    sleep 2
+
+    output = shell_output("curl 127.0.0.1:3306")
+    output.force_encoding("ASCII-8BIT") if output.respond_to?(:force_encoding)
+    assert_match version.to_s, output
+  ensure
+    Process.kill(9, pid)
+    Process.wait(pid)
   end
 end

@@ -1,6 +1,7 @@
 class ArxLibertatis < Formula
   desc "Cross-platform, open source port of Arx Fatalis"
   homepage "https://arx-libertatis.org/"
+  license "GPL-3.0"
   revision 1
 
   stable do
@@ -12,6 +13,11 @@ class ArxLibertatis < Formula
       url "https://github.com/arx/ArxLibertatis/commit/442ba4af978160abd3856a9daec38f5b6e213cb4.patch?full_index=1"
       sha256 "de361866cc51c14f317a67dcfd3b736160a577238f931c78a525ea2864b1add9"
     end
+  end
+
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -39,7 +45,7 @@ class ArxLibertatis < Formula
   depends_on "innoextract"
   depends_on "sdl"
 
-  conflicts_with "rnv", :because => "both install `arx` binaries"
+  conflicts_with "rnv", because: "both install `arx` binaries"
 
   def install
     args = std_cmake_args
@@ -74,13 +80,14 @@ class ArxLibertatis < Formula
     end
   end
 
-  def caveats; <<~EOS
-    This package only contains the Arx Libertatis binary, not the game data.
-    To play Arx Fatalis you will need to obtain the game from GOG.com and
-    install the game data with:
+  def caveats
+    <<~EOS
+      This package only contains the Arx Libertatis binary, not the game data.
+      To play Arx Fatalis you will need to obtain the game from GOG.com and
+      install the game data with:
 
-      arx-install-data /path/to/setup_arx_fatalis.exe
-  EOS
+        arx-install-data /path/to/setup_arx_fatalis.exe
+    EOS
   end
 
   test do

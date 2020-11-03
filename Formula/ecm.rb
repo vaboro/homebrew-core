@@ -5,8 +5,15 @@ class Ecm < Formula
   version "1.0"
   sha256 "1d0d19666f46d9a2fc7e534f52475e80a274e93bdd3c010a75fe833f8188b425"
 
+  # The first-party web page was been missing since 2014, so we can't check for
+  # new versions and the developer doesn't seem to be actively working on this.
+  livecheck do
+    skip "No available sources to check for versions"
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "93a81fd556f0fa5cb39016f88a50aa7880b65d7f281cd94fbdaba36320d33f1d" => :catalina
     sha256 "0ee8841213cd082cb18043cbc1bb6d38563abc05f5477906649b68665e82539f" => :mojave
     sha256 "985409c27f6eff735bda8566c07ee787fd2ed4c92ac72c303376076d14e08dd9" => :high_sierra
     sha256 "888612dee7486ca5413e2b1e0090a4e1bd5ea7f2fe5cc53fe02bb326ed4f3d4c" => :sierra

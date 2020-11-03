@@ -1,16 +1,19 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.1.tar.bz2"
-  sha256 "cce7b6d20522849301727f81282201d609553103ac0b09162cf28d102efb9709"
-  revision 2
+  url "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.bz2"
+  sha256 "c58f3863b61d944231077f344fe6b4b8fbb83f3d1bc93ab74640bf3e5acac009"
+  license "BSD-3-Clause"
+
+  livecheck do
+    url :homepage
+    regex(/MPI v?(\d+(?:\.\d+)+) release/i)
+  end
 
   bottle do
-    rebuild 1
-    sha256 "a1e1363f461531508564a90ddbf787c4d3e265bc581f1ec9ad4e5ce0034a63f4" => :catalina
-    sha256 "322c39684795f8eaf9e8f342528ecc119aa65566db10963272b975e9c6f31018" => :mojave
-    sha256 "c2a5846928bb13ccf83513f1db65ed79f8499d75cb51da655f8fb4f49ac787bd" => :high_sierra
-    sha256 "ff6a8d0b903ddbd716a33ee4669f80d12bcaa59eb11862614efaf92092c68d41" => :sierra
+    sha256 "fd21d8d449c7fee6126f11994b6e0d12178b1eab55cbb17f99056d535cb1ace4" => :catalina
+    sha256 "f3a7dca683792a4fe866b62004351b1dae6acf2376609cf36bdc771d9e9104ef" => :mojave
+    sha256 "33d3cd119f7f7d7d3154d758cc0ad68ad513624c9a648c9b87d732ea6a8e6068" => :high_sierra
   end
 
   head do
@@ -24,11 +27,28 @@ class OpenMpi < Formula
   depends_on "hwloc"
   depends_on "libevent"
 
-  conflicts_with "mpich", :because => "both install MPI compiler wrappers"
+  conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
   def install
     # otherwise libmpi_usempi_ignore_tkr gets built as a static library
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+
+    # Avoid references to the Homebrew shims directory
+    %w[
+      ompi/tools/ompi_info/param.c
+      orte/tools/orte-info/param.c
+      oshmem/tools/oshmem_info/param.c
+      opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c
+    ].each do |fname|
+      inreplace fname, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{ENV.cc}\""
+    end
+
+    %w[
+      ompi/tools/ompi_info/param.c
+      oshmem/tools/oshmem_info/param.c
+    ].each do |fname|
+      inreplace fname, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
+    end
 
     ENV.cxx11
 
@@ -41,9 +61,6 @@ class OpenMpi < Formula
       --with-sge
     ]
     args << "--with-platform-optimized" if build.head?
-
-    # Fixes an issue in 4.0.0, should be fixed in 4.0.1
-    args << "--enable-mpi1-compatibility"
 
     system "./autogen.pl" if build.head?
     system "./configure", *args

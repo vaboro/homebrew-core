@@ -3,9 +3,11 @@ class Rlog < Formula
   homepage "https://www.arg0.net/rlog"
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rlog/rlog-1.4.tar.gz"
   sha256 "a938eeedeb4d56f1343dc5561bc09ae70b24e8f70d07a6f8d4b6eed32e783f79"
+  license "LGPL-2.1"
 
   bottle do
     cellar :any
+    sha256 "42b1e5a687f78df9121a75bc0b1194a534f31b8476521592879ea5fe381d634f" => :catalina
     sha256 "4ceb686581d1dad40fbbd4dec3d26205f56d9c25179ca4880158a06c2895f197" => :mojave
     sha256 "5d85e13db4c6dd2892d136a96af4ac46d72254a39b842559ac9a4f9f3841af3e" => :high_sierra
     sha256 "51f6586bcfa2235a19b311189ca63431c596c689c7b014850e4a0cef2275074e" => :sierra

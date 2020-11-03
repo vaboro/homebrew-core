@@ -6,6 +6,7 @@ class MinioMc < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "RELEASE.2019-08-07T23-14-43Z",
       :revision => "fef437bdd6bdd65dbc51e3d069c2e7d0413bc143"
   version "20190807231443"
@@ -59,35 +60,39 @@ class MinioMc < Formula
     sha256 "3a85394b3ca31a22fc3a897ff376d8a88fcfffaf0be8b2af66f1bc68914a9cd9" => :mojave
     sha256 "f52d51b974009d99558a49490b0de689abd137eea2aa816bc4f285b4806a4640" => :high_sierra
 >>>>>>> upstream/master
+=======
+      tag:      "RELEASE.2020-09-03T00-08-28Z",
+      revision: "f99232260606ae4a6ef16613838d202765efa18c"
+  version "20200903000828"
+  license "Apache-2.0"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "9750629887fa58c2781b5d196e1b4698cd14732939be39129b76bd46838841a4" => :catalina
+    sha256 "ef16e1f657e99451344fe207c322cd30f767de1403652dc2d32aea8637c44f1d" => :mojave
+    sha256 "bd54790c65a26c3fd798a8574cf29ecd60305183b31b52a7cc4b8624489054c0" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
 
-  conflicts_with "midnight-commander", :because => "Both install a `mc` binary"
+  conflicts_with "midnight-commander", because: "both install an `mc` binary"
 
   def install
-    ENV["GOPATH"] = buildpath
-    src = buildpath/"src/github.com/minio/mc"
-    src.install buildpath.children
-    src.cd do
-      if build.head?
-        system "go", "build", "-o", buildpath/"mc"
-      else
-        minio_release = `git tag --points-at HEAD`.chomp
-        minio_version = minio_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)\-(\d+)\-(\d+)Z/, 'T\1:\2:\3Z')
-        minio_commit = `git rev-parse HEAD`.chomp
-        proj = "github.com/minio/mc"
+    if build.head?
+      system "go", "build", "-trimpath", "-o", bin/"mc"
+    else
+      minio_release = `git tag --points-at HEAD`.chomp
+      minio_version = minio_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
+      minio_commit = `git rev-parse HEAD`.chomp
+      proj = "github.com/minio/mc"
 
-        system "go", "build", "-o", buildpath/"mc", "-ldflags", <<~EOS
-          -X #{proj}/cmd.Version=#{minio_version}
-          -X #{proj}/cmd.ReleaseTag=#{minio_release}
-          -X #{proj}/cmd.CommitID=#{minio_commit}
-        EOS
-      end
+      system "go", "build", "-trimpath", "-o", bin/"mc", "-ldflags", <<~EOS
+        -X #{proj}/cmd.Version=#{minio_version}
+        -X #{proj}/cmd.ReleaseTag=#{minio_release}
+        -X #{proj}/cmd.CommitID=#{minio_commit}
+      EOS
     end
-
-    bin.install buildpath/"mc"
-    prefix.install_metafiles
   end
 
   test do

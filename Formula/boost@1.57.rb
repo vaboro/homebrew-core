@@ -3,9 +3,11 @@ class BoostAT157 < Formula
   homepage "https://www.boost.org"
   url "https://downloads.sourceforge.net/project/boost/boost/1.57.0/boost_1_57_0.tar.bz2"
   sha256 "910c8c022a33ccec7f088bd65d4f14b466588dda94ba2124e78b8c57db264967"
+  license "BSL-1.0"
 
   bottle do
     cellar :any
+    sha256 "1023f6d97a7feec1c4f4d48fece91f3943f1cb3fb55cf909b0cf919742fc8e1b" => :catalina
     sha256 "662ca2c70c493d0ad0715f93daedf518dfda501bc55de18bc6f393f2e541c075" => :mojave
     sha256 "a9eab1fbd081d88a4ee1d8102a038784b46ef98d77f11943793f8445341871ae" => :high_sierra
     sha256 "2a5722e316d528b2ee1b290c2bda772c19c426f32c8bcb6609c250d68c59d6cb" => :sierra
@@ -14,6 +16,15 @@ class BoostAT157 < Formula
   end
 
   keg_only :versioned_formula
+
+  disable! because: :versioned_formula
+
+  # Fix build on Xcode 11.4
+  patch do
+    url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
+    sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
+    directory "tools/build"
+  end
 
   def install
     # Force boost to compile with the desired compiler

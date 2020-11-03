@@ -2,20 +2,24 @@ class Pygments < Formula
   include Language::Python::Virtualenv
 
   desc "Generic syntax highlighter"
-  homepage "http://pygments.org/"
-  url "https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-2.4.2.tar.gz"
-  sha256 "881c4c157e45f30af185c1ffe8d549d48ac9127433f2c380c24b84572ad66297"
+  homepage "https://pygments.org/"
+  url "https://files.pythonhosted.org/packages/5d/9d/208733ccc91b1d2c2af7270ffe3def197504bd8da875bc3fa1dc75039795/Pygments-2.7.0.tar.gz"
+  sha256 "2594e8fdb06fef91552f86f4fd3a244d148ab24b66042036e64f29a291515048"
+  license "BSD-2-Clause"
+  head "https://github.com/pygments/pygments.git"
 
-  head "https://bitbucket.org/birkenfeld/pygments-main", :using => :hg
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "778197007f7c9dda3f9121d7ee3aa0014002665b40dae5dae14e07f504162062" => :mojave
-    sha256 "ab35a224a347be5ad296ac3ee12e69e917ca34f7f47a7ef948aa81ca1d40e710" => :high_sierra
-    sha256 "931c35edfec89042b2fc1c97256055060dd92fc60c699a883a204caf66930bae" => :sierra
+    sha256 "03299404beca19adc6f39a8f32fdbeb734fa90f503333daad3df13a92532c085" => :catalina
+    sha256 "6ae3cb101d7e035a157c54391c7c0f994510aeff7559de32e277e1a34aaf621c" => :mojave
+    sha256 "3467adc4fc47a70c8f1bcf554abfe3c65a9161eb8c4fa18ca6f1520910850354" => :high_sierra
   end
 
-  depends_on "python"
+  depends_on "python@3.8"
 
   def install
     bash_completion.install "external/pygments.bashcomp" => "pygmentize"

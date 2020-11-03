@@ -1,14 +1,15 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https://github.com/hetznercloud/cli"
-  url "https://github.com/hetznercloud/cli/archive/v1.13.0.tar.gz"
-  sha256 "d1baa87a867091a24d8c56279306df585664296ee20743bc74a73c3a94cdc300"
+  url "https://github.com/hetznercloud/cli/archive/v1.19.1.tar.gz"
+  sha256 "839d936158377cd6d23b5734853ff5458edcd3cd9c731a7ff57a55fc15c024d8"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b8764566dac04685b2ce9490675d9a2adfbf5f00de7c64530fe49d50a27bbf24" => :mojave
-    sha256 "2b265e0797a6b7d5c759a8805d739824170962ba99b497ecf84359deaee7af3d" => :high_sierra
-    sha256 "31f469cdff808e4b189588018a89873a75fee373d4d6be97bd3b46a0c467ef60" => :sierra
+    sha256 "3d049388f418fc05c9db65c7cb74aead11b6c54d8aae3a56fe1dd8c2a95082f6" => :catalina
+    sha256 "6739ce073c50578b0325c1420eb279063e5720b3e455d58871f1dcd7ef0ab24a" => :mojave
+    sha256 "a27c5f11c68616e93450377d39e1dd270066a729c576c5bbf27ae93f6695ed7c" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -24,9 +25,9 @@ class Hcloud < Formula
       prefix.install_metafiles
     end
 
-    output = Utils.popen_read("#{bin}/hcloud completion bash")
+    output = Utils.safe_popen_read("#{bin}/hcloud", "completion", "bash")
     (bash_completion/"hcloud").write output
-    output = Utils.popen_read("#{bin}/hcloud completion zsh")
+    output = Utils.safe_popen_read("#{bin}/hcloud", "completion", "zsh")
     (zsh_completion/"_hcloud").write output
   end
 

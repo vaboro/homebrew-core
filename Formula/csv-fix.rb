@@ -3,9 +3,15 @@ class CsvFix < Formula
   homepage "https://neilb.bitbucket.io/csvfix/"
   url "https://bitbucket.org/neilb/csvfix/get/version-1.6.tar.gz"
   sha256 "32982aa0daa933140e1ea5a667fb71d8adc731cc96068de3a8e83815be62c52b"
+  license "MIT"
+
+  livecheck do
+    skip "Bitbucket repository is missing"
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "3cc10313342650c680f23241e19ff8ec6b64df8fcc2123c5161b15e992c8973b" => :catalina
     sha256 "93a9586c3ef8614be909c0e5ac5bb463536dab6fcbfc00bb1e94fc6affbe7248" => :mojave
     sha256 "e02b2cb8929617c91a258c313481097146259a9ed68094bd759c30c3cc75806e" => :high_sierra
     sha256 "b52224f7cd1dd228ffe751c67993f854a8a59f17d6099d40fca02374f1949d02" => :sierra

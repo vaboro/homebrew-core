@@ -3,13 +3,14 @@ class CucumberCpp < Formula
   homepage "https://cucumber.io"
   url "https://github.com/cucumber/cucumber-cpp/archive/v0.5.tar.gz"
   sha256 "9e1b5546187290b265e43f47f67d4ce7bf817ae86ee2bc5fb338115b533f8438"
-  revision 4
+  license "MIT"
+  revision 6
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d89be4fb4e823bc33463728ec21e9b87a917bb5280469d85b16d55adc9b9ea05" => :mojave
-    sha256 "e7dfbf7237b801a4337608b708bef04e6271a27f4d1a3cb99273ce986657956d" => :high_sierra
-    sha256 "4dd3ef1e73c533952f3ba8399bc5edeec223ff31478c80595ed9e9e9140fb2f8" => :sierra
+    sha256 "f63868e84ffc9bf22d0b25d5f0e8d48fd3153b7d0862adfcf8edd3afc852ed79" => :catalina
+    sha256 "a0826d69b4ad3b0109166578892bb9c17458813136684e841da790bd85b96c71" => :mojave
+    sha256 "2507d7b18568db8856e01e21ad211739a14f217a8c4b4df3cc871c122d3c0c74" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -24,10 +25,6 @@ class CucumberCpp < Formula
       -DCUKE_DISABLE_BOOST_TEST=on
     ]
 
-    # Temporary fix for bad boost 1.70.0 / cmake interaction
-    # https://github.com/Homebrew/homebrew-core/pull/38890
-    args << "-DBoost_NO_BOOST_CMAKE=ON"
-
     system "cmake", ".", *args
     system "cmake", "--build", "."
     system "make", "install"
@@ -36,7 +33,10 @@ class CucumberCpp < Formula
   test do
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
-    if MacOS.version == :high_sierra
+    if MacOS.version >= :mojave && MacOS::CLT.installed?
+      ENV.delete("CPATH")
+      ENV["SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version)
+    elsif MacOS.version == :high_sierra
       ENV.delete("CPATH")
       ENV.delete("SDKROOT")
     end

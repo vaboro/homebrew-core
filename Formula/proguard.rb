@@ -1,10 +1,18 @@
 class Proguard < Formula
   desc "Java class file shrinker, optimizer, and obfuscator"
-  homepage "https://proguard.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/proguard/proguard/6.1/proguard6.1.1.tar.gz"
-  sha256 "f76444c49d1d4f8e9a635ed812a33c4ea586bef308479dacc19ee55ae0289186"
+  homepage "https://www.guardsquare.com/en/products/proguard"
+  url "https://github.com/Guardsquare/proguard/releases/download/v7.0.0/proguard-7.0.0.tar.gz"
+  sha256 "699f16644024000e90c2555083fa6f78a9cdf1d71f384535e82bf987d764f9fb"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://github.com/Guardsquare/proguard/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle :unneeded
+
+  depends_on "openjdk"
 
   def install
     libexec.install "lib/proguard.jar"

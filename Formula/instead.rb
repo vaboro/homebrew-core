@@ -1,13 +1,14 @@
 class Instead < Formula
   desc "Interpreter of simple text adventures"
   homepage "https://instead.syscall.ru/"
-  url "https://github.com/instead-hub/instead/archive/3.3.0.tar.gz"
-  sha256 "43fea58f3f4abd6b9fb5680b519f8a3d29c895798c5f69b39a01c080e95b4ac0"
+  url "https://github.com/instead-hub/instead/archive/3.3.2.tar.gz"
+  sha256 "bdb827f36e693dc7b443e69d4678d24f1ccc20dc093c22f58b8d78192da15f2e"
+  license "MIT"
 
   bottle do
-    sha256 "8e05330df7054b69d5696ba00bbf4bb438cbd35b175f5a745e80c7b0095dec73" => :mojave
-    sha256 "0eaf8c4d40fcd870575d99c5359e6fecc15d539707e6ddbe9065ee0f31e141ac" => :high_sierra
-    sha256 "78f59e3c2455fe4be63ec3ea079c4afcd9a3e5f7ff8d5de90b4e2fa1e401db9a" => :sierra
+    sha256 "e447bee8716c692d07e6d58b337639a64334dfa921326810c5ae0d64b14fe72e" => :catalina
+    sha256 "128a389655c4361f48dd8ee81344682a3d4433485cf91569a71961bed0885e06" => :mojave
+    sha256 "e9029b89e6133d0f233a679a684e64d0195b283aabb6c55640f8a95ed1297f50" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -16,14 +17,6 @@ class Instead < Formula
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
-
-  # Remove for > 3.2.1
-  # Fix undefined symbols errors for _CFBundleCopyResourcesDirectoryURL etc.
-  # Upstream commit from 22 Apr 2018 "CMake: link AppKit framework on macOS"
-  patch do
-    url "https://github.com/instead-hub/instead/commit/e00be1e2.patch?full_index=1"
-    sha256 "63213ebeb0136f5388edfc8d7f240282a225ce73ea50ff89b319282556551d74"
-  end
 
   def install
     mkdir "build" do

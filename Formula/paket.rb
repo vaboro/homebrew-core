@@ -4,6 +4,7 @@ class Paket < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/fsprojects/Paket/releases/download/5.216.0/paket.exe"
   sha256 "8afa98f4765ab97592027851df18073bbf0e74e0acd67412fce3d956473241f0"
 =======
@@ -17,6 +18,11 @@ class Paket < Formula
 =======
   url "https://github.com/fsprojects/Paket/releases/download/5.223.0/paket.exe"
   sha256 "65af59d0069bfd0329ec154fc535dd37c21733437148e5d3e5b3e22d8938e410"
+>>>>>>> upstream/master
+=======
+  url "https://github.com/fsprojects/Paket/releases/download/5.249.2/paket.exe"
+  sha256 "4c875e03d576cf57a645abcdcf4a56efb9138e55320caf28bcd35a478b44cb4f"
+  license "MIT"
 >>>>>>> upstream/master
 
   bottle :unneeded

@@ -1,19 +1,22 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https://openimagedenoise.github.io"
-  url "https://github.com/OpenImageDenoise/oidn/releases/download/v1.0.0/oidn-1.0.0.src.tar.gz"
-  sha256 "e3cb903c9def3a1485191da1a6d252055d907ed1b9a007b3bda1d3b522cd324e"
+  url "https://github.com/OpenImageDenoise/oidn/releases/download/v1.2.3/oidn-1.2.3.src.tar.gz"
+  sha256 "469d20b093a73b18a54a2e559b0f18a6baac845ede864be62429737042ebe4f7"
+  license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "b63fc5dea6c3114322d85193c709a5d5313fc53eacc359b818ffd3808f0ce2ed" => :mojave
-    sha256 "2cf532b344578f9e6350816858e6fdbd5fd13bfd992fbbbaeab120e2ecbd42fd" => :high_sierra
+    sha256 "36e3eaab701c477b99a8dd45ee9280de718aeb561429d9583cb2a387b9eace13" => :catalina
+    sha256 "3fae1d44be63e61401450dc6c3f0afe8b56bbf138e8c764e915911677749ee05" => :mojave
+    sha256 "768e611cdf47486bcd8167cd2532b944f10f2fe0d7895d7f0403989529932e06" => :high_sierra
   end
 
   depends_on "cmake" => :build
+  depends_on "ispc" => :build
   # clang: error: unknown argument: '-fopenmp-simd'
   # https://github.com/OpenImageDenoise/oidn/issues/35
-  depends_on :macos => :high_sierra
+  depends_on macos: :high_sierra
   depends_on "tbb"
 
   def install

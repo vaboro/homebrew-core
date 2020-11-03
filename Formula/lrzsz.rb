@@ -6,8 +6,14 @@ class Lrzsz < Formula
   sha256 "c28b36b14bddb014d9e9c97c52459852f97bd405f89113f30bee45ed92728ff1"
   revision 1
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?lrzsz[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "e8d2badf80013a07d43d89b2a2e2f99c2feb3abd2b6eeb579a52f01b39a9dd49" => :catalina
     sha256 "c828fb5694c30334ccd6dd68da5136e2d6c9d53d2e8ac558ef3ba246a7824ef8" => :mojave
     sha256 "c23cc0b0c9a0a7fae5a2e3d69ba01a7e6d09ad5e5a7d06c76620b72773ffebed" => :high_sierra
     sha256 "997f5b81f84b7814b0f4f78f056404f6c309eba1e62136e5f8ddf4b34d953b59" => :sierra

@@ -1,14 +1,14 @@
 class PetscComplex < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (complex)"
   homepage "https://www.mcs.anl.gov/petsc/"
-  url "http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.3.tar.gz"
-  sha256 "8bee4a5ad37af85938ae755be182dcea255888b4f8b3d976bedc57e959280622"
-  revision 2
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.5.tar.gz"
+  sha256 "10fc542dab961c8b17db35ad3a208cb184c237fc84e183817e38e6c7ab4b8732"
+  license "BSD-2-Clause"
 
   bottle do
-    sha256 "764adc1aa043525584ad6ccaa74e5295a5a58a69fd5a7fbccbe084af84c48b92" => :mojave
-    sha256 "c15f9aa6a1bd2e6b0528b1155ad4d3a126196e3d28eb6768a93f26bb55bdce9a" => :high_sierra
-    sha256 "ae222354d9a76c580fd608401445b012ec853ac0b028e2180d6674fe83ab0a5e" => :sierra
+    sha256 "64cce3d2f9fae783e515749fda301a68900b0f468c7be479d3b1918515f859d5" => :catalina
+    sha256 "00eeba1bc9d3cd76d7d789c697447b59723b323cf330ca84ffaec84aa8262bdf" => :mojave
+    sha256 "80ed4f272b5ceec75a4a90b46bdaaaa722b34a7c7aadfc3d4ec9bb50866c0267" => :high_sierra
   end
 
   depends_on "hdf5"
@@ -19,23 +19,28 @@ class PetscComplex < Formula
   depends_on "scalapack"
   depends_on "suite-sparse"
 
-  conflicts_with "petsc", :because => "petsc must be installed with either real or complex support, not both"
+  conflicts_with "petsc", because: "petsc must be installed with either real or complex support, not both"
 
   def install
-    ENV["CC"] = "mpicc"
-    ENV["CXX"] = "mpicxx"
-    ENV["F77"] = "mpif77"
-    ENV["FC"] = "mpif90"
     system "./configure", "--prefix=#{prefix}",
                           "--with-debugging=0",
                           "--with-scalar-type=complex",
-                          "--with-x=0"
+                          "--with-x=0",
+                          "--CC=mpicc",
+                          "--CXX=mpicxx",
+                          "--F77=mpif77",
+                          "--FC=mpif90",
+                          "MAKEFLAGS=$MAKEFLAGS"
     system "make", "all"
     system "make", "install"
+
+    # Avoid references to Homebrew shims
+    rm_f lib/"petsc/conf/configure-hash"
+    inreplace lib/"petsc/conf/petscvariables", "#{HOMEBREW_SHIMS_PATH}/mac/super/", ""
   end
 
   test do
-    test_case = "#{share}/petsc/examples/src/ksp/ksp/examples/tutorials/ex1.c"
+    test_case = "#{share}/petsc/examples/src/ksp/ksp/tutorials/ex1.c"
     system "mpicc", test_case, "-I#{include}", "-L#{lib}", "-lpetsc", "-o", "test"
     output = shell_output("./test")
     # This PETSc example prints several lines of output. The last line contains

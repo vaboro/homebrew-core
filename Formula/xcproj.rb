@@ -3,10 +3,11 @@ class Xcproj < Formula
   homepage "https://github.com/0xced/xcproj"
   url "https://github.com/0xced/xcproj/archive/0.2.1.tar.gz"
   sha256 "8c31f85d57945cd5bb306d7a0ff7912f2a0d53fa3c888657e0a69ca5d27348cb"
-  head "https://github.com/0xced/xcproj.git", :branch => "develop"
+  head "https://github.com/0xced/xcproj.git", branch: "develop"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "46aa93499933dd1599eb4d38ba2e5b8587092c08f8acb691b29a1ccee6a80b17" => :catalina
     sha256 "7efa30f2f581bbcc0962605710b1125965b6b8d13ca8e5fab8517adfe1c9334d" => :mojave
     sha256 "d34b031444c1122392afb789036d3197a0d333ae11447c819509f1f31de30c9f" => :high_sierra
     sha256 "f21fe7b203fbee383f502d66ac8471c7798d74dae7d4ad4491e933fcd1de22d5" => :sierra

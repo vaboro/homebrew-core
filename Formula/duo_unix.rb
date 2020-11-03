@@ -1,14 +1,18 @@
 class DuoUnix < Formula
   desc "Two-factor authentication for SSH"
   homepage "https://www.duosecurity.com/docs/duounix"
-  url "https://github.com/duosecurity/duo_unix/archive/duo_unix-1.11.2.tar.gz"
-  sha256 "e1ec2f43036ba639743d631f308419c9a88618a93d4038bf40a9cdeef89ca6db"
-  revision 1
+  url "https://github.com/duosecurity/duo_unix/archive/duo_unix-1.11.4.tar.gz"
+  sha256 "2fcba3e50fd477699d013c789ffc73a0b10c204d25c455abe7c81a2ecd886579"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://github.com/duosecurity/duo_unix.git"
+  end
 
   bottle do
-    sha256 "210721657888ee878f11a03497a9e5d8823410c4d0099b9aa33d03af4cce3b6e" => :mojave
-    sha256 "bb736a12e115653d1eafb88221825101110cd9399e347241668027cf44b5ba44" => :high_sierra
-    sha256 "dea30d4a4b5e20534aef3fca59001c58bed00dfd892adf458f9c417e73dee000" => :sierra
+    sha256 "67a6ff6605578e287fc862f6fb2ee9360dea7c22f8fbaa97a1bf18dd13db5ec0" => :catalina
+    sha256 "753e3f0d60c4c0404a6e347d052bc1ed4bd1e66b43170675549a36d4fe736f25" => :mojave
+    sha256 "8e707bc378fa13dfd92fb39e0de055c58f2470973fe80edc41bf500e4863128a" => :high_sierra
   end
 
   depends_on "autoconf" => :build

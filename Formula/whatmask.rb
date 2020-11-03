@@ -3,9 +3,11 @@ class Whatmask < Formula
   homepage "http://www.laffeycomputer.com/whatmask.html"
   url "https://web.archive.org/web/20170107110521/downloads.laffeycomputer.com/current_builds/whatmask/whatmask-1.2.tar.gz"
   sha256 "7dca0389e22e90ec1b1c199a29838803a1ae9ab34c086a926379b79edb069d89"
+  license "GPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "61c0c22cf55881e970a1e2cd239eb805b0e32733abbcba959f8540fc4fb6c1b5" => :catalina
     sha256 "acfac14343f3a746de062b9cbe300bcfb6287df43fd2c4ec5395f7c49e51e7ad" => :mojave
     sha256 "a46f984a59776d23efc00fbae9841026547f5c4f3884c31007c06acae51d4881" => :high_sierra
     sha256 "7d9c8318c69271c9b7774a4f84cd315f28986bd7dacc1f1c9a5451880a415a8b" => :sierra

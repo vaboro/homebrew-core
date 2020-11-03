@@ -3,9 +3,11 @@ class Libltc < Formula
   homepage "https://x42.github.io/libltc/"
   url "https://github.com/x42/libltc/releases/download/v1.3.1/libltc-1.3.1.tar.gz"
   sha256 "50e63eb3b767151bc0159a3cc5d426d03a42fd69029bc9b3b7c346555f4b709c"
+  license "LGPL-3.0"
 
   bottle do
     cellar :any
+    sha256 "c73e9da760961fc899dcd41c52f4e74cf2e29fb8ea619920c06c9ace25f717ab" => :catalina
     sha256 "aecfd413335e0981c5ac452bc0b81bee57d3a4e5974237f5b6a64aae734369cf" => :mojave
     sha256 "30f7ddada1d191c63214d44d9acec4862e71bca2ee67368c8546ec7240f65a9a" => :high_sierra
     sha256 "1c51db3447916e208601775d43fb248bdc76f3b29b6f309ccc74eddc0a11c9c6" => :sierra

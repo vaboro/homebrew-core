@@ -2,6 +2,7 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
+<<<<<<< HEAD
       :tag      => "v0.10.0",
       :revision => "ff80b17737a6a0aade663e4827e8af3ab5a21170"
 <<<<<<< HEAD
@@ -22,17 +23,31 @@ class OperatorSdk < Formula
     sha256 "91a932437b54fbc5e8730a84a21c2cc865e6ad81c23cd25f5b3a592aaf1a1976" => :high_sierra
     sha256 "60b8a7947caf489ce3429d87991905fc781b67fa5b552bd8b662abefdbe2bde4" => :sierra
 >>>>>>> upstream/master
+=======
+      tag:      "v1.0.0",
+      revision: "d7d5e0cd6cf5468bb66e0849f08fda5bf557f4fa"
+  license "Apache-2.0"
+  head "https://github.com/operator-framework/operator-sdk.git"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "12a2f74aefa1080a6f5398a34a6fa3e5dbc073701d417f3c98b223004947f4b4" => :catalina
+    sha256 "407b855e436cedc91a6be8c4e2280928a7267c0e468db1183919d11588b29b62" => :mojave
+    sha256 "ec30eef2b5107b09652baee76189b8f9eff0d4d4be7f940e740b7baad521e68a" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go"
 
   def install
-    # TODO: Do not set GOROOT. This is a fix for failing tests when compiled with Go 1.13.
-    # See https://github.com/Homebrew/homebrew-core/pull/43820.
-    ENV["GOROOT"] = Formula["go"].opt_libexec
+    ENV["GOBIN"] = bin
+    system "make", "install"
 
-    ENV["GOPATH"] = buildpath
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "bash")
+    (bash_completion/"operator-sdk").write output
 
+<<<<<<< HEAD
     dir = buildpath/"src/github.com/operator-framework/operator-sdk"
     dir.install buildpath.children - [buildpath/".brew_home"]
     dir.cd do
@@ -55,26 +70,21 @@ class OperatorSdk < Formula
 
       prefix.install_metafiles
     end
+=======
+    # Install zsh completion
+    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "zsh")
+    (zsh_completion/"_operator-sdk").write output
+>>>>>>> upstream/master
   end
 
   test do
-    # Use the offical golang module cache to prevent network flakes and allow
-    # this test to complete before timing out.
-    ENV["GOPROXY"] = "https://proxy.golang.org"
-
     if build.stable?
       version_output = shell_output("#{bin}/operator-sdk version")
-      assert_match "version: v#{version}", version_output
+      assert_match "version: \"v#{version}\"", version_output
       assert_match stable.specs[:revision], version_output
     end
 
-    # Create a new, blank operator
-    system "#{bin}/operator-sdk", "new", "test", "--repo=github.com/example-inc/app-operator"
-
-    cd "test" do
-      # Add an example API resource. This exercises most of the various pieces
-      # of generation logic.
-      system "#{bin}/operator-sdk", "add", "api", "--api-version=app.example.com/v1alpha1", "--kind=AppService"
-    end
+    system bin/"operator-sdk", "init", "--domain=example.com", "--repo=example.com/example/example"
+    assert_predicate testpath/"bin/manager", :exist?
   end
 end

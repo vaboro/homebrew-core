@@ -3,9 +3,11 @@ class Tinysvm < Formula
   homepage "http://chasen.org/~taku/software/TinySVM/"
   url "http://chasen.org/~taku/software/TinySVM/src/TinySVM-0.09.tar.gz"
   sha256 "e377f7ede3e022247da31774a4f75f3595ce768bc1afe3de9fc8e962242c7ab8"
+  license "LGPL-2.1"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "5bbed1c1f653d0fde6a8e82740a18f8f0e4c95f6d06c7c14dd8dbd4ed096c758" => :catalina
     sha256 "56f1afa09c931eb7e8dfaf46f1a814c1df306e4c20269ef78fddfbdf85a7251a" => :mojave
     sha256 "62f0920fdf8f5b7f29cebacc1add1396daef668c67e3d10644d9d35d1b49afc5" => :high_sierra
     sha256 "a6ad14c984b337bee83372ac6a29ffe7c0491180a302cfcd8f53b1a3ee6816e1" => :sierra

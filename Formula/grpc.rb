@@ -1,38 +1,69 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
-  url "https://github.com/grpc/grpc/archive/v1.23.0.tar.gz"
-  sha256 "f56ced18740895b943418fa29575a65cc2396ccfa3159fa40d318ef5f59471f9"
-  revision 3
+  url "https://github.com/grpc/grpc.git",
+    tag:      "v1.32.0",
+    revision: "414bb8322de2411eee1f4e841ff29d887bec7884",
+    shallow:  false
+  license "Apache-2.0"
+  revision 1
   head "https://github.com/grpc/grpc.git"
 
+  livecheck do
+    url "https://github.com/grpc/grpc/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
-    sha256 "163b4a5cf69671c9b1a95d6259169cf8d7d7bb2c5b3f80ab73972f5ae68ef23f" => :catalina
-    sha256 "02fe7b10b6077a38871062188058d1392d04bc4f23da7e09e73c52720e00a838" => :mojave
-    sha256 "c0fae293caad2ade02191f242cbf33b50283dc850d0c179dcc973ab00e3b60b2" => :high_sierra
+    cellar :any
+    rebuild 1
+    sha256 "0588400a642f91dc3a04a51af045f20f47babc301f87ba8ffa5c7493c2e618a7" => :catalina
+    sha256 "69135cd3114f1ea57d34be778a992c0e56e9d01253d8f48966e6f5cd51ccf6d3" => :mojave
+    sha256 "47ccc49dab77f9844283f1edd05a82a4ae64b8f86fd8943b6580ee9fe4abf915" => :high_sierra
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "cmake" => :build
   depends_on "libtool" => :build
+  depends_on "abseil"
   depends_on "c-ares"
   depends_on "gflags"
   depends_on "openssl@1.1"
   depends_on "protobuf"
-
-  resource "gtest" do
-    url "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
-    sha256 "9bf1fe5182a604b4135edc1a425ae356c9ad15e9b23f9f12a02e80184c3a249c"
-  end
+  depends_on "re2"
 
   def install
-    system "make", "install", "prefix=#{prefix}"
+    mkdir "cmake/build" do
+      args = %w[
+        ../..
+        -DBUILD_SHARED_LIBS=ON
+        -DgRPC_BUILD_TESTS=OFF
+        -DgRPC_INSTALL=ON
+        -DgRPC_ABSL_PROVIDER=package
+        -DgRPC_CARES_PROVIDER=package
+        -DgRPC_PROTOBUF_PROVIDER=package
+        -DgRPC_SSL_PROVIDER=package
+        -DgRPC_ZLIB_PROVIDER=package
+        -DgRPC_RE2_PROVIDER=package
+      ] + std_cmake_args
 
-    system "make", "install-plugins", "prefix=#{prefix}"
+      system "cmake", *args
+      system "make", "install"
 
-    (buildpath/"third_party/googletest").install resource("gtest")
-    system "make", "grpc_cli", "prefix=#{prefix}"
-    bin.install "bins/opt/grpc_cli"
+      args = %w[
+        ../..
+        -DCMAKE_EXE_LINKER_FLAGS=-lgflags
+        -DCMAKE_SHARED_LINKER_FLAGS=-lgflags
+        -DBUILD_SHARED_LIBS=ON
+        -DgRPC_BUILD_TESTS=ON
+        -DgRPC_GFLAGS_PROVIDER=package
+      ] + std_cmake_args
+      system "cmake", *args
+      system "make", "grpc_cli"
+      bin.install "grpc_cli"
+      lib.install Dir["libgrpc++_test_config*.dylib"]
+    end
   end
 
   test do

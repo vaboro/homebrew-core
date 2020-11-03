@@ -1,21 +1,24 @@
 class Libgweather < Formula
   desc "GNOME library for weather, locations and timezones"
   homepage "https://wiki.gnome.org/Projects/LibGWeather"
-  url "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.2.tar.xz"
-  sha256 "28ed5ff00d6faf1dc885c4252a538e43ff3f614fcf6a0f20c3b63604295d3c02"
-  revision 1
+  url "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz"
+  sha256 "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450"
+  revision 2
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "9f5e3e46636b1f0fbb2ddf83e45cd1f272a02433e2e25a3b0b4ab6841c40de28" => :catalina
-    sha256 "79624e2e5d703be2c1c0689e0d957932af1c883af8404b6142f52d939c697272" => :mojave
-    sha256 "ca837949f0fdbe0d860f220af4e29902398a82f20a40f4a5281089050eceb78a" => :high_sierra
+    sha256 "46c6e704f4d42d0032888a87cd2d0ce2fd2ce0a9b8027123976857d242c1b0f3" => :catalina
+    sha256 "b8db1057908c9723c708b919330b9a58cdbdb9e6a6c7b053242fb8c965171eff" => :mojave
+    sha256 "267bff5a8951012a4df193baed3816552028de9c44ae26d977e932a75a655d88" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
   depends_on "geocode-glib"
   depends_on "gtk+3"
   depends_on "libsoup"
@@ -24,7 +27,7 @@ class Libgweather < Formula
     ENV["DESTDIR"] = "/"
 
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", ".."
+      system "meson", *std_meson_args, ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end

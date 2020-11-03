@@ -4,6 +4,7 @@ class Istioctl < Formula
   url "https://github.com/istio/istio.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "1.2.4",
       :revision => "c562694ea6e554c2b60d12c9876d2641cfdd917d"
 
@@ -32,27 +33,37 @@ class Istioctl < Formula
     sha256 "2c0db1ea4ec4a53cac76e3ecf2c32dbdf848b8873032824e89f62e7975691daf" => :mojave
     sha256 "ed53ef88a88980d465ad6dcb5ef1038bca04eb1eeb023baadb287e316b04c186" => :high_sierra
 >>>>>>> upstream/master
+=======
+      tag:      "1.7.1",
+      revision: "4e26c697ce460dc8d3b25b25818fb0163ca16394"
+  license "Apache-2.0"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "40417e64c1a6f864aaa256dd76c31aed65623be7c6b15e6d0808382f7e73a557" => :catalina
+    sha256 "75dff65ccf186e8dae4d9a217619add0a82524bf74198abf12377041f28a8d42" => :mojave
+    sha256 "49fcc2f4f66e99e9b8341c6fc4616c0cd4341222ad1447ff2368c9028b58b68b" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
+  depends_on "go-bindata" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
     ENV["TAG"] = version.to_s
     ENV["ISTIO_VERSION"] = version.to_s
+    ENV["HUB"] = "docker.io/istio"
+    ENV["BUILD_WITH_CONTAINER"] = "0"
 
-    srcpath = buildpath/"src/istio.io/istio"
-    outpath = buildpath/"out/darwin_amd64/release"
-    srcpath.install buildpath.children
-
-    cd srcpath do
-      system "make", "istioctl"
-      prefix.install_metafiles
-      bin.install outpath/"istioctl"
+    system "make", "gen-charts", "istioctl", "istioctl.completion"
+    cd "out/darwin_amd64" do
+      bin.install "istioctl"
+      bash_completion.install "release/istioctl.bash"
+      zsh_completion.install "release/_istioctl"
     end
   end
 
   test do
-    assert_match "Retrieve policies and rules", shell_output("#{bin}/istioctl get -h")
+    assert_match version.to_s, shell_output("#{bin}/istioctl version --remote=false")
   end
 end

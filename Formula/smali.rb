@@ -1,38 +1,29 @@
 class Smali < Formula
   desc "Assembler/disassembler for Android's Java VM implementation"
   homepage "https://github.com/JesusFreke/smali"
-  url "https://bitbucket.org/JesusFreke/smali/downloads/smali-2.3.1.jar"
-  sha256 "a3c5a308dc8aa6b6441f4df5a2f3c333301d117c0f50465cbc0aff8f6053d594"
+  url "https://github.com/JesusFreke/smali/archive/v2.4.0.tar.gz"
+  sha256 "6a9014ecffd7d374f1b9e3c236b11d18a8d8f9c33dbb8ca171c79cc243a0f902"
+  license "BSD-3-Clause"
+  revision 1
 
-  bottle :unneeded
-
-  resource "baksmali-jar" do
-    url "https://bitbucket.org/JesusFreke/smali/downloads/baksmali-2.3.1.jar"
-    sha256 "6053ed3ffabb9f298d8fd42efc1c8386b7ef31df911db6cdbce05bb5d1f3acca"
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "2a17c236e4dea10abb4cfc8383abd72204dfa925e72ab10bf6aaaa02875af266" => :catalina
+    sha256 "39f6422066f4b61496c4ce287f37a7ee1069926eea698a6dbd15a131e14a7616" => :mojave
+    sha256 "7b90641feb3ce88a706bee6c8b5ca3a231f4d3c2ce138d7fabe5d470574d77f3" => :high_sierra
   end
 
-  resource "baksmali" do
-    url "https://bitbucket.org/JesusFreke/smali/downloads/baksmali"
-    sha256 "5d4b79776d401f2cbdb66c7c88e23cca773b9a939520fef4bf42e2856bbbfed4"
-  end
-
-  resource "smali" do
-    url "https://bitbucket.org/JesusFreke/smali/downloads/smali"
-    sha256 "910297fbeefb4590e6bffd185726c878382a0960fb6a7f0733f045b6faf60a30"
-  end
+  depends_on "gradle" => :build
+  depends_on "openjdk"
 
   def install
-    resource("baksmali-jar").stage do
-      libexec.install "baksmali-#{version}.jar" => "baksmali.jar"
-    end
+    system "gradle", "build", "--no-daemon"
 
-    libexec.install "smali-#{version}.jar" => "smali.jar"
+    %w[smali baksmali].each do |name|
+      jarfile = "#{name}-#{version}-dev-fat.jar"
 
-    %w[smali baksmali].each do |r|
-      libexec.install resource(r)
-      inreplace libexec/r, /^libdir=.*$/, "libdir=\"#{libexec}\""
-      chmod 0755, libexec/r
-      bin.install_symlink libexec/r
+      libexec.install "#{name}/build/libs/#{jarfile}"
+      bin.write_jar_script libexec/jarfile, name
     end
   end
 

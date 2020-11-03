@@ -4,9 +4,15 @@ class Httptunnel < Formula
   url "https://ftp.gnu.org/gnu/httptunnel/httptunnel-3.3.tar.gz"
   mirror "https://ftpmirror.gnu.org/httptunnel/httptunnel-3.3.tar.gz"
   sha256 "142f82b204876c2aa90f19193c7ff78d90bb4c2cba99dfd4ef625864aed1c556"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "992853ebe7a48e07cf6e129d68cab49aab670ce4231a4a984ded21ece64247c0" => :catalina
     sha256 "b6072c89e94ba53852f28c25ec85e6bdb24e7ebbce7eee35b418c9d609e68670" => :mojave
     sha256 "6012d5967ab7263658ce1da99ee7bbdd051e37243b922b0702f4279ed047c014" => :high_sierra
     sha256 "64b548d12c4e3012cb9d8d9f5171e0fc47e594c13f4d4ae35c5f97be1582b263" => :sierra

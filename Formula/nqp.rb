@@ -1,16 +1,19 @@
 class Nqp < Formula
   desc "Lightweight Perl 6-like environment for virtual machines"
   homepage "https://github.com/perl6/nqp"
-  url "https://github.com/perl6/nqp/releases/download/2019.07.1/nqp-2019.07.1.tar.gz"
-  sha256 "7324e5b84903c5063303a3c9fb6205bdf5f071c9778cc695ea746e7d41b12224"
+  url "https://github.com/perl6/nqp/releases/download/2020.08/nqp-2020.08.tar.gz"
+  sha256 "a2b68c112adeb11e9ead3f63aa83249821d4c4b23d5f7c35c9effbafb2b4a128"
+  license "Artistic-2.0"
 
   bottle do
-    sha256 "187e1643a69732e3f4fd6051e983c0b1821820ca70b50f79d2583d0001034a74" => :mojave
-    sha256 "76217f74bb225f9c1897e71f3157292b3e17de7913e12d9a6d70fbc340d35c88" => :high_sierra
-    sha256 "6c521de7bb7b1f39ee68c60be72e0de5cacbee807dbdaff079a68c38bc95a6db" => :sierra
+    sha256 "41681920e178578ef3860b3cc5fbeeebafed1b97d563683cf01a5916fa685dac" => :catalina
+    sha256 "c82fa7d1dc6349ff67c3396e31c1c3c0608968a56ad44cc06102226040825b00" => :mojave
+    sha256 "8612375c8706eb4b3e42fe24145b190f4b6450e4c3563595a30229d8d55b848e" => :high_sierra
   end
 
   depends_on "moarvm"
+
+  conflicts_with "rakudo-star", because: "rakudo-star currently ships with nqp included"
 
   def install
     system "perl", "Configure.pl",

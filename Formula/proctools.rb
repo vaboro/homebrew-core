@@ -1,11 +1,17 @@
 class Proctools < Formula
-  desc "pgrep, pkill, and pfind for OpenBSD and Darwin (macOS)"
+  desc "OpenBSD and Darwin versions of pgrep, pkill, and pfind"
   homepage "https://proctools.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/proctools/proctools/0.4pre1/proctools-0.4pre1.tar.gz"
   sha256 "4553b9c6eda959b12913bc39b6e048a8a66dad18f888f983697fece155ec5538"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/proctools/[^/]+/proctools[._-]v?(\d+(?:\.\d+)+(?:pre\d+)?)\.t}i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "f0fe70530d22c270ac3d5a105f2dbbbb0dc6a664acd03f3ad7da3f86255fd548" => :catalina
     sha256 "f7466405a3aab3cd7b00669ea685b1fe463a19bbdd7fef8b8c25f86595de2d34" => :mojave
     sha256 "d41f76776e37f54cabf5d76ce2cb89d13052f1221a70b325245f600a7bd047ae" => :high_sierra
     sha256 "8567dd0ffde620f8b1dd18e0529d670a235bcde6dac7b3f19d6528ecf843613a" => :sierra

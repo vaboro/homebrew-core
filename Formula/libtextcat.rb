@@ -4,10 +4,12 @@ class Libtextcat < Formula
   url "https://software.wise-guys.nl/download/libtextcat-2.2.tar.gz"
   mirror "https://src.fedoraproject.org/repo/pkgs/libtextcat/libtextcat-2.2.tar.gz/128cfc86ed5953e57fe0f5ae98b62c2e/libtextcat-2.2.tar.gz"
   sha256 "5677badffc48a8d332e345ea4fe225e3577f53fc95deeec8306000b256829655"
+  license "BSD-3-Clause"
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "9e178bd2a1479fb8d7be57c03b0bad722fbb94221d50b4b807bd6c89126492f2" => :catalina
     sha256 "02d7f744996abfda8bd85b4580c5a92a8bd89ad6cc06e2848caa9b3b0e858144" => :mojave
     sha256 "7997ea512b672f165e1e53e941147e9a520a9ab5d71b8b22e4a71622690e7cdb" => :high_sierra
     sha256 "24fe8791549204d8ef6e596fc327fbd3a645c729b440ba31ef47cf545f6f5b30" => :sierra

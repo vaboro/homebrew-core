@@ -5,9 +5,15 @@ class Libreplaygain < Formula
   version "r475"
   sha256 "8258bf785547ac2cda43bb195e07522f0a3682f55abe97753c974609ec232482"
 
+  livecheck do
+    url "https://www.musepack.net/index.php?pg=src"
+    regex(/href=.*?libreplaygain[._-](r\d+)\.t/i)
+  end
+
   bottle do
     cellar :any
     rebuild 1
+    sha256 "34a785ef56c26e506e4e225ace636163dd3b5dd310448a7b63d1ba1c99a2ea77" => :catalina
     sha256 "13df0590c2056af8071e5c182bc1b73cfd52b6ad7afb561d16a1ac3ddf0df179" => :mojave
     sha256 "c2d3becfcd2f629fb875b6d6c907505489381e5ea3893b0a882510ebbee9951a" => :high_sierra
     sha256 "d8f7cfc1bfad75b97271300a16f5c927849b03ff488141423ecf48b25c6ed8c3" => :sierra

@@ -3,9 +3,15 @@ class Mboxgrep < Formula
   homepage "https://datatipp.se/mboxgrep/"
   url "https://downloads.sourceforge.net/project/mboxgrep/mboxgrep/0.7.9/mboxgrep-0.7.9.tar.gz"
   sha256 "78d375a05c3520fad4bca88509d4da0dbe9fba31f36790bd20880e212acd99d7"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any
+    sha256 "abf21ae4b879f4a3e4c9c9b3d6640d4a104bb6d640c9f485bfecd261d217ca40" => :catalina
     sha256 "93f800f8bae502815c85bac9dd2d7ec85599caa1ee08b6a4860ca8db11ab7276" => :mojave
     sha256 "431d64ae6c1387c69b052942ee6b268ac9afbcd5bfff9d02bc21aeeaaa9807dd" => :high_sierra
     sha256 "44a294d075cb08e577c4d1c1e45c222bea93f3c8488f9bed54ded5b36797f536" => :sierra

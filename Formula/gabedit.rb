@@ -6,9 +6,17 @@ class Gabedit < Formula
   sha256 "45cdde213a09294bbf2df5f324ea11fc4c4045b3f9d58e4d67979e6f071c7689"
   revision 2
 
+  # Consider switching back to checking SourceForge releases once we can alter
+  # the matched version from `250` to `2.5.0`.
+  livecheck do
+    url "https://sites.google.com/site/allouchear/Home/gabedit/download"
+    regex(/current stable version of gabedit is v?(\d+(?:\.\d+)+)/i)
+  end
+
   bottle do
     cellar :any
     rebuild 1
+    sha256 "af6b9870f2b34921313f3f38329a507e450462bf74055880f8c572e153c78932" => :catalina
     sha256 "c8bd86798356203a2e554310149b51299c2221827a030fd74763c9237996fc9f" => :mojave
     sha256 "83b205bd7a01eb782a9346f048c3c2e217ba4dc425f620853a4da066563e6b5c" => :high_sierra
     sha256 "72d3d9bda815ffda49197241c46139686fbc0a4b2c9aeab2dce258573e5ea17b" => :sierra

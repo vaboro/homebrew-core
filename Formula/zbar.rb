@@ -1,37 +1,29 @@
 class Zbar < Formula
   desc "Suite of barcodes-reading tools"
-  homepage "https://zbar.sourceforge.io"
-  revision 9
+  homepage "https://github.com/mchehab/zbar"
+  url "https://github.com/mchehab/zbar/archive/0.23.1.tar.gz"
+  sha256 "297439f8859089d2248f55ab95b2a90bba35687975365385c87364c77fdb19f3"
+  license "LGPL-2.1-only"
+  revision 10
+  head "https://github.com/mchehab/zbar.git"
 
-  stable do
-    url "https://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
-    sha256 "234efb39dbbe5cef4189cc76f37afbe3cfcfb45ae52493bfe8e191318bdbadc6"
-
-    # Fix JPEG handling using patch from
-    # https://sourceforge.net/p/zbar/discussion/664596/thread/58b8d79b#8f67
-    # already applied upstream but not present in the 0.10 release
-    patch :DATA
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/zbar[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
-    cellar :any
-    sha256 "e6a6a23bc18fb83aaff6899da45c31cd3e5959eba8cfae4e0bd7a6ba7eba5cb0" => :mojave
-    sha256 "43b41e062704914a007017d7d35dfb518f6c04141a52eb2c146a5e908a75334c" => :high_sierra
-    sha256 "64d9816afc8e6fd898c402f152a9847b4e265da078cf27fa6b1fb289ec3d963c" => :sierra
-    sha256 "8a6c2c77063e98986a8b6d6a5eb19333cd39efccb03af08493d6b5e8a60d57b7" => :el_capitan
+    sha256 "1d045da2a7bd7f348a19643fa203e3bac2a41f3b4b913acf6c3dcbfd8ab451f0" => :catalina
+    sha256 "9494f562f1fca7e00c461e46768f61305802facfc4127d7253d7ffa1690af485" => :mojave
+    sha256 "6cc127961a7a4047fa3b10f5ffcdccbc15a26b13f43d232a18aa7e5fea131e01" => :high_sierra
   end
 
-  head do
-    url "https://github.com/ZBar/ZBar.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gettext" => :build
-    depends_on "libtool" => :build
-    depends_on "xmlto" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "gettext" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "xmlto" => :build
   depends_on "freetype"
   depends_on "imagemagick"
   depends_on "jpeg"
@@ -40,17 +32,7 @@ class Zbar < Formula
   depends_on "xz"
 
   def install
-    if build.head?
-      inreplace "configure.ac", "-Werror", ""
-      gettext = Formula["gettext"]
-      system "autoreconf", "-fvi", "-I", "#{gettext.opt_share}/aclocal"
-    end
-
-    # ImageMagick 7 compatibility
-    # Reported 20 Jun 2016 https://sourceforge.net/p/zbar/support-requests/156/
-    inreplace ["configure", "zbarimg/zbarimg.c"],
-      "wand/MagickWand.h",
-      "ImageMagick-7/MagickWand/MagickWand.h"
+    system "autoreconf", "-fvi"
 
     args = %W[
       --disable-dependency-tracking
@@ -70,27 +52,3 @@ class Zbar < Formula
     system bin/"zbarimg", "-h"
   end
 end
-
-__END__
-diff --git a/zbar/jpeg.c b/zbar/jpeg.c
-index fb566f4..d1c1fb2 100644
---- a/zbar/jpeg.c
-+++ b/zbar/jpeg.c
-@@ -79,8 +79,15 @@ int fill_input_buffer (j_decompress_ptr cinfo)
- void skip_input_data (j_decompress_ptr cinfo,
-                       long num_bytes)
- {
--    cinfo->src->next_input_byte = NULL;
--    cinfo->src->bytes_in_buffer = 0;
-+    if (num_bytes > 0) {
-+        if (num_bytes < cinfo->src->bytes_in_buffer) {
-+            cinfo->src->next_input_byte += num_bytes;
-+            cinfo->src->bytes_in_buffer -= num_bytes;
-+        }
-+        else {
-+            fill_input_buffer(cinfo);
-+        }
-+    }
- }
- 
- void term_source (j_decompress_ptr cinfo)

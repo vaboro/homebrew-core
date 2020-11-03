@@ -1,12 +1,19 @@
 class LittleCms < Formula
   desc "Version 1 of the Little CMS library"
-  homepage "http://www.littlecms.com/"
+  homepage "https://www.littlecms.com/"
   url "https://downloads.sourceforge.net/project/lcms/lcms/1.19/lcms-1.19.tar.gz"
   sha256 "80ae32cb9f568af4dc7ee4d3c05a4c31fc513fc3e31730fed0ce7378237273a9"
+  license "MIT"
   revision 1
+
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/lcms[._-]v?(1(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     cellar :any
+    sha256 "73cda76fd98e9466e570243f5190e68b45ffeeea2073185a51dd14dbde11a21a" => :catalina
     sha256 "d04e4cc09f471260e6e86eb866743eb0205b3345bc9e687d85307cdbd1a1fa9a" => :mojave
     sha256 "cead96af013b65c05e98c89890e66de1cdf864d1b6ed7da811f6618f2e551275" => :high_sierra
     sha256 "227c16cbe117abeac7398265543c20b905396b214785e1a9dc48041f0f3ce128" => :sierra

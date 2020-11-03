@@ -1,18 +1,24 @@
 class Geos < Formula
   desc "Geometry Engine"
   homepage "https://trac.osgeo.org/geos"
-  url "https://download.osgeo.org/geos/geos-3.7.3.tar.bz2"
-  sha256 "02035ae4e0ad711fa5a5556d7712530029edacac364b5b9c3ade0ded865fca7e"
+  url "https://download.osgeo.org/geos/geos-3.8.1.tar.bz2"
+  sha256 "4258af4308deb9dbb5047379026b4cd9838513627cb943a44e16c40e42ae17f7"
+  revision 1
+
+  livecheck do
+    url "https://download.osgeo.org/geos/"
+    regex(/href=.*?geos[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "ff40b1f3533d27f19ddc89ef3836f41f816b67bc492b52b592c49fab66f5f701" => :catalina
-    sha256 "ef713f51fa1a2bfada35f3cb002ee36dc4289b59487dc79e46a4ad9ce1236bc5" => :mojave
-    sha256 "309f427d5560709649390de757980e37dbedc7851f2f0e02d54fbcd2e2678080" => :high_sierra
+    sha256 "96668ef5d3512c74d8b9c029d36d52171e1d26e90935f4a108f51101c34df313" => :catalina
+    sha256 "32ad6e55282b63e933ca43309989943da06bd34eb151b8ca2f81ca70eb4ef146" => :mojave
+    sha256 "f17377d259393a9c0a7dd2ce41b7af6a09c2f4c137afe267ed7650adccc86c3f" => :high_sierra
   end
 
   depends_on "swig" => :build
-  depends_on "python"
+  depends_on "python@3.8"
 
   def install
     # https://trac.osgeo.org/geos/ticket/771
@@ -24,7 +30,7 @@ class Geos < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-python",
-                          "PYTHON=#{Formula["python"].opt_bin}/python3"
+                          "PYTHON=#{Formula["python@3.8"].opt_bin}/python3"
     system "make", "install"
   end
 

@@ -12,10 +12,12 @@ class LibbitcoinConsensus < Formula
     sha256 "d1c377534d2bec37652a62790e44e443cc3a72ef85b822679e07939fe2a51982" => :sierra
 =======
   sha256 "a4252f40910fcb61da14cf8028bf3824125bacb0fc251491c9bb4e2818065fca"
+  license "AGPL-3.0"
   revision 1
 
   bottle do
     cellar :any
+    sha256 "640bcb7886f6a844ac2de43be86646d4732fb9e77f0a260a58086b990bc821ae" => :catalina
     sha256 "fdc8742a5540f9503709a7f1e271b11551e297e915b081ad34f3f6a4290061bb" => :mojave
     sha256 "a186bf54816ed738b5f491df36f781728a84b1dd7fdf8aedd101231e7f03c20b" => :high_sierra
     sha256 "3d7714fde2d05817a98a42dc42da248fac643a9e645b2251d597b4155d7dd28b" => :sierra

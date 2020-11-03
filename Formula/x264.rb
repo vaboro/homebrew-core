@@ -1,29 +1,59 @@
 class X264 < Formula
   desc "H.264/AVC encoder"
   homepage "https://www.videolan.org/developers/x264.html"
-  head "https://git.videolan.org/git/x264.git"
+  license "GPL-2.0"
+  head "https://code.videolan.org/videolan/x264.git"
 
   stable do
     # the latest commit on the stable branch
-    url "https://git.videolan.org/git/x264.git",
-        :revision => "0a84d986e7020f8344f00752e3600b9769cc1e85"
-    version "r2917"
+    url "https://code.videolan.org/videolan/x264.git",
+        revision: "cde9a93319bea766a92e306d69059c76de970190"
+    version "r3011"
+  end
+
+  # There's no guarantee that the versions we find on the `release-macos` index
+  # page are stable but there didn't appear to be a different way of getting
+  # the version information at the time of writing.
+  livecheck do
+    url "https://artifacts.videolan.org/x264/release-macos/"
+    regex(%r{href=.*?x264[._-](r\d+)[._-][\da-z]+/?["' >]}i)
   end
 
   bottle do
     cellar :any
-    sha256 "ffa8c266ebaf05d45d7b50c73351cb3c5ea0c76fadd2bb421fc058f31bfc875f" => :catalina
-    sha256 "474593a6930921e1668ff97daaa211d6b0da6c48a08f928496d76b45542afafe" => :mojave
-    sha256 "0aad96ccfbf09fbb4cbbaa708c9ff6b46829bd92873f482b05582ee0f7389624" => :high_sierra
-    sha256 "845455c25e8966fd2a1dc9c08b78df6c9a28d73848c187b411ef5d34de6094d0" => :sierra
+    rebuild 1
+    sha256 "ba7da48fdd2dc85d18cf8ab11563bc9bfc04493a65a9909c5f70c84433ce5a7c" => :catalina
+    sha256 "309008e3a647544faf6fd640ab8d91a30082b1d100126b8afbea3912ba32ffa3" => :mojave
+    sha256 "5e03addc818d8631053aea74bf121de8aa885991646082a1dd2dd0cc57b00ef3" => :high_sierra
   end
 
   depends_on "nasm" => :build
 
+  if MacOS.version <= :high_sierra
+    # Stack realignment requires newer Clang
+    # https://code.videolan.org/videolan/x264/-/commit/b5bc5d69c580429ff716bafcd43655e855c31b02
+    depends_on "gcc"
+    fails_with :clang
+  end
+
+  # update config.* and configure: add Apple Silicon support.
+  # upstream PR https://code.videolan.org/videolan/x264/-/merge_requests/35
+  # Can be removed once it gets merged into stable branch
+  patch do
+    url "https://code.videolan.org/videolan/x264/-/commit/eb95c2965299ba5b8598e2388d71b02e23c9fba7.diff?full_index=1"
+    sha256 "7cdc60cffa8f3004837ba0c63c8422fbadaf96ccedb41e505607ead2691d49b9"
+  end
+
   def install
+    # Work around Xcode 11 clang bug
+    # https://bitbucket.org/multicoreware/x265/issues/514/wrong-code-generated-on-macos-1015
+    ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
+
     args = %W[
       --prefix=#{prefix}
       --disable-lsmash
+      --disable-swscale
+      --disable-ffms
       --enable-shared
       --enable-static
       --enable-strip

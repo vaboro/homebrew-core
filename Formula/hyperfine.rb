@@ -1,20 +1,27 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://github.com/sharkdp/hyperfine/archive/v1.7.0.tar.gz"
-  sha256 "d936aab473775e76c3a749828054e3f7d42e3909e8b0f56f99ecf6aa169a9bd3"
+  url "https://github.com/sharkdp/hyperfine/archive/v1.10.0.tar.gz"
+  sha256 "b949d6c1a78e9c1c5a7bb6c241fcd51d6faf00bba5719cc312f57b5b301cc854"
+  license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1e594b60a9a42d58a48d257b4a3bfa9749ee49411109a8e0eadd1518e8765c46" => :mojave
-    sha256 "3800230a38043d4e39d6e256c51ad8993d473e0c43aac1831278516c072b1f02" => :high_sierra
-    sha256 "178a014e8792930ccf1114f035188e8a894c3688356257178e4bcec1dd008e49" => :sierra
+    sha256 "09e341141f121b5b0caf0b4a9552b79a0777f8076910b1c91a65c29483102b36" => :catalina
+    sha256 "29051b59797e70714593561f09901ef02e9c79bc9b9b4b6ae226c53ca021f4ca" => :mojave
+    sha256 "49ea032f8c1403e6ab23e0f451e9bdf2e16f6e581cbd84f94743243ced62910d" => :high_sierra
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    ENV["SHELL_COMPLETIONS_DIR"] = buildpath
+    system "cargo", "install", *std_cargo_args
+    man1.install "doc/hyperfine.1"
+    bash_completion.install "hyperfine.bash"
+    fish_completion.install "hyperfine.fish"
+    zsh_completion.install "_hyperfine"
   end
 
   test do

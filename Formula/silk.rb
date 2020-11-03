@@ -1,19 +1,26 @@
 class Silk < Formula
   desc "Collection of traffic analysis tools"
   homepage "https://tools.netsa.cert.org/silk/"
-  url "https://tools.netsa.cert.org/releases/silk-3.18.2.tar.gz"
-  sha256 "855ce1ce862fc2cb7146a04cbe60ba2584ff7df176e07494a2f14d26976b4c2b"
+  url "https://tools.netsa.cert.org/releases/silk-3.19.1.tar.gz"
+  sha256 "b287de07502c53d51e9ccdcc17a46d8a4d7a59db9e5ae7add7b82458a9da45a7"
+
+  livecheck do
+    url :homepage
+    regex(%r{".*?/silk[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
-    sha256 "c90d8dfbda150c1a97e55a749fec32291f85d49479dd2726fbf48b9708c09fc4" => :mojave
-    sha256 "69d9342a0ebfa1429437d3fe656f531599b349da0ab4d057f46c8fd47b841fa3" => :high_sierra
-    sha256 "7b0527921b55dab17386e5d334179e7eaf87cc5e1a19fc6df067b2078dc3e43c" => :sierra
+    sha256 "4a88b111ce742a948b91b9441f2bbc7e821ffd3691673086ff46e8e27fbda31e" => :catalina
+    sha256 "923bc8b774f207d23073195b49befba72e378e79846b6809066f55f3df87c329" => :mojave
+    sha256 "663d2a858210750b8650e4f0e516dd6530fb5d08a7c501f8daa937572d8a81ee" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "libfixbuf"
   depends_on "yaf"
+
+  uses_from_macos "libpcap"
 
   def install
     args = %W[

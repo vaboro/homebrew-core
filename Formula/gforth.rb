@@ -3,13 +3,13 @@ class Gforth < Formula
   homepage "https://www.gnu.org/software/gforth/"
   url "https://www.complang.tuwien.ac.at/forth/gforth/gforth-0.7.3.tar.gz"
   sha256 "2f62f2233bf022c23d01c920b1556aa13eab168e3236b13352ac5e9f18542bb0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 "fad1852c887abe73b0142456849bca8fe69a87d8eb68f3d7d64e3120aef36d09" => :mojave
-    sha256 "f0a7cb803ec02c2599dfddfba3dc91e00353d526307a50d93c3962e67fe914a0" => :high_sierra
-    sha256 "c18312f7e27c15dce54614cff5cbb76f4356f8d40171cf3edafb96ecd981bb99" => :sierra
+    cellar :any
+    sha256 "e9063c35a2df4513ecb8c1aae8c02273c3da22487d90071db416c0b2b9bf1668" => :catalina
+    sha256 "25fd07e36c780229c02e3243b7aa71c3b3b2744e1626409f6321ad2d99c67471" => :mojave
+    sha256 "c5f42bd1b46307d521ccd626d7a5a4b030c48dd1788d4d580efb2d8aaa6d04bc" => :high_sierra
   end
 
   depends_on "emacs" => :build

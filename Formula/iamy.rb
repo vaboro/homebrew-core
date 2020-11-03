@@ -3,10 +3,12 @@ class Iamy < Formula
   homepage "https://github.com/99designs/iamy"
   url "https://github.com/99designs/iamy/archive/v2.3.2.tar.gz"
   sha256 "66d44dd6af485b2b003b0aa1c8dcd799f7bae934f1ce1efb7e5d5f6cfe7f8bf2"
+  license "MIT"
   head "https://github.com/99designs/iamy.git"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "a74e94857f4b788918ac74f9ef20c3c6c19a0e1164522a4591165b0d070795a4" => :catalina
     sha256 "d24e802f1fc572c7d49620531e57a5e143956b2ce1e1d05b2320167b09fbf875" => :mojave
     sha256 "aac8b68119dad48d8aca16a2355cc5c8605e8b1fe44b18e5eb8326216873d657" => :high_sierra
     sha256 "1d22caa158fea3cb67ca07ef5f0785dc9f8568470d0323a5958229ed1f650f6c" => :sierra

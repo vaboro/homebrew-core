@@ -4,8 +4,13 @@ class Rnv < Formula
   url "https://downloads.sourceforge.net/project/rnv/Sources/1.7.11/rnv-1.7.11.tar.bz2"
   sha256 "b2a1578773edd29ef7a828b3a392bbea61b4ca8013ce4efc3b5fbc18662c162e"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
+    sha256 "9a780a7b9ed3b264a7d0471aba7aac503b60640af76156028ecf118a0c35665e" => :catalina
     sha256 "06a2cb705d679da7de638434f45e28764dcd448863d31f6b39ab090dfde4c04f" => :mojave
     sha256 "9bf4571824c6d8e837cfcad7ac5e16c6bfc120d4638f0428cdfb8f14203b8c41" => :high_sierra
     sha256 "8dd3263bb656dcca22605b12faf4c6f54d65e5040e58a7a464c85b69ca19dc99" => :sierra
@@ -16,7 +21,7 @@ class Rnv < Formula
 
   depends_on "expat"
 
-  conflicts_with "arx-libertatis", :because => "both install `arx` binaries"
+  conflicts_with "arx-libertatis", because: "both install `arx` binaries"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

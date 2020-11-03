@@ -1,18 +1,18 @@
 class Profanity < Formula
   desc "Console based XMPP client"
-  homepage "http://www.profanity.im/"
-  url "https://profanity-im.github.io/profanity-0.7.0.tar.gz"
-  sha256 "f1eb99be01683d41b891b0f997f4c873c9bb87b0b6b8400b7fccb8e553d514bb"
-  revision 1
+  homepage "https://profanity-im.github.io"
+  url "https://profanity-im.github.io/profanity-0.9.5.tar.gz"
+  sha256 "23f7b2e5c6cf85913b9e7a228802bca9ecb1d1cf3bf8f8f285e9676176a24902"
+  license "GPL-3.0"
 
   bottle do
-    sha256 "f22a03bebff8b2f665f43d53fb73f85d43c4527335df6a51e7600dbb0fb5828e" => :mojave
-    sha256 "98a55ec40c11d1909d4651cf3263e20da2a698acee294a2ea1241cec140aae6b" => :high_sierra
-    sha256 "f5ec5037194ddf9117317fed8f521129904b1d13cd24a3133267f13fb9c914eb" => :sierra
+    sha256 "b53f7fbd103d911f55337861bf36957cfaead39e8c38478ed03eceb41b507872" => :catalina
+    sha256 "7112d51c1a187ca47b6d245d5600b46b3f0765efd5f2a215ce1a2d2327f2b884" => :mojave
+    sha256 "21837ee57161928d0389dcd7170245b61e0d2f2c8b2f702dc6127bd98380b477" => :high_sierra
   end
 
   head do
-    url "https://github.com/boothj5/profanity.git"
+    url "https://github.com/profanity-im/profanity.git"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -25,10 +25,13 @@ class Profanity < Formula
   depends_on "gnutls"
   depends_on "gpgme"
   depends_on "libotr"
+  depends_on "libsignal-protocol-c"
   depends_on "libstrophe"
   depends_on "openssl@1.1"
   depends_on "readline"
   depends_on "terminal-notifier"
+
+  uses_from_macos "curl"
 
   def install
     system "./bootstrap.sh" if build.head?

@@ -3,6 +3,7 @@ class Sha1dc < Formula
   homepage "https://github.com/cr-marcstevens/sha1collisiondetection"
   url "https://github.com/cr-marcstevens/sha1collisiondetection/archive/stable-v1.0.3.tar.gz"
   sha256 "77a1c2b2a4fbe4f78de288fa4831ca63938c3cb84a73a92c79f436238bd9ac07"
+  license "MIT"
 
   # The "master" branch is unusably broken and behind the
   # "simplified_c90" branch that's the basis for release.
@@ -10,6 +11,7 @@ class Sha1dc < Formula
 
   bottle do
     cellar :any
+    sha256 "ed78939b30e385c3adeac725b9f2865d60b8c0e15e1ec75d1b6c90855dc14206" => :catalina
     sha256 "1c12564c84282e1ddbac545864bd695527dca9026411725e4a4604eaed81ec8b" => :mojave
     sha256 "a489f11b91a88486274717eace83368f6b072b134ddc62001157b1fae9873dab" => :high_sierra
     sha256 "9eba4b19247672b715376e2086689e7418235d850a158636d2ba3deb46851933" => :sierra

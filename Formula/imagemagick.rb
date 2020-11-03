@@ -1,25 +1,29 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
-  # Please always keep the Homebrew mirror as the primary URL as the
-  # ImageMagick site removes tarballs regularly which means we get issues
-  # unnecessarily and older versions of the formula are broken.
-  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.8-66.tar.xz"
-  mirror "https://www.imagemagick.org/download/ImageMagick-7.0.8-66.tar.xz"
-  sha256 "300fbcf4745a4ca89c2b6f404170502e2e270524d0512523b1449de1f2e76a86"
+  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-29.tar.xz"
+  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-29.tar.xz"
+  sha256 "0d2b0da5bcc4b4de82d25dc641a51c36bc59b73c847e0407468373a4bb989779"
+  license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git"
 
+  livecheck do
+    url "https://www.imagemagick.org/download/"
+    regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
+  end
+
   bottle do
-    sha256 "adc548891ac2f3cb682adbbf9603bd5b2fadfb0ac68dd982827bcc80a1a055cf" => :catalina
-    sha256 "8bb0ae51e8ff5ecc22f08712a9ba5af1f08dfe26debef4cc2b54195da4de6268" => :mojave
-    sha256 "6a85643836f2def3f3aad705f17dab392c6497ee4eabbf23ccd542617dc50922" => :high_sierra
-    sha256 "ac7db948f4e3952fb560df507361590823cfa232d19061f629e8219d2531ff2d" => :sierra
+    sha256 "b78cb828d6e3652bd84f0cea56778f355c0a73f95a6ea694e44d0376e604ebc8" => :catalina
+    sha256 "e003b972aee4579d626f9b24e40a256b9a192152c6209c48afc2bc8ab2822055" => :mojave
+    sha256 "d7adcdaaa74f9f501e8797da436f497fca809955a0ed62654328e415ea9fafc6" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
+  depends_on "ghostscript"
   depends_on "jpeg"
   depends_on "libheif"
+  depends_on "liblqr"
   depends_on "libomp"
   depends_on "libpng"
   depends_on "libtiff"
@@ -29,14 +33,19 @@ class Imagemagick < Formula
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "xz"
+
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   skip_clean :la
 
   def install
+    # Avoid references to shim
+    inreplace Dir["**/*-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
+
     args = %W[
-      --disable-osx-universal-binary
+      --enable-osx-universal-binary=no
       --prefix=#{prefix}
       --disable-dependency-tracking
       --disable-silent-rules
@@ -49,8 +58,9 @@ class Imagemagick < Formula
       --with-openexr
       --with-webp=yes
       --with-heic=yes
-      --without-gslib
+      --with-gslib
       --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
+      --with-lqr
       --without-fftw
       --without-pango
       --without-x
@@ -58,7 +68,7 @@ class Imagemagick < Formula
       --enable-openmp
       ac_cv_prog_c_openmp=-Xpreprocessor\ -fopenmp
       ac_cv_prog_cxx_openmp=-Xpreprocessor\ -fopenmp
-      LDFLAGS=-lomp
+      LDFLAGS=-lomp\ -lz
     ]
 
     # versioned stuff in main tree is pointless for us
@@ -74,5 +84,6 @@ class Imagemagick < Formula
     %w[Modules freetype jpeg png tiff].each do |feature|
       assert_match feature, features
     end
+    assert_match "Helvetica", shell_output("#{bin}/identify -list font")
   end
 end

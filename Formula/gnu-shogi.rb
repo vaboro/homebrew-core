@@ -1,11 +1,17 @@
 class GnuShogi < Formula
-  desc "GNU Shogi (Japanese Chess)"
+  desc "Japanese Chess"
   homepage "https://www.gnu.org/software/gnushogi/"
   url "https://ftp.gnu.org/gnu/gnushogi/gnushogi-1.4.2.tar.gz"
   mirror "https://ftpmirror.gnu.org/gnushogi/gnushogi-1.4.2.tar.gz"
   sha256 "1ecc48a866303c63652552b325d685e7ef5e9893244080291a61d96505d52b29"
+  license "GPL-3.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
+    sha256 "6c559fdfcd24543c1f83f681fe3337048783d17649804b642fb0063dee88d7c8" => :catalina
     sha256 "c52d5743a6b9b6aeff9ba4b87104fa7adb58e7752683420e2c038f0216a2447d" => :mojave
     sha256 "20895a9d3fe87357df4dad1aaae16fee4d7a0c70e95119756c8ab2928817c161" => :high_sierra
     sha256 "677531c9eb7bdd01f22862c24d5ab144f7b78bd672223854fc169d103a9924e2" => :sierra

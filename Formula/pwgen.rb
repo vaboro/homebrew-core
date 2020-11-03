@@ -3,9 +3,15 @@ class Pwgen < Formula
   homepage "https://pwgen.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/pwgen/pwgen/2.08/pwgen-2.08.tar.gz"
   sha256 "dab03dd30ad5a58e578c5581241a6e87e184a18eb2c3b2e0fffa8a9cf105c97b"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "725911d1fd71b259acb7b907c09ef86a03545afe95e161856130992fc0789ffc" => :catalina
     sha256 "2f35a2d575e16a2ab0497cabfc927a7b40aba68edba574889bf9bbdf03572c12" => :mojave
     sha256 "185f2f56eb03da60277520734452204ec2e0059cbc1f0af5d0fec1e7fa837658" => :high_sierra
     sha256 "01a0709f74923e7b86d680f03d3ec056d3175cb7e54be176a26d5bfae890fd21" => :sierra

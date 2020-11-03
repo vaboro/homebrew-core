@@ -1,19 +1,25 @@
 class Libbluray < Formula
   desc "Blu-Ray disc playback library for media players like VLC"
   homepage "https://www.videolan.org/developers/libbluray.html"
-  url "https://download.videolan.org/pub/videolan/libbluray/1.1.2/libbluray-1.1.2.tar.bz2"
-  sha256 "a3dd452239b100dc9da0d01b30e1692693e2a332a7d29917bf84bb10ea7c0b42"
+  url "https://download.videolan.org/videolan/libbluray/1.2.0/libbluray-1.2.0.tar.bz2"
+  sha256 "cd41ea06fd2512a77ebf63872873641908ef81ce2fe4e4c842f6035a47696c11"
+  license "LGPL-2.1-or-later"
+
+  livecheck do
+    url "https://download.videolan.org/pub/videolan/libbluray/"
+    regex(%r{>([\d.]+)/<}i)
+  end
 
   bottle do
     cellar :any
     rebuild 1
-    sha256 "02450f9c05b48ec198c967ef34b109002c9d9f2c496ef8876f3779e451ed2271" => :catalina
-    sha256 "cf27d6ba0b4e169785801140ba11fb47e78040f26b5af9e2279bc808e5b62bc3" => :mojave
-    sha256 "1566fcca5871d636404d2517dba45f6c287ab8dd5c9ffc8b9b09dc1bf2af0e18" => :high_sierra
+    sha256 "9c6ef542e0a86886c669d99765c9a4f649e62a6e48ebd5a2dd961255e8657426" => :catalina
+    sha256 "49791738b4090ceba841a1a867c6c9724257f631e054ec716e67924b838a0059" => :mojave
+    sha256 "dbba386dc3a04515924b9423c37f293a57cceee8295e15994b3afe856a5e291a" => :high_sierra
   end
 
   head do
-    url "https://git.videolan.org/git/libbluray.git"
+    url "https://code.videolan.org/videolan/libbluray.git"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -21,15 +27,16 @@ class Libbluray < Formula
   end
 
   depends_on "ant" => :build
-  depends_on :java => ["1.8", :build]
+  depends_on java: ["1.8", :build]
   depends_on "pkg-config" => :build
   depends_on "fontconfig"
   depends_on "freetype"
 
+  uses_from_macos "libxml2"
+
   def install
     # Need to set JAVA_HOME manually since ant overrides 1.8 with 1.8+
-    cmd = Language::Java.java_home_cmd("1.8")
-    ENV["JAVA_HOME"] = Utils.popen_read(cmd).chomp
+    ENV["JAVA_HOME"] = Language::Java.java_home("1.8")
 
     # https://mailman.videolan.org/pipermail/libbluray-devel/2014-April/001401.html
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE"

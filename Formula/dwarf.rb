@@ -3,10 +3,12 @@ class Dwarf < Formula
   homepage "https://github.com/elboza/dwarf-ng/"
   url "https://github.com/elboza/dwarf-ng/archive/dwarf-0.4.0.tar.gz"
   sha256 "a64656f53ded5166041ae25cc4b1ad9ab5046a5c4d4c05b727447e73c0d83da0"
+  license "GPL-2.0"
   revision 1
 
   bottle do
     cellar :any
+    sha256 "1d0e1d803ab771d58a56cd52939d01b7c9e1a8474cb80c21b2251320340e5dc2" => :catalina
     sha256 "c10f3ccbb2dc59b7c76c9dd46a71f1e41d7c7faa8fab5f4326599b3a5467c770" => :mojave
     sha256 "92db022169f222a0ce002e6c20e6256cc5636f61c1e6fa1c44b56481c5a2422d" => :high_sierra
     sha256 "dbc5a7043b5888284ddab1d97b57406fc6c24d71c205a54482e3ef0e442e20fd" => :sierra
@@ -14,6 +16,7 @@ class Dwarf < Formula
 
   depends_on "flex"
   depends_on "readline"
+
   uses_from_macos "bison"
 
   def install

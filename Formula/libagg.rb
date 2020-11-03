@@ -4,10 +4,21 @@ class Libagg < Formula
   # Canonical URL inaccessible: https://antigrain.com/agg-2.5.tar.gz
   url "https://ftp.osuosl.org/pub/blfs/8.0/a/agg-2.5.tar.gz"
   sha256 "ab1edc54cc32ba51a62ff120d501eecd55fceeedf869b9354e7e13812289911f"
+  license "GPL-2.0"
+
+  # The homepage for this formula is a copy of the original and was created
+  # after the original was discontinued. There will be no further releases of
+  # the copy of this software used in the formula, as the developer is deceased.
+  # New development of libagg occurs in a fork of v2.4 and can be found at:
+  # https://sourceforge.net/projects/agg/
+  livecheck do
+    skip "No longer developed/maintained"
+  end
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "1ef56d71cf0fc0f5780395069105c7151f02a2264f2469ca3ae824c6366f45a6" => :catalina
     sha256 "97e0bd763cda63b61cefba2e46048275dda4d03cdaed251be5ebd0b7369b8e38" => :mojave
     sha256 "de1daeb1b324b1797f46ff6e6799498019de9256b4e09a128cf686e2572f6f60" => :high_sierra
     sha256 "872f49f0fd96ee65dca4bedba3e82c4fcf0e0b0c45de15afc82a9e70e0f0623c" => :sierra

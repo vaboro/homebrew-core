@@ -1,20 +1,21 @@
 class Lsd < Formula
   desc "Clone of ls with colorful output, file type icons, and more"
   homepage "https://github.com/Peltoche/lsd"
-  url "https://github.com/Peltoche/lsd/archive/0.16.0.tar.gz"
-  sha256 "e2406748d78431a1c03bdd2404a204a006c19905d926e41a36587b93a791e003"
+  url "https://github.com/Peltoche/lsd/archive/0.18.0.tar.gz"
+  sha256 "2905e5d8d61d98d60c65544f3d41ae77459c8a92a4c7acafadcfb0233b2b7f95"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9cf1be00bfe0f3f7d0142dd1d1f4118be58415f7a8444ff194a5f919a3dd03c9" => :mojave
-    sha256 "1017f694172dec6120c2d49277268ee21f417a363c55a880541c1119bd82fc4e" => :high_sierra
-    sha256 "93be9faa9b2a58a509f7d53a78ce1950bc3a770a13cffdc0980a329b97f14a5f" => :sierra
+    sha256 "4d4006519356f1225dc9ea1cd2bb4c912769070ebd030db56a76c3936dd5a33e" => :catalina
+    sha256 "5b197d19d9de997a5ad79a9438dd9358be5bf63a09555ef3eb7c077ea1760284" => :mojave
+    sha256 "609cf3638d7e41abb52da00a5df801ae2d6faf76757e47a924d07c6f0b5361c9" => :high_sierra
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

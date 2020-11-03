@@ -1,25 +1,32 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.38/gdk-pixbuf-2.38.2.tar.xz"
-  sha256 "73fa651ec0d89d73dd3070b129ce2203a66171dfc0bd2caa3570a9c93d2d0781"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.40/gdk-pixbuf-2.40.0.tar.xz"
+  sha256 "1582595099537ca8ff3b99c6804350b4c058bb8ad67411bbaae024ee7cead4e6"
+  revision 1
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "e3ed1a63293bb4416ac8beefe4538f016f354e2561c340a8278f178826855f58" => :catalina
-    sha256 "07d351a8ad7e28077a839d80e3d55a86ea9d056544e496afc3647b20596fa7ab" => :mojave
-    sha256 "f7d7f81ec134f8ee24798063c84c4a94524d15e252bf64a039819d23bc0842b1" => :high_sierra
-    sha256 "14fb535a5c957c4bb45794fbf29b96004811cecb3ae89be59943a1f5e2cfb8fd" => :sierra
+    sha256 "d70823971bb0c34d1ca997233471c9727dc7fe487ffbda050fad35a873a2b909" => :catalina
+    sha256 "e2599d42eb2cdf08f3784575778ea782e9bd5dfefbf15f7aea5408d8f653a6be" => :mojave
+    sha256 "3e95bd4ea1b357022809c86a104e0e971a264ffc69888026f261d74507abea00" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
   depends_on "glib"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  on_linux do
+    depends_on "shared-mime-info"
+  end
 
   # gdk-pixbuf has an internal version number separate from the overall
   # version number that specifies the location of its module and cache
@@ -38,8 +45,7 @@ class GdkPixbuf < Formula
               "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format(gdk_pixbuf_libdir)",
               "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format('#{HOMEBREW_PREFIX}/lib')"
 
-    args = %W[
-      --prefix=#{prefix}
+    args = std_meson_args + %w[
       -Dx11=false
       -Ddocs=false
       -Dgir=true

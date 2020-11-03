@@ -2,41 +2,28 @@ class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
   url "https://github.com/kyma-project/cli.git",
-      :tag      => "1.5.0",
-      :revision => "6c8148df282e0bd23a377e9e5eb250c33179a1ca"
+      tag:      "1.15.1",
+      revision: "5513567a73cc8d4104b6965937a15771a066e6ed"
+  license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e4f0222bc6915b6a4c73f6565bbc560bec671bd40b420d7fe0934c64e5734e16" => :catalina
-    sha256 "5a8705b6de2acbaa0a6ba66f0af112c6982c9618d006c5a3012298e691e58043" => :mojave
-    sha256 "b3a2fb78d3f063057712823f1bcaef51cdf38606b8b83cb506508e8134017c31" => :high_sierra
+    sha256 "4366d652edb19f7c46454607de15f5eea7092ae0bfb7723fb84cb950b2a4211d" => :catalina
+    sha256 "a128466fb724f79119318fe080db1f88c591485a4b0c6c4c1ada4aae76bdfd3f" => :mojave
+    sha256 "04c3120713e92b6ebe1d6aaf07445f514dd282e917da80cc4225093070ef595e" => :high_sierra
   end
 
-  depends_on "dep" => :build
-  depends_on "go" => :build
+  depends_on "go@1.14" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    bin_path = buildpath/"src/github.com/kyma-project/cli/"
-    bin_path.install Dir["*"]
-
-    cd bin_path do
-      system "dep", "ensure", "-vendor-only"
-      system "make", "build-darwin"
-      bin.install "bin/kyma-darwin" => "kyma"
-    end
+    system "make", "build-darwin"
+    bin.install "bin/kyma-darwin" => "kyma"
   end
 
   test do
-    output = shell_output("#{bin}/kyma --help")
-    assert_match "Kyma CLI allows you to install and manage Kyma.", output
-
-    output = shell_output("#{bin}/kyma version --client")
-    assert_match "Kyma CLI version", output
-
     touch testpath/"kubeconfig"
-    output = shell_output("#{bin}/kyma install --kubeconfig ./kubeconfig 2>&1", 1)
-    assert_match "invalid configuration", output
+    assert_match "invalid configuration",
+      shell_output("#{bin}/kyma install --kubeconfig ./kubeconfig 2>&1", 1)
   end
 end

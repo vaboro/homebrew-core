@@ -1,14 +1,20 @@
 class Xxhash < Formula
   desc "Extremely fast non-cryptographic hash algorithm"
   homepage "https://github.com/Cyan4973/xxHash"
-  url "https://github.com/Cyan4973/xxHash/archive/v0.7.1.tar.gz"
-  sha256 "afa29766cfc0448ff4a1fd9f2c47e02c48d50be5b79749925d15d545008c3f81"
+  url "https://github.com/Cyan4973/xxHash/archive/v0.8.0.tar.gz"
+  sha256 "7054c3ebd169c97b64a92d7b994ab63c70dd53a06974f1f630ab782c28db0f4f"
+  license "BSD-2-Clause"
+
+  livecheck do
+    url "https://github.com/Cyan4973/xxHash/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "be63f1db40715777ed72c20e5a75b0491e863dda33d7ba2ca825f256b3f80ef4" => :mojave
-    sha256 "9b4aad450dcb6469088b53d53d305da3ad300245767f93d8709c9ccddc1e9e86" => :high_sierra
-    sha256 "61ceabdb6921692f69f1f51d256ffde7c88b86b58283471ee005ac7806d2cf5f" => :sierra
+    sha256 "06ea145c49451bf37f2a73139100f436b4bf9f275b77b9dadcb5d36a7b07fae1" => :catalina
+    sha256 "df75758d4b4756b23530ec54e2289148652e3f54d6f9a8e45c43f662bc69d7c2" => :mojave
+    sha256 "821f8c8df3ada242236f2f231ae72cdcaf23412a5e22458c23df453631129300" => :high_sierra
   end
 
   def install

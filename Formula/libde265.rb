@@ -1,24 +1,27 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://github.com/strukturag/libde265/releases/download/v1.0.3/libde265-1.0.3.tar.gz"
-  sha256 "e4206185a7c67d3b797d6537df8dcaa6e5fd5a5f93bd14e65a755c33cd645f7a"
+  url "https://github.com/strukturag/libde265/releases/download/v1.0.6/libde265-1.0.6.tar.gz"
+  sha256 "e2a34ca3934a826d0893e966ee93bc2d207f505253be94ad38fb40ca98cceb5f"
+  license "LGPL-3.0-or-later"
 
   bottle do
     cellar :any
-    sha256 "ba7915f58700104ed63fbaf26b21616b1776fecaddbae33f784273122dc56825" => :catalina
-    sha256 "01179a3f87c9cf12df83db31e3a9de568a37970624b623b27ec92ce2e5513fb0" => :mojave
-    sha256 "318155fde344fe1742f354396bd65fbd2b1ed14f420131f3ed5ff569d5a6b38f" => :high_sierra
-    sha256 "5f247bee31e10b2217023a64e5ef841566f1ee5edc7227dc15110fb507405269" => :sierra
-    sha256 "942f19c7b70c6bc6510715c13752bb99e7a4793f1f028245fd2f2b798a8efe56" => :el_capitan
+    sha256 "119771a3c4b3da418886e2142d27d93191e37ecdebb46d07060f8f7b85fbb1c4" => :catalina
+    sha256 "97450df80726024f5e1f099a4df07555caeead0a89b225ccf895aca0f033d98f" => :mojave
+    sha256 "b1961f6dc7dbba259edafcee3b57741177ba9c6c6b1ccf43337167ec4d0cb246" => :high_sierra
   end
 
   def install
+    extra_args = []
+    extra_args << "--build=aarch64-apple-darwin#{OS.kernel_version}" if Hardware::CPU.arm?
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--disable-sherlock265",
                           "--disable-dec265",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
+                          *extra_args
     system "make", "install"
 
     # Install the test-related executables in libexec.

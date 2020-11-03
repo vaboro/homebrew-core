@@ -1,8 +1,14 @@
 class Composer < Formula
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org/"
-  url "https://getcomposer.org/download/1.9.0/composer.phar"
-  sha256 "c9dff69d092bdec14dee64df6677e7430163509798895fbd54891c166c5c0875"
+  url "https://getcomposer.org/download/1.10.13/composer.phar"
+  sha256 "5ca7445cfd48dd27c5a84aa005a47b4d9fd91132313830609875df3a6973708f"
+  license "MIT"
+
+  livecheck do
+    url "https://github.com/composer/composer.git"
+    regex(/^[\d.]+$/i)
+  end
 
   bottle :unneeded
 

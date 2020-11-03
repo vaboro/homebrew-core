@@ -5,8 +5,14 @@ class Espeak < Formula
   sha256 "bf9a17673adffcc28ff7ea18764f06136547e97bbd9edf2ec612f09b207f0659"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/espeak[._-]v?(\d+(?:\.\d+)+)(?:-source)?\.(?:t|zip)}i)
+  end
+
   bottle do
     rebuild 1
+    sha256 "9e3a743f118a7ca9d177d005d260814d576fc9c72f5cad369204a8c42c54ffb4" => :catalina
     sha256 "055c918c267f825ed18f089c75db7c7408ea25ca93ba1a99e0aaba6f5b3a446d" => :mojave
     sha256 "ff4334be449510bdea51a7d853890fec167914658eb4c5167c5a6b40c6621ee2" => :high_sierra
     sha256 "ad40b912f2b0cf1b72ab89d53729cd61717a9d9b5bc588950cd6318b63c9e133" => :sierra

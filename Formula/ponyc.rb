@@ -1,34 +1,28 @@
 class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.org/"
-  url "https://github.com/ponylang/ponyc/archive/0.32.0.tar.gz"
-  sha256 "e8e070164ca0e4e41e606bde617ccab9cc64aa3dca8c79293635a6fdbcabf454"
-  head "https://github.com/ponylang/ponyc.git"
+  url "https://github.com/ponylang/ponyc.git",
+      tag:      "0.37.0",
+      revision: "991bec5c43bd175bbb64e7400c08b1292e6d0538"
+  license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "1c9e1e67c63f0ba1a4f26f24822d034063a7b0e61aef9f4bd170286c5ef851b9" => :catalina
-    sha256 "78f04a002a09ea593d40ce7de30a55aba15d3938431104453a05bfa7c319759a" => :mojave
-    sha256 "2728aae72d8981fce49a080d34729bce4e36f8c220dc5798723b1318a37d7514" => :high_sierra
+    cellar :any_skip_relocation
+    sha256 "98271b54f1ea1171b63e88d26e5093278553007d2c22d535a86499094b56f7e8" => :catalina
+    sha256 "5167364b13e68c873d6141987e30a2a06e9d3d49da7c2b270aa2d8fba18fe959" => :mojave
+    sha256 "0799b0a955962c33411b0261cadc2d4c556670b19a8094b5acabd21d61153db8" => :high_sierra
   end
 
-  # https://github.com/ponylang/ponyc/issues/1274
-  # https://github.com/Homebrew/homebrew-core/issues/5346
-  pour_bottle? do
-    reason <<~EOS
-      The bottle requires Xcode/CLT 8.0 or later to work properly.
-    EOS
-    satisfy { DevelopmentTools.clang_build_version >= 800 }
-  end
-
-  depends_on "llvm@7"
-  depends_on :macos => :yosemite
+  depends_on "cmake" => :build
 
   def install
     ENV.cxx11
-    ENV["LLVM_CONFIG"] = "#{Formula["llvm@7"].opt_bin}/llvm-config"
-    system "make", "install", "verbose=1", "config=release",
-           "ponydir=#{prefix}", "prefix="
+
+    ENV["MAKEFLAGS"] = "build_flags=-j#{ENV.make_jobs}"
+    system "make", "libs"
+    system "make", "configure"
+    system "make", "build"
+    system "make", "install", "DESTDIR=#{prefix}"
   end
 
   test do

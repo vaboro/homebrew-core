@@ -5,6 +5,7 @@ class Pdf2image < Formula
   sha256 "e8672c3bdba118c83033c655d90311db003557869c92903e5012cdb368a68982"
 
   bottle do
+    sha256 "7a62006adfc88fc38c5333d94836127d4f51228291dfddc726f10a1cac1b6383" => :catalina
     sha256 "722d8eefc7f7f12555f4997ca13470fda8b508a2683bc9edc6bfa5b883707202" => :mojave
     sha256 "59ba0fc004f64cafaeb8e9beb6c07964b8df8fb10bf653aeb83713e3610ac182" => :high_sierra
     sha256 "46df7ae58a1bfc73cd1a1c1075de032724514d29995e965169d69f51409cad7e" => :sierra
@@ -16,8 +17,8 @@ class Pdf2image < Formula
   depends_on "ghostscript"
   depends_on :x11
 
-  conflicts_with "poppler", "xpdf",
-    :because => "pdf2image, poppler, and xpdf install conflicting executables"
+  conflicts_with "pdftohtml", "poppler", "xpdf",
+    because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 
   def install
     system "./configure", "--prefix=#{prefix}"
@@ -31,7 +32,7 @@ class Pdf2image < Formula
 
     # Add X11 libs manually; the Makefiles don't use LDFLAGS properly
     inreplace ["src/Makefile", "xpdf/Makefile"],
-      "LDFLAGS =", "LDFLAGS=-L#{MacOS::X11.lib}"
+      "LDFLAGS =", "LDFLAGS=-L#{MacOS::XQuartz.lib}"
 
     system "make"
     system "make", "install"

@@ -4,9 +4,11 @@ class Sqtop < Formula
   url "https://github.com/paleg/sqtop/archive/v2015-02-08.tar.gz"
   version "2015-02-08"
   sha256 "eae4c8bc16dbfe70c776d990ecf14328acab0ed736f0bf3bd1647a3ac2f5e8bf"
+  license "GPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "653be227eb16e647b90f0f034543a490476e3ceaa0e9c165b1963b916b4a9703" => :catalina
     sha256 "27786a7ca63d00ecb47e9f1e3e844a077d38048871cec3c03308831716338dc1" => :mojave
     sha256 "fe9a704fdf7f24dadba6b4f7cc20f8f07d93c19450701e01b408ea2f7574ec63" => :high_sierra
     sha256 "30f51d2886adf914eef22af21dfac92f544c59c88b6e7961972eb6702e48d0c0" => :sierra

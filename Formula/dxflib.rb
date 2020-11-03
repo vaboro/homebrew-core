@@ -4,9 +4,15 @@ class Dxflib < Formula
   url "https://www.ribbonsoft.com/archives/dxflib/dxflib-2.5.0.0-1.src.tar.gz"
   sha256 "20ad9991eec6b0f7a3cc7c500c044481a32110cdc01b65efa7b20d5ff9caefa9"
 
+  livecheck do
+    url "https://www.ribbonsoft.com/en/dxflib-downloads"
+    regex(/href=.*?dxflib[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     rebuild 2
+    sha256 "70b4e8b65b8a1090eb19080c1ec7675ec58aaef4c573ac2af89f2fe985e23d7e" => :catalina
     sha256 "1b9e667aa5bb30e050f41370afbbfaa91a563ab015a4ab4930c7dbb99fccc956" => :mojave
     sha256 "fb790fe1b9357907e77f50650ed0d696e855c311320d726472ac511297994573" => :high_sierra
     sha256 "db45aa2b00f82b996370eaf1321e0cce79fc3868c42a9524e10adce478139bc2" => :sierra

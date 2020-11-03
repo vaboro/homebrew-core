@@ -1,27 +1,41 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https://ninja-build.org/"
-  url "https://github.com/ninja-build/ninja/archive/v1.9.0.tar.gz"
-  sha256 "5d7ec75828f8d3fd1a0c2f31b5b0cea780cdfe1031359228c428c1a48bfcd5b9"
+  url "https://github.com/ninja-build/ninja/archive/v1.10.1.tar.gz"
+  sha256 "a6b6f7ac360d4aabd54e299cc1d8fa7b234cd81b9401693da21221c62569a23e"
+  license "Apache-2.0"
+  revision 1
   head "https://github.com/ninja-build/ninja.git"
+
+  livecheck do
+    url "https://github.com/ninja-build/ninja/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9cfd9fe284e4c4eda7bda2a7a5c3970b22775df472a57e7aafea12a36b69357f" => :catalina
-    sha256 "d3f825237b23175d46ed02f492df8297968f3ce45f328362f167caf962323c98" => :mojave
-    sha256 "c6057431959eb3117f5eca1bb62d2403d189f3091f2cacaef89c9696b2ecec39" => :high_sierra
-    sha256 "dc8bba938426720e0f4f2158b882f331737059919cf46ff59fcb786261b8ea8c" => :sierra
+    rebuild 1
+    sha256 "573d01508893add0fadf069f53d6ccc968e93943d1a3e40bf65b4d8ac8ed0a1f" => :catalina
+    sha256 "d431b62893122706a8feb184e61c0d5836189e1e2614764540a356ae0a665ed3" => :mojave
+    sha256 "d7ea07c919779729613eba445b34aaa0425d505af17ea5bda70dada8ac473ddb" => :high_sierra
+  end
+
+  depends_on "cmake" => :build
+
+  # from https://github.com/ninja-build/ninja/pull/1836, remove in next release
+  patch do
+    url "https://github.com/ninja-build/ninja/commit/2f3e5275e2ea67cb634488957adbb997c2ff685f.diff?full_index=1"
+    sha256 "aee7a3e862c8ded377e4a948390519bc7ff17cae69ae779d3c5172562d9559f2"
   end
 
   def install
-    system "python", "configure.py", "--bootstrap"
+    system "cmake", "-Bbuild-cmake", "-H.", *std_cmake_args
+    system "cmake", "--build", "build-cmake"
 
     # Quickly test the build
-    system "./configure.py"
-    system "./ninja", "ninja_test"
-    system "./ninja_test", "--gtest_filter=-SubprocessTest.SetWithLots"
+    system "./build-cmake/ninja_test"
 
-    bin.install "ninja"
+    bin.install "build-cmake/ninja"
     bash_completion.install "misc/bash-completion" => "ninja-completion.sh"
     zsh_completion.install "misc/zsh-completion" => "_ninja"
   end
@@ -36,5 +50,11 @@ class Ninja < Formula
       build foo.o: cc foo.c
     EOS
     system bin/"ninja", "-t", "targets"
+    port = free_port
+    fork do
+      exec bin/"ninja", "-t", "browse", "--port=#{port}", "--no-browser", "foo.o"
+    end
+    sleep 2
+    assert_match "foo.c", shell_output("curl -s http://localhost:#{port}?foo.o")
   end
 end

@@ -4,9 +4,16 @@ class Stress < Formula
   url "https://people.seas.harvard.edu/~apw/stress/stress-1.0.4.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/s/stress/stress_1.0.4.orig.tar.gz"
   sha256 "057e4fc2a7706411e1014bf172e4f94b63a12f18412378fca8684ca92408825b"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/s/stress/"
+    regex(/href=.*?stress[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "ca9674089210d1cac7af47b5f8402ce41bcbc8348892a72f226bb4d29587b349" => :catalina
     sha256 "57923f0549beb3e528ad7683a09d615096d875512fb46b9ed7c54aa6382ca793" => :mojave
     sha256 "3087af5469f5867b82ab85158c7268d0172b58da91baec06916659bb0fd2f930" => :high_sierra
     sha256 "1a18d667f7804579758079e3a3f94683a64687120b5f4b77cf25a63f3f8cec39" => :sierra

@@ -1,13 +1,20 @@
 class Glib < Formula
+  include Language::Python::Shebang
+
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.62/glib-2.62.1.tar.xz"
-  sha256 "3dd9024e1d0872a6da7ac509937ccf997161b11d7d35be337c7e829cbae0f9df"
+  url "https://download.gnome.org/sources/glib/2.66/glib-2.66.0.tar.xz"
+  sha256 "c5a66bf143065648c135da4c943d2ac23cce15690fc91c358013b2889111156c"
+  license "LGPL-2.1-or-later"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "0868afcbb10b19fb173ba859504510fbba8672ead539a89da8743973738d82c3" => :catalina
-    sha256 "2bddb0094d0ef4ef563d56a0a5961ef95dd22130ff38b81148f5285c29e8dc2a" => :mojave
-    sha256 "2370f23c9e8b7e1f4ad08ef557517745b93ed105682b60329a706f569559e085" => :high_sierra
+    sha256 "142399144487c3f9e93342dfa39ecf6116174ac237481cd6bacb18790f34a6a3" => :catalina
+    sha256 "c661a50a97315c5813fe311ccb05d7a8718396951e80585d8dafca411bfba011" => :mojave
+    sha256 "ccecc73842ecd06db6086457332cb2d7b5005d63962201c049d51de523c124a9" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -16,14 +23,17 @@ class Glib < Formula
   depends_on "gettext"
   depends_on "libffi"
   depends_on "pcre"
-  depends_on "python"
-  uses_from_macos "util-linux" # for libmount.so
+  depends_on "python@3.8"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,
   # but needed to fix an assumption about the location of the d-bus machine
   # id file.
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/6164294a7/glib/hardcoded-paths.diff"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/6164294a75541c278f3863b111791376caa3ad26/glib/hardcoded-paths.diff"
     sha256 "a57fec9e85758896ff5ec1ad483050651b59b7b77e0217459ea650704b7d422b"
   end
 
@@ -32,7 +42,7 @@ class Glib < Formula
       "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX
 
     # Disable dtrace; see https://trac.macports.org/ticket/30413
-    args = %W[
+    args = std_meson_args + %W[
       -Diconv=auto
       -Dgio_module_dir=#{HOMEBREW_PREFIX}/lib/gio/modules
       -Dbsymbolic_functions=false
@@ -40,9 +50,10 @@ class Glib < Formula
     ]
 
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", *args, ".."
+      system "meson", *args, ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
+      bin.find { |f| rewrite_shebang detected_python_shebang, f }
     end
 
     # ensure giomoduledir contains prefix, as this pkgconfig variable will be
@@ -56,7 +67,7 @@ class Glib < Formula
     # have a pkgconfig file, so we add gettext lib and include paths here.
     gettext = Formula["gettext"].opt_prefix
     inreplace lib+"pkgconfig/glib-2.0.pc" do |s|
-      s.gsub! "Libs: -lintl -L${libdir} -lglib-2.0",
+      s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
               "Libs: -L${libdir} -lglib-2.0 -L#{gettext}/lib -lintl"
       s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
               "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext}/include"

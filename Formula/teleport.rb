@@ -1,32 +1,48 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://gravitational.com/teleport"
-  url "https://github.com/gravitational/teleport/archive/v4.1.0.tar.gz"
-  sha256 "94e3b54aac069a8b252657cba4c7333f581adefb7afb2316946f899b9b51921e"
+  url "https://github.com/gravitational/teleport/archive/v4.3.5.tar.gz"
+  sha256 "7a4081117e4a13bfbea0d1cc64aef6e8103c360551523b2abef0971712beb5a9"
+  license "Apache-2.0"
   head "https://github.com/gravitational/teleport.git"
+
+  livecheck do
+    url "https://github.com/gravitational/teleport/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "978b23a23a158a38e6c0cf077b7feeb7836a35d4f8811036e7daf495312a4706" => :catalina
-    sha256 "3193ea574dfd40ca9edce1c4fe92ffe22faf0235c7020c6c41e6eef266a90353" => :mojave
-    sha256 "d5faf8f14d241f4065d0a950b63258dbe9b14677f8333eb8125d204fa4ab8212" => :high_sierra
+    sha256 "25f58c4d14b1276df4b957b51edebb9cfae56083f6084cc831c29ea5e79720e6" => :catalina
+    sha256 "0b5c412839bf5f27fd70a752a2a28ffd1408dc30a5dd489e2aaf1ad7275d538c" => :mojave
+    sha256 "3c5f65eb7952139861314f3a7a571b66d03defb883e963d15746d78d5926b723" => :high_sierra
   end
 
   depends_on "go" => :build
 
-  conflicts_with "etsh", :because => "both install `tsh` binaries"
+  uses_from_macos "curl" => :test
+  uses_from_macos "zip"
+
+  on_linux do
+    depends_on "netcat" => :test
+  end
+
+  conflicts_with "etsh", because: "both install `tsh` binaries"
+
+  resource "webassets" do
+    url "https://github.com/gravitational/webassets/archive/72412062d6d55ec7faa9707abf500d703e7d09da.tar.gz"
+    sha256 "c84767bea0a723f406e3b6566a0a48892758b2e5f3a9e9b453d22171315fd29d"
+  end
 
   def install
-    ENV["GOOS"] = "darwin"
-    ENV["GOARCH"] = "amd64"
     ENV["GOPATH"] = buildpath
     ENV["GOROOT"] = Formula["go"].opt_libexec
 
+    (buildpath/"webassets").install resource("webassets")
     (buildpath/"src/github.com/gravitational/teleport").install buildpath.children
     cd "src/github.com/gravitational/teleport" do
       ENV.deparallelize { system "make", "full" }
       bin.install Dir["build/*"]
-      prefix.install_metafiles
     end
   end
 

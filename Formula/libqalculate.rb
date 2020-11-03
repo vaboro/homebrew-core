@@ -1,13 +1,14 @@
 class Libqalculate < Formula
   desc "Library for Qalculate! program"
   homepage "https://qalculate.github.io/"
-  url "https://github.com/Qalculate/libqalculate/releases/download/v3.4.0/libqalculate-3.4.0.tar.gz"
-  sha256 "752d975c3e2cd3ff5827fde5f6d4554a2e5c436826ba8af9cb0623f82615dc60"
+  url "https://github.com/Qalculate/libqalculate/releases/download/v3.12.1/libqalculate-3.12.1.tar.gz"
+  sha256 "28c46dc8dd975f253627d80c55a6feab7c44d965dce3ceffefc3cafc9a97c457"
+  license "GPL-2.0"
 
   bottle do
-    sha256 "d80e8dc8831a96ecf6cc8df65dad62428a552f2755edeb19c4bd9636d9badff3" => :mojave
-    sha256 "74bfd3a79c11d365da4e65c6afcecc0417ce487f6dab1355d7dcfae296204dd1" => :high_sierra
-    sha256 "9e4661c61714b98d80cbdd680972a1160bf213eb10c6bc6c643d51c37e520daa" => :sierra
+    sha256 "4b449d035cbccbc76d5d39c7a601b162df5f7fae5c9f0a67624513d1e48db92d" => :catalina
+    sha256 "737229c55c1f26c4d22c87cf4dde6e1beb51760e1735d6386303096847680d8e" => :mojave
+    sha256 "975a77ca0bf73190e872edcd2ac0feb78bcec8f707f3ce07c88e23ade92ee8ba" => :high_sierra
   end
 
   depends_on "intltool" => :build

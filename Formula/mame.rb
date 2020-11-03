@@ -1,54 +1,55 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0213.tar.gz"
-  version "0.213"
-  sha256 "19b71a8055b70729ca17c399c18ae1ea34cbd8993a2d5d1eba7d631b7cef82f4"
+  url "https://github.com/mamedev/mame/archive/mame0224.tar.gz"
+  version "0.224"
+  sha256 "3518e71ec20fbeac8ebe93f8ec856078b8288e19f0d7cb38959d4bde30cd2810"
+  license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git"
 
   bottle do
     cellar :any
-    sha256 "bc00188e9a9e54b5f30aea268f17bb09eda37f516b0342277edf2c80e56e34b4" => :mojave
-    sha256 "6c8e6c4331e707599e2b20ab501e7dacdace488514d7efd59b392254296536dc" => :high_sierra
+    sha256 "02234561654ce4acf965841a0392225186d1edf4200653d3a09ae0f94dcfbe33" => :catalina
+    sha256 "8258fdcf71c960ae6fadf019cbeecc68e2d91977c39c22b884295fa8eeacadac" => :mojave
+    sha256 "ab42ed0bce4a11ef242c0988b80de0e7f51a0168009ec0917e8b64d8b61fb830" => :high_sierra
   end
 
-  depends_on "asio" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "pugixml" => :build
+  depends_on "python@3.8" => :build
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
   depends_on "flac"
   depends_on "jpeg"
-  depends_on "lua"
-  # Need C++ compiler and standard library support C++14.
-  # Build failure on Sierra, see:
-  # https://github.com/Homebrew/homebrew-core/pull/39388
-  depends_on :macos => :high_sierra
+  # Need C++ compiler and standard library support C++17.
+  depends_on macos: :high_sierra
   depends_on "portaudio"
   depends_on "portmidi"
   depends_on "sdl2"
   depends_on "sqlite"
   depends_on "utf8proc"
 
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
+
   def install
+    # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""
 
-    # Mame's build system genie can't find headers and libraries with version suffix.
-    ENV.append "CPPFLAGS", "-I#{Formula["lua"].opt_include}/lua"
-    ENV.append "CPPFLAGS", "-I#{Formula["pugixml"].opt_include}/pugixml-1.9"
-    ENV.append "LDFLAGS", "-L#{Formula["pugixml"].opt_lib}/pugixml-1.9"
-
-    system "make", "USE_LIBSDL=1",
+    # Use bundled asio and lua instead of latest version.
+    # See: <https://github.com/mamedev/mame/issues/5721>
+    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3",
+                   "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",
-                   "USE_SYSTEM_LIB_ASIO=1",
+                   "USE_SYSTEM_LIB_ASIO=",
+                   "USE_SYSTEM_LIB_LUA=",
                    "USE_SYSTEM_LIB_FLAC=1",
                    "USE_SYSTEM_LIB_GLM=1",
                    "USE_SYSTEM_LIB_JPEG=1",
-                   "USE_SYSTEM_LIB_LUA=1",
-                   "USE_SYSTEM_LIB_PORTMIDI=1",
                    "USE_SYSTEM_LIB_PORTAUDIO=1",
+                   "USE_SYSTEM_LIB_PORTMIDI=1",
                    "USE_SYSTEM_LIB_PUGIXML=1",
                    "USE_SYSTEM_LIB_RAPIDJSON=1",
                    "USE_SYSTEM_LIB_SQLITE3=1",
@@ -62,7 +63,7 @@ class Mame < Formula
       system "make", "man"
       man1.install "build/man/MAME.1" => "mame.1"
     end
-    pkgshare.install %w[artwork bgfx hash ini keymaps plugins samples uismall.bdf]
+    pkgshare.install %w[artwork bgfx hash ini keymaps language plugins samples uismall.bdf]
   end
 
   test do

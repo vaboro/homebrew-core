@@ -3,10 +3,17 @@ class Asciiquarium < Formula
   homepage "https://robobunny.com/projects/asciiquarium/html/"
   url "https://robobunny.com/projects/asciiquarium/asciiquarium_1.1.tar.gz"
   sha256 "1b08c6613525e75e87546f4e8984ab3b33f1e922080268c749f1777d56c9d361"
+  license "GPL-2.0"
   revision 1
+
+  livecheck do
+    url "https://robobunny.com/projects/asciiquarium/"
+    regex(/href=.*?asciiquarium[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "9bf092861aad33c28e8f753d79032eb9af48521508dbee0a5ec6dc3646e6cc89" => :catalina
     sha256 "7c9263400bd1045b998e5f48d34d79fa4df0e27daf5f9c49afb1ed283a39f537" => :mojave
     sha256 "10d2a74f8e447c87fa477de74aa692a1d0043ab508e9a924126e0a3d55ffe5a7" => :high_sierra
     sha256 "890b0e69b0261ff61b0d0666f2b3e0f579c1f63556c77c2d8d24bc1ef3f4e241" => :sierra
@@ -42,7 +49,7 @@ class Asciiquarium < Formula
 
     chmod 0755, "asciiquarium"
     bin.install "asciiquarium"
-    bin.env_script_all_files(libexec/"bin", :PERL5LIB => ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

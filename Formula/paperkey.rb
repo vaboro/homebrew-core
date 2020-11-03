@@ -3,9 +3,16 @@ class Paperkey < Formula
   homepage "https://www.jabberwocky.com/software/paperkey/"
   url "https://www.jabberwocky.com/software/paperkey/paperkey-1.6.tar.gz"
   sha256 "a245fd13271a8d2afa03dde979af3a29eb3d4ebb1fbcad4a9b52cf67a27d05f7"
+  license "GPL-2.0"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?paperkey[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "12be9f841cfb0d4069be3e461cd5e783ba4ea11195507a13763f90ccc026f31e" => :catalina
     sha256 "894ef3339013be6574f736e316c61cbf54fbc3dcac358df14f1d54b1d7387854" => :mojave
     sha256 "82e49c6aa559a349ce73521a90881acb74a540de03d355ad7461c177d00bb8e8" => :high_sierra
     sha256 "fecd3e866173f93ddd6d89e91f2850d29c10e8edf27bb969a95de581ec382c56" => :sierra

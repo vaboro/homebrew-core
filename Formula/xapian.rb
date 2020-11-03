@@ -1,28 +1,43 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.12/xapian-core-1.4.12.tar.xz"
-  sha256 "4f8a36da831712db41d38a039fefb5251869761a58be28ba802994bb930fac7c"
+  url "https://oligarchy.co.uk/xapian/1.4.17/xapian-core-1.4.17.tar.xz"
+  sha256 "b5eb8556dea1b0cad4167a66223522e66d670ec1eba16c7fdc844ed6b652572e"
+  license "GPL-2.0"
   version_scheme 1
+
+  livecheck do
+    url :homepage
+    regex(/latest stable version.*?is v?(\d+(?:\.\d+)+)</im)
+  end
 
   bottle do
     cellar :any
-    sha256 "cad63039b4ff1ae0d2af68a4737356f8fbf8a679feb6b1827fce99779c675773" => :mojave
-    sha256 "bae68a0933c29c3f1e70089d68ded475e5bcb4a409400e5de06fa43048e9a3fe" => :high_sierra
-    sha256 "312ba2283f4de8f16c8f24b53ab2c7f1dd2c7907af3076fb6137bb6946692f1e" => :sierra
+    sha256 "4712dbe3959cf4bb599d5c28a63b752de362d8201a68d4c2b73cce4e61d575e0" => :catalina
+    sha256 "fd46c140fdbd39fc34a201f51414239112edacedf85486496eeee9d62b8f29cf" => :mojave
+    sha256 "62231301f3ee14feb596caa691aef3b3ae95068cb7636eb5abbcefeb056571bc" => :high_sierra
   end
 
   depends_on "sphinx-doc" => :build
-  depends_on "python"
+  depends_on "python@3.8"
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   skip_clean :la
 
   resource "bindings" do
-    url "https://oligarchy.co.uk/xapian/1.4.12/xapian-bindings-1.4.12.tar.xz"
-    sha256 "7577174efbee2b893b5387fb0bdf3b630e82f55288a00a4c3ec9fdc463e42a49"
+    url "https://oligarchy.co.uk/xapian/1.4.17/xapian-bindings-1.4.17.tar.xz"
+    sha256 "48a65d91e0c3a4a8f4a1ca05dc39225912088aca2c47c0048cc93b09d338ebd3"
   end
 
   def install
+    python = Formula["python@3.8"].opt_bin/"python3"
+    ENV["PYTHON"] = python
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -30,10 +45,12 @@ class Xapian < Formula
 
     resource("bindings").stage do
       ENV["XAPIAN_CONFIG"] = bin/"xapian-config"
-      ENV.prepend_create_path "PYTHON3_LIB", lib/"python3.7/site-packages"
 
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"lib/python3.7/site-packages"
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor/lib/python3.7/site-packages"
+      xy = Language::Python.major_minor_version python
+      ENV.prepend_create_path "PYTHON3_LIB", lib/"python#{xy}/site-packages"
+
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"lib/python#{xy}/site-packages"
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor/lib/python#{xy}/site-packages"
 
       system "./configure", "--disable-dependency-tracking",
                             "--prefix=#{prefix}",
@@ -45,6 +62,6 @@ class Xapian < Formula
 
   test do
     system bin/"xapian-config", "--libs"
-    system "python3.7 -c 'import xapian'"
+    system Formula["python@3.8"].opt_bin/"python3", "-c", "import xapian"
   end
 end

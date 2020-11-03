@@ -3,9 +3,11 @@ class Vilistextum < Formula
   homepage "https://bhaak.net/vilistextum/"
   url "https://bhaak.net/vilistextum/vilistextum-2.6.9.tar.gz"
   sha256 "3a16b4d70bfb144e044a8d584f091b0f9204d86a716997540190100c20aaf88d"
+  license "GPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "cead55f6cb7e4d66d3f6ca2bf013f0cb653144a0fe79620fdd5735a1e57566a5" => :catalina
     sha256 "c36418e1556b9f5f9c0126811fddca3149137abfed6b36596ec4612c3806a3ec" => :mojave
     sha256 "6005ce3b4c593707dfe7ffbc10ea64f26ce6e441803a9133ab46ba0fbaee422f" => :high_sierra
     sha256 "b8fa6ddde71b9b86128e12bbc343935ca5ec58e15d28da2a1a9972a23df9becd" => :sierra

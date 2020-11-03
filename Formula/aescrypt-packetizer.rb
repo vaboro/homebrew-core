@@ -4,8 +4,14 @@ class AescryptPacketizer < Formula
   url "https://www.aescrypt.com/download/v3/linux/aescrypt-3.14.tgz"
   sha256 "5051394529bf3f99c42b57f755b2269e6abaae8b0e3fd90869c4b0bb58f5f1c7"
 
+  livecheck do
+    url "https://www.aescrypt.com/download/"
+    regex(%r{href=.*?/linux/aescrypt[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "1615637765b9c2c4aa26bb5c858962d2b5614d7098aa45ebb8154c839fcde13a" => :catalina
     sha256 "063038d7a6789ce5052fa1f7bf1be43ab9cd5c4157d5f9d1d37a91382b007958" => :mojave
     sha256 "ad36c0bff9d673c364b18795669f51329d8e7c5ea862af2ef3614051976cf601" => :high_sierra
     sha256 "39463bd2c693eaa4060f10e8d663346189ff1ebcc9bfa20971158e9e265b7b1c" => :sierra
@@ -19,7 +25,7 @@ class AescryptPacketizer < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on :xcode => :build
+  depends_on xcode: :build
 
   def install
     if build.head?
@@ -43,10 +49,11 @@ class AescryptPacketizer < Formula
     mv "#{bin}/aescrypt_keygen", "#{bin}/paescrypt_keygen"
   end
 
-  def caveats; <<~EOS
-    To avoid conflicting with our other AESCrypt package the binaries
-    have been renamed paescrypt and paescrypt_keygen.
-  EOS
+  def caveats
+    <<~EOS
+      To avoid conflicting with our other AESCrypt package the binaries
+      have been renamed paescrypt and paescrypt_keygen.
+    EOS
   end
 
   test do

@@ -5,8 +5,14 @@ class Ttyrec < Formula
   sha256 "ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec"
   revision 1
 
+  livecheck do
+    url :homepage
+    regex(/href=["']?ttyrec[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "6d893647087afa85234f60103507a5a878360d018816c557534d469c4edf7bf9" => :catalina
     sha256 "fa4e19544555ebf7956beceaa656bb8aed894f26b82683a5db32b88501cc5a85" => :mojave
     sha256 "8121debd07c4ecdd24d86fc7dadb00a7807e028f512418b5ba0d85768619628d" => :high_sierra
     sha256 "0323b20a0905ad1c3a2f997714572d779bcf6db63d8798840c14f6a75fd70cd5" => :sierra

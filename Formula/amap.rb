@@ -1,13 +1,20 @@
 class Amap < Formula
   desc "Perform application protocol detection"
-  homepage "https://www.thc.org/thc-amap/"
-  url "https://www.thc.org/releases/amap-5.4.tar.gz"
+  homepage "https://github.com/vanhauser-thc/THC-Archive"
+  url "https://github.com/vanhauser-thc/THC-Archive/raw/master/Tools/amap-5.4.tar.gz"
   mirror "https://downloads.sourceforge.net/project/slackbuildsdirectlinks/amap/amap-5.4.tar.gz"
   sha256 "a75ea58de75034de6b10b0de0065ec88e32f9e9af11c7d69edbffc4da9a5b059"
   revision 3
 
+  livecheck do
+    url "https://github.com/vanhauser-thc/THC-Archive/tree/master/Tools/"
+    strategy :page_match
+    regex(%r{href=.*?/amap[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     cellar :any
+    sha256 "48480e1e415d4003efdfac48d4f5ae75c2dbfa1d53d9e742ca400cffa04dc231" => :catalina
     sha256 "ede3ed735b1041b7bb99595ffdbb49e392dbb84065383e32c0e270f8bea22da4" => :mojave
     sha256 "6266dd3178e2ed39f7a48e6c9fc19fbb073f4e7d71686d5ef3ce0ee660ccb982" => :high_sierra
     sha256 "1361e89caf2590146c5872907f90ad67ac9b99d2198320691e9f6df0cfdbe16c" => :sierra

@@ -1,13 +1,19 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.13.1-Source.tar.gz"
-  sha256 "158021539a85ca597075f4a534117721ea51f5ddea44b5ec27519d553c980f8d"
+  url "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.18.0-Source.tar.gz"
+  sha256 "d88943df0f246843a1a062796edbf709ef911de7269648eef864be259e9704e3"
+  revision 1
+
+  livecheck do
+    url "https://software.ecmwf.int/wiki/display/ECC/Releases"
+    regex(/href=.*?eccodes[._-]v?(\d+(?:\.\d+)+)-Source\.t/i)
+  end
 
   bottle do
-    sha256 "e2176627399b50a2ff590e4bc4eb46992eac5535e5bc3614d6c6e52a8fbe781c" => :mojave
-    sha256 "80af243cbb5b7c42529ef8d4efa783f57b8d9e8f4dad7367842715c922aec4a5" => :high_sierra
-    sha256 "2a16c2a52726f0164f2c70f9ba56e0ebd8ed5738e0990ec085f07e65a08af7ea" => :sierra
+    sha256 "752b23e86c8c5c54d1870ff3cee3adbb4f2bd3eb552c6a87073ba3867107354f" => :catalina
+    sha256 "7b0366448047c170843a0519611acb03a6cdf10c6f67df6b6813514a8f2d8854" => :mojave
+    sha256 "cf12c6c0ae154b545e8ca764a635a6df15ac0fba85eac7143a6564ca740283ed" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -16,10 +22,11 @@ class Eccodes < Formula
   depends_on "libpng"
   depends_on "netcdf"
 
-  conflicts_with "grib-api",
-    :because => "eccodes and grib-api install the same binaries."
-
   def install
+    # Fix for GCC 10, remove with next version
+    # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=957159
+    ENV.prepend "FFLAGS", "-fallow-argument-mismatch"
+
     inreplace "CMakeLists.txt", "find_package( OpenJPEG )", ""
 
     mkdir "build" do
@@ -27,6 +34,11 @@ class Eccodes < Formula
                             "-DENABLE_PYTHON=OFF", *std_cmake_args
       system "make", "install"
     end
+
+    # Avoid references to Homebrew shims directory
+    inreplace include/"eccodes_ecbuild_config.h", HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/clang", "/usr/bin/clang"
+    inreplace lib/"pkgconfig/eccodes.pc", HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/clang", "/usr/bin/clang"
+    inreplace lib/"pkgconfig/eccodes_f90.pc", HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/clang", "/usr/bin/clang"
   end
 
   test do

@@ -1,20 +1,26 @@
 class AngleGrinder < Formula
   desc "Slice and dice log files on the command-line"
   homepage "https://github.com/rcoh/angle-grinder"
-  url "https://github.com/rcoh/angle-grinder/archive/v0.11.0.tar.gz"
-  sha256 "2bf30335511d0bf0c89c693b108751ae8574f0ba757ff99d813969e959a90850"
+  url "https://github.com/rcoh/angle-grinder/archive/v0.15.0.tar.gz"
+  sha256 "5359d6e241eca2bc3bdb7ddf9344b4ef8315cbe7629775c09e0ab7ed70310c8d"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fb9320f378795c456d775614c7a08e0c2df7c447cf3be700142bbef988f59f41" => :catalina
-    sha256 "e7e27623aad3f772486810f151621f93c9112d58297ede293d7cbde051f4553e" => :mojave
-    sha256 "4071b07d97fab4660b6089e3f51e0a791ebe36170283d410fa91aa0d4cb84105" => :high_sierra
+    sha256 "4bc6e214a67b692d17af8cb67ea6dd72d64254842e0d9f4d614d65bf6e786ce0" => :catalina
+    sha256 "7cb1d26f16dd143a134362cf0909901d64516f25d0f856fdc2fc2b0b76ed2e48" => :mojave
+    sha256 "87cff82607f02e299989ea5c13687895c0eb77c9fb60dcefaf76c8667d5e7965" => :high_sierra
   end
 
   depends_on "rust" => :build
 
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@1.1"
+  end
+
   def install
-    system "cargo", "install", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

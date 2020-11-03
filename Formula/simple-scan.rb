@@ -1,21 +1,24 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/3.34/simple-scan-3.34.0.tar.xz"
-  sha256 "7378bb9d891f956df232eb85bda59b9551be9578bc209bff40fed47d21cfb8bb"
-  revision 1
+  url "https://download.gnome.org/sources/simple-scan/3.38/simple-scan-3.38.0.tar.xz"
+  sha256 "4356affd035f01a57b182199effd9808700efccb498bdc8367bf09bce404c311"
+  license "GPL-3.0-or-later"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "f7ed7cc755f1ea1584992c7f80f2c1b9c7df40fea51d0f69e09f007508e4be3a" => :catalina
-    sha256 "3ac910e141f6abec6cebf8f87f52529bb28c6720b407a6b0b011cc5365ec0d37" => :mojave
-    sha256 "eb7cdfbc69616ce9da492826f32b50bb8907fb0e6beb25bd9c484940faff5e15" => :high_sierra
+    sha256 "1fef462043b0581c3c8f87d9fbbd36942447cb7d91a99134f62b446e08945d79" => :catalina
+    sha256 "af8f8b195ba4b8bcdd23ef18cfff5bc6b75ff60b02b0a6c16ad8186193e19018" => :mojave
+    sha256 "f883982bc960fc7713445421f8ed2406f7b88a41082a918e606b96de1c571069" => :high_sierra
   end
 
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "gtk+3"
@@ -23,17 +26,10 @@ class SimpleScan < Formula
   depends_on "sane-backends"
   depends_on "webp"
 
-  # fixes vala compiler error
-  # see https://gitlab.gnome.org/GNOME/simple-scan/merge_requests/27
-  patch do
-    url "https://gitlab.gnome.org/GNOME/simple-scan/commit/47d35324.diff"
-    sha256 "d32ba584a5d9d2f2e13d12bde9e185d28234983f9f7d0a7275924fedf62dd405"
-  end
-
   def install
     ENV["DESTDIR"] = "/"
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", ".."
+      system "meson", *std_meson_args, ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end

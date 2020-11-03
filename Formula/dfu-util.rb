@@ -3,9 +3,15 @@ class DfuUtil < Formula
   homepage "https://dfu-util.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/dfu-util/dfu-util-0.9.tar.gz"
   sha256 "36428c6a6cb3088cad5a3592933385253da5f29f2effa61518ee5991ea38f833"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any
+    sha256 "742ed4829d01efdb37854b29e5f2199b4674b310cdad87f8cfdbeedc3ed97c7e" => :catalina
     sha256 "811d4e5d574bf5d3cb8783374927c6861c083e05711f538925a819490c5a49c7" => :mojave
     sha256 "c1e5f33cee759c8273ed5b9088262c442773342378939cecd374c99889126f8b" => :high_sierra
     sha256 "3b9f9f6cf990becc1f2979fbec2cf2833d6f0ee2ab1ba3db4979203f1d591ee2" => :sierra

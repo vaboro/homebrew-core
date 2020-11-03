@@ -4,10 +4,17 @@ class Libcuefile < Formula
   url "https://files.musepack.net/source/libcuefile_r475.tar.gz"
   version "r475"
   sha256 "b681ca6772b3f64010d24de57361faecf426ee6182f5969fcf29b3f649133fe7"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://www.musepack.net/index.php?pg=src"
+    regex(/href=.*?libcuefile[._-](r\d+)\.t/i)
+  end
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "3069cf9b0261d8cedee8979348227f5c77a5c6dcb8942f9fbea20b3e3f190374" => :catalina
     sha256 "1e64fe68ce178b904ac44a7a2c017a030c6f0ff87fb18b7c943c8c766f23d186" => :mojave
     sha256 "a0b9b31c26ac9dc2704e71834259c0f9d0a12dce4ad4bbcdaae64fea5004ceae" => :high_sierra
     sha256 "66ec2d9281a5459326a1b2d220b9f68fa241a6b9f8370324377af6751d60b7fd" => :sierra

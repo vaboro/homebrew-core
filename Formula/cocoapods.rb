@@ -1,25 +1,32 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
-  url "https://github.com/CocoaPods/CocoaPods/archive/1.8.1.tar.gz"
-  sha256 "bbca0489a41896253c579627772041fb7e725f642c39de27b4cc4dbc32d0c1ea"
+  url "https://github.com/CocoaPods/CocoaPods/archive/1.9.3.tar.gz"
+  sha256 "12d8f52dcfbaf0f4b3e52001e072e26aa3c967e1c41e84511e84b587ae434e27"
+  license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "03b9ed9fbfebca70e81845558318cd83e9a7c73ea7aa63c35875f59ae1576437" => :catalina
-    sha256 "4045649812030c32ff3d6bda57c2dfb1928cb5711672deed6bb02c807b850c9a" => :mojave
-    sha256 "9696171cd45e6f9213536d4ddb289be1efeb4e0a5b3603c16f693db0ac5f98d6" => :high_sierra
+    sha256 "70f8c793bb60631422db028bbebb64ba9fcc1085a216abe5e625357380e06d46" => :catalina
+    sha256 "074e5b53b7a054c132582183dcf47546ddd028a7beb9fcdc653fe4a43225bcf3" => :mojave
+    sha256 "61d9473fd19573cebe3401921c69b8bc69eba9c096de654776a24dedd089ce65" => :high_sierra
   end
 
-  depends_on "ruby" if MacOS.version <= :sierra
+  depends_on "pkg-config" => :build
+
+  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "ruby", since: :catalina
 
   def install
+    if MacOS.version >= :mojave && MacOS::CLT.installed?
+      ENV["SDKROOT"] = ENV["HOMEBREW_SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version)
+    end
+
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "cocoapods.gemspec"
     system "gem", "install", "cocoapods-#{version}.gem"
     # Other executables don't work currently.
     bin.install libexec/"bin/pod", libexec/"bin/xcodeproj"
-    bin.env_script_all_files(libexec/"bin", :GEM_HOME => ENV["GEM_HOME"])
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do

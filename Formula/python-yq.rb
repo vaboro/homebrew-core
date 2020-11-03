@@ -1,29 +1,39 @@
 class PythonYq < Formula
   desc "Command-line YAML and XML processor that wraps jq"
-  homepage "https://yq.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/0c/23/aa30f88c916128aa60de9d4f53dd40c8f6c31cb7ebb808aab1b0501a701f/yq-2.7.2.tar.gz"
-  sha256 "f7dafd1e53d1f806ffe11de6da814e231d866595e2faae0dfc38135b8ee79bbb"
+  homepage "https://kislyuk.github.io/yq/"
+  url "https://files.pythonhosted.org/packages/e1/b6/00502cc0db06ccec929e1b94e418e73ed7c8056e0bda2d0b71206b14ed94/yq-2.11.0.tar.gz"
+  sha256 "8654d8217d98caa4b03bc00a7041b3716e7e6f441516b52a3f7cc91578c1e9be"
+  license "Apache-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d3d388e9e69167f57f2b8f4e87322aeda5a940a1ce4227a43a671aeb19c06b04" => :mojave
-    sha256 "ec55df02a3aaf3aca5d43e01047474bd83c5bea8bce6c469e81df8dcd7c73024" => :high_sierra
-    sha256 "ec55df02a3aaf3aca5d43e01047474bd83c5bea8bce6c469e81df8dcd7c73024" => :sierra
+    sha256 "d460e8631ba100cd9d87866155f5bbb6aeaa8b1052310d3b696c3e0cc43bf7d5" => :catalina
+    sha256 "598a986b32809caf6d72edc96bcb97ab15455ca2b2cba4ed79f659dbbc2ca14d" => :mojave
+    sha256 "3d7976e54dc4614b060ddef4434956c13f1684113cc68a501bbcefc99554559c" => :high_sierra
   end
 
   depends_on "jq"
-  depends_on "python"
+  depends_on "python@3.8"
 
-  conflicts_with "yq", :because => "both install `yq` executables"
+  conflicts_with "yq", because: "both install `yq` executables"
+
+  resource "argcomplete" do
+    url "https://files.pythonhosted.org/packages/df/a0/3544d453e6b80792452d71fdf45aac532daf1c2b2d7fc6cb712e1c3daf11/argcomplete-1.12.0.tar.gz"
+    sha256 "2fbe5ed09fd2c1d727d4199feca96569a5b50d44c71b16da9c742201f7cc295c"
+  end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz"
-    sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
+    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
+    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
   end
 
   resource "xmltodict" do
-    url "https://files.pythonhosted.org/packages/57/17/a6acddc5f5993ea6eaf792b2e6c3be55e3e11f3b85206c818572585f61e1/xmltodict-0.11.0.tar.gz"
-    sha256 "8f8d7d40aa28d83f4109a7e8aa86e67a4df202d9538be40c0cb1d70da527b0df"
+    url "https://files.pythonhosted.org/packages/58/40/0d783e14112e064127063fbf5d1fe1351723e5dfe9d6daad346a305f6c49/xmltodict-0.12.0.tar.gz"
+    sha256 "50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21"
   end
 
   def install
@@ -42,8 +52,8 @@ class PythonYq < Formula
 
     bin.install Dir[libexec/"bin/*"]
     env = {
-      :PATH       => "#{Formula["jq"].opt_bin}:$PATH",
-      :PYTHONPATH => ENV["PYTHONPATH"],
+      PATH:       "#{Formula["jq"].opt_bin}:$PATH",
+      PYTHONPATH: ENV["PYTHONPATH"],
     }
     bin.env_script_all_files(libexec/"bin", env)
   end

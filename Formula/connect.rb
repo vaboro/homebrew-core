@@ -4,8 +4,13 @@ class Connect < Formula
   url "https://bitbucket.org/gotoh/connect/get/1.105.tar.gz"
   sha256 "e7c98d31787f93b51c62ee05e0b558cfb577cda8198834a6d5b4d32528bf63ee"
 
+  livecheck do
+    skip "Bitbucket repository is missing"
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "a353ddbeceae3a28038be62f2bbbdc54be7f2bd8642c57e33c2cd5f883dcfb3d" => :catalina
     sha256 "9950d137f925a1a64a241235fa355ec0b73238e1d89c9b31cc979ce8ccba3f98" => :mojave
     sha256 "406798ed3fe31bdf93780ea4f33b3be0c14b3d262ff09c3fa11eb6bad509a643" => :high_sierra
     sha256 "20658283a4ed9ee93c6a6faeb2b33d0b3721ababb31068b6d898da5db77b0a68" => :sierra

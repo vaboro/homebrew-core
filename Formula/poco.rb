@@ -1,26 +1,30 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.9.3/poco-1.9.3-all.tar.gz"
-  sha256 "583c464cb2a85a1b0d1bded22875a929eabca54b1575124b114dc4f7e573aa68"
-  revision 1
-  head "https://github.com/pocoproject/poco.git", :branch => "develop"
+  url "https://pocoproject.org/releases/poco-1.10.1/poco-1.10.1-all.tar.gz"
+  sha256 "7f5931e0bb06bc2880a0f3867053a2fddf6c0d3e5dd96342a665460301fc34ca"
+  license "BSL-1.0"
+  head "https://github.com/pocoproject/poco.git", branch: "develop"
+
+  livecheck do
+    url "https://pocoproject.org/releases"
+    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "b1d99b95f5db087fd940730f1a18b10150678222545becc5930b1d82b4fa8291" => :mojave
-    sha256 "e81534b6338bf2ee789a34c58947f460a30f02df717bf88b6cfd2045424646e5" => :high_sierra
-    sha256 "c4c316c9c37ec16007d688e2fadda3c9b704914d63a8cbbbb98fd686ccc5b7d6" => :sierra
+    sha256 "0755dff1346ea80aa6202ce3e8269c608960abd4bf0a4566e56075cc99364b57" => :catalina
+    sha256 "7abccb2c17823c6dda9dee9e5918fa28ef846d8095252681c83c47bbb674f5c8" => :mojave
+    sha256 "70cea3a570e187c3e70a8dbbe1ad2e43be1c159d0d9118c1bfc1a8cc6441e2a4" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 
   def install
-    ENV.cxx11
-
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DENABLE_DATA_MYSQL=OFF",
+      system "cmake", "..", *std_cmake_args,
+                            "-DENABLE_DATA_MYSQL=OFF",
                             "-DENABLE_DATA_ODBC=OFF"
       system "make", "install"
     end

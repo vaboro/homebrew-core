@@ -3,10 +3,17 @@ class CmuSphinxbase < Formula
   homepage "https://cmusphinx.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz"
   sha256 "55708944872bab1015b8ae07b379bf463764f469163a8fd114cbb16c5e486ca8"
+  license "BSD-2-Clause"
+
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/sphinxbase[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "0cea9513b180773ff3c45d24453e962ef4ad5d1f923c4c22716437f3580b195f" => :catalina
     sha256 "b55c9f16e8b89fc515d9bf8bd6ed91f532d0c82a46be01cd9792bb27076a6a51" => :mojave
     sha256 "2ebde8d649a3e78c3e219c83e1f12e6cee924f5404b0d68e8fe7d220c8dad0f5" => :high_sierra
     sha256 "fde603304716876e192bef822f8df21c26e09688d43580d3f9a61c78e03dbbb0" => :sierra

@@ -3,9 +3,11 @@ class ChinadnsC < Formula
   homepage "https://github.com/shadowsocks/ChinaDNS"
   url "https://github.com/shadowsocks/ChinaDNS/releases/download/1.3.2/chinadns-1.3.2.tar.gz"
   sha256 "abfd433e98ac0f31b8a4bd725d369795181b0b6e8d1b29142f1bb3b73bbc7230"
+  license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "0c4820f0e5a12421b0e64c3cb993608560817a446b8747e7119838cb271b9044" => :catalina
     sha256 "61ccebe523d9e2417385c911beca6a01ee7d2810f1a665fca9a4f6a0e7b81623" => :mojave
     sha256 "5b0b51abe8a40dee4b1296e81da179aff05ba42befc869e06e081d7e6fc4e726" => :high_sierra
     sha256 "fa51351f3cdfb63fa672d2011c08ac8a1f9a260bcfaacb13e4657f39e721b96f" => :sierra

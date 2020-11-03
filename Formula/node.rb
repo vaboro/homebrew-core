@@ -1,32 +1,44 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v12.11.1/node-v12.11.1.tar.gz"
-  sha256 "37043ddbe60f18a52ec31e0381b66adebbc0ec24669d72f132a1fdfacdf029ae"
+  url "https://nodejs.org/dist/v14.11.0/node-v14.11.0.tar.gz"
+  sha256 "c07669ddbd708d0dfc4ccb63a7ced7ad1fd7d1b59ced50cf05f22f0b96e45463"
+  license "MIT"
   head "https://github.com/nodejs/node.git"
+
+  livecheck do
+    url "https://nodejs.org/dist/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "30ee7e81c7142603dd5fc0d90659f633cd5e4a0a7f1382aa6cd2b3620c58f329" => :catalina
-    sha256 "2c55bc818349816cd336dcf9abf85d3a84aaede346e4da4f2459a7efa1590902" => :mojave
-    sha256 "b3323bf82459e14ed097bef9e25322ce1d55d1cb9a10674e39031eae0259a79d" => :high_sierra
+    sha256 "e86cd695d7b195000acbb6d539f0dc3bc69120f0ce606b65d29c18d8416d733c" => :catalina
+    sha256 "9ddd2d01f8e70fbe8d2e802dddcb1ffaf39e32240000fac13a83c95cea4b24c5" => :mojave
+    sha256 "162dea664b7a10e78d0070fa0ce3a738dc0492ad58220a68fbe4282e28baba60" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@2" => :build
+  depends_on "python@3.8" => :build
   depends_on "icu4c"
 
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-6.11.3.tgz"
-    sha256 "9e1dbf6a2642df2cef11e68fdc20e29e4ee04bd7c9459fef914cae4bdc587f18"
+    url "https://registry.npmjs.org/npm/-/npm-6.14.8.tgz"
+    sha256 "fe8e873cb606c06f67f666b4725eb9122c8927f677c8c0baf1477f0ff81f5a2c"
   end
 
   def install
+    # make sure subprocesses spawned by make are using our Python 3
+    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
+
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
     args = %W[--prefix=#{prefix} --without-npm --with-intl=system-icu]
+    # Remove `--openssl-no-asm` workaround when upstream releases a fix
+    # See also: https://github.com/nodejs/node/issues/34043
+    args << "--openssl-no-asm" if Hardware::CPU.arm?
     args << "--tag=head" if build.head?
 
     system "./configure", *args
@@ -65,13 +77,13 @@ class Node < Formula
     ln_sf node_modules/"npm/bin/npm-cli.js", HOMEBREW_PREFIX/"bin/npm"
     ln_sf node_modules/"npm/bin/npx-cli.js", HOMEBREW_PREFIX/"bin/npx"
 
-    # Let's do the manpage dance. It's just a jump to the left.
-    # And then a step to the right, with your hand on rm_f.
+    # Create manpage symlinks (or overwrite the old ones)
     %w[man1 man5 man7].each do |man|
       # Dirs must exist first: https://github.com/Homebrew/legacy-homebrew/issues/35969
       mkdir_p HOMEBREW_PREFIX/"share/man/#{man}"
+      # still needed to migrate from copied file manpages to symlink manpages
       rm_f Dir[HOMEBREW_PREFIX/"share/man/#{man}/{npm.,npm-,npmrc.,package.json.,npx.}*"]
-      cp Dir[libexec/"lib/node_modules/npm/man/#{man}/{npm,package.json,npx}*"], HOMEBREW_PREFIX/"share/man/#{man}"
+      ln_sf Dir[node_modules/"npm/man/#{man}/{npm,package-,shrinkwrap-,npx}*"], HOMEBREW_PREFIX/"share/man/#{man}"
     end
 
     (node_modules/"npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")

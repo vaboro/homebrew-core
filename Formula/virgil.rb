@@ -2,33 +2,27 @@ class Virgil < Formula
   desc "CLI tool to manage your Virgil account and applications"
   homepage "https://github.com/VirgilSecurity/virgil-cli"
   url "https://github.com/VirgilSecurity/virgil-cli.git",
-     :tag      => "v5.1.2",
-     :revision => "c5cc5011b753a7149c7003f9c041e430d59b6efd"
+     tag:      "v5.2.9",
+     revision: "604e4339d100c9cd133f4730ba0efbd599321ecb"
+  license "BSD-3-Clause"
   head "https://github.com/VirgilSecurity/virgil-cli.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "733507479075cd10daff920074a761b8521d006c112ee1706b4d1f08f1655e3c" => :mojave
-    sha256 "dce39bf7b99b204ccd9722e1756e7c7c6814969ddcbc6046f19d43daf12d6861" => :high_sierra
-    sha256 "037bb056392f96e1690d04f644818dbcdf983000062bfc02abe1088abf5efab3" => :sierra
+    sha256 "841082fa11c796ba0045d4ced3cead342fba308b049f07db4a0bd3309acc08c7" => :catalina
+    sha256 "d115016c280fbfe9381b56d0e08b9a69b4dc62042bb73424c243ea3f73280cd9" => :mojave
+    sha256 "f7b6c179875ab30f849e3cbba53c8aeed7af4c569b69d4b112c2d749e5c38ea4" => :high_sierra
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    dir = buildpath/"src/github.com/VirgilSecurity/virgil-cli"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-    cd dir do
-      system "dep", "ensure", "-vendor-only"
-      system "go", "build", "-o", "virgil"
-      bin.install "virgil"
-    end
+    system "make"
+    bin.install "virgil"
   end
 
   test do
-    result = shell_output "#{bin}/virgil pure keygen"
+    result = shell_output "#{bin}/virgil purekit keygen"
     assert_match /SK.1./, result
   end
 end

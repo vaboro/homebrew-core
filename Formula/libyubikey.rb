@@ -3,9 +3,16 @@ class Libyubikey < Formula
   homepage "https://yubico.github.io/yubico-c/"
   url "https://developers.yubico.com/yubico-c/Releases/libyubikey-1.13.tar.gz"
   sha256 "04edd0eb09cb665a05d808c58e1985f25bb7c5254d2849f36a0658ffc51c3401"
+  license "BSD-2-Clause"
+
+  livecheck do
+    url "https://developers.yubico.com/yubico-c/Releases/"
+    regex(/href=.*?libyubikey[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
+    sha256 "b6fccb68ae85837533ea4680063cc64f207f2d6926c4eafaf23e81f0b790fc55" => :catalina
     sha256 "f5f99ad5056fe1d8bfa69a389983ac9ae0f5e65c60d984de4fb9591b6b19daba" => :mojave
     sha256 "8440f766e153b537a092f55a07990c0fd28e0b244407bf6824d21fedb3d97f32" => :high_sierra
     sha256 "23f550d2f6e2cd6310756e3625c17868e206c90029e241fbc915a408f4761263" => :sierra

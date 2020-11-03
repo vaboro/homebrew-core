@@ -1,15 +1,16 @@
 class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
-  homepage "https://docs.get-faas.com/"
+  homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      :tag      => "0.9.3",
-      :revision => "5ff1504047756f9ff2e0a10ae64803ab63df470a"
+      tag:      "0.12.9",
+      revision: "40555282492b1f7cfdb10d801fcdce251360ec25"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "34a0ec9d1c7d0bf717a095b6fd6a3a3ff121cdd4f007ea125d60f0953d719090" => :catalina
-    sha256 "f5300d6e315ddaed60ea2aeaf9bab7ef262e9b1bdbb15fa760b10215ad7f9e4c" => :mojave
-    sha256 "30792d4b95f9d0f8d35d3c025e5cec99780d1223161af0b6107c6c80fa162f6a" => :high_sierra
+    sha256 "74e0979caa804d1e2771cc7bb8ca334f3e45a5e8b2f33abc63b21d7fccd6bab3" => :catalina
+    sha256 "e8ac72ff95820dd19650bf8c2f3257d22e11b3dd10a28721f4a4bf328258a5e9" => :mojave
+    sha256 "7c81a7145f3a9acd9c348abcc5229cea7a8afcb1b6469a189d0e74a5b3650fdd" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class FaasCli < Formula
     (buildpath/"src/github.com/openfaas/faas-cli").install buildpath.children
     cd "src/github.com/openfaas/faas-cli" do
       project = "github.com/openfaas/faas-cli"
-      commit = Utils.popen_read("git", "rev-parse", "HEAD").chomp
+      commit = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
       system "go", "build", "-ldflags",
              "-s -w -X #{project}/version.GitCommit=#{commit} -X #{project}/version.Version=#{version}", "-a",
              "-installsuffix", "cgo", "-o", bin/"faas-cli"
@@ -50,7 +51,7 @@ class FaasCli < Formula
 
     (testpath/"test.yml").write <<~EOS
       provider:
-        name: faas
+        name: openfaas
         gateway: http://localhost:#{port}
         network: "func_functions"
 

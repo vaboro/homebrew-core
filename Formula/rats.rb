@@ -3,8 +3,10 @@ class Rats < Formula
   homepage "https://security.web.cern.ch/security/recommendations/en/codetools/rats.shtml"
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/rats-2.4.tgz"
   sha256 "2163ad111070542d941c23b98d3da231f13cf065f50f2e4ca40673996570776a"
+  license "GPL-2.0"
 
   bottle do
+    sha256 "bf5da3e9088abba09350b4a812691a3f76b00bfce1c74947fb7c016d88eb89f9" => :catalina
     sha256 "77244d885c0f203d64bd4054105310a797a9b44333bf4ef1f7b7cec63b0a163f" => :mojave
     sha256 "6ae19bc72cfea62b56b83931f95a70f27ce9a13617026292861a272e22269135" => :high_sierra
     sha256 "5f2a74a60c30a825ad036f390e3830346be4fe3299a28a81e25630d54defd119" => :sierra

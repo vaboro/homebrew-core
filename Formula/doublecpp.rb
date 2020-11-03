@@ -1,11 +1,17 @@
 class Doublecpp < Formula
   desc "Double dispatch in C++"
   homepage "https://doublecpp.sourceforge.io/"
-  url "https://downloads.sourceforge.net/doublecpp/doublecpp-0.6.3.tar.gz"
+  url "https://downloads.sourceforge.net/project/doublecpp/doublecpp/0.6.3/doublecpp-0.6.3.tar.gz"
   sha256 "232f8bf0d73795558f746c2e77f6d7cb54e1066cbc3ea7698c4fba80983423af"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "429cf6757b46b6f0289439d40db98e3a574a4bf0bde930f8b9ae25a55f4452cb" => :catalina
     sha256 "eed3920bd4e85e32542ce2a67fc9d928f8d8ddfceb0b48e80ddd9db30090e9e6" => :mojave
     sha256 "ca161369434cba6763add99e4e470a495662c866a328b374c5d6184e687361cc" => :high_sierra
     sha256 "748af7fb63392453cc4b648cea20786173202f5c891b45765dbf374e4ac2c2d5" => :sierra

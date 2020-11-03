@@ -1,13 +1,19 @@
 class Gtkx3 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.12.tar.xz"
-  sha256 "1384eba5614fed160044ae0d32369e3df7b4f517b03f4b1f24d383e528f4be83"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.23.tar.xz"
+  sha256 "5d864d248357a2251545b3387b35942de5f66e4c66013f0962eb5cb6f8dae2b1"
+  license "LGPL-2.0-or-later"
+
+  livecheck do
+    url :stable
+    regex(/gtk\+[._-](3\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
+  end
 
   bottle do
-    sha256 "8544242fdbc70c7543fa9d46d90c8e1b8cae301c9eb09281714b5b8807db68c7" => :catalina
-    sha256 "ab801d103e2a80dad3825348cc998f89e5eaec949f3baa0a0563f3d63cd5fe5c" => :mojave
-    sha256 "15c99a778550e443a9d6a8f8bce42c7575b4d68ebdeb17fe5476fed20aea821c" => :high_sierra
+    sha256 "94b7fbbd4b2557e511b7971998d46b9e96a050b9b5468f8df6410c4b1f28ba18" => :catalina
+    sha256 "ea959fea33bb7ebc455249f782372f1f7f89aa6f19113f2f8a16c8539b6f0ea2" => :mojave
+    sha256 "c5ec8329feaa8a798714bea712ba07836014aa04d28d42a9b63bd5e0adc4e659" => :high_sierra
   end
 
   depends_on "docbook" => :build
@@ -24,9 +30,10 @@ class Gtkx3 < Formula
   depends_on "libepoxy"
   depends_on "pango"
 
+  uses_from_macos "libxslt" => :build # for xsltproc
+
   def install
-    args = %W[
-      --prefix=#{prefix}
+    args = std_meson_args + %w[
       -Dx11_backend=false
       -Dquartz_backend=true
       -Dgtk_doc=false
@@ -53,6 +60,7 @@ class Gtkx3 < Formula
   def post_install
     system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
     system bin/"gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+    system "#{bin}/gtk-query-immodules-3.0 > #{HOMEBREW_PREFIX}/lib/gtk-3.0/3.0.0/immodules.cache"
   end
 
   test do
@@ -116,5 +124,7 @@ class Gtkx3 < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
+    # include a version check for the pkg-config files
+    assert_match version.to_s, shell_output("cat #{lib}/pkgconfig/gtk+-3.0.pc").strip
   end
 end

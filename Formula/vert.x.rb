@@ -1,16 +1,23 @@
 class VertX < Formula
   desc "Toolkit for building reactive applications on the JVM"
   homepage "https://vertx.io/"
-  url "https://bintray.com/vertx/downloads/download_file?file_path=vert.x-3.8.2-full.tar.gz"
-  sha256 "22b9ad3e4656112b55c911dcf777ef93b78af2517152f0a84dc8ceb0271ca58d"
+  url "https://bintray.com/vertx/downloads/download_file?file_path=vert.x-3.9.3-full.zip"
+  sha256 "b2d95774c7eaca541a0c3085db804d5c6e4fbb4990e53ccab7291713c25ec92f"
+  license any_of: ["EPL-2.0", "Apache-2.0"]
+
+  livecheck do
+    url "https://vertx.io/download/"
+    regex(/href=.*?vert\.x[._-]v?(\d+(?:\.\d+)+)-full\.t/i)
+  end
 
   bottle :unneeded
-  depends_on :java => "1.8+"
+
+  depends_on "openjdk"
 
   def install
     rm_f Dir["bin/*.bat"]
     libexec.install %w[bin conf lib]
-    bin.install_symlink "#{libexec}/bin/vertx"
+    (bin/"vertx").write_env_script "#{libexec}/bin/vertx", Language::Java.overridable_java_home_env
   end
 
   test do

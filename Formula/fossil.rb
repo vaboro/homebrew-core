@@ -1,16 +1,21 @@
 class Fossil < Formula
   desc "Distributed software configuration management"
   homepage "https://www.fossil-scm.org/"
-  url "https://www.fossil-scm.org/index.html/uv/fossil-src-2.9.tar.gz"
-  sha256 "1cb2ada92d43e3e7e008fe77f5e743d301c7ea34d4c36c42f255f873e73d8b4f"
-  revision 1
-  head "https://www.fossil-scm.org/", :using => :fossil
+  url "https://www.fossil-scm.org/index.html/uv/fossil-src-2.12.1.tar.gz"
+  sha256 "822326ffcfed3748edaf4cfd5ab45b23225dea840304f765d1d55d2e6c7d6603"
+  license "BSD-2-Clause"
+  head "https://www.fossil-scm.org/", using: :fossil
+
+  livecheck do
+    url "https://www.fossil-scm.org/index.html/uv/download.js"
+    regex(/"title": *?"Version (\d+(?:\.\d+)+)/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "c876f19f2fe8bd1d92360437baee0e3887a7598497328f408b5ad84d5ffe6696" => :mojave
-    sha256 "8b3b9b01b25196cef89e25e95b0eda93976a43fc3f525f77cc4353e492142091" => :high_sierra
-    sha256 "52de169a2cc7dcf4eff56e9553184f1790f98ee1bd21b367aeb83d1c637c862e" => :sierra
+    sha256 "79dddedf515aa4c145161b6511f99f8864656f19cd3935be77cf92bac60e1eb0" => :catalina
+    sha256 "0366a7a4642f1805d593fd8c357df989cb811280afbef101bbc07fdcec4391d7" => :mojave
+    sha256 "87006ce88d4bc52e452b06f2a10f8151930af1e0b6c14bace7eeb486505fd5b9" => :high_sierra
   end
 
   depends_on "openssl@1.1"
@@ -25,10 +30,10 @@ class Fossil < Formula
       "--disable-fusefs",
     ]
 
-    if MacOS.sdk_path_if_needed
-      args << "--with-tcl=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework"
+    args << if MacOS.sdk_path_if_needed
+      "--with-tcl=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework"
     else
-      args << "--with-tcl-stubs"
+      "--with-tcl-stubs"
     end
 
     system "./configure", *args

@@ -3,9 +3,11 @@ class CrushTools < Formula
   homepage "https://github.com/google/crush-tools"
   url "https://github.com/google/crush-tools/releases/download/20150716/crush-tools-20150716.tar.gz"
   sha256 "ef2f9c919536a2f13b3065af3a9a9756c90ede53ebd67d3e169c90ad7cd1fb05"
+  license "Apache-2.0"
 
   bottle do
     cellar :any
+    sha256 "c5172b5ab0e1d85d0e1e87e0dc83b66b5ee8ffda0d86f85f586e4e8850268861" => :catalina
     sha256 "148684da73eef05ce20f602fdc2d0a9795afbdb6db9cd324c74860c6600ff835" => :mojave
     sha256 "729196f80c05c5e395c145752a7a54cc1488a6cf1767b43ed9f639c2f3f3c463" => :high_sierra
     sha256 "28286e04a7baf7790f446f2f474a74387e6c0282df70d89ade39c84187394ce4" => :sierra
@@ -23,8 +25,8 @@ class CrushTools < Formula
 
   depends_on "pcre"
 
-  conflicts_with "aggregate", :because => "both install an `aggregate` binary"
-  conflicts_with "num-utils", :because => "both install an `range` binary"
+  conflicts_with "aggregate", because: "both install an `aggregate` binary"
+  conflicts_with "num-utils", because: "both install an `range` binary"
 
   def install
     system "./bootstrap" if build.head?

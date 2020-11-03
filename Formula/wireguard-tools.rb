@@ -1,17 +1,20 @@
 class WireguardTools < Formula
   desc "Tools for the WireGuard secure network tunnel"
   homepage "https://www.wireguard.com/"
-  # Please only update version when the tools have been modified/updated,
-  # since the Linux module aspect isn't of utility for us.
-  url "https://git.zx2c4.com/WireGuard/snapshot/WireGuard-0.0.20190905.tar.xz"
-  sha256 "78767ceeb5286beaa851145f072d920a340a9f1b771a2943b8efd638cee1a8f6"
-  head "https://git.zx2c4.com/WireGuard", :using => :git
+  url "https://git.zx2c4.com/wireguard-tools/snapshot/wireguard-tools-1.0.20200820.tar.xz"
+  sha256 "7735a04c68fffb101a10a67e3bd97a171f2b8eb47e9ddce2be68eb6538b013d0"
+  license "GPL-2.0"
+  head "https://git.zx2c4.com/wireguard-tools", using: :git
+
+  livecheck do
+    url "https://github.com/WireGuard/wireguard-tools"
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c165ed343667bd331ba792ce5fb869c31196940ab97f61527413d5ae2b8849f8" => :mojave
-    sha256 "4c20b4c5c986e7d1972f12be22f2051d4f817cfd5f0e789a923de1497952e9cc" => :high_sierra
-    sha256 "135dd7d027656bd2f8e2d64f7f5c03df708d4aad2351f2cc6597a2bbcfbc070d" => :sierra
+    sha256 "ebfaa9ce7fb682918d20ed728ab58aef7f18ca6e8109acf8643c7553a4c8f80e" => :catalina
+    sha256 "79078300c5573d894011800bccd4b0fc315f3f5ae6b1c76de508ce7d34a8bad8" => :mojave
+    sha256 "980d6cf99451f09be4b54abeb873c8f4958e7127f357d08f457c010a5f8b6089" => :high_sierra
   end
 
   depends_on "bash"
@@ -20,7 +23,7 @@ class WireguardTools < Formula
   def install
     system "make", "BASHCOMPDIR=#{bash_completion}", "WITH_BASHCOMPLETION=yes", "WITH_WGQUICK=yes",
                    "WITH_SYSTEMDUNITS=no", "PREFIX=#{prefix}", "SYSCONFDIR=#{prefix}/etc",
-                   "-C", "src/tools", "install"
+                   "-C", "src", "install"
   end
 
   test do

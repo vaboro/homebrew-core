@@ -2,15 +2,21 @@ class Libsass < Formula
   desc "C implementation of a Sass compiler"
   homepage "https://github.com/sass/libsass"
   url "https://github.com/sass/libsass.git",
-      :tag      => "3.6.1",
-      :revision => "4d229af5500be1023883c38c4a675f0ed919839d"
+      tag:      "3.6.4",
+      revision: "8d312a1c91bb7dd22883ebdfc829003f75a82396"
+  license "MIT"
   head "https://github.com/sass/libsass.git"
+
+  livecheck do
+    url "https://github.com/sass/libsass/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "e537c43fed3ee97113f8ad4f019fd68c474a7e4d7a318f77a442a74e1929041a" => :mojave
-    sha256 "3fb6068985f5911476e132ab1e5e9c5850edd7806867fe4e117d18e7a4b9efb6" => :high_sierra
-    sha256 "e9c7104789c533116f92c6115f8b311689f9987055da6eea7f4b4fc8cc4178ce" => :sierra
+    sha256 "a674d8155125a1659499c689b2c3ecc4d37c8196667a93b4463f65dfa77a686c" => :catalina
+    sha256 "45e5e4f4eb76253127712dcef15df520064db0bd712e3fea9f349fa6ebee79a5" => :mojave
+    sha256 "85722d303754f2d6d07c4c704cf81c9aa827473f7d6130c66d90da984862c47d" => :high_sierra
   end
 
   depends_on "autoconf" => :build

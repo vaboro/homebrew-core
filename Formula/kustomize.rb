@@ -2,39 +2,42 @@ class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https://github.com/kubernetes-sigs/kustomize"
   url "https://github.com/kubernetes-sigs/kustomize.git",
-      :tag      => "v3.2.0",
-      :revision => "a3103f1e62ddb5b696daa3fd359bb6f2e8333b49"
+      tag:      "kustomize/v3.8.2",
+      revision: "e2973f6ecc9be6187cfd5ecf5e180f842249b3c6"
+  license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kustomize.git"
+
+  livecheck do
+    url :head
+    regex(%r{kustomize/v?(\d+(?:\.\d+)+)$}i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "37e844f32fe59d3e8fd770d2c0270573d05569989a4f1ff681f5bc52064461cd" => :mojave
-    sha256 "c4394c1616de83613db73580e3aaa2667592d726803ee0fa247acd47e8d6034b" => :high_sierra
-    sha256 "5fb657f255f45d45e2aa9ecfc5cee7d2af20344b184dfbe46a1ceb1105cb4cee" => :sierra
+    rebuild 1
+    sha256 "601a07e4f64fd9cfaf6d5711affacf90021d6aff686211883b062bb2971a24e8" => :catalina
+    sha256 "cd22865db58698712c60458745895ef9e54ca77c115c8696299e93ee36fb7b84" => :mojave
+    sha256 "e165140a287fd347501dce99b3f3e873361063f1a3f70ed16e0e883388fbb6e3" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
+    revision = Utils.safe_popen_read("git", "rev-parse", "HEAD").strip
+    tag = Utils.safe_popen_read("git", "tag", "--contains", "HEAD").strip
 
-    revision = Utils.popen_read("git", "rev-parse", "HEAD").strip
-
-    dir = buildpath/"src/kubernetes-sigs/kustomize"
-    dir.install buildpath.children
-    dir.cd do
+    cd "kustomize" do
       ldflags = %W[
-        -s -X sigs.k8s.io/kustomize/v3/pkg/commands/misc.kustomizeVersion=#{version}
-        -X sigs.k8s.io/kustomize/v3/pkg/commands/misc.gitCommit=#{revision}
-        -X sigs.k8s.io/kustomize/v3/pkg/commands/misc.buildDate=#{Time.now.iso8601}
+        -s -X sigs.k8s.io/kustomize/api/provenance.version=#{tag}
+        -X sigs.k8s.io/kustomize/api/provenance.gitCommit=#{revision}
+        -X sigs.k8s.io/kustomize/api/provenance.buildDate=#{Time.now.iso8601}
       ]
-      system "go", "build", "-ldflags", ldflags.join(" "), "-o", bin/"kustomize", "cmd/kustomize/main.go"
-      prefix.install_metafiles
+      system "go", "build", "-ldflags", ldflags.join(" "), "-o", bin/"kustomize"
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kustomize version")
+    assert_match "kustomize/v#{version}", shell_output("#{bin}/kustomize version")
 
     (testpath/"kustomization.yaml").write <<~EOS
       resources:

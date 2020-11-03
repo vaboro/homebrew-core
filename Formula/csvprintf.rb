@@ -3,9 +3,11 @@ class Csvprintf < Formula
   homepage "https://github.com/archiecobbs/csvprintf"
   url "https://github.com/archiecobbs/csvprintf/archive/1.0.4.tar.gz"
   sha256 "022188ced570203d6084e6eab68f7ad96054a4ab8aa54db1857a8fd076280568"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "528d28c7c771522232c9a46b696cab18458ae21252859037c4f1b92801496eb4" => :catalina
     sha256 "42e857e3fe76d351204fb76fd017a257f3362382af49f6c7c03e156af6bd5bb0" => :mojave
     sha256 "99340f4265ad7a952d3f4fdcce154a10e46c7c8c06979b9e7c5d5016810a8c87" => :high_sierra
     sha256 "236d5de27a77cadffa4cc014b9f2416b7d952f8cedb96ced98096f0bbdc928cb" => :sierra

@@ -1,14 +1,20 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
   homepage "https://zeroc.com"
-  url "https://github.com/zeroc-ice/ice/archive/v3.7.2.tar.gz"
-  sha256 "e329a24abf94a4772a58a0fe61af4e707743a272c854552eef3d7833099f40f9"
+  url "https://github.com/zeroc-ice/ice/archive/v3.7.4.tar.gz"
+  sha256 "57f200bd2916799bce12960e579d9f9e5b6a9801addaf93d97bb4ce15c760a44"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://github.com/zeroc-ice/ice/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "cbb84aa941cb649002f99a17c6689839f460cd98ea9b94c37feba727b25dbfcd" => :mojave
-    sha256 "ad69bfebe60936dd6d32923f004f4f6ebce35c33019470c895251d76d6a46d4e" => :high_sierra
-    sha256 "fa4ee11fe92011c69fd9bc3c64aedc07a38f63e5a71ce1637109b1955df839a5" => :sierra
+    sha256 "ed026c50e889b8eab856b8310d9b57a5a09487775b85e0fd3a745c3703234aa3" => :catalina
+    sha256 "d8ddc0c493286e78174f61eb8feb7af105c6c4b33580435f6df4515aefa56b0a" => :mojave
+    sha256 "d80dfe41a72184cfb820940e926acd8204d5338327b0ff1007fe77e7662a8164" => :high_sierra
   end
 
   depends_on "lmdb"
@@ -35,13 +41,14 @@ class Ice < Formula
     end
   end
 
-  def caveats; <<~EOS
-    slice2py, slice2js and slice2rb were installed in:
+  def caveats
+    <<~EOS
+      slice2py, slice2js and slice2rb were installed in:
 
-      #{opt_libexec}/bin
+        #{opt_libexec}/bin
 
-    You may wish to add this directory to your PATH.
-  EOS
+      You may wish to add this directory to your PATH.
+    EOS
   end
 
   test do

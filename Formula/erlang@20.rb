@@ -2,16 +2,24 @@ class ErlangAT20 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-20.3.8.22.tar.gz"
-  sha256 "d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753"
-  revision 1
+  url "https://github.com/erlang/otp/archive/OTP-20.3.8.26.tar.gz"
+  sha256 "dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813"
+  license "Apache-2.0"
+
+  livecheck do
+    url "https://github.com/erlang/otp.git"
+    regex(/OTP[._-]v?(20(?:\.\d+)+)/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "e099e5f75fb5e924ff43791778e84ae8030656f02995e08c97cef3d357468875" => :mojave
-    sha256 "a3544497c4940df02a427eab843b2a267777f6dd85fb6fa2a17738087a12a8ab" => :high_sierra
-    sha256 "e76e6ac51e9f8c93684633f918a16f4aea13bdf29db4699a28fceaa0f99ff0c4" => :sierra
+    sha256 "130019a8e459654a92e7267b60932867c8c27957d5bd5b791e358407e6d2755b" => :catalina
+    sha256 "5e1003bf97321f4cf5cd57b062b752c2d92bcbb457ab5e992309790b7827fd1f" => :mojave
+    sha256 "a401feb22927ecc0e649f3f2f7aeba331725b6390985f826ed5639d59732ee6a" => :high_sierra
   end
+
+  # Deprecated with OTP-23 release (https://erlang.org/pipermail/erlang-questions/2020-July/099747.html)
+  deprecate! date: "2020-05-13", because: :unsupported
 
   keg_only :versioned_formula
 
@@ -20,6 +28,8 @@ class ErlangAT20 < Formula
   depends_on "libtool" => :build
   depends_on "openssl@1.1"
   depends_on "wxmac"
+
+  uses_from_macos "m4" => :build
 
   resource "man" do
     url "https://www.erlang.org/download/otp_doc_man_20.3.tar.gz"
@@ -34,6 +44,10 @@ class ErlangAT20 < Formula
   end
 
   def install
+    # Work around Xcode 11 clang bug
+    # https://bitbucket.org/multicoreware/x265/issues/514/wrong-code-generated-on-macos-1015
+    ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
+
     # Unset these so that building wx, kernel, compiler and
     # other modules doesn't fail with an unintelligable error.
     %w[LIBS FLAGS AFLAGS ZFLAGS].each { |k| ENV.delete("ERL_#{k}") }
@@ -68,12 +82,13 @@ class ErlangAT20 < Formula
     doc.install resource("html")
   end
 
-  def caveats; <<~EOS
-    Man pages can be found in:
-      #{opt_lib}/erlang/man
+  def caveats
+    <<~EOS
+      Man pages can be found in:
+        #{opt_lib}/erlang/man
 
-    Access them with `erl -man`, or add this directory to MANPATH.
-  EOS
+      Access them with `erl -man`, or add this directory to MANPATH.
+    EOS
   end
 
   test do

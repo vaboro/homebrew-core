@@ -1,15 +1,20 @@
 class Onioncat < Formula
   desc "VPN-adapter that provides location privacy using Tor or I2P"
   homepage "https://www.onioncat.org"
-  url "https://www.cypherpunk.at/ocat/download/Source/current/onioncat-0.2.2.r578.tar.gz"
-  version "0.2.2.r578"
-  sha256 "69c677e04987bd438495d575b566c358f449ff138b836925fd406cf6d6a400f5"
+  url "https://www.cypherpunk.at/ocat/download/Source/0.3/onioncat-0.3.8.tar.gz"
+  sha256 "9564d10c64161408a573256ba8aece9296499a753cbdae6bfbc3544e72a1d63b"
+  license "GPL-3.0"
+
+  livecheck do
+    url "https://www.cypherpunk.at/ocat/download/Source/current/"
+    regex(/href=.*?onioncat[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
-    sha256 "8d31228fb732238341e83b58991673588818cd27d6be983f65cb02c4292f6d1b" => :mojave
-    sha256 "1062942ec61923ed49c04afd61ccc9bb56166efe0285fe93b406597d23223fa9" => :high_sierra
-    sha256 "539500f5eeed2771a729c9e61196831c3a3796edafcb2c27a38b26ca5674f7a6" => :sierra
-    sha256 "98acc41c8dc5fcefbe5a410266a762ddacbe12323e958a8fe6ca753ec51f33fe" => :el_capitan
+    cellar :any_skip_relocation
+    sha256 "18bca9a7fa0830c5efb83c8914923202b6a1ed0abadf5cc4755c04c54978e3eb" => :catalina
+    sha256 "102814e9feb8bccb65537f9fd156e3b718466dfafdf7df6e513ab5b5e3560ff3" => :mojave
+    sha256 "cef6fe952042a8b9d838a8369f96c9ab74d83eb271ccdf4829e0b23ba89dee58" => :high_sierra
   end
 
   depends_on "tor"

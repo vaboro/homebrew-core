@@ -3,13 +3,19 @@ require "language/node"
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
   homepage "https://www.npmjs.com/package/ask-cli"
-  url "https://registry.npmjs.org/ask-cli/-/ask-cli-1.7.13.tgz"
-  sha256 "543d5deda1a2c4c66a62d55c426acf20ba8779ff675ceba74a3e36468e73183e"
+  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.15.0.tgz"
+  sha256 "8b4ae063b264b3c5719734c9f9c4d052710dabb7b6df010c1651f14060c08bb0"
+  license "Apache-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "3ebe550758bd0628d135e0dd0b42af1e69d176bec1ba579fa413851253c271de" => :mojave
-    sha256 "be325154452e6aff089e37d51834fcb57adf1af02ceef3dbe2dcd7ed7643632e" => :high_sierra
-    sha256 "6b1dac10f21aaa26565b7947fbdf33e28a403821cdbc664f1b17a08e97c26db9" => :sierra
+    cellar :any_skip_relocation
+    sha256 "df412b039b4e881837553c4c26f73720b73cad02d46ebf8090b45f0c15073147" => :catalina
+    sha256 "c7bd5b9b7e734cd2a44d76aaa33c4f946eabf334824f1f249c974d19dd29f3f2" => :mojave
+    sha256 "88f8ddf490537a57ae65eac917de7c281a1c6f545f45203dff165fbfaee2a93a" => :high_sierra
   end
 
   depends_on "node"
@@ -21,7 +27,6 @@ class AskCli < Formula
 
   test do
     output = shell_output("#{bin}/ask deploy 2>&1", 1)
-    assert_match %r{\AInvalid json: [^ ]+\/.ask\/cli_config\Z}, output
-    system "#{bin}/ask", "lambda", "--help"
+    assert_match "[Error]: CliFileNotFoundError: File #{testpath}/.ask/cli_config not exists.", output
   end
 end

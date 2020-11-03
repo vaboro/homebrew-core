@@ -3,11 +3,13 @@ class Ghi < Formula
   homepage "https://github.com/stephencelis/ghi"
   url "https://github.com/stephencelis/ghi/archive/1.2.0.tar.gz"
   sha256 "ffc17cfbdc8b88bf208f5f762e62c211bf8fc837f447354ad53cce39b1400671"
+  license "MIT"
   revision 4
   head "https://github.com/stephencelis/ghi.git"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "36449d0c0fc0a544808178745ce7a846dfd905cf5fc2489feaa2a70d26346041" => :catalina
     sha256 "b6dcd03ae7705b3a3648c6df15b9e451397cd81e41acc5c5f8444796c747c580" => :mojave
     sha256 "9289e061f8a249130950ec212042e3d9adfaa96e3591f0eb2d6038c28ff0e6d6" => :high_sierra
     sha256 "d2b59c4b0326bd4d4b2de6da0310e1d5228cc63d57adb9eb37c5f5c5a9471131" => :sierra
@@ -34,7 +36,7 @@ class Ghi < Formula
                     "--install-dir", libexec
     end
     bin.install "ghi"
-    bin.env_script_all_files(libexec/"bin", :GEM_HOME => ENV["GEM_HOME"])
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
     man1.install "man/ghi.1"
   end
 

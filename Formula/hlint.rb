@@ -1,25 +1,30 @@
-require "language/haskell"
-
 class Hlint < Formula
-  include Language::Haskell::Cabal
-
   desc "Haskell source code suggestions"
   homepage "https://github.com/ndmitchell/hlint"
-  url "https://hackage.haskell.org/package/hlint-2.2.3/hlint-2.2.3.tar.gz"
-  sha256 "e6df9f402a02011100248ffd4b9a5aa4bb5fbf7bb61677c50a0cdf5ac298b32a"
+  url "https://hackage.haskell.org/package/hlint-3.2/hlint-3.2.tar.gz"
+  sha256 "3ff4143310971e3f9d3c37c4507dd1d8cbe901f5f9aae597105b64dec0f06a3c"
+  license "BSD-3-Clause"
   head "https://github.com/ndmitchell/hlint.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
-    sha256 "641b47cdbabb274249e13ae1cf696e212d27ab9586713fdbb8267da512d50833" => :catalina
-    sha256 "b61782e0026194a598071a725a04b602a78bdfcd4855c041b2ae88d088369a1b" => :mojave
-    sha256 "bd15904aa4ce157c2218de16b4093d9554cf105f3e7a5a95784d050a2c1403f6" => :high_sierra
+    cellar :any_skip_relocation
+    sha256 "ea96ebff70add4db014bd83c57f71f8f9df4ed1c437942959192b94fbdaac940" => :catalina
+    sha256 "6b2e4de58ca753b7b91cbcbc004186de64c84be82761ffa8bc0909197449a1b1" => :mojave
+    sha256 "65149d639d145c02ff529cc9889c0a909f776654137ce87cd995361673fed7e5" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 
+  uses_from_macos "ncurses"
+
   def install
-    install_cabal_package :using => ["alex", "happy"]
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", *std_cabal_v2_args
     man1.install "data/hlint.1"
   end
 
@@ -27,6 +32,11 @@ class Hlint < Formula
     (testpath/"test.hs").write <<~EOS
       main = do putStrLn "Hello World"
     EOS
-    assert_match "Redundant do", shell_output("#{bin}/hlint test.hs", 1)
+    assert_match "No hints", shell_output("#{bin}/hlint test.hs")
+
+    (testpath/"test1.hs").write <<~EOS
+      main = do foo x; return 3; bar z
+    EOS
+    assert_match "Redundant return", shell_output("#{bin}/hlint test1.hs", 1)
   end
 end

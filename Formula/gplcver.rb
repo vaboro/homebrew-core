@@ -4,8 +4,16 @@ class Gplcver < Formula
   url "https://downloads.sourceforge.net/project/gplcver/gplcver/2.12a/gplcver-2.12a.src.tar.bz2"
   sha256 "f7d94677677f10c2d1e366eda2d01a652ef5f30d167660905c100f52f1a46e75"
 
+  # This regex intentionally matches seemingly unstable versions, as the only
+  # available version at the time of writing was `2.12a`.
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/gplcver[._-]v?(\d+(?:\.\d+)+[a-z]?)\.src\.}i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "e0db2e2d2f4331ecbe4ead3c8f9d4f239c6b9427472ea959dd394544fbbf7b43" => :catalina
     sha256 "fb50587552693b0c0c26ee074c52766c097f90afc6492a0bcf75cc65aaf2f031" => :mojave
     sha256 "2460dcc2da525280cd5b7d2452abe922874291b92f0ba3abd1316da2e5ff40f7" => :high_sierra
     sha256 "a0f14e7d01b7098ed6e770b21df05f03d7506ca0bab3d1f84845ca9ca7d1eb5b" => :sierra

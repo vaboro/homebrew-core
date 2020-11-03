@@ -1,26 +1,30 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
-  homepage "https://proj4.org/"
-  url "https://download.osgeo.org/proj/proj-6.2.0.tar.gz"
-  sha256 "b300c0f872f632ad7f8eb60725edbf14f0f8f52db740a3ab23e7b94f1cd22a50"
+  homepage "https://proj.org/"
+  url "https://github.com/OSGeo/PROJ/releases/download/7.1.1/proj-7.1.1.tar.gz"
+  sha256 "324e7abb5569fb5f787dadf1d4474766915c485a188cf48cf07153b99156b5f9"
+  license "MIT"
 
   bottle do
-    sha256 "908f4bb4b562f146181b316cba0a74c9bbb786cb2cb347279d38c175f2aae78b" => :catalina
-    sha256 "136f63801c76a4c288ed6f520ae42fede385c65767ae9d323671ab0f00805e9b" => :mojave
-    sha256 "e18d22d518a9d7841815a87f29e1e56acf46d0aa3b9f1ee1740bff2537e38bb8" => :high_sierra
-    sha256 "2ffd7fa1cbed257c42e4d81f7f5e75ebdd81d009a0cf2eab0f3136a68f3579c2" => :sierra
+    sha256 "71574389bbcaaab542e8a9c9ce21aee6d9498d6a8693c454cbf69023a97f925a" => :catalina
+    sha256 "858f2ae2da4aeb24e724c02d44c3bd9c5b43f7e64ae3799c5976cb479e70d77e" => :mojave
+    sha256 "565076941c141b5af73000490f3db26e6872b59f768e7727b07094d99c26c68a" => :high_sierra
   end
 
   head do
-    url "https://github.com/OSGeo/proj.4.git"
+    url "https://github.com/OSGeo/proj.git"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
   depends_on "pkg-config" => :build
+  depends_on "libtiff"
 
-  conflicts_with "blast", :because => "both install a `libproj.a` library"
+  uses_from_macos "curl"
+  uses_from_macos "sqlite"
+
+  conflicts_with "blast", because: "both install a `libproj.a` library"
 
   skip_clean :la
 
@@ -32,7 +36,6 @@ class Proj < Formula
 
   def install
     (buildpath/"nad").install resource("datumgrid")
-
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

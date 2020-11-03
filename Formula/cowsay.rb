@@ -4,9 +4,11 @@ class Cowsay < Formula
   homepage "https://github.com/tnalpgge/rank-amateur-cowsay"
   url "https://github.com/tnalpgge/rank-amateur-cowsay/archive/cowsay-3.04.tar.gz"
   sha256 "d8b871332cfc1f0b6c16832ecca413ca0ac14d58626491a6733829e3d655878b"
+  license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "f6cb1c4d1b6f9d8eff3630420c8e51cb51029d00261fa30513f915ff231f5e2d" => :catalina
     sha256 "bff466bf07d7aba50b954b4b37b15eb338da542244450843ed6f1fd8223a5eab" => :mojave
     sha256 "9dd1c2263533507d55a6cfc8747ad6a68c0c042c7631512f0611001831dd441c" => :high_sierra
     sha256 "17a1a4620885c9a4b7104b43072ed32348b37f6bb43a1120fe23a46d893e87ea" => :sierra

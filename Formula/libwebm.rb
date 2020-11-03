@@ -3,9 +3,11 @@ class Libwebm < Formula
   homepage "https://www.webmproject.org/code/"
   url "https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.27.tar.gz"
   sha256 "1332f43742aeae215fd8df1be6e363e753b17abb37447190e789299fe3edec77"
+  license "BSD-3-Clause"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "548a7393b909a559e08fbd6a0783ada345e0ef08b59f9b44588cc99d4420a040" => :catalina
     sha256 "4238e3823e0e467e06492563d7f8c7603751419568ba621b6f644ad4ee5a30e6" => :mojave
     sha256 "0df7605cdc3aff926c0ffbcf5d72cf12933781083890eeeacc10df82b317b7c2" => :high_sierra
     sha256 "36f647efcc9d72881ad8998df30e3268ec0b69b81c872fc381e3d7126fa2da6e" => :sierra

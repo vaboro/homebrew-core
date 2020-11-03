@@ -1,19 +1,19 @@
 class IosDeploy < Formula
   desc "Install and debug iPhone apps from the command-line"
-  homepage "https://github.com/phonegap/ios-deploy"
-  url "https://github.com/ios-control/ios-deploy/archive/1.9.4.tar.gz"
-  sha256 "60ca03270b449a14639ff137ee7af47349809e5f8a5ee765186539f8fb0ebde5"
-  head "https://github.com/phonegap/ios-deploy.git"
+  homepage "https://github.com/ios-control/ios-deploy"
+  url "https://github.com/ios-control/ios-deploy/archive/1.11.1.tar.gz"
+  sha256 "638c90ae7ec71bc89ed0f2e9a464b9db8f2b312a20802c782873f82675d41048"
+  license all_of: ["GPL-3.0-or-later", "BSD-3-Clause"]
+  head "https://github.com/ios-control/ios-deploy.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "43b17fb8423e24b280873044eebe7100bb0788f7fca80e4e48062a73f6183de9" => :mojave
-    sha256 "92be61884aeaa78e0571ec9764e841831c513733319c5b42439bda26640877c6" => :high_sierra
-    sha256 "8e46be474d63299f12cef533429a4c77a52d5a4872b79e29c47acf47d673d2ef" => :sierra
+    sha256 "af5fd607db481534ebb05a85a781ef562d18095ad281dcb43739b7cdd9f0645a" => :catalina
+    sha256 "c496d357fcf45cb2dbb7b281c588b6b36e72e5f0a2126dca7bf7b311acec26c3" => :mojave
+    sha256 "fc27814ad907fcfecaada65a07128eb8fdf4eaaf9e90cf07f2aa483e8fee2a89" => :high_sierra
   end
 
-  depends_on :xcode => :build
-  depends_on :macos => :yosemite
+  depends_on xcode: :build
 
   def install
     xcodebuild "-configuration", "Release", "SYMROOT=build"
@@ -21,8 +21,6 @@ class IosDeploy < Formula
     xcodebuild "test", "-scheme", "ios-deploy-tests", "-configuration", "Release", "SYMROOT=build"
 
     bin.install "build/Release/ios-deploy"
-    include.install "build/Release/libios_deploy.h"
-    lib.install "build/Release/libios-deploy.a"
   end
 
   test do

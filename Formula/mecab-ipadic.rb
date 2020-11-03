@@ -6,8 +6,17 @@ class MecabIpadic < Formula
   version "2.7.0-20070801"
   sha256 "b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523"
 
+  # We check the Debian index page because the first-party website uses a Google
+  # Drive download URL and doesn't list the version in any other way, so we
+  # can't identify the newest version there.
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/m/mecab-ipadic/"
+    regex(/href=.*?mecab-ipadic[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)(?:\+main)?\.orig\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "90271975d35925136a14f2563e4b5201bed51b5c1fc27249d916676027c1016e" => :catalina
     sha256 "30967b4167d34f05c79f185d71a40198fff4067d0cce82aed59383548c898681" => :mojave
     sha256 "ef5cf167b05fd74457d5c31a46750450e8f80720ebc705766ee10df6ed41a861" => :high_sierra
     sha256 "33f42c18d7347708a56d8846c0bde5c8291b7685ce06b342e96442bca35f6663" => :sierra

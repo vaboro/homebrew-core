@@ -1,8 +1,14 @@
+require "language/node"
+
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
-  homepage "https://kripken.github.io/emscripten-site/"
+  homepage "https://emscripten.org/"
+  # Emscripten is available under 2 licenses, the MIT license and the
+  # University of Illinois/NCSA Open Source License.
+  license "MIT"
 
   stable do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,20 +26,30 @@ class Emscripten < Formula
     url "https://github.com/emscripten-core/emscripten/archive/1.38.44.tar.gz"
     sha256 "e6bf63595ca28beb4c0385062cd686f1b442d7faa8b3c717fb4cb872478b4660"
 >>>>>>> upstream/master
+=======
+    url "https://github.com/emscripten-core/emscripten/archive/1.40.1.tar.gz"
+    sha256 "e15ad7ffa1cce35c25cac7c797d6daa0c5868905eaaf5ed1431a8228b8803dfc"
+>>>>>>> upstream/master
 
     resource "fastcomp" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.38.44.tar.gz"
-      sha256 "d066f36d1083e5d62e2a9fb24e162e506a6b359fc101c43aec22ba8b1a836a01"
+      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.40.1.tar.gz"
+      sha256 "c34868ab566e9f073df319d9872608cef47ed1ea74852acacb12a22fd7c99a4c"
     end
 
     resource "fastcomp-clang" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.38.44.tar.gz"
-      sha256 "13aca52d91aba756f8e0610e4a4ebd8147369f4708c7542efdf8a4f96e52f2a1"
+      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.40.1.tar.gz"
+      sha256 "9ce4612df39684348d78acb711ec10bee98ad4ac136fb0dcb70d4c884b8bb6b3"
     end
+  end
+
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     cellar :any
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,23 +71,30 @@ class Emscripten < Formula
     sha256 "3abedeaff354db116142227d55d93232210b073549ab26c33b7f8c97fe8e897b" => :high_sierra
     sha256 "36d6ea5dd8eaff5b9f8adf9388bfc9bcab2d22b8b738a164378601e174cc9bca" => :sierra
 >>>>>>> upstream/master
+=======
+    rebuild 1
+    sha256 "8b21f38d1065a89301c3cce79c0bce448089d536280ae6d1cbe97ee3a98b183d" => :catalina
+    sha256 "476a8b8a00f535d160cbb8a08f82c5256d46a434703ecd86d2ed10ec5cea36fe" => :mojave
+    sha256 "09ad53bb82328357f106bbb01b06caa9a02c3daedc9d3ea4f7419badbaa66e17" => :high_sierra
+>>>>>>> upstream/master
   end
 
   head do
-    url "https://github.com/emscripten-core/emscripten.git", :branch => "incoming"
+    url "https://github.com/emscripten-core/emscripten.git"
 
     resource "fastcomp" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp.git", :branch => "incoming"
+      url "https://github.com/emscripten-core/emscripten-fastcomp.git"
     end
 
     resource "fastcomp-clang" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp-clang.git", :branch => "incoming"
+      url "https://github.com/emscripten-core/emscripten-fastcomp-clang.git"
     end
   end
 
   depends_on "cmake" => :build
+  depends_on "binaryen"
   depends_on "node"
-  depends_on "python"
+  depends_on "python@3.8"
   depends_on "yuicompressor"
 
   def install
@@ -103,22 +126,39 @@ class Emscripten < Formula
       system "make", "install"
     end
 
+    cd libexec do
+      system "npm", "install", *Language::Node.local_npm_install_args
+      rm_f "node_modules/ws/builderror.log" # Avoid references to Homebrew shims
+    end
+
     %w[em++ em-config emar emcc emcmake emconfigure emlink.py emmake
        emranlib emrun emscons].each do |emscript|
-      bin.install_symlink libexec/emscript
+      (bin/emscript).write_env_script libexec/emscript, PYTHON: Formula["python@3.8"].opt_bin/"python3"
     end
   end
 
-  def caveats; <<~EOS
-    Manually set LLVM_ROOT to
-      #{opt_libexec}/llvm/bin
-    and comment out BINARYEN_ROOT
-    in ~/.emscripten after running `emcc` for the first time.
-  EOS
+  def post_install
+    system bin/"emcc"
+    inreplace "#{libexec}/.emscripten" do |s|
+      s.gsub! /^(LLVM_ROOT.*)/, "#\\1\nLLVM_ROOT = \"#{opt_libexec}/llvm/bin\"\\2"
+      s.gsub! /^(BINARYEN_ROOT.*)/, "#\\1\nBINARYEN_ROOT = \"#{Formula["binaryen"].opt_prefix}\"\\2"
+    end
   end
 
   test do
-    system bin/"emcc"
-    assert_predicate testpath/".emscripten", :exist?, "Failed to create sample config"
+    # Fixes "Unsupported architecture" Xcode prepocessor error
+    ENV.delete "CPATH"
+
+    (testpath/"test.c").write <<~EOS
+      #include <stdio.h>
+      int main()
+      {
+        printf("Hello World!");
+        return 0;
+      }
+    EOS
+
+    system bin/"emcc", "test.c", "-o", "test.js", "-s", "NO_EXIT_RUNTIME=0"
+    assert_equal "Hello World!", shell_output("node test.js").chomp
   end
 end

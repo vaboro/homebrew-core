@@ -4,8 +4,14 @@ class Lwtools < Formula
   url "http://lwtools.projects.l-w.ca/releases/lwtools/lwtools-4.17.tar.gz"
   sha256 "a93ab316ca0176901822873dba4bc286d3a5cf86e6a853d3edb7a51ecc96a91c"
 
+  livecheck do
+    url "http://www.lwtools.ca/releases/lwtools/"
+    regex(/href=.*?lwtools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "1ce602bff92ea48cca7732b218e999350d62a3f76d7c69c3e73573da2139d662" => :catalina
     sha256 "3cfae9c3afc0a2fa0d8fdf48c88cb504056f35702f45a4afe5070ceb408d4919" => :mojave
     sha256 "8c0c67d34661986431d9fdb2fe5b6315a0da6b4ec9b4eac139868bfa1ee18069" => :high_sierra
     sha256 "d4f5b062ba3fbd7c7d3115c6f6451fdaa4daf331e0e7f0641580df19dc3c65e4" => :sierra

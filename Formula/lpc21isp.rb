@@ -5,8 +5,13 @@ class Lpc21isp < Formula
   version "1.97"
   sha256 "9f7d80382e4b70bfa4200233466f29f73a36fea7dc604e32f05b9aa69ef591dc"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "e5231b41e3d08d835d4c3a457b594c60576c42802347c01555acc94c04067d94" => :catalina
     sha256 "bf40168803e67310ecdf47f5ad8f1c8738d6775a91b99b5cda221fdc85e65a51" => :mojave
     sha256 "fa1c7462808e18f1b2a180c5db6c0ccd4481b5c0d29c5e834dd1feb888c96dba" => :high_sierra
     sha256 "68c3756fd99268814cfdc861e971d1201bac42bf5b922ab37119fcb082c86a1c" => :sierra

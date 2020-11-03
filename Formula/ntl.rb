@@ -1,14 +1,19 @@
 class Ntl < Formula
   desc "C++ number theory library"
   homepage "https://www.shoup.net/ntl"
-  url "https://www.shoup.net/ntl/ntl-11.3.3.tar.gz"
-  sha256 "1bd9b64c3e8e8563b8f04e87851799dbfaa9d44d131c8531f66d390ca5b05b13"
+  url "https://www.shoup.net/ntl/ntl-11.4.3.tar.gz"
+  sha256 "b7c1ccdc64840e6a24351eb4a1e68887d29974f03073a1941c906562c0b83ad2"
+
+  livecheck do
+    url "https://www.shoup.net/ntl/download.html"
+    regex(/href=.*?ntl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
-    sha256 "d36287eff7d247b0ed8b9272c51cc0dabd486e4377a52791585ec6e088950319" => :mojave
-    sha256 "42aa80db293b3831ac801bd63c3b16f79c90d42579aa4e2a2784c4068bea2a21" => :high_sierra
-    sha256 "faadc525db2bd3df71037b4dbdc62cacad398d210659f84e00f34cf99287b398" => :sierra
+    sha256 "fc44a358782565b05098a29f2694fe16100c2b5aa096c04875edd093adf78b5d" => :catalina
+    sha256 "d0739cc2ebea1427d1fae3b0f871105b69d6f9c4c765415ed2f328af1e925598" => :mojave
+    sha256 "5747add8bf85ae5a46d8c12635efbf61a2b5c402e35fdaebcf7499148c682564" => :high_sierra
   end
 
   depends_on "gmp"

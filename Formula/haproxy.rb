@@ -3,6 +3,7 @@ class Haproxy < Formula
   homepage "https://www.haproxy.org/"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://www.haproxy.org/download/2.0/src/haproxy-2.0.4.tar.gz"
   sha256 "e2680696032c8b957cd26fd948fff239d2cfc17b00964e6d2dc5adf8155fcef1"
 
@@ -32,6 +33,21 @@ class Haproxy < Formula
     sha256 "7cbb2a35dfcc612a1c1ee5b0236a5427c87c4d76cb340f84e43c240a4d57c5e7" => :mojave
     sha256 "a5f0c4b210ad14a0d4e3882560b7a78e4c5566f60f4914e1bbbcb4d1768d24d4" => :high_sierra
 >>>>>>> upstream/master
+=======
+  url "https://www.haproxy.org/download/2.2/src/haproxy-2.2.3.tar.gz"
+  sha256 "7209db363d4dbecb21133f37b01048df666aebc14ff543525dbea79be202064e"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?haproxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
+  bottle do
+    cellar :any
+    sha256 "3d6b32b32bd0642d08b2d4536c2d9f121f52f7915c28d5d60a4cafab464c7539" => :catalina
+    sha256 "5fcb9d22e8a68d1e0247bbe610ebd081383aa5ee984583e73b397551de3d154e" => :mojave
+    sha256 "06704b809443228163ecff0231bc0afb5e8bde61f71cb8d13903f3ef41b1e183" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "openssl@1.1"
@@ -55,30 +71,31 @@ class Haproxy < Formula
     bin.install "haproxy"
   end
 
-  plist_options :manual => "haproxy -f #{HOMEBREW_PREFIX}/etc/haproxy.cfg"
+  plist_options manual: "haproxy -f #{HOMEBREW_PREFIX}/etc/haproxy.cfg"
 
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>KeepAlive</key>
-        <true/>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/haproxy</string>
-          <string>-f</string>
-          <string>#{etc}/haproxy.cfg</string>
-        </array>
-        <key>StandardErrorPath</key>
-        <string>#{var}/log/haproxy.log</string>
-        <key>StandardOutPath</key>
-        <string>#{var}/log/haproxy.log</string>
-      </dict>
-    </plist>
-  EOS
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>KeepAlive</key>
+          <true/>
+          <key>ProgramArguments</key>
+          <array>
+            <string>#{opt_bin}/haproxy</string>
+            <string>-f</string>
+            <string>#{etc}/haproxy.cfg</string>
+          </array>
+          <key>StandardErrorPath</key>
+          <string>#{var}/log/haproxy.log</string>
+          <key>StandardOutPath</key>
+          <string>#{var}/log/haproxy.log</string>
+        </dict>
+      </plist>
+    EOS
   end
 
   test do

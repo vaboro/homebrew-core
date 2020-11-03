@@ -1,17 +1,19 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
   homepage "https://github.com/okbob/pspg"
-  url "https://github.com/okbob/pspg/archive/2.1.3.tar.gz"
-  sha256 "a2f008ed6672a46e1a78d0a88281641d5319a86e711d854c5c17b56174391397"
+  url "https://github.com/okbob/pspg/archive/3.1.3.tar.gz"
+  sha256 "2f4d1660a150c988c3b1d126a24fe8cb0f76471a829806dacb3ed85fe0e45c8d"
+  license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git"
 
   bottle do
     cellar :any
-    sha256 "7e94d95d5f3b45d8b4173925c4230e606c3879823c2bfd57f2e70e7ff45d9b0b" => :catalina
-    sha256 "4f3374a088351b0d3d3628c7777675a4584c44d5bc46c8dbfe89d815591f9541" => :mojave
-    sha256 "3d5e75d67e06e05e5393be11fffcc6496004d11d9afd697a34b61b8eca5364e0" => :high_sierra
+    sha256 "202cd5e760ac8dd0944678d576466f3663af59d071d22f5deee8a9beb12a5bdd" => :catalina
+    sha256 "739a146032e27e1c98ff06e51b26ef237319220d63319145fdc28109b57c1783" => :mojave
+    sha256 "5a12bd07ee31870e60e5d8f607ab5062e969a5914f88c8727013cea7cdee8c5c" => :high_sierra
   end
 
+  depends_on "libpq"
   depends_on "ncurses"
   depends_on "readline"
 
@@ -21,15 +23,16 @@ class Pspg < Formula
     system "make", "install"
   end
 
-  def caveats; <<~EOS
-    Add the following line to your psql profile (e.g. ~/.psqlrc)
-      \\setenv PAGER pspg
-      \\pset border 2
-      \\pset linestyle unicode
-  EOS
+  def caveats
+    <<~EOS
+      Add the following line to your psql profile (e.g. ~/.psqlrc)
+        \\setenv PAGER pspg
+        \\pset border 2
+        \\pset linestyle unicode
+    EOS
   end
 
   test do
-    assert_match "pspg-#{version.to_f}", shell_output("#{bin}/pspg --version")
+    assert_match "pspg-#{version.to_f}", shell_output("#{bin}/pspg --version", 1)
   end
 end

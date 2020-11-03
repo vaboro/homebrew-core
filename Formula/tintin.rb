@@ -1,14 +1,20 @@
 class Tintin < Formula
   desc "MUD client"
-  homepage "https://tintin.sourceforge.io/"
-  url "https://downloads.sourceforge.net/tintin/tintin-2.01.90.tar.gz"
-  sha256 "6b3eef2a993250d7094c5fcd4aa6ea3e2356228b006c70062f5757577c86936c"
+  homepage "https://tintin.mudhalla.net/"
+  url "https://github.com/scandum/tintin/releases/download/2.02.03/tintin-2.02.03.tar.gz"
+  sha256 "e44c88b1c97283525062ce15efdddebf5067e84ea37491903bcd8c8824f26f79"
+  license "GPL-3.0"
+
+  livecheck do
+    url "https://github.com/scandum/tintin/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "f149950448a3c8fd4af7af4cd741ec501688da1ada83f0d461f853997fd1542b" => :mojave
-    sha256 "5d34258b43da14466fa7d4e901295b30d805b84c487294d9dafeb5faf61000c7" => :high_sierra
-    sha256 "e3a066af9d699b30ad7e084c2403bd97df8116560fcbc33002214f7d7ebd47f4" => :sierra
+    sha256 "5655e2bfaf4fb9932f2b9317745f97b73162bd12d926a8fd9783002449d8ed3a" => :catalina
+    sha256 "b10d78dd09e94adac5f9a4aaeddc756b7ee578e9a77ef9f81f8c4f1941f90c3c" => :mojave
+    sha256 "9f4a88c8da68bde84fc56b34ef86b53e1691d33a59e340c54aa18b50c7c88f46" => :high_sierra
   end
 
   depends_on "gnutls"
@@ -28,10 +34,6 @@ class Tintin < Formula
   end
 
   test do
-    require "pty"
-    (testpath/"input").write("#end {bye}\n")
-    PTY.spawn(bin/"tt++", "-G", "input") do |r, _w, _pid|
-      assert_match "Goodbye", r.read
-    end
+    assert_match version.to_s, shell_output("#{bin}/tt++ -V", 1)
   end
 end

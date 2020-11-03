@@ -4,9 +4,15 @@ class A2ps < Formula
   url "https://ftp.gnu.org/gnu/a2ps/a2ps-4.14.tar.gz"
   mirror "https://ftpmirror.gnu.org/a2ps/a2ps-4.14.tar.gz"
   sha256 "f3ae8d3d4564a41b6e2a21f237d2f2b104f48108591e8b83497500182a3ab3a4"
+  license "GPL-3.0-or-later"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     rebuild 3
+    sha256 "98a293e2d83134c9a1c35026f68207d9fc2ac1bde9d7d15dd29849d7d9c5b237" => :catalina
     sha256 "b3d7d7bd0bfcada7fc2bc2340ab67362e5087e53b4d611d84aafedf713bde6c3" => :mojave
     sha256 "99646196c8b9e6d5a7b67ecca1589160749d690128bb89aace3b79d4c355dfde" => :high_sierra
     sha256 "5a1c466a3f833797710464dd1aaf4ad6c9ff0a47de33ab3b2ba9cf0c2be36bfd" => :sierra
@@ -17,6 +23,10 @@ class A2ps < Formula
     reason "The bottle needs to be installed into /usr/local."
     # https://github.com/Homebrew/brew/issues/2005
     satisfy { HOMEBREW_PREFIX.to_s == "/usr/local" }
+  end
+
+  on_linux do
+    depends_on "gperf"
   end
 
   # Software was last updated in 2007.

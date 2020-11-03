@@ -2,6 +2,7 @@ class Bitwise < Formula
   desc "Terminal based bit manipulator in ncurses"
   homepage "https://github.com/mellowcandle/bitwise"
 <<<<<<< HEAD
+<<<<<<< HEAD
   url "https://github.com/mellowcandle/bitwise/releases/download/v0.33/bitwise-v0.33.tar.gz"
   sha256 "598a623d9befaf1e724d78406a93140c1fc05ba9526f11bee945d236a92572c8"
 
@@ -19,6 +20,17 @@ class Bitwise < Formula
     sha256 "c78b42bffab47e12d4c98d97c47e14e9809e08fce3921cef84ae7f038fb1159a" => :mojave
     sha256 "0a3bd971b0473b8f863158df2f7176eb90b1da390840e43433f660bd62e006da" => :high_sierra
     sha256 "5b63274d741baf311a5e7409d42e5e63854ac5e5852c12e5ee08ba98572393d1" => :sierra
+>>>>>>> upstream/master
+=======
+  url "https://github.com/mellowcandle/bitwise/releases/download/v0.41/bitwise-v0.41.tar.gz"
+  sha256 "33ce934fb99dadf7652224152cc135a0abf6a211adde53d96e9be7067567749c"
+  license "GPL-3.0"
+
+  bottle do
+    cellar :any
+    sha256 "d7d90a1402b7b87e1989b2504e6c55ea5bea27282f4bf909b6248aac2d5263cd" => :catalina
+    sha256 "95674ac94d09b5502765956cc94b5f1a9687f22f145e2757bd708f7f7613f913" => :mojave
+    sha256 "e5e76e2ec3f762a6c79b52552fb5513bc891e55831aa75806f61b75834369d6d" => :high_sierra
 >>>>>>> upstream/master
   end
 

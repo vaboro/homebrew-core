@@ -1,17 +1,24 @@
 class Bluepill < Formula
-  desc "iOS testing tool that runs UI tests using multiple simulators"
+  desc "Testing tool for iOS that runs UI tests using multiple simulators"
   homepage "https://github.com/linkedin/bluepill"
-  url "https://github.com/linkedin/bluepill/archive/v4.1.1.tar.gz"
-  sha256 "960d5fc980c5f92f9b05211b78ae1cf5798289da29e87bfe55af86e7b1876a18"
+  url "https://github.com/linkedin/bluepill.git",
+    tag:      "v5.4.2",
+    revision: "506e39951ea835b9240b15bd6a6bf593cf6534f9"
+  license "BSD-2-Clause"
   head "https://github.com/linkedin/bluepill.git"
+
+  livecheck do
+    url "https://github.com/linkedin/bluepill/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "38bc9c743a3b614059e474d91da2f19ad88746bd8057370d2bbcf49953eb4313" => :mojave
-    sha256 "9e4506d2c52ac67e48f87a77352a3fd8ec270fa68ddf82e60751589442d2d498" => :high_sierra
+    sha256 "695be1e8867ff14019e9604f7350ba90be43dc7f7794fdc830ee3311595f6a6d" => :catalina
+    sha256 "c99867b72bcaeb0198a69b7c957979b30ba0a6e4d9ca3b72dfa3ea27b50f2387" => :mojave
   end
 
-  depends_on :xcode => ["10.0", :build]
+  depends_on xcode: ["11.2", :build]
 
   def install
     xcodebuild "-workspace", "Bluepill.xcworkspace",

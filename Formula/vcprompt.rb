@@ -4,9 +4,14 @@ class Vcprompt < Formula
   url "https://bitbucket.org/gward/vcprompt/downloads/vcprompt-1.2.1.tar.gz"
   sha256 "98c2dca278a34c5cdbdf4a5ff01747084141fbf4c50ba88710c5a13c3cf9af09"
 
+  livecheck do
+    skip "Bitbucket repository is missing"
+  end
+
   bottle do
     cellar :any
     rebuild 1
+    sha256 "8ea1dcba5986f35a4bf282a0970be07e4767a4b98669c01989554db4d67f0b4a" => :catalina
     sha256 "9c1a9204571d68401cca95f2ee1acbf5c1b0cd22f0f9251d506a4a201d795dfc" => :mojave
     sha256 "cd5abc9fe361da52bef71b639adc956a8b18f02cbf95272ddf9802862d469090" => :high_sierra
     sha256 "9416ab35f637cc751b667f1a8481d17936faa58f39749d87e4e32b07b647f229" => :sierra
@@ -16,7 +21,7 @@ class Vcprompt < Formula
   end
 
   head do
-    url "https://bitbucket.org/gward/vcprompt", :using => :hg
+    url "https://bitbucket.org/gward/vcprompt", using: :hg
     depends_on "autoconf" => :build
   end
 

@@ -1,14 +1,18 @@
 class Goffice < Formula
   desc "Gnumeric spreadsheet program"
   homepage "https://developer.gnome.org/goffice/"
-  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.45.tar.xz"
-  sha256 "702ba567e9ec0bbdd9b1a8161cd24648b4868d57a6cb89128f13c125f6f31947"
-  revision 2
+  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.48.tar.xz"
+  sha256 "a439162fa26a0e58117e07b82b37000a7f421088ad379eb1f6a1cdee101ecefc"
+  license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "73f03c21d7a54de03036261ed6da4b362bc0be1ef26f7f66898b8708e67b238c" => :catalina
-    sha256 "ecedd906f35ea37bcc54a5832d9ef7c11b2f833cd2999b809426b90d82053f59" => :mojave
-    sha256 "c692381c13217c7033954e075a643dec876f7d9d754802573f6fe88826adc7ff" => :high_sierra
+    sha256 "3e05167a37c42bfa01acf4be7055a52e3c2a03c990536ae5562b2c0aa4812e42" => :catalina
+    sha256 "9edf36fd2ffb0a116e4e5f69cd00a04dd29eda04c1a3069b0e4da8950573c0a4" => :mojave
+    sha256 "7043808e39862444e7aaae796137b30fadefb142dea291f9d8ce23228d635264" => :high_sierra
   end
 
   head do
@@ -30,6 +34,7 @@ class Goffice < Formula
   depends_on "librsvg"
   depends_on "pango"
   depends_on "pcre"
+
   uses_from_macos "libxslt"
 
   def install

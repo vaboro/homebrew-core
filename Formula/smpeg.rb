@@ -1,11 +1,17 @@
 class Smpeg < Formula
   desc "SDL MPEG Player Library"
   homepage "https://icculus.org/smpeg/"
-  url "svn://svn.icculus.org/smpeg/tags/release_0_4_5/", :revision => "399"
+  url "svn://svn.icculus.org/smpeg/tags/release_0_4_5/", revision: "399"
+
+  livecheck do
+    url "https://svn.icculus.org/smpeg/tags/"
+    regex(%r{href=.*?release[._-]v?([01](?:[._]\d+)+)/}i)
+  end
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "929cb2fe89f7525acbf38a269bde8aaf07f7b2d406007ee9df2d21051a0ccba6" => :catalina
     sha256 "6e826bd49ceb171cc36877c0498d8ccfc3c614f39b684728e0c307b69942d58c" => :mojave
     sha256 "2779c8aba2aed376076e53fc9e2e694e8b5fabca0096ae91eed786b73ef3704f" => :high_sierra
     sha256 "9ac1a1c83a9861b8762ab711d709e67bf020204fb1c1b5907b244d83ced4ab2c" => :sierra

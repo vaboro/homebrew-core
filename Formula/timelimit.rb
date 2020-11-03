@@ -4,8 +4,14 @@ class Timelimit < Formula
   url "https://devel.ringlet.net/files/sys/timelimit/timelimit-1.9.0.tar.gz"
   sha256 "34185bbfe807a912f352f4e2f634c9c3781810b376c4bba947a2381611e7d72c"
 
+  livecheck do
+    url :homepage
+    regex(/latest release is .*?timelimit[._-]v?(\d+(?:\.\d+)+)</i)
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "5a4d896430260125864a8b8e22aabf172e36c8f8942faece7db8d502c568a690" => :catalina
     sha256 "4b868a4ee5bd9e424e6ea4aa36fc828d6efd3f07b1d72063bbdb5a0c59baa276" => :mojave
     sha256 "872dbbd21820c6d08513f29bc0c024f8584c7d7b7b6b4b436553414d08fd6950" => :high_sierra
     sha256 "5fdeeb6ef9c0306f7195187b8068bc4f84de79d6f6716977a262ce26abb3b1db" => :sierra

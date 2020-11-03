@@ -3,9 +3,11 @@ class Envv < Formula
   homepage "https://github.com/jakewendt/envv#readme"
   url "https://github.com/jakewendt/envv/archive/v1.7.tar.gz"
   sha256 "1db05b46904e0cc4d777edf3ea14665f6157ade0567359e28663b5b00f6fa59a"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "54b7b425a3db83134fc9038b8672bd84a943413f5386d9cef92711eeaaade467" => :catalina
     sha256 "59acc1f13ed58898376a14ffcb23766f62ff7c0446eebb3ee8aa1f8162f0994c" => :mojave
     sha256 "35e2781067a3f5429c36546a20faca9d4762882bf3908122efc58c8b752968e9" => :high_sierra
     sha256 "cc30a2317f78124c609d6313a33cea58c9d428a95903966da4cb42051630ef97" => :sierra

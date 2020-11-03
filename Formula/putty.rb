@@ -1,14 +1,14 @@
 class Putty < Formula
   desc "Implementation of Telnet and SSH"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
-  url "https://the.earth.li/~sgtatham/putty/0.72/putty-0.72.tar.gz"
-  sha256 "f236b5a26b0905809b3cd190158e8b95d81f86ad34fdd97a4312c1877f2cec5f"
+  url "https://the.earth.li/~sgtatham/putty/0.74/putty-0.74.tar.gz"
+  sha256 "ddd5d388e51dd9e6e294005b30037f6ae802239a44c9dc9808c779e6d11b847d"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "039baa96e05a37924ec3a9fbba5c8c04ff6524123e5295196bc12a67ce98dbe2" => :mojave
-    sha256 "8cccc7fcb0cc05069a9e1ed4f0a44e31458efc65b593a7cdd4f14ca48b1a9564" => :high_sierra
-    sha256 "04e18801cd8a061f79faa6d3e72bf4d8b3c61f8787fec5a3e8d6156c1946ff9b" => :sierra
+    sha256 "d5e454c08c5d06394527aa7141a332eb721097068f25deff3b4affa847837178" => :catalina
+    sha256 "5f9844fc7464fefd987780b3579a33b2ca37673be56c2a8249c312a19e20faea" => :mojave
+    sha256 "6621f31a41a8eedbbb2fda99a0548deed80d432216469105bac8084df66dbcbf" => :high_sierra
   end
 
   head do
@@ -21,7 +21,9 @@ class Putty < Formula
 
   depends_on "pkg-config" => :build
 
-  conflicts_with "pssh", :because => "both install `pscp` binaries"
+  uses_from_macos "expect" => :test
+
+  conflicts_with "pssh", because: "both install `pscp` binaries"
 
   def install
     if build.head?

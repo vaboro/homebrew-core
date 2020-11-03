@@ -1,25 +1,38 @@
 class Dnsperf < Formula
   desc "Measure DNS performance by simulating network conditions"
   homepage "https://www.dns-oarc.net/tools/dnsperf"
-  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.3.1.tar.gz"
-  sha256 "ffefdc4610943c645b181d26843842d4890721d4da09ebb19aa7c8a5b7effd8a"
-  revision 1
+  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.3.4.tar.gz"
+  sha256 "adcb3ad28ad46ef9ff4a218c67bd5ea9a9dde556b9a277059a1f390ce0f86581"
+  license "Apache-2.0"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?dnsperf[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "fc3550c76cf87091bbee3fa47a61970c9f0c862e8beb4ac9702636d3541a1b88" => :mojave
-    sha256 "25020eee136ad0faf63126440c93dcc87dd35be1e951cd595247b65e51ed2d39" => :high_sierra
-    sha256 "6be4c1270899b5af3526547f7e0edb5a79ac16ca634bab93af3edb6901b9cd6b" => :sierra
+    sha256 "29ce167d9cac25446abbab3948a4de2b66bead70576bca24f13bda51c1d79de4" => :catalina
+    sha256 "4cc4b444f46fe98328a3d07c70672b6e963b7b530a10515a02a1f40eab1b2d42" => :mojave
+    sha256 "d2bad43d4858579143f5f01aab16ca5fe8a528b3fe81051ee212ebefc7e4a057" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "bind"
+  depends_on "krb5"
   depends_on "libxml2"
 
   def install
     # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+
+    # Extra linker flags are needed to build this on macOS.
+    # Upstream bug ticket: https://github.com/DNS-OARC/dnsperf/issues/80
+    ENV.append "LDFLAGS", "-framework CoreFoundation"
+    ENV.append "LDFLAGS", "-framework CoreServices"
+    ENV.append "LDFLAGS", "-framework Security"
+    ENV.append "LDFLAGS", "-framework GSS"
+    ENV.append "LDFLAGS", "-framework Kerberos"
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

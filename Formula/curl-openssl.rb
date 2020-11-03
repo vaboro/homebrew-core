@@ -1,14 +1,15 @@
 class CurlOpenssl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.66.0.tar.bz2"
-  sha256 "6618234e0235c420a21f4cb4c2dd0badde76e6139668739085a70c4e2fe7a141"
+  url "https://curl.haxx.se/download/curl-7.72.0.tar.bz2"
+  sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
+  license "curl"
+  revision 1
 
   bottle do
-    sha256 "2b28a8ee69e76187811d91d30a249227565530a39835774fde5f9b833d545e1d" => :catalina
-    sha256 "48f2ce8c1ad64e221740f893e82b71511c4715283dc663128ad744f2ffa569f2" => :mojave
-    sha256 "a93f3fe64c64afa6d3ffedaccfb1d3afc5f933ee475dc5a57e91ca151d05fc7a" => :high_sierra
-    sha256 "fd3deb1cc6de9f34a727cfa545891bd56818595872f46b5c305435d234f77620" => :sierra
+    sha256 "1a6a54a5b277d33f82c54861d084668edad7a6e5df88f15173d3abb5e6f2e954" => :catalina
+    sha256 "04a142f305941854e78bdcdbf570aabae8cee49052449938485bd7be7abd14ae" => :mojave
+    sha256 "408a987e5e52d4a043f62aeaeb006ccf28d5dca2a39b9f2d7419a4c8922ad477" => :high_sierra
   end
 
   head do
@@ -19,7 +20,7 @@ class CurlOpenssl < Formula
     depends_on "libtool" => :build
   end
 
-  keg_only :provided_by_macos
+  keg_only :shadowed_by_macos, "macOS provides curl"
 
   depends_on "pkg-config" => :build
   depends_on "brotli"
@@ -31,24 +32,26 @@ class CurlOpenssl < Formula
   depends_on "openldap"
   depends_on "openssl@1.1"
   depends_on "rtmpdump"
+  depends_on "zstd"
 
   def install
     system "./buildconf" if build.head?
 
+    openssl = Formula["openssl@1.1"]
     args = %W[
       --disable-debug
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
       --enable-ares=#{Formula["c-ares"].opt_prefix}
-      --with-ca-bundle=#{etc}/openssl@1.1/cert.pem
-      --with-ca-path=#{etc}/openssl@1.1/certs
+      --with-ca-bundle=#{openssl.pkgetc}/cert.pem
+      --with-ca-path=#{openssl.pkgetc}/certs
       --with-gssapi
       --with-libidn2
       --with-libmetalink
       --with-librtmp
       --with-libssh2
-      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl=#{openssl.opt_prefix}
       --without-libpsl
     ]
 

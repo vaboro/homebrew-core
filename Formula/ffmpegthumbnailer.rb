@@ -1,16 +1,17 @@
 class Ffmpegthumbnailer < Formula
   desc "Create thumbnails for your video files"
   homepage "https://github.com/dirkvdb/ffmpegthumbnailer"
-  url "https://github.com/dirkvdb/ffmpegthumbnailer/releases/download/2.2.0/ffmpegthumbnailer-2.2.0.tar.bz2"
-  sha256 "e5c31299d064968198cd378f7488e52cd5e738fac998eea780bc77d7f32238c2"
-  revision 3
+  url "https://github.com/dirkvdb/ffmpegthumbnailer/archive/2.2.2.tar.gz"
+  sha256 "8c4c42ab68144a9e2349710d42c0248407a87e7dc0ba4366891905322b331f92"
+  license "GPL-2.0"
+  revision 2
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git"
 
   bottle do
     cellar :any
-    sha256 "71ecc0e3166dcd1ce16c2b51b5434a7207f85bf681ebb14910c537ba077b6ef5" => :mojave
-    sha256 "0096816909396660805320d6e64b9fec9f5281cdb594edb01d32d1f85fb52234" => :high_sierra
-    sha256 "9e8fc85ebc068dbed78505d03e8d095cd1acf128a658a896e77233eec613218c" => :sierra
+    sha256 "28a278ef88da9c423a719558dfc138e8ff15d89559b04250b143e8e0840b1bcd" => :catalina
+    sha256 "66868572e40f91a49b363a8943eeeb9066eb0b8dd510a719070f3997f50b2ea8" => :mojave
+    sha256 "71cea969bdeeb648b9788736e1aea0904bba274df17ecc42ec21cd8c21b18539" => :high_sierra
   end
 
   depends_on "cmake" => :build

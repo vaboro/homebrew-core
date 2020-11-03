@@ -11,9 +11,11 @@ class LibbitcoinNode < Formula
     sha256 "e8e1cc3be334b9cc10502d54243299f07b349a2314e692e68a0a351e9c4c3b52" => :sierra
 =======
   sha256 "9556ee8aab91e893db1cf343883034571153b206ffbbce3e3133c97e6ee4693b"
+  license "AGPL-3.0"
   revision 1
 
   bottle do
+    sha256 "653e045b09c85d70bcc454f6a2fb7c7cbd5fcfdd77eb0f4d376699c5bde730e8" => :catalina
     sha256 "d80c4711180ca3046edfad49d380a434f3dee07232ab3171483a5f135ebe41d2" => :mojave
     sha256 "d0e3c6d9bcd6db9b2275aadafd8c15ad086da4f4b43cb3e2b25ed76239841d8d" => :high_sierra
     sha256 "982ed6da5589239636751f909765d7ddc744fbfe29ed8a6f73cf6b8f62546e3f" => :sierra

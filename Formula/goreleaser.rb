@@ -5,6 +5,7 @@ class Goreleaser < Formula
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       :tag      => "v0.114.1",
       :revision => "36b190490f7b1716c9edb9ce96f243397b97abf3"
 
@@ -43,23 +44,25 @@ class Goreleaser < Formula
     sha256 "8ef334862e473c30a273acc7eb552ec438bdfa126156032bbe85ac93b4c3ce8c" => :mojave
     sha256 "28177e58ab866d7440b6c65b67485f6c1a21f9bf75cbf66e83476daf7f207e85" => :high_sierra
 >>>>>>> upstream/master
+=======
+      tag:      "v0.143.0",
+      revision: "28230b67f8f25ed8493e85f3d06fb4dec5618f44"
+  license "MIT"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "7ef7ca6765c61694e6d63c5e95929d2234480c7d75807ce68a73234b2cbc239d" => :catalina
+    sha256 "d64c123992116544febbe08e0a88476b7b9e9ac320efad00d9760ad34c71e44e" => :mojave
+    sha256 "fa1e0110c826109db418814d9c34827e41a7d1125a9cea5c28c0cebe427d68dd" => :high_sierra
+>>>>>>> upstream/master
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/goreleaser/goreleaser"
-    dir.install buildpath.children
-
-    cd dir do
-      system "go", "mod", "vendor"
-      system "go", "build", "-ldflags",
-                   "-s -w -X main.version=#{version} -X main.commit=#{stable.specs[:revision]} -X main.builtBy=homebrew",
-                   "-o", bin/"goreleaser"
-      prefix.install_metafiles
-    end
+    system "go", "build", "-ldflags",
+             "-s -w -X main.version=#{version} -X main.commit=#{stable.specs[:revision]} -X main.builtBy=homebrew",
+             *std_go_args
   end
 
   test do

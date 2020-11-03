@@ -1,19 +1,23 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-4.3.0/modules-4.3.0.tar.bz2"
-  sha256 "3a33ab5ca9f43b12491896859bb812721c5dc4bd7500fce35a51a802760cec49"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-4.5.3/modules-4.5.3.tar.bz2"
+  sha256 "f6cd4ef29d5037d367d04fe041e06cc915a092afee664b56e1045ec74e66ac6b"
+
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/modules[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "3f9ade73ad63d8d66cbb15e65668ed365c97ca7e43c01c0888aeeda469a5860c" => :mojave
-    sha256 "e7eb38927dd127c48712b2a8f97a0e63877c3b7c31a70ff3e928a97ff9d5051c" => :high_sierra
-    sha256 "c7352c28ef997d528026f2f2a28263ae56ba7000bcded5b5809f45eb446597ea" => :sierra
+    sha256 "cbc6ac501c2142c7919ecc9b56aa80d2e0828eb2c28060f792ab2d6da7947dec" => :catalina
+    sha256 "5f21d6a67818b08d239fb5b530d2c82d097ea161ca17fd4b378fa63f4a50bf55" => :mojave
+    sha256 "62863887e0df66d8fc99dd581a1949223d615d4bc58e4366bd0a086b42e8f94d" => :high_sierra
   end
 
   def install
     args = %W[
-      --disable-dependency-tracking
       --prefix=#{prefix}
       --datarootdir=#{share}
       --with-tcl=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework
@@ -23,12 +27,13 @@ class Modules < Formula
     system "make", "install"
   end
 
-  def caveats; <<~EOS
-    To activate modules, add the following at the end of your .zshrc:
-      source #{opt_prefix}/init/zsh
-    You will also need to reload your .zshrc:
-      source ~/.zshrc
-  EOS
+  def caveats
+    <<~EOS
+      To activate modules, add the following at the end of your .zshrc:
+        source #{opt_prefix}/init/zsh
+      You will also need to reload your .zshrc:
+        source ~/.zshrc
+    EOS
   end
 
   test do

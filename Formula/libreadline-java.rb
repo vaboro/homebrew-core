@@ -5,14 +5,19 @@ class LibreadlineJava < Formula
   sha256 "cdcfd9910bfe2dca4cd08b2462ec05efee7395e9b9c3efcb51e85fa70548c890"
   revision 2
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
+    sha256 "5259a709b33cf833a2ceb22fc768b01651e3e55a35efeed7f540190f73beea4d" => :catalina
     sha256 "1a254f92d07e11b0a85bccc89a548f6eaff3ada1706056bb1af559a93b7d6665" => :mojave
     sha256 "f2fc9a1faf643600da0b9b3b0711ee3b9b3beabcfdb0121d9018b5a98dba8a8d" => :high_sierra
     sha256 "784fc9cb94f45ccaf91af932f35d6ac3570326914c4a4da866c9e34e173238a2" => :sierra
   end
 
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
   depends_on "readline"
 
   # Fix "non-void function should return a value"-Error
@@ -62,7 +67,8 @@ class LibreadlineJava < Formula
       s.change_make_var! "CC", "cc"
       s.gsub! "LIB_EXT := so", "LIB_EXT := jnilib"
       s.gsub! "$(CC) -shared $(OBJECTS) $(LIBPATH) $($(TG)_LIBS) -o $@",
-        "$(CC) -install_name #{HOMEBREW_PREFIX}/lib/$(LIB_PRE)$(TG).$(LIB_EXT) -dynamiclib $(OBJECTS) $(LIBPATH) $($(TG)_LIBS) -o $@"
+              "$(CC) -install_name #{HOMEBREW_PREFIX}/lib/$(LIB_PRE)$(TG).$(LIB_EXT) " \
+              "-dynamiclib $(OBJECTS) $(LIBPATH) $($(TG)_LIBS) -o $@"
     end
 
     pkgshare.mkpath
@@ -74,15 +80,19 @@ class LibreadlineJava < Formula
     doc.install "api"
   end
 
-  def caveats; <<~EOS
-    You may need to set JAVA_HOME:
-      export JAVA_HOME="$(/usr/libexec/java_home)"
-  EOS
+  def caveats
+    <<~EOS
+      You may need to set JAVA_HOME:
+        export JAVA_HOME="$(/usr/libexec/java_home)"
+    EOS
   end
 
   # Testing libreadline-java (can we execute and exit libreadline without exceptions?)
   test do
-    assert /Exception/ !~ pipe_output("java -Djava.library.path=#{lib} -cp #{pkgshare}/libreadline-java.jar test.ReadlineTest", "exit")
+    assert /Exception/ !~ pipe_output(
+      "java -Djava.library.path=#{lib} -cp #{pkgshare}/libreadline-java.jar test.ReadlineTest",
+      "exit",
+    )
   end
 end
 

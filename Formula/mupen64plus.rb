@@ -3,10 +3,17 @@ class Mupen64plus < Formula
   homepage "https://www.mupen64plus.org/"
   url "https://github.com/mupen64plus/mupen64plus-core/releases/download/2.5/mupen64plus-bundle-src-2.5.tar.gz"
   sha256 "9c75b9d826f2d24666175f723a97369b3a6ee159b307f7cc876bbb4facdbba66"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://github.com/mupen64plus/mupen64plus-core/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "999b60faedf8eb2299f854991995c44b81898de85a73ca0568902e5b63641e42" => :catalina
     sha256 "c88a4d9a47cdcc6b995615d5fd4b061a7046ec72fac75560d79998b7abf60b78" => :mojave
     sha256 "4dc531259b558fe987eecd74d87afb70284d36ec4e0c3008de751b820f83e64b" => :high_sierra
     sha256 "28006559bb0cc624432b1a8b0a7dfd08e9a5a3d59d7dbaf5cde64ac29dc747d1" => :sierra
@@ -26,7 +33,9 @@ class Mupen64plus < Formula
 
   def install
     # Prevent different C++ standard library warning
-    inreplace Dir["source/mupen64plus-**/projects/unix/Makefile"], /(-mmacosx-version-min)=\d+\.\d+/, "\\1=#{MacOS.version}"
+    inreplace Dir["source/mupen64plus-**/projects/unix/Makefile"],
+              /(-mmacosx-version-min)=\d+\.\d+/,
+              "\\1=#{MacOS.version}"
 
     # Fix build with Xcode 9 using upstream commit:
     # https://github.com/mupen64plus/mupen64plus-video-glide64mk2/commit/5ac11270

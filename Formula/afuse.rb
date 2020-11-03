@@ -3,9 +3,11 @@ class Afuse < Formula
   homepage "https://github.com/pcarrier/afuse/"
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/afuse/afuse-0.4.1.tar.gz"
   sha256 "c6e0555a65d42d3782e0734198bbebd22486386e29cb00047bc43c3eb726dca8"
+  license "GPL-2.0"
 
   bottle do
     cellar :any
+    sha256 "cf5a7aeba0e2504ea5bf7bf691ed2d0f8245cbac069b089359588e7df04140e0" => :catalina
     sha256 "d28d229c3bc7317681e538388a3d87df170aa56dc8e5e9ced6bf964e6fafba71" => :mojave
     sha256 "5596df8a8351206809f4b047e9d357e36273f5d505e531db3f14d320cf7eec28" => :high_sierra
     sha256 "900e55a47834181f518e87e7cbaaf0f3f078b0d40631ffccfc776e82c7c61f87" => :sierra

@@ -3,10 +3,12 @@ class Chgems < Formula
   homepage "https://github.com/postmodern/chgems#readme"
   url "https://github.com/postmodern/chgems/archive/v0.3.2.tar.gz"
   sha256 "515d1bfebb5d5183a41a502884e329fd4c8ddccb14ba8a6548a1f8912013f3dd"
+  license "MIT"
   head "https://github.com/postmodern/chgems.git"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "aae71d51be9dea4a7109bcf94073a772038ae50f32cd0eec51179aa554029e01" => :catalina
     sha256 "9b24233632189a803f6e65fcd408bf8220b25ad225fda970a141eb0f7bad4d8c" => :mojave
     sha256 "a9913aa39c5901bc434ce9774d5ccf3e618fa20784a709f7185bc3e26430b367" => :high_sierra
     sha256 "01e2e0335391df51b5fb2003e79d4994a48b4515077904b4e924062a0bf79b3c" => :sierra

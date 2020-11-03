@@ -1,12 +1,13 @@
 class GitFlow < Formula
   desc "Extensions to follow Vincent Driessen's branching model"
   homepage "https://github.com/nvie/gitflow"
+  license "BSD-2-Clause"
 
   stable do
     # Use the tag instead of the tarball to get submodules
     url "https://github.com/nvie/gitflow.git",
-      :tag      => "0.4.1",
-      :revision => "1ffb6b1091f05466d3cd27f2da9c532a38586ed5"
+      tag:      "0.4.1",
+      revision: "1ffb6b1091f05466d3cd27f2da9c532a38586ed5"
 
     resource "completion" do
       url "https://github.com/bobthecow/git-flow-completion/archive/0.4.2.2.tar.gz"
@@ -16,6 +17,7 @@ class GitFlow < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "8ea12cd7e2666fb6fdfaffaeb3a0437037a40cde559a835fc9de038f36a424dc" => :catalina
     sha256 "ab455769b6b8122e1d345f56d799fe43445bbbeba6265892715167388c737af9" => :mojave
     sha256 "ce4b64f4d13f4a5a8e05c9087627b42cd328c8accc8349c4ca256238d1d3fecc" => :high_sierra
     sha256 "acb9a2690fa86925600fa6e67e38731ef05f7f5d6ccfceb9c5175286c1081fe0" => :sierra
@@ -25,14 +27,14 @@ class GitFlow < Formula
   end
 
   head do
-    url "https://github.com/nvie/gitflow.git", :branch => "develop"
+    url "https://github.com/nvie/gitflow.git", branch: "develop"
 
     resource "completion" do
-      url "https://github.com/bobthecow/git-flow-completion.git", :branch => "develop"
+      url "https://github.com/bobthecow/git-flow-completion.git", branch: "develop"
     end
   end
 
-  conflicts_with "git-flow-avh", :because => "Both install `git-flow` binaries and completions"
+  conflicts_with "git-flow-avh", because: "both install `git-flow` binaries and completions"
 
   def install
     system "make", "prefix=#{libexec}", "install"

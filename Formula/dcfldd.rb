@@ -3,9 +3,15 @@ class Dcfldd < Formula
   homepage "https://dcfldd.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/dcfldd/dcfldd/1.3.4-1/dcfldd-1.3.4-1.tar.gz"
   sha256 "f5143a184da56fd5ac729d6d8cbcf9f5da8e1cf4604aa9fb97c59553b7e6d5f8"
+  license "GPL-2.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "17bf5e7a79a3453103e9fd5a70f0b12d49c93c5302a6ada8bd021ca918979992" => :catalina
     sha256 "63b3928acc96ad685b064fa3de4f44c4b96d1cbb610d4ea8b7c205a41385a4e7" => :mojave
     sha256 "95b0c080c543745a3a81751cc175fb99a1b75a7e124518d8e5d3337b76a97e72" => :high_sierra
     sha256 "0958d948042f047d4249a7400f8c4f7adfe41f11c20aa04a0dbaac09c718ea2a" => :sierra

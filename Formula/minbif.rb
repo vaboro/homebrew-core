@@ -8,6 +8,7 @@ class Minbif < Formula
 
   bottle do
     cellar :any
+    sha256 "57dc630a96ec93b8168d569cc1ff0152f381ca52c10d2b6b7bffc1d91cbc14a2" => :catalina
     sha256 "479cfbb3b59f2c0c05b0553188ae2497ee313b02e5850172bb7055231def61b8" => :mojave
     sha256 "5b8a0fd609cda94163f95c7d0b6620c143b3ff127178d37a57b76493231c73cc" => :sierra
   end
@@ -38,12 +39,13 @@ class Minbif < Formula
     (var/"lib/minbif/users").mkpath
   end
 
-  def caveats; <<~EOS
-    Minbif must be passed its config as first argument:
-        minbif #{etc}/minbif/minbif.conf
+  def caveats
+    <<~EOS
+      Minbif must be passed its config as first argument:
+          minbif #{etc}/minbif/minbif.conf
 
-    Learn more about minbif: https://symlink.me/projects/minbif/wiki/Quick_start
-  EOS
+      Learn more about minbif: https://symlink.me/projects/minbif/wiki/Quick_start
+    EOS
   end
 
   test do

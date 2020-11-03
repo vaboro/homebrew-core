@@ -3,10 +3,12 @@ class Libpuzzle < Formula
   homepage "https://www.pureftpd.org/project/libpuzzle"
   url "https://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/libpuzzle-0.11.tar.bz2"
   sha256 "ba628268df6956366cbd44ae48c3f1bab41e70b4737041a1f33dac9832c44781"
+  license "ISC"
 
   bottle do
     cellar :any
     rebuild 2
+    sha256 "858f964b7cbbde7c37abd6915d64f4a25f9a37e85e1d2ec841e9a2c37b591de9" => :catalina
     sha256 "fa41c55ca3bee07a45c5b77c91137dcf9e34852d6bbb9467e3f84a8f233361eb" => :mojave
     sha256 "017b32e2b389f87bc7445476d67543dd711cdac34374da0958d70a4682a706a7" => :high_sierra
     sha256 "62452be0513886b00ad766fc6c444f69af8a70d89948a65b3fe201c12383f536" => :sierra

@@ -2,31 +2,26 @@ class Calicoctl < Formula
   desc "Calico CLI tool"
   homepage "https://www.projectcalico.org"
   url "https://github.com/projectcalico/calicoctl.git",
-      :tag      => "v3.9.1",
-      :revision => "ab93db3bc81fe069e3a6cce521f1956870adfb88"
+      tag:      "v3.16.1",
+      revision: "7426fc4418468f613c00c04dde4e02d8bef32257"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4516287eafcb97b6d039c31ea45ef4cbabf7325d9c342a9a88d04ac5ea8199fc" => :catalina
-    sha256 "8941d3769e4ec26e754a801b1a52194e0cdc285fda59e682c2fee245db4acfb3" => :mojave
-    sha256 "24210905f607a5960e9ca6112025446a6ef6867bc100013bdc3dc42f4ecee877" => :high_sierra
+    sha256 "8920aea8fa8619fca97f3fcc295ab6b5855582d639f361191aecb0d79c84f61c" => :catalina
+    sha256 "943adb8672eb263d61631f3689bd5b909b30a04d6e50bad5a028f7ea7b98720a" => :mojave
+    sha256 "3a5ff0f4d05b17e858bbb303ea0e643ab2e0b53c5a2bdc0ee1ab40a04a5d04e1" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/projectcalico/calicoctl"
-    dir.install buildpath.children
-
-    cd dir do
-      commands = "github.com/projectcalico/calicoctl/calicoctl/commands"
-      ldflags = "-X #{commands}.VERSION=#{stable.specs[:tag]} -X #{commands}.GIT_REVISION=#{stable.specs[:revision][0, 8]} -s -w"
-      system "go", "build", "-v", "-o", "dist/calicoctl-darwin-amd64", "-ldflags", ldflags, "calicoctl/calicoctl.go"
-      bin.install "dist/calicoctl-darwin-amd64" => "calicoctl"
-      prefix.install_metafiles
-    end
+    commands = "github.com/projectcalico/calicoctl/calicoctl/commands"
+    system "go", "build", *std_go_args,
+                          "-ldflags", "-X #{commands}.VERSION=#{stable.specs[:tag]} " \
+                                      "-X #{commands}.GIT_REVISION=#{stable.specs[:revision][0, 8]} " \
+                                      "-s -w",
+                          "calicoctl/calicoctl.go"
   end
 
   test do

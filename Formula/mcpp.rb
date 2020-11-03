@@ -4,9 +4,15 @@ class Mcpp < Formula
   url "https://downloads.sourceforge.net/project/mcpp/mcpp/V.2.7.2/mcpp-2.7.2.tar.gz"
   sha256 "3b9b4421888519876c4fc68ade324a3bbd81ceeb7092ecdbbc2055099fcb8864"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/mcpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     cellar :any
     rebuild 1
+    sha256 "742a861cb7087caedaed90aa40c4780a1e6e4ad50be74ee64b251c6ae1ebe21c" => :catalina
     sha256 "40a63165c2df3feab3ed58c09a3f4b60daef5e112ec2f101f056aee56ca9819f" => :mojave
     sha256 "fe1489ca47b0d9e551b4aa1b6cb2a4135848be79e3982856442080f75fcb45d7" => :high_sierra
     sha256 "cdd368c63dc6403832c938967f8f099ec3d02acfcc5c75ab0426ad1cd213b045" => :sierra

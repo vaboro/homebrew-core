@@ -1,12 +1,14 @@
 class Xu4 < Formula
   desc "Remake of Ultima IV"
   homepage "https://xu4.sourceforge.io/"
-  url "https://svn.code.sf.net/p/xu4/code/trunk/u4", :revision => "3088"
+  url "https://svn.code.sf.net/p/xu4/code/trunk/u4", revision: "3088"
   version "1.0beta4+r3088"
+  license "GPL-2.0"
   head "https://svn.code.sf.net/p/xu4/code/trunk/u4"
 
   bottle do
     cellar :any
+    sha256 "e47edcace3c7b496b59d85f904b102a4fbc031c50671a02cc749149d194d11f6" => :catalina
     sha256 "0454e0ccdb0c16122e0acaaf34e7ff256d6f8fa8c5f3860c97d68217ad1d1aaf" => :mojave
     sha256 "e7aac43710b9180710c9af0dcd80a955aa095d6264f92eb482cbe2322c01146d" => :high_sierra
     sha256 "9d490768b07abfa8c105c88dc0d2a6be97e175f6535afcee0a4c63e37d976f6f" => :sierra
@@ -19,13 +21,13 @@ class Xu4 < Formula
   depends_on "sdl_mixer"
 
   resource "ultima4" do
-    url "https://www.thatfleminggent.com/ultima/ultima4.zip", :using => :nounzip
+    url "https://www.thatfleminggent.com/ultima/ultima4.zip", using: :nounzip
     sha256 "94aa748cfa1d0e7aa2e518abebb994f3c18acf7edb78c3bd37cd0a4404e6ba74"
   end
 
   resource "u4upgrad" do
     url "https://downloads.sourceforge.net/project/xu4/Ultima%204%20VGA%20Upgrade/1.3/u4upgrad.zip",
-      :using => :nounzip
+      using: :nounzip
     sha256 "400ac37311f3be74c1b2d7836561b2ead2b146f5162586865b0f4881225cca58"
   end
 

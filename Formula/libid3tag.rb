@@ -4,6 +4,11 @@ class Libid3tag < Formula
   url "https://downloads.sourceforge.net/project/mad/libid3tag/0.15.1b/libid3tag-0.15.1b.tar.gz"
   sha256 "63da4f6e7997278f8a3fef4c6a372d342f705051d1eeb6a46a86b03610e26151"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/libid3tag[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
+  end
+
   bottle do
     cellar :any
     rebuild 1
@@ -54,19 +59,20 @@ class Libid3tag < Formula
     (lib+"pkgconfig/id3tag.pc").write pc_file
   end
 
-  def pc_file; <<~EOS
-    prefix=#{opt_prefix}
-    exec_prefix=${prefix}
-    libdir=${exec_prefix}/lib
-    includedir=${prefix}/include
+  def pc_file
+    <<~EOS
+      prefix=#{opt_prefix}
+      exec_prefix=${prefix}
+      libdir=${exec_prefix}/lib
+      includedir=${prefix}/include
 
-    Name: id3tag
-    Description: ID3 tag reading library
-    Version: #{version}
-    Requires:
-    Conflicts:
-    Libs: -L${libdir} -lid3tag -lz
-    Cflags: -I${includedir}
-  EOS
+      Name: id3tag
+      Description: ID3 tag reading library
+      Version: #{version}
+      Requires:
+      Conflicts:
+      Libs: -L${libdir} -lid3tag -lz
+      Cflags: -I${includedir}
+    EOS
   end
 end

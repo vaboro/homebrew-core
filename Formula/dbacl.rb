@@ -3,9 +3,15 @@ class Dbacl < Formula
   homepage "https://dbacl.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/dbacl/dbacl/1.14.1/dbacl-1.14.1.tar.gz"
   sha256 "ff0dfb67682e863b1c3250acc441ce77c033b9b21d8e8793e55b622e42005abd"
+  license "GPL-3.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "d81fd1fc86703610737cfd9d24f8c3c8db2e97ef4148f1f7f91a43c81c8762c6" => :catalina
     sha256 "8a64ac80e91d8d5b2366046096098b851d503c58af65ef0858834c5794d039a5" => :mojave
     sha256 "42c1c03e8df0b4db91dc99ace3ec87f3901f1aa6975430d597240ab5f9182c1f" => :high_sierra
     sha256 "c6e6d74e2f2a86325ee895f8ef6893d99e1463d0018ead0d0da46e0dfd95c272" => :sierra

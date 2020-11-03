@@ -3,9 +3,11 @@ class Uniutils < Formula
   homepage "https://billposer.org/Software/unidesc.html"
   url "https://billposer.org/Software/Downloads/uniutils-2.27.tar.gz"
   sha256 "c662a9215a3a67aae60510f679135d479dbddaf90f5c85a3c5bab1c89da61596"
+  license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "c2991a6dc15937fd36591ef3a56134d9474b544a3d0f9407a9555adebf3a53e7" => :catalina
     sha256 "2ea235c47ef4ede643ccb1adaccbc376b0cbe39bbdeb3d5623bcbea210cd7519" => :mojave
     sha256 "6717501e797865b956ded03f433b9353e033328727bcdd6263b1f3721c8ef30d" => :high_sierra
     sha256 "5f6609e92596f48fbb20bd0245437f4e967ebc9d06d9fc5e130584f394dce21a" => :sierra

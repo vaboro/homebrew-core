@@ -3,9 +3,11 @@ class Scriptcs < Formula
   homepage "https://github.com/scriptcs/scriptcs"
   url "https://github.com/scriptcs/scriptcs/archive/v0.17.1.tar.gz"
   sha256 "e876118d82f52cbdd9569783ec9278c4ac449055aa628cdcb2d785bf8098a434"
+  license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "c14c80f7b24ac5f2c14119ec2f371416ae07b9fba8bd9b0eb90d57ef5104f765" => :catalina
     sha256 "121137df4078b2819a16f0f3e75924b10eba51a3ca7ac0a4be3d9010d2d1f7aa" => :mojave
     sha256 "263fda7addb857a9ed3c0c15856c422d3684ad069c2efc644858bb1779a92e91" => :high_sierra
     sha256 "9ccece2f779060ab23e699b07d6cc6ce0b2c2e0058cc995b1541e1170f69a6eb" => :sierra

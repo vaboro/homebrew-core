@@ -5,8 +5,13 @@ class Mjpegtools < Formula
   sha256 "864f143d7686377f8ab94d91283c696ebd906bf256b2eacc7e9fb4dddcedc407"
   revision 2
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
+    sha256 "5628d3b16a0e3172ba49a38b903b5be2fcb2595ce4919e32c41e39a89a250102" => :catalina
     sha256 "c8a22d895e9835274994bdf72b0ca6f3c0df523e5dc8e281ed7d1fd7ae3b41eb" => :mojave
     sha256 "7f47c9df784de38ee02726c1381b42a5924754c7702003ee8fafbae296302638" => :high_sierra
     sha256 "9f5c0eb81540bf70ff8b2352a8ea21117a75c6dbdac58ea8d04d0da47a639cb9" => :sierra

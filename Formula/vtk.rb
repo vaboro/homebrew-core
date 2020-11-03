@@ -1,15 +1,15 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz"
-  sha256 "34c3dc775261be5e45a8049155f7228b6bd668106c72a3c435d95730d17d57bb"
-  revision 3
+  url "https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz"
+  sha256 "1b39a5e191c282861e7af4101eaa8585969a2de05f5646c9199a161213a622c7"
+  license "BSD-3-Clause"
   head "https://github.com/Kitware/VTK.git"
 
   bottle do
-    sha256 "b82c5276ce784af50cb6cddc8355b69239a51ea724849375207fff1518990be1" => :mojave
-    sha256 "1e2f7885e7502b654db20733c675d432549aba8d454567ec38fcb7a5975b9f24" => :high_sierra
-    sha256 "416159f7f88c72a0aec2eb5fb8d68feb99053cd025fc5c3b1f8b41e81cb8df1c" => :sierra
+    sha256 "22e2e88e68c6617c5c9d52a10bc10b07c25ef2a6f75b6ea64f89e07b0390f7c3" => :catalina
+    sha256 "75182550cd36d5023bd361037d6b87db466d0855536eb8a62d8340e0a97fd6a8" => :mojave
+    sha256 "ac2fc81f4f71018e38af37d65ad7ff3c1e7b978fc5ab629df4d7089b1048bcb6" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -21,40 +21,35 @@ class Vtk < Formula
   depends_on "libtiff"
   depends_on "netcdf"
   depends_on "pyqt"
-  depends_on "python"
+  depends_on "python@3.8"
   depends_on "qt"
 
   def install
-    pyver = Language::Python.major_minor_version "python3"
-    py_prefix = Formula["python3"].opt_frameworks/"Python.framework/Versions/#{pyver}"
+    # Do not record compiler path because it references the shim directory
+    inreplace "Common/Core/vtkConfigure.h.in", "@CMAKE_CXX_COMPILER@", "clang++"
+
     args = std_cmake_args + %W[
-      -DBUILD_SHARED_LIBS=ON
-      -DBUILD_TESTING=OFF
+      -DBUILD_SHARED_LIBS:BOOL=ON
+      -DBUILD_TESTING:BOOL=OFF
       -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
       -DCMAKE_INSTALL_RPATH:STRING=#{lib}
-      -DModule_vtkInfovisBoost=ON
-      -DModule_vtkInfovisBoostGraphAlgorithms=ON
-      -DModule_vtkRenderingFreeTypeFontConfig=ON
-      -DVTK_REQUIRED_OBJCXX_FLAGS=''
-      -DVTK_USE_COCOA=ON
-      -DVTK_USE_SYSTEM_EXPAT=ON
-      -DVTK_USE_SYSTEM_HDF5=ON
-      -DVTK_USE_SYSTEM_JPEG=ON
-      -DVTK_USE_SYSTEM_LIBXML2=ON
-      -DVTK_USE_SYSTEM_NETCDF=ON
-      -DVTK_USE_SYSTEM_PNG=ON
-      -DVTK_USE_SYSTEM_TIFF=ON
-      -DVTK_USE_SYSTEM_ZLIB=ON
-      -DVTK_WRAP_PYTHON=ON
+      -DVTK_WRAP_PYTHON:BOOL=ON
       -DVTK_PYTHON_VERSION=3
-      -DPYTHON_EXECUTABLE=#{Formula["python"].opt_bin}/python3
-      -DPYTHON_INCLUDE_DIR=#{py_prefix}/include/python#{pyver}m
-      -DPYTHON_LIBRARY=#{py_prefix}/lib/libpython#{pyver}.dylib
-      -DVTK_INSTALL_PYTHON_MODULE_DIR=#{lib}/python#{pyver}/site-packages
-      -DVTK_QT_VERSION:STRING=5
-      -DVTK_Group_Qt=ON
-      -DVTK_WRAP_PYTHON_SIP=ON
-      -DSIP_PYQT_DIR='#{Formula["pyqt5"].opt_share}/sip'
+      -DVTK_USE_COCOA:BOOL=ON
+      -DVTK_LEGACY_REMOVE:BOOL=ON
+      -DVTK_MODULE_ENABLE_VTK_InfovisBoost:STRING=YES
+      -DVTK_MODULE_ENABLE_VTK_InfovisBoostGraphAlgorithms:STRING=YES
+      -DVTK_MODULE_ENABLE_VTK_RenderingFreeTypeFontConfig:STRING=YES
+      -DVTK_MODULE_USE_EXTERNAL_VTK_expat:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_hdf5:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_jpeg:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_libxml2:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_netcdf:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_png:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_tiff:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
+      -DPython3_EXECUTABLE:PATH=#{Formula["python@3.8"].opt_bin}/python3
+      -DVTK_GROUP_ENABLE_Qt:STRING=YES
     ]
 
     mkdir "build" do
@@ -62,11 +57,6 @@ class Vtk < Formula
       system "make"
       system "make", "install"
     end
-
-    # Avoid hard-coding HDF5's Cellar path
-    inreplace Dir["#{lib}/cmake/**/vtkhdf5.cmake"].first,
-              Formula["hdf5"].prefix.realpath,
-              Formula["hdf5"].opt_prefix
   end
 
   test do

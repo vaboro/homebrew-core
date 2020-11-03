@@ -3,9 +3,15 @@ class Iat < Formula
   homepage "https://sourceforge.net/projects/iat.berlios/"
   url "https://downloads.sourceforge.net/project/iat.berlios/iat-0.1.7.tar.bz2"
   sha256 "fb72c42f4be18107ec1bff8448bd6fac2a3926a574d4950a4d5120f0012d62ca"
+  license "GPL-3.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "6400e0c863f951cf324e9630ad9de91cc099e5d3f9cfd34f3cfa4344eb747cf3" => :catalina
     sha256 "e10169c9c7101efb0cfa7670cadbed74dde199b1a8d034f73e906f897be1bbc2" => :mojave
     sha256 "799764ef75d9efdf93f92a2fbc2beaedecd6037eae45eaaf7ce888c2ef2b3eb3" => :high_sierra
     sha256 "97d378d0b0ee8bb685272d126a54c833ad8d9f7f3ab34631198d054d2f1d0bdf" => :sierra

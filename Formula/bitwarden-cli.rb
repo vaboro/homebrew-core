@@ -3,14 +3,19 @@ require "language/node"
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https://bitwarden.com/"
-  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-1.7.4.tgz"
-  sha256 "c4aae7b4efe2fade882b3fe7d0db1f81379e16562bdfeee17da890399e6cc65a"
+  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-1.12.0.tgz"
+  sha256 "0397f1dd382e3577f1c550821124d91a45c46015537c2108343e59277e6d8ce3"
+  license "GPL-3.0"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "bd522c9535bc7b6b8939f5077a664d3a878f0422bed140d70fc96da504cce528" => :mojave
-    sha256 "45270b5ae13e5a07f820ae09693130bbfe86e195af76be6bcc4909c9943088f4" => :high_sierra
-    sha256 "f069faf016545d9d2b720d7603a0e76c8043d16a957ce15a896d9420e22fb331" => :sierra
+    sha256 "b4326ba5082b398b5fd6b11f8837f111756e02cfef54f6af587452dfbe5456f0" => :catalina
+    sha256 "d606f871bf2ccfe4f749fbfc796603fb8973df47444443605ae0feba7c7482b3" => :mojave
+    sha256 "175bb66acd1a979ba17c3d38f32edf995f5ed34a8c7f1188206ddfca0ed6c856" => :high_sierra
   end
 
   depends_on "node"

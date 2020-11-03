@@ -3,10 +3,12 @@ class Mktorrent < Formula
   homepage "https://github.com/Rudde/mktorrent/wiki"
   url "https://github.com/Rudde/mktorrent/archive/v1.1.tar.gz"
   sha256 "d0f47500192605d01b5a2569c605e51ed319f557d24cfcbcb23a26d51d6138c9"
+  license "GPL-2.0"
   revision 1
 
   bottle do
     cellar :any
+    sha256 "3c9a180d450b8e49d1c4a6fc967df8599f602f955b7b27f8589b2052e0d77a91" => :catalina
     sha256 "22bc8649ce5fea25549610eec4110d45f3fa1d05335cfc982df82806ff34d71b" => :mojave
     sha256 "60be732dfea657c6faffa7e9d644f6ade7f974e7fea6ec46fa2941baac5eee80" => :high_sierra
     sha256 "3e7f91587dbea47713351b40a99b50728a878a9eb720eca14bd125541e62606f" => :sierra

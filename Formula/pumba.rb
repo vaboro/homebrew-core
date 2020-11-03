@@ -1,29 +1,24 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https://github.com/alexei-led/pumba"
-  url "https://github.com/alexei-led/pumba/archive/0.6.5.tar.gz"
-  sha256 "d3f19bba5520ec2b26554b807e31596a1cf16da60cf34d945399cf45a369300d"
+  url "https://github.com/alexei-led/pumba/archive/0.7.5.tar.gz"
+  sha256 "27a0a6a6e462458464cbed03a702d815a839321ecdc375847b90a9f060a1f856"
+  license "Apache-2.0"
   head "https://github.com/alexei-led/pumba.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5639041fbd2e4653fe922f419332e28255fb7d32ec7f76c63839324738cfffb4" => :catalina
-    sha256 "257ef1308a0e73183d0aba22aee88c5e1cf7dc8ab8f673b556e63c43652a03bc" => :mojave
-    sha256 "c6c4c6181cd79cbb52c0e52b4b952163427f66125d03028b40ac38a497896613" => :high_sierra
+    sha256 "9466bf26ee389122ea63bc3ddd87619052436b81960f321b2ed7eb12ae30dd97" => :catalina
+    sha256 "4d6b6d75185c7c1caa95a6e5cd79513ee579f54c5a2d0bb220f2e9f279ebab2d" => :mojave
+    sha256 "567508d3166f37c6ec5875a9079d8ac7168ce6c17e1274de9a31f3ee58eede94" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    src = buildpath/"src/github.com/alexei-led/pumba"
-    src.install buildpath.children
-    src.cd do
-      system "go", "build", "-o", bin/"pumba", "-ldflags",
-             "-X main.Version=#{version}", "./cmd"
-      prefix.install_metafiles
-    end
+    system "go", "build", "-ldflags", "-s -w -X main.Version=#{version}",
+           "-trimpath", "-o", bin/"pumba", "./cmd"
+    prefix.install_metafiles
   end
 
   test do

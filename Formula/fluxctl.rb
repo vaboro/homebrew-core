@@ -1,28 +1,28 @@
 class Fluxctl < Formula
   desc "Command-line tool to access Weave Flux, the Kubernetes GitOps operator"
-  homepage "https://github.com/weaveworks/flux"
-  url "https://github.com/weaveworks/flux.git",
-      :tag      => "1.14.2",
-      :revision => "7fd090af0dd9b63acc9fa1c8616d5bf5657c6160"
+  homepage "https://github.com/fluxcd/flux"
+  url "https://github.com/fluxcd/flux.git",
+      tag:      "1.20.2",
+      revision: "a35b978174606c7290a3a64438b8bb3eeb3fd6ea"
+  license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "21bad42323986e91a2f0f178f95025d26917bee47a45644befb7050040b9b8de" => :mojave
-    sha256 "3758702dcf1455af361c4bb2344b4541072dc52dac593e9fe497b48217d0e979" => :high_sierra
-    sha256 "d428f34c65016fab9a0f02b859a6fec69c5c6e3ffeea16589d9a35ec24f90dd1" => :sierra
+    sha256 "b731245d5b42da469ecf3d70081318f08c2cbf3ae52e5528843d038c3a937de3" => :catalina
+    sha256 "c2971b5466e75550d245f3ba2fa452ba739f90d987353d59f07ba62a17bc0545" => :mojave
+    sha256 "92797cd1fbd6d1c0b31a2f3366ed8199224f6d8f042cd854ce681e632c76c30d" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/weaveworks/flux"
-    dir.install buildpath.children
-
-    cd dir/"cmd/fluxctl" do
-      system "go", "build", "-ldflags", "-X main.version=#{version}", "-o", bin/"fluxctl"
-      prefix.install_metafiles
+    cd buildpath/"cmd/fluxctl" do
+      system "go", "build", "-ldflags", "-s -w -X main.version=#{version}", "-trimpath", "-o", bin/"fluxctl"
     end
   end
 
@@ -38,10 +38,10 @@ class Fluxctl < Formula
     # about a missing .kube/config file.
     require "pty"
     require "timeout"
-    r, _w, pid = PTY.spawn("#{bin}/fluxctl sync", :err=>:out)
+    r, _w, pid = PTY.spawn("#{bin}/fluxctl sync", err: :out)
     begin
       Timeout.timeout(5) do
-        assert_match r.gets.chomp, "Error: Could not load kubernetes configuration file: invalid configuration: no configuration has been provided"
+        assert_match "Error: Could not load kubernetes configuration file", r.gets.chomp
         Process.wait pid
         assert_equal 1, $CHILD_STATUS.exitstatus
       end

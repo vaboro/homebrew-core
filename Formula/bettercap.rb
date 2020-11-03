@@ -1,14 +1,15 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https://www.bettercap.org/"
-  url "https://github.com/bettercap/bettercap/archive/v2.25.tar.gz"
-  sha256 "955b29946774bb12a757006d5518bc20e7174092c5a37f771ab1cb8d21223b6a"
+  url "https://github.com/bettercap/bettercap/archive/v2.28.tar.gz"
+  sha256 "5bde85117679c6ed8b5469a5271cdd5f7e541bd9187b8d0f26dee790c37e36e9"
+  license "GPL-3.0-only"
 
   bottle do
     cellar :any
-    sha256 "291d3974c236a92a28355f510b0488d4936013ce1f76dafd657962ebfa9cf85f" => :catalina
-    sha256 "11f0d79d8e62f825359be195cc0afff39f65636ae88ec0b2ea3a342a09498918" => :mojave
-    sha256 "3f3433851f6558f3f935895cef8ce7842328e63533607878336369b8228a9e8e" => :high_sierra
+    sha256 "0614862741982083f1629e32b87d84116917e218cac936a078061b898a1e3f04" => :catalina
+    sha256 "805fbdc7281828c316c6fc91454c7f101ab7be69b235b1e32aa78dbaf55da8d3" => :mojave
+    sha256 "6709b0ce6657bc3732dee9079d7635dbab2450d233c57f82e5758e2d0978a38e" => :high_sierra
   end
 
   depends_on "dep" => :build
@@ -16,25 +17,21 @@ class Bettercap < Formula
   depends_on "pkg-config" => :build
   depends_on "libusb"
 
-  def install
-    ENV["GOPATH"] = buildpath
-    (buildpath/"src/github.com/bettercap/bettercap").install buildpath.children
+  uses_from_macos "libpcap"
 
-    cd "src/github.com/bettercap/bettercap" do
-      system "dep", "ensure", "-vendor-only"
-      system "make", "build"
-      bin.install "bettercap"
-      prefix.install_metafiles
-    end
+  def install
+    system "make", "build"
+    bin.install "bettercap"
   end
 
-  def caveats; <<~EOS
-    bettercap requires root privileges so you will need to run `sudo bettercap`.
-    You should be certain that you trust any software you grant root privileges.
-  EOS
+  def caveats
+    <<~EOS
+      bettercap requires root privileges so you will need to run `sudo bettercap`.
+      You should be certain that you trust any software you grant root privileges.
+    EOS
   end
 
   test do
-    assert_match "bettercap", shell_output("#{bin}/bettercap -help 2>&1", 2)
+    assert_match "Operation not permitted", shell_output("#{bin}/bettercap 2>&1", 1)
   end
 end

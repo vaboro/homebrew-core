@@ -3,10 +3,17 @@ class Flvstreamer < Formula
   homepage "https://www.nongnu.org/flvstreamer/"
   url "https://download.savannah.gnu.org/releases/flvstreamer/source/flvstreamer-2.1c1.tar.gz"
   sha256 "e90e24e13a48c57b1be01e41c9a7ec41f59953cdb862b50cf3e667429394d1ee"
+  license "GPL-2.0"
+
+  livecheck do
+    url "https://download.savannah.gnu.org/releases/flvstreamer/source/"
+    regex(/href=.*?flvstreamer[._-]v?(\d+(?:\.\d+)+(?:[a-z]\d*)?)\.t/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "cfc6a5308ead52bccf753068f8de3a57abd47cf4bdf12d046ca540f3b38ebf8d" => :catalina
     sha256 "207ffd2262cd3767e7443f9b389100eb8788ceeb48dbe06030452b4e30d132f3" => :mojave
     sha256 "52d09a95883b401b1d77d0e85354099cc351285a2243d00c257778033f36dbf6" => :high_sierra
     sha256 "e257779383d236611212078f2e6db28d457d51a282d6163806e0232134a046b0" => :sierra
@@ -15,7 +22,7 @@ class Flvstreamer < Formula
     sha256 "26ba92a604070dd27301456d120121618865108b33089191cd7ddcee78fbc465" => :mavericks
   end
 
-  conflicts_with "rtmpdump", :because => "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
+  conflicts_with "rtmpdump", because: "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
 
   def install
     system "make", "posix"

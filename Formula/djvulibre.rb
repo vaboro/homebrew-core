@@ -5,7 +5,13 @@ class Djvulibre < Formula
   sha256 "e69668252565603875fb88500cde02bf93d12d48a3884e472696c896e81f505f"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/djvulibre[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
+    sha256 "db05f9813a9bc65c90de3cb0dedae93cf8f34694f01975b2c077add5b007d435" => :catalina
     sha256 "e4b26399caea6a5496e8c6710ed6853d6a4961e010fc499a93abf38846ae9c8b" => :mojave
     sha256 "70f48c15f481fd3939f60eb94f3fa47ea67340a3343df73110252ef7b5ce69de" => :high_sierra
     sha256 "7f3f10f71e06342886c20b449551fc36d9edebf5bf5e90cb3fc355cf4624f4d9" => :sierra

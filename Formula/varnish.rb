@@ -1,23 +1,31 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://varnish-cache.org/_downloads/varnish-6.3.0.tgz"
-  sha256 "95ccdec5f1dcba8b41d24e685b3f2379fbc6b9701d106cc78011d4d09a73947f"
+  url "https://varnish-cache.org/_downloads/varnish-6.4.0.tgz"
+  sha256 "f636ba2d881b146f480fb52efefae468b36c2c3e6620d07460f9ccbe364a76c2"
+
+  livecheck do
+    url "https://varnish-cache.org/releases/"
+    regex(/href=.*?varnish[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
-    sha256 "9146f3c910f56ae9e837b0be9f4360240acc3f00543388b40e8b2dd86dc14554" => :catalina
-    sha256 "718953a191b073f4c1c0bd7fdb67af10ea84c788a18094552bd2332df95ebe83" => :mojave
-    sha256 "258db2ff48086b7d0050c816dbf37bb93b59fea5d80b0aa6b09c375efc050bdd" => :high_sierra
+    rebuild 1
+    sha256 "e603ccb2533b3580adad44c1e6899c8f057ee66ba27cee4d6d854b12e91f1dd8" => :catalina
+    sha256 "0c4a75a0195843add41833c4e74446f40e7caa3cd7a9f04f5f42c5000ab37ef2" => :mojave
+    sha256 "94bc1fde6d14d0b4966f81775b46f12b87c28f88f9324b9d5ae2ef679619a34d" => :high_sierra
   end
 
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@3.8" => :build
   depends_on "sphinx-doc" => :build
   depends_on "pcre"
 
   def install
+    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
+
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--localstatedir=#{var}"
@@ -26,7 +34,7 @@ class Varnish < Formula
     (var/"varnish").mkpath
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/sbin/varnishd -n #{HOMEBREW_PREFIX}/var/varnish -f #{HOMEBREW_PREFIX}/etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000 -a 0.0.0.0:8080 -F"
+  plist_options manual: "#{HOMEBREW_PREFIX}/sbin/varnishd -n #{HOMEBREW_PREFIX}/var/varnish -f #{HOMEBREW_PREFIX}/etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000 -a 0.0.0.0:8080 -F"
 
   def plist
     <<~EOS

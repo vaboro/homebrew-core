@@ -1,14 +1,20 @@
 class Gdcm < Formula
   desc "Grassroots DICOM library and utilities for medical files"
   homepage "https://sourceforge.net/projects/gdcm/"
-  url "https://github.com/malaterre/GDCM/archive/v3.0.1.tar.gz"
-  sha256 "f1ee8ebda7a465281abada329b4dbca6e036a42ead6ad58070ff4f94da7819d9"
-  revision 2
+  url "https://github.com/malaterre/GDCM/archive/v3.0.7.tar.gz"
+  sha256 "e00881f0a93d2db4a686231d5f1092a4bc888705511fe5d90114f2226147a18d"
+  license "BSD-3-Clause"
+  revision 1
+
+  livecheck do
+    url "https://github.com/malaterre/GDCM/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
-    sha256 "6f4314bef2cd7c0849f04d6cd27a858ab6ced1f1b8987af52ccfc22461fe0759" => :mojave
-    sha256 "f4102a34b9787a50db114b97a9456e30bff18e26846ac3ad17fd0e48f0ecb192" => :high_sierra
-    sha256 "f74a4c29513115a9d6f9745abba1c33dfb1d93ecfd87e9f5f37563cbff2bce8a" => :sierra
+    sha256 "b2841a7f94489f2d534e6134c9898340310324338ad571ac58123af52dafbe4c" => :catalina
+    sha256 "1443c52dde4cb326af509de3912f6f8d107917d348b72ce7a0771affcaba0e82" => :mojave
+    sha256 "dfb4d452c0afe790ed5518a605a674454511a2e3b8364f7363b9f34875c3c237" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -17,15 +23,18 @@ class Gdcm < Formula
   depends_on "swig" => :build
   depends_on "openjpeg"
   depends_on "openssl@1.1"
-  depends_on "python"
-  depends_on "vtk"
+  depends_on "python@3.8"
+  depends_on "vtk@8.2"
 
   def install
     ENV.cxx11
 
-    xy = Language::Python.major_minor_version "python3"
-    python_include = Utils.popen_read("python3 -c 'from distutils import sysconfig;print(sysconfig.get_python_inc(True))'").chomp
-    python_executable = Utils.popen_read("python3 -c 'import sys;print(sys.executable)'").chomp
+    python3 = Formula["python@3.8"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version python3
+    python_include =
+      Utils.safe_popen_read(python3, "-c", "from distutils import sysconfig;print(sysconfig.get_python_inc(True))")
+           .chomp
+    python_executable = Utils.safe_popen_read(python3, "-c", "import sys;print(sys.executable)").chomp
 
     args = std_cmake_args + %W[
       -GNinja
@@ -68,6 +77,6 @@ class Gdcm < Formula
     system ENV.cxx, "-std=c++11", "test.cxx.o", "-o", "test", "-L#{lib}", "-lgdcmDSED"
     system "./test"
 
-    system "python3", "-c", "import gdcm"
+    system Formula["python@3.8"].opt_bin/"python3", "-c", "import gdcm"
   end
 end

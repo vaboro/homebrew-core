@@ -3,10 +3,12 @@ class Libvbucket < Formula
   homepage "https://couchbase.com/develop/c/current"
   url "https://s3.amazonaws.com/packages.couchbase.com/clients/c/libvbucket-1.8.0.4.tar.gz"
   sha256 "398ba491d434fc109fd64f38678916e1aa19c522abc8c090dbe4e74a2a2ea38d"
+  license "Apache-2.0"
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "3bad5f5bc0f7644ba2960c330016dd350ffe386620642c4fbb34dbbda840e36a" => :catalina
     sha256 "99703e4bfe795310481070096dd496b41185cdde224aa2381a2a7b2dcc618278" => :mojave
     sha256 "bce41a629d7cf6504a1d5fa518d31cc46fcc93b8c82187167d4ab9306f2d593d" => :high_sierra
     sha256 "69c96d5758926202939b79930d82da27bd65d50e0ef19d844ac705cacd99ba58" => :sierra

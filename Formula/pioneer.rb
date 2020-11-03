@@ -1,15 +1,15 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
   homepage "https://pioneerspacesim.net/"
-  url "https://github.com/pioneerspacesim/pioneer/archive/20190203.tar.gz"
-  sha256 "e526f1659ae321f45b997c0245acecbf9c4cf2122b025ab8db1090f1b9804f5e"
-  revision 1
+  url "https://github.com/pioneerspacesim/pioneer/archive/20200203.tar.gz"
+  sha256 "3055d63c1bd3377c3794eee830a8adbd650b178bad9e927531e38cb5d5838694"
+  license "GPL-3.0"
   head "https://github.com/pioneerspacesim/pioneer.git"
 
   bottle do
-    sha256 "84dc7f21bde81882c7846f8de0cd71465c26be88dc9bf523dd0c193d1b6cb47d" => :mojave
-    sha256 "610de685a2de25fa7b56d0b4a342f4f0c1804d2d610a2dfa695bbcef35581856" => :high_sierra
-    sha256 "a583feae2e73f15ba3e647d341ae488415ccf6494ba0d59575a55f414b235deb" => :sierra
+    sha256 "d6ef58a82bd5d0030f28db39103882a4da8416ba3b1dae5d3e98d09e2d06c5c6" => :catalina
+    sha256 "837ce3dc518de05e3c50597252acf888b55ee341777f765bd4b1d88faf53592d" => :mojave
+    sha256 "2d2d2aaeff7ec2231f7908504d4750f9fc2e60fd4d68f059d20808cea36370d7" => :high_sierra
   end
 
   depends_on "cmake" => :build

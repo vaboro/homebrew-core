@@ -7,6 +7,7 @@ class NumUtils < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "8e0385979e9fbba3b30e1b492e8a0160c203e22ce648f959c764848ceb2f30c3" => :catalina
     sha256 "ed2b66381fa6949dbf99e34e2fcf1b4b0519c892d44d8472af1f8abfa94c1c91" => :mojave
     sha256 "0fb446d9d8068e05f3144c22261672b7ad22589e55b3a6d15d65f6bebabf9a14" => :high_sierra
     sha256 "37c24f625dae12d9db8592de4dc9003d4ce267a7a0bb6076e156f54d8ec990d1" => :sierra
@@ -15,9 +16,9 @@ class NumUtils < Formula
     sha256 "188ff1f94691f8bf5099ec1012d4732be8fa385bf738671f86780376dd2597b9" => :mavericks
   end
 
-  conflicts_with "normalize", :because => "both install `normalize` binaries"
-  conflicts_with "crush-tools", :because => "both install an `range` binary"
-  conflicts_with "argyll-cms", :because => "both install `average` binaries"
+  conflicts_with "normalize", because: "both install `normalize` binaries"
+  conflicts_with "crush-tools", because: "both install an `range` binary"
+  conflicts_with "argyll-cms", because: "both install `average` binaries"
 
   def install
     %w[average bound interval normalize numgrep numprocess numsum random range round].each do |p|

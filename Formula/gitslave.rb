@@ -4,8 +4,13 @@ class Gitslave < Formula
   url "https://downloads.sourceforge.net/project/gitslave/gitslave-2.0.2.tar.gz"
   sha256 "8aa3dcb1b50418cc9cee9bee86bb4b279c1c5a34b7adc846697205057d4826f0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "dd32d79091815434db1c465b3f7caa6c6c346449558d82023a6d88ff92c6ba6b" => :catalina
     sha256 "0a6c3ead2d8834fb3e728c06bb72d1102ff516cfafd8283e96b03c5a13a44b89" => :mojave
     sha256 "53cbfbd7d9f86fa6ee98b46356d76db4c952adbf9e3cf913f0a3136da56bcb69" => :high_sierra
     sha256 "3ccd021a4393d137eed5c0dfdfe94b325b6142258a7090ad04f9166039efa52d" => :sierra

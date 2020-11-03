@@ -3,17 +3,21 @@ class BoostAT155 < Formula
   homepage "https://www.boost.org"
   url "https://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2"
   sha256 "fff00023dd79486d444c8e29922f4072e1d451fc5a4d2b6075852ead7f2b7b52"
+  license "BSL-1.0"
   revision 1
 
   bottle do
     cellar :any
     rebuild 1
+    sha256 "2db1cc42c4810d7fdbe7dd7778fc51d37b829d8d39a8e5dc34a9867f7f619445" => :catalina
     sha256 "655c9b514a797113af2e4199457ccb9dd8d8e0364f227390f0ca54b254439f2a" => :mojave
     sha256 "15894f998719ef4130d2dea076accadb709a6d5d0809114452f5175585ccd454" => :high_sierra
     sha256 "16a7e98e578adbf8c353bc868b9cd98e80b41928329743dba1b54ee53d76295c" => :sierra
   end
 
   keg_only :versioned_formula
+
+  disable! because: :versioned_formula
 
   # Patches boost::atomic for LLVM 3.4 as it is used on OS X 10.9 with Xcode 5.1
   # https://github.com/Homebrew/homebrew/issues/27396
@@ -35,6 +39,13 @@ class BoostAT155 < Formula
   patch :p2 do
     url "https://github.com/boostorg/chrono/commit/143260d.diff?full_index=1"
     sha256 "96ba2f3a028df323e9bdffb400cc7c30c0c67e3d681c8c5a867c40ae0549cb62"
+  end
+
+  # Fix build on Xcode 11.4
+  patch :p2 do
+    url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
+    sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
+    directory "tools/build/v2"
   end
 
   def install

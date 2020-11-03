@@ -3,11 +3,13 @@ class Openclonk < Formula
   homepage "https://www.openclonk.org/"
   url "https://www.openclonk.org/builds/release/7.0/openclonk-7.0-src.tar.bz2"
   sha256 "bc1a231d72774a7aa8819e54e1f79be27a21b579fb057609398f2aa5700b0732"
+  license "ISC"
   revision 2
-  head "https://github.com/openclonk/openclonk", :using => :git
+  head "https://github.com/openclonk/openclonk", using: :git
 
   bottle do
     cellar :any
+    sha256 "210a3ff7a897e476db83eff28e4dad3ea6e56d0fd1df0161a63bf34214fd71dc" => :catalina
     sha256 "e15174b64e0999fcd66abbc585e8c0b789e047bd59df85577f7fe7e3937e5cf6" => :mojave
     sha256 "056037f1d797495cce2b0c28be28e76c49a318a339443b48c141a43ca0d871f1" => :high_sierra
     sha256 "101621b7af46c82184ad302b2246a6d76abfa3c14ad46a7c810dafaedea87051" => :sierra
@@ -24,8 +26,6 @@ class Openclonk < Formula
   depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
-  # Requires some C++14 features missing in Mavericks
-  depends_on :macos => :yosemite
 
   def install
     ENV.cxx11

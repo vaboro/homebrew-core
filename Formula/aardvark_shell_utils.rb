@@ -3,9 +3,18 @@ class AardvarkShellUtils < Formula
   homepage "http://www.laffeycomputer.com/shellutils.html"
   url "https://web.archive.org/web/20170106105512/downloads.laffeycomputer.com/current_builds/shellutils/aardvark_shell_utils-1.0.tar.gz"
   sha256 "aa2b83d9eea416aa31dd1ce9b04054be1a504e60e46426225543476c0ebc3f67"
+  license "GPL-2.0"
+
+  # This regex is multiline since there's a line break between `href=` and the
+  # attribute value on the homepage.
+  livecheck do
+    url :homepage
+    regex(/href=.*?aardvark_shell_utils[._-]v?(\d+(?:\.\d+)+)\.t/im)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "df44cfc6ab0cf9b275f806ab72b47ab47475e35ca3faabbcbbe2054d65f6aa4e" => :catalina
     sha256 "d67eb7992219f30e6bced8b4a47d4a111ebb81b6b622d33dfb73ce2022b4fb70" => :mojave
     sha256 "aec60722076aab148a97d2f426f7d15b1b214793f8168b15f2b6d4d65d2afc48" => :high_sierra
     sha256 "cf6d9a3d99fefa3cce7ea67c7e8070a99d648b5bf3a3cd9da9ab128a1696327d" => :sierra
@@ -14,7 +23,8 @@ class AardvarkShellUtils < Formula
     sha256 "e8e8b6fd4ee85d8a6ae267fbd20160c1aeddeb6c8e302793b12a807131ef4b27" => :mavericks
   end
 
-  conflicts_with "coreutils", :because => "both install `realpath` binaries"
+  conflicts_with "coreutils", because: "both install `realpath` binaries"
+  conflicts_with "uutils-coreutils", because: "both install `realpath` binaries"
 
   def install
     system "./configure", "--disable-debug",

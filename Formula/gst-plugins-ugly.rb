@@ -1,24 +1,24 @@
 class GstPluginsUgly < Formula
   desc "Library for constructing graphs of media-handling components"
   homepage "https://gstreamer.freedesktop.org/"
-  url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.16.1.tar.xz"
-  sha256 "4bf913b2ca5195ac3b53b5e3ade2dc7c45d2258507552ddc850c5fa425968a1d"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.18.0.tar.xz"
+  sha256 "686644e45e08258ae240c4519376668ad8d34ea6d0f6ab556473c317bfb7e082"
+  license "LGPL-2.0-or-later"
+  head "https://anongit.freedesktop.org/git/gstreamer/gst-plugins-ugly.git"
+
+  livecheck do
+    url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/"
+    regex(/href=.*?gst-plugins-ugly[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
+  end
 
   bottle do
-    sha256 "88a6413d10e0ad2a2a1b36372ba3831b902ec78ada06c2f763e0cf7eab2d5a11" => :catalina
-    sha256 "013482b8c2b286e9f97b61d6aed9a64f954f158d6b93f8cb7e054974a83b9b8a" => :mojave
-    sha256 "28c1bf0e8f8c83eec65d49ce829bb37c821c48f76c287aa6f3f19daba5e077eb" => :high_sierra
-    sha256 "35ad1217120377f824ba83b318e1bac892ff42529c514ae0eed3badd43a3c5e1" => :sierra
+    sha256 "c36743765a8fb0c1f90fbf6df6b5e3b2c06ed5e9a54664253d6ff866da830516" => :catalina
+    sha256 "d9b1b8933c4f0c17d8deef36c4b28f278e9db3fcd637e344ef526cc378139e59" => :mojave
+    sha256 "2bd4a31d2161da3a473c12092a9273549bee7b0f005e5472c97c02ef6a3ce575" => :high_sierra
   end
 
-  head do
-    url "https://anongit.freedesktop.org/git/gstreamer/gst-plugins-ugly.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "flac"
   depends_on "gettext"
@@ -32,23 +32,16 @@ class GstPluginsUgly < Formula
   depends_on "x264"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --mandir=#{man}
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-amrnb
-      --disable-amrwb
+    args = std_meson_args + %w[
+      -Damrnb=disabled
+      -Damwrbdec=disabled
     ]
 
-    if build.head?
-      ENV["NOCONFIGURE"] = "yes"
-      system "./autogen.sh"
+    mkdir "build" do
+      system "meson", *args, ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
     end
-
-    system "./configure", *args
-    system "make"
-    system "make", "install"
   end
 
   test do

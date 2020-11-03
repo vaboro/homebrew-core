@@ -1,5 +1,5 @@
 class GnuGo < Formula
-  desc "GNU Go"
+  desc "Plays the game of Go"
   homepage "https://www.gnu.org/software/gnugo/gnugo.html"
   url "https://ftp.gnu.org/gnu/gnugo/gnugo-3.8.tar.gz"
   mirror "https://ftpmirror.gnu.org/gnugo/gnugo-3.8.tar.gz"
@@ -7,8 +7,13 @@ class GnuGo < Formula
   revision 1
   head "https://git.savannah.gnu.org/git/gnugo.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
+    sha256 "b756b9307e6ff0a0cb9c05eca13ae12b3a9f6ee44219fa4a899e5301fffa2483" => :catalina
     sha256 "75ae8e3e46982c28060396ad4cfaab92c0072f7f8191e21fe9b5b53b157fac06" => :mojave
     sha256 "5e6ee72c1ccd877c08591680117bf73d809f6422ea9855596b286970d165c14a" => :high_sierra
     sha256 "25fa92bd5c129cb655ec06c441523ada5cbc90a560111c32f5b1246c8f7d124c" => :sierra

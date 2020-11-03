@@ -5,7 +5,12 @@ class Goocanvas < Formula
   sha256 "c728e2b7d4425ae81b54e1e07a3d3c8a4bd6377a63cffa43006045bceaa92e90"
   revision 2
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
+    sha256 "ff71ce064b86b1e8973ee5c6aaebdbba6a1159614f5c425d83cc3fb6b00e8b97" => :catalina
     sha256 "b9d36364339793b428077bbc7735981f8cd33e681971653806dc574236382778" => :mojave
     sha256 "6822fe0a452809ce94bc1fd70fb32b024ad52702a56878db381b7dad2e05aa28" => :high_sierra
     sha256 "44b1bd9f058cd4fe112cd1022a0ad2daa93c7f849257ae57bc6d10f9c33e57de" => :sierra

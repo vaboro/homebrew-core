@@ -1,20 +1,24 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostpdl-9.27.tar.gz"
-  sha256 "9e089546624296bf4aca14c2adcb0762b323ca77ae14176d21127b749baac8d6"
-  revision 1
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostpdl-9.52.tar.gz"
+  sha256 "8f6e48325c106ae033bbae3e55e6c0b9ee5c6b57e54f7cd24fb80a716a93b06a"
+  license "AGPL-3.0"
+
+  livecheck do
+    url :head
+    regex(/^ghostscript[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
-    sha256 "9d0eeacca30a4c80b31b983364dde5278aefdf95247ffe54a7217fba6cfeb56c" => :catalina
-    sha256 "4bb192d7d0f38dd990f9d042e0e39002a1d762685f13d670fbab368bf5ca411e" => :mojave
-    sha256 "882e895e24244985a47bad1db7f4d86d8bcbebb5aafa532bde393554a2e3815f" => :high_sierra
-    sha256 "55b5a12f39605e29c6faddeca9ae366b8fda8ee44ef24d0ebe34dcad803f012a" => :sierra
+    sha256 "8cd0efa1e5525f849be3ee1e50e1635b99667cb4d1eb6c3002a45378346882f4" => :catalina
+    sha256 "8906a4dbf2513963a4710f351e3426622c259bd888c760e4c08a9436860b4014" => :mojave
+    sha256 "cd5e55d0429d7e88ba2d580e79934c157d5bd2981d71a7f40db4573abe79af67" => :high_sierra
   end
 
   head do
     # Can't use shallow clone. Doing so = fatal errors.
-    url "https://git.ghostscript.com/ghostpdl.git", :shallow => false
+    url "https://git.ghostscript.com/ghostpdl.git", shallow: false
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -24,16 +28,15 @@ class Ghostscript < Formula
   depends_on "pkg-config" => :build
   depends_on "libtiff"
 
+  on_linux do
+    depends_on "fontconfig"
+    depends_on "libidn"
+  end
+
   # https://sourceforge.net/projects/gs-fonts/
   resource "fonts" do
     url "https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz"
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
-  end
-
-  # Patch upstream Bug 700952 (https://bugs.ghostscript.com/show_bug.cgi?id=700988) in ghostscript 9.27
-  patch do
-    url "https://git.ghostscript.com/?p=ghostpdl.git;a=patch;h=06c920713e11"
-    sha256 "15db61d2ca230df92e3b40d717e6baa475b13aa5583c08074f57f2c6f74018cc"
   end
 
   patch :DATA # Uncomment macOS-specific make vars
@@ -55,12 +58,6 @@ class Ghostscript < Formula
     else
       system "./configure", *args
     end
-
-    # Fix for shared library bug https://bugs.ghostscript.com/show_bug.cgi?id=701211
-    # Can be removed in next version, and possibly replaced by passing
-    # --enable-gpdl to configure
-    inreplace "Makefile", "PCL_XPS_TARGETS=$(PCL_TARGET) $(XPS_TARGET)",
-                          "PCL_XPS_TARGETS=$(PCL_TARGET) $(XPS_TARGET) $(GPDL_TARGET)"
 
     # Install binaries and libraries
     system "make", "install"
@@ -84,8 +81,8 @@ index f50c09c00adb..8855133b400c 100644
 @@ -89,18 +89,33 @@ GPDL_SONAME_MAJOR_MINOR=$(GPDL_SONAME_BASE)$(GS_SOEXT)$(SO_LIB_VERSION_SEPARATOR
  # similar linkers it must containt the trailing "="
  # LDFLAGS_SO=-shared -Wl,$(LD_SET_DT_SONAME)$(LDFLAGS_SO_PREFIX)$(GS_SONAME_MAJOR)
- 
- 
+
+
  # MacOS X
 -#GS_SOEXT=dylib
 -#GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
@@ -99,7 +96,7 @@ index f50c09c00adb..8855133b400c 100644
 -#LDFLAGS_SO_MAC=-dynamiclib -install_name $(GS_SONAME_MAJOR_MINOR)
 +GS_LDFLAGS_SO=-dynamiclib -install_name $(GS_SONAME_MAJOR_MINOR)
  #LDFLAGS_SO=-dynamiclib -install_name $(FRAMEWORK_NAME)
- 
+
 +PCL_SONAME=$(PCL_SONAME_BASE).$(GS_SOEXT)
 +PCL_SONAME_MAJOR=$(PCL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
 +PCL_SONAME_MAJOR_MINOR=$(PCL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)

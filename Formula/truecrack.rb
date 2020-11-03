@@ -4,10 +4,12 @@ class Truecrack < Formula
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/truecrack/truecrack_v35.tar.gz"
   version "3.5"
   sha256 "25bf270fa3bc3591c3d795e5a4b0842f6581f76c0b5d17c0aef260246fe726b3"
+  license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "fb57614e52a889118b43b5ea47d5ae7174ac84525c7496908804d6aca51a8818" => :catalina
     sha256 "8eff51aec7a5413b11d35adcc1559e036687ae31aee11a477cc7d62f603fd1e1" => :mojave
     sha256 "fd148aa52883969c30029e25889c560443347575cb064fe9e93d48e9940afcb6" => :high_sierra
     sha256 "96ecdedf66599ec83da60c5a64de37dce4aa3411bf3a575bb5d5e1b6646fd5b3" => :sierra
