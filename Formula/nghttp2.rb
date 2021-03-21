@@ -30,11 +30,7 @@ class Nghttp2 < Formula
   depends_on "libevent"
   depends_on "openssl@1.1"
 
-<<<<<<< HEAD
   patch :DATA
-=======
-  uses_from_macos "zlib"
->>>>>>> upstream/master
 
   def install
     ENV.cxx11

@@ -24,7 +24,7 @@ class Sshfs < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
-  depends_on :osxfuse
+  # depends_on :osxfuse # deprecated
 
   # Apply patch that clears one remaining roadblock that prevented setting
   # a custom I/O buffer size on macOS. With this patch in place, it's

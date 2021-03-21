@@ -22,7 +22,7 @@ class Imlib2 < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on :x11
+  # depends_on :x11 # deprecated
 
   def install
     args = %W[
