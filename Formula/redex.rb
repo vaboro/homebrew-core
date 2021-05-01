@@ -15,10 +15,9 @@ class Redex < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "38b99353ae775a8a59145ff46abffa6214e13e5069574d6f37d647b99612092b" => :catalina
-    sha256 "9bfe343fbde2ce7c2f3fb1bf5429ee310c52efe5bd229dd51220542d312ee1aa" => :mojave
-    sha256 "76a9a498034b150c3fd5a32b10008ce37fe92f6657c0c978a84bb04bc9b8d4b8" => :high_sierra
+    sha256 cellar: :any, catalina:    "38b99353ae775a8a59145ff46abffa6214e13e5069574d6f37d647b99612092b"
+    sha256 cellar: :any, mojave:      "9bfe343fbde2ce7c2f3fb1bf5429ee310c52efe5bd229dd51220542d312ee1aa"
+    sha256 cellar: :any, high_sierra: "76a9a498034b150c3fd5a32b10008ce37fe92f6657c0c978a84bb04bc9b8d4b8"
   end
 
   depends_on "autoconf" => :build

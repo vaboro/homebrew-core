@@ -12,11 +12,10 @@ class ApacheArrow < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "4ee0bde4bc71342b6dc68afb180cea27e231abbe50499f72bdff603ae7c3684f" => :catalina
-    sha256 "31e51d4a7466d045c3badea22a41223334710bec8d10a764ac99968dbff888c6" => :mojave
-    sha256 "7a78b3bb24fe9fe9c0935e1236db0ac5007d0b8e987c0b4d7e8f080b07e5be79" => :high_sierra
+    sha256 cellar: :any, catalina:    "4ee0bde4bc71342b6dc68afb180cea27e231abbe50499f72bdff603ae7c3684f"
+    sha256 cellar: :any, mojave:      "31e51d4a7466d045c3badea22a41223334710bec8d10a764ac99968dbff888c6"
+    sha256 cellar: :any, high_sierra: "7a78b3bb24fe9fe9c0935e1236db0ac5007d0b8e987c0b4d7e8f080b07e5be79"
   end
 
   depends_on "boost" => :build

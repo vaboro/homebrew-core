@@ -7,10 +7,9 @@ class DroneCli < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d2c15b99b882372b7894935e0cadda2c41735620571335ba8d6b4883aca95195" => :catalina
-    sha256 "18fb2d2348f7dc3201734813117c795cae4d93310796fec9c595072647d1c567" => :mojave
-    sha256 "9f9e614e62431cd2bb2ab7eb44edfde14c46298d0061b520ac33d7ed1360c288" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d2c15b99b882372b7894935e0cadda2c41735620571335ba8d6b4883aca95195"
+    sha256 cellar: :any_skip_relocation, mojave:      "18fb2d2348f7dc3201734813117c795cae4d93310796fec9c595072647d1c567"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9f9e614e62431cd2bb2ab7eb44edfde14c46298d0061b520ac33d7ed1360c288"
   end
 
   depends_on "go" => :build
@@ -24,6 +23,6 @@ class DroneCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/drone --version")
 
-    assert_match /manage logs/, shell_output("#{bin}/drone log 2>&1")
+    assert_match(/manage logs/, shell_output("#{bin}/drone log 2>&1"))
   end
 end

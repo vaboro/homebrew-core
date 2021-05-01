@@ -10,9 +10,9 @@ class Lammps < Formula
   license "GPL-2.0"
 
   bottle do
-    sha256 "9434567739e6497752d8b2e76b7dd06723b2d9773510e92d3e00aa601208c532" => :catalina
-    sha256 "6c450ea6fd0261adb9b18a8c09f69763b84f51d696c5bb269bf3b141f01bd484" => :mojave
-    sha256 "1a3ecf33da4145a48ab4c645bdb762ef8997c79e2ddaba33b6a12db898c8e73f" => :high_sierra
+    sha256 catalina:    "9434567739e6497752d8b2e76b7dd06723b2d9773510e92d3e00aa601208c532"
+    sha256 mojave:      "6c450ea6fd0261adb9b18a8c09f69763b84f51d696c5bb269bf3b141f01bd484"
+    sha256 high_sierra: "1a3ecf33da4145a48ab4c645bdb762ef8997c79e2ddaba33b6a12db898c8e73f"
   end
 
   depends_on "pkg-config" => :build

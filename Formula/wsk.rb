@@ -6,10 +6,9 @@ class Wsk < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "461c8bd630f1fb80859d16f1ef4ec57ba73990febdada45deb0411b66fca044e" => :catalina
-    sha256 "3082ab49e515fa5b534ee3e8f0de9e90a23d7130d9fbf5f469ea5ef3f40c8bd9" => :mojave
-    sha256 "9ea3a295b2eb7b4f622ec8d6065aa5a9cd50285d83df66453e41d2214de6135c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "461c8bd630f1fb80859d16f1ef4ec57ba73990febdada45deb0411b66fca044e"
+    sha256 cellar: :any_skip_relocation, mojave:      "3082ab49e515fa5b534ee3e8f0de9e90a23d7130d9fbf5f469ea5ef3f40c8bd9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9ea3a295b2eb7b4f622ec8d6065aa5a9cd50285d83df66453e41d2214de6135c"
   end
 
   depends_on "go" => :build

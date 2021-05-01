@@ -8,10 +8,9 @@ class ReorderPythonImports < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f82f81ae238fb1ea08d2847d85688226f665c247cee99e6928761139bd84f14a" => :catalina
-    sha256 "00b8dfb9fc9de88820c7115a701a86c582fe08651130eab710216e629fa748ab" => :mojave
-    sha256 "e068d759d9b9897c699e515c5a41791fd8029c990bb8bdedd2a38ce2f91122c1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f82f81ae238fb1ea08d2847d85688226f665c247cee99e6928761139bd84f14a"
+    sha256 cellar: :any_skip_relocation, mojave:      "00b8dfb9fc9de88820c7115a701a86c582fe08651130eab710216e629fa748ab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e068d759d9b9897c699e515c5a41791fd8029c990bb8bdedd2a38ce2f91122c1"
   end
 
   depends_on "python@3.8"

@@ -11,10 +11,9 @@ class Atari800 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "5bc2d96418e21a76809abfa2513f630cb207848b0894f27cda34b2f55bace81c" => :catalina
-    sha256 "f5508c8a0021a0fcbd1e35d7a4313d8c9ba52ab937d0fde59ccc5f81e3c49ac0" => :mojave
-    sha256 "497ce17afc99e76180b94b76b08c1aca973eab554ee3ccecfd14818c71e97035" => :high_sierra
+    sha256 cellar: :any, catalina:    "5bc2d96418e21a76809abfa2513f630cb207848b0894f27cda34b2f55bace81c"
+    sha256 cellar: :any, mojave:      "f5508c8a0021a0fcbd1e35d7a4313d8c9ba52ab937d0fde59ccc5f81e3c49ac0"
+    sha256 cellar: :any, high_sierra: "497ce17afc99e76180b94b76b08c1aca973eab554ee3ccecfd14818c71e97035"
   end
 
   depends_on "libpng"

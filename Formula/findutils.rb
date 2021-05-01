@@ -11,11 +11,10 @@ class Findutils < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f9ba06f4d48275e8cab659450b05e77873e909f31104df450201a83d465ed1ca" => :catalina
-    sha256 "3c609b729a1dc859459282a856ff6c164cd8388e531dad4e58c8d4c7acb670fb" => :mojave
-    sha256 "996a9fe2b1829fdf7b7257bead0ef0c4315832e9ba21b149779abeb59dcbde30" => :high_sierra
-    sha256 "4b66ce398f2d5f5c65bf0b05fcc55334398e75cb965a17d781d7c3a15a4bba61" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f9ba06f4d48275e8cab659450b05e77873e909f31104df450201a83d465ed1ca"
+    sha256 cellar: :any_skip_relocation, mojave:      "3c609b729a1dc859459282a856ff6c164cd8388e531dad4e58c8d4c7acb670fb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "996a9fe2b1829fdf7b7257bead0ef0c4315832e9ba21b149779abeb59dcbde30"
+    sha256 cellar: :any_skip_relocation, sierra:      "4b66ce398f2d5f5c65bf0b05fcc55334398e75cb965a17d781d7c3a15a4bba61"
   end
 
   def install

@@ -10,10 +10,9 @@ class Ephemeralpg < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c57037299f11da6b4560707c9380bfdbb8708f379bf8fccae6bf0069d4dedd8a" => :catalina
-    sha256 "61a09eb4b62f4fd794ceb1af70f21198840598cd859a40c59c0be8799132ff86" => :mojave
-    sha256 "6889ddcf36023c982fe421ea8660445b416989968cc9a64b0a5156dd9f01cdfe" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c57037299f11da6b4560707c9380bfdbb8708f379bf8fccae6bf0069d4dedd8a"
+    sha256 cellar: :any_skip_relocation, mojave:      "61a09eb4b62f4fd794ceb1af70f21198840598cd859a40c59c0be8799132ff86"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6889ddcf36023c982fe421ea8660445b416989968cc9a64b0a5156dd9f01cdfe"
   end
 
   depends_on "postgresql"

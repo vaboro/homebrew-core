@@ -12,9 +12,9 @@ class SwiProlog < Formula
   end
 
   bottle do
-    sha256 "ff0b739f559d250bd0452f5567fa4484f8152145de2fc6d4854f74851bbbcd40" => :catalina
-    sha256 "2f6c8c976324d9afea6fcf4683ed4a953eb4fb14b168de03c7f00399db9707d0" => :mojave
-    sha256 "cbe5f89a9a2a0c6802dd731498e6bac1b44277123aa2b326193552d6b6e25165" => :high_sierra
+    sha256 catalina:    "ff0b739f559d250bd0452f5567fa4484f8152145de2fc6d4854f74851bbbcd40"
+    sha256 mojave:      "2f6c8c976324d9afea6fcf4683ed4a953eb4fb14b168de03c7f00399db9707d0"
+    sha256 high_sierra: "cbe5f89a9a2a0c6802dd731498e6bac1b44277123aa2b326193552d6b6e25165"
   end
 
   depends_on "cmake" => :build

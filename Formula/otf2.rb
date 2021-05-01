@@ -6,9 +6,9 @@ class Otf2 < Formula
   revision 1
 
   bottle do
-    sha256 "4c532e5cb9864669bc29b6ad5007669c92a6abb3e069d7904ab3b102169ec2bc" => :catalina
-    sha256 "ec63ae3bd66e7231b05f6bbd5ce8b0606126ad25e871f59d9e066fa62b9e26d8" => :mojave
-    sha256 "dbf4c3c761e51a184a675d369a54dea5247d25d96e78899ca3b268a04c629c48" => :high_sierra
+    sha256 catalina:    "4c532e5cb9864669bc29b6ad5007669c92a6abb3e069d7904ab3b102169ec2bc"
+    sha256 mojave:      "ec63ae3bd66e7231b05f6bbd5ce8b0606126ad25e871f59d9e066fa62b9e26d8"
+    sha256 high_sierra: "dbf4c3c761e51a184a675d369a54dea5247d25d96e78899ca3b268a04c629c48"
   end
 
   depends_on "sphinx-doc" => :build

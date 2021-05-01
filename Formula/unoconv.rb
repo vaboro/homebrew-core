@@ -12,10 +12,9 @@ class Unoconv < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :catalina
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :mojave
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a"
+    sha256 cellar: :any_skip_relocation, mojave:      "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a"
   end
 
   depends_on "python@3.8"
@@ -31,6 +30,6 @@ class Unoconv < Formula
   end
 
   test do
-    assert_match /office installation/, pipe_output("#{bin}/unoconv 2>&1")
+    assert_match(/office installation/, pipe_output("#{bin}/unoconv 2>&1"))
   end
 end

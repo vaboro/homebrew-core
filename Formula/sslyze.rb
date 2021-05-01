@@ -16,10 +16,9 @@ class Sslyze < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b5a0b1691a0f599ba5e43e54c690ebcdcb71460363e837a4c37bf7a92d8210e6" => :catalina
-    sha256 "2b13136ca39b259fe1cf169f2fa0032ea554f0973b228e710c10b4fe15340bcf" => :mojave
-    sha256 "60928584ee62129c4ec2ef9bd3387ed0f0d08ec7b41d10b211fe54b47b4ba8a4" => :high_sierra
+    sha256 cellar: :any, catalina:    "b5a0b1691a0f599ba5e43e54c690ebcdcb71460363e837a4c37bf7a92d8210e6"
+    sha256 cellar: :any, mojave:      "2b13136ca39b259fe1cf169f2fa0032ea554f0973b228e710c10b4fe15340bcf"
+    sha256 cellar: :any, high_sierra: "60928584ee62129c4ec2ef9bd3387ed0f0d08ec7b41d10b211fe54b47b4ba8a4"
   end
 
   head do
@@ -84,6 +83,6 @@ class Sslyze < Formula
 
   test do
     assert_match "SCAN COMPLETED", shell_output("#{bin}/sslyze --regular google.com")
-    assert_no_match /exception/, shell_output("#{bin}/sslyze --certinfo letsencrypt.org")
+    assert_no_match(/exception/, shell_output("#{bin}/sslyze --certinfo letsencrypt.org"))
   end
 end

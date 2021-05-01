@@ -7,10 +7,9 @@ class GolangciLint < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a6e139f42c2be35b26682337be838ae8d236c4acd0c9d8c330d04f972da333de" => :catalina
-    sha256 "ab78ea189596defabdf2f5aea3e9556e299f396d0290c1c0f531a3fe74604176" => :mojave
-    sha256 "96fce72ff510e59df44e5c10555c8014196c8ce8991dd1feddbb8cd6353df519" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a6e139f42c2be35b26682337be838ae8d236c4acd0c9d8c330d04f972da333de"
+    sha256 cellar: :any_skip_relocation, mojave:      "ab78ea189596defabdf2f5aea3e9556e299f396d0290c1c0f531a3fe74604176"
+    sha256 cellar: :any_skip_relocation, high_sierra: "96fce72ff510e59df44e5c10555c8014196c8ce8991dd1feddbb8cd6353df519"
   end
 
   depends_on "go"

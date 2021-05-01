@@ -10,10 +10,9 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "7bbc4358faae0aeb94e88a87016b4ecb899b9e188c5e318afabc151eb68f4300" => :catalina
-    sha256 "58f2fdad411b3e7852f1c442e2be4ccd01ed8ab3d563ef8c418de9101c989e88" => :mojave
-    sha256 "a9afe8d28a6c0a67b55d9bc46d5b30ee2f169db4ce25bef25355644fd4a83163" => :high_sierra
+    sha256 cellar: :any, catalina:    "7bbc4358faae0aeb94e88a87016b4ecb899b9e188c5e318afabc151eb68f4300"
+    sha256 cellar: :any, mojave:      "58f2fdad411b3e7852f1c442e2be4ccd01ed8ab3d563ef8c418de9101c989e88"
+    sha256 cellar: :any, high_sierra: "a9afe8d28a6c0a67b55d9bc46d5b30ee2f169db4ce25bef25355644fd4a83163"
   end
 
   uses_from_macos "libffi"
@@ -57,7 +56,7 @@ class MinimalRacket < Formula
 
   test do
     output = shell_output("#{bin}/racket -e '(displayln \"Hello Homebrew\")'")
-    assert_match /Hello Homebrew/, output
+    assert_match(/Hello Homebrew/, output)
 
     # show that the config file isn't malformed
     output = shell_output("'#{bin}/raco' pkg config")

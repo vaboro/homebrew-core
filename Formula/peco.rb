@@ -7,10 +7,9 @@ class Peco < Formula
   head "https://github.com/peco/peco.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "02aee47d2d6e04c17c5a8a0c0d4391004175b00d2c01550b37bec09be865953a" => :catalina
-    sha256 "f2c6e54d44a476bdfcab73c53789fceceeda94101e1b537525af870b1995a5aa" => :mojave
-    sha256 "fb083704e02c7b00b740039da5a93c505ac4448b3e568fc04756902c28d68202" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "02aee47d2d6e04c17c5a8a0c0d4391004175b00d2c01550b37bec09be865953a"
+    sha256 cellar: :any_skip_relocation, mojave:      "f2c6e54d44a476bdfcab73c53789fceceeda94101e1b537525af870b1995a5aa"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fb083704e02c7b00b740039da5a93c505ac4448b3e568fc04756902c28d68202"
   end
 
   depends_on "go" => :build

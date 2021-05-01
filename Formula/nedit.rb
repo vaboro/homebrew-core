@@ -10,11 +10,10 @@ class Nedit < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "94f8ffca9fa3ac5376460da0b2b74bd835f8fecd6bbfaf009925492902f9fa29" => :catalina
-    sha256 "c4f3db1d3a4772caf72caeba2f4dbdcd063d8983d5252f763870dcea70eaf59e" => :mojave
-    sha256 "74a4e728ef503642b5ad4dc4466f26a2d6f241e7d495099c8b14defd4e12f350" => :high_sierra
+    sha256 cellar: :any, catalina:    "94f8ffca9fa3ac5376460da0b2b74bd835f8fecd6bbfaf009925492902f9fa29"
+    sha256 cellar: :any, mojave:      "c4f3db1d3a4772caf72caeba2f4dbdcd063d8983d5252f763870dcea70eaf59e"
+    sha256 cellar: :any, high_sierra: "74a4e728ef503642b5ad4dc4466f26a2d6f241e7d495099c8b14defd4e12f350"
   end
 
   depends_on "openmotif"

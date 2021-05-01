@@ -7,10 +7,9 @@ class IosDeploy < Formula
   head "https://github.com/ios-control/ios-deploy.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "af5fd607db481534ebb05a85a781ef562d18095ad281dcb43739b7cdd9f0645a" => :catalina
-    sha256 "c496d357fcf45cb2dbb7b281c588b6b36e72e5f0a2126dca7bf7b311acec26c3" => :mojave
-    sha256 "fc27814ad907fcfecaada65a07128eb8fdf4eaaf9e90cf07f2aa483e8fee2a89" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "af5fd607db481534ebb05a85a781ef562d18095ad281dcb43739b7cdd9f0645a"
+    sha256 cellar: :any_skip_relocation, mojave:      "c496d357fcf45cb2dbb7b281c588b6b36e72e5f0a2126dca7bf7b311acec26c3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fc27814ad907fcfecaada65a07128eb8fdf4eaaf9e90cf07f2aa483e8fee2a89"
   end
 
   depends_on xcode: :build

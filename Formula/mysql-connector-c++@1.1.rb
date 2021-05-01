@@ -6,10 +6,9 @@ class MysqlConnectorCxxAT11 < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "08bf6fb8a787b7b007717ce1099121239c44e02a4cce5d0c7c5dcb82835d3447" => :catalina
-    sha256 "759c0753dba575dbe1d13eb9a8a6658fb9ed93a840cc1147eb36f8bbcc98f3ea" => :mojave
-    sha256 "57d1006de8cc2f45f4860b1a4726cf1426f665810f6167dee1c77ba2f006a471" => :high_sierra
+    sha256 cellar: :any, catalina:    "08bf6fb8a787b7b007717ce1099121239c44e02a4cce5d0c7c5dcb82835d3447"
+    sha256 cellar: :any, mojave:      "759c0753dba575dbe1d13eb9a8a6658fb9ed93a840cc1147eb36f8bbcc98f3ea"
+    sha256 cellar: :any, high_sierra: "57d1006de8cc2f45f4860b1a4726cf1426f665810f6167dee1c77ba2f006a471"
   end
 
   keg_only :versioned_formula

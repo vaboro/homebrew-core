@@ -11,10 +11,9 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0e6895cc08dbd61dfa24beaa432285b23625c57a2630a7ae0a8ea88bd2b8ed57" => :catalina
-    sha256 "2f75ce87ec73177d32caff6f534f433614196884ebef8932b92a55b615097be8" => :mojave
-    sha256 "9b82b726e6b422bd00f8e6513f99d7e4df86731d4f119ba2abfeba770803002b" => :high_sierra
+    sha256 cellar: :any, catalina:    "0e6895cc08dbd61dfa24beaa432285b23625c57a2630a7ae0a8ea88bd2b8ed57"
+    sha256 cellar: :any, mojave:      "2f75ce87ec73177d32caff6f534f433614196884ebef8932b92a55b615097be8"
+    sha256 cellar: :any, high_sierra: "9b82b726e6b422bd00f8e6513f99d7e4df86731d4f119ba2abfeba770803002b"
   end
 
   head do

@@ -7,10 +7,9 @@ class Calicoctl < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8920aea8fa8619fca97f3fcc295ab6b5855582d639f361191aecb0d79c84f61c" => :catalina
-    sha256 "943adb8672eb263d61631f3689bd5b909b30a04d6e50bad5a028f7ea7b98720a" => :mojave
-    sha256 "3a5ff0f4d05b17e858bbb303ea0e643ab2e0b53c5a2bdc0ee1ab40a04a5d04e1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8920aea8fa8619fca97f3fcc295ab6b5855582d639f361191aecb0d79c84f61c"
+    sha256 cellar: :any_skip_relocation, mojave:      "943adb8672eb263d61631f3689bd5b909b30a04d6e50bad5a028f7ea7b98720a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3a5ff0f4d05b17e858bbb303ea0e643ab2e0b53c5a2bdc0ee1ab40a04a5d04e1"
   end
 
   depends_on "go" => :build

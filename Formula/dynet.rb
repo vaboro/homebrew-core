@@ -6,11 +6,10 @@ class Dynet < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "500a9235a348147fb8aa6b07f9618e9ae45d1a88c42504facc384f50cf0d1943" => :catalina
-    sha256 "40496e31ece215e6f1faffc56eb8d674195f0f946cc100222d1d4a9762fd59c6" => :mojave
-    sha256 "6d1bc8d99dfaff753f6bbea2d3da485de1c7494eec8b7eba85a9ea376eccfbcd" => :high_sierra
+    sha256 cellar: :any, catalina:    "500a9235a348147fb8aa6b07f9618e9ae45d1a88c42504facc384f50cf0d1943"
+    sha256 cellar: :any, mojave:      "40496e31ece215e6f1faffc56eb8d674195f0f946cc100222d1d4a9762fd59c6"
+    sha256 cellar: :any, high_sierra: "6d1bc8d99dfaff753f6bbea2d3da485de1c7494eec8b7eba85a9ea376eccfbcd"
   end
 
   depends_on "cmake" => :build

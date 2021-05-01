@@ -12,12 +12,12 @@ class Geomview < Formula
   end
 
   bottle do
-    sha256 "2a2d54a233f02bb8667cc5217fe110fc31e29eeeaca51f99bb7ac58237f9b0a9" => :catalina
-    sha256 "cd70e7bf1004fe4b28933971dc3e817822c2abdd17fd09eb728f26ac85506cb2" => :mojave
-    sha256 "d66bbca7b5fb25556f03f40264d338e5ce99efaeba4e227b14711632a7f97cf5" => :high_sierra
-    sha256 "34cc860cab36fad0c134035897063de637b55c1bd53aafbccd24847af6af3b34" => :sierra
-    sha256 "6857c1bc6d2640c074b53981b2f027eb527a7c103b0c7ab1cd16d868decd35f9" => :el_capitan
-    sha256 "edc57089dc5ba7f2e7ec43c66202f19c460c4a1970f9c60984c0f3fe6c481012" => :yosemite
+    sha256 catalina:    "2a2d54a233f02bb8667cc5217fe110fc31e29eeeaca51f99bb7ac58237f9b0a9"
+    sha256 mojave:      "cd70e7bf1004fe4b28933971dc3e817822c2abdd17fd09eb728f26ac85506cb2"
+    sha256 high_sierra: "d66bbca7b5fb25556f03f40264d338e5ce99efaeba4e227b14711632a7f97cf5"
+    sha256 sierra:      "34cc860cab36fad0c134035897063de637b55c1bd53aafbccd24847af6af3b34"
+    sha256 el_capitan:  "6857c1bc6d2640c074b53981b2f027eb527a7c103b0c7ab1cd16d868decd35f9"
+    sha256 yosemite:    "edc57089dc5ba7f2e7ec43c66202f19c460c4a1970f9c60984c0f3fe6c481012"
   end
 
   depends_on "openmotif"

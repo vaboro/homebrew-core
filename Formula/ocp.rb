@@ -6,9 +6,9 @@ class Ocp < Formula
   license "GPL-2.0"
 
   bottle do
-    sha256 "d9c557bc2f3161818fcf4701e7cc123bd6d2f85ff9e80df5976392de9102a737" => :catalina
-    sha256 "e23ff51d2b5b9adaa44f5d851da94c836f68886bacc2cd739b30166a2ec04312" => :mojave
-    sha256 "6b40bde3ba007a8b18451502bcf49841d8a3f75ec06a7d6a8e748f508e7dc1f9" => :high_sierra
+    sha256 catalina:    "d9c557bc2f3161818fcf4701e7cc123bd6d2f85ff9e80df5976392de9102a737"
+    sha256 mojave:      "e23ff51d2b5b9adaa44f5d851da94c836f68886bacc2cd739b30166a2ec04312"
+    sha256 high_sierra: "6b40bde3ba007a8b18451502bcf49841d8a3f75ec06a7d6a8e748f508e7dc1f9"
   end
 
   depends_on "flac"

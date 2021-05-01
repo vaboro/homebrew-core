@@ -7,10 +7,9 @@ class Fcct < Formula
   head "https://github.com/coreos/fcct.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1b525343e7d1401c4de2694c7ed25a40d05e607900519ce36c63e76166fde16b" => :catalina
-    sha256 "6b968d4d747e4eb678ab899ff539e49ed771f5a0cc2f87a359e2e404b1e7f12b" => :mojave
-    sha256 "bd2d80c315a29dba226b390329418701e2a149d50c4a16a5fad4a9083f26b433" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1b525343e7d1401c4de2694c7ed25a40d05e607900519ce36c63e76166fde16b"
+    sha256 cellar: :any_skip_relocation, mojave:      "6b968d4d747e4eb678ab899ff539e49ed771f5a0cc2f87a359e2e404b1e7f12b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bd2d80c315a29dba226b390329418701e2a149d50c4a16a5fad4a9083f26b433"
   end
 
   depends_on "go" => :build
@@ -46,10 +45,10 @@ class Fcct < Formula
 
     system "#{bin}/fcct", "--strict", "--output=#{testpath}/example.ign", "#{testpath}/example.fcc"
     assert_predicate testpath/"example.ign", :exist?
-    assert_match /.*"sshAuthorizedKeys":\["ssh-rsa mykey"\].*/m, File.read(testpath/"example.ign").strip
+    assert_match(/.*"sshAuthorizedKeys":\["ssh-rsa mykey"\].*/m, File.read(testpath/"example.ign").strip)
 
     output = shell_output("#{bin}/fcct --strict #{testpath}/example.fcc")
-    assert_match /.*"sshAuthorizedKeys":\["ssh-rsa mykey"\].*/m, output.strip
+    assert_match(/.*"sshAuthorizedKeys":\["ssh-rsa mykey"\].*/m, output.strip)
 
     shell_output("#{bin}/fcct --strict --output=#{testpath}/broken.ign #{testpath}/broken.fcc", 1)
     refute_predicate testpath/"broken.ign", :exist?

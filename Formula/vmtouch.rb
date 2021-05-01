@@ -6,11 +6,10 @@ class Vmtouch < Formula
   head "https://github.com/hoytech/vmtouch.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "30c620a4dc06285c41c7194468de50cf0f12aab38c6441d8e1bbad6d4231ee1e" => :catalina
-    sha256 "020d4e624a448e4e1b9a6e26b8f506bd65ab789ae1c0f23f25beda78b09bc6dd" => :mojave
-    sha256 "edb14ca1ff4cbd4ab535ca9099ea113a36e280ddaf2957a65bdef10f4a7a1b88" => :high_sierra
-    sha256 "7359ed3256886940e6fb1883141c495d5b3e6ab28130ed16553e0f6ab57ac3db" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "30c620a4dc06285c41c7194468de50cf0f12aab38c6441d8e1bbad6d4231ee1e"
+    sha256 cellar: :any_skip_relocation, mojave:      "020d4e624a448e4e1b9a6e26b8f506bd65ab789ae1c0f23f25beda78b09bc6dd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "edb14ca1ff4cbd4ab535ca9099ea113a36e280ddaf2957a65bdef10f4a7a1b88"
+    sha256 cellar: :any_skip_relocation, sierra:      "7359ed3256886940e6fb1883141c495d5b3e6ab28130ed16553e0f6ab57ac3db"
   end
 
   # Upstream change broke macOS support in 1.3.1, patch submitted upstream and accepted.

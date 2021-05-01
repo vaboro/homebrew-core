@@ -5,13 +5,12 @@ class Zyre < Formula
   sha256 "8735bdf11ad9bcdccd4c4fd05cebfbbaea8511e21376bc7ad22f3cbbc038e263"
 
   bottle do
-    cellar :any
-    sha256 "789b7e1d186e2f53371c84b412b18df37c00e0a3aaaad02737e1c61460e06861" => :catalina
-    sha256 "0bcd7f6da37e2249b2a80b00703064ec2b1332bff9979a40bff84a19c38c1d3f" => :mojave
-    sha256 "7f9c25da501db588f3268e4f1fe99ec58357b41cd601a61859ebbce2eb875dee" => :high_sierra
-    sha256 "f8f694368da98cd4781d43b1e4e18db94584ce1f8508b41d492d81194a15db3c" => :sierra
-    sha256 "1402b11567fa689064366bf9f8fe9527dba8dfe9246e35b02130a344aa879a9b" => :el_capitan
-    sha256 "1170a594d0eff7a57df26150d92daa37382ca6469d320e84957afb184560f691" => :yosemite
+    sha256 cellar: :any, catalina:    "789b7e1d186e2f53371c84b412b18df37c00e0a3aaaad02737e1c61460e06861"
+    sha256 cellar: :any, mojave:      "0bcd7f6da37e2249b2a80b00703064ec2b1332bff9979a40bff84a19c38c1d3f"
+    sha256 cellar: :any, high_sierra: "7f9c25da501db588f3268e4f1fe99ec58357b41cd601a61859ebbce2eb875dee"
+    sha256 cellar: :any, sierra:      "f8f694368da98cd4781d43b1e4e18db94584ce1f8508b41d492d81194a15db3c"
+    sha256 cellar: :any, el_capitan:  "1402b11567fa689064366bf9f8fe9527dba8dfe9246e35b02130a344aa879a9b"
+    sha256 cellar: :any, yosemite:    "1170a594d0eff7a57df26150d92daa37382ca6469d320e84957afb184560f691"
   end
 
   head do

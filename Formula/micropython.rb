@@ -8,10 +8,9 @@ class Micropython < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "af98b434dd38d24a28541b3bdc168a689b914b425aa80a6bf384c18862ed3737" => :catalina
-    sha256 "dff6248820013f3f31408252de971418ac26f6eacd20791c6eaeb9527ea552f2" => :mojave
-    sha256 "19800fe474da81062c005732c1dd6c3e66e6a2a8e04f38a4a69ce8513808895c" => :high_sierra
+    sha256 cellar: :any, catalina:    "af98b434dd38d24a28541b3bdc168a689b914b425aa80a6bf384c18862ed3737"
+    sha256 cellar: :any, mojave:      "dff6248820013f3f31408252de971418ac26f6eacd20791c6eaeb9527ea552f2"
+    sha256 cellar: :any, high_sierra: "19800fe474da81062c005732c1dd6c3e66e6a2a8e04f38a4a69ce8513808895c"
   end
 
   depends_on "pkg-config" => :build

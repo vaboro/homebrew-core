@@ -9,12 +9,12 @@ class Tgif < Formula
   end
 
   bottle do
-    sha256 "057f91cf9ac5c38a46b158878f82ca57a5a1caa6589448ff90021fa80c0c6d00" => :catalina
-    sha256 "4067b1468cc15d199a88629b19a677bd1d97462478a48d6a751aca6c1802e738" => :mojave
-    sha256 "4023a1df9a1b9ee248891d2d54ce00127407ce80f89d2b1edef05fe2e4c8cf1f" => :high_sierra
-    sha256 "d96d0bafe9c364642e354a6d80ffce48d532a8ed161372cf549c213b9a0a8a30" => :sierra
-    sha256 "9912995702f73e3add877e329b9bd894e9a7f5fe2024161b27b6d81462aeda9d" => :el_capitan
-    sha256 "df95673872cdb34ca9cccfaa456bdc4a35e29d720b8ffa4875501cf864d399bd" => :yosemite
+    sha256 catalina:    "057f91cf9ac5c38a46b158878f82ca57a5a1caa6589448ff90021fa80c0c6d00"
+    sha256 mojave:      "4067b1468cc15d199a88629b19a677bd1d97462478a48d6a751aca6c1802e738"
+    sha256 high_sierra: "4023a1df9a1b9ee248891d2d54ce00127407ce80f89d2b1edef05fe2e4c8cf1f"
+    sha256 sierra:      "d96d0bafe9c364642e354a6d80ffce48d532a8ed161372cf549c213b9a0a8a30"
+    sha256 el_capitan:  "9912995702f73e3add877e329b9bd894e9a7f5fe2024161b27b6d81462aeda9d"
+    sha256 yosemite:    "df95673872cdb34ca9cccfaa456bdc4a35e29d720b8ffa4875501cf864d399bd"
   end
 
   depends_on :x11

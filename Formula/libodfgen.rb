@@ -11,11 +11,10 @@ class Libodfgen < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "25fb42ad5715c87c0a23547b59515aa5c0d7cba2e0a5d09d2d2a8eeb06217677" => :catalina
-    sha256 "f90434da376c3af4b55640d1c5a870c28339a9174dfda56b7bc79dc6b6b60ec8" => :mojave
-    sha256 "b80178fdbf5ca0816879466adc8fbedd671d57db3378ee3c708fefdf9b8f87e3" => :high_sierra
+    sha256 cellar: :any, catalina:    "25fb42ad5715c87c0a23547b59515aa5c0d7cba2e0a5d09d2d2a8eeb06217677"
+    sha256 cellar: :any, mojave:      "f90434da376c3af4b55640d1c5a870c28339a9174dfda56b7bc79dc6b6b60ec8"
+    sha256 cellar: :any, high_sierra: "b80178fdbf5ca0816879466adc8fbedd671d57db3378ee3c708fefdf9b8f87e3"
   end
 
   depends_on "boost" => :build

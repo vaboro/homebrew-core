@@ -8,10 +8,9 @@ class KubeAws < Formula
   head "https://github.com/kubernetes-incubator/kube-aws.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2985bd4c4175b626c943495a81b29b4de86e34274ac094d741c7e0fbf9462b9e" => :catalina
-    sha256 "b23f734a2c61dd01b4d188f8894430265b58096d23eb4cf4b2fe0d443765bcc7" => :mojave
-    sha256 "a17474237622bf8f4be4843cc8e49fa264f43d37f597116bc0352c7bcbd04f5e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2985bd4c4175b626c943495a81b29b4de86e34274ac094d741c7e0fbf9462b9e"
+    sha256 cellar: :any_skip_relocation, mojave:      "b23f734a2c61dd01b4d188f8894430265b58096d23eb4cf4b2fe0d443765bcc7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a17474237622bf8f4be4843cc8e49fa264f43d37f597116bc0352c7bcbd04f5e"
   end
 
   depends_on "go" => :build

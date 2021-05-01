@@ -13,10 +13,9 @@ class Jsdoc3 < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f27ce46b59636cf0b06c0857e59c5cc7de89f59524e1597c0efd05d48d02299a" => :catalina
-    sha256 "d33bd4efc75166f484d496cfc58d1273bb6f42a73f220841efdaca1e54be37ce" => :mojave
-    sha256 "47d6b79de54abbd92259da7b2101125158a07949195e760ab385fd088c086379" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f27ce46b59636cf0b06c0857e59c5cc7de89f59524e1597c0efd05d48d02299a"
+    sha256 cellar: :any_skip_relocation, mojave:      "d33bd4efc75166f484d496cfc58d1273bb6f42a73f220841efdaca1e54be37ce"
+    sha256 cellar: :any_skip_relocation, high_sierra: "47d6b79de54abbd92259da7b2101125158a07949195e760ab385fd088c086379"
   end
 
   depends_on "node"

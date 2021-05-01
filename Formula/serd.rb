@@ -6,10 +6,9 @@ class Serd < Formula
   license "ISC"
 
   bottle do
-    cellar :any
-    sha256 "3361f452fbde6a02d8dfe77fdd53c6c5ff99e0bcb9df4504526674641cc4b24e" => :catalina
-    sha256 "e511ee4c7bb634cef312c139535c537aaafd70bbf2c62900a2b2950901f9eebf" => :mojave
-    sha256 "6d5a775d35f00fca2fb98c9177616322e3a868204c2c3f93614102e5ece3237f" => :high_sierra
+    sha256 cellar: :any, catalina:    "3361f452fbde6a02d8dfe77fdd53c6c5ff99e0bcb9df4504526674641cc4b24e"
+    sha256 cellar: :any, mojave:      "e511ee4c7bb634cef312c139535c537aaafd70bbf2c62900a2b2950901f9eebf"
+    sha256 cellar: :any, high_sierra: "6d5a775d35f00fca2fb98c9177616322e3a868204c2c3f93614102e5ece3237f"
   end
 
   depends_on "pkg-config" => :build

@@ -10,10 +10,9 @@ class Giflib < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ad97d175fa77f7afb4a1c215538d8ae9eff30435de7feaa6a5d2e29fca7fef4d" => :catalina
-    sha256 "42d2f8a6e9dbf9d4c22a2e64581c7170cc7dcb2a0e66df383efc67b7bc96238d" => :mojave
-    sha256 "e1a30a20ad93cd9ec003027d7fba43a7e04ced0bff4156614818cccfc9dec6c9" => :high_sierra
+    sha256 cellar: :any, catalina:    "ad97d175fa77f7afb4a1c215538d8ae9eff30435de7feaa6a5d2e29fca7fef4d"
+    sha256 cellar: :any, mojave:      "42d2f8a6e9dbf9d4c22a2e64581c7170cc7dcb2a0e66df383efc67b7bc96238d"
+    sha256 cellar: :any, high_sierra: "e1a30a20ad93cd9ec003027d7fba43a7e04ced0bff4156614818cccfc9dec6c9"
   end
 
   # Upstream has stripped out the previous autotools-based build system and their

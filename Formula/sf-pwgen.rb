@@ -7,11 +7,10 @@ class SfPwgen < Formula
   head "https://github.com/anders/pwgen.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0fc934513e71330c48333b6e0698b39013d1b2aee57f93124c0c1bff2236475e" => :catalina
-    sha256 "50e87a417ac3d9b5be7318c7e2983db1a1f90759fab02a898f9cd257b15ac6e2" => :mojave
-    sha256 "2ebd137c58bd8d20a50251e159b6074e65009a265aa351cf6eb0afd39d59edc1" => :high_sierra
-    sha256 "01cf1ff26d304c0cbb0072130ba2476ddeebd8933040092b937ced1ede06c2a2" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0fc934513e71330c48333b6e0698b39013d1b2aee57f93124c0c1bff2236475e"
+    sha256 cellar: :any_skip_relocation, mojave:      "50e87a417ac3d9b5be7318c7e2983db1a1f90759fab02a898f9cd257b15ac6e2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2ebd137c58bd8d20a50251e159b6074e65009a265aa351cf6eb0afd39d59edc1"
+    sha256 cellar: :any_skip_relocation, sierra:      "01cf1ff26d304c0cbb0072130ba2476ddeebd8933040092b937ced1ede06c2a2"
   end
 
   def install

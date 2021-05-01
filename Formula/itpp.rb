@@ -12,14 +12,13 @@ class Itpp < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b2e1462473404d4c01645da0c7602e75395942a7478a337d70c969fa888c6dcd" => :catalina
-    sha256 "cc0a4a3787d616440ff284f97f87742327a5293b439195143a909b7764eb3ae4" => :mojave
-    sha256 "357a4ee1ed9d2c7509a8ae7a22bda393942c6c40d56dc60468fdeec39b675ad5" => :high_sierra
-    sha256 "168b61ba02bd54e625ccbcac998595dc2e96a4210a0709a7b7296a8ed9b985b5" => :sierra
-    sha256 "c9f2f041dbdbea87029180a253fa0cd470aee6a2144a848b10f9fb5c40f01b8e" => :el_capitan
-    sha256 "6e772c61104760fcf2c9500fa06fb2d032d4db1f53ef44d090e18aca54ee75f0" => :yosemite
-    sha256 "c9e5ed1ab5febb67c61139b451ac70c501e6dd8fe656f7658d9e6aaa3f025e2a" => :mavericks
+    sha256 cellar: :any, catalina:    "b2e1462473404d4c01645da0c7602e75395942a7478a337d70c969fa888c6dcd"
+    sha256 cellar: :any, mojave:      "cc0a4a3787d616440ff284f97f87742327a5293b439195143a909b7764eb3ae4"
+    sha256 cellar: :any, high_sierra: "357a4ee1ed9d2c7509a8ae7a22bda393942c6c40d56dc60468fdeec39b675ad5"
+    sha256 cellar: :any, sierra:      "168b61ba02bd54e625ccbcac998595dc2e96a4210a0709a7b7296a8ed9b985b5"
+    sha256 cellar: :any, el_capitan:  "c9f2f041dbdbea87029180a253fa0cd470aee6a2144a848b10f9fb5c40f01b8e"
+    sha256 cellar: :any, yosemite:    "6e772c61104760fcf2c9500fa06fb2d032d4db1f53ef44d090e18aca54ee75f0"
+    sha256 cellar: :any, mavericks:   "c9e5ed1ab5febb67c61139b451ac70c501e6dd8fe656f7658d9e6aaa3f025e2a"
   end
 
   depends_on "cmake" => :build

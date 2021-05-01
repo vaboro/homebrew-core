@@ -7,10 +7,9 @@ class Elixir < Formula
   head "https://github.com/elixir-lang/elixir.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ed5f1be4059b41113c35f0a3ae1f01ae5042b143869d22457428507c4a976812" => :catalina
-    sha256 "8f1dea3bdea9a75644f0a3459d9ed61c391e5e72886f734e8c4dfe0465a94903" => :mojave
-    sha256 "c2e6978c73f4bc53891a7d42aad74a679d6df421caeb595550dfd3193929d7ed" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ed5f1be4059b41113c35f0a3ae1f01ae5042b143869d22457428507c4a976812"
+    sha256 cellar: :any_skip_relocation, mojave:      "8f1dea3bdea9a75644f0a3459d9ed61c391e5e72886f734e8c4dfe0465a94903"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c2e6978c73f4bc53891a7d42aad74a679d6df421caeb595550dfd3193929d7ed"
   end
 
   depends_on "erlang"

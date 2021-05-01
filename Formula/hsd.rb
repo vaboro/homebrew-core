@@ -9,9 +9,9 @@ class Hsd < Formula
 
   bottle do
     rebuild 1
-    sha256 "dbd50284d8546d83bbe30663b99eeb5244fad4c0fedac0e673772b99300e0967" => :catalina
-    sha256 "051254fac8a90d4069a7da8a56e17b16b926083d74bf699b34ab71d0c815bd81" => :mojave
-    sha256 "0420b2d3785703c26a0c02f873d08463795e0bcee43a5f3bf871b28a7901ba40" => :high_sierra
+    sha256 catalina:    "dbd50284d8546d83bbe30663b99eeb5244fad4c0fedac0e673772b99300e0967"
+    sha256 mojave:      "051254fac8a90d4069a7da8a56e17b16b926083d74bf699b34ab71d0c815bd81"
+    sha256 high_sierra: "0420b2d3785703c26a0c02f873d08463795e0bcee43a5f3bf871b28a7901ba40"
   end
 
   depends_on "python@3.8" => :build

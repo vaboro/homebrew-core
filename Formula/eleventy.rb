@@ -13,10 +13,9 @@ class Eleventy < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "46d20c5bec31be5785cd494a3925e2b3f8231800d865e98e025bf637e131ea86" => :catalina
-    sha256 "eddd72fbb882382129956d2ef4b27671ede98db7681a6134096371a248dbec1c" => :mojave
-    sha256 "69ab30317e492a8e467cc77f91a7c1ca961269071939bb5c4b56ab9e8ea4c595" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "46d20c5bec31be5785cd494a3925e2b3f8231800d865e98e025bf637e131ea86"
+    sha256 cellar: :any_skip_relocation, mojave:      "eddd72fbb882382129956d2ef4b27671ede98db7681a6134096371a248dbec1c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "69ab30317e492a8e467cc77f91a7c1ca961269071939bb5c4b56ab9e8ea4c595"
   end
 
   depends_on "node"

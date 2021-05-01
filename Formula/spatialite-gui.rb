@@ -7,10 +7,9 @@ class SpatialiteGui < Formula
   revision 6
 
   bottle do
-    cellar :any
-    sha256 "fd3dd58b7818d298d1ee682270e124d25fd92bb7017a05d53dcf45ebf53f1e23" => :catalina
-    sha256 "13c864fd247e27bc67c69047d7b175b1e6913cadff426ddf2267754ea1dee278" => :mojave
-    sha256 "dc96081a458992e1fbefc8cb9c93d285596d1ad2844367fd84c0679bd4e175d3" => :high_sierra
+    sha256 cellar: :any, catalina:    "fd3dd58b7818d298d1ee682270e124d25fd92bb7017a05d53dcf45ebf53f1e23"
+    sha256 cellar: :any, mojave:      "13c864fd247e27bc67c69047d7b175b1e6913cadff426ddf2267754ea1dee278"
+    sha256 cellar: :any, high_sierra: "dc96081a458992e1fbefc8cb9c93d285596d1ad2844367fd84c0679bd4e175d3"
   end
 
   depends_on "pkg-config" => :build

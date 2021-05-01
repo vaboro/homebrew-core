@@ -6,9 +6,9 @@ class Juise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 "fdc8151a4937275308e7d353b0f42007e5a371a58551c2609351ac9ae0647bbb" => :catalina
-    sha256 "7895026372337e9a86c906b364f5a3bda3c217e6def31b6e51ada8ab14c9334b" => :mojave
-    sha256 "6c4e884c63521014cd059e59372130ea70a06067769aaaf79497cb1f6877c41a" => :high_sierra
+    sha256 catalina:    "fdc8151a4937275308e7d353b0f42007e5a371a58551c2609351ac9ae0647bbb"
+    sha256 mojave:      "7895026372337e9a86c906b364f5a3bda3c217e6def31b6e51ada8ab14c9334b"
+    sha256 high_sierra: "6c4e884c63521014cd059e59372130ea70a06067769aaaf79497cb1f6877c41a"
   end
 
   head do

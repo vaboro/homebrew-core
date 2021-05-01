@@ -6,10 +6,9 @@ class Odpi < Formula
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
-    cellar :any
-    sha256 "9817fa422fa89f12395b6f981f731e2392d6dd0c5e6b026adc655eb05fb33d0d" => :catalina
-    sha256 "1375a9d693cc5ef4c41b2b4c625d738191884e28c97e6e64314a26b446e8ec12" => :mojave
-    sha256 "84afef53c203bfe74cfabefb188e8d09067d0e282f0f550901a131601faef769" => :high_sierra
+    sha256 cellar: :any, catalina:    "9817fa422fa89f12395b6f981f731e2392d6dd0c5e6b026adc655eb05fb33d0d"
+    sha256 cellar: :any, mojave:      "1375a9d693cc5ef4c41b2b4c625d738191884e28c97e6e64314a26b446e8ec12"
+    sha256 cellar: :any, high_sierra: "84afef53c203bfe74cfabefb188e8d09067d0e282f0f550901a131601faef769"
   end
 
   def install

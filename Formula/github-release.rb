@@ -7,10 +7,9 @@ class GithubRelease < Formula
   head "https://github.com/github-release/github-release.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "67399d81e62c8b1fb7d5b26ebea79de5d806757cd194d2055dcd5dc8935167e2" => :catalina
-    sha256 "3640960eb97bed10dfe75237cc61b3e8fb36f526c9d50c6820cd07c841432842" => :mojave
-    sha256 "53b5ef103a6190a891f53a5c52019ab2e12e31f15f4f97775cb2cb169befefa1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "67399d81e62c8b1fb7d5b26ebea79de5d806757cd194d2055dcd5dc8935167e2"
+    sha256 cellar: :any_skip_relocation, mojave:      "3640960eb97bed10dfe75237cc61b3e8fb36f526c9d50c6820cd07c841432842"
+    sha256 cellar: :any_skip_relocation, high_sierra: "53b5ef103a6190a891f53a5c52019ab2e12e31f15f4f97775cb2cb169befefa1"
   end
 
   depends_on "go" => :build

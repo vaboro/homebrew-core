@@ -11,10 +11,9 @@ class Docbook < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3" => :catalina
-    sha256 "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3" => :mojave
-    sha256 "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3"
+    sha256 cellar: :any_skip_relocation, mojave:      "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8152e5356c47a7b8282f3ed84ee3f29565e8ce620bddeaeaf23dfd1f5ef111a3"
   end
 
   uses_from_macos "libxml2"

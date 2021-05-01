@@ -10,10 +10,9 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "de70755aba3f996f670ebfb1a87a0c8e6664e7b43f498b3a6ef142ff96e1f64f" => :catalina
-    sha256 "d674541be036abf14122f6df709ec1cd4aac4e87bcb4265f68f1433ef56eeb46" => :mojave
-    sha256 "4989e5985a9c5c26f9d7878cc4aa683a791c889dc7a4d6e5b9ef323d0a84defd" => :high_sierra
+    sha256 cellar: :any, catalina:    "de70755aba3f996f670ebfb1a87a0c8e6664e7b43f498b3a6ef142ff96e1f64f"
+    sha256 cellar: :any, mojave:      "d674541be036abf14122f6df709ec1cd4aac4e87bcb4265f68f1433ef56eeb46"
+    sha256 cellar: :any, high_sierra: "4989e5985a9c5c26f9d7878cc4aa683a791c889dc7a4d6e5b9ef323d0a84defd"
   end
 
   depends_on "boost" => :build

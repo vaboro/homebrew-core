@@ -11,10 +11,9 @@ class Abcmidi < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "886d3fb55c973886038503454f569f492cf88f93771e1933a02b3a7dbebbf24d" => :catalina
-    sha256 "e8d23406db17a5c449050bc08752b0b5767d299fcea55c01b929efe4d6f06e44" => :mojave
-    sha256 "312bb0356635a3c556b1023608f1ff5ec601443e89ad27fd270cdf49a73fca60" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "886d3fb55c973886038503454f569f492cf88f93771e1933a02b3a7dbebbf24d"
+    sha256 cellar: :any_skip_relocation, mojave:      "e8d23406db17a5c449050bc08752b0b5767d299fcea55c01b929efe4d6f06e44"
+    sha256 cellar: :any_skip_relocation, high_sierra: "312bb0356635a3c556b1023608f1ff5ec601443e89ad27fd270cdf49a73fca60"
   end
 
   def install

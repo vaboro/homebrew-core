@@ -7,11 +7,10 @@ class DockerLs < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0dd57092a34d0bfac07d79e87912e3bedfda5f9b7046db31c9c637d080519f2c" => :catalina
-    sha256 "13e48e45be8cdb09ff06ca244927b8131debc11b3bc8a31f3d1a1960015024f9" => :mojave
-    sha256 "f16bb4511bb3880c9f9dfe114c825f57075ae5524c4e009372a4c9305c236f8d" => :high_sierra
-    sha256 "a32421f644c0385dfce1af8091c254502471625cde6ba304cba9dd86f547ada9" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0dd57092a34d0bfac07d79e87912e3bedfda5f9b7046db31c9c637d080519f2c"
+    sha256 cellar: :any_skip_relocation, mojave:      "13e48e45be8cdb09ff06ca244927b8131debc11b3bc8a31f3d1a1960015024f9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f16bb4511bb3880c9f9dfe114c825f57075ae5524c4e009372a4c9305c236f8d"
+    sha256 cellar: :any_skip_relocation, sierra:      "a32421f644c0385dfce1af8091c254502471625cde6ba304cba9dd86f547ada9"
   end
 
   depends_on "go" => :build
@@ -31,13 +30,13 @@ class DockerLs < Formula
   end
 
   test do
-    assert_match /\Wlatest\W/m, pipe_output("#{bin}/docker-ls tags \
+    assert_match(/\Wlatest\W/m, pipe_output("#{bin}/docker-ls tags \
       -r https://index.docker.io -u '' -p '' \
       --progress-indicator=false library/busybox \
-    ")
+    "))
 
-    assert_match /401/, pipe_output("#{bin}/docker-rm  \
+    assert_match(/401/, pipe_output("#{bin}/docker-rm  \
       -r https://index.docker.io -u foo -p bar library/busybox:latest 2<&1 \
-    ")
+    "))
   end
 end

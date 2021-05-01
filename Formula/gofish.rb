@@ -7,10 +7,9 @@ class Gofish < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "db76c4f80f2bcc9de811fb78d24ef3352a18072720edd3ba8fd0c985fdc1a41a" => :catalina
-    sha256 "c2571af53fe2460268ad217cfb20fdcf187d29a5106393949ca22b64cfc69c49" => :mojave
-    sha256 "97f68fea6cc4d9e3f7fe5cb6256f7fe7d3558df6067106d17adc274728464635" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "db76c4f80f2bcc9de811fb78d24ef3352a18072720edd3ba8fd0c985fdc1a41a"
+    sha256 cellar: :any_skip_relocation, mojave:      "c2571af53fe2460268ad217cfb20fdcf187d29a5106393949ca22b64cfc69c49"
+    sha256 cellar: :any_skip_relocation, high_sierra: "97f68fea6cc4d9e3f7fe5cb6256f7fe7d3558df6067106d17adc274728464635"
   end
 
   depends_on "go" => :build

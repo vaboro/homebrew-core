@@ -7,10 +7,9 @@ class Gcovr < Formula
   head "https://github.com/gcovr/gcovr.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "64f2de6af39af65e2da0fe0622cf72005110bdafcaecdfb71abd6253dc4cf9d5" => :catalina
-    sha256 "6a25bff0607c3ec6e8442a541dfae012678b046e5a1023efc22c5a5063300e1d" => :mojave
-    sha256 "182bbf76588334f06561c759dfdd7ded755f913293eb5da0fa2d7a9b53e6ee86" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "64f2de6af39af65e2da0fe0622cf72005110bdafcaecdfb71abd6253dc4cf9d5"
+    sha256 cellar: :any_skip_relocation, mojave:      "6a25bff0607c3ec6e8442a541dfae012678b046e5a1023efc22c5a5063300e1d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "182bbf76588334f06561c759dfdd7ded755f913293eb5da0fa2d7a9b53e6ee86"
   end
 
   depends_on "python@3.8"

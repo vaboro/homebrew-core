@@ -6,11 +6,10 @@ class Kubecfg < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "4b1c21dd475b3d66051e4413173991f7825876fa09f82b0e0b913c2355ad3de1" => :catalina
-    sha256 "18a96eba78f47594337dc07a87ba17c90c3562eb665e5318bdc660b7556f1bf6" => :mojave
-    sha256 "1a504128fd97438fc4e35ef265bbc2b7693ddd11dc343c0a6b1dca55df593ab3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4b1c21dd475b3d66051e4413173991f7825876fa09f82b0e0b913c2355ad3de1"
+    sha256 cellar: :any_skip_relocation, mojave:      "18a96eba78f47594337dc07a87ba17c90c3562eb665e5318bdc660b7556f1bf6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1a504128fd97438fc4e35ef265bbc2b7693ddd11dc343c0a6b1dca55df593ab3"
   end
 
   depends_on "go" => :build

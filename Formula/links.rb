@@ -11,10 +11,9 @@ class Links < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c43cf180508872a2e5461af4c3c80a58d2d8824d1bb8b0c1a7d0f890aa12ef49" => :catalina
-    sha256 "aef8fa60ec4bdc8adca1cab129a2a8fd0a44888d867e7b468a1ed7672f7c7550" => :mojave
-    sha256 "6660756b8d9ac4a433212c44067fd1627e96c3bcf7996f4a51da1affe39e29e5" => :high_sierra
+    sha256 cellar: :any, catalina:    "c43cf180508872a2e5461af4c3c80a58d2d8824d1bb8b0c1a7d0f890aa12ef49"
+    sha256 cellar: :any, mojave:      "aef8fa60ec4bdc8adca1cab129a2a8fd0a44888d867e7b468a1ed7672f7c7550"
+    sha256 cellar: :any, high_sierra: "6660756b8d9ac4a433212c44067fd1627e96c3bcf7996f4a51da1affe39e29e5"
   end
 
   depends_on "pkg-config" => :build

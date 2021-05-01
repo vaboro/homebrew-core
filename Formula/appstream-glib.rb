@@ -6,10 +6,9 @@ class AppstreamGlib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    cellar :any
-    sha256 "387813e442c2da30f6b778c691b4306d5ab8b80ec388454e4883f2858b270ddf" => :catalina
-    sha256 "b723129505d1a990f406e1ea49cb24c76b3d1ae5135625d2be213279858a730a" => :mojave
-    sha256 "79165dd4badda969b194ab9333181bc81cca64bc161dc74e95bd643401764e5a" => :high_sierra
+    sha256 cellar: :any, catalina:    "387813e442c2da30f6b778c691b4306d5ab8b80ec388454e4883f2858b270ddf"
+    sha256 cellar: :any, mojave:      "b723129505d1a990f406e1ea49cb24c76b3d1ae5135625d2be213279858a730a"
+    sha256 cellar: :any, high_sierra: "79165dd4badda969b194ab9333181bc81cca64bc161dc74e95bd643401764e5a"
   end
 
   depends_on "docbook" => :build

@@ -6,11 +6,10 @@ class Libchewing < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "19b9c38b3036f5ad16c413135e5424c8174789129cafe3c488fecdaffa39f281" => :catalina
-    sha256 "b00710a74c619461b99eb3043b927248ccc0e2c2f3607683dfbcad61b82e4fe3" => :mojave
-    sha256 "c346c2dbf72ea2d97f88cc9fc694b61eccc7db44c38092e9d652a31612f60ef1" => :high_sierra
+    sha256 cellar: :any, catalina:    "19b9c38b3036f5ad16c413135e5424c8174789129cafe3c488fecdaffa39f281"
+    sha256 cellar: :any, mojave:      "b00710a74c619461b99eb3043b927248ccc0e2c2f3607683dfbcad61b82e4fe3"
+    sha256 cellar: :any, high_sierra: "c346c2dbf72ea2d97f88cc9fc694b61eccc7db44c38092e9d652a31612f60ef1"
   end
 
   head do

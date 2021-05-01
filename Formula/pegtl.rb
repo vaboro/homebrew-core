@@ -6,10 +6,9 @@ class Pegtl < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd" => :catalina
-    sha256 "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd" => :mojave
-    sha256 "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd"
+    sha256 cellar: :any_skip_relocation, mojave:      "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "10ad60dbc5a6c4054579b2e7529dfb053395cfd2c9bc5ddb5c2bf6b939b8f9cd"
   end
 
   depends_on "cmake" => :build

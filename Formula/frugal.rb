@@ -6,10 +6,9 @@ class Frugal < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d674c6275d4dcd8f7c2c73ded930e3fc7819a88ff3b1f0006881e07a8f1fb50d" => :catalina
-    sha256 "48370c82e9e201210f22f7b6bdbbabe7724b61eef8bbf5128ed7b555ecae0268" => :mojave
-    sha256 "9f016a8fc19c8f634410a0b6a23a78abff138560b806576cb3770a7272173273" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d674c6275d4dcd8f7c2c73ded930e3fc7819a88ff3b1f0006881e07a8f1fb50d"
+    sha256 cellar: :any_skip_relocation, mojave:      "48370c82e9e201210f22f7b6bdbbabe7724b61eef8bbf5128ed7b555ecae0268"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9f016a8fc19c8f634410a0b6a23a78abff138560b806576cb3770a7272173273"
   end
 
   depends_on "glide" => :build

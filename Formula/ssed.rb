@@ -6,11 +6,10 @@ class Ssed < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "21b9139163cd1f1ddf11ad063e4e9c2409d7c73cba2473912d9117a1631205b8" => :catalina
-    sha256 "3684fa95549fe291253881be5f173e9cff43940be146842f3576a48c7052e234" => :mojave
-    sha256 "cc8945d2f1d9849181c61650958ba6f90a1ff4f4d7dfacf265b5d13921d0a91b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "21b9139163cd1f1ddf11ad063e4e9c2409d7c73cba2473912d9117a1631205b8"
+    sha256 cellar: :any_skip_relocation, mojave:      "3684fa95549fe291253881be5f173e9cff43940be146842f3576a48c7052e234"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cc8945d2f1d9849181c61650958ba6f90a1ff4f4d7dfacf265b5d13921d0a91b"
   end
 
   conflicts_with "gnu-sed", because: "both install share/info/sed.info"

@@ -10,10 +10,9 @@ class GeocodeGlib < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "52ce343c52ad20417f87bde9889b0086768b657874d94fd39eb54141f20fcedd" => :catalina
-    sha256 "e7d30594593bc5fcc430f548d304ec88ff053ab5eebcd6f4bd696fd8b0c4acc7" => :mojave
-    sha256 "74d7d13e5d99f9d4f07674faa262d68b57d86b550e0504dbf0797e84de9e52fa" => :high_sierra
+    sha256 cellar: :any, catalina:    "52ce343c52ad20417f87bde9889b0086768b657874d94fd39eb54141f20fcedd"
+    sha256 cellar: :any, mojave:      "e7d30594593bc5fcc430f548d304ec88ff053ab5eebcd6f4bd696fd8b0c4acc7"
+    sha256 cellar: :any, high_sierra: "74d7d13e5d99f9d4f07674faa262d68b57d86b550e0504dbf0797e84de9e52fa"
   end
 
   depends_on "gobject-introspection" => :build

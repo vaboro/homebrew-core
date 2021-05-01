@@ -13,10 +13,9 @@ class Khal < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e96fbd39b7baeb9dcb49dafa8706c8757339530f310d71b9f4a59ae0818be3e2" => :catalina
-    sha256 "709409761b6ffd42aae9858d974bf4aa3b2ae7e83cd752a5c9b2ac1f38cb917b" => :mojave
-    sha256 "40044701772609c9af1981f2d9708cde8147621e69827e6107feb769cb8d3d0e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e96fbd39b7baeb9dcb49dafa8706c8757339530f310d71b9f4a59ae0818be3e2"
+    sha256 cellar: :any_skip_relocation, mojave:      "709409761b6ffd42aae9858d974bf4aa3b2ae7e83cd752a5c9b2ac1f38cb917b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "40044701772609c9af1981f2d9708cde8147621e69827e6107feb769cb8d3d0e"
   end
 
   depends_on "python@3.8"

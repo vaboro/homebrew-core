@@ -6,9 +6,9 @@ class KdeKi18n < Formula
   head "https://invent.kde.org/frameworks/ki18n.git"
 
   bottle do
-    sha256 "da4981215236a96dfecc3a64ee85b5d5a2942b9c101cdfbb0896093d60a33642" => :catalina
-    sha256 "52e4c45fd1b4c18bbad54ba48d44c542525f8f58ad20a6396ef377abba72734a" => :mojave
-    sha256 "93fb10c573cfc3d451983b53d96b5099f187f081087c1e13cad1123baf98fc58" => :high_sierra
+    sha256 catalina:    "da4981215236a96dfecc3a64ee85b5d5a2942b9c101cdfbb0896093d60a33642"
+    sha256 mojave:      "52e4c45fd1b4c18bbad54ba48d44c542525f8f58ad20a6396ef377abba72734a"
+    sha256 high_sierra: "93fb10c573cfc3d451983b53d96b5099f187f081087c1e13cad1123baf98fc58"
   end
 
   depends_on "cmake" => [:build, :test]

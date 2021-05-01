@@ -8,10 +8,9 @@ class Libfreenect < Formula
   head "https://github.com/OpenKinect/libfreenect.git"
 
   bottle do
-    cellar :any
-    sha256 "a9098e0b3d868c85de4b0bb243d16200361002ff5d27d6d9c9bc5a08fb6ab95a" => :catalina
-    sha256 "d150e4351036b1b3174d24c359736e04a3bbdbe966c77b1714f0edbef486d012" => :mojave
-    sha256 "c08bad975cc7175fdf88a603fb300cac3493f0e20172fc99a69da568d4ad68ff" => :high_sierra
+    sha256 cellar: :any, catalina:    "a9098e0b3d868c85de4b0bb243d16200361002ff5d27d6d9c9bc5a08fb6ab95a"
+    sha256 cellar: :any, mojave:      "d150e4351036b1b3174d24c359736e04a3bbdbe966c77b1714f0edbef486d012"
+    sha256 cellar: :any, high_sierra: "c08bad975cc7175fdf88a603fb300cac3493f0e20172fc99a69da568d4ad68ff"
   end
 
   depends_on "cmake" => :build

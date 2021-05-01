@@ -7,10 +7,9 @@ class Davix < Formula
   head "https://github.com/cern-fts/davix.git"
 
   bottle do
-    cellar :any
-    sha256 "31228a01aae02ff881132588f85e59c563d3bcaf206f7600afb16eed76f478c8" => :catalina
-    sha256 "d7af8ace083026f5fbbebc6e986162b16f651df17bd64a5303f6f4af6a110a9c" => :mojave
-    sha256 "562abf97a898044427a6f968145208d27ada1bf7b6e793fb64eb6fef5864731a" => :high_sierra
+    sha256 cellar: :any, catalina:    "31228a01aae02ff881132588f85e59c563d3bcaf206f7600afb16eed76f478c8"
+    sha256 cellar: :any, mojave:      "d7af8ace083026f5fbbebc6e986162b16f651df17bd64a5303f6f4af6a110a9c"
+    sha256 cellar: :any, high_sierra: "562abf97a898044427a6f968145208d27ada1bf7b6e793fb64eb6fef5864731a"
   end
 
   depends_on "cmake" => :build

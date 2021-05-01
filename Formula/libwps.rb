@@ -11,10 +11,9 @@ class Libwps < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "df168fef776884800b6e739e914ca328b2ed2011fb2f7c650a95ffb410669ff9" => :catalina
-    sha256 "6858e4fc67b746fa2f392c717eab3abf2af4826e7499489b4da45d98b9539b24" => :mojave
-    sha256 "cfba7b4a80156e0783277ea263ee303ecc2194b1a1147493e9b8e6ccafb3885d" => :high_sierra
+    sha256 cellar: :any, catalina:    "df168fef776884800b6e739e914ca328b2ed2011fb2f7c650a95ffb410669ff9"
+    sha256 cellar: :any, mojave:      "6858e4fc67b746fa2f392c717eab3abf2af4826e7499489b4da45d98b9539b24"
+    sha256 cellar: :any, high_sierra: "cfba7b4a80156e0783277ea263ee303ecc2194b1a1147493e9b8e6ccafb3885d"
   end
 
   depends_on "boost" => :build

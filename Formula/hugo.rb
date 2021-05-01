@@ -7,10 +7,9 @@ class Hugo < Formula
   head "https://github.com/gohugoio/hugo.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6e039d566b7a75c25fcf28f41df558e7e0618776f8be54ec5154b4120bbd5013" => :catalina
-    sha256 "e69593a150fdfbc65b19b36093a14233b225f53761fcc7090937e68754eaefb6" => :mojave
-    sha256 "fe7f51e46634cc09785f338478c5474f22fc262374693ce6508d8e5497f625b2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6e039d566b7a75c25fcf28f41df558e7e0618776f8be54ec5154b4120bbd5013"
+    sha256 cellar: :any_skip_relocation, mojave:      "e69593a150fdfbc65b19b36093a14233b225f53761fcc7090937e68754eaefb6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fe7f51e46634cc09785f338478c5474f22fc262374693ce6508d8e5497f625b2"
   end
 
   depends_on "go" => :build

@@ -12,11 +12,10 @@ class Rsstail < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "253a99c8187e0dc6fb29049273f08dd4b199c0de1e9171c4a0829f21aaf5c90f" => :catalina
-    sha256 "b6f2a222c1bc903a5d0179331398ced65980798d694d186bd52e0b54239d9dfd" => :mojave
-    sha256 "29b1cd5b6cbfbd66d250586450e2e24e5706da80b03aa1b54834bd0c01e73202" => :high_sierra
+    sha256 cellar: :any, catalina:    "253a99c8187e0dc6fb29049273f08dd4b199c0de1e9171c4a0829f21aaf5c90f"
+    sha256 cellar: :any, mojave:      "b6f2a222c1bc903a5d0179331398ced65980798d694d186bd52e0b54239d9dfd"
+    sha256 cellar: :any, high_sierra: "29b1cd5b6cbfbd66d250586450e2e24e5706da80b03aa1b54834bd0c01e73202"
   end
 
   depends_on "libmrss"

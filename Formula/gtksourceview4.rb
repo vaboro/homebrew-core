@@ -11,9 +11,9 @@ class Gtksourceview4 < Formula
   end
 
   bottle do
-    sha256 "d49d932f5d0986c72d13d0750e1038ab18036da9539902a55d6cd856126bc452" => :catalina
-    sha256 "bc2eae19e209fe125041648d1f45ab36a8609ac2a49c8bc9fe1aa604b8cc8d99" => :mojave
-    sha256 "38fbfbe4cc2887532bf078e2a2b62a1d1102cb09bf4f8724d31e96d9a58a0148" => :high_sierra
+    sha256 catalina:    "d49d932f5d0986c72d13d0750e1038ab18036da9539902a55d6cd856126bc452"
+    sha256 mojave:      "bc2eae19e209fe125041648d1f45ab36a8609ac2a49c8bc9fe1aa604b8cc8d99"
+    sha256 high_sierra: "38fbfbe4cc2887532bf078e2a2b62a1d1102cb09bf4f8724d31e96d9a58a0148"
   end
 
   depends_on "gobject-introspection" => :build

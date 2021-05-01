@@ -7,10 +7,9 @@ class GetIplayer < Formula
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a3e2df4c8d889ff6230f0ef2bdace24455d15de97a0442b19139f7b8502dbf28" => :catalina
-    sha256 "574a33ef3208092d42fb8640da5ec55dd33b8114207f871329dfdd04813f77e1" => :mojave
-    sha256 "7cb313cecc47bd886b3fa782cc90d790ba75af34567b6bd29af84a218abcec40" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a3e2df4c8d889ff6230f0ef2bdace24455d15de97a0442b19139f7b8502dbf28"
+    sha256 cellar: :any_skip_relocation, mojave:      "574a33ef3208092d42fb8640da5ec55dd33b8114207f871329dfdd04813f77e1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7cb313cecc47bd886b3fa782cc90d790ba75af34567b6bd29af84a218abcec40"
   end
 
   depends_on "atomicparsley"

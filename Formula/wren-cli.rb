@@ -6,10 +6,9 @@ class WrenCli < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c7f9b2cc6e9913517f802d8ef0142484fd86cb2b972ceb670f1b791b65144937" => :catalina
-    sha256 "9bf6170802498342b99b6fb167a6ff9254601e911b5c7c74605145985909e6ff" => :mojave
-    sha256 "074f4d9634a9e8e7fc33cd302778116121874851aa854830d41e3b73ba50500b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c7f9b2cc6e9913517f802d8ef0142484fd86cb2b972ceb670f1b791b65144937"
+    sha256 cellar: :any_skip_relocation, mojave:      "9bf6170802498342b99b6fb167a6ff9254601e911b5c7c74605145985909e6ff"
+    sha256 cellar: :any_skip_relocation, high_sierra: "074f4d9634a9e8e7fc33cd302778116121874851aa854830d41e3b73ba50500b"
   end
 
   def install

@@ -8,9 +8,9 @@ class Ppl < Formula
   revision 1
 
   bottle do
-    sha256 "65aa31c0201a860d32e874ab34cbdea7132101fc6461510e06641a11ca762e82" => :catalina
-    sha256 "253714635b8718e7822853e1385c546b665450b7059e8067e4008ed865eae261" => :mojave
-    sha256 "7a9b9ceabcf71bf31ed8185caaa6e78c065511ba3e6cf805be13402983c2a7e1" => :high_sierra
+    sha256 catalina:    "65aa31c0201a860d32e874ab34cbdea7132101fc6461510e06641a11ca762e82"
+    sha256 mojave:      "253714635b8718e7822853e1385c546b665450b7059e8067e4008ed865eae261"
+    sha256 high_sierra: "7a9b9ceabcf71bf31ed8185caaa6e78c065511ba3e6cf805be13402983c2a7e1"
   end
 
   depends_on "gmp"

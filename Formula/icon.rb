@@ -6,11 +6,10 @@ class Icon < Formula
   sha256 "062a680862b1c10c21789c0c7c7687c970a720186918d5ed1f7aad9fdc6fa9b9"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "a4f708b77cf3147ad2bc029577a7f56aa4cd2a4d192e9fc0a28eb34dcc08775f" => :catalina
-    sha256 "3b97859fb6ac03f3420628fef5d660fbbf6208f642a979307b6bc85e063eb5c3" => :mojave
-    sha256 "f0f50c06a2355371e01ea83f95a1743d94815f3029c0d74ce5888f446c07ab18" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a4f708b77cf3147ad2bc029577a7f56aa4cd2a4d192e9fc0a28eb34dcc08775f"
+    sha256 cellar: :any_skip_relocation, mojave:      "3b97859fb6ac03f3420628fef5d660fbbf6208f642a979307b6bc85e063eb5c3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f0f50c06a2355371e01ea83f95a1743d94815f3029c0d74ce5888f446c07ab18"
   end
 
   def install

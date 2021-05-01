@@ -6,10 +6,9 @@ class Bedops < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "067fa5b0cf0288e60ec7378b07b622218ff385dfc7cadd19ac6fe92ef087aff3" => :catalina
-    sha256 "a3e404afc30d1f77ebfd5c713933a36fed137ab2086da3d7a07ff08d2cd36fb6" => :mojave
-    sha256 "d30e93e415036d271dd424feebc451de8de2e6ed195f950ff6682623c2969dab" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "067fa5b0cf0288e60ec7378b07b622218ff385dfc7cadd19ac6fe92ef087aff3"
+    sha256 cellar: :any_skip_relocation, mojave:      "a3e404afc30d1f77ebfd5c713933a36fed137ab2086da3d7a07ff08d2cd36fb6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d30e93e415036d271dd424feebc451de8de2e6ed195f950ff6682623c2969dab"
   end
 
   def install

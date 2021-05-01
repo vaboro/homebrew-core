@@ -8,10 +8,9 @@ class Auditbeat < Formula
   head "https://github.com/elastic/beats.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "efca3746f1863eb2bd303cfe2d8199b47137dfa4f4421939b67d1f23499d6dd1" => :catalina
-    sha256 "810c2f0dbe5f7da523e830fffa06d1ce633db9f3a225d000580b3554cd28949a" => :mojave
-    sha256 "d31b702da405364e3c12c7c593a17ab11813523b4c6bc3c22827a933c3461d53" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "efca3746f1863eb2bd303cfe2d8199b47137dfa4f4421939b67d1f23499d6dd1"
+    sha256 cellar: :any_skip_relocation, mojave:      "810c2f0dbe5f7da523e830fffa06d1ce633db9f3a225d000580b3554cd28949a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d31b702da405364e3c12c7c593a17ab11813523b4c6bc3c22827a933c3461d53"
   end
 
   depends_on "go" => :build
@@ -119,7 +118,7 @@ class Auditbeat < Formula
     touch testpath/"files/touch"
     sleep 30
     s = IO.readlines(testpath/"auditbeat/auditbeat").last(1)[0]
-    assert_match /"action":\["(initial_scan|created)"\]/, s
+    assert_match(/"action":\["(initial_scan|created)"\]/, s)
     realdirpath = File.realdirpath(testpath)
     assert_match "\"path\":\"#{realdirpath}/files/touch\"", s
   end

@@ -34,11 +34,10 @@ class Sdl < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "98b91b216ee0a29425796e5ece1062b4d57535dd83c68d8ffd23dafd9ca102d3" => :catalina
-    sha256 "b19b93f980a305d7e18b3f3d59b0679e4f91c11dd51334725cc9244a74a2e177" => :mojave
-    sha256 "2580e605dc4d53ea5d321c8cf8451a16630199a01bdcb7c7e0b8f39bfd6ed068" => :high_sierra
+    sha256 cellar: :any, catalina:    "98b91b216ee0a29425796e5ece1062b4d57535dd83c68d8ffd23dafd9ca102d3"
+    sha256 cellar: :any, mojave:      "b19b93f980a305d7e18b3f3d59b0679e4f91c11dd51334725cc9244a74a2e177"
+    sha256 cellar: :any, high_sierra: "2580e605dc4d53ea5d321c8cf8451a16630199a01bdcb7c7e0b8f39bfd6ed068"
   end
 
   head do

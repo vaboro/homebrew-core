@@ -11,10 +11,9 @@ class Pango < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ddf6c6e74e58909336517fdad64ff0f32212627b1fae8d9bb53439953d29279a" => :catalina
-    sha256 "cbf05eae84754034359bfed76853667eaf1b53bfaa92f2da67c416299e17e6c7" => :mojave
-    sha256 "de0f7b7a6c735a240feb38c00c66afc99316e1d82432b677f4de3fef076cbb89" => :high_sierra
+    sha256 cellar: :any, catalina:    "ddf6c6e74e58909336517fdad64ff0f32212627b1fae8d9bb53439953d29279a"
+    sha256 cellar: :any, mojave:      "cbf05eae84754034359bfed76853667eaf1b53bfaa92f2da67c416299e17e6c7"
+    sha256 cellar: :any, high_sierra: "de0f7b7a6c735a240feb38c00c66afc99316e1d82432b677f4de3fef076cbb89"
   end
 
   depends_on "gobject-introspection" => :build

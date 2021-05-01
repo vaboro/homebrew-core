@@ -5,9 +5,9 @@ class LibcouchbaseAT2 < Formula
   sha256 "bbee97ef2394f275b8cd4b9b940010566a2d34d4754ba3532a7fca3d94029b75"
   license "Apache-2.0"
   bottle do
-    sha256 "d3065af67b6c27379c674fadeca9a3a37eda0323d701769c34ab4aa5d5e1a345" => :catalina
-    sha256 "b0fc35ac0a09d79476957fef601928fce6e9bc1abee8ec3522d59a389754fa39" => :mojave
-    sha256 "4efb6194205ecbd2149ccda7631ca9f5257bcf8bc8ea00e89d50fbb7f7113da2" => :high_sierra
+    sha256 catalina:    "d3065af67b6c27379c674fadeca9a3a37eda0323d701769c34ab4aa5d5e1a345"
+    sha256 mojave:      "b0fc35ac0a09d79476957fef601928fce6e9bc1abee8ec3522d59a389754fa39"
+    sha256 high_sierra: "4efb6194205ecbd2149ccda7631ca9f5257bcf8bc8ea00e89d50fbb7f7113da2"
   end
 
   keg_only :versioned_formula
@@ -30,7 +30,7 @@ class LibcouchbaseAT2 < Formula
   end
 
   test do
-    assert_match /LCB_ECONNREFUSED/,
-      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
+    assert_match(/LCB_ECONNREFUSED/,
+      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip)
   end
 end

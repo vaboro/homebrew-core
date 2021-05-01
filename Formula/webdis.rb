@@ -6,10 +6,9 @@ class Webdis < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "d0f5052f9479bba534cdc8f5acfb047207d46b7e03aa3bea8bc9b17a07a27948" => :catalina
-    sha256 "e27da82c3099bbc9194c2a53dd3113580874e06ac8dc206f1523636cb678d3a2" => :mojave
-    sha256 "1947a8b3ffcb642053eefc5fa48aca88604148713fe8ae57eb4ab80a6991b097" => :high_sierra
+    sha256 cellar: :any, catalina:    "d0f5052f9479bba534cdc8f5acfb047207d46b7e03aa3bea8bc9b17a07a27948"
+    sha256 cellar: :any, mojave:      "e27da82c3099bbc9194c2a53dd3113580874e06ac8dc206f1523636cb678d3a2"
+    sha256 cellar: :any, high_sierra: "1947a8b3ffcb642053eefc5fa48aca88604148713fe8ae57eb4ab80a6991b097"
   end
 
   depends_on "libevent"
@@ -20,7 +19,7 @@ class Webdis < Formula
 
     inreplace "webdis.prod.json" do |s|
       s.gsub! "/var/log/webdis.log", "#{var}/log/webdis.log"
-      s.gsub! /daemonize":\s*true/, "daemonize\":\tfalse"
+      s.gsub!(/daemonize":\s*true/, "daemonize\":\tfalse")
     end
 
     etc.install "webdis.json", "webdis.prod.json"

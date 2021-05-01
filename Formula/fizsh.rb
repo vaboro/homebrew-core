@@ -12,13 +12,12 @@ class Fizsh < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c1cb674d5a7219ea4c41f3becd0997cf55dfd26a06a17d739f14a3d59da7df75" => :catalina
-    sha256 "02457429b5257b916207bc7f46acd5577f8e01183437ef03b594991ba3e69466" => :mojave
-    sha256 "7916e571aaf891561a5a6be1ef9708e63ee17ecb41fe60b75129c765d3dad1cb" => :high_sierra
-    sha256 "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd" => :sierra
-    sha256 "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd" => :el_capitan
-    sha256 "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "c1cb674d5a7219ea4c41f3becd0997cf55dfd26a06a17d739f14a3d59da7df75"
+    sha256 cellar: :any_skip_relocation, mojave:      "02457429b5257b916207bc7f46acd5577f8e01183437ef03b594991ba3e69466"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7916e571aaf891561a5a6be1ef9708e63ee17ecb41fe60b75129c765d3dad1cb"
+    sha256 cellar: :any_skip_relocation, sierra:      "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd"
+    sha256 cellar: :any_skip_relocation, yosemite:    "334ceff9d649e87f87be9d3f561ee38221f8c87712a3b506b145191dc51fc4bd"
   end
 
   depends_on "zsh"

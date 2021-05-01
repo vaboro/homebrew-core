@@ -12,10 +12,9 @@ class Triton < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c641a16f691b80643d5d9bf68056953dba80044956b87bef3269f008433bbb0d" => :catalina
-    sha256 "64bf5b0274d9fd434c6d8d80489fd13ebebd1e2f1bd7acaed285fc2a4749b36d" => :mojave
-    sha256 "0893698205caab0e12f9a75291649de97d2e409e850fec41eac0373d3ea05964" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c641a16f691b80643d5d9bf68056953dba80044956b87bef3269f008433bbb0d"
+    sha256 cellar: :any_skip_relocation, mojave:      "64bf5b0274d9fd434c6d8d80489fd13ebebd1e2f1bd7acaed285fc2a4749b36d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0893698205caab0e12f9a75291649de97d2e409e850fec41eac0373d3ea05964"
   end
 
   depends_on "node"
@@ -28,6 +27,6 @@ class Triton < Formula
 
   test do
     output = shell_output("#{bin}/triton profile ls")
-    assert_match /\ANAME  CURR  ACCOUNT  USER  URL$/, output
+    assert_match(/\ANAME  CURR  ACCOUNT  USER  URL$/, output)
   end
 end

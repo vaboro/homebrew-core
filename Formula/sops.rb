@@ -7,10 +7,9 @@ class Sops < Formula
   head "https://github.com/mozilla/sops.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7b883bcead58c088e16a32310a29f4146066329f7f8b203bf69ec5f1fecec950" => :catalina
-    sha256 "1c0ef6707dee2088bb816d827f6cfd2d7a26ef530b5177b3ae5652aa2a0591eb" => :mojave
-    sha256 "b6e72dd038ae5c28786423aa9b5eb31c92b9533feee1b927d72cb697e3c1ddd7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7b883bcead58c088e16a32310a29f4146066329f7f8b203bf69ec5f1fecec950"
+    sha256 cellar: :any_skip_relocation, mojave:      "1c0ef6707dee2088bb816d827f6cfd2d7a26ef530b5177b3ae5652aa2a0591eb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b6e72dd038ae5c28786423aa9b5eb31c92b9533feee1b927d72cb697e3c1ddd7"
   end
 
   depends_on "go" => :build

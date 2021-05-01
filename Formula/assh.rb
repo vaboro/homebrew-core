@@ -7,10 +7,9 @@ class Assh < Formula
   head "https://github.com/moul/assh.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e12956db15a33133390f2317143315710f6692aad3e5b36fafa3934e43ab3241" => :catalina
-    sha256 "2507b79a656698c02c1fb678ebe280ba44326a9f8ec17d4fd355a3843b60253b" => :mojave
-    sha256 "359270a9985af3faba8cfe637027d2a4d44ed3b0ce129bd5eb22354eb000bf45" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e12956db15a33133390f2317143315710f6692aad3e5b36fafa3934e43ab3241"
+    sha256 cellar: :any_skip_relocation, mojave:      "2507b79a656698c02c1fb678ebe280ba44326a9f8ec17d4fd355a3843b60253b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "359270a9985af3faba8cfe637027d2a4d44ed3b0ce129bd5eb22354eb000bf45"
   end
 
   depends_on "go" => :build

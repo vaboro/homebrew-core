@@ -10,12 +10,11 @@ class Optipng < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "093c6a64c408594726d3bbf646394d1bec0ff05e95e8a71b7ca244afb67929ee" => :catalina
-    sha256 "150c2cace53963fa77b40e30e403fea731ac87ce3aa5bf0528205f3bcd0626ab" => :mojave
-    sha256 "b64e8d6bd75de2e40d481c7b0e816f45b0865e2dfa42f03e507f67607804ef2b" => :high_sierra
-    sha256 "416ce24daab37aaef4fecda949fc80bed2b1d9b9714406f972b093846578ab3a" => :sierra
-    sha256 "f59e3cedb808003915ee214f6487b968e3e6dcea669452f0a732fcced03aaa8f" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "093c6a64c408594726d3bbf646394d1bec0ff05e95e8a71b7ca244afb67929ee"
+    sha256 cellar: :any_skip_relocation, mojave:      "150c2cace53963fa77b40e30e403fea731ac87ce3aa5bf0528205f3bcd0626ab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b64e8d6bd75de2e40d481c7b0e816f45b0865e2dfa42f03e507f67607804ef2b"
+    sha256 cellar: :any_skip_relocation, sierra:      "416ce24daab37aaef4fecda949fc80bed2b1d9b9714406f972b093846578ab3a"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "f59e3cedb808003915ee214f6487b968e3e6dcea669452f0a732fcced03aaa8f"
   end
 
   uses_from_macos "zlib"

@@ -6,10 +6,9 @@ class Libimagequant < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "31bc66699e19c2874ace33dc919782b6effefa53bdcb6bfe804f954e9d4df1bf" => :catalina
-    sha256 "65b36c32d15e2605ab813007436090f2004c50062dd68a806fe324e832f62e06" => :mojave
-    sha256 "9f2444bbeed8e96b5a575dd6d9168330f5aa9609aae13919eb50576d2b93e994" => :high_sierra
+    sha256 cellar: :any, catalina:    "31bc66699e19c2874ace33dc919782b6effefa53bdcb6bfe804f954e9d4df1bf"
+    sha256 cellar: :any, mojave:      "65b36c32d15e2605ab813007436090f2004c50062dd68a806fe324e832f62e06"
+    sha256 cellar: :any, high_sierra: "9f2444bbeed8e96b5a575dd6d9168330f5aa9609aae13919eb50576d2b93e994"
   end
 
   def install

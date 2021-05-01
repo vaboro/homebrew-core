@@ -8,8 +8,7 @@ class Swiftgen < Formula
   head "https://github.com/SwiftGen/SwiftGen.git", branch: "develop"
 
   bottle do
-    cellar :any
-    sha256 "8bcb52fa2749827b28c38658154d45129005a9573f3ba53a8997aedf0043a7c5" => :catalina
+    sha256 cellar: :any, catalina: "8bcb52fa2749827b28c38658154d45129005a9573f3ba53a8997aedf0043a7c5"
   end
 
   depends_on "ruby" => :build if MacOS.version <= :sierra

@@ -8,9 +8,9 @@ class Siril < Formula
   head "https://gitlab.com/free-astro/siril.git"
 
   bottle do
-    sha256 "3e2facc0ace5466da9bf184b424b947198310216e5d18c32d8573a68d7d3eb1c" => :catalina
-    sha256 "72a6f08ef2984f1deef657f8503050d2eef4a74c1f1246441b580674bd4f2344" => :mojave
-    sha256 "d002c0aeb1481907ee85fd88dbd71149a1ef1e06af697c07f5142d57b6ab5f55" => :high_sierra
+    sha256 catalina:    "3e2facc0ace5466da9bf184b424b947198310216e5d18c32d8573a68d7d3eb1c"
+    sha256 mojave:      "72a6f08ef2984f1deef657f8503050d2eef4a74c1f1246441b580674bd4f2344"
+    sha256 high_sierra: "d002c0aeb1481907ee85fd88dbd71149a1ef1e06af697c07f5142d57b6ab5f55"
   end
 
   depends_on "autoconf" => :build

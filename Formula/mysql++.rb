@@ -6,10 +6,9 @@ class Mysqlxx < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "657ebf2f50f14f877b6892bbee2c5e92aef47093a22918a9d14b871769d76a30" => :catalina
-    sha256 "0e2b71648130ccac76a5d861e609538ffc697e629db9c352b0f69b513df4aa4e" => :mojave
-    sha256 "a8bb0d5cdc09c45b28b15e6e3de0b20260b8f11f395fb968d1f6a4c931d9a292" => :high_sierra
+    sha256 cellar: :any, catalina:    "657ebf2f50f14f877b6892bbee2c5e92aef47093a22918a9d14b871769d76a30"
+    sha256 cellar: :any, mojave:      "0e2b71648130ccac76a5d861e609538ffc697e629db9c352b0f69b513df4aa4e"
+    sha256 cellar: :any, high_sierra: "a8bb0d5cdc09c45b28b15e6e3de0b20260b8f11f395fb968d1f6a4c931d9a292"
   end
 
   depends_on "mysql-client"

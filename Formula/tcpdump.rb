@@ -12,10 +12,9 @@ class Tcpdump < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "d4a3781175e0ce1d1a1048a3e211b8775dcec91e362fb51b3384e7404be3b4b6" => :catalina
-    sha256 "6cd2cafe6229e2ccb97ba0b636e19a89c9e2f0ec85778910ed55498a30c03eb3" => :mojave
-    sha256 "22f03cae37a35d6369292efd2c661f781df8dc21184046e768e13c148dbb3f19" => :high_sierra
+    sha256 cellar: :any, catalina:    "d4a3781175e0ce1d1a1048a3e211b8775dcec91e362fb51b3384e7404be3b4b6"
+    sha256 cellar: :any, mojave:      "6cd2cafe6229e2ccb97ba0b636e19a89c9e2f0ec85778910ed55498a30c03eb3"
+    sha256 cellar: :any, high_sierra: "22f03cae37a35d6369292efd2c661f781df8dc21184046e768e13c148dbb3f19"
   end
 
   depends_on "libpcap"

@@ -12,10 +12,9 @@ class Dust < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "693714f8f0d1207b8e54357f924e3a1242dd54d93f21de76b669217812065711" => :catalina
-    sha256 "4c5c1cda666e8d405cf39ae79b3327dd8581555c18417b0834c2d334ad4568ed" => :mojave
-    sha256 "52750a57ee2e58c7b95661b61cb0d855ba653946f6f21881ed041f2ce2cea747" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "693714f8f0d1207b8e54357f924e3a1242dd54d93f21de76b669217812065711"
+    sha256 cellar: :any_skip_relocation, mojave:      "4c5c1cda666e8d405cf39ae79b3327dd8581555c18417b0834c2d334ad4568ed"
+    sha256 cellar: :any_skip_relocation, high_sierra: "52750a57ee2e58c7b95661b61cb0d855ba653946f6f21881ed041f2ce2cea747"
   end
 
   depends_on "rust" => :build
@@ -25,6 +24,6 @@ class Dust < Formula
   end
 
   test do
-    assert_match /\d+.+?\./, shell_output("#{bin}/dust -n 1")
+    assert_match(/\d+.+?\./, shell_output("#{bin}/dust -n 1"))
   end
 end

@@ -8,10 +8,9 @@ class Pqiv < Formula
   head "https://github.com/phillipberndt/pqiv.git"
 
   bottle do
-    cellar :any
-    sha256 "406bf15556cbc6f3d23f20784f7f8de5c7338675e48ce7237fb9759ad348ebd5" => :catalina
-    sha256 "c7f56c5b90ce529d8da4e09f7a8d502c49fb3bf15ca7a7a3fe824001f0a4236e" => :mojave
-    sha256 "b2b084b475294c9ad63da9c073aceaaaaa26d6f1bb6f8a0cd37898b670a9703d" => :high_sierra
+    sha256 cellar: :any, catalina:    "406bf15556cbc6f3d23f20784f7f8de5c7338675e48ce7237fb9759ad348ebd5"
+    sha256 cellar: :any, mojave:      "c7f56c5b90ce529d8da4e09f7a8d502c49fb3bf15ca7a7a3fe824001f0a4236e"
+    sha256 cellar: :any, high_sierra: "b2b084b475294c9ad63da9c073aceaaaaa26d6f1bb6f8a0cd37898b670a9703d"
   end
 
   depends_on "pkg-config" => :build

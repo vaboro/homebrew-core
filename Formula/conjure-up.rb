@@ -8,10 +8,9 @@ class ConjureUp < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "cf5da249d3e6045fd8e170399cb5486a566f3673c112c1f37454cfda1d383094" => :catalina
-    sha256 "a86f3cfe45e1e04e83a17fba28edaa64c17b490fe278c54220c46b0063618406" => :mojave
-    sha256 "0ad79673bcf095a1b7923f252eeca5a9d72e0482b88fa4d8803e0de5006428b8" => :high_sierra
+    sha256 cellar: :any, catalina:    "cf5da249d3e6045fd8e170399cb5486a566f3673c112c1f37454cfda1d383094"
+    sha256 cellar: :any, mojave:      "a86f3cfe45e1e04e83a17fba28edaa64c17b490fe278c54220c46b0063618406"
+    sha256 cellar: :any, high_sierra: "0ad79673bcf095a1b7923f252eeca5a9d72e0482b88fa4d8803e0de5006428b8"
   end
 
   depends_on "awscli"

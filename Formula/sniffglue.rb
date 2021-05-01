@@ -6,11 +6,10 @@ class Sniffglue < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "3c1e6e2eca7f6441d0c892089bd46c8451dd5fa3b1f42350b05592bb7fef06b7" => :catalina
-    sha256 "b781fc29156663e2b55f1fcb2a8647cf2eb2d452d43767c50ed9b57e88d92ff2" => :mojave
-    sha256 "ad3744f7f3da5f36683cb16d0dbb3a5eaf0773cb59400eb972de68f12d999bb5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3c1e6e2eca7f6441d0c892089bd46c8451dd5fa3b1f42350b05592bb7fef06b7"
+    sha256 cellar: :any_skip_relocation, mojave:      "b781fc29156663e2b55f1fcb2a8647cf2eb2d452d43767c50ed9b57e88d92ff2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ad3744f7f3da5f36683cb16d0dbb3a5eaf0773cb59400eb972de68f12d999bb5"
   end
 
   depends_on "rust" => :build

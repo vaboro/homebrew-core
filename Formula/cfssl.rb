@@ -8,10 +8,9 @@ class Cfssl < Formula
   head "https://github.com/cloudflare/cfssl.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "324cc909a9f6ade935def00160e7031fefa4a6aeb54d7595bec67986015e916b" => :catalina
-    sha256 "186357f1d25264be064c11a9aa2f7d7638687b8842a6945f313e576214a0f961" => :mojave
-    sha256 "0ad5f71f0350706a43d6fe121ad328c9d9fee4595c51ea900a0b9b466e4909b0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "324cc909a9f6ade935def00160e7031fefa4a6aeb54d7595bec67986015e916b"
+    sha256 cellar: :any_skip_relocation, mojave:      "186357f1d25264be064c11a9aa2f7d7638687b8842a6945f313e576214a0f961"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0ad5f71f0350706a43d6fe121ad328c9d9fee4595c51ea900a0b9b466e4909b0"
   end
 
   depends_on "go" => :build

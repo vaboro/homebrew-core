@@ -7,10 +7,9 @@ class Swiftformat < Formula
   head "https://github.com/nicklockwood/SwiftFormat.git", shallow: false
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fb29575ebc4d367b58cc4e6725081956a4689936633c1cb22840c9f2f296e3e9" => :catalina
-    sha256 "b36e163b4a5efe118996a246b6ecece31d4113e10f87f87aad3d79e3cc564b61" => :mojave
-    sha256 "814cf678efdef9adbfd20130446039b2c87c7ed3ab680d2b884a19d293eb5b8a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fb29575ebc4d367b58cc4e6725081956a4689936633c1cb22840c9f2f296e3e9"
+    sha256 cellar: :any_skip_relocation, mojave:      "b36e163b4a5efe118996a246b6ecece31d4113e10f87f87aad3d79e3cc564b61"
+    sha256 cellar: :any_skip_relocation, high_sierra: "814cf678efdef9adbfd20130446039b2c87c7ed3ab680d2b884a19d293eb5b8a"
   end
 
   depends_on xcode: ["10.1", :build]

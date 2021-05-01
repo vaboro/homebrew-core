@@ -11,10 +11,9 @@ class Sfk < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "008d880b4b2a3d06e60fb28bc9950d2774de8e1430c99922779ea3f81b8b3fd9" => :catalina
-    sha256 "b4e4dfaf137db0eb4f759e707be3be8e2f8cf3bba2c98452e53d16006a3de5ee" => :mojave
-    sha256 "708df4b05628a36d80a818ad487cce07b2ff6de924b7106df7dd31877a7354f1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "008d880b4b2a3d06e60fb28bc9950d2774de8e1430c99922779ea3f81b8b3fd9"
+    sha256 cellar: :any_skip_relocation, mojave:      "b4e4dfaf137db0eb4f759e707be3be8e2f8cf3bba2c98452e53d16006a3de5ee"
+    sha256 cellar: :any_skip_relocation, high_sierra: "708df4b05628a36d80a818ad487cce07b2ff6de924b7106df7dd31877a7354f1"
   end
 
   def install

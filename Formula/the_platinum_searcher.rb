@@ -7,12 +7,11 @@ class ThePlatinumSearcher < Formula
   head "https://github.com/monochromegane/the_platinum_searcher.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fbaca6dca74533a513f9b483607a75fe1ae1b772e39bd3e051d3c859bf378f84" => :catalina
-    sha256 "b2e99bee242a5b9a1667a321de1e777eb83a8023b034ebe0da3fc0953a193f26" => :mojave
-    sha256 "5b85047b2b893e8ec45e3f68b37c09cfb80ceb0a7c2b9c70937f2f2ca1f6f0bc" => :high_sierra
-    sha256 "1e952c6a666f180343cfdc1afa859f702638276e597d4292520fa6cf91ac82b8" => :sierra
-    sha256 "3439437518655cdd74c95eda5a161c01d5fe80604ef9c3e8936449a96ba3dcc1" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "fbaca6dca74533a513f9b483607a75fe1ae1b772e39bd3e051d3c859bf378f84"
+    sha256 cellar: :any_skip_relocation, mojave:      "b2e99bee242a5b9a1667a321de1e777eb83a8023b034ebe0da3fc0953a193f26"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5b85047b2b893e8ec45e3f68b37c09cfb80ceb0a7c2b9c70937f2f2ca1f6f0bc"
+    sha256 cellar: :any_skip_relocation, sierra:      "1e952c6a666f180343cfdc1afa859f702638276e597d4292520fa6cf91ac82b8"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "3439437518655cdd74c95eda5a161c01d5fe80604ef9c3e8936449a96ba3dcc1"
   end
 
   depends_on "go" => :build

@@ -10,11 +10,10 @@ class Libglademm < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "d123ccbbf9e8e599a6b889e3b02214b7556b9b205d1835cabb4259bf1520738d" => :catalina
-    sha256 "7198c6996d64bbe6a06380c23d010f0c9a949e3220c8a3dcb785fba0ceb22c33" => :mojave
-    sha256 "4daab6726178c96ac56452716422004dd4fcdfbaef22b85d99f9ddc317c88ea1" => :high_sierra
-    sha256 "6f7c8cbd127f333df690910aa8aa3561989679719bebbfb9d1d4c41a9821d57c" => :sierra
+    sha256 cellar: :any, catalina:    "d123ccbbf9e8e599a6b889e3b02214b7556b9b205d1835cabb4259bf1520738d"
+    sha256 cellar: :any, mojave:      "7198c6996d64bbe6a06380c23d010f0c9a949e3220c8a3dcb785fba0ceb22c33"
+    sha256 cellar: :any, high_sierra: "4daab6726178c96ac56452716422004dd4fcdfbaef22b85d99f9ddc317c88ea1"
+    sha256 cellar: :any, sierra:      "6f7c8cbd127f333df690910aa8aa3561989679719bebbfb9d1d4c41a9821d57c"
   end
 
   depends_on "pkg-config" => :build

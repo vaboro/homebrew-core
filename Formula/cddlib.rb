@@ -7,10 +7,9 @@ class Cddlib < Formula
   version_scheme 1
 
   bottle do
-    cellar :any
-    sha256 "06dfe39e32a33bfeecffbdb4dbaa5da38f0f9e49bdd70995d431f71c050c697c" => :catalina
-    sha256 "eae03b8375c1b6c06d3f3b0fa2d420f84ede931fae51b1d2b1158ac65ae2d879" => :mojave
-    sha256 "c11684af685133e3c83ae655ac44fc4b9ca99e97adf22d85100bc762933ac2d6" => :high_sierra
+    sha256 cellar: :any, catalina:    "06dfe39e32a33bfeecffbdb4dbaa5da38f0f9e49bdd70995d431f71c050c697c"
+    sha256 cellar: :any, mojave:      "eae03b8375c1b6c06d3f3b0fa2d420f84ede931fae51b1d2b1158ac65ae2d879"
+    sha256 cellar: :any, high_sierra: "c11684af685133e3c83ae655ac44fc4b9ca99e97adf22d85100bc762933ac2d6"
   end
 
   depends_on "gmp"

@@ -7,10 +7,9 @@ class UutilsCoreutils < Formula
   head "https://github.com/uutils/coreutils.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bd2d08c082e4249d9d73dcdc251f8a441d6dad6f949547110ecb96a023c7f84e" => :catalina
-    sha256 "421ae0f39ebdea7acf3bfd9f569f376ee9008b4e7bb72340c09628e5b50021d1" => :mojave
-    sha256 "b8eb6f2ff0292941b52d1b1ecafad239844b8447a0bce67792b7d4b61b7aece8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bd2d08c082e4249d9d73dcdc251f8a441d6dad6f949547110ecb96a023c7f84e"
+    sha256 cellar: :any_skip_relocation, mojave:      "421ae0f39ebdea7acf3bfd9f569f376ee9008b4e7bb72340c09628e5b50021d1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b8eb6f2ff0292941b52d1b1ecafad239844b8447a0bce67792b7d4b61b7aece8"
   end
 
   depends_on "make" => :build

@@ -11,10 +11,9 @@ class Nco < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "bab1f5fe6df7ba6cc8fc3898bd69d533f8de6549594f63a750cb64ae322e760b" => :catalina
-    sha256 "2a9ff992e98765074901e8b8b9a2dbe839e33de30712df3a8c90fbd397c658f0" => :mojave
-    sha256 "e9f00b7d4927dc1c9a16f0120173746d9063c3251d01416a20fd517d07aa724b" => :high_sierra
+    sha256 cellar: :any, catalina:    "bab1f5fe6df7ba6cc8fc3898bd69d533f8de6549594f63a750cb64ae322e760b"
+    sha256 cellar: :any, mojave:      "2a9ff992e98765074901e8b8b9a2dbe839e33de30712df3a8c90fbd397c658f0"
+    sha256 cellar: :any, high_sierra: "e9f00b7d4927dc1c9a16f0120173746d9063c3251d01416a20fd517d07aa724b"
   end
 
   head do

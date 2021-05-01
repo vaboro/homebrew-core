@@ -8,10 +8,9 @@ class Neko < Formula
   head "https://github.com/HaxeFoundation/neko.git"
 
   bottle do
-    cellar :any
-    sha256 "a2c2e95b27fbe6a15ce0efc03a40655e2a283e3be08acdb0cc398a9367ec76a2" => :catalina
-    sha256 "bb0f7ece136bfa89ac5d690f936f3ba0b34bd8e3a256f73260297e2a5f8e67eb" => :mojave
-    sha256 "7697cb00ffbca3583c0633d042959beda280c6a5e9c3b802d0c14883a1cead88" => :high_sierra
+    sha256 cellar: :any, catalina:    "a2c2e95b27fbe6a15ce0efc03a40655e2a283e3be08acdb0cc398a9367ec76a2"
+    sha256 cellar: :any, mojave:      "bb0f7ece136bfa89ac5d690f936f3ba0b34bd8e3a256f73260297e2a5f8e67eb"
+    sha256 cellar: :any, high_sierra: "7697cb00ffbca3583c0633d042959beda280c6a5e9c3b802d0c14883a1cead88"
   end
 
   depends_on "cmake" => :build

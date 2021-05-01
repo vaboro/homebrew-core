@@ -7,10 +7,9 @@ class Blastem < Formula
   head "https://www.retrodev.com/repos/blastem", using: :hg
 
   bottle do
-    cellar :any
-    sha256 "6de87547192f1037defe587f9ee30ff32b2b5686067e330276163c700e1668ca" => :catalina
-    sha256 "14193d951f4f115e618acbc95cb20e625c6fcc74ccb241f1f960c12f0655484c" => :mojave
-    sha256 "841dc46c59d53256aeb619279b4bd8e4997810dc2832ee86fed9a41e056196b5" => :high_sierra
+    sha256 cellar: :any, catalina:    "6de87547192f1037defe587f9ee30ff32b2b5686067e330276163c700e1668ca"
+    sha256 cellar: :any, mojave:      "14193d951f4f115e618acbc95cb20e625c6fcc74ccb241f1f960c12f0655484c"
+    sha256 cellar: :any, high_sierra: "841dc46c59d53256aeb619279b4bd8e4997810dc2832ee86fed9a41e056196b5"
   end
 
   depends_on "freetype" => :build

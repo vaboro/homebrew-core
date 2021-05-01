@@ -7,9 +7,9 @@ class Calcurse < Formula
   head "https://git.calcurse.org/calcurse.git"
 
   bottle do
-    sha256 "21cb64443bbffe19f0adb8dfc8f5e49eabed5fc5c0347215bbb7aa3383126719" => :catalina
-    sha256 "0d114c613163c192e9f156750ffa9c3c9a4a303c103a7bc7091c369da151a4c4" => :mojave
-    sha256 "41886cc820da1133c6c5f57fea4f9fbe072a0735e3ef8522a9301736216f4e70" => :high_sierra
+    sha256 catalina:    "21cb64443bbffe19f0adb8dfc8f5e49eabed5fc5c0347215bbb7aa3383126719"
+    sha256 mojave:      "0d114c613163c192e9f156750ffa9c3c9a4a303c103a7bc7091c369da151a4c4"
+    sha256 high_sierra: "41886cc820da1133c6c5f57fea4f9fbe072a0735e3ef8522a9301736216f4e70"
   end
 
   depends_on "gettext"

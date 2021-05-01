@@ -7,13 +7,12 @@ class Xu4 < Formula
   head "https://svn.code.sf.net/p/xu4/code/trunk/u4"
 
   bottle do
-    cellar :any
-    sha256 "e47edcace3c7b496b59d85f904b102a4fbc031c50671a02cc749149d194d11f6" => :catalina
-    sha256 "0454e0ccdb0c16122e0acaaf34e7ff256d6f8fa8c5f3860c97d68217ad1d1aaf" => :mojave
-    sha256 "e7aac43710b9180710c9af0dcd80a955aa095d6264f92eb482cbe2322c01146d" => :high_sierra
-    sha256 "9d490768b07abfa8c105c88dc0d2a6be97e175f6535afcee0a4c63e37d976f6f" => :sierra
-    sha256 "47700a341c1dc6a700d5a0f2925846b2457e3f470b25c2288c8c0c132202d027" => :el_capitan
-    sha256 "aab6d22274a345209ff25516b2dd11b715088ccab2d31588b8253f65e29f0e96" => :yosemite
+    sha256 cellar: :any, catalina:    "e47edcace3c7b496b59d85f904b102a4fbc031c50671a02cc749149d194d11f6"
+    sha256 cellar: :any, mojave:      "0454e0ccdb0c16122e0acaaf34e7ff256d6f8fa8c5f3860c97d68217ad1d1aaf"
+    sha256 cellar: :any, high_sierra: "e7aac43710b9180710c9af0dcd80a955aa095d6264f92eb482cbe2322c01146d"
+    sha256 cellar: :any, sierra:      "9d490768b07abfa8c105c88dc0d2a6be97e175f6535afcee0a4c63e37d976f6f"
+    sha256 cellar: :any, el_capitan:  "47700a341c1dc6a700d5a0f2925846b2457e3f470b25c2288c8c0c132202d027"
+    sha256 cellar: :any, yosemite:    "aab6d22274a345209ff25516b2dd11b715088ccab2d31588b8253f65e29f0e96"
   end
 
   depends_on "libpng"

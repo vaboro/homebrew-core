@@ -8,10 +8,9 @@ class HgFastExport < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "88cbf330f7c043f1e36f00e8bded4624ec510ca5d825e0be1f1805520f893238" => :catalina
-    sha256 "b308363b65517f560f935ba4a2ffcbba80f69d42d79788b83935518552b95138" => :mojave
-    sha256 "1da8e73f749516b112815209ab914d1929820004db9d91170d99666f993e15a8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "88cbf330f7c043f1e36f00e8bded4624ec510ca5d825e0be1f1805520f893238"
+    sha256 cellar: :any_skip_relocation, mojave:      "b308363b65517f560f935ba4a2ffcbba80f69d42d79788b83935518552b95138"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1da8e73f749516b112815209ab914d1929820004db9d91170d99666f993e15a8"
   end
 
   depends_on :macos # Due to Python 2

@@ -11,11 +11,10 @@ class Clzip < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ae164ce5fd5a020988dc4e177a25cf19f924b282e561cdabf57577c88940ac2b" => :catalina
-    sha256 "654a41ff519d4109d38f17c3fb321f130e60c9d72d137674f2dde9ef5cf129be" => :mojave
-    sha256 "2a3bf6819a2fdbef49fa7bf1e1cea7ef6c6d090bf8fa787fe7b2a582b2631045" => :high_sierra
-    sha256 "26dbdb3a397aa3f62acc15bbbf599a32e5b832564ea6ddc6e15327baac90b5ba" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ae164ce5fd5a020988dc4e177a25cf19f924b282e561cdabf57577c88940ac2b"
+    sha256 cellar: :any_skip_relocation, mojave:      "654a41ff519d4109d38f17c3fb321f130e60c9d72d137674f2dde9ef5cf129be"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2a3bf6819a2fdbef49fa7bf1e1cea7ef6c6d090bf8fa787fe7b2a582b2631045"
+    sha256 cellar: :any_skip_relocation, sierra:      "26dbdb3a397aa3f62acc15bbbf599a32e5b832564ea6ddc6e15327baac90b5ba"
   end
 
   def install

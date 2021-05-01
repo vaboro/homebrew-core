@@ -11,11 +11,10 @@ class Ophcrack < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "47361d9c18591930ce871fa3c7ab36eaa43003a8a5339238648787cdd748d962" => :catalina
-    sha256 "0bdbfbee37e693edff5fc8f71c52f1fb12d6dd07c1e64aa1a20401df0789853a" => :mojave
-    sha256 "a1061331c1e9b4a726c818005a3d795ba8c73b29ecd78a3828b5e5eafac18107" => :high_sierra
-    sha256 "6229ee0c1e44192fa0d513b7e72e5c72e7fbd29b5ad7f61cd5c5824d76d49105" => :sierra
+    sha256 cellar: :any, catalina:    "47361d9c18591930ce871fa3c7ab36eaa43003a8a5339238648787cdd748d962"
+    sha256 cellar: :any, mojave:      "0bdbfbee37e693edff5fc8f71c52f1fb12d6dd07c1e64aa1a20401df0789853a"
+    sha256 cellar: :any, high_sierra: "a1061331c1e9b4a726c818005a3d795ba8c73b29ecd78a3828b5e5eafac18107"
+    sha256 cellar: :any, sierra:      "6229ee0c1e44192fa0d513b7e72e5c72e7fbd29b5ad7f61cd5c5824d76d49105"
   end
 
   depends_on "openssl@1.1"

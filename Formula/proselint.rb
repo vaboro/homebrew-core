@@ -14,10 +14,9 @@ class Proselint < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "16677bb488b626f2a5ebab9c85b52e5aa34501861aaf146dd093fdeab9c8d7af" => :catalina
-    sha256 "2cb69c3b259812c1eeb11cc83ec7fcd5d0e6a01485a784ecdb76c75e55a5ad18" => :mojave
-    sha256 "51b225461669feb8926219f46de1fa4c438e875e9b6b9669f9191bd883679617" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "16677bb488b626f2a5ebab9c85b52e5aa34501861aaf146dd093fdeab9c8d7af"
+    sha256 cellar: :any_skip_relocation, mojave:      "2cb69c3b259812c1eeb11cc83ec7fcd5d0e6a01485a784ecdb76c75e55a5ad18"
+    sha256 cellar: :any_skip_relocation, high_sierra: "51b225461669feb8926219f46de1fa4c438e875e9b6b9669f9191bd883679617"
   end
 
   depends_on "python@3.8"

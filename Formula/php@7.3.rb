@@ -8,9 +8,9 @@ class PhpAT73 < Formula
   license "PHP-3.01"
 
   bottle do
-    sha256 "7ac04487f43382329a46499cb6c789994c1c9bcb501fd024d55b0ac4c71a7063" => :catalina
-    sha256 "a700b78f4635f46ebbdc4c56d85ee3421e4bdc523fcf9fbecfad230b45ab225d" => :mojave
-    sha256 "d4847acd6ce4c05f35840e65979b4512a513d5afcc0f29b62b91604bb9d015a6" => :high_sierra
+    sha256 catalina:    "7ac04487f43382329a46499cb6c789994c1c9bcb501fd024d55b0ac4c71a7063"
+    sha256 mojave:      "a700b78f4635f46ebbdc4c56d85ee3421e4bdc523fcf9fbecfad230b45ab225d"
+    sha256 high_sierra: "d4847acd6ce4c05f35840e65979b4512a513d5afcc0f29b62b91604bb9d015a6"
   end
 
   keg_only :versioned_formula
@@ -327,8 +327,8 @@ class PhpAT73 < Formula
   end
 
   test do
-    assert_match /^Zend OPcache$/, shell_output("#{bin}/php -i"),
-      "Zend OPCache extension not loaded"
+    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
+      "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
     assert_includes MachO::Tools.dylibs("#{bin}/php"),
@@ -337,8 +337,8 @@ class PhpAT73 < Formula
     system "#{bin}/phpdbg", "-V"
     system "#{bin}/php-cgi", "-m"
     # Prevent SNMP extension to be added
-    assert_no_match /^snmp$/, shell_output("#{bin}/php -m"),
-      "SNMP extension doesn't work reliably with Homebrew on High Sierra"
+    assert_no_match(/^snmp$/, shell_output("#{bin}/php -m"),
+      "SNMP extension doesn't work reliably with Homebrew on High Sierra")
     begin
       port = free_port
       port_fpm = free_port

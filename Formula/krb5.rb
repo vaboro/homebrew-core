@@ -10,9 +10,9 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 "db39e4570abab6459fb857cb41fdd0a375810d25a4c712f4504585255397d150" => :catalina
-    sha256 "e35ce1f9da67683b70fa075f4317a476c8356860c0a1c935d6a56eaee6716e8e" => :mojave
-    sha256 "972a37782e92d2dec91a9f6cd90d2a98f4004101268579e1a1d6c3650014bed4" => :high_sierra
+    sha256 catalina:    "db39e4570abab6459fb857cb41fdd0a375810d25a4c712f4504585255397d150"
+    sha256 mojave:      "e35ce1f9da67683b70fa075f4317a476c8356860c0a1c935d6a56eaee6716e8e"
+    sha256 high_sierra: "972a37782e92d2dec91a9f6cd90d2a98f4004101268579e1a1d6c3650014bed4"
   end
 
   keg_only :provided_by_macos

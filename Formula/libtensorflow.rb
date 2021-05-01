@@ -8,10 +8,9 @@ class Libtensorflow < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "687fe75656a903bf42b6fe49b842571419ba7bd4b234ac23b500a6eedc65d406" => :catalina
-    sha256 "541b32b5a74cc3da9d571a854e6325900c43e94c195a1def841169a437b808ea" => :mojave
-    sha256 "a05569b17e31de59106a7503118d126d096ebd246308b0dea4ca8819d1d945f9" => :high_sierra
+    sha256 cellar: :any, catalina:    "687fe75656a903bf42b6fe49b842571419ba7bd4b234ac23b500a6eedc65d406"
+    sha256 cellar: :any, mojave:      "541b32b5a74cc3da9d571a854e6325900c43e94c195a1def841169a437b808ea"
+    sha256 cellar: :any, high_sierra: "a05569b17e31de59106a7503118d126d096ebd246308b0dea4ca8819d1d945f9"
   end
 
   depends_on "bazel" => :build
@@ -129,7 +128,7 @@ class Libtensorflow < Formula
     assert_not_nil benchmark_model_match,
       "Unexpected summarize_graph output for graph-new.pb (no benchmark_model example)"
 
-    benchmark_model_args = benchmark_model_match[1].split(" ")
+    benchmark_model_args = benchmark_model_match[1].split
     benchmark_model_args.delete("--show_flops")
 
     benchmark_model_command = [

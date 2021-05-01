@@ -8,11 +8,10 @@ class Prest < Formula
   head "https://github.com/prest/prest.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "ac343c6c877e71e720c54aa587b9ecaa523c2f519c27d38f3fcd0ec4ce27d610" => :catalina
-    sha256 "cefb4b1a4f50e5ed2b5a97cf1abded81fc7d814a75af4542cfd230af941bb898" => :mojave
-    sha256 "3bad786cdca119026b897588f5db24a6ddbe550f33ed58b7ff16c95400dfc25c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ac343c6c877e71e720c54aa587b9ecaa523c2f519c27d38f3fcd0ec4ce27d610"
+    sha256 cellar: :any_skip_relocation, mojave:      "cefb4b1a4f50e5ed2b5a97cf1abded81fc7d814a75af4542cfd230af941bb898"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3bad786cdca119026b897588f5db24a6ddbe550f33ed58b7ff16c95400dfc25c"
   end
 
   depends_on "go" => :build

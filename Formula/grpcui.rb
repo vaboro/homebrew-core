@@ -6,10 +6,9 @@ class Grpcui < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a8551ee4ec39d50e8b596a5c7c3b4e8c62371f294937c951aae2f3e40931cb6d" => :catalina
-    sha256 "e81b5780c4d24c413ad269c6d51ff226a5b7bf929003ced43200870604d01d92" => :mojave
-    sha256 "c28c396193a02af6efadd816e5dea7d6a648dc178e8411e3a53885f44834619b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a8551ee4ec39d50e8b596a5c7c3b4e8c62371f294937c951aae2f3e40931cb6d"
+    sha256 cellar: :any_skip_relocation, mojave:      "e81b5780c4d24c413ad269c6d51ff226a5b7bf929003ced43200870604d01d92"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c28c396193a02af6efadd816e5dea7d6a648dc178e8411e3a53885f44834619b"
   end
 
   depends_on "go" => :build

@@ -6,10 +6,9 @@ class Librasterlite < Formula
   revision 7
 
   bottle do
-    cellar :any
-    sha256 "566f8ba211d425ca07a06d98f4d6e2ef961eba32293fc83730eb654c3f9a0d2f" => :catalina
-    sha256 "28508bacd17ad8c11369d11a99bdc7118c41b50de1a0bbb8b3a0c50117b02c2d" => :mojave
-    sha256 "23792ab784c100ea583bbcd570ba2f093aa591438fa2f660b365bb7d99f0b999" => :high_sierra
+    sha256 cellar: :any, catalina:    "566f8ba211d425ca07a06d98f4d6e2ef961eba32293fc83730eb654c3f9a0d2f"
+    sha256 cellar: :any, mojave:      "28508bacd17ad8c11369d11a99bdc7118c41b50de1a0bbb8b3a0c50117b02c2d"
+    sha256 cellar: :any, high_sierra: "23792ab784c100ea583bbcd570ba2f093aa591438fa2f660b365bb7d99f0b999"
   end
 
   depends_on "pkg-config" => :build

@@ -10,10 +10,9 @@ class Deheader < Formula
   head "https://gitlab.com/esr/deheader.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :catalina
-    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :mojave
-    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d"
+    sha256 cellar: :any_skip_relocation, mojave:      "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d"
   end
 
   depends_on "xmlto" => :build

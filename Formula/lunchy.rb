@@ -7,10 +7,9 @@ class Lunchy < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ee66090fe1ddcb8204521e47ce805cc4e51708a0033d6916a36f4beba333b1e8" => :catalina
-    sha256 "663eb72d186a577ab10af9ad50d2ac3748901206f329071e8e0aed432e73759f" => :mojave
-    sha256 "71f804d56f0ff8a37209dfc427400885833fffc2d6139cf40a99e91151099900" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ee66090fe1ddcb8204521e47ce805cc4e51708a0033d6916a36f4beba333b1e8"
+    sha256 cellar: :any_skip_relocation, mojave:      "663eb72d186a577ab10af9ad50d2ac3748901206f329071e8e0aed432e73759f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "71f804d56f0ff8a37209dfc427400885833fffc2d6139cf40a99e91151099900"
   end
 
   uses_from_macos "ruby"

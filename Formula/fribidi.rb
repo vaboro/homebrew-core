@@ -6,10 +6,9 @@ class Fribidi < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "c3799c193fb513a5c66a6e9fa950c1bdd15c12f931b9421dbf8e1c8e994f41e3" => :catalina
-    sha256 "a53aef8adec171a839a2ea0f7d90655f385215d4a6c45c0ffc2a97c75a297fb5" => :mojave
-    sha256 "83253b57bd1621e9340bfdb86ba147ff0a095e006ef53ad0c5421107557475a0" => :high_sierra
+    sha256 cellar: :any, catalina:    "c3799c193fb513a5c66a6e9fa950c1bdd15c12f931b9421dbf8e1c8e994f41e3"
+    sha256 cellar: :any, mojave:      "a53aef8adec171a839a2ea0f7d90655f385215d4a6c45c0ffc2a97c75a297fb5"
+    sha256 cellar: :any, high_sierra: "83253b57bd1621e9340bfdb86ba147ff0a095e006ef53ad0c5421107557475a0"
   end
 
   def install
@@ -26,6 +25,6 @@ class Fribidi < Formula
       a _lsimple _RteST_o th_oat
     EOS
 
-    assert_match /a simple TSet that/, shell_output("#{bin}/fribidi --charset=CapRTL --test test.input")
+    assert_match(/a simple TSet that/, shell_output("#{bin}/fribidi --charset=CapRTL --test test.input"))
   end
 end

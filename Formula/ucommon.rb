@@ -10,11 +10,11 @@ class Ucommon < Formula
   end
 
   bottle do
-    sha256 "3040baab77d1ff69f36ff21ec9259c8512170f361119e66b446a48b86f157320" => :catalina
-    sha256 "34ef3423a4f8f0de02e05e8a00a5f1cb12bd0b9790103354792c24b7613ccb80" => :mojave
-    sha256 "650bda43b289012df676190269cde7bb3be3e1337f4f2eddc6f472ae38bbda1c" => :high_sierra
-    sha256 "0546fbc44ac1e17d8757b41a67b2d68b15bc872b4b19fea649e5d7fe54a4d2d4" => :sierra
-    sha256 "57756d7809936ed885ef8fc7a284498ab12a5be6cc1ad41ad148dd45074fc322" => :el_capitan
+    sha256 catalina:    "3040baab77d1ff69f36ff21ec9259c8512170f361119e66b446a48b86f157320"
+    sha256 mojave:      "34ef3423a4f8f0de02e05e8a00a5f1cb12bd0b9790103354792c24b7613ccb80"
+    sha256 high_sierra: "650bda43b289012df676190269cde7bb3be3e1337f4f2eddc6f472ae38bbda1c"
+    sha256 sierra:      "0546fbc44ac1e17d8757b41a67b2d68b15bc872b4b19fea649e5d7fe54a4d2d4"
+    sha256 el_capitan:  "57756d7809936ed885ef8fc7a284498ab12a5be6cc1ad41ad148dd45074fc322"
   end
 
   depends_on "pkg-config" => :build

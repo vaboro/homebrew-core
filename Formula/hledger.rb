@@ -10,10 +10,9 @@ class Hledger < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ea0f380189028b5e6f1c41743de1692553d7752a001ea0f7e3ba715ba5d31d8e" => :catalina
-    sha256 "db03cb4f2d644d7fd090898d039bb4ca5509ced2f116ecd1f2950bd077864098" => :mojave
-    sha256 "31d4beba55f2acbe521b255b40e9751cba33065193be8be102381cfffcc98f62" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ea0f380189028b5e6f1c41743de1692553d7752a001ea0f7e3ba715ba5d31d8e"
+    sha256 cellar: :any_skip_relocation, mojave:      "db03cb4f2d644d7fd090898d039bb4ca5509ced2f116ecd1f2950bd077864098"
+    sha256 cellar: :any_skip_relocation, high_sierra: "31d4beba55f2acbe521b255b40e9751cba33065193be8be102381cfffcc98f62"
   end
 
   depends_on "ghc@8.8" => :build
@@ -80,7 +79,7 @@ class Hledger < Formula
     end
     sleep 1
     begin
-      assert_match /boat +123/, shell_output("curl -s http://127.0.0.1:5000/journal")
+      assert_match(/boat +123/, shell_output("curl -s http://127.0.0.1:5000/journal"))
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

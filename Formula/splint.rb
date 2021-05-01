@@ -6,11 +6,10 @@ class Splint < Formula
   sha256 "c78db643df663313e3fa9d565118391825dd937617819c6efc7966cdf444fb0a"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "98cc2bfccef60b21ec014ff35e71cc91a85e77435b4e429090e2767d0696bef8" => :catalina
-    sha256 "abe5a5d75a01fa272839dbc219a5fde2c76c7c7593e7dd365c152e4cb02a2c59" => :mojave
-    sha256 "b95c7e4981cb11c23b686dbb01dcc01c1317909371b5d21ba0aa155e47569eec" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "98cc2bfccef60b21ec014ff35e71cc91a85e77435b4e429090e2767d0696bef8"
+    sha256 cellar: :any_skip_relocation, mojave:      "abe5a5d75a01fa272839dbc219a5fde2c76c7c7593e7dd365c152e4cb02a2c59"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b95c7e4981cb11c23b686dbb01dcc01c1317909371b5d21ba0aa155e47569eec"
   end
 
   uses_from_macos "flex"
@@ -41,7 +40,7 @@ class Splint < Formula
     EOS
 
     output = shell_output("#{bin}/splint #{path} 2>&1", 1)
-    assert_match /5:18:\s+Variable c used before definition/, output
+    assert_match(/5:18:\s+Variable c used before definition/, output)
   end
 end
 

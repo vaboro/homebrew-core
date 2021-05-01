@@ -6,10 +6,9 @@ class Libzt < Formula
     revision: "a0b50530d37d9c13d30a68bf1d4686485be36327"
 
   bottle do
-    cellar :any
-    sha256 "57fdc3d84cd81657411b579cb497aab00a1dd1b576d37947d30eb3f591997365" => :catalina
-    sha256 "253dc7f90329eae4b4d775cfd9c0e6647a971a54322a504b513b98e4b2c43038" => :mojave
-    sha256 "19554cc555c087797403049615b0145cec80dc3c49a5a70167b2fad75a0729ce" => :high_sierra
+    sha256 cellar: :any, catalina:    "57fdc3d84cd81657411b579cb497aab00a1dd1b576d37947d30eb3f591997365"
+    sha256 cellar: :any, mojave:      "253dc7f90329eae4b4d775cfd9c0e6647a971a54322a504b513b98e4b2c43038"
+    sha256 cellar: :any, high_sierra: "19554cc555c087797403049615b0145cec80dc3c49a5a70167b2fad75a0729ce"
   end
 
   depends_on "cmake" => :build

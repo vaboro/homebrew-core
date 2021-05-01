@@ -10,10 +10,9 @@ class Libmatio < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "5b8bf79fa47dddfa85405fc2e0ea4e0ca44d9154ff690144568b1b8d334edd03" => :catalina
-    sha256 "fb0f8804978485fedcdd4cd8b6800840aa0b25778be9bbfab29b4dcabb76f5d8" => :mojave
-    sha256 "961900fbb90c3c37a0e1607bead7c92baa23f289afaee607775731303e335b4b" => :high_sierra
+    sha256 cellar: :any, catalina:    "5b8bf79fa47dddfa85405fc2e0ea4e0ca44d9154ff690144568b1b8d334edd03"
+    sha256 cellar: :any, mojave:      "fb0f8804978485fedcdd4cd8b6800840aa0b25778be9bbfab29b4dcabb76f5d8"
+    sha256 cellar: :any, high_sierra: "961900fbb90c3c37a0e1607bead7c92baa23f289afaee607775731303e335b4b"
   end
 
   depends_on "hdf5"

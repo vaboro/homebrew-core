@@ -7,10 +7,9 @@ class Twoping < Formula
   head "https://github.com/rfinnie/2ping.git", branch: "main"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e" => :catalina
-    sha256 "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e" => :mojave
-    sha256 "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e"
+    sha256 cellar: :any_skip_relocation, mojave:      "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2e76c2949b024e9d3bb26d2f2861b859a51d3f8b0508f5ba8f76d1b2e1d63f3e"
   end
 
   depends_on "python@3.8"

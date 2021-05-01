@@ -12,10 +12,9 @@ class VstsCli < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b37f51f73b543f2c9403e0a982aa1ae625f170b971a75b1ab07a23a62aa01949" => :catalina
-    sha256 "27a52ac2afc49b4392804ce47984f8ea1986dde0a221d599d2f3afa0e93ca6b3" => :mojave
-    sha256 "59d1ccaa24e3356771bd998de79c226803957811170765933d5ca03f3547f99a" => :high_sierra
+    sha256 cellar: :any, catalina:    "b37f51f73b543f2c9403e0a982aa1ae625f170b971a75b1ab07a23a62aa01949"
+    sha256 cellar: :any, mojave:      "27a52ac2afc49b4392804ce47984f8ea1986dde0a221d599d2f3afa0e93ca6b3"
+    sha256 cellar: :any, high_sierra: "59d1ccaa24e3356771bd998de79c226803957811170765933d5ca03f3547f99a"
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611

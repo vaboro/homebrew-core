@@ -7,9 +7,9 @@ class Libcouchbase < Formula
   head "https://github.com/couchbase/libcouchbase.git"
 
   bottle do
-    sha256 "390701dc52468061f893e9711884f6847764d0ad6d6d141d012775fc41499841" => :catalina
-    sha256 "6fe952f6cecd138dc4f4d84cccd913d15c6855f0f0d9fb0b6dbe054f9ccf3fa5" => :mojave
-    sha256 "244210b83c9eda35f870ac60206f2d6c3118790430e15e0debc2bf0e9be98b3e" => :high_sierra
+    sha256 catalina:    "390701dc52468061f893e9711884f6847764d0ad6d6d141d012775fc41499841"
+    sha256 mojave:      "6fe952f6cecd138dc4f4d84cccd913d15c6855f0f0d9fb0b6dbe054f9ccf3fa5"
+    sha256 high_sierra: "244210b83c9eda35f870ac60206f2d6c3118790430e15e0debc2bf0e9be98b3e"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +30,7 @@ class Libcouchbase < Formula
   end
 
   test do
-    assert_match /LCB_ERR_CONNECTION_REFUSED/,
-      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
+    assert_match(/LCB_ERR_CONNECTION_REFUSED/,
+      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip)
   end
 end

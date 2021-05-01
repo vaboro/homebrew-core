@@ -7,10 +7,9 @@ class Kcov < Formula
   head "https://github.com/SimonKagstrom/kcov.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7a3af28e85c85c6f1dc684086884c724dfdbcf72efca48add536c5dd08bda4c0" => :catalina
-    sha256 "833750a5d75e99a392010b305841daca6d0007e5a9b2ccd2ab5d54f18c01b6ad" => :mojave
-    sha256 "e5c6cc5b5ed21b5609107cb80ac67dec4ffc9b9227e272464b9eeade66932bd3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7a3af28e85c85c6f1dc684086884c724dfdbcf72efca48add536c5dd08bda4c0"
+    sha256 cellar: :any_skip_relocation, mojave:      "833750a5d75e99a392010b305841daca6d0007e5a9b2ccd2ab5d54f18c01b6ad"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e5c6cc5b5ed21b5609107cb80ac67dec4ffc9b9227e272464b9eeade66932bd3"
   end
 
   depends_on "cmake" => :build

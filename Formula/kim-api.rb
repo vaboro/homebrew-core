@@ -1,5 +1,5 @@
 class KimApi < Formula
-  desc "The Knowledgebase of Interatomic Models (KIM) API"
+  desc "Knowledgebase of Interatomic Models (KIM) API"
   homepage "https://openkim.org"
   url "https://s3.openkim.org/kim-api/kim-api-2.1.3.txz"
   sha256 "88a5416006c65a2940d82fad49de0885aead05bfa8b59f87d287db5516b9c467"
@@ -11,9 +11,9 @@ class KimApi < Formula
   end
 
   bottle do
-    sha256 "585be65f52b6c5dd3b9c5ea0da1af889e24ef085f8174485d9256b84d9b01d84" => :catalina
-    sha256 "29743babbc332f529773cba2962512e3d29c0e269675bbb033effedbe1f92da3" => :mojave
-    sha256 "8f64683177ac688908e33c98ca57ae3b2c3c59215e70b77296b40843b6e69a0f" => :high_sierra
+    sha256 catalina:    "585be65f52b6c5dd3b9c5ea0da1af889e24ef085f8174485d9256b84d9b01d84"
+    sha256 mojave:      "29743babbc332f529773cba2962512e3d29c0e269675bbb033effedbe1f92da3"
+    sha256 high_sierra: "8f64683177ac688908e33c98ca57ae3b2c3c59215e70b77296b40843b6e69a0f"
   end
 
   depends_on "cmake" => :build

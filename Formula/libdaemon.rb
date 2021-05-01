@@ -6,11 +6,10 @@ class Libdaemon < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "ad96f0b0e09c3e0c178d3e903659d65ae34fea18365197924a4911c291d02531" => :catalina
-    sha256 "1fe52d810eca4471b4d285de02a09ea9e4b78d762f1a2a292d6da1eb10e9626d" => :mojave
-    sha256 "0933bb1dde0237f4079fefcd228ea644be36fbf814aa96762ebbae3537886558" => :high_sierra
+    sha256 cellar: :any, catalina:    "ad96f0b0e09c3e0c178d3e903659d65ae34fea18365197924a4911c291d02531"
+    sha256 cellar: :any, mojave:      "1fe52d810eca4471b4d285de02a09ea9e4b78d762f1a2a292d6da1eb10e9626d"
+    sha256 cellar: :any, high_sierra: "0933bb1dde0237f4079fefcd228ea644be36fbf814aa96762ebbae3537886558"
   end
 
   def install

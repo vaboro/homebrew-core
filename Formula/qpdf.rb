@@ -6,10 +6,9 @@ class Qpdf < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "5ccc930f3c428ba0838eb50778c5e0fbe7c984fb43b468ba959714d70a7813eb" => :catalina
-    sha256 "38a233da22d6a6e00fea01f8aff2f609c27915fdf9a86687b44153cdf2c07f07" => :mojave
-    sha256 "4615f85d75741f053733eb37f12c35e3264492f00e9086530f2a40c710a0d7ea" => :high_sierra
+    sha256 cellar: :any, catalina:    "5ccc930f3c428ba0838eb50778c5e0fbe7c984fb43b468ba959714d70a7813eb"
+    sha256 cellar: :any, mojave:      "38a233da22d6a6e00fea01f8aff2f609c27915fdf9a86687b44153cdf2c07f07"
+    sha256 cellar: :any, high_sierra: "4615f85d75741f053733eb37f12c35e3264492f00e9086530f2a40c710a0d7ea"
   end
 
   depends_on "jpeg"

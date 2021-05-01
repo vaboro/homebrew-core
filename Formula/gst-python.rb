@@ -11,9 +11,9 @@ class GstPython < Formula
   end
 
   bottle do
-    sha256 "610decb902b40054564e797d73a470946baaa973b516f1b9ff983416a99c5564" => :catalina
-    sha256 "d23d7f107b550e85d0f87a43c2053a2f8f6039604c8f4bc249d539f7fb5a406e" => :mojave
-    sha256 "8d96ba5f03d17b0dc8dd6cf46f4534693de368e504f2eab732dfa1be7478e98a" => :high_sierra
+    sha256 catalina:    "610decb902b40054564e797d73a470946baaa973b516f1b9ff983416a99c5564"
+    sha256 mojave:      "d23d7f107b550e85d0f87a43c2053a2f8f6039604c8f4bc249d539f7fb5a406e"
+    sha256 high_sierra: "8d96ba5f03d17b0dc8dd6cf46f4534693de368e504f2eab732dfa1be7478e98a"
   end
 
   depends_on "meson" => :build

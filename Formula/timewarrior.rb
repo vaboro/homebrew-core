@@ -7,10 +7,9 @@ class Timewarrior < Formula
   head "https://github.com/GothenburgBitFactory/timewarrior.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4c872f73c14a7219179b3f468d5ceb0739b79ace42e69126f9b3549eac9cba94" => :catalina
-    sha256 "336d8bbaf618d17901774358a58772579318a405e7020c63583538283b1f2165" => :mojave
-    sha256 "c15692ae447c6364eb7c74665e3b9d8acb01be7f31eb0f4ebaf92d7c7dc3f874" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4c872f73c14a7219179b3f468d5ceb0739b79ace42e69126f9b3549eac9cba94"
+    sha256 cellar: :any_skip_relocation, mojave:      "336d8bbaf618d17901774358a58772579318a405e7020c63583538283b1f2165"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c15692ae447c6364eb7c74665e3b9d8acb01be7f31eb0f4ebaf92d7c7dc3f874"
   end
 
   depends_on "cmake" => :build

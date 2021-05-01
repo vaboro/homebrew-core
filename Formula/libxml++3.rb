@@ -10,10 +10,9 @@ class Libxmlxx3 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "583c5345ed243a5cea2bbf82e71a130e85554110ebe3927183171c66225a7c26" => :catalina
-    sha256 "054180f67aa9d297a26c40fc9e6dcc27bf68e78f09db895b3821c68751eabae2" => :mojave
-    sha256 "2da0d0f6e732f910e75e5b20c19a01056854d00feab6e1c2490b7722bbc1af29" => :high_sierra
+    sha256 cellar: :any, catalina:    "583c5345ed243a5cea2bbf82e71a130e85554110ebe3927183171c66225a7c26"
+    sha256 cellar: :any, mojave:      "054180f67aa9d297a26c40fc9e6dcc27bf68e78f09db895b3821c68751eabae2"
+    sha256 cellar: :any, high_sierra: "2da0d0f6e732f910e75e5b20c19a01056854d00feab6e1c2490b7722bbc1af29"
   end
 
   depends_on "pkg-config" => :build

@@ -11,9 +11,9 @@ class StoneSoup < Formula
   end
 
   bottle do
-    sha256 "aed9973952598da0eec03689ab04b5133e6170ad2b3009da470191a2fbb0b3b6" => :catalina
-    sha256 "3ca35a24927cb22726a0f187d794b90637e1b6c09151f507507e79156f6bc33c" => :mojave
-    sha256 "dc43d1b520ed222b5f00b1a92610422fb2f4dcdf134d5f624cc41b0c23629f6d" => :high_sierra
+    sha256 catalina:    "aed9973952598da0eec03689ab04b5133e6170ad2b3009da470191a2fbb0b3b6"
+    sha256 mojave:      "3ca35a24927cb22726a0f187d794b90637e1b6c09151f507507e79156f6bc33c"
+    sha256 high_sierra: "dc43d1b520ed222b5f00b1a92610422fb2f4dcdf134d5f624cc41b0c23629f6d"
   end
 
   depends_on "pkg-config" => :build

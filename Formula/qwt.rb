@@ -9,9 +9,9 @@ class Qwt < Formula
   end
 
   bottle do
-    sha256 "1890f28117b4bc819d39359bfe70af5993d735a9bf4e8b5121992e3681287801" => :catalina
-    sha256 "79dfcceaa6ad17084d8997201d22de70a19b8228e626094ed1d4a6787c3324f7" => :mojave
-    sha256 "22baeaa7b5cbaade938f80ab01845e8fb8516389b82cfd2ca8180aeeb676289f" => :high_sierra
+    sha256 catalina:    "1890f28117b4bc819d39359bfe70af5993d735a9bf4e8b5121992e3681287801"
+    sha256 mojave:      "79dfcceaa6ad17084d8997201d22de70a19b8228e626094ed1d4a6787c3324f7"
+    sha256 high_sierra: "22baeaa7b5cbaade938f80ab01845e8fb8516389b82cfd2ca8180aeeb676289f"
   end
 
   depends_on "qt"
@@ -22,7 +22,7 @@ class Qwt < Formula
 
   def install
     inreplace "qwtconfig.pri" do |s|
-      s.gsub! /^\s*QWT_INSTALL_PREFIX\s*=(.*)$/, "QWT_INSTALL_PREFIX=#{prefix}"
+      s.gsub!(/^\s*QWT_INSTALL_PREFIX\s*=(.*)$/, "QWT_INSTALL_PREFIX=#{prefix}")
 
       # Install Qt plugin in `lib/qt/plugins/designer`, not `plugins/designer`.
       s.sub! %r{(= \$\$\{QWT_INSTALL_PREFIX\})/(plugins/designer)$},

@@ -6,9 +6,9 @@ class Cups < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "1bed38f7aa9ee2c76fed5393e308cf7de5dd6d443debb0455ee7739e010b0e20" => :catalina
-    sha256 "19ea09cef986e1c66f1736409f4e7917914100bb68525d8118e705500fbf28e0" => :mojave
-    sha256 "0d3328bddece686cfa54e63b61f68c68fed1b1f8553cd45ed194d8a80e56f9c9" => :high_sierra
+    sha256 catalina:    "1bed38f7aa9ee2c76fed5393e308cf7de5dd6d443debb0455ee7739e010b0e20"
+    sha256 mojave:      "19ea09cef986e1c66f1736409f4e7917914100bb68525d8118e705500fbf28e0"
+    sha256 high_sierra: "0d3328bddece686cfa54e63b61f68c68fed1b1f8553cd45ed194d8a80e56f9c9"
   end
 
   keg_only :provided_by_macos

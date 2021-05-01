@@ -7,10 +7,9 @@ class Jmxtrans < Formula
   version_scheme 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "775e5443bc4570f5af09ff033609193c69c05d0ab80150cd67811dd1cc3a7e56" => :catalina
-    sha256 "8ef8263d13b6dc9d913cf2c13f4c75ecc63c20dab9c7d977d1ecfa0e86977eb1" => :mojave
-    sha256 "97546c9316f94cfa738e4bba4363adaa0b3838e3f8bc4aed6b8ae4822b57a182" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "775e5443bc4570f5af09ff033609193c69c05d0ab80150cd67811dd1cc3a7e56"
+    sha256 cellar: :any_skip_relocation, mojave:      "8ef8263d13b6dc9d913cf2c13f4c75ecc63c20dab9c7d977d1ecfa0e86977eb1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "97546c9316f94cfa738e4bba4363adaa0b3838e3f8bc4aed6b8ae4822b57a182"
   end
 
   depends_on "maven" => :build

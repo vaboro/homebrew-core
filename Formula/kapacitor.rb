@@ -13,10 +13,9 @@ class Kapacitor < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "45d4043ba983183baffd30a4316cc18f0da3c2b432be37e542c9d15de49dcfa4" => :catalina
-    sha256 "41f6340ac74e2c46544fbad969ae1e098f66bfb565676e12a90b3e4746a4b877" => :mojave
-    sha256 "ac353ad7fa8f5fcbc8b522858eee05fb2e193b4678e9b4d168df2d3e08e406e8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "45d4043ba983183baffd30a4316cc18f0da3c2b432be37e542c9d15de49dcfa4"
+    sha256 cellar: :any_skip_relocation, mojave:      "41f6340ac74e2c46544fbad969ae1e098f66bfb565676e12a90b3e4746a4b877"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ac353ad7fa8f5fcbc8b522858eee05fb2e193b4678e9b4d168df2d3e08e406e8"
   end
 
   depends_on "go" => :build
@@ -85,7 +84,7 @@ class Kapacitor < Formula
     (testpath/"config.toml").write shell_output("#{bin}/kapacitord config")
 
     inreplace testpath/"config.toml" do |s|
-      s.gsub! /disable-subscriptions = false/, "disable-subscriptions = true"
+      s.gsub!(/disable-subscriptions = false/, "disable-subscriptions = true")
       s.gsub! %r{data_dir = "/.*/.kapacitor"}, "data_dir = \"#{testpath}/kapacitor\""
       s.gsub! %r{/.*/.kapacitor/replay}, "#{testpath}/kapacitor/replay"
       s.gsub! %r{/.*/.kapacitor/tasks}, "#{testpath}/kapacitor/tasks"

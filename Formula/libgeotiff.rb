@@ -6,10 +6,9 @@ class Libgeotiff < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "181da2f2a3860b23ee95eded5a9f5600f34e2ee016e76a7fbede959e565d0ca8" => :catalina
-    sha256 "7311abe41270eb90f91b69e84eab0528be0b76a11cc43ce0e2aca1529da585fe" => :mojave
-    sha256 "b52ce34a76c3510314e840753610d5d423cd0689d5b93d3d41e7c119ba67d09b" => :high_sierra
+    sha256 cellar: :any, catalina:    "181da2f2a3860b23ee95eded5a9f5600f34e2ee016e76a7fbede959e565d0ca8"
+    sha256 cellar: :any, mojave:      "7311abe41270eb90f91b69e84eab0528be0b76a11cc43ce0e2aca1529da585fe"
+    sha256 cellar: :any, high_sierra: "b52ce34a76c3510314e840753610d5d423cd0689d5b93d3d41e7c119ba67d09b"
   end
 
   head do
@@ -67,6 +66,6 @@ class Libgeotiff < Formula
                    "-L#{Formula["libtiff"].opt_lib}", "-ltiff", "-o", "test"
     system "./test", "test.tif"
     output = shell_output("#{bin}/listgeo test.tif")
-    assert_match /GeogInvFlatteningGeoKey.*123.456/, output
+    assert_match(/GeogInvFlatteningGeoKey.*123.456/, output)
   end
 end

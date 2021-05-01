@@ -1,5 +1,5 @@
 class Fceux < Formula
-  desc "The all in one NES/Famicom Emulator"
+  desc "All in one NES/Famicom Emulator"
   homepage "http://fceux.com"
   url "https://downloads.sourceforge.net/project/fceultra/Source%20Code/2.2.3%20src/fceux-2.2.3.src.tar.gz"
   sha256 "4be6dda9a347f941809a3c4a90d21815b502384adfdd596adaa7b2daf088823e"
@@ -10,11 +10,12 @@ class Fceux < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "7c7550b97011321d5d48f8f689c7158223aee5054698a6c707a185404e469e35" => :catalina
-    sha256 "800e46a45f554876ad2a63ea6a62f6d672e5aefd2c9cca8f58fe615b82eb9ea7" => :mojave
-    sha256 "3f587de213706a92fb02b14676514f6cba079e3c3b7ded2e57a8e718ebf9cf20" => :high_sierra
+    sha256 cellar: :any, catalina:    "7c7550b97011321d5d48f8f689c7158223aee5054698a6c707a185404e469e35"
+    sha256 cellar: :any, mojave:      "800e46a45f554876ad2a63ea6a62f6d672e5aefd2c9cca8f58fe615b82eb9ea7"
+    sha256 cellar: :any, high_sierra: "3f587de213706a92fb02b14676514f6cba079e3c3b7ded2e57a8e718ebf9cf20"
   end
+
+  disable! because: :does_not_build
 
   depends_on "pkg-config" => :build
   depends_on "scons" => :build
@@ -23,7 +24,6 @@ class Fceux < Formula
   depends_on "sdl"
 
   # Does not build: some build scripts rely on Python 2 syntax
-  disable! because: :does_not_build
 
   # Fix "error: ordered comparison between pointer and zero"
   if DevelopmentTools.clang_build_version >= 900

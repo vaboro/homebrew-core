@@ -7,10 +7,9 @@ class Duktape < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "0f182d03ddebdaa46b3f0991909705ec14402b67d889c64a3ac4c9748fdf8e3d" => :catalina
-    sha256 "38eb8d5d6226b4fc3fe26c125a4581f3d542fd61d86f7734220102d75c63e790" => :mojave
-    sha256 "96129b54cdf5ef5a43a0c54295b05ea902293fc7c10b5bb8e829db3a57f6850e" => :high_sierra
+    sha256 cellar: :any, catalina:    "0f182d03ddebdaa46b3f0991909705ec14402b67d889c64a3ac4c9748fdf8e3d"
+    sha256 cellar: :any, mojave:      "38eb8d5d6226b4fc3fe26c125a4581f3d542fd61d86f7734220102d75c63e790"
+    sha256 cellar: :any, high_sierra: "96129b54cdf5ef5a43a0c54295b05ea902293fc7c10b5bb8e829db3a57f6850e"
   end
 
   def install

@@ -8,11 +8,10 @@ class ProofGeneral < Formula
   head "https://github.com/ProofGeneral/PG.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 3
-    sha256 "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd" => :catalina
-    sha256 "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd" => :mojave
-    sha256 "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd"
+    sha256 cellar: :any_skip_relocation, mojave:      "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ccc115760830d046c9e53277a571f451eb251c9b10c09589c627f146f4a9a4dd"
   end
 
   depends_on "texi2html" => :build

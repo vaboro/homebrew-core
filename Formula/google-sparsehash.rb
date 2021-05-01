@@ -7,10 +7,9 @@ class GoogleSparsehash < Formula
   head "https://github.com/sparsehash/sparsehash.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620" => :catalina
-    sha256 "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620" => :mojave
-    sha256 "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620"
+    sha256 cellar: :any_skip_relocation, mojave:      "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620"
+    sha256 cellar: :any_skip_relocation, high_sierra: "11390608ee72647c06a9735f89535604e6ed2b2531431f9eb81bdf423ab07620"
   end
 
   def install

@@ -12,12 +12,11 @@ class Clinfo < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "860a35b3f6e571b54f7d7292446b9c1365b72f9fe9cc4d402641207156a58e17" => :catalina
-    sha256 "9678520a5637d07faa9cb50e9d490c5ea44da41ce332b70c0115ad6c2d2d14cc" => :mojave
-    sha256 "d10832aa0b4a2f8602efca713aa85a2a78ae6df19d61d9c256c3e3cd4c37aba1" => :high_sierra
-    sha256 "bc0233b23ba9f5ac6f037b206eb22ae66583853864c1334652bbc69b239307a3" => :sierra
-    sha256 "1d456b254b9686f01649e08cf0c76a3b208f1873deae3d8920e22f57cc0f258a" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "860a35b3f6e571b54f7d7292446b9c1365b72f9fe9cc4d402641207156a58e17"
+    sha256 cellar: :any_skip_relocation, mojave:      "9678520a5637d07faa9cb50e9d490c5ea44da41ce332b70c0115ad6c2d2d14cc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d10832aa0b4a2f8602efca713aa85a2a78ae6df19d61d9c256c3e3cd4c37aba1"
+    sha256 cellar: :any_skip_relocation, sierra:      "bc0233b23ba9f5ac6f037b206eb22ae66583853864c1334652bbc69b239307a3"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "1d456b254b9686f01649e08cf0c76a3b208f1873deae3d8920e22f57cc0f258a"
   end
 
   def install
@@ -25,6 +24,6 @@ class Clinfo < Formula
   end
 
   test do
-    assert_match /Device Type +CPU/, shell_output(bin/"clinfo")
+    assert_match(/Device Type +CPU/, shell_output(bin/"clinfo"))
   end
 end

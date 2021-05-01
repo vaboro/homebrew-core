@@ -10,10 +10,9 @@ class Termius < Formula
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
   bottle do
-    cellar :any
-    sha256 "e91fa9088b648af8c8774485450c1104b8b4cd5c2f3cef0839114056fddd25fc" => :catalina
-    sha256 "1267ac5caba6db09fa22e3552caa0c2f4e417c7b97998a11d71a041d98197d5d" => :mojave
-    sha256 "be10f0b1b3886e5917f54fc6d0558ca6cafeb5764ce3fa06fbed9f6dcdc2dd5a" => :high_sierra
+    sha256 cellar: :any, catalina:    "e91fa9088b648af8c8774485450c1104b8b4cd5c2f3cef0839114056fddd25fc"
+    sha256 cellar: :any, mojave:      "1267ac5caba6db09fa22e3552caa0c2f4e417c7b97998a11d71a041d98197d5d"
+    sha256 cellar: :any, high_sierra: "be10f0b1b3886e5917f54fc6d0558ca6cafeb5764ce3fa06fbed9f6dcdc2dd5a"
   end
 
   depends_on "libyaml"

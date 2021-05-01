@@ -12,11 +12,10 @@ class Exercism < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "9a4080f7e35f37dc4eb15e733692314cec32cba7e0f76e8f58eb99850f708cb1" => :catalina
-    sha256 "7319920cfd6779984dfabbecdf3e15a37603f6bfbecfc1121bfa2a044fb8ed17" => :mojave
-    sha256 "b094a8441575b02f312f04760589f94d9f2b1d76330c07a67f7d07a40ad561a9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9a4080f7e35f37dc4eb15e733692314cec32cba7e0f76e8f58eb99850f708cb1"
+    sha256 cellar: :any_skip_relocation, mojave:      "7319920cfd6779984dfabbecdf3e15a37603f6bfbecfc1121bfa2a044fb8ed17"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b094a8441575b02f312f04760589f94d9f2b1d76330c07a67f7d07a40ad561a9"
   end
 
   depends_on "go" => :build

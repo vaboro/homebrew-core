@@ -6,9 +6,9 @@ class MariadbConnectorOdbc < Formula
   license "LGPL-2.1"
 
   bottle do
-    sha256 "339b4c5fa7121936bd5ed68e5d6c507400e43445bc46b63f6cea6212e047c66f" => :catalina
-    sha256 "4ba2a2852289ab5843bba747e84188d0c663d39129be4bb57ef23307ffc93261" => :mojave
-    sha256 "49f91ee3450c6650885b90efa9c07ca5d23f72fdd8a37387302cdf5c0ad548a9" => :high_sierra
+    sha256 catalina:    "339b4c5fa7121936bd5ed68e5d6c507400e43445bc46b63f6cea6212e047c66f"
+    sha256 mojave:      "4ba2a2852289ab5843bba747e84188d0c663d39129be4bb57ef23307ffc93261"
+    sha256 high_sierra: "49f91ee3450c6650885b90efa9c07ca5d23f72fdd8a37387302cdf5c0ad548a9"
   end
 
   depends_on "cmake" => :build

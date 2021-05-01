@@ -7,10 +7,9 @@ class Dlib < Formula
   head "https://github.com/davisking/dlib.git"
 
   bottle do
-    cellar :any
-    sha256 "e2d4bb20a24df712a73fc74c162851dbfededf25391e4ae002858d705cbfb112" => :catalina
-    sha256 "58ad454876f4a987a8fff1df2fc5f7e04693a19cb0ece79eaa7ffb2dcdf18c36" => :mojave
-    sha256 "c34bb491a71eb49ab4eb9af3dd18d2c8557f9f06b14b55b08aa8ed7d3cf6945e" => :high_sierra
+    sha256 cellar: :any, catalina:    "e2d4bb20a24df712a73fc74c162851dbfededf25391e4ae002858d705cbfb112"
+    sha256 cellar: :any, mojave:      "58ad454876f4a987a8fff1df2fc5f7e04693a19cb0ece79eaa7ffb2dcdf18c36"
+    sha256 cellar: :any, high_sierra: "c34bb491a71eb49ab4eb9af3dd18d2c8557f9f06b14b55b08aa8ed7d3cf6945e"
   end
 
   depends_on "cmake" => :build
@@ -51,6 +50,6 @@ class Dlib < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
-    assert_match /INFO.*example: The answer is 42/, shell_output("./test")
+    assert_match(/INFO.*example: The answer is 42/, shell_output("./test"))
   end
 end

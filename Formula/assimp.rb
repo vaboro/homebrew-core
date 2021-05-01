@@ -7,10 +7,9 @@ class Assimp < Formula
   head "https://github.com/assimp/assimp.git"
 
   bottle do
-    cellar :any
-    sha256 "f049baf0e3bc3941e8449dbfbc997d0448b0a1722bfdceadb69b2eacc48e3464" => :catalina
-    sha256 "620f5f399783c487ae78077da65b65f6a0c81dce23768ae56eb1edd383a57daa" => :mojave
-    sha256 "6dffc67ca984f5870bdc09a1c0adbb3c0d2209c7fb8169e2204c4c2d2d44aebe" => :high_sierra
+    sha256 cellar: :any, catalina:    "f049baf0e3bc3941e8449dbfbc997d0448b0a1722bfdceadb69b2eacc48e3464"
+    sha256 cellar: :any, mojave:      "620f5f399783c487ae78077da65b65f6a0c81dce23768ae56eb1edd383a57daa"
+    sha256 cellar: :any, high_sierra: "6dffc67ca984f5870bdc09a1c0adbb3c0d2209c7fb8169e2204c4c2d2d44aebe"
   end
 
   depends_on "cmake" => :build

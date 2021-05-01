@@ -8,10 +8,9 @@ class LibtensorflowAT1 < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "88440057fc88398f8b9affc4b60f4d8ac897a72403cad5a5a67d8c659ab79bfa" => :catalina
-    sha256 "15fdb97131bdba58139f40ef7730e75aeba13a2440d2d9e3a67d36a51300c42a" => :mojave
-    sha256 "bcf7c915fd8d97ffef810d5df53e16136de7e7c784a9b97a0474831c6d923ae5" => :high_sierra
+    sha256 cellar: :any, catalina:    "88440057fc88398f8b9affc4b60f4d8ac897a72403cad5a5a67d8c659ab79bfa"
+    sha256 cellar: :any, mojave:      "15fdb97131bdba58139f40ef7730e75aeba13a2440d2d9e3a67d36a51300c42a"
+    sha256 cellar: :any, high_sierra: "bcf7c915fd8d97ffef810d5df53e16136de7e7c784a9b97a0474831c6d923ae5"
   end
 
   keg_only :versioned_formula

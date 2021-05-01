@@ -6,10 +6,9 @@ class Fmt < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "ecc628fabb67ff7f03a9fbe916ad629e30e6add398c84750c0af55ea5b261bd7" => :catalina
-    sha256 "a037d74f6005e7df7b7f080b3a3f643c229e315dec0e948851f64cadaed4764d" => :mojave
-    sha256 "6e5496f417d00981661d6d716125cde6b7e6502827735d3c0d726fc63407b283" => :high_sierra
+    sha256 cellar: :any, catalina:    "ecc628fabb67ff7f03a9fbe916ad629e30e6add398c84750c0af55ea5b261bd7"
+    sha256 cellar: :any, mojave:      "a037d74f6005e7df7b7f080b3a3f643c229e315dec0e948851f64cadaed4764d"
+    sha256 cellar: :any, high_sierra: "6e5496f417d00981661d6d716125cde6b7e6502827735d3c0d726fc63407b283"
   end
 
   depends_on "cmake" => :build

@@ -11,10 +11,9 @@ class Arpoison < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "550588e02ce0eb78b47d2d2f9e8b863c29761667aca72e4ad0c0810b13682d9b" => :catalina
-    sha256 "c97bb55590119dbda338a24e634f9089bb3e43889a810a7bece231d6304b7bcf" => :mojave
-    sha256 "ee2eedf6780546bcf4610984d36a773300c5528122d08b7873b640a51f76ee56" => :high_sierra
+    sha256 cellar: :any, catalina:    "550588e02ce0eb78b47d2d2f9e8b863c29761667aca72e4ad0c0810b13682d9b"
+    sha256 cellar: :any, mojave:      "c97bb55590119dbda338a24e634f9089bb3e43889a810a7bece231d6304b7bcf"
+    sha256 cellar: :any, high_sierra: "ee2eedf6780546bcf4610984d36a773300c5528122d08b7873b640a51f76ee56"
   end
 
   depends_on "libnet"

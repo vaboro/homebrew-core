@@ -11,10 +11,9 @@ class Chadwick < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "693c6ee0980401936a83453bdbc398aeb0eb06ba9bb8e101046508b14edfdc98" => :catalina
-    sha256 "a068fd25b1e8b3d6f9a56a8a1d4ac18a49f07f82450b1ab3f3766b86fb0a362a" => :mojave
-    sha256 "427b5c0fca10b23b66c56bda3537080df2ba467edea59a9dfd2f0fba56f50f9b" => :high_sierra
+    sha256 cellar: :any, catalina:    "693c6ee0980401936a83453bdbc398aeb0eb06ba9bb8e101046508b14edfdc98"
+    sha256 cellar: :any, mojave:      "a068fd25b1e8b3d6f9a56a8a1d4ac18a49f07f82450b1ab3f3766b86fb0a362a"
+    sha256 cellar: :any, high_sierra: "427b5c0fca10b23b66c56bda3537080df2ba467edea59a9dfd2f0fba56f50f9b"
   end
 
   def install

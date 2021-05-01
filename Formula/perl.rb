@@ -12,9 +12,9 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 "bc6c97521b6edf723c8ee0742aebb1954b5c8fec81bf2d96861c3f8bcc4e404d" => :catalina
-    sha256 "f09b3fefe2175b36e590ee13e7aa84d28ebcbce3ef8e252e24a0aebb752405ab" => :mojave
-    sha256 "718a54da6e3b02c33d5230776aaa54eaaac710c09cf412078014c9c50dd0ac51" => :high_sierra
+    sha256 catalina:    "bc6c97521b6edf723c8ee0742aebb1954b5c8fec81bf2d96861c3f8bcc4e404d"
+    sha256 mojave:      "f09b3fefe2175b36e590ee13e7aa84d28ebcbce3ef8e252e24a0aebb752405ab"
+    sha256 high_sierra: "718a54da6e3b02c33d5230776aaa54eaaac710c09cf412078014c9c50dd0ac51"
   end
 
   uses_from_macos "expat"

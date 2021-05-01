@@ -12,9 +12,9 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 "fd5b91344d38ca11881e63c4b48c1b5b7311565996393eec83889c81266eb3f3" => :catalina
-    sha256 "b1a07ee418585ce3e6e2b8fe5e64d35e570685d815c427b268fd3bed0bc28993" => :mojave
-    sha256 "ca851a4698d294bdedbb97eda9012e5bff78d19c54b3ac0d2b1340e796ec9d41" => :high_sierra
+    sha256 catalina:    "fd5b91344d38ca11881e63c4b48c1b5b7311565996393eec83889c81266eb3f3"
+    sha256 mojave:      "b1a07ee418585ce3e6e2b8fe5e64d35e570685d815c427b268fd3bed0bc28993"
+    sha256 high_sierra: "ca851a4698d294bdedbb97eda9012e5bff78d19c54b3ac0d2b1340e796ec9d41"
   end
 
   depends_on "bison" => :build

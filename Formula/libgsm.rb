@@ -10,10 +10,9 @@ class Libgsm < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9a3eaa556cd1a5429c458ee11c29b5c757ee6f32fbc334355110a37622357dc4" => :catalina
-    sha256 "f7a7683ef5f7f916e81e3ed51aa754da92ca2b993533608f8fc95187baaf8b3c" => :mojave
-    sha256 "5a2b52e7ed65f005f32bb56519dd425b26e537f888b49402322fe1424f0901e4" => :high_sierra
+    sha256 cellar: :any, catalina:    "9a3eaa556cd1a5429c458ee11c29b5c757ee6f32fbc334355110a37622357dc4"
+    sha256 cellar: :any, mojave:      "f7a7683ef5f7f916e81e3ed51aa754da92ca2b993533608f8fc95187baaf8b3c"
+    sha256 cellar: :any, high_sierra: "5a2b52e7ed65f005f32bb56519dd425b26e537f888b49402322fe1424f0901e4"
   end
 
   # Builds a dynamic library for gsm, this package is no longer developed

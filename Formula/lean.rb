@@ -14,10 +14,9 @@ class Lean < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "60bf9be856f7c4158d18717387bd9a74e1e8036fb4ecdb285b3d410e82fec907" => :catalina
-    sha256 "a1cee5b0d39bc214d16ad925c4f5fb70c4edba84da64d4cc0f288233f4b032c8" => :mojave
-    sha256 "4efbb7149a7a7f8b85a1c1e8e48e561757b0cf3849b55d31795d30d372ac7a08" => :high_sierra
+    sha256 cellar: :any, catalina:    "60bf9be856f7c4158d18717387bd9a74e1e8036fb4ecdb285b3d410e82fec907"
+    sha256 cellar: :any, mojave:      "a1cee5b0d39bc214d16ad925c4f5fb70c4edba84da64d4cc0f288233f4b032c8"
+    sha256 cellar: :any, high_sierra: "4efbb7149a7a7f8b85a1c1e8e48e561757b0cf3849b55d31795d30d372ac7a08"
   end
 
   depends_on "cmake" => :build

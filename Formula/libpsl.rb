@@ -6,10 +6,9 @@ class Libpsl < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "999ac95bde3ffb61596c0fa4c2e93c36ef01d9c056b3c96a27ee39fab2970c57" => :catalina
-    sha256 "58cf56bdac182080b09b3832dc091c99106d88baeb797d4b31c5c4572491557c" => :mojave
-    sha256 "f91cdd5992c4c85083e30692cc509349a15fb43f0725580bc14de1e47ba8e7c4" => :high_sierra
+    sha256 cellar: :any, catalina:    "999ac95bde3ffb61596c0fa4c2e93c36ef01d9c056b3c96a27ee39fab2970c57"
+    sha256 cellar: :any, mojave:      "58cf56bdac182080b09b3832dc091c99106d88baeb797d4b31c5c4572491557c"
+    sha256 cellar: :any, high_sierra: "f91cdd5992c4c85083e30692cc509349a15fb43f0725580bc14de1e47ba8e7c4"
   end
 
   depends_on "meson" => :build

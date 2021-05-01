@@ -6,11 +6,10 @@ class Hatari < Formula
   head "https://git.tuxfamily.org/hatari/hatari.git"
 
   bottle do
-    cellar :any
-    sha256 "b7117341420c778b9d58b05551c59f214ef22c60ec3b94dcbcd7ce9bfd404ceb" => :catalina
-    sha256 "c0a3104dfa4cbaf4fd4d740606f79d5a1813e1721fd0df39864d3e5f68b81648" => :mojave
-    sha256 "297be94b3f4d81ab53b00e9ed5918b62c6de3d80a70b9c17b1dc364b0e52a75d" => :high_sierra
-    sha256 "e9059ebf74999ffdd7737aa36a9cbde52766ac0187a3b94074b79ffd5ab49977" => :sierra
+    sha256 cellar: :any, catalina:    "b7117341420c778b9d58b05551c59f214ef22c60ec3b94dcbcd7ce9bfd404ceb"
+    sha256 cellar: :any, mojave:      "c0a3104dfa4cbaf4fd4d740606f79d5a1813e1721fd0df39864d3e5f68b81648"
+    sha256 cellar: :any, high_sierra: "297be94b3f4d81ab53b00e9ed5918b62c6de3d80a70b9c17b1dc364b0e52a75d"
+    sha256 cellar: :any, sierra:      "e9059ebf74999ffdd7737aa36a9cbde52766ac0187a3b94074b79ffd5ab49977"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +36,6 @@ class Hatari < Formula
   end
 
   test do
-    assert_match /Hatari v#{version} -/, shell_output("#{bin}/hatari -v", 1)
+    assert_match(/Hatari v#{version} -/, shell_output("#{bin}/hatari -v", 1))
   end
 end

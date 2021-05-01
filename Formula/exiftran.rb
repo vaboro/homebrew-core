@@ -11,10 +11,9 @@ class Exiftran < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "155e492e4c82c7e06be60966dcf343832e456bbc47cd1293ec1805dd3e47e42c" => :high_sierra
-    sha256 "11c7c1d5a5e5a16b7cfd9cf8004cb1fd3f141974462df036ce09539083eb3d60" => :sierra
-    sha256 "8ad9b01ec63c6ebb4488dada2d973b47756ed839fe96b083a9b49ec85c0eeb12" => :el_capitan
+    sha256 cellar: :any, high_sierra: "155e492e4c82c7e06be60966dcf343832e456bbc47cd1293ec1805dd3e47e42c"
+    sha256 cellar: :any, sierra:      "11c7c1d5a5e5a16b7cfd9cf8004cb1fd3f141974462df036ce09539083eb3d60"
+    sha256 cellar: :any, el_capitan:  "8ad9b01ec63c6ebb4488dada2d973b47756ed839fe96b083a9b49ec85c0eeb12"
   end
 
   depends_on "pkg-config" => :build

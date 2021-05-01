@@ -10,9 +10,9 @@ class Msitools < Formula
   end
 
   bottle do
-    sha256 "f9b65f68c973c323e96a0492df562bae32e3ede79d9e5a6f24b89f53ef085883" => :catalina
-    sha256 "b7646423954ae62a8dcb8ee413f98e0f5e1c4b8a73876255fcd2f0371e547f92" => :mojave
-    sha256 "fd8689ba0902ed4d784f85969d281a0e1c58bb76f0fe17a93d96ba2d3f845cdb" => :high_sierra
+    sha256 catalina:    "f9b65f68c973c323e96a0492df562bae32e3ede79d9e5a6f24b89f53ef085883"
+    sha256 mojave:      "b7646423954ae62a8dcb8ee413f98e0f5e1c4b8a73876255fcd2f0371e547f92"
+    sha256 high_sierra: "fd8689ba0902ed4d784f85969d281a0e1c58bb76f0fe17a93d96ba2d3f845cdb"
   end
 
   depends_on "intltool" => :build
@@ -48,7 +48,7 @@ class Msitools < Formula
 
   test do
     # wixl-heat: make an xml fragment
-    assert_match /<Fragment>/, pipe_output("#{bin}/wixl-heat --prefix test")
+    assert_match(/<Fragment>/, pipe_output("#{bin}/wixl-heat --prefix test"))
 
     # wixl: build two installers
     1.upto(2) do |i|
@@ -90,7 +90,7 @@ class Msitools < Formula
     # msiinfo: show info for an installer
     out = `#{bin}/msiinfo suminfo installer1.msi`
     assert_equal 0, $CHILD_STATUS.exitstatus
-    assert_match /Author: BigCo/, out
+    assert_match(/Author: BigCo/, out)
 
     # msiextract: extract files from an installer
     mkdir "files"

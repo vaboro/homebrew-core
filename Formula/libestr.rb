@@ -11,11 +11,10 @@ class Libestr < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "f539c76e3acdd0a93def55a0e82ecf45c53de65dc6dc18fd123efe815d8a65cd" => :catalina
-    sha256 "543dcd541a69d52d5d1d21d51d0cf57c1617cc177f743c2dfea8ea3d548b93e8" => :mojave
-    sha256 "7f17c5dbb6534afe6b37ae1d1f994d3387cd8527d6aaa768604837ac681eee59" => :high_sierra
-    sha256 "5ff130cf6aa42842636dd90b7a8e7e60adbb289682bd915c98937b032c38fc54" => :sierra
+    sha256 cellar: :any, catalina:    "f539c76e3acdd0a93def55a0e82ecf45c53de65dc6dc18fd123efe815d8a65cd"
+    sha256 cellar: :any, mojave:      "543dcd541a69d52d5d1d21d51d0cf57c1617cc177f743c2dfea8ea3d548b93e8"
+    sha256 cellar: :any, high_sierra: "7f17c5dbb6534afe6b37ae1d1f994d3387cd8527d6aaa768604837ac681eee59"
+    sha256 cellar: :any, sierra:      "5ff130cf6aa42842636dd90b7a8e7e60adbb289682bd915c98937b032c38fc54"
   end
 
   depends_on "pkg-config" => :build

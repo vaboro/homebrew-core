@@ -7,10 +7,9 @@ class Pachi < Formula
   head "https://github.com/pasky/pachi.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e1cac19564a176a50d27f08b4e395a53ff4144dc17fd93dcaa013adfc8cca83a" => :catalina
-    sha256 "76edc1b521dfb93e8c6573b689c8bc5a01103888f2f7310fd46aa53d8b6ea0dc" => :mojave
-    sha256 "476509041b907edfd0380bc91a3fd4fc41b359bae58524ab4ab8017df4f61fe0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e1cac19564a176a50d27f08b4e395a53ff4144dc17fd93dcaa013adfc8cca83a"
+    sha256 cellar: :any_skip_relocation, mojave:      "76edc1b521dfb93e8c6573b689c8bc5a01103888f2f7310fd46aa53d8b6ea0dc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "476509041b907edfd0380bc91a3fd4fc41b359bae58524ab4ab8017df4f61fe0"
   end
 
   resource "patterns" do
@@ -55,6 +54,6 @@ class Pachi < Formula
   end
 
   test do
-    assert_match /^= [A-T][0-9]+$/, pipe_output("#{bin}/pachi", "genmove b\n", 0)
+    assert_match(/^= [A-T][0-9]+$/, pipe_output("#{bin}/pachi", "genmove b\n", 0))
   end
 end

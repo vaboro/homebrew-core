@@ -5,11 +5,10 @@ class Libcanberra < Formula
   sha256 "c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "34ff83c6dc8af0afc1f1988ebde1ccb4c17d4604fa6d36567daedef43da3047d" => :catalina
-    sha256 "3d32a254ac069ef41b785f6950e3eea625de6faaf99d2402236b451f8c765b05" => :mojave
-    sha256 "561aa9aba4e6b5f191b74d3dd1c96de9951e3dc5b696d93abaeaa301aa117bae" => :high_sierra
+    sha256 cellar: :any, catalina:    "34ff83c6dc8af0afc1f1988ebde1ccb4c17d4604fa6d36567daedef43da3047d"
+    sha256 cellar: :any, mojave:      "3d32a254ac069ef41b785f6950e3eea625de6faaf99d2402236b451f8c765b05"
+    sha256 cellar: :any, high_sierra: "561aa9aba4e6b5f191b74d3dd1c96de9951e3dc5b696d93abaeaa301aa117bae"
   end
 
   head do

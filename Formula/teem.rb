@@ -10,13 +10,13 @@ class Teem < Formula
   end
 
   bottle do
-    sha256 "105f54c1cb830584bcf694756ab18eab2a7d9a67e3226699272c4449cc2f816e" => :catalina
-    sha256 "439d02dd7f54d7f307b5984d00448a4e77309660e8f1c52e998ef9ea40fdcaa1" => :mojave
-    sha256 "4cb2692b42e79880161879605c3990cd5d0c4fbb171c7ccd003bb9d6bb0fee09" => :high_sierra
-    sha256 "31d19cd9e0e4c064fb743c41a286736503e61b1d5e4b81f29140fcebf2cde2c8" => :sierra
-    sha256 "5ade8dc18d0c66ac154d802df6c64e88222781b6fc427a841fb1f4047f8c4e49" => :el_capitan
-    sha256 "3974a9a565044cb4de798eb1bec2b8980eef03eb6bd7ec6c98cddd606f7c8a29" => :yosemite
-    sha256 "c340d18c157b81be663636ff72326ecb946313ea1dfc533a6ba95b9efdb6bf44" => :mavericks
+    sha256 catalina:    "105f54c1cb830584bcf694756ab18eab2a7d9a67e3226699272c4449cc2f816e"
+    sha256 mojave:      "439d02dd7f54d7f307b5984d00448a4e77309660e8f1c52e998ef9ea40fdcaa1"
+    sha256 high_sierra: "4cb2692b42e79880161879605c3990cd5d0c4fbb171c7ccd003bb9d6bb0fee09"
+    sha256 sierra:      "31d19cd9e0e4c064fb743c41a286736503e61b1d5e4b81f29140fcebf2cde2c8"
+    sha256 el_capitan:  "5ade8dc18d0c66ac154d802df6c64e88222781b6fc427a841fb1f4047f8c4e49"
+    sha256 yosemite:    "3974a9a565044cb4de798eb1bec2b8980eef03eb6bd7ec6c98cddd606f7c8a29"
+    sha256 mavericks:   "c340d18c157b81be663636ff72326ecb946313ea1dfc533a6ba95b9efdb6bf44"
   end
 
   depends_on "cmake" => :build

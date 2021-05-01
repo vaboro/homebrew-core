@@ -6,9 +6,9 @@ class Opencc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "dddf951ae0363e1e92c34d3d0087233d8d07053682557fd1bbed457aa98c677f" => :catalina
-    sha256 "0503b49e5fcec9652ea10a3ab14d182babf48aae43644c68b243b94c2a781182" => :mojave
-    sha256 "d48b56dec1d0f6f0fe0eb2690f8ac152e8dc13971c40649fe5e6ba810efdec17" => :high_sierra
+    sha256 catalina:    "dddf951ae0363e1e92c34d3d0087233d8d07053682557fd1bbed457aa98c677f"
+    sha256 mojave:      "0503b49e5fcec9652ea10a3ab14d182babf48aae43644c68b243b94c2a781182"
+    sha256 high_sierra: "d48b56dec1d0f6f0fe0eb2690f8ac152e8dc13971c40649fe5e6ba810efdec17"
   end
 
   depends_on "cmake" => :build

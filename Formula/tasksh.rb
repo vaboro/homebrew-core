@@ -7,12 +7,11 @@ class Tasksh < Formula
   head "https://github.com/GothenburgBitFactory/taskshell.git", branch: "1.3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "db065e61ef2e605a1987012eaf4c0f10b648a98da3d143b9a02e1c22d51216f7" => :catalina
-    sha256 "c766ebd317962a04a3d78a4fbcc202085a27e0d15f63debf095f84a9a97d6306" => :mojave
-    sha256 "17f99be8d0aea4c43877fbfb121b7989047f04650ccffa85e948859e8ee51e0b" => :high_sierra
-    sha256 "fd1b333c777401c53d5ddc8aaf52150a2a15fea4230a91d457d9d99ce2819ee7" => :sierra
-    sha256 "d695adcf10582123053612d98ed4bf988b22c50919598bf167bc2e62db142352" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "db065e61ef2e605a1987012eaf4c0f10b648a98da3d143b9a02e1c22d51216f7"
+    sha256 cellar: :any_skip_relocation, mojave:      "c766ebd317962a04a3d78a4fbcc202085a27e0d15f63debf095f84a9a97d6306"
+    sha256 cellar: :any_skip_relocation, high_sierra: "17f99be8d0aea4c43877fbfb121b7989047f04650ccffa85e948859e8ee51e0b"
+    sha256 cellar: :any_skip_relocation, sierra:      "fd1b333c777401c53d5ddc8aaf52150a2a15fea4230a91d457d9d99ce2819ee7"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "d695adcf10582123053612d98ed4bf988b22c50919598bf167bc2e62db142352"
   end
 
   depends_on "cmake" => :build

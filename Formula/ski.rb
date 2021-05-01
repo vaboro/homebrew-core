@@ -6,10 +6,9 @@ class Ski < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253" => :catalina
-    sha256 "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253" => :mojave
-    sha256 "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253"
+    sha256 cellar: :any_skip_relocation, mojave:      "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b647b2162475b1dccee3afe7d6d878108fc3ac97826756c355b0c8b748143253"
   end
 
   head do

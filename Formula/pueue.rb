@@ -7,10 +7,9 @@ class Pueue < Formula
   head "https://github.com/Nukesor/pueue.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "031681eda88e3a16306fec612a6137d8ec34f618b7211886926ec22d8b9b1ffc" => :catalina
-    sha256 "3df8071cbb8b1b753c7f1d74c91f98e8de711683dc899e33f83f9697a9f8d1bc" => :mojave
-    sha256 "251fd9a409d76b722aa3bc3bb4d75d0a37673aaef0b290c60fea9b246326857b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "031681eda88e3a16306fec612a6137d8ec34f618b7211886926ec22d8b9b1ffc"
+    sha256 cellar: :any_skip_relocation, mojave:      "3df8071cbb8b1b753c7f1d74c91f98e8de711683dc899e33f83f9697a9f8d1bc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "251fd9a409d76b722aa3bc3bb4d75d0a37673aaef0b290c60fea9b246326857b"
   end
 
   depends_on "rust" => :build
@@ -64,7 +63,7 @@ class Pueue < Formula
       end
       sleep 5
       cmd = "#{bin}/pueue status"
-      assert_match /Task list is empty.*/m, shell_output(cmd)
+      assert_match(/Task list is empty.*/m, shell_output(cmd))
     ensure
       Process.kill("TERM", pid)
     end

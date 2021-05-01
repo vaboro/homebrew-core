@@ -7,10 +7,9 @@ class Progress < Formula
   head "https://github.com/Xfennec/progress.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "104d62681c513b6c3e7d997245768d7e2e3941ab43dc37fb67b33bb188e4acc4" => :catalina
-    sha256 "62ea2e563eac2c9c9ad6f8eb3d5565024b2e303313c6d5cf509901893ee01d32" => :mojave
-    sha256 "699d0712e633d357dbd853e797e94f85bee3af00f70b9e206fe6335d620b8e5c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "104d62681c513b6c3e7d997245768d7e2e3941ab43dc37fb67b33bb188e4acc4"
+    sha256 cellar: :any_skip_relocation, mojave:      "62ea2e563eac2c9c9ad6f8eb3d5565024b2e303313c6d5cf509901893ee01d32"
+    sha256 cellar: :any_skip_relocation, high_sierra: "699d0712e633d357dbd853e797e94f85bee3af00f70b9e206fe6335d620b8e5c"
   end
 
   uses_from_macos "ncurses"

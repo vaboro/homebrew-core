@@ -6,10 +6,9 @@ class Pgformatter < Formula
   license "PostgreSQL"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "afcce813b73ebaa9326790850289abdfeba332e4be86c6e55fcec6220b66bbef" => :catalina
-    sha256 "d991b9830807c92d78108a2320a358d162db5749b97bcdb8dea846058392c97c" => :mojave
-    sha256 "86e00ee2a7f917e6e0e8c7409c788267faeb710b4c707f4a6463bcd0c2dd0fae" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "afcce813b73ebaa9326790850289abdfeba332e4be86c6e55fcec6220b66bbef"
+    sha256 cellar: :any_skip_relocation, mojave:      "d991b9830807c92d78108a2320a358d162db5749b97bcdb8dea846058392c97c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "86e00ee2a7f917e6e0e8c7409c788267faeb710b4c707f4a6463bcd0c2dd0fae"
   end
 
   def install

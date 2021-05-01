@@ -8,10 +8,9 @@ class Dnstwist < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "bc12a0d72921370961acd9802a547d8b4c940462cc8f8745e35027e7a747297c" => :catalina
-    sha256 "14674817c598ec74cfdb5892e196c908853e8e2325e437add16dcba08dd439eb" => :mojave
-    sha256 "3074ad20059b21245482ef0960ecb65385f3e834add362d077bc4bb0b6ca738a" => :high_sierra
+    sha256 cellar: :any, catalina:    "bc12a0d72921370961acd9802a547d8b4c940462cc8f8745e35027e7a747297c"
+    sha256 cellar: :any, mojave:      "14674817c598ec74cfdb5892e196c908853e8e2325e437add16dcba08dd439eb"
+    sha256 cellar: :any, high_sierra: "3074ad20059b21245482ef0960ecb65385f3e834add362d077bc4bb0b6ca738a"
   end
 
   depends_on "geoip"
@@ -101,7 +100,7 @@ class Dnstwist < Formula
     assert_match version.to_s, output
     assert_match "Fetching content from:", output
     assert_match "//brew.sh", output
-    assert_match /Processing \d+ permutations/, output
-    assert_not_match /notice: missing module/, output
+    assert_match(/Processing \d+ permutations/, output)
+    assert_not_match(/notice: missing module/, output)
   end
 end

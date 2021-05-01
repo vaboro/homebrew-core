@@ -6,10 +6,9 @@ class Gitui < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "15fc69a2aef24cc4292dba4f0de18bc6baa176788d044973e79a11fbc2ccb103" => :catalina
-    sha256 "466fbe53bd0775b5cacb9281a9c5846178ae448fbe079d32cb9dc19f037411d2" => :mojave
-    sha256 "5e725a78841410e48a7a932c79cb98bb02d8c567a0c0705334d24549fdfcc81f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "15fc69a2aef24cc4292dba4f0de18bc6baa176788d044973e79a11fbc2ccb103"
+    sha256 cellar: :any_skip_relocation, mojave:      "466fbe53bd0775b5cacb9281a9c5846178ae448fbe079d32cb9dc19f037411d2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5e725a78841410e48a7a932c79cb98bb02d8c567a0c0705334d24549fdfcc81f"
   end
 
   depends_on "rust" => :build
@@ -44,7 +43,7 @@ class Gitui < Formula
       invalid: :replace,
       undef:   :replace,
       replace: "")
-    screenlog.gsub! /\e\[([;\d]+)?m/, ""
+    screenlog.gsub!(/\e\[([;\d]+)?m/, "")
     assert_match "Author: Stephan Dilly", screenlog
     assert_match "Date: 2020-06-15", screenlog
     assert_match "Sha: 9c2a31846c417d8775a346ceaf38e77b710d3aab", screenlog

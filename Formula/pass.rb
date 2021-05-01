@@ -12,11 +12,10 @@ class Pass < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :catalina
-    sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :mojave
-    sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3"
+    sha256 cellar: :any_skip_relocation, mojave:      "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3"
   end
 
   depends_on "gnu-getopt"

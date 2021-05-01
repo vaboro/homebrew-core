@@ -6,9 +6,9 @@ class Gource < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 "6db0866cca37c5701a5deb79e4867ec0cf1134c76839a40b6fd49968a5564cb0" => :catalina
-    sha256 "18204f0fb8b737d0e903718a645a08d63338c93c7ca8052db569445d19a18800" => :mojave
-    sha256 "1dc9d1e848779e59367a2c7714bc6f2c97f2becc3d4ccef8c3576ad38af4053e" => :high_sierra
+    sha256 catalina:    "6db0866cca37c5701a5deb79e4867ec0cf1134c76839a40b6fd49968a5564cb0"
+    sha256 mojave:      "18204f0fb8b737d0e903718a645a08d63338c93c7ca8052db569445d19a18800"
+    sha256 high_sierra: "1dc9d1e848779e59367a2c7714bc6f2c97f2becc3d4ccef8c3576ad38af4053e"
   end
 
   head do

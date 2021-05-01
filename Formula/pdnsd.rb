@@ -8,11 +8,11 @@ class Pdnsd < Formula
 
   bottle do
     rebuild 2
-    sha256 "125b690bbac734558cd9a4510c1336e2a92c3fd4748ba2ed216af9a5041c5d60" => :catalina
-    sha256 "822ab7ede7c626ab8cb0c5e7340f3896cdef7cc112c8d9843e55d601f5847297" => :mojave
-    sha256 "be218973e8fe1d807e7d9ec2762cab2a9968ce302fb46fb89974a686c1afcc43" => :high_sierra
-    sha256 "81c4852b1093820909afc140f052f732cbd94e428d9aff261b90d74cb4935b09" => :sierra
-    sha256 "1fa2f1f6ba9fc4fe710c1dc1d5bfb2b9663c557f5cdddf3a2fff8394f138a08f" => :el_capitan
+    sha256 catalina:    "125b690bbac734558cd9a4510c1336e2a92c3fd4748ba2ed216af9a5041c5d60"
+    sha256 mojave:      "822ab7ede7c626ab8cb0c5e7340f3896cdef7cc112c8d9843e55d601f5847297"
+    sha256 high_sierra: "be218973e8fe1d807e7d9ec2762cab2a9968ce302fb46fb89974a686c1afcc43"
+    sha256 sierra:      "81c4852b1093820909afc140f052f732cbd94e428d9aff261b90d74cb4935b09"
+    sha256 el_capitan:  "1fa2f1f6ba9fc4fe710c1dc1d5bfb2b9663c557f5cdddf3a2fff8394f138a08f"
   end
 
   def install

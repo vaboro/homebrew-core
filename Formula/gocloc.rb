@@ -7,10 +7,9 @@ class Gocloc < Formula
   head "https://github.com/hhatto/gocloc.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :catalina
-    sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :mojave
-    sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b"
+    sha256 cellar: :any_skip_relocation, mojave:      "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b"
   end
 
   depends_on "go" => :build

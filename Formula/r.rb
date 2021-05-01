@@ -12,9 +12,9 @@ class R < Formula
   end
 
   bottle do
-    sha256 "4d2073c7d93e1117cc35fcc375f6eb112f16c311cc4400d703a805d57f0de71a" => :catalina
-    sha256 "e337fd3411cd1dffc9be88c1e116d87acac55021b3a5c70af0feba1b1a2c7259" => :mojave
-    sha256 "9040c02a85ac2c37007f066cb3c388c41ea5f4e9e7cfde864f249999b0ce4026" => :high_sierra
+    sha256 catalina:    "4d2073c7d93e1117cc35fcc375f6eb112f16c311cc4400d703a805d57f0de71a"
+    sha256 mojave:      "e337fd3411cd1dffc9be88c1e116d87acac55021b3a5c70af0feba1b1a2c7259"
+    sha256 high_sierra: "9040c02a85ac2c37007f066cb3c388c41ea5f4e9e7cfde864f249999b0ce4026"
   end
 
   depends_on "pkg-config" => :build

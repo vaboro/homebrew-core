@@ -7,10 +7,9 @@ class Hcxtools < Formula
   head "https://github.com/ZerBea/hcxtools.git"
 
   bottle do
-    cellar :any
-    sha256 "28de57048c75f7989ee928255665312bcc125687a4587b0464cd780b19e4ce44" => :catalina
-    sha256 "0f2d40f916f84577de2fca9f5f773cc17880e0b11a3b66ae0ea0eff36a019721" => :mojave
-    sha256 "b8379678a34c6254d33afea1f73d5c3014ab8125cbc4303021bfaf81a08303ad" => :high_sierra
+    sha256 cellar: :any, catalina:    "28de57048c75f7989ee928255665312bcc125687a4587b0464cd780b19e4ce44"
+    sha256 cellar: :any, mojave:      "0f2d40f916f84577de2fca9f5f773cc17880e0b11a3b66ae0ea0eff36a019721"
+    sha256 cellar: :any, high_sierra: "b8379678a34c6254d33afea1f73d5c3014ab8125cbc4303021bfaf81a08303ad"
   end
 
   depends_on "openssl@1.1"

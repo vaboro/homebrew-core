@@ -6,10 +6,9 @@ class BibTool < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "26f2121d720fa6ffc20547b0bfc6754930f6b8660b51f634c686279dae7e73ce" => :catalina
-    sha256 "d75a1a60204b002cc06acc025cfdc74db76a563b9bb508876d0e45d771f61dc8" => :mojave
-    sha256 "0d92e3fead68380fc84cbf5517d2ed2eecdfcbfc1fc14c6343f51ee60d43f948" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "26f2121d720fa6ffc20547b0bfc6754930f6b8660b51f634c686279dae7e73ce"
+    sha256 cellar: :any_skip_relocation, mojave:      "d75a1a60204b002cc06acc025cfdc74db76a563b9bb508876d0e45d771f61dc8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0d92e3fead68380fc84cbf5517d2ed2eecdfcbfc1fc14c6343f51ee60d43f948"
   end
 
   def install

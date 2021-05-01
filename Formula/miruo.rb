@@ -7,14 +7,13 @@ class Miruo < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "044456429802d6f6d8ba2a8d00547e0e0695e99edd1cceb1af29e70eb004d13f" => :catalina
-    sha256 "a71716a29094f72b62cc6a84284abb509916907c5559b25a2b85196148b86c84" => :mojave
-    sha256 "36df62e0454d4b7e5743a002a2ff3293e087a9fb607c369f3d23732d87330e4e" => :high_sierra
-    sha256 "dbe92dd3ab515528597eb76aa986f4e9d8dd512504d76ca60b86b5dc5dc70449" => :sierra
-    sha256 "8a5402f68bcb73e22f13fb0b049caea5d186520e81bf77889c91a558d9988c59" => :el_capitan
-    sha256 "f39aa9336ac2ec07ec0bd25bc7f7d3ae1b7a76c8af8c4d5e1f7e0ffdcfcbc9fe" => :yosemite
-    sha256 "3b5a390dae561d3ac554cbd6f16c1af6019677c3846985b116ce8fd1de649bd1" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "044456429802d6f6d8ba2a8d00547e0e0695e99edd1cceb1af29e70eb004d13f"
+    sha256 cellar: :any_skip_relocation, mojave:      "a71716a29094f72b62cc6a84284abb509916907c5559b25a2b85196148b86c84"
+    sha256 cellar: :any_skip_relocation, high_sierra: "36df62e0454d4b7e5743a002a2ff3293e087a9fb607c369f3d23732d87330e4e"
+    sha256 cellar: :any_skip_relocation, sierra:      "dbe92dd3ab515528597eb76aa986f4e9d8dd512504d76ca60b86b5dc5dc70449"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "8a5402f68bcb73e22f13fb0b049caea5d186520e81bf77889c91a558d9988c59"
+    sha256 cellar: :any_skip_relocation, yosemite:    "f39aa9336ac2ec07ec0bd25bc7f7d3ae1b7a76c8af8c4d5e1f7e0ffdcfcbc9fe"
+    sha256 cellar: :any_skip_relocation, mavericks:   "3b5a390dae561d3ac554cbd6f16c1af6019677c3846985b116ce8fd1de649bd1"
   end
 
   def install

@@ -12,10 +12,9 @@ class Jupyterlab < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "6bed9623a449ef37e88fc05a756e82829b3c58c1cb80323c8e8cbb069b83402c" => :catalina
-    sha256 "4bb1622e233ed68dcef96913541daeea2ddf8e527153f31fa735aec297d579c1" => :mojave
-    sha256 "c6fd205cc7ee7e554a432522394b16d873fe8c662ef2eda584095d48c8c0d0a1" => :high_sierra
+    sha256 cellar: :any, catalina:    "6bed9623a449ef37e88fc05a756e82829b3c58c1cb80323c8e8cbb069b83402c"
+    sha256 cellar: :any, mojave:      "4bb1622e233ed68dcef96913541daeea2ddf8e527153f31fa735aec297d579c1"
+    sha256 cellar: :any, high_sierra: "c6fd205cc7ee7e554a432522394b16d873fe8c662ef2eda584095d48c8c0d0a1"
   end
 
   depends_on "ipython"
@@ -362,11 +361,11 @@ class Jupyterlab < Formula
     version_regexp = Regexp.quote(version.to_s)
 
     # Ensure that jupyter can load the jupyter lab package.
-    assert_match /^jupyter lab *: #{version_regexp}$/,
-      shell_output(bin/"jupyter --version")
+    assert_match(/^jupyter lab *: #{version_regexp}$/,
+      shell_output(bin/"jupyter --version"))
 
     # Ensure that jupyter-lab binary was installed by pip.
-    assert_match /^#{version_regexp}$/,
-      shell_output(bin/"jupyter-lab --version")
+    assert_match(/^#{version_regexp}$/,
+      shell_output(bin/"jupyter-lab --version"))
   end
 end

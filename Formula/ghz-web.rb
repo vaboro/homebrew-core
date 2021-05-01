@@ -6,10 +6,9 @@ class GhzWeb < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0e350d6ef4001b02c0b32f81db4c28bb1b7ca5882ba84178f7c10e71b9e09458" => :catalina
-    sha256 "ce25fe1827d18e045520a26d088c3afb64a71c212086463a5ef5171ac727738e" => :mojave
-    sha256 "32a6d2be9187fa8539fc98f78021e15f5453d7e67abb5ae2a5ddece28b94fc93" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0e350d6ef4001b02c0b32f81db4c28bb1b7ca5882ba84178f7c10e71b9e09458"
+    sha256 cellar: :any_skip_relocation, mojave:      "ce25fe1827d18e045520a26d088c3afb64a71c212086463a5ef5171ac727738e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "32a6d2be9187fa8539fc98f78021e15f5453d7e67abb5ae2a5ddece28b94fc93"
   end
 
   depends_on "go" => :build
@@ -33,6 +32,6 @@ class GhzWeb < Formula
     end
     sleep 1
     cmd = "curl -sIm3 -XGET http://localhost:#{port}/"
-    assert_match /200 OK/m, shell_output(cmd)
+    assert_match(/200 OK/m, shell_output(cmd))
   end
 end

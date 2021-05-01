@@ -12,14 +12,13 @@ class A52dec < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a40e7384a64c5d4e22209088af424eeb4a9de3eba4c5451f95a2a1b6732969f6" => :catalina
-    sha256 "5186add25fb7aae66c80139b56ea81fb3aff1f87e74354c2cebe022374532286" => :mojave
-    sha256 "c7485fae127d02a6628186b821d72fc40bc82019ae30ddee0abfacf2b63701dc" => :high_sierra
-    sha256 "150123fdf33421b85f4625d73c015a660300db698a82fd0165475fe8e7081d0b" => :sierra
-    sha256 "2feac8f578fd1aa43385ce8714b059c90f4aaf3a0401d8ba825939e8e8ab7b1b" => :el_capitan
-    sha256 "cfe0ddcf275b03d9ad0c626174962601ae18d3f77fa35266228425b818ce4a7f" => :yosemite
-    sha256 "cb40eed81300fa32069bac07244cf7f56363cc04af853ddb75bada292e8d9912" => :mavericks
+    sha256 cellar: :any, catalina:    "a40e7384a64c5d4e22209088af424eeb4a9de3eba4c5451f95a2a1b6732969f6"
+    sha256 cellar: :any, mojave:      "5186add25fb7aae66c80139b56ea81fb3aff1f87e74354c2cebe022374532286"
+    sha256 cellar: :any, high_sierra: "c7485fae127d02a6628186b821d72fc40bc82019ae30ddee0abfacf2b63701dc"
+    sha256 cellar: :any, sierra:      "150123fdf33421b85f4625d73c015a660300db698a82fd0165475fe8e7081d0b"
+    sha256 cellar: :any, el_capitan:  "2feac8f578fd1aa43385ce8714b059c90f4aaf3a0401d8ba825939e8e8ab7b1b"
+    sha256 cellar: :any, yosemite:    "cfe0ddcf275b03d9ad0c626174962601ae18d3f77fa35266228425b818ce4a7f"
+    sha256 cellar: :any, mavericks:   "cb40eed81300fa32069bac07244cf7f56363cc04af853ddb75bada292e8d9912"
   end
 
   def install

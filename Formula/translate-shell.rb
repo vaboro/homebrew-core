@@ -7,10 +7,9 @@ class TranslateShell < Formula
   head "https://github.com/soimort/translate-shell.git", branch: "develop"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1" => :catalina
-    sha256 "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1" => :mojave
-    sha256 "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1"
+    sha256 cellar: :any_skip_relocation, mojave:      "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "858d52386202bbcb1313a72b642d9d5f4cbfe2ca35fd9556f6cf5275d7d2b9a1"
   end
 
   depends_on "fribidi"

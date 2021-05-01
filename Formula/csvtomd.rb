@@ -13,10 +13,9 @@ class Csvtomd < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a095eb1747bdc18b737a5a1a090486cd0b694f33283163007f19b3b9e0abfade" => :catalina
-    sha256 "87c756127704a0211c2dcb8d7e0b7b11dfbaf0a2878dfec9a4881e034f114fd0" => :mojave
-    sha256 "c7ec7a2ff12f6d5707bb51b14bd078c2401840108cf1f6c4a774d04ffedf427b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a095eb1747bdc18b737a5a1a090486cd0b694f33283163007f19b3b9e0abfade"
+    sha256 cellar: :any_skip_relocation, mojave:      "87c756127704a0211c2dcb8d7e0b7b11dfbaf0a2878dfec9a4881e034f114fd0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c7ec7a2ff12f6d5707bb51b14bd078c2401840108cf1f6c4a774d04ffedf427b"
   end
 
   depends_on "python@3.8"

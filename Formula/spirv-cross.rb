@@ -7,10 +7,9 @@ class SpirvCross < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e23ad5f26f55793c665977deecea85f7d1ac92a9f80bef9c86eaf8195709007a" => :catalina
-    sha256 "33675bde9b1f2e5861d6c5b37f027ac9be2f9a1783d2efdc84f7756c483b085e" => :mojave
-    sha256 "51295b9f28b4bff7807d938c741c7a0c5a807d22808dd84df97457bbcde9f621" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e23ad5f26f55793c665977deecea85f7d1ac92a9f80bef9c86eaf8195709007a"
+    sha256 cellar: :any_skip_relocation, mojave:      "33675bde9b1f2e5861d6c5b37f027ac9be2f9a1783d2efdc84f7756c483b085e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "51295b9f28b4bff7807d938c741c7a0c5a807d22808dd84df97457bbcde9f621"
   end
 
   depends_on "cmake" => :build

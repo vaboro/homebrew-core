@@ -12,10 +12,9 @@ class NodeExporter < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7b68d39007278906d3a749370131c4ee7026f410350c48de3f65eeb4bd0c9310" => :catalina
-    sha256 "1ff2d6c27e863565b9b6415ee406d8f2585366c855f7ff9d64577043dec78b7e" => :mojave
-    sha256 "3d902e39d3d2be664928596a6a1af176af4a73194d3714341c6e365be3894d86" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7b68d39007278906d3a749370131c4ee7026f410350c48de3f65eeb4bd0c9310"
+    sha256 cellar: :any_skip_relocation, mojave:      "1ff2d6c27e863565b9b6415ee406d8f2585366c855f7ff9d64577043dec78b7e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3d902e39d3d2be664928596a6a1af176af4a73194d3714341c6e365be3894d86"
   end
 
   depends_on "go" => :build
@@ -73,7 +72,7 @@ class NodeExporter < Formula
   end
 
   test do
-    assert_match /node_exporter/, shell_output("#{bin}/node_exporter --version 2>&1")
+    assert_match(/node_exporter/, shell_output("#{bin}/node_exporter --version 2>&1"))
 
     fork { exec bin/"node_exporter" }
     sleep 2

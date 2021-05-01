@@ -6,10 +6,9 @@ class Norm < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "b01566af6d67555366f350e72a9717479c1510af885a89b60827356aeba7d2af" => :catalina
-    sha256 "bc9f51046dc479949b480bb9a27143679bccb5f4bab0928c5968d280f9489d86" => :mojave
-    sha256 "c46470e7594148cbee61f851b57373374abdc6a94e91c722efabd3c90f36ec06" => :high_sierra
+    sha256 cellar: :any, catalina:    "b01566af6d67555366f350e72a9717479c1510af885a89b60827356aeba7d2af"
+    sha256 cellar: :any, mojave:      "bc9f51046dc479949b480bb9a27143679bccb5f4bab0928c5968d280f9489d86"
+    sha256 cellar: :any, high_sierra: "c46470e7594148cbee61f851b57373374abdc6a94e91c722efabd3c90f36ec06"
   end
 
   resource "protolib" do

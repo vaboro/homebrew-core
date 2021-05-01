@@ -7,10 +7,9 @@ class Exodriver < Formula
   head "https://github.com/labjack/exodriver.git"
 
   bottle do
-    cellar :any
-    sha256 "aa86ed0ef4a6886bf65ba979938202a7bfabf2d844f2ffe14dee2466f3c65e59" => :catalina
-    sha256 "9451412a4469cdf44e56eeac4c457a91b3363410859d4d48975ce3223f8b20d2" => :mojave
-    sha256 "db8ef53e652b1296843207ee4d315b7ce5e7adf35ce5cf07f36d1d3f8dfdd28f" => :high_sierra
+    sha256 cellar: :any, catalina:    "aa86ed0ef4a6886bf65ba979938202a7bfabf2d844f2ffe14dee2466f3c65e59"
+    sha256 cellar: :any, mojave:      "9451412a4469cdf44e56eeac4c457a91b3363410859d4d48975ce3223f8b20d2"
+    sha256 cellar: :any, high_sierra: "db8ef53e652b1296843207ee4d315b7ce5e7adf35ce5cf07f36d1d3f8dfdd28f"
   end
 
   depends_on "libusb"
@@ -26,6 +25,6 @@ class Exodriver < Formula
 
   test do
     output = shell_output("#{pkgshare}/testModbusFunctions")
-    assert_match /Result:\s+writeBuffer:/, output
+    assert_match(/Result:\s+writeBuffer:/, output)
   end
 end

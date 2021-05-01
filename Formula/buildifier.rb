@@ -7,10 +7,9 @@ class Buildifier < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978" => :catalina
-    sha256 "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978" => :mojave
-    sha256 "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978"
+    sha256 cellar: :any_skip_relocation, mojave:      "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e9d9ccbbbda5e795a4d4dff20f72bd0ed998bdce69356954f8f2aadc8690e978"
   end
 
   depends_on "bazelisk" => :build

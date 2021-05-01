@@ -7,10 +7,9 @@ class DmtxUtils < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "b769c72ede0c30f8d66fa831a0228e1896a59bee2c1edb833cc983ffad647ff3" => :catalina
-    sha256 "2aa5a9010d8aa229b81b7b571739131420a33643814b93d23de55547ac7c0202" => :mojave
-    sha256 "dc6b4de991219302c6cc12f6bfc4ef867469f76278f77e0b7bed41e07e27f598" => :high_sierra
+    sha256 cellar: :any, catalina:    "b769c72ede0c30f8d66fa831a0228e1896a59bee2c1edb833cc983ffad647ff3"
+    sha256 cellar: :any, mojave:      "2aa5a9010d8aa229b81b7b571739131420a33643814b93d23de55547ac7c0202"
+    sha256 cellar: :any, high_sierra: "dc6b4de991219302c6cc12f6bfc4ef867469f76278f77e0b7bed41e07e27f598"
   end
 
   depends_on "autoconf" => :build

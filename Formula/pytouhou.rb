@@ -7,10 +7,9 @@ class Pytouhou < Formula
   head "https://hg.linkmauve.fr/touhou", using: :hg
 
   bottle do
-    cellar :any
-    sha256 "e0470e99f10a318e152eeb46e7e555271234e1ee256d26d9115d947bd810beca" => :catalina
-    sha256 "038adcb10d7aa824288b6a67c85cdd7b950d6f3ec5bfefc9a2a37f55c6c96026" => :mojave
-    sha256 "5222b26c38e279f14622baf64a1d2dfab9decf6920533b353eed61b9d9f6b411" => :high_sierra
+    sha256 cellar: :any, catalina:    "e0470e99f10a318e152eeb46e7e555271234e1ee256d26d9115d947bd810beca"
+    sha256 cellar: :any, mojave:      "038adcb10d7aa824288b6a67c85cdd7b950d6f3ec5bfefc9a2a37f55c6c96026"
+    sha256 cellar: :any, high_sierra: "5222b26c38e279f14622baf64a1d2dfab9decf6920533b353eed61b9d9f6b411"
   end
 
   depends_on "pkg-config" => :build

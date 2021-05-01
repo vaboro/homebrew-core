@@ -7,10 +7,9 @@ class Neofetch < Formula
   head "https://github.com/dylanaraps/neofetch.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01" => :catalina
-    sha256 "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01" => :mojave
-    sha256 "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
+    sha256 cellar: :any_skip_relocation, mojave:      "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
   end
 
   depends_on "imagemagick"

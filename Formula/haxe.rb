@@ -12,10 +12,9 @@ class Haxe < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "4d198b6fe5ad9addbaadd2aba3a43e4f0a356cfd632e389af76c83a8eb1246a6" => :catalina
-    sha256 "077d47ef86c0c3ccdc5f4c7c92b5485e76727afc3096d19bf149125e60ad5ce3" => :mojave
-    sha256 "3c8e7a07d745f290ef54154a05b730440cb319ec84319e6117e59936510b3234" => :high_sierra
+    sha256 cellar: :any, catalina:    "4d198b6fe5ad9addbaadd2aba3a43e4f0a356cfd632e389af76c83a8eb1246a6"
+    sha256 cellar: :any, mojave:      "077d47ef86c0c3ccdc5f4c7c92b5485e76727afc3096d19bf149125e60ad5ce3"
+    sha256 cellar: :any, high_sierra: "3c8e7a07d745f290ef54154a05b730440cb319ec84319e6117e59936510b3234"
   end
 
   depends_on "cmake" => :build
@@ -80,6 +79,6 @@ class Haxe < Formula
     EOS
     system "#{bin}/haxe", "-js", "out.js", "-main", "HelloWorld"
     _, stderr, = Open3.capture3("osascript -so -lJavaScript out.js")
-    assert_match /^Hello world!$/, stderr
+    assert_match(/^Hello world!$/, stderr)
   end
 end

@@ -7,10 +7,9 @@ class Serve < Formula
   head "https://github.com/syntaqx/serve.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b6358efb493acb673bf7513a252f9f48e9ebb2c6a7824208d89ae631cfad9439" => :catalina
-    sha256 "9521fba08dd7bcfd843464b3c12a4f841007f28052104072768e052c194de6aa" => :mojave
-    sha256 "0735a5f8002970bc5d1cb1ca68681713de9dfcffc7eeb30bcdcb7fc33bc58551" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b6358efb493acb673bf7513a252f9f48e9ebb2c6a7824208d89ae631cfad9439"
+    sha256 cellar: :any_skip_relocation, mojave:      "9521fba08dd7bcfd843464b3c12a4f841007f28052104072768e052c194de6aa"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0735a5f8002970bc5d1cb1ca68681713de9dfcffc7eeb30bcdcb7fc33bc58551"
   end
 
   depends_on "go" => :build

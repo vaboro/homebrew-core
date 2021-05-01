@@ -6,9 +6,9 @@ class Quickjs < Formula
   license "MIT"
 
   bottle do
-    sha256 "a1f998b9825902b58cbc9fff5dfbb3b7fa3cff70bdb00d5518c124c7fb241dda" => :catalina
-    sha256 "bd0b90ea85294d55896f668c2079112606052c6695e8b419b874d98198b5d69c" => :mojave
-    sha256 "d21f88599b0f002f71b477be73f48a5ca9faaa32f3696faf647d1ce416a2fcec" => :high_sierra
+    sha256 catalina:    "a1f998b9825902b58cbc9fff5dfbb3b7fa3cff70bdb00d5518c124c7fb241dda"
+    sha256 mojave:      "bd0b90ea85294d55896f668c2079112606052c6695e8b419b874d98198b5d69c"
+    sha256 high_sierra: "d21f88599b0f002f71b477be73f48a5ca9faaa32f3696faf647d1ce416a2fcec"
   end
 
   def install
@@ -17,7 +17,7 @@ class Quickjs < Formula
 
   test do
     output = shell_output("#{bin}/qjs --eval 'const js=\"JS\"; console.log(`Q${js}${(7 + 35)}`);'").strip
-    assert_match /^QJS42/, output
+    assert_match(/^QJS42/, output)
 
     path = testpath/"test.js"
     path.write "console.log('hello');"

@@ -6,11 +6,10 @@ class Rename < Formula
   head "https://github.com/ap/rename.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "494aba9267348e401431cbcb1193df1c1138fda69d66aaa3c7ee229be51277fd" => :catalina
-    sha256 "13c919a8edd4935b7e5462a172b8336c0425a627f76fd3aa72c652c35ea233cc" => :mojave
-    sha256 "86b4b8a450b749f6fd84d86334d2d9f3a1c57fa3832f6e69d602369b4c6e5300" => :high_sierra
-    sha256 "ed4a9403e533b143f8f1ee307035b28c995a13970c64ed7646719e12688ec7a0" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "494aba9267348e401431cbcb1193df1c1138fda69d66aaa3c7ee229be51277fd"
+    sha256 cellar: :any_skip_relocation, mojave:      "13c919a8edd4935b7e5462a172b8336c0425a627f76fd3aa72c652c35ea233cc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "86b4b8a450b749f6fd84d86334d2d9f3a1c57fa3832f6e69d602369b4c6e5300"
+    sha256 cellar: :any_skip_relocation, sierra:      "ed4a9403e533b143f8f1ee307035b28c995a13970c64ed7646719e12688ec7a0"
   end
 
   conflicts_with "util-linux", because: "both install `rename` binaries"

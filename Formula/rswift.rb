@@ -7,9 +7,8 @@ class Rswift < Formula
   head "https://github.com/mac-cain13/R.swift.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1da952f52f531fcc1cb86888ce59c97547636855a4e2d23d147591ed9de0ec49" => :catalina
-    sha256 "a344a394d9edece2c4737eec24ed2ed087719e0b95dfd269aae80b6b90040b44" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "1da952f52f531fcc1cb86888ce59c97547636855a4e2d23d147591ed9de0ec49"
+    sha256 cellar: :any_skip_relocation, mojave:   "a344a394d9edece2c4737eec24ed2ed087719e0b95dfd269aae80b6b90040b44"
   end
 
   depends_on xcode: "10.2"

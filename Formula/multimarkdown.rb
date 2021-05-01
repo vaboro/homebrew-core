@@ -7,10 +7,9 @@ class Multimarkdown < Formula
   head "https://github.com/fletcher/MultiMarkdown-6.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fda293b3a57480609f06eee55ec2ba8d65799577df2be38c0af1cc70e22fcd9d" => :catalina
-    sha256 "ce5d41628cd36556b2e6375a88dce78d90da7502033fe147fff90c3d542bd7c9" => :mojave
-    sha256 "fde9097e38d1fdb2161d71eb81758e25c1a1a39120a27c931e2d408ac8338fd6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fda293b3a57480609f06eee55ec2ba8d65799577df2be38c0af1cc70e22fcd9d"
+    sha256 cellar: :any_skip_relocation, mojave:      "ce5d41628cd36556b2e6375a88dce78d90da7502033fe147fff90c3d542bd7c9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fde9097e38d1fdb2161d71eb81758e25c1a1a39120a27c931e2d408ac8338fd6"
   end
 
   depends_on "cmake" => :build

@@ -13,10 +13,9 @@ class HomeassistantCli < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "147e080fb5b9377766c8788a371ac336da5568e960b6857468a94c2410d8ff15" => :catalina
-    sha256 "70ebba0eb012d61f1d523ecbb72cb95ec411d63a358c06d881f0c50599919d11" => :mojave
-    sha256 "a7d4301ca443bc0e0a2761d4592515e027e1bfa964a07de6752bb0f714e0f2bf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "147e080fb5b9377766c8788a371ac336da5568e960b6857468a94c2410d8ff15"
+    sha256 cellar: :any_skip_relocation, mojave:      "70ebba0eb012d61f1d523ecbb72cb95ec411d63a358c06d881f0c50599919d11"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a7d4301ca443bc0e0a2761d4592515e027e1bfa964a07de6752bb0f714e0f2bf"
   end
 
   depends_on "python@3.8"

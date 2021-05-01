@@ -6,10 +6,9 @@ class Bombadillo < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e28036e78119313b05947c16b65c5d512a97b96c1a096470c2c38877bd396954" => :catalina
-    sha256 "dc47ed396c8a8c988d82b0a87f5c5c368d604f535ae5cc932ad941c22376073f" => :mojave
-    sha256 "e45a0bec0801f7719539f0ccda6ce7cfc76dccd346d6a09bb65a04f2c2238cd9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e28036e78119313b05947c16b65c5d512a97b96c1a096470c2c38877bd396954"
+    sha256 cellar: :any_skip_relocation, mojave:      "dc47ed396c8a8c988d82b0a87f5c5c368d604f535ae5cc932ad941c22376073f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e45a0bec0801f7719539f0ccda6ce7cfc76dccd346d6a09bb65a04f2c2238cd9"
   end
 
   depends_on "go" => :build
@@ -26,7 +25,7 @@ class Bombadillo < Formula
     r, w, pid = PTY.spawn("stty rows 80 cols 43 && XDG_CONFIG_HOME=#{config} #{cmd}")
     sleep 1
     w.write "q"
-    assert_match /Bombadillo is a non-web browser/, r.read
+    assert_match(/Bombadillo is a non-web browser/, r.read)
 
     status = PTY.check(pid)
     assert_not_nil status

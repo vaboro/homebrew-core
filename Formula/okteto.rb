@@ -6,10 +6,9 @@ class Okteto < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "505c1a79da06eb50f76cd67ee58721ca095f0418008bdc910b809ca7edca981a" => :catalina
-    sha256 "7bf004a9622ec82e7d073fddea7b2fb661c4bf35935f52f6d047c5ee06e20e25" => :mojave
-    sha256 "810219a2736be9d0b090d917c8d255b44dfcf6042d71fa97acf740282fd3962d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "505c1a79da06eb50f76cd67ee58721ca095f0418008bdc910b809ca7edca981a"
+    sha256 cellar: :any_skip_relocation, mojave:      "7bf004a9622ec82e7d073fddea7b2fb661c4bf35935f52f6d047c5ee06e20e25"
+    sha256 cellar: :any_skip_relocation, high_sierra: "810219a2736be9d0b090d917c8d255b44dfcf6042d71fa97acf740282fd3962d"
   end
 
   depends_on "go" => :build

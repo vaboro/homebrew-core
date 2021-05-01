@@ -6,9 +6,9 @@ class Fplll < Formula
   license "LGPL-2.1"
 
   bottle do
-    sha256 "9201144fd0ef7be11fd0f2ee3f860fc62efa4202c46be0f47540198b11f8202a" => :catalina
-    sha256 "099b4cc18fe92f4a19d0ba8113190524bd24814dc967addb6c149aca32ec90c7" => :mojave
-    sha256 "6f73bbf1c544b88e525c1fbd17594d4a77c5dc10b283d5308b6f816fcac9cfc9" => :high_sierra
+    sha256 catalina:    "9201144fd0ef7be11fd0f2ee3f860fc62efa4202c46be0f47540198b11f8202a"
+    sha256 mojave:      "099b4cc18fe92f4a19d0ba8113190524bd24814dc967addb6c149aca32ec90c7"
+    sha256 high_sierra: "6f73bbf1c544b88e525c1fbd17594d4a77c5dc10b283d5308b6f816fcac9cfc9"
   end
 
   depends_on "automake" => :build

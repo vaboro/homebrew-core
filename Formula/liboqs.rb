@@ -6,10 +6,9 @@ class Liboqs < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "f08fb2aefced27d1cc26680e50a1f0df0d87182f923135cd57900a5e3fc0beb8" => :catalina
-    sha256 "6a58d68654065e151ca045a81eb0c1e3e786696a84453b6c75aea4b2d449f66e" => :mojave
-    sha256 "47d203b377f2702041634aabe030ba786f466afb78b83bbe27a79b3aabcd9d49" => :high_sierra
+    sha256 cellar: :any, catalina:    "f08fb2aefced27d1cc26680e50a1f0df0d87182f923135cd57900a5e3fc0beb8"
+    sha256 cellar: :any, mojave:      "6a58d68654065e151ca045a81eb0c1e3e786696a84453b6c75aea4b2d449f66e"
+    sha256 cellar: :any, high_sierra: "47d203b377f2702041634aabe030ba786f466afb78b83bbe27a79b3aabcd9d49"
   end
 
   depends_on "cmake" => :build

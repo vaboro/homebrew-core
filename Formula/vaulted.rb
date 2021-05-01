@@ -7,10 +7,9 @@ class Vaulted < Formula
   head "https://github.com/miquella/vaulted.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6e28a27d6d1c24b2cd7d3ca0ff147a8309425dcd1d405861378bd40c191af5d2" => :catalina
-    sha256 "246a6e46d12ceb79f4406802a72860a4d4e381bf34b8228c10773898b33dbb3e" => :mojave
-    sha256 "24f80eafb9d738391a99724915f07a546ebc822d5e3ab725fc90bfa690cc4ee7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6e28a27d6d1c24b2cd7d3ca0ff147a8309425dcd1d405861378bd40c191af5d2"
+    sha256 cellar: :any_skip_relocation, mojave:      "246a6e46d12ceb79f4406802a72860a4d4e381bf34b8228c10773898b33dbb3e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "24f80eafb9d738391a99724915f07a546ebc822d5e3ab725fc90bfa690cc4ee7"
   end
 
   depends_on "go" => :build

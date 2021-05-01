@@ -8,10 +8,9 @@ class B2Tools < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "44a0e9dd53f7711359859cf75fcadfd741cb15f413929589923770a7c5094358" => :catalina
-    sha256 "6153a57ec789a18a9566d692213d814199b9239019f63a3edcb5fe8ccaa05a1d" => :mojave
-    sha256 "50f86e78975ab3401e41ddcc6259e94eced3782df36c978b4b4ef7c169fc83dc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "44a0e9dd53f7711359859cf75fcadfd741cb15f413929589923770a7c5094358"
+    sha256 cellar: :any_skip_relocation, mojave:      "6153a57ec789a18a9566d692213d814199b9239019f63a3edcb5fe8ccaa05a1d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "50f86e78975ab3401e41ddcc6259e94eced3782df36c978b4b4ef7c169fc83dc"
   end
 
   depends_on "python@3.8"

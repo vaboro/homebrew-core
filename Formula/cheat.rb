@@ -6,10 +6,9 @@ class Cheat < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "78ed17a3a87db6a169c5c984ccb7d4083641679f871e208879b45962511a0a5b" => :catalina
-    sha256 "22a32893fb8c620146fb784454c0337116b174d62d085b7e3050a5bc5981ef5a" => :mojave
-    sha256 "d60d58f26760c6d9c125c02a8d8238cc159e040f3bf07d2b016f6b4dbfc5ba9d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "78ed17a3a87db6a169c5c984ccb7d4083641679f871e208879b45962511a0a5b"
+    sha256 cellar: :any_skip_relocation, mojave:      "22a32893fb8c620146fb784454c0337116b174d62d085b7e3050a5bc5981ef5a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d60d58f26760c6d9c125c02a8d8238cc159e040f3bf07d2b016f6b4dbfc5ba9d"
   end
 
   depends_on "go" => :build

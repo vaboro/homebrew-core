@@ -10,14 +10,13 @@ class Markdown < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "35864422386d1390de813462b697b604813bc3a7caac7bf3fd172335e25b2a55" => :catalina
-    sha256 "343d406a2a4838499afa96395733e0d61f91c725a4693e6c5b3c49293e5297e8" => :mojave
-    sha256 "c7b43e96e9967731f9f9395152dca0d1535eb270a953aeccfe24dc99d3941f97" => :high_sierra
-    sha256 "47715f7beb1f434a5d52e6977c7f6ad584be7b0d970dacb00ef5965bd162858d" => :sierra
-    sha256 "a5b025bc09c8b274507cfc5c86da6350560477f24ce109dd5a79f2dafa97d805" => :el_capitan
-    sha256 "5e1b8b5388f1b4ceefe3fae528ae83e2fa3f9ed9f27668e8faded36b9ec3274e" => :yosemite
-    sha256 "66fffda1a29fd9e2dcddcb52fb9606f21d897bf4680583626b612a95d27b1e04" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "35864422386d1390de813462b697b604813bc3a7caac7bf3fd172335e25b2a55"
+    sha256 cellar: :any_skip_relocation, mojave:      "343d406a2a4838499afa96395733e0d61f91c725a4693e6c5b3c49293e5297e8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c7b43e96e9967731f9f9395152dca0d1535eb270a953aeccfe24dc99d3941f97"
+    sha256 cellar: :any_skip_relocation, sierra:      "47715f7beb1f434a5d52e6977c7f6ad584be7b0d970dacb00ef5965bd162858d"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "a5b025bc09c8b274507cfc5c86da6350560477f24ce109dd5a79f2dafa97d805"
+    sha256 cellar: :any_skip_relocation, yosemite:    "5e1b8b5388f1b4ceefe3fae528ae83e2fa3f9ed9f27668e8faded36b9ec3274e"
+    sha256 cellar: :any_skip_relocation, mavericks:   "66fffda1a29fd9e2dcddcb52fb9606f21d897bf4680583626b612a95d27b1e04"
   end
 
   conflicts_with "discount", because: "both install `markdown` binaries"

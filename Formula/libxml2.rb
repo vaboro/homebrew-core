@@ -13,10 +13,9 @@ class Libxml2 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "bab6280370d9e7171d34e79ed1c1caa9b0b772ef7a1568f448a654255a505d5e" => :catalina
-    sha256 "7185d4c64a25e546eaf525134210bfb21edffb0bfa93c122e4696ab3788cfbf3" => :mojave
-    sha256 "bff3e730b9531c1b5088d49633a740eb27938961dc762b7de344e06d85ea20ee" => :high_sierra
+    sha256 cellar: :any, catalina:    "bab6280370d9e7171d34e79ed1c1caa9b0b772ef7a1568f448a654255a505d5e"
+    sha256 cellar: :any, mojave:      "7185d4c64a25e546eaf525134210bfb21edffb0bfa93c122e4696ab3788cfbf3"
+    sha256 cellar: :any, high_sierra: "bff3e730b9531c1b5088d49633a740eb27938961dc762b7de344e06d85ea20ee"
   end
 
   head do

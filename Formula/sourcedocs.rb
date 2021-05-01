@@ -6,9 +6,8 @@ class Sourcedocs < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9bdc9f8b2d42d2f66251a5f201ff4d978dd96030d726dc924e3c1928b70bf91a" => :catalina
-    sha256 "d0f79030518567fa2fee422afa683015191440dfca26b4e3a5718b79502a9d49" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "9bdc9f8b2d42d2f66251a5f201ff4d978dd96030d726dc924e3c1928b70bf91a"
+    sha256 cellar: :any_skip_relocation, mojave:   "d0f79030518567fa2fee422afa683015191440dfca26b4e3a5718b79502a9d49"
   end
 
   depends_on xcode: ["10.3", :build, :test]

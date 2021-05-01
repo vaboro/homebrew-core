@@ -6,10 +6,9 @@ class LibpqxxAT6 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "a6c097c77ca535f5714cb0fc2096a4ac382f241f9878a8253b37cb8bd3eb5188" => :catalina
-    sha256 "a983077fe9a2cb76ed3189781724353d08861c27a51ebdd697df25a065aefe95" => :mojave
-    sha256 "22b2fe737dd2546276ce7bc1679bc3bab7fb0070ef96a60e649af488d5ee7aab" => :high_sierra
+    sha256 cellar: :any, catalina:    "a6c097c77ca535f5714cb0fc2096a4ac382f241f9878a8253b37cb8bd3eb5188"
+    sha256 cellar: :any, mojave:      "a983077fe9a2cb76ed3189781724353d08861c27a51ebdd697df25a065aefe95"
+    sha256 cellar: :any, high_sierra: "22b2fe737dd2546276ce7bc1679bc3bab7fb0070ef96a60e649af488d5ee7aab"
   end
 
   keg_only :versioned_formula

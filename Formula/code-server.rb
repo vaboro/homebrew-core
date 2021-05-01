@@ -10,10 +10,9 @@ class CodeServer < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "79ec8cadf71c1b23a92b552888a971b8cc6055a6bd25b34b74e1ab90509fd08f" => :catalina
-    sha256 "437c96b5ab795a11341025a3d0640b289636ae2ef6f382c7d91cb4112d6f168c" => :mojave
-    sha256 "02d2d1c07b5650a4a7786d09f75a7c988a51dd20dd3bec49f0bb4a6ba6cfa9f7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "79ec8cadf71c1b23a92b552888a971b8cc6055a6bd25b34b74e1ab90509fd08f"
+    sha256 cellar: :any_skip_relocation, mojave:      "437c96b5ab795a11341025a3d0640b289636ae2ef6f382c7d91cb4112d6f168c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "02d2d1c07b5650a4a7786d09f75a7c988a51dd20dd3bec49f0bb4a6ba6cfa9f7"
   end
 
   depends_on "python@3.8" => :build

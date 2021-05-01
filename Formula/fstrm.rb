@@ -6,10 +6,9 @@ class Fstrm < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "e84d0b8f2c27683c16e0d168a94b355cc2dcdfae2b118b943b3853579f85a829" => :catalina
-    sha256 "d20520e5164f271d97214c4645186996ee926c3847d59e8236e6dd643edec13b" => :mojave
-    sha256 "8a373443cef458c2384efa537867eba87a19f58a413f052dcf0ee4c6636a379b" => :high_sierra
+    sha256 cellar: :any, catalina:    "e84d0b8f2c27683c16e0d168a94b355cc2dcdfae2b118b943b3853579f85a829"
+    sha256 cellar: :any, mojave:      "d20520e5164f271d97214c4645186996ee926c3847d59e8236e6dd643edec13b"
+    sha256 cellar: :any, high_sierra: "8a373443cef458c2384efa537867eba87a19f58a413f052dcf0ee4c6636a379b"
   end
 
   head do

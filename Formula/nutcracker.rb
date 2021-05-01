@@ -7,14 +7,13 @@ class Nutcracker < Formula
   head "https://github.com/twitter/twemproxy.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ffac57428129de09b69d1cff52add5e369dc61a7ff70882c44bebe05d1705ae0" => :catalina
-    sha256 "e089d40fa4c225d6d8a2f5d7aec22d073fabdcd99d38ad3f99fd292fed534d8a" => :mojave
-    sha256 "8d4ab58ba04b1c0622915d080a4b12e6c70b2c338df40ad357b217a6a8ac43e5" => :high_sierra
-    sha256 "4987e6e2ef6fffb2fe05a65795cb513d628edda38f0e0ee69cea05159d16a4b5" => :sierra
-    sha256 "1f3714c4459185e9002ea87f4fc4a4de429f028df957615ee9876c61a7c89a6d" => :el_capitan
-    sha256 "73698710fa026b8585665a9b730626df444dabe6acf118cc4f0c2f57c27e214c" => :yosemite
-    sha256 "8e66691c40fe71934bb5eab848c61ef07f8f427774e253c0065eb64cc5410f9b" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "ffac57428129de09b69d1cff52add5e369dc61a7ff70882c44bebe05d1705ae0"
+    sha256 cellar: :any_skip_relocation, mojave:      "e089d40fa4c225d6d8a2f5d7aec22d073fabdcd99d38ad3f99fd292fed534d8a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8d4ab58ba04b1c0622915d080a4b12e6c70b2c338df40ad357b217a6a8ac43e5"
+    sha256 cellar: :any_skip_relocation, sierra:      "4987e6e2ef6fffb2fe05a65795cb513d628edda38f0e0ee69cea05159d16a4b5"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "1f3714c4459185e9002ea87f4fc4a4de429f028df957615ee9876c61a7c89a6d"
+    sha256 cellar: :any_skip_relocation, yosemite:    "73698710fa026b8585665a9b730626df444dabe6acf118cc4f0c2f57c27e214c"
+    sha256 cellar: :any_skip_relocation, mavericks:   "8e66691c40fe71934bb5eab848c61ef07f8f427774e253c0065eb64cc5410f9b"
   end
 
   depends_on "autoconf" => :build

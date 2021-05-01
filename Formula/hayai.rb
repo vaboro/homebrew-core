@@ -6,12 +6,11 @@ class Hayai < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0a63325782e38d9ea125ec2948604856a2d0a95a89607bbe3eb8730ca5034009" => :catalina
-    sha256 "083c25ed21eb21a54f72ea2957b47e6444278aaa996143c2788e434fb19eaf0c" => :mojave
-    sha256 "c28fb50fbaed6281dafa6b8ec7b2cafc45fe3255bcc57a6678dbac5da67e4dca" => :high_sierra
-    sha256 "d2702e169ba0c8a8b79f3df6f83fc2268b95b0b0d2c2c4d11387ea99011800f4" => :sierra
-    sha256 "0a9089377b36a1f719966add1fcd01780e27e250db062affb818236e9b8161c6" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "0a63325782e38d9ea125ec2948604856a2d0a95a89607bbe3eb8730ca5034009"
+    sha256 cellar: :any_skip_relocation, mojave:      "083c25ed21eb21a54f72ea2957b47e6444278aaa996143c2788e434fb19eaf0c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c28fb50fbaed6281dafa6b8ec7b2cafc45fe3255bcc57a6678dbac5da67e4dca"
+    sha256 cellar: :any_skip_relocation, sierra:      "d2702e169ba0c8a8b79f3df6f83fc2268b95b0b0d2c2c4d11387ea99011800f4"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "0a9089377b36a1f719966add1fcd01780e27e250db062affb818236e9b8161c6"
   end
 
   depends_on "cmake" => :build

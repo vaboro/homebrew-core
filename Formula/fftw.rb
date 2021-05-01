@@ -11,10 +11,9 @@ class Fftw < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e021f210b7f8a785b86b82fe191408d783def6e6baec192e8133d703c51bf0de" => :catalina
-    sha256 "d4af1ee10e2eb5784874cac832f10d3e8d3010962e31102df7c6bffc34783d92" => :mojave
-    sha256 "64d050b8736eed9b127f175d39d4acc93c1ec960b096aee756bbb5ea906b6b82" => :high_sierra
+    sha256 cellar: :any, catalina:    "e021f210b7f8a785b86b82fe191408d783def6e6baec192e8133d703c51bf0de"
+    sha256 cellar: :any, mojave:      "d4af1ee10e2eb5784874cac832f10d3e8d3010962e31102df7c6bffc34783d92"
+    sha256 cellar: :any, high_sierra: "64d050b8736eed9b127f175d39d4acc93c1ec960b096aee756bbb5ea906b6b82"
   end
 
   depends_on "gcc"

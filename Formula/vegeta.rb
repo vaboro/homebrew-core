@@ -6,10 +6,9 @@ class Vegeta < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f93a70561ffc7d97fb58638e1555148058036f1b65ee3b0891352346a256c8d5" => :catalina
-    sha256 "f3496b02858387a32051d015677ca417c04251b2a98b6d36d8611836908dd23e" => :mojave
-    sha256 "d03417e5f8bf936b8fa726f6ec25607809db1e284a4ca98ebf884fea3825ec49" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f93a70561ffc7d97fb58638e1555148058036f1b65ee3b0891352346a256c8d5"
+    sha256 cellar: :any_skip_relocation, mojave:      "f3496b02858387a32051d015677ca417c04251b2a98b6d36d8611836908dd23e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d03417e5f8bf936b8fa726f6ec25607809db1e284a4ca98ebf884fea3825ec49"
   end
 
   depends_on "go" => :build

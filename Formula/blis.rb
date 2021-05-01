@@ -7,10 +7,9 @@ class Blis < Formula
   head "https://github.com/flame/blis.git"
 
   bottle do
-    cellar :any
-    sha256 "8ac1fb34cdaad5dfdac2e3ac454de08e7ff2a165571554f0bfd665ab2e5f2a71" => :catalina
-    sha256 "2ab25f7e90a115e604a5233420b190c7ab60c73642f6eedc3b519f96d20c7bc2" => :mojave
-    sha256 "4f19883538758550e8a0ce958d661e186b42cd8af66d6671e3589c30a6e96e14" => :high_sierra
+    sha256 cellar: :any, catalina:    "8ac1fb34cdaad5dfdac2e3ac454de08e7ff2a165571554f0bfd665ab2e5f2a71"
+    sha256 cellar: :any, mojave:      "2ab25f7e90a115e604a5233420b190c7ab60c73642f6eedc3b519f96d20c7bc2"
+    sha256 cellar: :any, high_sierra: "4f19883538758550e8a0ce958d661e186b42cd8af66d6671e3589c30a6e96e14"
   end
 
   def install

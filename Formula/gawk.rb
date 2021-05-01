@@ -11,9 +11,9 @@ class Gawk < Formula
   end
 
   bottle do
-    sha256 "581b48f781104f0c3233edc30c47628f4eec8c2f1f2e191151f367ce26ec538a" => :catalina
-    sha256 "ddbb56c56d66f375147769a27301e2ffd099abdc07f5dfc16389af22028e185b" => :mojave
-    sha256 "eac1b8c97c682c32a1b6c589818aa8ffb8f09630258ed6f215c882368540713e" => :high_sierra
+    sha256 catalina:    "581b48f781104f0c3233edc30c47628f4eec8c2f1f2e191151f367ce26ec538a"
+    sha256 mojave:      "ddbb56c56d66f375147769a27301e2ffd099abdc07f5dfc16389af22028e185b"
+    sha256 high_sierra: "eac1b8c97c682c32a1b6c589818aa8ffb8f09630258ed6f215c882368540713e"
   end
 
   depends_on "gettext"

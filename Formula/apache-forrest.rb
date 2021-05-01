@@ -12,11 +12,10 @@ class ApacheForrest < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132" => :catalina
-    sha256 "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132" => :mojave
-    sha256 "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132"
+    sha256 cellar: :any_skip_relocation, mojave:      "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132"
+    sha256 cellar: :any_skip_relocation, high_sierra: "53aed268e732c00ae5d57d4b98287c59f12c124f5a1b925d02aefacdc6dc5132"
   end
 
   depends_on "openjdk"

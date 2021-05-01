@@ -7,10 +7,9 @@ class RedisAT40 < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a3da3a3af97a3ca5c36c2399defd06e6cbbd0b105980b2d626f224e384adc017" => :catalina
-    sha256 "3cbcec571f8c420f2f6daacbef87ed462229f31e4d189be36bee7795a25fc050" => :mojave
-    sha256 "e2c6a35a448d8a5bc23182d07a499e7005681d522131253d9087de9c091ba8f5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a3da3a3af97a3ca5c36c2399defd06e6cbbd0b105980b2d626f224e384adc017"
+    sha256 cellar: :any_skip_relocation, mojave:      "3cbcec571f8c420f2f6daacbef87ed462229f31e4d189be36bee7795a25fc050"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e2c6a35a448d8a5bc23182d07a499e7005681d522131253d9087de9c091ba8f5"
   end
 
   keg_only :versioned_formula
@@ -26,7 +25,7 @@ class RedisAT40 < Formula
     inreplace "redis.conf" do |s|
       s.gsub! "/var/run/redis.pid", var/"run/redis.pid"
       s.gsub! "dir ./", "dir #{var}/db/redis/"
-      s.sub!  /^bind .*$/, "bind 127.0.0.1 ::1"
+      s.sub!(/^bind .*$/, "bind 127.0.0.1 ::1")
     end
 
     etc.install "redis.conf"

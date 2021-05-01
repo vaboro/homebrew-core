@@ -7,11 +7,10 @@ class Pbc < Formula
   head "https://repo.or.cz/pbc.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "83d464696ab79f463ec2dc930cbd9c3ecbdedde5c578e70a4994b2cd8fec1f6d" => :catalina
-    sha256 "85855bfe6dfe9a4fc0b0359f74aa7ea587283c1c724a6c4aee77972ecfc1d390" => :mojave
-    sha256 "adc712fd4cc68990b669922be5b8ab15e4d499176c09facb5b129c6d7c847262" => :high_sierra
+    sha256 cellar: :any, catalina:    "83d464696ab79f463ec2dc930cbd9c3ecbdedde5c578e70a4994b2cd8fec1f6d"
+    sha256 cellar: :any, mojave:      "85855bfe6dfe9a4fc0b0359f74aa7ea587283c1c724a6c4aee77972ecfc1d390"
+    sha256 cellar: :any, high_sierra: "adc712fd4cc68990b669922be5b8ab15e4d499176c09facb5b129c6d7c847262"
   end
 
   depends_on "gmp"

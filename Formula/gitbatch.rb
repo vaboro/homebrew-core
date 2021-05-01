@@ -6,10 +6,9 @@ class Gitbatch < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "58b204bd1779e99cade465f98457ec14cadaee9a3b65afe099245faba640da0c" => :catalina
-    sha256 "31d8b72293ceacef7d44beb203887ff80628cb5cd3b56a9f0b467704d153b261" => :mojave
-    sha256 "73fc219e77776b78635c672111736a1ce26f6f1afe0df4ce7c571341578cd1e9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "58b204bd1779e99cade465f98457ec14cadaee9a3b65afe099245faba640da0c"
+    sha256 cellar: :any_skip_relocation, mojave:      "31d8b72293ceacef7d44beb203887ff80628cb5cd3b56a9f0b467704d153b261"
+    sha256 cellar: :any_skip_relocation, high_sierra: "73fc219e77776b78635c672111736a1ce26f6f1afe0df4ce7c571341578cd1e9"
   end
 
   depends_on "go" => :build

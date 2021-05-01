@@ -11,10 +11,9 @@ class Clhep < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "8c8ce7164df92c63519e8d361f341ef848796cdd4087982e507f32d06952afbf" => :catalina
-    sha256 "fda146a801791ab47ea095d0ba4d201de7fe52a23b90626e56f05aaeaf181a8f" => :mojave
-    sha256 "7cd39923fcc37640a5f8bf841252c1f914494443aa5c359a6aa68a6e57ee9282" => :high_sierra
+    sha256 cellar: :any, catalina:    "8c8ce7164df92c63519e8d361f341ef848796cdd4087982e507f32d06952afbf"
+    sha256 cellar: :any, mojave:      "fda146a801791ab47ea095d0ba4d201de7fe52a23b90626e56f05aaeaf181a8f"
+    sha256 cellar: :any, high_sierra: "7cd39923fcc37640a5f8bf841252c1f914494443aa5c359a6aa68a6e57ee9282"
   end
 
   head do

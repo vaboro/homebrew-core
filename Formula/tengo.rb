@@ -6,10 +6,9 @@ class Tengo < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ff566e05a3ad3a9c701a120bdeaab1d827b88fd080b5cff2414f126f81bb9aa7" => :catalina
-    sha256 "32509cb1d3000c8b81ef23aee8d45b7e9d0bd323813aec71274917e62cf1d548" => :mojave
-    sha256 "937265ab2612c87d48a6277d7ef62e17395f427faaf1f5da4951a1ad12c427ea" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ff566e05a3ad3a9c701a120bdeaab1d827b88fd080b5cff2414f126f81bb9aa7"
+    sha256 cellar: :any_skip_relocation, mojave:      "32509cb1d3000c8b81ef23aee8d45b7e9d0bd323813aec71274917e62cf1d548"
+    sha256 cellar: :any_skip_relocation, high_sierra: "937265ab2612c87d48a6277d7ef62e17395f427faaf1f5da4951a1ad12c427ea"
   end
 
   depends_on "go" => :build

@@ -8,10 +8,9 @@ class Serverless < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e1ddca4a669e569f107f5ae6d768f764738d1389eaebd1f6292e894236261ac5" => :catalina
-    sha256 "d5c9b217e5b89c3691bfcaa1dfdefe8d53781ef5480f4d89c33e6f89b9d9e807" => :mojave
-    sha256 "4d47a09d39097c2bd43678f3dc880799dcbe4a8256afcc4407edaf982bf06da4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e1ddca4a669e569f107f5ae6d768f764738d1389eaebd1f6292e894236261ac5"
+    sha256 cellar: :any_skip_relocation, mojave:      "d5c9b217e5b89c3691bfcaa1dfdefe8d53781ef5480f4d89c33e6f89b9d9e807"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4d47a09d39097c2bd43678f3dc880799dcbe4a8256afcc4407edaf982bf06da4"
   end
 
   depends_on "node"

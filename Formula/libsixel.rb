@@ -5,10 +5,9 @@ class Libsixel < Formula
   sha256 "9f6dcaf40d250614ce0121b153949c327c46a958cfd2e47750d8788b7ed28e6a"
 
   bottle do
-    cellar :any
-    sha256 "520fa6d77af3c6cc84fb84b1a5b8797bb6e44396b70ad7654eb3362d2174d0ab" => :catalina
-    sha256 "716d90122f113bd1c6b2ad7e872a476923981b4c26830c94ca68724437e860b1" => :mojave
-    sha256 "9e061ce67b22c8ad8760bccc7e954ee46852285bc078087712538e102ce8215c" => :high_sierra
+    sha256 cellar: :any, catalina:    "520fa6d77af3c6cc84fb84b1a5b8797bb6e44396b70ad7654eb3362d2174d0ab"
+    sha256 cellar: :any, mojave:      "716d90122f113bd1c6b2ad7e872a476923981b4c26830c94ca68724437e860b1"
+    sha256 cellar: :any, high_sierra: "9e061ce67b22c8ad8760bccc7e954ee46852285bc078087712538e102ce8215c"
   end
 
   depends_on "jpeg"

@@ -6,10 +6,9 @@ class Yaz < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "3e99cfd562ae262f299752a7d92dbad3f9b67dd37726e90b1109684f0deac7d1" => :catalina
-    sha256 "0fb86a32e27613df4ef17bc76556364a85d220c9d044f6f2c515ca0bb2e94c6a" => :mojave
-    sha256 "a3dd5357b88bd5780a90dc1fb51c12943d3a8ba6ce69073fb262116c9b050b3e" => :high_sierra
+    sha256 cellar: :any, catalina:    "3e99cfd562ae262f299752a7d92dbad3f9b67dd37726e90b1109684f0deac7d1"
+    sha256 cellar: :any, mojave:      "0fb86a32e27613df4ef17bc76556364a85d220c9d044f6f2c515ca0bb2e94c6a"
+    sha256 cellar: :any, high_sierra: "a3dd5357b88bd5780a90dc1fb51c12943d3a8ba6ce69073fb262116c9b050b3e"
   end
 
   head do

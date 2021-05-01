@@ -7,10 +7,9 @@ class SimpleAmqpClient < Formula
   head "https://github.com/alanxz/SimpleAmqpClient.git"
 
   bottle do
-    cellar :any
-    sha256 "97ceed4ae134cb5f01dc3c5efdafaccf3374aee7c748217eba9bb8624edb74dc" => :catalina
-    sha256 "42bf1dcae157dc5e3ad6c274cfff63e0599d1c1fa2ed634696a26ec499e6b18f" => :mojave
-    sha256 "0df2d53228ce5b30d670a67b36b8440158d4773c55c206456fc2762c7e820cec" => :high_sierra
+    sha256 cellar: :any, catalina:    "97ceed4ae134cb5f01dc3c5efdafaccf3374aee7c748217eba9bb8624edb74dc"
+    sha256 cellar: :any, mojave:      "42bf1dcae157dc5e3ad6c274cfff63e0599d1c1fa2ed634696a26ec499e6b18f"
+    sha256 cellar: :any, high_sierra: "0df2d53228ce5b30d670a67b36b8440158d4773c55c206456fc2762c7e820cec"
   end
 
   depends_on "cmake" => :build

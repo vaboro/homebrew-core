@@ -6,9 +6,8 @@ class Macosvpn < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8a2d3103fe6c5c674b9180af8c1c0e15e0583874a3986e84ac3a29cc76227329" => :catalina
-    sha256 "e31d705b812175220fef63839c6310ae3ee28e2e8d61dc04bdb2972dd970f513" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "8a2d3103fe6c5c674b9180af8c1c0e15e0583874a3986e84ac3a29cc76227329"
+    sha256 cellar: :any_skip_relocation, mojave:   "e31d705b812175220fef63839c6310ae3ee28e2e8d61dc04bdb2972dd970f513"
   end
 
   depends_on xcode: ["11.1", :build]

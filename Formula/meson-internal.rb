@@ -9,10 +9,9 @@ class MesonInternal < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2081b7b2d37614f170b2b55855d77bd2788922a02103da66f2d0d33952541a3f" => :catalina
-    sha256 "c00f702a075153263b34ade26d43a9a3a98673b6b8d30ce7d17e36581b16f2bf" => :mojave
-    sha256 "e5c4655a955250b17edc8fbd17a3bd56b5a99d1fc34db303f2bfa684a2c76167" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2081b7b2d37614f170b2b55855d77bd2788922a02103da66f2d0d33952541a3f"
+    sha256 cellar: :any_skip_relocation, mojave:      "c00f702a075153263b34ade26d43a9a3a98673b6b8d30ce7d17e36581b16f2bf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e5c4655a955250b17edc8fbd17a3bd56b5a99d1fc34db303f2bfa684a2c76167"
   end
 
   keg_only <<~EOS

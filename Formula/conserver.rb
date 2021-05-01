@@ -11,10 +11,9 @@ class Conserver < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ce9d095a9e435480fe4a8eb2e73c0732fe0d7eda89aafc98e0599453eaa8f626" => :catalina
-    sha256 "70283393748aaf6397ea4b0bcdda5f7192597da2093e8fe0c21fcbc89cd5e900" => :mojave
-    sha256 "e5de5fdc13fd75c8ab4cb11f0a86408b63b2683ac9aacf573d7df0500dc38210" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ce9d095a9e435480fe4a8eb2e73c0732fe0d7eda89aafc98e0599453eaa8f626"
+    sha256 cellar: :any_skip_relocation, mojave:      "70283393748aaf6397ea4b0bcdda5f7192597da2093e8fe0c21fcbc89cd5e900"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e5de5fdc13fd75c8ab4cb11f0a86408b63b2683ac9aacf573d7df0500dc38210"
   end
 
   def install

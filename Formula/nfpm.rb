@@ -7,10 +7,9 @@ class Nfpm < Formula
   head "https://github.com/goreleaser/nfpm.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9eca2f8f1e72d5d22290a512f70bf3f2a8d2fce04763df9f546990a5cab6c578" => :catalina
-    sha256 "cc2a9cab6f92a4f49b15ce365e2980a66ceadcc634222b66f35673fc8e3dc8e6" => :mojave
-    sha256 "ccbbf75e6160fbf9a0dbf1e7b425f20be7a879dc89c68ef9cdf2ad2e0cc14817" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9eca2f8f1e72d5d22290a512f70bf3f2a8d2fce04763df9f546990a5cab6c578"
+    sha256 cellar: :any_skip_relocation, mojave:      "cc2a9cab6f92a4f49b15ce365e2980a66ceadcc634222b66f35673fc8e3dc8e6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ccbbf75e6160fbf9a0dbf1e7b425f20be7a879dc89c68ef9cdf2ad2e0cc14817"
   end
 
   depends_on "go" => :build

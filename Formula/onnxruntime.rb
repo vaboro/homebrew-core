@@ -7,10 +7,9 @@ class Onnxruntime < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "8523ac42679c8d4ab9b7224468020781a2654abad851d7e95a3d570cd29456c2" => :catalina
-    sha256 "c9f06b98661dfba06e3bdebc1743274f1a77c0af78f3f7b5290c01f900e5ee2d" => :mojave
-    sha256 "21055d5a282b4c9501d3623a6d3b5dae04954e6cf925fbdc93d4d9723d634e7d" => :high_sierra
+    sha256 cellar: :any, catalina:    "8523ac42679c8d4ab9b7224468020781a2654abad851d7e95a3d570cd29456c2"
+    sha256 cellar: :any, mojave:      "c9f06b98661dfba06e3bdebc1743274f1a77c0af78f3f7b5290c01f900e5ee2d"
+    sha256 cellar: :any, high_sierra: "21055d5a282b4c9501d3623a6d3b5dae04954e6cf925fbdc93d4d9723d634e7d"
   end
 
   depends_on "cmake" => :build

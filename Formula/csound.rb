@@ -14,9 +14,9 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 "d0d9f99b5afdecb3df96968a547b907862c721c6ef903d4681df0036d1f5ac07" => :catalina
-    sha256 "b78a4d843e44cb5fa29122647abf2fa544e944b22e3b6637dc8e665e17db14d5" => :mojave
-    sha256 "9393b139b0ca4bcef998414750066c8539bc37aa299d962407f5e5cf5c712511" => :high_sierra
+    sha256 catalina:    "d0d9f99b5afdecb3df96968a547b907862c721c6ef903d4681df0036d1f5ac07"
+    sha256 mojave:      "b78a4d843e44cb5fa29122647abf2fa544e944b22e3b6637dc8e665e17db14d5"
+    sha256 high_sierra: "9393b139b0ca4bcef998414750066c8539bc37aa299d962407f5e5cf5c712511"
   end
 
   depends_on "asio" => :build
@@ -137,9 +137,9 @@ class Csound < Formula
     ENV["SADIR"] = frameworks/"CsoundLib64.framework/Versions/Current/samples"
 
     output = shell_output "#{bin}/csound test.orc test.sco 2>&1"
-    assert_match /^hello, world$/, output
-    assert_match /^rtaudio:/, output
-    assert_match /^rtmidi:/, output
+    assert_match(/^hello, world$/, output)
+    assert_match(/^rtaudio:/, output)
+    assert_match(/^rtmidi:/, output)
 
     assert_predicate testpath/"test.aif", :exist?
     assert_predicate testpath/"test.h5", :exist?

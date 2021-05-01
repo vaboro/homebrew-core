@@ -13,10 +13,9 @@ class KeepkeyAgent < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d63b20fa73ca477c96862ff34e60bd54ff52ba88408212960dd4a772e8fa5643" => :catalina
-    sha256 "143afaf234c996ac776b3eb09cf271bdf8d70f91ce17de9dfb6f60b08f6dfe98" => :mojave
-    sha256 "90f8bed92a8c541ae0d3b4ba75f03094249d2081abd92be51a90feb4dbf2e401" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d63b20fa73ca477c96862ff34e60bd54ff52ba88408212960dd4a772e8fa5643"
+    sha256 cellar: :any_skip_relocation, mojave:      "143afaf234c996ac776b3eb09cf271bdf8d70f91ce17de9dfb6f60b08f6dfe98"
+    sha256 cellar: :any_skip_relocation, high_sierra: "90f8bed92a8c541ae0d3b4ba75f03094249d2081abd92be51a90feb4dbf2e401"
   end
 
   depends_on "python@3.8"

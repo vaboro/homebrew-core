@@ -6,10 +6,9 @@ class Ccheck < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "edc3a16f072eeca5647916de805bc80a753d00548b860a052f670b4698464632" => :catalina
-    sha256 "4afea0fa685001ecf5777cb37975074cc382f2282bfe7fbaf9543c3b520272df" => :mojave
-    sha256 "564171a220f9f031bd04044319b1e99e0a294208b3e804513ee0fe607525fe81" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "edc3a16f072eeca5647916de805bc80a753d00548b860a052f670b4698464632"
+    sha256 cellar: :any_skip_relocation, mojave:      "4afea0fa685001ecf5777cb37975074cc382f2282bfe7fbaf9543c3b520272df"
+    sha256 cellar: :any_skip_relocation, high_sierra: "564171a220f9f031bd04044319b1e99e0a294208b3e804513ee0fe607525fe81"
   end
 
   depends_on "go" => :build

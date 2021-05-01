@@ -13,9 +13,9 @@ class RakudoStar < Formula
 
   bottle do
     rebuild 1
-    sha256 "3b278aad10dae56ebb623fecdc5cd8e044d1bb23021a48e4c4428554674cb89e" => :catalina
-    sha256 "c0ad291ef64244dec178ecb1c878ca8e921123c70e408b8f8f96dc64d2364248" => :mojave
-    sha256 "0938d963dc23119a1c4a2fa976d4b870f81d744c41986f122aad15858c0b9717" => :high_sierra
+    sha256 catalina:    "3b278aad10dae56ebb623fecdc5cd8e044d1bb23021a48e4c4428554674cb89e"
+    sha256 mojave:      "c0ad291ef64244dec178ecb1c878ca8e921123c70e408b8f8f96dc64d2364248"
+    sha256 high_sierra: "0938d963dc23119a1c4a2fa976d4b870f81d744c41986f122aad15858c0b9717"
   end
 
   depends_on "gmp"

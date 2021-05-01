@@ -7,10 +7,9 @@ class Rsnapshot < Formula
   head "https://github.com/rsnapshot/rsnapshot.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74" => :catalina
-    sha256 "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74" => :mojave
-    sha256 "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74"
+    sha256 cellar: :any_skip_relocation, mojave:      "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e195b17e2c28a787e6bc183c3f57397256fba91c8d5c490f3c24576033d39a74"
   end
 
   uses_from_macos "rsync" => :build

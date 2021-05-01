@@ -10,9 +10,9 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 "99c553658a5410e74a836b248b6a4fecadc08c40faef552f4bca7eed4d7ad60c" => :catalina
-    sha256 "3d1b72f69ac954e32acd44720259dcea17fafd64003bb6482aeb6b8713fe6d52" => :mojave
-    sha256 "00948b264bddee07a9dc275534e6316af318c5c1fe8196117fc2adb628352f33" => :high_sierra
+    sha256 catalina:    "99c553658a5410e74a836b248b6a4fecadc08c40faef552f4bca7eed4d7ad60c"
+    sha256 mojave:      "3d1b72f69ac954e32acd44720259dcea17fafd64003bb6482aeb6b8713fe6d52"
+    sha256 high_sierra: "00948b264bddee07a9dc275534e6316af318c5c1fe8196117fc2adb628352f33"
   end
 
   head do

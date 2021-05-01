@@ -8,11 +8,10 @@ class Choose < Formula
   head "https://github.com/geier/choose.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "add76ddd5165ad17bfc784dff7237777eac7ee898379bd55d76228e6f6897d6d" => :catalina
-    sha256 "74170f2582ab4a29bffcc34583017f97f39c5b600a5f5cfebacd6d66ecd5c818" => :mojave
-    sha256 "388b64e8072a54f01006ab9cad297789eda36fe0bec83b45759cfe80dbf8cb2c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "add76ddd5165ad17bfc784dff7237777eac7ee898379bd55d76228e6f6897d6d"
+    sha256 cellar: :any_skip_relocation, mojave:      "74170f2582ab4a29bffcc34583017f97f39c5b600a5f5cfebacd6d66ecd5c818"
+    sha256 cellar: :any_skip_relocation, high_sierra: "388b64e8072a54f01006ab9cad297789eda36fe0bec83b45759cfe80dbf8cb2c"
   end
 
   depends_on "python@3.8"

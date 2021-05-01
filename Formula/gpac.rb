@@ -15,10 +15,9 @@ class Gpac < Formula
   head "https://github.com/gpac/gpac.git"
 
   bottle do
-    cellar :any
-    sha256 "615c346a9a86fd6fcdc1591bf6c5a634ae408e0ba39e11ec1b9e011488e278e3" => :catalina
-    sha256 "167c5e24935a3f4b118e0d931f1d3ed2a4101a39b5de85910ec7384ee13f95b1" => :mojave
-    sha256 "420874d6129c931e0dd7051bb2a91fd492f40456ade36259de611546f409f539" => :high_sierra
+    sha256 cellar: :any, catalina:    "615c346a9a86fd6fcdc1591bf6c5a634ae408e0ba39e11ec1b9e011488e278e3"
+    sha256 cellar: :any, mojave:      "167c5e24935a3f4b118e0d931f1d3ed2a4101a39b5de85910ec7384ee13f95b1"
+    sha256 cellar: :any, high_sierra: "420874d6129c931e0dd7051bb2a91fd492f40456ade36259de611546f409f539"
   end
 
   depends_on "pkg-config" => :build

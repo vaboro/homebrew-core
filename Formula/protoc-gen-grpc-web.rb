@@ -8,10 +8,9 @@ class ProtocGenGrpcWeb < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "21e02257e40195b66ec8c1e656774e8452be850b873334228338e010bd99bd9d" => :catalina
-    sha256 "42dc41e59794872cc06df660a812fa17222cf70c5204401a49ecd911055f38a9" => :mojave
-    sha256 "0f629b3b8c1023eb2e011bbdb6bbcf60b64ad0d7cac2f1127171bab8cc618405" => :high_sierra
+    sha256 cellar: :any, catalina:    "21e02257e40195b66ec8c1e656774e8452be850b873334228338e010bd99bd9d"
+    sha256 cellar: :any, mojave:      "42dc41e59794872cc06df660a812fa17222cf70c5204401a49ecd911055f38a9"
+    sha256 cellar: :any, high_sierra: "0f629b3b8c1023eb2e011bbdb6bbcf60b64ad0d7cac2f1127171bab8cc618405"
   end
 
   depends_on "cmake" => :build

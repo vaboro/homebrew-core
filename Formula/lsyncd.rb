@@ -6,11 +6,10 @@ class Lsyncd < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
     rebuild 3
-    sha256 "0debd8aa085f8cf12d26130566cc529db249898beabace826983703c6f0cce6d" => :catalina
-    sha256 "227ed2454a78e615514adfe0abf8958c05ebf15e4e276a628ead4b182b111ba0" => :mojave
-    sha256 "d99630522e8cff9064be87cc4539854c02b75eedf76f866e8d41e59afa6a8423" => :high_sierra
+    sha256 cellar: :any, catalina:    "0debd8aa085f8cf12d26130566cc529db249898beabace826983703c6f0cce6d"
+    sha256 cellar: :any, mojave:      "227ed2454a78e615514adfe0abf8958c05ebf15e4e276a628ead4b182b111ba0"
+    sha256 cellar: :any, high_sierra: "d99630522e8cff9064be87cc4539854c02b75eedf76f866e8d41e59afa6a8423"
   end
 
   depends_on "cmake" => :build

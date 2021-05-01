@@ -8,10 +8,9 @@ class Miniserve < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e8955f888b8c0828d741d5541a2ae6567704d78db99600d59b3d9a02dc571089" => :mojave
-    sha256 "8711ae0bb727abd3ed3ad8d1335275d26fbc473f19bacfbad76b10b5a0bf4efc" => :high_sierra
-    sha256 "a00b82cfce9fecd067b62ec3135a0e9cc59d3133f97ed3c0e7b815e4921c32d0" => :sierra
+    sha256 cellar: :any_skip_relocation, mojave:      "e8955f888b8c0828d741d5541a2ae6567704d78db99600d59b3d9a02dc571089"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8711ae0bb727abd3ed3ad8d1335275d26fbc473f19bacfbad76b10b5a0bf4efc"
+    sha256 cellar: :any_skip_relocation, sierra:      "a00b82cfce9fecd067b62ec3135a0e9cc59d3133f97ed3c0e7b815e4921c32d0"
   end
 
   depends_on "rust"

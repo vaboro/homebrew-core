@@ -6,10 +6,9 @@ class Ffsend < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5090ef4f96a88aa9b705f5b6b28976eed11a41d2ba075d3c15cf423e55bb98f2" => :catalina
-    sha256 "4368dfd715fe14f5112a55bb8dbdada32b397fd2915abf61940da7954c902138" => :mojave
-    sha256 "16afb60046195e5ba30e5ee737e6e85ddc1fa225b8912bbb057e76c81e36be1a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5090ef4f96a88aa9b705f5b6b28976eed11a41d2ba075d3c15cf423e55bb98f2"
+    sha256 cellar: :any_skip_relocation, mojave:      "4368dfd715fe14f5112a55bb8dbdada32b397fd2915abf61940da7954c902138"
+    sha256 cellar: :any_skip_relocation, high_sierra: "16afb60046195e5ba30e5ee737e6e85ddc1fa225b8912bbb057e76c81e36be1a"
   end
 
   depends_on "rust" => :build

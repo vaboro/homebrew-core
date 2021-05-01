@@ -13,10 +13,9 @@ class Pympress < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0882199094438644ae2af8e60ea55f02272990cca88b4ae0cbcfbabc9a68465b" => :catalina
-    sha256 "7594889ecb2cf373356f01c1eb4e56573ba26bd50fd5ed0de5ece83d75f1adca" => :mojave
-    sha256 "e6634bc9a8213054574d6be0814ef0b8faf6209e20aafb721753418a718f68af" => :high_sierra
+    sha256 cellar: :any, catalina:    "0882199094438644ae2af8e60ea55f02272990cca88b4ae0cbcfbabc9a68465b"
+    sha256 cellar: :any, mojave:      "7594889ecb2cf373356f01c1eb4e56573ba26bd50fd5ed0de5ece83d75f1adca"
+    sha256 cellar: :any, high_sierra: "e6634bc9a8213054574d6be0814ef0b8faf6209e20aafb721753418a718f68af"
   end
 
   depends_on "gobject-introspection"
@@ -62,6 +61,6 @@ class Pympress < Formula
     # Version info contained in log file only if all dependencies loaded successfully
     assert_predicate testpath/"Library/Logs/pympress.log", :exist?
     output = (testpath/"Library/Logs/pympress.log").read
-    assert_match /^INFO:pympress.__main__:Pympress: #{version}\s*;/, output
+    assert_match(/^INFO:pympress.__main__:Pympress: #{version}\s*;/, output)
   end
 end

@@ -7,10 +7,9 @@ class Gammaray < Formula
   head "https://github.com/KDAB/GammaRay.git"
 
   bottle do
-    cellar :any
-    sha256 "d43f04f5d9d8f0f26ff7ec8164b8a6a6397174e56476a60abf7f592a5e8ef2d8" => :catalina
-    sha256 "daaad613868d4159d40b7c954dfca613ac68a6cbd75e1471d35e04958ff5ae16" => :mojave
-    sha256 "652ed0574b07f8e0bffa9b7927c718295cbc4d1e5b69148101923d8edebcf406" => :high_sierra
+    sha256 cellar: :any, catalina:    "d43f04f5d9d8f0f26ff7ec8164b8a6a6397174e56476a60abf7f592a5e8ef2d8"
+    sha256 cellar: :any, mojave:      "daaad613868d4159d40b7c954dfca613ac68a6cbd75e1471d35e04958ff5ae16"
+    sha256 cellar: :any, high_sierra: "652ed0574b07f8e0bffa9b7927c718295cbc4d1e5b69148101923d8edebcf406"
   end
 
   depends_on "cmake" => :build

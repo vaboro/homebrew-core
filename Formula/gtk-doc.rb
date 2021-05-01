@@ -13,10 +13,9 @@ class GtkDoc < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce" => :catalina
-    sha256 "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce" => :mojave
-    sha256 "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce"
+    sha256 cellar: :any_skip_relocation, mojave:      "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2e0c508a1f6fe8ab48a03ab83f8471c3153ce937099437dad6bbbd1dd36a42ce"
   end
 
   depends_on "itstool" => :build

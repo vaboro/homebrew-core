@@ -8,10 +8,9 @@ class Reposurgeon < Formula
   head "https://gitlab.com/esr/reposurgeon.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "54257b991eca3725c03ed737d38158f2c9406b29fe035ed43a59dda6ac0400d2" => :catalina
-    sha256 "045b3d231e384da1ac603b3f7f4d0b96b86bccfb208e93148aa56fee0d7baffa" => :mojave
-    sha256 "b1025a09b10689b8562959ed6e6e37c77d04765285ba64fde51bbf385e15ff29" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "54257b991eca3725c03ed737d38158f2c9406b29fe035ed43a59dda6ac0400d2"
+    sha256 cellar: :any_skip_relocation, mojave:      "045b3d231e384da1ac603b3f7f4d0b96b86bccfb208e93148aa56fee0d7baffa"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b1025a09b10689b8562959ed6e6e37c77d04765285ba64fde51bbf385e15ff29"
   end
 
   depends_on "asciidoctor" => :build

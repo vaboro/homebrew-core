@@ -7,10 +7,9 @@ class Abcde < Formula
   head "https://git.einval.com/git/abcde.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6994f8e32417a1630b2680c96bcae3de5c430976de0dc66056e5687070473f19" => :mojave
-    sha256 "6994f8e32417a1630b2680c96bcae3de5c430976de0dc66056e5687070473f19" => :high_sierra
-    sha256 "7fbfff0c184bef38f29580ec587d5edb473699eaad29bb15e686d2634c070737" => :sierra
+    sha256 cellar: :any_skip_relocation, mojave:      "6994f8e32417a1630b2680c96bcae3de5c430976de0dc66056e5687070473f19"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6994f8e32417a1630b2680c96bcae3de5c430976de0dc66056e5687070473f19"
+    sha256 cellar: :any_skip_relocation, sierra:      "7fbfff0c184bef38f29580ec587d5edb473699eaad29bb15e686d2634c070737"
   end
 
   depends_on "cd-discid"

@@ -6,10 +6,9 @@ class AzureStorageCpp < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "cca19a55ebebdfbc2f38b1a358868b66238d3e0ac748019ad2ec82ec2475170f" => :catalina
-    sha256 "7d6e3641f5a0ac840b508f83209f63bc511639112439017bab30afbd3d98611f" => :mojave
-    sha256 "0513ca4194954b2e69a741c49068f27c043f3cc88535c288cce9f04048b3477b" => :high_sierra
+    sha256 cellar: :any, catalina:    "cca19a55ebebdfbc2f38b1a358868b66238d3e0ac748019ad2ec82ec2475170f"
+    sha256 cellar: :any, mojave:      "7d6e3641f5a0ac840b508f83209f63bc511639112439017bab30afbd3d98611f"
+    sha256 cellar: :any, high_sierra: "0513ca4194954b2e69a741c49068f27c043f3cc88535c288cce9f04048b3477b"
   end
 
   depends_on "cmake" => :build

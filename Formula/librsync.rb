@@ -6,9 +6,9 @@ class Librsync < Formula
   license "LGPL-2.1"
 
   bottle do
-    sha256 "eb1526a88a99556f1ae98c7fa008a8c17ddbe2efe2e55de0192ccbccf9840937" => :catalina
-    sha256 "27f16505bf1b37a9701d70701e708451d47743a3b4d453dcc1d4048065af05af" => :mojave
-    sha256 "20fd33975022b7caaa12b9906b726f1b9dd9a792d9291170e72298a351650610" => :high_sierra
+    sha256 catalina:    "eb1526a88a99556f1ae98c7fa008a8c17ddbe2efe2e55de0192ccbccf9840937"
+    sha256 mojave:      "27f16505bf1b37a9701d70701e708451d47743a3b4d453dcc1d4048065af05af"
+    sha256 high_sierra: "20fd33975022b7caaa12b9906b726f1b9dd9a792d9291170e72298a351650610"
   end
 
   depends_on "cmake" => :build

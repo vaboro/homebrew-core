@@ -6,10 +6,9 @@ class LibsigcxxAT2 < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "bcf678faa58639056292bb201143fe4add755d9f6da6a65f4b7d10cff0ccfe17" => :catalina
-    sha256 "034cb3a54d796e4b9ec4619a15612fc64fc7e7cbddf189f71bb5342f7b631a3d" => :mojave
-    sha256 "c8cccc56cfb07d96e339af416c7a2449673c5303f15f99c5f668fc4c5f792695" => :high_sierra
+    sha256 cellar: :any, catalina:    "bcf678faa58639056292bb201143fe4add755d9f6da6a65f4b7d10cff0ccfe17"
+    sha256 cellar: :any, mojave:      "034cb3a54d796e4b9ec4619a15612fc64fc7e7cbddf189f71bb5342f7b631a3d"
+    sha256 cellar: :any, high_sierra: "c8cccc56cfb07d96e339af416c7a2449673c5303f15f99c5f668fc4c5f792695"
   end
 
   uses_from_macos "m4" => :build

@@ -8,10 +8,9 @@ class BoostPython < Formula
   head "https://github.com/boostorg/boost.git"
 
   bottle do
-    cellar :any
-    sha256 "04fb7370e7cae6e4fda40545eaf8624576253ba72d6ed405debc0d48da4e6821" => :catalina
-    sha256 "9709be9548489de159a5a756fee04b8a3807a7f135c08b1ebce82ae363f49269" => :mojave
-    sha256 "b0773fe6e6125e6a45966aa5ef9e078a02c77c86d16f3fd6f7c50df4c23d7c78" => :high_sierra
+    sha256 cellar: :any, catalina:    "04fb7370e7cae6e4fda40545eaf8624576253ba72d6ed405debc0d48da4e6821"
+    sha256 cellar: :any, mojave:      "9709be9548489de159a5a756fee04b8a3807a7f135c08b1ebce82ae363f49269"
+    sha256 cellar: :any, high_sierra: "b0773fe6e6125e6a45966aa5ef9e078a02c77c86d16f3fd6f7c50df4c23d7c78"
   end
 
   depends_on "boost"
@@ -79,8 +78,8 @@ class BoostPython < Formula
     EOS
 
     pyprefix = `python-config --prefix`.chomp
-    pyincludes = Utils.popen_read("python-config", "--includes").chomp.split(" ")
-    pylib = Utils.popen_read("python-config", "--ldflags").chomp.split(" ")
+    pyincludes = Utils.popen_read("python-config", "--includes").chomp.split
+    pylib = Utils.popen_read("python-config", "--ldflags").chomp.split
 
     system ENV.cxx, "-shared", "hello.cpp", "-L#{lib}", "-lboost_python27",
                     "-o", "hello.so", "-I#{pyprefix}/include/python2.7",

@@ -11,10 +11,9 @@ class Ddrescue < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "517175b22fc4cc660059801b497484ffd7096ade308222c752e758f5036f570a" => :catalina
-    sha256 "73234513fd966432d0cd11f907614b350c6943b3d2c82a7d1ed487fa93f948ca" => :mojave
-    sha256 "a4090204da6b3ef1ff36ff144dd7737e42424e7adf59519becd76ca134cbc08c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "517175b22fc4cc660059801b497484ffd7096ade308222c752e758f5036f570a"
+    sha256 cellar: :any_skip_relocation, mojave:      "73234513fd966432d0cd11f907614b350c6943b3d2c82a7d1ed487fa93f948ca"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a4090204da6b3ef1ff36ff144dd7737e42424e7adf59519becd76ca134cbc08c"
   end
 
   def install

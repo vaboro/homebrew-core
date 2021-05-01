@@ -7,10 +7,9 @@ class EulerPy < Formula
   head "https://github.com/iKevinY/EulerPy.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :catalina
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :mojave
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264"
+    sha256 cellar: :any_skip_relocation, mojave:      "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264"
   end
 
   depends_on "python@3.8"

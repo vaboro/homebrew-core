@@ -6,11 +6,10 @@ class CouchdbLucene < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "56e618fa1e535e061171d52dde83b617f4793b17654c4cc9adf1fc125607e096" => :catalina
-    sha256 "03b37461aeb2eb4172ee4ff18a44c9074d9b486bec0d3192a37bb22262e078c6" => :mojave
-    sha256 "2081b4665600643fd02deaac5b2177622d91729b6aec56197087b81412ecae35" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "56e618fa1e535e061171d52dde83b617f4793b17654c4cc9adf1fc125607e096"
+    sha256 cellar: :any_skip_relocation, mojave:      "03b37461aeb2eb4172ee4ff18a44c9074d9b486bec0d3192a37bb22262e078c6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2081b4665600643fd02deaac5b2177622d91729b6aec56197087b81412ecae35"
   end
 
   depends_on "maven" => :build

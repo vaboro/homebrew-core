@@ -10,10 +10,9 @@ class Bonniexx < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d6efac6fef771ca5d88fd4f8157e185e120c5e6935f9d940f2c6c3d5c9564ce0" => :catalina
-    sha256 "af6277fc9f23e9665b134aa2790dc30ebdaba386492c1832bf88a1f67280c63c" => :mojave
-    sha256 "50872a4a0cbca4eecb515214f23efe7eb5e421dbbbe406a5e95a7bd62e4f9d34" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d6efac6fef771ca5d88fd4f8157e185e120c5e6935f9d940f2c6c3d5c9564ce0"
+    sha256 cellar: :any_skip_relocation, mojave:      "af6277fc9f23e9665b134aa2790dc30ebdaba386492c1832bf88a1f67280c63c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "50872a4a0cbca4eecb515214f23efe7eb5e421dbbbe406a5e95a7bd62e4f9d34"
   end
 
   # Remove the #ifdef _LARGEFILE64_SOURCE macros which not only prohibits the

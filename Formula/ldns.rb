@@ -13,10 +13,9 @@ class Ldns < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0446a8f1f3bc55d5d618c5bb2137d45dd3784d69e575ebabacf3dddb0d61055a" => :catalina
-    sha256 "1df2448c33ca744971061cecc782c7fe464b449eb9852c8b6287a59b8f696938" => :mojave
-    sha256 "da38537015dd33fa5ee0b5a5239cfc57a83aa4806a59b8d2111f7a498595d40a" => :high_sierra
+    sha256 cellar: :any, catalina:    "0446a8f1f3bc55d5d618c5bb2137d45dd3784d69e575ebabacf3dddb0d61055a"
+    sha256 cellar: :any, mojave:      "1df2448c33ca744971061cecc782c7fe464b449eb9852c8b6287a59b8f696938"
+    sha256 cellar: :any, high_sierra: "da38537015dd33fa5ee0b5a5239cfc57a83aa4806a59b8d2111f7a498595d40a"
   end
 
   depends_on "swig" => :build
@@ -44,7 +43,7 @@ class Ldns < Formula
 
     inreplace "Makefile" do |s|
       s.change_make_var! "PYTHON_LDFLAGS", "-undefined dynamic_lookup"
-      s.gsub! /(\$\(PYTHON_LDFLAGS\).*) -no-undefined/, "\\1"
+      s.gsub!(/(\$\(PYTHON_LDFLAGS\).*) -no-undefined/, "\\1")
     end
 
     system "make"

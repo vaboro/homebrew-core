@@ -8,10 +8,9 @@ class Circleci < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a7b94146626651a94e010c1afdba30ade38f9b03ac576ee9631553a337a8429e" => :catalina
-    sha256 "15bbd1934381c67d3e6fa02d755b439c1145b273f4e50055422a809c14624124" => :mojave
-    sha256 "ce65018526de731cf6c9621860ff74533d9fc949accd35305c6e9eb0d4de946c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a7b94146626651a94e010c1afdba30ade38f9b03ac576ee9631553a337a8429e"
+    sha256 cellar: :any_skip_relocation, mojave:      "15bbd1934381c67d3e6fa02d755b439c1145b273f4e50055422a809c14624124"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ce65018526de731cf6c9621860ff74533d9fc949accd35305c6e9eb0d4de946c"
   end
 
   depends_on "go" => :build
@@ -39,7 +38,7 @@ class Circleci < Formula
 
   test do
     # assert basic script execution
-    assert_match /#{version}\+.{7}/, shell_output("#{bin}/circleci version").strip
+    assert_match(/#{version}\+.{7}/, shell_output("#{bin}/circleci version").strip)
     (testpath/".circleci.yml").write("{version: 2.1}")
     output = shell_output("#{bin}/circleci config pack #{testpath}/.circleci.yml")
     assert_match "version: 2.1", output

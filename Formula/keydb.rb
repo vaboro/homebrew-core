@@ -6,10 +6,9 @@ class Keydb < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e718d2be36d52596f2ad33e0d6bcd063173de0e3b2825a89ef0420e141ac2198" => :catalina
-    sha256 "f063c6ea799a16c0f10611483c299b81595f38e5225a4cf393b096f6e41ab0e1" => :mojave
-    sha256 "c528879a051d37d3734f178cf16610e74172bef322c9aac98c77a1fb2b42993d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e718d2be36d52596f2ad33e0d6bcd063173de0e3b2825a89ef0420e141ac2198"
+    sha256 cellar: :any_skip_relocation, mojave:      "f063c6ea799a16c0f10611483c299b81595f38e5225a4cf393b096f6e41ab0e1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c528879a051d37d3734f178cf16610e74172bef322c9aac98c77a1fb2b42993d"
   end
 
   def install

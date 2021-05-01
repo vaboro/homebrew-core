@@ -12,10 +12,9 @@ class Dmenu < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c3c3df399b25d4f8973cb2dad21e9eee4e6c07f60fa639e0239c6e64a134c284" => :catalina
-    sha256 "28c154b8f5c657ca864305f495d7cd43ed4d39ce3d9fe17ffc101dc808033edf" => :mojave
-    sha256 "ed800e10a28a770ff50b0a4462ecb18406d0dec7a4d59f42885b7f6e8ee387db" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c3c3df399b25d4f8973cb2dad21e9eee4e6c07f60fa639e0239c6e64a134c284"
+    sha256 cellar: :any_skip_relocation, mojave:      "28c154b8f5c657ca864305f495d7cd43ed4d39ce3d9fe17ffc101dc808033edf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ed800e10a28a770ff50b0a4462ecb18406d0dec7a4d59f42885b7f6e8ee387db"
   end
 
   depends_on :x11
@@ -25,6 +24,6 @@ class Dmenu < Formula
   end
 
   test do
-    assert_match /#{version}/, shell_output("#{bin}/dmenu -v")
+    assert_match(/#{version}/, shell_output("#{bin}/dmenu -v"))
   end
 end

@@ -7,10 +7,9 @@ class Dbmate < Formula
   head "https://github.com/amacneil/dbmate.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "40c2f2d04a9d033478fdff1a272fa0d125a1dbdd746154afe97c5c36612a36af" => :catalina
-    sha256 "11a6e1840fba35c278f3312b36ce1045c79e15cd51148f1cfe2e5172075585e6" => :mojave
-    sha256 "861621c58be22ec75cf0c4c0539facaa526b69aee1ba14d697c7b9a52bcfac6c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "40c2f2d04a9d033478fdff1a272fa0d125a1dbdd746154afe97c5c36612a36af"
+    sha256 cellar: :any_skip_relocation, mojave:      "11a6e1840fba35c278f3312b36ce1045c79e15cd51148f1cfe2e5172075585e6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "861621c58be22ec75cf0c4c0539facaa526b69aee1ba14d697c7b9a52bcfac6c"
   end
 
   depends_on "go" => :build

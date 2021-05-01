@@ -7,10 +7,9 @@ class Slowhttptest < Formula
   head "https://github.com/shekyan/slowhttptest.git"
 
   bottle do
-    cellar :any
-    sha256 "baaffefacf315bcb7ae0d5a241e8f41e326c76a3ac67e119ced1c9139e198bde" => :catalina
-    sha256 "77d5fe071eb0015008a405ffa3838060a186d6e6134ae6dcf8ee9498a995857c" => :mojave
-    sha256 "c9b36ccf8aee0f6572e2eb1112caf25811c22f1500ad81c1277309c76bd6460b" => :high_sierra
+    sha256 cellar: :any, catalina:    "baaffefacf315bcb7ae0d5a241e8f41e326c76a3ac67e119ced1c9139e198bde"
+    sha256 cellar: :any, mojave:      "77d5fe071eb0015008a405ffa3838060a186d6e6134ae6dcf8ee9498a995857c"
+    sha256 cellar: :any, high_sierra: "c9b36ccf8aee0f6572e2eb1112caf25811c22f1500ad81c1277309c76bd6460b"
   end
 
   depends_on "openssl@1.1"

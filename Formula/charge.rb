@@ -13,10 +13,9 @@ class Charge < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b6b02c7658ca9d8c8211554a74d399f5a9188f516e152fb7eee5a2b879d050d3" => :catalina
-    sha256 "f2d73159f3331a3c7a6126eb7054fb987abf89598521fad3dece201f06cbf79d" => :mojave
-    sha256 "2dcccfe026217c62a72db3ff501ee56c1c8216e5f00e567ca12706aaddb6ea8b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b6b02c7658ca9d8c8211554a74d399f5a9188f516e152fb7eee5a2b879d050d3"
+    sha256 cellar: :any_skip_relocation, mojave:      "f2d73159f3331a3c7a6126eb7054fb987abf89598521fad3dece201f06cbf79d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2dcccfe026217c62a72db3ff501ee56c1c8216e5f00e567ca12706aaddb6ea8b"
   end
 
   depends_on "node"

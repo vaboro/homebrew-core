@@ -6,10 +6,9 @@ class Pybind11 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384" => :catalina
-    sha256 "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384" => :mojave
-    sha256 "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384"
+    sha256 cellar: :any_skip_relocation, mojave:      "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c154d564868492981456c9a4e3fa21b6cdb821d96ba14d1ca1f4825d642a1384"
   end
 
   depends_on "cmake" => :build
@@ -40,7 +39,7 @@ class Pybind11 < Formula
       example.add(1,2)
     EOS
 
-    python_flags = `#{Formula["python@3.8"].opt_bin}/python3-config --cflags --ldflags --embed`.split(" ")
+    python_flags = `#{Formula["python@3.8"].opt_bin}/python3-config --cflags --ldflags --embed`.split
     system ENV.cxx, "-O3", "-shared", "-std=c++11", *python_flags, "example.cpp", "-o", "example.so"
     system Formula["python@3.8"].opt_bin/"python3", "example.py"
   end

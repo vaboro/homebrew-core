@@ -7,10 +7,9 @@ class Ffmpeg2theora < Formula
   head "https://gitlab.xiph.org/xiph/ffmpeg2theora.git"
 
   bottle do
-    cellar :any
-    sha256 "8c9c5de4f7abb7aff89f0d29a5234e549dc9a3ab8a58f7dbc79ef84e290cf3c9" => :catalina
-    sha256 "955b11ab8815ad86a02fdd7f7454880108a191d8b406c499b5d5314f4498656c" => :mojave
-    sha256 "f91d9c881ea674c6b6b02f83a6ef53c6e30554c7b2828a9e706eb38cce33220f" => :high_sierra
+    sha256 cellar: :any, catalina:    "8c9c5de4f7abb7aff89f0d29a5234e549dc9a3ab8a58f7dbc79ef84e290cf3c9"
+    sha256 cellar: :any, mojave:      "955b11ab8815ad86a02fdd7f7454880108a191d8b406c499b5d5314f4498656c"
+    sha256 cellar: :any, high_sierra: "f91d9c881ea674c6b6b02f83a6ef53c6e30554c7b2828a9e706eb38cce33220f"
   end
 
   depends_on "pkg-config" => :build

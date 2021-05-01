@@ -7,10 +7,9 @@ class Cloc < Formula
   head "https://github.com/AlDanial/cloc.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f287c5bccd7c70cd25a17eaa235b392c6b3f27da6a9d4c47d5b0cbd45608dc84" => :catalina
-    sha256 "eda8d2e68c995503592bc9b2ec5e49fb30e93464df512d20ba45c08d0a9e8886" => :mojave
-    sha256 "24d26f59347952a7469fdb10830486a0f34b5c11884f5c4da05d34a858c8bd20" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f287c5bccd7c70cd25a17eaa235b392c6b3f27da6a9d4c47d5b0cbd45608dc84"
+    sha256 cellar: :any_skip_relocation, mojave:      "eda8d2e68c995503592bc9b2ec5e49fb30e93464df512d20ba45c08d0a9e8886"
+    sha256 cellar: :any_skip_relocation, high_sierra: "24d26f59347952a7469fdb10830486a0f34b5c11884f5c4da05d34a858c8bd20"
   end
 
   resource "Regexp::Common" do

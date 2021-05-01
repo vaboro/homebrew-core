@@ -6,10 +6,9 @@ class Enet < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "7188260137953334ee61ed7eb2252d813e3cb7d86985d0d18ed3e1ce84bc965f" => :catalina
-    sha256 "34bc8c1bbc9d71e2af3ec8f65dd24d681ad70be68f67534bba9a40f6e68bf21e" => :mojave
-    sha256 "95634a66c99f7cb4f2b4a402017fee5f2ab1f6cb36f2fe75725c44c36908bf1b" => :high_sierra
+    sha256 cellar: :any, catalina:    "7188260137953334ee61ed7eb2252d813e3cb7d86985d0d18ed3e1ce84bc965f"
+    sha256 cellar: :any, mojave:      "34bc8c1bbc9d71e2af3ec8f65dd24d681ad70be68f67534bba9a40f6e68bf21e"
+    sha256 cellar: :any, high_sierra: "95634a66c99f7cb4f2b4a402017fee5f2ab1f6cb36f2fe75725c44c36908bf1b"
   end
 
   def install

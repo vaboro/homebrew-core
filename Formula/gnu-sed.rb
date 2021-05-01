@@ -11,10 +11,9 @@ class GnuSed < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "726be75d6d7155820b408a10e5c1a5ba1406374a7fc167af62524a4f4bbbc099" => :catalina
-    sha256 "093f16752e7dfb115c055f20aed090108b94edd47c40f5e50878d961359251b2" => :mojave
-    sha256 "865abe618c67037a4a419a05e0df2c6814fb3abdd6f631ea546aeba0aaf8eb78" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "726be75d6d7155820b408a10e5c1a5ba1406374a7fc167af62524a4f4bbbc099"
+    sha256 cellar: :any_skip_relocation, mojave:      "093f16752e7dfb115c055f20aed090108b94edd47c40f5e50878d961359251b2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "865abe618c67037a4a419a05e0df2c6814fb3abdd6f631ea546aeba0aaf8eb78"
   end
 
   conflicts_with "ssed", because: "both install share/info/sed.info"
@@ -51,9 +50,9 @@ class GnuSed < Formula
   test do
     (testpath/"test.txt").write "Hello world!"
     system "#{bin}/gsed", "-i", "s/world/World/g", "test.txt"
-    assert_match /Hello World!/, File.read("test.txt")
+    assert_match(/Hello World!/, File.read("test.txt"))
 
     system "#{opt_libexec}/gnubin/sed", "-i", "s/world/World/g", "test.txt"
-    assert_match /Hello World!/, File.read("test.txt")
+    assert_match(/Hello World!/, File.read("test.txt"))
   end
 end

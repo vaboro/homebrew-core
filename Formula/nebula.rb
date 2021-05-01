@@ -6,11 +6,10 @@ class Nebula < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "4a8afd93fe529dae21fdbd7a9fa25d0aee5411b1601563f660bbd4b539488645" => :catalina
-    sha256 "71d30d68a8a92cd82a522348010020a358e50487571f0e147deb89d1afefdadb" => :mojave
-    sha256 "ed3fa03a2fe956c9cf610d17a8df6b60e3d75508c15dc3fd46c47cd7decf2967" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4a8afd93fe529dae21fdbd7a9fa25d0aee5411b1601563f660bbd4b539488645"
+    sha256 cellar: :any_skip_relocation, mojave:      "71d30d68a8a92cd82a522348010020a358e50487571f0e147deb89d1afefdadb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ed3fa03a2fe956c9cf610d17a8df6b60e3d75508c15dc3fd46c47cd7decf2967"
   end
 
   depends_on "go" => :build

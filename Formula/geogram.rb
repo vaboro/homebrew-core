@@ -5,9 +5,9 @@ class Geogram < Formula
   sha256 "203349ff6424bc1d75f0a534b0b4626fc08e594109b5eaa7e82ee712f59bd24d"
 
   bottle do
-    sha256 "16ffa419e614e6ef1c73e14eb6b358fc112d9e5bb35e4c1b92dcab8f89842882" => :catalina
-    sha256 "ff58b787e0fa5c0b0608528dc76a94d8c76caa73b00102700f14e9a91e78aebc" => :mojave
-    sha256 "c5d5de12f0d0e7f7eb53022e7f9dae5b09172e97040f4d10b494ed66a0c4fb60" => :high_sierra
+    sha256 catalina:    "16ffa419e614e6ef1c73e14eb6b358fc112d9e5bb35e4c1b92dcab8f89842882"
+    sha256 mojave:      "ff58b787e0fa5c0b0608528dc76a94d8c76caa73b00102700f14e9a91e78aebc"
+    sha256 high_sierra: "c5d5de12f0d0e7f7eb53022e7f9dae5b09172e97040f4d10b494ed66a0c4fb60"
   end
 
   depends_on "cmake" => :build

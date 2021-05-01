@@ -24,9 +24,9 @@ class Watchman < Formula
   end
 
   bottle do
-    sha256 "7840f564c11d33425c9eb8985f9156e782e66ef2a3578329dba83ee15a9bf0be" => :catalina
-    sha256 "ba2338b0f23c8b8817fd7bfa92466b7a97ab416e93ec6c3a400041aef013de86" => :mojave
-    sha256 "150468653b5c5a8e4eb92a3ecf420f157ed0e4772513ee93425bb3f635964dad" => :high_sierra
+    sha256 catalina:    "7840f564c11d33425c9eb8985f9156e782e66ef2a3578329dba83ee15a9bf0be"
+    sha256 mojave:      "ba2338b0f23c8b8817fd7bfa92466b7a97ab416e93ec6c3a400041aef013de86"
+    sha256 high_sierra: "150468653b5c5a8e4eb92a3ecf420f157ed0e4772513ee93425bb3f635964dad"
   end
 
   depends_on "autoconf" => :build
@@ -76,6 +76,6 @@ class Watchman < Formula
   end
 
   test do
-    assert_equal /(\d+\.\d+\.\d+)/.match(version)[0], shell_output("#{bin}/watchman -v").chomp
+    assert_equal(/(\d+\.\d+\.\d+)/.match(version)[0], shell_output("#{bin}/watchman -v").chomp)
   end
 end

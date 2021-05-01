@@ -6,10 +6,9 @@ class Webarchiver < Formula
   head "https://github.com/newzealandpaul/webarchiver.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7413d45de93fbe6fcc3bc9af073a2bb063cdad7f3479d6bf890634d48761df22" => :catalina
-    sha256 "ffd1e97727c1551d6bfc63ba3980469ca7be4c99bbd89c1036671a1e3463e3e3" => :mojave
-    sha256 "fe85ee50f8a3da76dcbcd8bb24c1bea05bde33525055c4d471c8b07fccadfa65" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7413d45de93fbe6fcc3bc9af073a2bb063cdad7f3479d6bf890634d48761df22"
+    sha256 cellar: :any_skip_relocation, mojave:      "ffd1e97727c1551d6bfc63ba3980469ca7be4c99bbd89c1036671a1e3463e3e3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fe85ee50f8a3da76dcbcd8bb24c1bea05bde33525055c4d471c8b07fccadfa65"
   end
 
   depends_on xcode: ["6.0.1", :build]
@@ -23,6 +22,6 @@ class Webarchiver < Formula
 
   test do
     system "#{bin}/webarchiver", "-url", "https://www.google.com", "-output", "foo.webarchive"
-    assert_match /Apple binary property list/, shell_output("file foo.webarchive")
+    assert_match(/Apple binary property list/, shell_output("file foo.webarchive"))
   end
 end

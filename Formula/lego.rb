@@ -7,10 +7,9 @@ class Lego < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f4811a1694e1bfe2dbb2fef4ea3a44cbb0d6cba4940b3c4f904f515d2c3d7469" => :catalina
-    sha256 "7dfbb0d990526cbd5f6db396cf16eada4f6675021f9917eab7db050f8bb21fc1" => :mojave
-    sha256 "7946ea0f32c17de5af07144533fb9982b0183bfa1973e3c0e1f48ce1d49cce3a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f4811a1694e1bfe2dbb2fef4ea3a44cbb0d6cba4940b3c4f904f515d2c3d7469"
+    sha256 cellar: :any_skip_relocation, mojave:      "7dfbb0d990526cbd5f6db396cf16eada4f6675021f9917eab7db050f8bb21fc1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7946ea0f32c17de5af07144533fb9982b0183bfa1973e3c0e1f48ce1d49cce3a"
   end
 
   depends_on "go" => :build

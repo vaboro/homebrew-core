@@ -8,10 +8,9 @@ class Bnfc < Formula
   head "https://github.com/BNFC/bnfc.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a56684b9fecdf25ef5c77f9124c8c8c3cdbf5f21405a6135eaf47680c387d231" => :catalina
-    sha256 "47cbd943179d46b54c4ff614d613662a4db766ed6f80ec980060acdf6a1c0812" => :mojave
-    sha256 "a92f1907cedabddf2a10a994de224cb15221786742beeb1cde87ac47dc17ff76" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a56684b9fecdf25ef5c77f9124c8c8c3cdbf5f21405a6135eaf47680c387d231"
+    sha256 cellar: :any_skip_relocation, mojave:      "47cbd943179d46b54c4ff614d613662a4db766ed6f80ec980060acdf6a1c0812"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a92f1907cedabddf2a10a994de224cb15221786742beeb1cde87ac47dc17ff76"
   end
 
   depends_on "cabal-install" => [:build, :test]

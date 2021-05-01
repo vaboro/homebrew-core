@@ -6,10 +6,9 @@ class Pgweb < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0e114aa64f94b8e64b6b26e314a38443c42a793e7e3c6f246b9b7219d2c1c905" => :catalina
-    sha256 "8e2ff51513713949c869457d39c787ae7f5f13ba75abc11561914378e59fbb11" => :mojave
-    sha256 "43637e2a033c04ffc96dff95b355e2b99e0fdd263ff432498dceac9f305cc03d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0e114aa64f94b8e64b6b26e314a38443c42a793e7e3c6f246b9b7219d2c1c905"
+    sha256 cellar: :any_skip_relocation, mojave:      "8e2ff51513713949c869457d39c787ae7f5f13ba75abc11561914378e59fbb11"
+    sha256 cellar: :any_skip_relocation, high_sierra: "43637e2a033c04ffc96dff95b355e2b99e0fdd263ff432498dceac9f305cc03d"
   end
 
   depends_on "go" => :build

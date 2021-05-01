@@ -9,10 +9,9 @@ class Zydis < Formula
   head "https://github.com/zyantific/zydis.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ceffe3459006c374498e06809f8d75e9f512d5a43482d9b4d3973bbe4b2e3944" => :catalina
-    sha256 "a51c744f89ed204c66e0699a960a3c58625a5f46f16f3710e68a4746bbc0fb7e" => :mojave
-    sha256 "cefab7b097b79ae4c04616c235e572ffc5416296eba2a10bd7b07c6f18148313" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ceffe3459006c374498e06809f8d75e9f512d5a43482d9b4d3973bbe4b2e3944"
+    sha256 cellar: :any_skip_relocation, mojave:      "a51c744f89ed204c66e0699a960a3c58625a5f46f16f3710e68a4746bbc0fb7e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cefab7b097b79ae4c04616c235e572ffc5416296eba2a10bd7b07c6f18148313"
   end
 
   depends_on "cmake" => :build

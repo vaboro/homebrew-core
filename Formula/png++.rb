@@ -10,11 +10,10 @@ class Pngxx < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c6377c5185e7ae53ff7ec9a133b8c12618a400f64d14b55ee751dc7c85cbc491" => :catalina
-    sha256 "536f9c2dd05cfd2ae8a4f7f5d0c5c38575cf91609498f98bd6c3f97c4de2c520" => :mojave
-    sha256 "536f9c2dd05cfd2ae8a4f7f5d0c5c38575cf91609498f98bd6c3f97c4de2c520" => :high_sierra
-    sha256 "cee110f568bae723e8e5172e8bab36c8f4c5adb8bf339a444926a572bfa13f89" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c6377c5185e7ae53ff7ec9a133b8c12618a400f64d14b55ee751dc7c85cbc491"
+    sha256 cellar: :any_skip_relocation, mojave:      "536f9c2dd05cfd2ae8a4f7f5d0c5c38575cf91609498f98bd6c3f97c4de2c520"
+    sha256 cellar: :any_skip_relocation, high_sierra: "536f9c2dd05cfd2ae8a4f7f5d0c5c38575cf91609498f98bd6c3f97c4de2c520"
+    sha256 cellar: :any_skip_relocation, sierra:      "cee110f568bae723e8e5172e8bab36c8f4c5adb8bf339a444926a572bfa13f89"
   end
 
   depends_on "libpng"

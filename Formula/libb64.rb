@@ -9,10 +9,9 @@ class Libb64 < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ee788cea9a073c456398f86661ea27e092c3d327ea8b0792643ed7d38bd402d0" => :catalina
-    sha256 "7a53661bc0fe2bea875f0a14cc66b6352694f1e797e4506ad2c8ef35dfcc2169" => :mojave
-    sha256 "3b5266e99b78c81ae7ec00c19aa7e9d3fad7f47611fc1332710bd8e03f48da55" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ee788cea9a073c456398f86661ea27e092c3d327ea8b0792643ed7d38bd402d0"
+    sha256 cellar: :any_skip_relocation, mojave:      "7a53661bc0fe2bea875f0a14cc66b6352694f1e797e4506ad2c8ef35dfcc2169"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3b5266e99b78c81ae7ec00c19aa7e9d3fad7f47611fc1332710bd8e03f48da55"
   end
 
   def install

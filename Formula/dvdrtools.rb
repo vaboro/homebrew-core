@@ -11,14 +11,13 @@ class Dvdrtools < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "40f565db4f098c70bed700dc88edd45951e58a7f7c64583d52db81afcdbde704" => :catalina
-    sha256 "77bee36a67611f862c4fd8fbff7b1bbc7e307f5f618508664f02193df7347865" => :mojave
-    sha256 "f697f22349d9ed05ad580d06b5dc38c4b626187d50cfc364af4bb5634f16b152" => :high_sierra
-    sha256 "afa198a1854643ac7657ad1c93bfc5f9b05760e3b3375dd3ec43ad0b51e4ea7e" => :sierra
-    sha256 "8d29698226d26f42559f4913a13920632b85cafc389122697fa2c5c4d0cd2d8b" => :el_capitan
-    sha256 "4feb2b0e87b7402706c5a382c8e35b66279aa1b73c37c7ded7a6cc14de3a8a62" => :yosemite
-    sha256 "45fbfc8f888ca87b81aa7dff0f30d8cb69c36a4ce1933d76faecbd023c4ab3ad" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "40f565db4f098c70bed700dc88edd45951e58a7f7c64583d52db81afcdbde704"
+    sha256 cellar: :any_skip_relocation, mojave:      "77bee36a67611f862c4fd8fbff7b1bbc7e307f5f618508664f02193df7347865"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f697f22349d9ed05ad580d06b5dc38c4b626187d50cfc364af4bb5634f16b152"
+    sha256 cellar: :any_skip_relocation, sierra:      "afa198a1854643ac7657ad1c93bfc5f9b05760e3b3375dd3ec43ad0b51e4ea7e"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "8d29698226d26f42559f4913a13920632b85cafc389122697fa2c5c4d0cd2d8b"
+    sha256 cellar: :any_skip_relocation, yosemite:    "4feb2b0e87b7402706c5a382c8e35b66279aa1b73c37c7ded7a6cc14de3a8a62"
+    sha256 cellar: :any_skip_relocation, mavericks:   "45fbfc8f888ca87b81aa7dff0f30d8cb69c36a4ce1933d76faecbd023c4ab3ad"
   end
 
   conflicts_with "cdrtools",

@@ -9,10 +9,9 @@ class VpnSlice < Formula
   head "https://github.com/dlenski/vpn-slice.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "350f4032091eaf9e5daeae9bc4232e7eb6f873dc0fd2cd838bdb5feed820ec1a" => :catalina
-    sha256 "b8057aa360ec68539ec028a0f30a883440bcf7cb2d72e62159594e5ec4146017" => :mojave
-    sha256 "7f6c4cb4440b65b6579bd3796591ee95a7caeda748f40c82aea386b089d2898b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "350f4032091eaf9e5daeae9bc4232e7eb6f873dc0fd2cd838bdb5feed820ec1a"
+    sha256 cellar: :any_skip_relocation, mojave:      "b8057aa360ec68539ec028a0f30a883440bcf7cb2d72e62159594e5ec4146017"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7f6c4cb4440b65b6579bd3796591ee95a7caeda748f40c82aea386b089d2898b"
   end
 
   depends_on "python@3.8"

@@ -6,11 +6,10 @@ class Mlpack < Formula
   revision 1
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "3b98834eb65f185a1b8d6c2d505995e51ee77443dad98da8c1f16b5ad5e665ee" => :catalina
-    sha256 "bee3717f1ce59530b51fed4f454fc0f56d459e15cf04cd262d9896ab98c3f0ac" => :mojave
-    sha256 "42fba9f2653c3deab2acec2de9276dd9787b09ce902ea5857d4bef9f10593ab1" => :high_sierra
+    sha256 cellar: :any, catalina:    "3b98834eb65f185a1b8d6c2d505995e51ee77443dad98da8c1f16b5ad5e665ee"
+    sha256 cellar: :any, mojave:      "bee3717f1ce59530b51fed4f454fc0f56d459e15cf04cd262d9896ab98c3f0ac"
+    sha256 cellar: :any, high_sierra: "42fba9f2653c3deab2acec2de9276dd9787b09ce902ea5857d4bef9f10593ab1"
   end
 
   depends_on "cmake" => :build

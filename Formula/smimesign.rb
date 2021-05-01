@@ -6,10 +6,9 @@ class Smimesign < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "abad2ebcdf7f1c0eb58badee31d787e9a986b99ea17e79013acfeb437a4537e9" => :catalina
-    sha256 "56af904bbe4aa96d755ef99b67145ee20c57d0a0fc1681fe9c6333e19ce68be3" => :mojave
-    sha256 "024a4963b723bd2ec94fde2a578cb80342f4837d9ec34158ae023479c4157f33" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "abad2ebcdf7f1c0eb58badee31d787e9a986b99ea17e79013acfeb437a4537e9"
+    sha256 cellar: :any_skip_relocation, mojave:      "56af904bbe4aa96d755ef99b67145ee20c57d0a0fc1681fe9c6333e19ce68be3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "024a4963b723bd2ec94fde2a578cb80342f4837d9ec34158ae023479c4157f33"
   end
 
   depends_on "go" => :build

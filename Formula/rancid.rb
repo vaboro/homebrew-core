@@ -6,10 +6,9 @@ class Rancid < Formula
   sha256 "b1c1415d16ac291e29ff356a3c4f688160f07f1a091869290a95cd1793d4d3fb"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "39ec33c962ee398c0e8bbf842debcd8f68142c32c6c6c43c75e52d2b8f453c6a" => :catalina
-    sha256 "4e95ce8c637515da76bad63aeafd50ddcfd6efa8cb93cb233a1619a0174b71bc" => :mojave
-    sha256 "3fe616a75b533dc7d4b8989f8719d6eb9d78628572f1e0769c6ddd6e4e769aae" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "39ec33c962ee398c0e8bbf842debcd8f68142c32c6c6c43c75e52d2b8f453c6a"
+    sha256 cellar: :any_skip_relocation, mojave:      "4e95ce8c637515da76bad63aeafd50ddcfd6efa8cb93cb233a1619a0174b71bc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3fe616a75b533dc7d4b8989f8719d6eb9d78628572f1e0769c6ddd6e4e769aae"
   end
 
   conflicts_with "par", because: "both install `par` binaries"

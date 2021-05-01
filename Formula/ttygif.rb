@@ -6,10 +6,9 @@ class Ttygif < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "61f7135b9f03465ac86f26e7b7cad7ca09ec35495841ee868b76f001faefd040" => :catalina
-    sha256 "34060f2f53d6388461ca29a81938490bb1768aa9f44303c7cce717c2f8ad6246" => :mojave
-    sha256 "ab8ee96836d9a9663e94f9dc9e2337a2968a8fe4523f8da166b4e865a1e81ada" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "61f7135b9f03465ac86f26e7b7cad7ca09ec35495841ee868b76f001faefd040"
+    sha256 cellar: :any_skip_relocation, mojave:      "34060f2f53d6388461ca29a81938490bb1768aa9f44303c7cce717c2f8ad6246"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ab8ee96836d9a9663e94f9dc9e2337a2968a8fe4523f8da166b4e865a1e81ada"
   end
 
   depends_on "imagemagick"

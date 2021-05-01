@@ -6,10 +6,9 @@ class Libzdb < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "114982357474fdd8af3df7d11a3575e81686ff55d6c2018b5385c7f5acfee7ed" => :catalina
-    sha256 "bc52a04fe2ae5500200c1521f4e32497c9eee2d2c4087e60c9ed11a09b2cac67" => :mojave
-    sha256 "123039235efee305797c3252e0e4b07c93989785165c044eefa9f86eae73f9b0" => :high_sierra
+    sha256 cellar: :any, catalina:    "114982357474fdd8af3df7d11a3575e81686ff55d6c2018b5385c7f5acfee7ed"
+    sha256 cellar: :any, mojave:      "bc52a04fe2ae5500200c1521f4e32497c9eee2d2c4087e60c9ed11a09b2cac67"
+    sha256 cellar: :any, high_sierra: "123039235efee305797c3252e0e4b07c93989785165c044eefa9f86eae73f9b0"
   end
 
   depends_on macos: :high_sierra # C++ 17 is required

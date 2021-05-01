@@ -9,10 +9,9 @@ class Mmseqs2 < Formula
   head "https://github.com/soedinglab/MMseqs2.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9bc41128722a0a926cc30fca2cfb29574bb150deb8acc482cd61e7e49e8169fb" => :catalina
-    sha256 "789fa0f2f9bef66df73de586236dbffb037f8a32794e47768818d1fc732c05e2" => :mojave
-    sha256 "d3f8b1a3ba35b0af1e80a0a917d915e8c19ea542bde20879c3031f1138af55aa" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9bc41128722a0a926cc30fca2cfb29574bb150deb8acc482cd61e7e49e8169fb"
+    sha256 cellar: :any_skip_relocation, mojave:      "789fa0f2f9bef66df73de586236dbffb037f8a32794e47768818d1fc732c05e2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d3f8b1a3ba35b0af1e80a0a917d915e8c19ea542bde20879c3031f1138af55aa"
   end
 
   depends_on "cmake" => :build

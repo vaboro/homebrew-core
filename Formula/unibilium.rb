@@ -5,12 +5,11 @@ class Unibilium < Formula
   sha256 "78997d38d4c8177c60d3d0c1aa8c53fd0806eb21825b7b335b1768d7116bc1c1"
 
   bottle do
-    cellar :any
-    sha256 "fb0335f25d2848a8dc1eb0911292905c76bb97e98bf349fc6afefe7752164fd1" => :catalina
-    sha256 "3886afa29fecdbf2051ae6a92fac638bd27b6edafb75b199e50c0fc6fbf18266" => :mojave
-    sha256 "5c29d645cd3e0ad950a7054c73b89cb76114b369476eb8bca26587c38571861d" => :high_sierra
-    sha256 "15338d452e5e09e7b8f3bedd6d557d735d06bfbc53204487d11b6c225a04ad71" => :sierra
-    sha256 "d8caea872f5f8ed11503e46fc37f17fafbc8a4c64a5382e2bf9e6d84feda2f98" => :el_capitan
+    sha256 cellar: :any, catalina:    "fb0335f25d2848a8dc1eb0911292905c76bb97e98bf349fc6afefe7752164fd1"
+    sha256 cellar: :any, mojave:      "3886afa29fecdbf2051ae6a92fac638bd27b6edafb75b199e50c0fc6fbf18266"
+    sha256 cellar: :any, high_sierra: "5c29d645cd3e0ad950a7054c73b89cb76114b369476eb8bca26587c38571861d"
+    sha256 cellar: :any, sierra:      "15338d452e5e09e7b8f3bedd6d557d735d06bfbc53204487d11b6c225a04ad71"
+    sha256 cellar: :any, el_capitan:  "d8caea872f5f8ed11503e46fc37f17fafbc8a4c64a5382e2bf9e6d84feda2f98"
   end
 
   depends_on "libtool" => :build

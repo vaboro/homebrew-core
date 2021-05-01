@@ -11,10 +11,9 @@ class Bde < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b11a948d232e02bf0ceaee439451f94ce48cc024b7737400b5ca21fbfe0aafb5" => :catalina
-    sha256 "5915ea6038ff06703afa39cd989f62aa69cb3d0a0021acffb759a5a306312c78" => :mojave
-    sha256 "7690286795f26cc1fe240355e75a6cea19c8dddbb441e3a3e905c3a276f44191" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b11a948d232e02bf0ceaee439451f94ce48cc024b7737400b5ca21fbfe0aafb5"
+    sha256 cellar: :any_skip_relocation, mojave:      "5915ea6038ff06703afa39cd989f62aa69cb3d0a0021acffb759a5a306312c78"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7690286795f26cc1fe240355e75a6cea19c8dddbb441e3a3e905c3a276f44191"
   end
 
   depends_on "cmake" => :build

@@ -6,9 +6,8 @@ class Solidity < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "82c08040ddaab8989960f89de602ebe5b7b890b67ae081aa16f7d304f2273d52" => :catalina
-    sha256 "f6d741893302638e028a59ccaaaccabc02e3b1f42655df5484a9d0063f4aaa7e" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "82c08040ddaab8989960f89de602ebe5b7b890b67ae081aa16f7d304f2273d52"
+    sha256 cellar: :any_skip_relocation, mojave:   "f6d741893302638e028a59ccaaaccabc02e3b1f42655df5484a9d0063f4aaa7e"
   end
 
   depends_on "cmake" => :build

@@ -10,10 +10,9 @@ class Pgroonga < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9fd0decbb8035c8b86a85a9a18c69cc18ca80343aa79142437ebc085d2e92c0c" => :catalina
-    sha256 "9a7b21ee071a28ce41b2407509801cdf526a4752f84a14e4a5931eec18f32cd2" => :mojave
-    sha256 "83504f44a4635b8e70d1505b315895bed3a94d2925c968f42f481a23afb1ab10" => :high_sierra
+    sha256 cellar: :any, catalina:    "9fd0decbb8035c8b86a85a9a18c69cc18ca80343aa79142437ebc085d2e92c0c"
+    sha256 cellar: :any, mojave:      "9a7b21ee071a28ce41b2407509801cdf526a4752f84a14e4a5931eec18f32cd2"
+    sha256 cellar: :any, high_sierra: "83504f44a4635b8e70d1505b315895bed3a94d2925c968f42f481a23afb1ab10"
   end
 
   depends_on "pkg-config" => :build

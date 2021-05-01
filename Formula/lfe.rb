@@ -7,11 +7,10 @@ class Lfe < Formula
   head "https://github.com/rvirding/lfe.git", branch: "develop"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "7dd076c48d565d4d0b686224178c1ee98a121529544633af3b13c71565f1f9e5" => :catalina
-    sha256 "f05f9f0affc3bba078432f5822f85549ea905ce0dc4271f501e0d38e113dd09f" => :mojave
-    sha256 "4a2aff7e038f97050cbd8beb84023c9c9c093078ba4233ead520513bd708b3c5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7dd076c48d565d4d0b686224178c1ee98a121529544633af3b13c71565f1f9e5"
+    sha256 cellar: :any_skip_relocation, mojave:      "f05f9f0affc3bba078432f5822f85549ea905ce0dc4271f501e0d38e113dd09f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4a2aff7e038f97050cbd8beb84023c9c9c093078ba4233ead520513bd708b3c5"
   end
 
   depends_on "emacs" if MacOS.version >= :catalina

@@ -11,12 +11,12 @@ class Ncftp < Formula
   end
 
   bottle do
-    sha256 "4082ca1bf2427d1780e0ebcf96b1d90d78630544a318ef94808ba003bfb49f47" => :catalina
-    sha256 "3f7f108352b84b36c6d2174e4cc71c9b5b3632ac79b2aa8293205ea322541ba0" => :mojave
-    sha256 "bd53fba3c13ba333f8e22ce0adc67a9ee3fa0d95e571f9833f4928d0adb0ee30" => :high_sierra
-    sha256 "25caf7d9c7ac3c1642d3d205fcedfbea05878798033c0ff82cc3b5fbab4674d5" => :sierra
-    sha256 "821f66bcd8991168314bb77f1404b3af6f93fda5c4fdcb3c651d3b7fbdd7f4fe" => :el_capitan
-    sha256 "ac12f87bb648eb4dde883ad5ccca0c8cf80c60e1437ce03e5fc8d768fcec1bde" => :yosemite
+    sha256 catalina:    "4082ca1bf2427d1780e0ebcf96b1d90d78630544a318ef94808ba003bfb49f47"
+    sha256 mojave:      "3f7f108352b84b36c6d2174e4cc71c9b5b3632ac79b2aa8293205ea322541ba0"
+    sha256 high_sierra: "bd53fba3c13ba333f8e22ce0adc67a9ee3fa0d95e571f9833f4928d0adb0ee30"
+    sha256 sierra:      "25caf7d9c7ac3c1642d3d205fcedfbea05878798033c0ff82cc3b5fbab4674d5"
+    sha256 el_capitan:  "821f66bcd8991168314bb77f1404b3af6f93fda5c4fdcb3c651d3b7fbdd7f4fe"
+    sha256 yosemite:    "ac12f87bb648eb4dde883ad5ccca0c8cf80c60e1437ce03e5fc8d768fcec1bde"
   end
 
   def install

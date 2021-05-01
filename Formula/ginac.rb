@@ -6,10 +6,9 @@ class Ginac < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "1f8cfa27de553a5d255476f6b9bf733e07b2a7fae0634c54cf3f76a6df70657e" => :catalina
-    sha256 "d7ac7422a7cc3b9d629e5ec07af4882ebc6228a306d5a30b30fea9f0caaf0ed8" => :mojave
-    sha256 "7a29a3fd12ee311e585dbd768fdb7a41634db388c76dd62d08435eec2d93738e" => :high_sierra
+    sha256 cellar: :any, catalina:    "1f8cfa27de553a5d255476f6b9bf733e07b2a7fae0634c54cf3f76a6df70657e"
+    sha256 cellar: :any, mojave:      "d7ac7422a7cc3b9d629e5ec07af4882ebc6228a306d5a30b30fea9f0caaf0ed8"
+    sha256 cellar: :any, high_sierra: "7a29a3fd12ee311e585dbd768fdb7a41634db388c76dd62d08435eec2d93738e"
   end
 
   depends_on "pkg-config" => :build

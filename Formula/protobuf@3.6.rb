@@ -7,11 +7,10 @@ class ProtobufAT36 < Formula
   revision 2
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "6d2da9252d93ab92e216192a91e71445325e82a660580a63867820d013eb849c" => :catalina
-    sha256 "4bf947fba8c49983858b40906e8cb56adca645d645bc3a5f3561c6fc76e9f5eb" => :mojave
-    sha256 "b58011315d7163fcb54491c60f7151cf79eb71bca9c78395d9d2a365ed374626" => :high_sierra
+    sha256 cellar: :any, catalina:    "6d2da9252d93ab92e216192a91e71445325e82a660580a63867820d013eb849c"
+    sha256 cellar: :any, mojave:      "4bf947fba8c49983858b40906e8cb56adca645d645bc3a5f3561c6fc76e9f5eb"
+    sha256 cellar: :any, high_sierra: "b58011315d7163fcb54491c60f7151cf79eb71bca9c78395d9d2a365ed374626"
   end
 
   keg_only :versioned_formula

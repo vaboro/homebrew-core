@@ -8,11 +8,10 @@ class SyncGateway < Formula
   head "https://github.com/couchbase/sync_gateway.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "b1ec1b07a62ae7e15e2d16be2a10ccc18a53ba1302a8aaef1760d90046500cc0" => :catalina
-    sha256 "db5e68b8cf1d359212a549ca79685f219854652421e88459c796bf27ccaf004b" => :mojave
-    sha256 "7efcb17eada7400912053e7fc0e4851d2f3346278238f6be3bc3a854af6ee339" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b1ec1b07a62ae7e15e2d16be2a10ccc18a53ba1302a8aaef1760d90046500cc0"
+    sha256 cellar: :any_skip_relocation, mojave:      "db5e68b8cf1d359212a549ca79685f219854652421e88459c796bf27ccaf004b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7efcb17eada7400912053e7fc0e4851d2f3346278238f6be3bc3a854af6ee339"
   end
 
   depends_on "gnupg" => :build

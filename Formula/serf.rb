@@ -8,10 +8,9 @@ class Serf < Formula
   head "https://github.com/hashicorp/serf.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7b232e24a80e1c0199e2b1b368f7c55e1f51ff840b450eb826b2688a2c6fab03" => :catalina
-    sha256 "04d4ea4e4c299ac0899a59f96381a7f382b91b16d6cc4b7eb69d97c446e66343" => :mojave
-    sha256 "22a8592c825ec0adb0e790be20dd0e24a8d5afb2b326d17df22a5266197a4148" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7b232e24a80e1c0199e2b1b368f7c55e1f51ff840b450eb826b2688a2c6fab03"
+    sha256 cellar: :any_skip_relocation, mojave:      "04d4ea4e4c299ac0899a59f96381a7f382b91b16d6cc4b7eb69d97c446e66343"
+    sha256 cellar: :any_skip_relocation, high_sierra: "22a8592c825ec0adb0e790be20dd0e24a8d5afb2b326d17df22a5266197a4148"
   end
 
   depends_on "go" => :build
@@ -32,7 +31,7 @@ class Serf < Formula
       exec "#{bin}/serf", "agent"
     end
     sleep 1
-    assert_match /:7946.*alive$/, shell_output("#{bin}/serf members")
+    assert_match(/:7946.*alive$/, shell_output("#{bin}/serf members"))
   ensure
     system "#{bin}/serf", "leave"
     Process.kill "SIGINT", pid

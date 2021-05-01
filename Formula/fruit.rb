@@ -6,10 +6,9 @@ class Fruit < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "10f1081e14b11a547b36020cdfa75486fac42036389b37d2df831f586fc78429" => :catalina
-    sha256 "fc0a6e56340a21a4548f589d38df7b52bd6edabb483e6c6e0a9fe8605a373a8f" => :mojave
-    sha256 "73e0c030fb7984d5b3b72d11410ca2f30c4e5a66ba183070fc3ae8a919ea5094" => :high_sierra
+    sha256 cellar: :any, catalina:    "10f1081e14b11a547b36020cdfa75486fac42036389b37d2df831f586fc78429"
+    sha256 cellar: :any, mojave:      "fc0a6e56340a21a4548f589d38df7b52bd6edabb483e6c6e0a9fe8605a373a8f"
+    sha256 cellar: :any, high_sierra: "73e0c030fb7984d5b3b72d11410ca2f30c4e5a66ba183070fc3ae8a919ea5094"
   end
 
   depends_on "cmake" => :build

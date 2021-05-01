@@ -6,10 +6,9 @@ class Trimage < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384" => :catalina
-    sha256 "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384" => :mojave
-    sha256 "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384"
+    sha256 cellar: :any_skip_relocation, mojave:      "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384"
+    sha256 cellar: :any_skip_relocation, high_sierra: "34db72d3e2bbec742fd9d8286919e6dfda53ad2d552c80c1285240b9338ff384"
   end
 
   depends_on "advancecomp"

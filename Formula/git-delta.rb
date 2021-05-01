@@ -7,10 +7,9 @@ class GitDelta < Formula
   head "https://github.com/dandavison/delta.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ef07bc394646ce496f4df2187a190d9462911309484859eb673a898afe5cd245" => :catalina
-    sha256 "766eb46b081280cb6db0e7a18b0af23061de6bc36a17424b9389d044b9f395a9" => :mojave
-    sha256 "a21ba72f6937355d553b634caf3498edcd87c3329e134d1ceeaddb6490ba27ea" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ef07bc394646ce496f4df2187a190d9462911309484859eb673a898afe5cd245"
+    sha256 cellar: :any_skip_relocation, mojave:      "766eb46b081280cb6db0e7a18b0af23061de6bc36a17424b9389d044b9f395a9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a21ba72f6937355d553b634caf3498edcd87c3329e134d1ceeaddb6490ba27ea"
   end
 
   depends_on "rust" => :build

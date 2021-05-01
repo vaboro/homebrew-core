@@ -10,9 +10,9 @@ class Gucharmap < Formula
   end
 
   bottle do
-    sha256 "732ed6b19cd29d595941397082369c61c35a4e960ca0b36e4dd306cc7a97b06e" => :catalina
-    sha256 "a01bf4f29277930ae3376a8d6a69c762d95ba0d1e2807af55f7ec8e3c41866cb" => :mojave
-    sha256 "9c3fbd03c494d4dfa3f126d070e033529aa71d1902674d1b70c1c2ccb73f5835" => :high_sierra
+    sha256 catalina:    "732ed6b19cd29d595941397082369c61c35a4e960ca0b36e4dd306cc7a97b06e"
+    sha256 mojave:      "a01bf4f29277930ae3376a8d6a69c762d95ba0d1e2807af55f7ec8e3c41866cb"
+    sha256 high_sierra: "9c3fbd03c494d4dfa3f126d070e033529aa71d1902674d1b70c1c2ccb73f5835"
   end
 
   depends_on "coreutils" => :build

@@ -6,10 +6,9 @@ class AwsEsProxy < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "dc7b61f5e22fb14108c697fd16d8e10f1dc7c25ba4e198aea9048d5a1ab49380" => :catalina
-    sha256 "04072658dc075c931b5090ed0fc8a7d918388f3352c2752e03eb22f8cda48cb6" => :mojave
-    sha256 "12e316705d1c4730b83f9a7a31559b7968f4c3bace93569902db6a57da0b6966" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dc7b61f5e22fb14108c697fd16d8e10f1dc7c25ba4e198aea9048d5a1ab49380"
+    sha256 cellar: :any_skip_relocation, mojave:      "04072658dc075c931b5090ed0fc8a7d918388f3352c2752e03eb22f8cda48cb6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "12e316705d1c4730b83f9a7a31559b7968f4c3bace93569902db6a57da0b6966"
   end
 
   depends_on "go" => :build

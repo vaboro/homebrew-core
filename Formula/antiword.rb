@@ -10,13 +10,13 @@ class Antiword < Formula
   end
 
   bottle do
-    sha256 "7f62624bf238ba077370f6e8e223704b57eee461f2bbaddc47de8e4b5c5a4eda" => :catalina
-    sha256 "63b4aa9e31936c405039161b1ae728d76472bb9932a7b460e1fdd7a1276ee5ad" => :mojave
-    sha256 "cacd3e8a83231fd139a5b845f17fb99a34f728d10df2eb6289457037ee8c827f" => :high_sierra
-    sha256 "6456be83a3f867a0df1121b7c7b6c413d94d1e38bc920c9c5fda73851265fb2e" => :sierra
-    sha256 "ffc3b61781ffb2ae04537e34b28a19a4fe33683c534dd2d1504d2ec8d5ef4bef" => :el_capitan
-    sha256 "1397c95409d671da764658460eba612b2564d4a0403bfffa667510e05f2fb08a" => :yosemite
-    sha256 "4f4938378ed4cad59dc61d652ec8d33b0410f85dd99ac825f1f86eeeedb07402" => :mavericks
+    sha256 catalina:    "7f62624bf238ba077370f6e8e223704b57eee461f2bbaddc47de8e4b5c5a4eda"
+    sha256 mojave:      "63b4aa9e31936c405039161b1ae728d76472bb9932a7b460e1fdd7a1276ee5ad"
+    sha256 high_sierra: "cacd3e8a83231fd139a5b845f17fb99a34f728d10df2eb6289457037ee8c827f"
+    sha256 sierra:      "6456be83a3f867a0df1121b7c7b6c413d94d1e38bc920c9c5fda73851265fb2e"
+    sha256 el_capitan:  "ffc3b61781ffb2ae04537e34b28a19a4fe33683c534dd2d1504d2ec8d5ef4bef"
+    sha256 yosemite:    "1397c95409d671da764658460eba612b2564d4a0403bfffa667510e05f2fb08a"
+    sha256 mavericks:   "4f4938378ed4cad59dc61d652ec8d33b0410f85dd99ac825f1f86eeeedb07402"
   end
 
   resource "sample.doc" do

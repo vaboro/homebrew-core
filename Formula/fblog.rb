@@ -7,10 +7,9 @@ class Fblog < Formula
   head "https://github.com/brocode/fblog.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "073b76d7c246f672906e7ededa27fb4791f7282a458638829da9e8e4667ef8c9" => :catalina
-    sha256 "16bdfe547bdad0b581ac563e1420623df35eda3a52e293f229f6e84e46010798" => :mojave
-    sha256 "8ddd09ea7663352daba5ffeb48a35f05bab17ab729dc24d3e0bb1f8c3aee1db9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "073b76d7c246f672906e7ededa27fb4791f7282a458638829da9e8e4667ef8c9"
+    sha256 cellar: :any_skip_relocation, mojave:      "16bdfe547bdad0b581ac563e1420623df35eda3a52e293f229f6e84e46010798"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8ddd09ea7663352daba5ffeb48a35f05bab17ab729dc24d3e0bb1f8c3aee1db9"
   end
 
   depends_on "rust" => :build

@@ -7,10 +7,9 @@ class Tup < Formula
   head "https://github.com/gittup/tup.git"
 
   bottle do
-    cellar :any
-    sha256 "6a6730ccbf131493bfd3f35b4e38f50a60cbefb122794ab603b6ad2e7fba2f28" => :catalina
-    sha256 "d1d2207224fb78fd4f1dcdbfacf2b62b10538ebacccd33356c5e93fcedad030e" => :mojave
-    sha256 "9e45e8c40a8576611ba6fa53a55c9004b31f41af75c9130ba909012ec19fef45" => :high_sierra
+    sha256 cellar: :any, catalina:    "6a6730ccbf131493bfd3f35b4e38f50a60cbefb122794ab603b6ad2e7fba2f28"
+    sha256 cellar: :any, mojave:      "d1d2207224fb78fd4f1dcdbfacf2b62b10538ebacccd33356c5e93fcedad030e"
+    sha256 cellar: :any, high_sierra: "9e45e8c40a8576611ba6fa53a55c9004b31f41af75c9130ba909012ec19fef45"
   end
 
   depends_on "pkg-config" => :build

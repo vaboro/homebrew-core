@@ -5,10 +5,9 @@ class Cpm < Formula
   sha256 "07f66930cd173b314cc745706dc75d5cd873c498aebc65d9cecbd353cd5f9aee"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "81c6cf61b1821d3d7de20bfff1c3ee6dff207399ad3b4b18d0aefa74c13b4c00" => :catalina
-    sha256 "f32eed6d025314d54c034b301e5c711dff0e0413d636eefd3886c65f690c2f71" => :mojave
-    sha256 "1207e5b101a9e9e48832c73a60dd0b58593634e83becef774d0eef3236dd21b0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "81c6cf61b1821d3d7de20bfff1c3ee6dff207399ad3b4b18d0aefa74c13b4c00"
+    sha256 cellar: :any_skip_relocation, mojave:      "f32eed6d025314d54c034b301e5c711dff0e0413d636eefd3886c65f690c2f71"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1207e5b101a9e9e48832c73a60dd0b58593634e83becef774d0eef3236dd21b0"
   end
 
   depends_on "perl"

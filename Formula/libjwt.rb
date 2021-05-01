@@ -6,10 +6,9 @@ class Libjwt < Formula
   license "MPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "247bde97c3bc0b297d83a4f3234ed44c6e5c84f94bbbbb794654b7d9ec4a176a" => :catalina
-    sha256 "b89dfc9c94b697150d3ec8d9b18208755c8253f4e2657f87111db10c288851d6" => :mojave
-    sha256 "27966254d5e40f91dd93b012ce65677829727498d5aef1321cf26e884944c545" => :high_sierra
+    sha256 cellar: :any, catalina:    "247bde97c3bc0b297d83a4f3234ed44c6e5c84f94bbbbb794654b7d9ec4a176a"
+    sha256 cellar: :any, mojave:      "b89dfc9c94b697150d3ec8d9b18208755c8253f4e2657f87111db10c288851d6"
+    sha256 cellar: :any, high_sierra: "27966254d5e40f91dd93b012ce65677829727498d5aef1321cf26e884944c545"
   end
 
   depends_on "autoconf" => :build

@@ -6,10 +6,9 @@ class When < Formula
   head "https://github.com/bcrowell/when.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "88a5d4653d7062e0ac6d9913d35390126c1739fe04f0f458624f0199046d0fcd" => :catalina
-    sha256 "18c0460162e7dcb98d499fb8622a471162897a91f4f844fe46f42a52182cc69e" => :mojave
-    sha256 "a0623fd31e458f82217956bd98e72964634f5d632025336386e824a27fe654ae" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "88a5d4653d7062e0ac6d9913d35390126c1739fe04f0f458624f0199046d0fcd"
+    sha256 cellar: :any_skip_relocation, mojave:      "18c0460162e7dcb98d499fb8622a471162897a91f4f844fe46f42a52182cc69e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a0623fd31e458f82217956bd98e72964634f5d632025336386e824a27fe654ae"
   end
 
   def install

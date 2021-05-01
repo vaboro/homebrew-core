@@ -7,10 +7,9 @@ class Snappy < Formula
   head "https://github.com/google/snappy.git"
 
   bottle do
-    cellar :any
-    sha256 "b15a258346dc93bd5c6900a405ccb2e9e02ebfeb5b16607b340cc6a5a021eba3" => :catalina
-    sha256 "e996c3b0dfac02c8cdd06d849db47e853800389ff7d18fa66526d7d51d305589" => :mojave
-    sha256 "77276307037cc20bf44c86fef60b1745c1d8f84d6f963332535b34868f5fc2b4" => :high_sierra
+    sha256 cellar: :any, catalina:    "b15a258346dc93bd5c6900a405ccb2e9e02ebfeb5b16607b340cc6a5a021eba3"
+    sha256 cellar: :any, mojave:      "e996c3b0dfac02c8cdd06d849db47e853800389ff7d18fa66526d7d51d305589"
+    sha256 cellar: :any, high_sierra: "77276307037cc20bf44c86fef60b1745c1d8f84d6f963332535b34868f5fc2b4"
   end
 
   depends_on "cmake" => :build

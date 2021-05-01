@@ -6,10 +6,9 @@ class So < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5bf7f63a206b7ab5b64f102d493db409a3fb068a76326aa0eaa68582ea779638" => :catalina
-    sha256 "13beb97e318c3655cf2a6ecb537f776c5973a7a944c14c212455a359b419b872" => :mojave
-    sha256 "cfc2bf938aacca1db66b6a072dca9cc9f346e21a9ae1a7534d3e1124810e0c2b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5bf7f63a206b7ab5b64f102d493db409a3fb068a76326aa0eaa68582ea779638"
+    sha256 cellar: :any_skip_relocation, mojave:      "13beb97e318c3655cf2a6ecb537f776c5973a7a944c14c212455a359b419b872"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cfc2bf938aacca1db66b6a072dca9cc9f346e21a9ae1a7534d3e1124810e0c2b"
   end
 
   depends_on "rust" => :build
@@ -39,7 +38,7 @@ class So < Formula
     input.close
 
     # make sure it's the correct answer
-    assert_match /:wq/, File.read("output")
+    assert_match(/:wq/, File.read("output"))
   ensure
     Process.kill("TERM", wait_thr.pid)
   end

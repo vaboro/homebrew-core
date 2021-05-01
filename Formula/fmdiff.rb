@@ -7,14 +7,13 @@ class Fmdiff < Formula
   head "https://github.com/brunodefraine/fmscripts.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "4dc5d4eed6916cab57ab1350c7623014c1f2136b69dcb5593c9e344b86328f6c" => :catalina
-    sha256 "4c5fb2bb25510c7269a40ef77d55a3d7e52377db2a012d60c3003a9512616314" => :mojave
-    sha256 "03bf7b7acda053f3b96de99591fb97cef678297941eab37f52802a3c2734afdd" => :high_sierra
-    sha256 "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f" => :sierra
-    sha256 "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f" => :el_capitan
-    sha256 "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "4dc5d4eed6916cab57ab1350c7623014c1f2136b69dcb5593c9e344b86328f6c"
+    sha256 cellar: :any_skip_relocation, mojave:      "4c5fb2bb25510c7269a40ef77d55a3d7e52377db2a012d60c3003a9512616314"
+    sha256 cellar: :any_skip_relocation, high_sierra: "03bf7b7acda053f3b96de99591fb97cef678297941eab37f52802a3c2734afdd"
+    sha256 cellar: :any_skip_relocation, sierra:      "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f"
+    sha256 cellar: :any_skip_relocation, yosemite:    "59d9c9d8a8759531a2f715619cfb2bce404fc7378235cf416ea5a426eb8d967f"
   end
 
   # Needs FileMerge.app, which is part of Xcode.

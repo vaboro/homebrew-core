@@ -6,10 +6,9 @@ class Fastme < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "ef8226e09481486fa3e047ee5145cfc0dc370fceaa702095b835ad701eebf9fe" => :catalina
-    sha256 "517b3f8d0fe9b403b9de35ebca8af530f859a66ae788ee779e21b9d62e9c5c6f" => :mojave
-    sha256 "25cf8eb54ef7416842036f83c99eebb5a5881267d642f4a2c84c94fb5892a511" => :high_sierra
+    sha256 cellar: :any, catalina:    "ef8226e09481486fa3e047ee5145cfc0dc370fceaa702095b835ad701eebf9fe"
+    sha256 cellar: :any, mojave:      "517b3f8d0fe9b403b9de35ebca8af530f859a66ae788ee779e21b9d62e9c5c6f"
+    sha256 cellar: :any, high_sierra: "25cf8eb54ef7416842036f83c99eebb5a5881267d642f4a2c84c94fb5892a511"
   end
 
   depends_on "gcc"

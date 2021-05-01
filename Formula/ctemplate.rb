@@ -7,10 +7,9 @@ class Ctemplate < Formula
   head "https://github.com/olafvdspek/ctemplate.git"
 
   bottle do
-    cellar :any
-    sha256 "de55fe59cb142f6837d75f81c32a1430bd1df1cd3e612f2ccaa60baf4443ac4b" => :catalina
-    sha256 "614ac53920b9d21fcd936bf83580168ba9bebc15df7e87cf99135ab20bf1744d" => :mojave
-    sha256 "563a9a2d8c62edbd1496b4e360a625e3b484856d35edd945b364586f65c0e4e8" => :high_sierra
+    sha256 cellar: :any, catalina:    "de55fe59cb142f6837d75f81c32a1430bd1df1cd3e612f2ccaa60baf4443ac4b"
+    sha256 cellar: :any, mojave:      "614ac53920b9d21fcd936bf83580168ba9bebc15df7e87cf99135ab20bf1744d"
+    sha256 cellar: :any, high_sierra: "563a9a2d8c62edbd1496b4e360a625e3b484856d35edd945b364586f65c0e4e8"
   end
 
   depends_on "autoconf" => :build

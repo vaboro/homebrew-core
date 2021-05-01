@@ -10,9 +10,9 @@ class Libgweather < Formula
   end
 
   bottle do
-    sha256 "46c6e704f4d42d0032888a87cd2d0ce2fd2ce0a9b8027123976857d242c1b0f3" => :catalina
-    sha256 "b8db1057908c9723c708b919330b9a58cdbdb9e6a6c7b053242fb8c965171eff" => :mojave
-    sha256 "267bff5a8951012a4df193baed3816552028de9c44ae26d977e932a75a655d88" => :high_sierra
+    sha256 catalina:    "46c6e704f4d42d0032888a87cd2d0ce2fd2ce0a9b8027123976857d242c1b0f3"
+    sha256 mojave:      "b8db1057908c9723c708b919330b9a58cdbdb9e6a6c7b053242fb8c965171eff"
+    sha256 high_sierra: "267bff5a8951012a4df193baed3816552028de9c44ae26d977e932a75a655d88"
   end
 
   depends_on "gobject-introspection" => :build

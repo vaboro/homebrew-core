@@ -11,10 +11,9 @@ class Nrpe < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "6ef7387202f3b9afda335fd77f16a268a82bed7a9f6ef856faa83741b308d8f2" => :catalina
-    sha256 "90463f41b64e1ac2149dd917d536e406ed22ba9cef8a27e06618bab53c4e673e" => :mojave
-    sha256 "e109e63ca7f6f5386eae058d19e510c5d3a5deb2633f8ef014df1ac24d414cb9" => :high_sierra
+    sha256 cellar: :any, catalina:    "6ef7387202f3b9afda335fd77f16a268a82bed7a9f6ef856faa83741b308d8f2"
+    sha256 cellar: :any, mojave:      "90463f41b64e1ac2149dd917d536e406ed22ba9cef8a27e06618bab53c4e673e"
+    sha256 cellar: :any, high_sierra: "e109e63ca7f6f5386eae058d19e510c5d3a5deb2633f8ef014df1ac24d414cb9"
   end
 
   depends_on "nagios-plugins"
@@ -87,7 +86,7 @@ class Nrpe < Formula
 
     begin
       output = shell_output("netstat -an")
-      assert_match /.*\*\.5666.*LISTEN/, output, "nrpe did not start"
+      assert_match(/.*\*\.5666.*LISTEN/, output, "nrpe did not start")
       pid_nrpe = shell_output("pgrep nrpe").to_i
     ensure
       Process.kill("SIGINT", pid_nrpe)

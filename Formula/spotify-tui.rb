@@ -7,10 +7,9 @@ class SpotifyTui < Formula
   head "https://github.com/Rigellute/spotify-tui.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "26e77cf5b03c45e0cb0b934e75d1de29869dacf0dcc59685550e62be2ea18ba6" => :catalina
-    sha256 "ff8df87d5297146c8c7ed37c11c3fc5b36f463d5de442212c00fc48109f46d1d" => :mojave
-    sha256 "a7634db723c15f57c783426b237fa90d478dbc77cf15cfef9efac6e9693a2bcd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "26e77cf5b03c45e0cb0b934e75d1de29869dacf0dcc59685550e62be2ea18ba6"
+    sha256 cellar: :any_skip_relocation, mojave:      "ff8df87d5297146c8c7ed37c11c3fc5b36f463d5de442212c00fc48109f46d1d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a7634db723c15f57c783426b237fa90d478dbc77cf15cfef9efac6e9693a2bcd"
   end
 
   depends_on "rust" => :build
@@ -23,6 +22,6 @@ class SpotifyTui < Formula
     pid = fork { exec "#{bin}/spt -c #{testpath/"client.yml"} 2>&1 > output" }
     sleep 2
     Process.kill "TERM", pid
-    assert_match /Enter your Client ID/, File.read("output")
+    assert_match(/Enter your Client ID/, File.read("output"))
   end
 end

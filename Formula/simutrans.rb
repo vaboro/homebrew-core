@@ -13,10 +13,9 @@ class Simutrans < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c2c9d281769baf57a160d47af3a8e0575912f8823f11e305e0f42c380759c7d6" => :catalina
-    sha256 "227e7f7ac0becc49570846825ed6fb3a484c85741a2289216842066e225dd8c0" => :mojave
-    sha256 "25efa70edc3b5b9270e4f6cc1bc40010ed5a427e081ed6810dc69151b47d9dac" => :high_sierra
+    sha256 cellar: :any, catalina:    "c2c9d281769baf57a160d47af3a8e0575912f8823f11e305e0f42c380759c7d6"
+    sha256 cellar: :any, mojave:      "227e7f7ac0becc49570846825ed6fb3a484c85741a2289216842066e225dd8c0"
+    sha256 cellar: :any, high_sierra: "25efa70edc3b5b9270e4f6cc1bc40010ed5a427e081ed6810dc69151b47d9dac"
   end
 
   depends_on "libpng"

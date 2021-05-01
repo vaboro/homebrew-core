@@ -7,10 +7,9 @@ class Graphite2 < Formula
   head "https://github.com/silnrsi/graphite.git"
 
   bottle do
-    cellar :any
-    sha256 "0831f474c920b66bbeab3f93a91fa019b82bfffcdd40e369fdab76372700e980" => :catalina
-    sha256 "2f3abb971be03141e9eea54b87c6861d72865bd76fde73ae3161d64c40d51cd9" => :mojave
-    sha256 "62e39dce0ae0440ac164edaab6e1351520bc5414ad509fc0b8d5c890500785bd" => :high_sierra
+    sha256 cellar: :any, catalina:    "0831f474c920b66bbeab3f93a91fa019b82bfffcdd40e369fdab76372700e980"
+    sha256 cellar: :any, mojave:      "2f3abb971be03141e9eea54b87c6861d72865bd76fde73ae3161d64c40d51cd9"
+    sha256 cellar: :any, high_sierra: "62e39dce0ae0440ac164edaab6e1351520bc5414ad509fc0b8d5c890500785bd"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +31,7 @@ class Graphite2 < Formula
   test do
     resource("testfont").stage do
       shape = shell_output("#{bin}/gr2fonttest Simple-Graphite-Font.ttf 'abcde'")
-      assert_match /67.*36.*37.*38.*71/m, shape
+      assert_match(/67.*36.*37.*38.*71/m, shape)
     end
   end
 end

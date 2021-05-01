@@ -7,10 +7,9 @@ class Wasmer < Formula
   head "https://github.com/wasmerio/wasmer.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "751b4b059036dbca254eef935bc03240e1fd559465a376a0cff8f5a41dcd3980" => :catalina
-    sha256 "725d2b857e0954b1e2fd8a01021847e168d5daec33cd76c32f90a0ae12fdf422" => :mojave
-    sha256 "42ea898c1ebd9c0ac58bf21117c05df6a4726123590444c19173a01586c80c63" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "751b4b059036dbca254eef935bc03240e1fd559465a376a0cff8f5a41dcd3980"
+    sha256 cellar: :any_skip_relocation, mojave:      "725d2b857e0954b1e2fd8a01021847e168d5daec33cd76c32f90a0ae12fdf422"
+    sha256 cellar: :any_skip_relocation, high_sierra: "42ea898c1ebd9c0ac58bf21117c05df6a4726123590444c19173a01586c80c63"
   end
 
   depends_on "cmake" => :build

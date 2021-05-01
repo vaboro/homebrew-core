@@ -6,10 +6,9 @@ class Castget < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    cellar :any
-    sha256 "83d589037e4418829134060be140fce4b4b9883b9b68376f20257df68d9fff9a" => :catalina
-    sha256 "fedc8c680b948b9f87cfd3f63f90bd6cb02143120a9c74d5b1bc5a04e84290d9" => :mojave
-    sha256 "4d1f21bb31abc39d28110a76608493423f96a1f19c4b67c1cb651887f3848675" => :high_sierra
+    sha256 cellar: :any, catalina:    "83d589037e4418829134060be140fce4b4b9883b9b68376f20257df68d9fff9a"
+    sha256 cellar: :any, mojave:      "fedc8c680b948b9f87cfd3f63f90bd6cb02143120a9c74d5b1bc5a04e84290d9"
+    sha256 cellar: :any, high_sierra: "4d1f21bb31abc39d28110a76608493423f96a1f19c4b67c1cb651887f3848675"
   end
 
   depends_on "pkg-config" => :build

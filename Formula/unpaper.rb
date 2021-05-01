@@ -6,10 +6,9 @@ class Unpaper < Formula
   revision 4
 
   bottle do
-    cellar :any
-    sha256 "c72b06d6ed960566861cfdd9e01949fe3b532c21efb380606f2b0820d7592c47" => :catalina
-    sha256 "e391cb0121a88acbadb26933c12c6066c638e802578650655260507e0dea490f" => :mojave
-    sha256 "d347977d11838ca92f9f648eda8b35da43e2b0fc5973f025081b55c1a11b0d2b" => :high_sierra
+    sha256 cellar: :any, catalina:    "c72b06d6ed960566861cfdd9e01949fe3b532c21efb380606f2b0820d7592c47"
+    sha256 cellar: :any, mojave:      "e391cb0121a88acbadb26933c12c6066c638e802578650655260507e0dea490f"
+    sha256 cellar: :any, high_sierra: "d347977d11838ca92f9f648eda8b35da43e2b0fc5973f025081b55c1a11b0d2b"
   end
 
   head do

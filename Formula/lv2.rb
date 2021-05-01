@@ -5,10 +5,9 @@ class Lv2 < Formula
   sha256 "90a3e5cf8bdca81b49def917e89fd6bba1d5845261642cd54e7888df0320473f"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e" => :catalina
-    sha256 "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e" => :mojave
-    sha256 "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e"
+    sha256 cellar: :any_skip_relocation, mojave:      "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6cafb26479b24f5b6746557359b665d03bc42dd47ee7acea5a9c0b742c23936e"
   end
 
   depends_on :macos # Due to Python 2

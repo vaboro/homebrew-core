@@ -8,10 +8,9 @@ class FonFlashCli < Formula
   head "https://github.com/ericpaulbishop/gargoyle.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3e37b716229888d09999e4abcb432d0d9b4e604345dbc824cb032e7840fad793" => :catalina
-    sha256 "6d8285e23b9ab3563c43ffa9d02c99dc3506a29a07174b7ff2ed7f709bbd7117" => :mojave
-    sha256 "f60605913533cdc90c6ef163efc7b112af2a61f606b53a715639e08288838dbf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3e37b716229888d09999e4abcb432d0d9b4e604345dbc824cb032e7840fad793"
+    sha256 cellar: :any_skip_relocation, mojave:      "6d8285e23b9ab3563c43ffa9d02c99dc3506a29a07174b7ff2ed7f709bbd7117"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f60605913533cdc90c6ef163efc7b112af2a61f606b53a715639e08288838dbf"
   end
 
   def install

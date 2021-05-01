@@ -5,11 +5,10 @@ class Libxspf < Formula
   sha256 "ba9e93a0066469b074b4022b480004651ad3aa5b4313187fd407d833f79b43a5"
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "2fac98e985ea3242cbce81bbb9e5e37fba44e47204b4a53b868e01199ece71eb" => :catalina
-    sha256 "76c09682c27449a52128a0aa29de091b907327f71cf320b30be5eb3b37442bcb" => :mojave
-    sha256 "ae1e960341fb08826fb30de46f3b1c075c22d9e655acb9e44067327c487328a7" => :high_sierra
+    sha256 cellar: :any, catalina:    "2fac98e985ea3242cbce81bbb9e5e37fba44e47204b4a53b868e01199ece71eb"
+    sha256 cellar: :any, mojave:      "76c09682c27449a52128a0aa29de091b907327f71cf320b30be5eb3b37442bcb"
+    sha256 cellar: :any, high_sierra: "ae1e960341fb08826fb30de46f3b1c075c22d9e655acb9e44067327c487328a7"
   end
 
   depends_on "pkg-config" => :build

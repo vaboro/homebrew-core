@@ -11,10 +11,9 @@ class Log4cxx < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ec9ff34b2c49aa9a48536f7d109da16cc32f9ce83e95ac1dc3efc8a982709908" => :catalina
-    sha256 "23a968d63f8a181a73410cffcde5fd16fbacd5867453e7c0d7b0cb3815942bf8" => :mojave
-    sha256 "11478b4f5ece24ec391954cc0538bb28f11ae6256a9499ca1e95103c2eb1d75c" => :high_sierra
+    sha256 cellar: :any, catalina:    "ec9ff34b2c49aa9a48536f7d109da16cc32f9ce83e95ac1dc3efc8a982709908"
+    sha256 cellar: :any, mojave:      "23a968d63f8a181a73410cffcde5fd16fbacd5867453e7c0d7b0cb3815942bf8"
+    sha256 cellar: :any, high_sierra: "11478b4f5ece24ec391954cc0538bb28f11ae6256a9499ca1e95103c2eb1d75c"
   end
 
   depends_on "autoconf" => :build
@@ -73,6 +72,6 @@ class Log4cxx < Formula
       log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
     EOS
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-llog4cxx"
-    assert_match /ERROR.*Foo/, shell_output("./test", 1)
+    assert_match(/ERROR.*Foo/, shell_output("./test", 1))
   end
 end

@@ -11,9 +11,9 @@ class SstpClient < Formula
   end
 
   bottle do
-    sha256 "07d9e21c21591a675d760f059838f26bbbe02a04b27518bce5d3a9b0d0069194" => :catalina
-    sha256 "0c32039442cbe0c26bc90660fd99e19940b71677637b60d03350a4c90b3ca35c" => :mojave
-    sha256 "cfc794cfd038b84da0b1f329bc7eb6f5c5165e1727ec53c259a5d93ab48d47b0" => :high_sierra
+    sha256 catalina:    "07d9e21c21591a675d760f059838f26bbbe02a04b27518bce5d3a9b0d0069194"
+    sha256 mojave:      "0c32039442cbe0c26bc90660fd99e19940b71677637b60d03350a4c90b3ca35c"
+    sha256 high_sierra: "cfc794cfd038b84da0b1f329bc7eb6f5c5165e1727ec53c259a5d93ab48d47b0"
   end
 
   depends_on "pkg-config" => :build

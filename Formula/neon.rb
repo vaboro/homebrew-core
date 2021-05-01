@@ -11,10 +11,9 @@ class Neon < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "4cb9cac535f8d40ca71c0bb04fe2baa24f929685d06caf71311d285933ac0828" => :catalina
-    sha256 "3aef45d339688bda9dd7dc6682bebb97f8c0eb349a0ebb9a92d92e01635a5f75" => :mojave
-    sha256 "e1a66cf7af9daade4ce304c14b11b797610f448f194306e996ffacab04c2af5d" => :high_sierra
+    sha256 cellar: :any, catalina:    "4cb9cac535f8d40ca71c0bb04fe2baa24f929685d06caf71311d285933ac0828"
+    sha256 cellar: :any, mojave:      "3aef45d339688bda9dd7dc6682bebb97f8c0eb349a0ebb9a92d92e01635a5f75"
+    sha256 cellar: :any, high_sierra: "e1a66cf7af9daade4ce304c14b11b797610f448f194306e996ffacab04c2af5d"
   end
 
   depends_on "pkg-config" => :build

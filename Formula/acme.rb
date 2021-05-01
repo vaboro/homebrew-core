@@ -12,10 +12,9 @@ class Acme < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "54080f9a08a3f958c5a024fd536c2308c392521a4a4092afb115f368b3256fd2" => :catalina
-    sha256 "53ddd3c05dea30a12436e997a68ab50670bd9dbe771e3c3a6d7216c0240c6e07" => :mojave
-    sha256 "8ed3df0ed73b3f995ca33b357c00f54b03f16ec2effd61eca985b04a82eb40b6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "54080f9a08a3f958c5a024fd536c2308c392521a4a4092afb115f368b3256fd2"
+    sha256 cellar: :any_skip_relocation, mojave:      "53ddd3c05dea30a12436e997a68ab50670bd9dbe771e3c3a6d7216c0240c6e07"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8ed3df0ed73b3f995ca33b357c00f54b03f16ec2effd61eca985b04a82eb40b6"
   end
 
   def install

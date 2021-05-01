@@ -11,10 +11,9 @@ class Expat < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "202ebb6d7a1eb01066263128fe34ebbbc806e5ee35b283510fa1074b674c3739" => :catalina
-    sha256 "7440c3d35a2bd7d27bb6364a5d8c2f206509d6ebe09bd507039b701c133bb45d" => :mojave
-    sha256 "5c51e4a42af80a11bf3f2c697a36aedc6df21b03bed3b51c3127472660b042b3" => :high_sierra
+    sha256 cellar: :any, catalina:    "202ebb6d7a1eb01066263128fe34ebbbc806e5ee35b283510fa1074b674c3739"
+    sha256 cellar: :any, mojave:      "7440c3d35a2bd7d27bb6364a5d8c2f206509d6ebe09bd507039b701c133bb45d"
+    sha256 cellar: :any, high_sierra: "5c51e4a42af80a11bf3f2c697a36aedc6df21b03bed3b51c3127472660b042b3"
   end
 
   head do

@@ -1,7 +1,7 @@
 class Swift < Formula
   desc "High-performance system programming language"
   homepage "https://swift.org"
-  # Note: Keep version in sync with resources below
+  # NOTE: Keep version in sync with resources below
   url "https://github.com/apple/swift/archive/swift-5.2.5-RELEASE.tar.gz"
   sha256 "2353bb00dada11160945729a33af94150b7cf0a6a38fbe975774a6e244dbc548"
   license "Apache-2.0"
@@ -13,8 +13,8 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 "26e59645661eaeea4b9c59deea4dd5591dedce7c74b20c772f2e82ab3450d678" => :catalina
-    sha256 "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7" => :mojave
+    sha256 catalina: "26e59645661eaeea4b9c59deea4dd5591dedce7c74b20c772f2e82ab3450d678"
+    sha256 mojave:   "b49fe185bb64ab86515c9b51d43046aad807fa70e49668a403385a72cc4a70b7"
   end
 
   keg_only :provided_by_macos

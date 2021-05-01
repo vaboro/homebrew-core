@@ -6,10 +6,9 @@ class Cortex < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2682468002977085500804931b9d8867e6ba8bc6c4c717f957d7bb6f4e62a899" => :catalina
-    sha256 "03515e6d66aab6e1ba7cf364d9e4ef20fad156dbed855abc40a17b4686e26c3a" => :mojave
-    sha256 "157de4fbc1e9941cf47753d204b2cd48636e1654e15dff1f3a3709f58e53fd86" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2682468002977085500804931b9d8867e6ba8bc6c4c717f957d7bb6f4e62a899"
+    sha256 cellar: :any_skip_relocation, mojave:      "03515e6d66aab6e1ba7cf364d9e4ef20fad156dbed855abc40a17b4686e26c3a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "157de4fbc1e9941cf47753d204b2cd48636e1654e15dff1f3a3709f58e53fd86"
   end
 
   depends_on "go" => :build

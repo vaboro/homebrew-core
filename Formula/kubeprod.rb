@@ -6,10 +6,9 @@ class Kubeprod < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "72b78c5b8393d7fe37d9b1ec1e53f32a34162f4a6379ddd2250bbe5680c53d3e" => :catalina
-    sha256 "75fc89249f53f9b8fe8e09bf3970c11ddc2aaa417f49735c2ac79b0d468dca3e" => :mojave
-    sha256 "bf0f97d8da14fd61c43cf1844eb4899f81073719c233aaaa0856f971e0dfc048" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "72b78c5b8393d7fe37d9b1ec1e53f32a34162f4a6379ddd2250bbe5680c53d3e"
+    sha256 cellar: :any_skip_relocation, mojave:      "75fc89249f53f9b8fe8e09bf3970c11ddc2aaa417f49735c2ac79b0d468dca3e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bf0f97d8da14fd61c43cf1844eb4899f81073719c233aaaa0856f971e0dfc048"
   end
 
   depends_on "go" => :build

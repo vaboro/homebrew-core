@@ -6,10 +6,9 @@ class Silicon < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "85ae46889515c69afb54d056aabc2b5e0c96a17dac70b360e409f8904b26366f" => :catalina
-    sha256 "75a92b9eb7b41d836aed9adc37edeb45dd5b9d38921155ed60f568cdab97667b" => :mojave
-    sha256 "06dac3633cbe5c721ea96eac98fbc1347d62fd78e39a3ed328093d517f3eeb61" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "85ae46889515c69afb54d056aabc2b5e0c96a17dac70b360e409f8904b26366f"
+    sha256 cellar: :any_skip_relocation, mojave:      "75a92b9eb7b41d836aed9adc37edeb45dd5b9d38921155ed60f568cdab97667b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "06dac3633cbe5c721ea96eac98fbc1347d62fd78e39a3ed328093d517f3eeb61"
   end
 
   depends_on "rust" => :build

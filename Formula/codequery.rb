@@ -6,10 +6,9 @@ class Codequery < Formula
   license "MPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "b3f585e17783444968f0739397eb41fb14f897584118689bf1dbb862344e4221" => :catalina
-    sha256 "94fd84eb8c088b69eeddd1e09ad6bf7ed97ddd052e2ab4f6381776a6b4d3622d" => :mojave
-    sha256 "da150e36ca0d9cc56f7b243aa26677e4bed67335b1be5d01f10eeaf83df6884b" => :high_sierra
+    sha256 cellar: :any, catalina:    "b3f585e17783444968f0739397eb41fb14f897584118689bf1dbb862344e4221"
+    sha256 cellar: :any, mojave:      "94fd84eb8c088b69eeddd1e09ad6bf7ed97ddd052e2ab4f6381776a6b4d3622d"
+    sha256 cellar: :any, high_sierra: "da150e36ca0d9cc56f7b243aa26677e4bed67335b1be5d01f10eeaf83df6884b"
   end
 
   depends_on "cmake" => :build

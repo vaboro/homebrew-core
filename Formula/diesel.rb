@@ -7,11 +7,10 @@ class Diesel < Formula
   head "https://github.com/diesel-rs/diesel.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "a63b7299a7b32a4c6f581ce4aac9b264bb4b1fbd555268126f2db791606846f2" => :catalina
-    sha256 "ecff18f1ca293e846f0a1742311c89a146315a051531a3fff6ff27ddb14f9e95" => :mojave
-    sha256 "f63d5ac49ce152f424ce1d0072177857a0c9724156bdb5faad34f74af58e24e6" => :high_sierra
+    sha256 cellar: :any, catalina:    "a63b7299a7b32a4c6f581ce4aac9b264bb4b1fbd555268126f2db791606846f2"
+    sha256 cellar: :any, mojave:      "ecff18f1ca293e846f0a1742311c89a146315a051531a3fff6ff27ddb14f9e95"
+    sha256 cellar: :any, high_sierra: "f63d5ac49ce152f424ce1d0072177857a0c9724156bdb5faad34f74af58e24e6"
   end
 
   depends_on "rust" => [:build, :test]

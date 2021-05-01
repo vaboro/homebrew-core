@@ -7,10 +7,9 @@ class PerlBuild < Formula
   head "https://github.com/tokuhirom/perl-build.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "21afa110a4b5fa7ed53d3e79fcf9f602fb8143902a6a0b0ba22be0aeadd9b98c" => :catalina
-    sha256 "47c139b2b6d68fdc08742dbda4ebdde55ae23cae474818d7f15fcfa156554fe5" => :mojave
-    sha256 "3bb5910f082f8936165523306b1762f18277f3aac1cdd4abdfb84dfd5d240e45" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "21afa110a4b5fa7ed53d3e79fcf9f602fb8143902a6a0b0ba22be0aeadd9b98c"
+    sha256 cellar: :any_skip_relocation, mojave:      "47c139b2b6d68fdc08742dbda4ebdde55ae23cae474818d7f15fcfa156554fe5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3bb5910f082f8936165523306b1762f18277f3aac1cdd4abdfb84dfd5d240e45"
   end
 
   uses_from_macos "perl"

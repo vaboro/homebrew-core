@@ -11,11 +11,10 @@ class Thrift < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "9fff4084e59bf612da35f7e731c82f5a1d714aec8ba860a2521c0ca1d73731d4" => :catalina
-    sha256 "840fbc8db938bc1b8e50d16f733bcd22a8918efee276cbf969fc79f779380b5d" => :mojave
-    sha256 "bec0a20279bf36bcd960c71b9e417e41a53479e8a575034bef426994e7ecc546" => :high_sierra
+    sha256 cellar: :any, catalina:    "9fff4084e59bf612da35f7e731c82f5a1d714aec8ba860a2521c0ca1d73731d4"
+    sha256 cellar: :any, mojave:      "840fbc8db938bc1b8e50d16f733bcd22a8918efee276cbf969fc79f779380b5d"
+    sha256 cellar: :any, high_sierra: "bec0a20279bf36bcd960c71b9e417e41a53479e8a575034bef426994e7ecc546"
   end
 
   head do

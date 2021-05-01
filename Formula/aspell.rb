@@ -11,10 +11,12 @@ class Aspell < Formula
   end
 
   bottle do
-    sha256 "f34a5b53fa80f6f0ea3cef83d04eceed93f918153463e0b77a596374a842249d" => :catalina
-    sha256 "756d2f24409150b932043544af99bc1c2ea242299174ab89a2d06c7878812af8" => :mojave
-    sha256 "9bbb8be505d953395bcccde4712cf85792c6bf03af535cc553783361476ddddb" => :high_sierra
+    sha256 catalina:    "f34a5b53fa80f6f0ea3cef83d04eceed93f918153463e0b77a596374a842249d"
+    sha256 mojave:      "756d2f24409150b932043544af99bc1c2ea242299174ab89a2d06c7878812af8"
+    sha256 high_sierra: "9bbb8be505d953395bcccde4712cf85792c6bf03af535cc553783361476ddddb"
   end
+
+  uses_from_macos "ncurses"
 
   uses_from_macos "ncurses"
 
@@ -551,8 +553,6 @@ class Aspell < Formula
     mirror "https://ftpmirror.gnu.org/aspell/dict/zu/aspell-zu-0.50-0.tar.bz2"
     sha256 "3fa255cd0b20e6229a53df972fd3c5ed8481db11cfd0347dd3da629bbb7a6796"
   end
-
-  uses_from_macos "ncurses"
 
   # const problems with llvm: https://www.freebsd.org/cgi/query-pr.cgi?pr=180565&cat=
   patch :DATA

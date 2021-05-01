@@ -7,12 +7,11 @@ class Pacparser < Formula
   head "https://github.com/pacparser/pacparser.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "985bbf12ff200cd4f521eddbc17e084f1cb1fd8166853a52fd4b30228bdefd46" => :catalina
-    sha256 "5a4db686679c753a806fa2e2df5e93263f973f447f9357fcdadc071687c10071" => :mojave
-    sha256 "1bb0af844e0cfd58357987f2f9e6f82b0e72a13df961f13ad8b81b3e00a3dff2" => :high_sierra
-    sha256 "719e5eadacf71e3a2e863447609322c45f3be3a9d3ee63373c05a9a2ae7f31b8" => :sierra
+    sha256 cellar: :any, catalina:    "985bbf12ff200cd4f521eddbc17e084f1cb1fd8166853a52fd4b30228bdefd46"
+    sha256 cellar: :any, mojave:      "5a4db686679c753a806fa2e2df5e93263f973f447f9357fcdadc071687c10071"
+    sha256 cellar: :any, high_sierra: "1bb0af844e0cfd58357987f2f9e6f82b0e72a13df961f13ad8b81b3e00a3dff2"
+    sha256 cellar: :any, sierra:      "719e5eadacf71e3a2e863447609322c45f3be3a9d3ee63373c05a9a2ae7f31b8"
   end
 
   def install

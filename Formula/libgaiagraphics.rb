@@ -6,10 +6,9 @@ class Libgaiagraphics < Formula
   revision 7
 
   bottle do
-    cellar :any
-    sha256 "05b3806c31a6e084eeeec2e44c83b8fb728cd0de4cc22dae14888ff52e290cca" => :catalina
-    sha256 "bfaf50e26b9312c1ef7d9b62677e92099339d14393ce855b870fe9288503c5df" => :mojave
-    sha256 "20a230ae5fccd2d5114e8ab7a128dd57834104461e5a7cbc2f7c7e63075214d9" => :high_sierra
+    sha256 cellar: :any, catalina:    "05b3806c31a6e084eeeec2e44c83b8fb728cd0de4cc22dae14888ff52e290cca"
+    sha256 cellar: :any, mojave:      "bfaf50e26b9312c1ef7d9b62677e92099339d14393ce855b870fe9288503c5df"
+    sha256 cellar: :any, high_sierra: "20a230ae5fccd2d5114e8ab7a128dd57834104461e5a7cbc2f7c7e63075214d9"
   end
 
   depends_on "pkg-config" => :build

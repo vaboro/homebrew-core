@@ -10,9 +10,9 @@ class Gauche < Formula
   end
 
   bottle do
-    sha256 "0d2bc0fa954237af130845e904c6c1680018c52c0fe60ccdcbb25000ed5b5408" => :catalina
-    sha256 "bb0bee61ddd5726151e4569d8ea2c7b5797a82543bb13e45a6fec66a521cdcae" => :mojave
-    sha256 "719f5826572a2aec1383ef5501ee4f92580f8a769205c03e47f9e610fa0b5abd" => :high_sierra
+    sha256 catalina:    "0d2bc0fa954237af130845e904c6c1680018c52c0fe60ccdcbb25000ed5b5408"
+    sha256 mojave:      "bb0bee61ddd5726151e4569d8ea2c7b5797a82543bb13e45a6fec66a521cdcae"
+    sha256 high_sierra: "719f5826572a2aec1383ef5501ee4f92580f8a769205c03e47f9e610fa0b5abd"
   end
 
   def install

@@ -15,10 +15,9 @@ class Abcl < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bf6e2009b77b8e23c1140be6043bc51096180bd9cb8d00888caa9750eb9d1a89" => :catalina
-    sha256 "1d884eb75df567889352f3a3dcd5620d92df1acdc28a219a5d1c75b06052b859" => :mojave
-    sha256 "7a04bbbe48101327cbd7c08fb93c34e578a427b8dafdc2a7dbe59c213923764a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bf6e2009b77b8e23c1140be6043bc51096180bd9cb8d00888caa9750eb9d1a89"
+    sha256 cellar: :any_skip_relocation, mojave:      "1d884eb75df567889352f3a3dcd5620d92df1acdc28a219a5d1c75b06052b859"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7a04bbbe48101327cbd7c08fb93c34e578a427b8dafdc2a7dbe59c213923764a"
   end
 
   depends_on "ant"
@@ -39,6 +38,6 @@ class Abcl < Formula
 
   test do
     (testpath/"test.lisp").write "(print \"Homebrew\")\n(quit)"
-    assert_match /"Homebrew"$/, shell_output("#{bin}/abcl --load test.lisp").strip
+    assert_match(/"Homebrew"$/, shell_output("#{bin}/abcl --load test.lisp").strip)
   end
 end

@@ -8,10 +8,9 @@ class Libtommath < Formula
   head "https://github.com/libtom/libtommath.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "700d1c4dfecd1016215158de7436d02452a149c5882ba3fda1201a72d6c3d5ea" => :catalina
-    sha256 "9832ceb97e387a519d6ae9b66bb3a7066c1d112d947667527a5edfcc692e4983" => :mojave
-    sha256 "26e39af069485ef58c3517fb765db3a5e8dba0f253aac3d0d5968ff2a35e595b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "700d1c4dfecd1016215158de7436d02452a149c5882ba3fda1201a72d6c3d5ea"
+    sha256 cellar: :any_skip_relocation, mojave:      "9832ceb97e387a519d6ae9b66bb3a7066c1d112d947667527a5edfcc692e4983"
+    sha256 cellar: :any_skip_relocation, high_sierra: "26e39af069485ef58c3517fb765db3a5e8dba0f253aac3d0d5968ff2a35e595b"
   end
 
   # Fixes mp_set_double being missing on macOS.

@@ -11,10 +11,9 @@ class Aubio < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "933eeaef88547341ec684e7aa422dc92e6864a06caa211d8d988608da577a4b1" => :catalina
-    sha256 "0680687b55f8de23fde5c71d0dd1767552ef87642dba588ce572de441029c493" => :mojave
-    sha256 "e98d68d3cb9a8576990b5c3ba75a2b7acb71e4f3196365a0c560878ab5258141" => :high_sierra
+    sha256 cellar: :any, catalina:    "933eeaef88547341ec684e7aa422dc92e6864a06caa211d8d988608da577a4b1"
+    sha256 cellar: :any, mojave:      "0680687b55f8de23fde5c71d0dd1767552ef87642dba588ce572de441029c493"
+    sha256 cellar: :any, high_sierra: "e98d68d3cb9a8576990b5c3ba75a2b7acb71e4f3196365a0c560878ab5258141"
   end
 
   depends_on "libtool" => :build

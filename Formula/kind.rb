@@ -7,11 +7,10 @@ class Kind < Formula
   head "https://github.com/kubernetes-sigs/kind.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "e5ba99b5f14711e0dcb121a992d74c5ee6c6b0468b27e5200bf796d4987e13c0" => :catalina
-    sha256 "d52a780ad6af93a2a7c480a41c5178a461b9966ddc1adb66adde8ff3bce15238" => :mojave
-    sha256 "423ea750ae8589d1a199847f746d8e9b5b1f1d81ceff3a9dab2d63f161532588" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e5ba99b5f14711e0dcb121a992d74c5ee6c6b0468b27e5200bf796d4987e13c0"
+    sha256 cellar: :any_skip_relocation, mojave:      "d52a780ad6af93a2a7c480a41c5178a461b9966ddc1adb66adde8ff3bce15238"
+    sha256 cellar: :any_skip_relocation, high_sierra: "423ea750ae8589d1a199847f746d8e9b5b1f1d81ceff3a9dab2d63f161532588"
   end
 
   depends_on "go" => :build

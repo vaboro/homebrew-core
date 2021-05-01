@@ -7,11 +7,10 @@ class Dromeaudio < Formula
   head "https://github.com/joshb/dromeaudio.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "5199ecfbb8454f1560685c537b1fbaf1b301b39ad8ea825a9f846cc9f3530f30" => :catalina
-    sha256 "062b0fa8e43363d60e5816343d1fcb7f58ce02c236512d96f4bf4ba10c96fd2c" => :mojave
-    sha256 "1334685c021a520567e2d16bfe68ebddea8f9382a50645e241d09349cfb6b450" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5199ecfbb8454f1560685c537b1fbaf1b301b39ad8ea825a9f846cc9f3530f30"
+    sha256 cellar: :any_skip_relocation, mojave:      "062b0fa8e43363d60e5816343d1fcb7f58ce02c236512d96f4bf4ba10c96fd2c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1334685c021a520567e2d16bfe68ebddea8f9382a50645e241d09349cfb6b450"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +32,7 @@ class Dromeaudio < Formula
     #   AudioUnitSetProperty (for StreamFormat) failed
     #
     # Related PR: https://github.com/Homebrew/homebrew-core/pull/55292
-    assert_match /Usage: .*?DromeAudioPlayer <filename>/i,
-                 shell_output(bin/"DromeAudioPlayer 2>&1", 1)
+    assert_match(/Usage: .*?DromeAudioPlayer <filename>/i,
+                 shell_output(bin/"DromeAudioPlayer 2>&1", 1))
   end
 end

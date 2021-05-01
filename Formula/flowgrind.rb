@@ -11,10 +11,9 @@ class Flowgrind < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e598d94bf046253c93bfb394d532584bca417b69e63b70b851f0ab4f9adf3089" => :catalina
-    sha256 "652a07d073f21ae8158fed8b7a34c739a88a0e594c32408a83d48e80a93df944" => :mojave
-    sha256 "4b723ca4f7f92a354bf8226d67fd8537a13c07223ff5d05ebd9da82491cb546a" => :high_sierra
+    sha256 cellar: :any, catalina:    "e598d94bf046253c93bfb394d532584bca417b69e63b70b851f0ab4f9adf3089"
+    sha256 cellar: :any, mojave:      "652a07d073f21ae8158fed8b7a34c739a88a0e594c32408a83d48e80a93df944"
+    sha256 cellar: :any, high_sierra: "4b723ca4f7f92a354bf8226d67fd8537a13c07223ff5d05ebd9da82491cb546a"
   end
 
   depends_on "gsl"

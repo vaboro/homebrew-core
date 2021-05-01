@@ -8,10 +8,9 @@ class Valabind < Formula
   head "https://github.com/radare/valabind.git"
 
   bottle do
-    cellar :any
-    sha256 "c5ad6fe97fa944521c3848f282a940aa3f37d22bc96a472d6f320715f679b38b" => :catalina
-    sha256 "e120768e4de31c6d5efcfd3e09eacf59c9b8d2388f3a402a296fc13a50c35263" => :mojave
-    sha256 "90ee3663f74b52b5efb182792bbb4bd76780929bc7444dd319dcf51d27888390" => :high_sierra
+    sha256 cellar: :any, catalina:    "c5ad6fe97fa944521c3848f282a940aa3f37d22bc96a472d6f320715f679b38b"
+    sha256 cellar: :any, mojave:      "e120768e4de31c6d5efcfd3e09eacf59c9b8d2388f3a402a296fc13a50c35263"
+    sha256 cellar: :any, high_sierra: "90ee3663f74b52b5efb182792bbb4bd76780929bc7444dd319dcf51d27888390"
   end
 
   depends_on "pkg-config" => :build

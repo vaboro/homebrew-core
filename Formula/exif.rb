@@ -6,10 +6,9 @@ class Exif < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "3d4f3d7c86e7c112f9164970cb5e283a96d82235c1633f15de6683b04ec7df87" => :catalina
-    sha256 "a600fdec30f561aaf97184c57ef77697cb617dd19795cb89201f9851646e9fad" => :mojave
-    sha256 "f8978e60a9eedc21fe0da30fa0a6bf900635635a5b1fa827473881b25c12d542" => :high_sierra
+    sha256 cellar: :any, catalina:    "3d4f3d7c86e7c112f9164970cb5e283a96d82235c1633f15de6683b04ec7df87"
+    sha256 cellar: :any, mojave:      "a600fdec30f561aaf97184c57ef77697cb617dd19795cb89201f9851646e9fad"
+    sha256 cellar: :any, high_sierra: "f8978e60a9eedc21fe0da30fa0a6bf900635635a5b1fa827473881b25c12d542"
   end
 
   depends_on "pkg-config" => :build

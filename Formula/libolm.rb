@@ -6,10 +6,9 @@ class Libolm < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "bbe4e24d1c0a1e584d2feb1b4cdcf2b3b6f995e8e01b48367d2b60d5b25ab2c6" => :catalina
-    sha256 "0bcc49962732ee4eb211fc59abbc803444dab90486539f76605b233bdb765705" => :mojave
-    sha256 "7c5a282fba56d8968e138cd7c36949757397f8cc2ba8446c683cf3b24f5ff6aa" => :high_sierra
+    sha256 cellar: :any, catalina:    "bbe4e24d1c0a1e584d2feb1b4cdcf2b3b6f995e8e01b48367d2b60d5b25ab2c6"
+    sha256 cellar: :any, mojave:      "0bcc49962732ee4eb211fc59abbc803444dab90486539f76605b233bdb765705"
+    sha256 cellar: :any, high_sierra: "7c5a282fba56d8968e138cd7c36949757397f8cc2ba8446c683cf3b24f5ff6aa"
   end
 
   depends_on "cmake" => :build

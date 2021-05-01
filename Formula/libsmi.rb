@@ -11,11 +11,10 @@ class Libsmi < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "1a25b44883bb95940e789ec6395dfa796ec44fd4e0d9ae1ee81a4119fe70ac14" => :catalina
-    sha256 "507d7f52bd7be5c1cc3170831de43e3ebd5a4312b6eda5d795d7519437016246" => :mojave
-    sha256 "25a31cf7557ddfc1174a932b904d6c96bda4f3c733caf8258edbdef376e99544" => :high_sierra
+    sha256 cellar: :any, catalina:    "1a25b44883bb95940e789ec6395dfa796ec44fd4e0d9ae1ee81a4119fe70ac14"
+    sha256 cellar: :any, mojave:      "507d7f52bd7be5c1cc3170831de43e3ebd5a4312b6eda5d795d7519437016246"
+    sha256 cellar: :any, high_sierra: "25a31cf7557ddfc1174a932b904d6c96bda4f3c733caf8258edbdef376e99544"
   end
 
   def install
@@ -25,6 +24,6 @@ class Libsmi < Formula
   end
 
   test do
-    assert_match /#{version}/, shell_output("#{bin}/smidiff -V")
+    assert_match(/#{version}/, shell_output("#{bin}/smidiff -V"))
   end
 end

@@ -8,10 +8,9 @@ class Mitie < Formula
   head "https://github.com/mit-nlp/MITIE.git"
 
   bottle do
-    cellar :any
-    sha256 "194f53bc1f0f2bcc8c833d486229cb960c33705b389d7e83d0edf0afb14756eb" => :catalina
-    sha256 "f433ff3785259a3ca1a76066ac500639cf8bfe80cb5e327b3ff0a5345ec27442" => :mojave
-    sha256 "4ca2709376e8a37abe3a3f2763b698489b79fb2ff3c65d6845cbd2aefa9a2e9b" => :high_sierra
+    sha256 cellar: :any, catalina:    "194f53bc1f0f2bcc8c833d486229cb960c33705b389d7e83d0edf0afb14756eb"
+    sha256 cellar: :any, mojave:      "f433ff3785259a3ca1a76066ac500639cf8bfe80cb5e327b3ff0a5345ec27442"
+    sha256 cellar: :any, high_sierra: "4ca2709376e8a37abe3a3f2763b698489b79fb2ff3c65d6845cbd2aefa9a2e9b"
   end
 
   depends_on "python@3.8"

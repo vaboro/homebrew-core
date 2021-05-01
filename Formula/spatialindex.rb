@@ -7,10 +7,9 @@ class Spatialindex < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "fbcbfaf6510137f3168a0dc57cbac8c8b1435094b1ede9d35a30fa6ccaea28f4" => :catalina
-    sha256 "a5cbdfb3acddb053e596fc56e7653559581923e48ed6815503fffc47c7a16660" => :mojave
-    sha256 "cace27981cc1e5143a48e8b700d6823dff9d8049140683e0e536c476894ede91" => :high_sierra
+    sha256 cellar: :any, catalina:    "fbcbfaf6510137f3168a0dc57cbac8c8b1435094b1ede9d35a30fa6ccaea28f4"
+    sha256 cellar: :any, mojave:      "a5cbdfb3acddb053e596fc56e7653559581923e48ed6815503fffc47c7a16660"
+    sha256 cellar: :any, high_sierra: "cace27981cc1e5143a48e8b700d6823dff9d8049140683e0e536c476894ede91"
   end
 
   depends_on "cmake" => :build

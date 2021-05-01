@@ -6,10 +6,9 @@ class ScwAT1 < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "52c01ff6fe52aebc9d92652b82e197726f7887eb3dcb83eecaba69d96ec27ae4" => :catalina
-    sha256 "e818b6b3cf23a0d128edc20717cf10b46e0307e7f7641228589bdee20ef39056" => :mojave
-    sha256 "9682d9e4c0fe67549909bc33191f16ef7f7e312acd9316d32819d26eac5dfc06" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "52c01ff6fe52aebc9d92652b82e197726f7887eb3dcb83eecaba69d96ec27ae4"
+    sha256 cellar: :any_skip_relocation, mojave:      "e818b6b3cf23a0d128edc20717cf10b46e0307e7f7641228589bdee20ef39056"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9682d9e4c0fe67549909bc33191f16ef7f7e312acd9316d32819d26eac5dfc06"
   end
 
   keg_only :versioned_formula

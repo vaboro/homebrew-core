@@ -12,10 +12,9 @@ class Genders < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e1bbeeb4bc32d8655ea35718825175dc1293a1cebd059437cf2fcc9001d159e2" => :catalina
-    sha256 "353ba0eda08b2c75c72e72c2782fb72becb095b2a2875406651c48837dde4223" => :mojave
-    sha256 "31a726904f22c156b763a8bc95bd3db6e85b8bc0cf7d8a82d584bb8684241f6c" => :high_sierra
+    sha256 cellar: :any, catalina:    "e1bbeeb4bc32d8655ea35718825175dc1293a1cebd059437cf2fcc9001d159e2"
+    sha256 cellar: :any, mojave:      "353ba0eda08b2c75c72e72c2782fb72becb095b2a2875406651c48837dde4223"
+    sha256 cellar: :any, high_sierra: "31a726904f22c156b763a8bc95bd3db6e85b8bc0cf7d8a82d584bb8684241f6c"
   end
 
   def install

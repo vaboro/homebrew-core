@@ -9,10 +9,9 @@ class Pgplot < Formula
   revision 9
 
   bottle do
-    cellar :any
-    sha256 "3ed0aa0fd52518e2a8fd10cf856bdd4a892ad5165499df24b39935844fdb6855" => :catalina
-    sha256 "2422381ec9907e1b1045f3c358b9aafe1a2bc7f8f9849bbd4615d5ae0d63480b" => :mojave
-    sha256 "837e69addf8bf9a526fbaf1bfb204fb1a4966dec83295b3628568691d633b613" => :high_sierra
+    sha256 cellar: :any, catalina:    "3ed0aa0fd52518e2a8fd10cf856bdd4a892ad5165499df24b39935844fdb6855"
+    sha256 cellar: :any, mojave:      "2422381ec9907e1b1045f3c358b9aafe1a2bc7f8f9849bbd4615d5ae0d63480b"
+    sha256 cellar: :any, high_sierra: "837e69addf8bf9a526fbaf1bfb204fb1a4966dec83295b3628568691d633b613"
   end
 
   depends_on "gcc" # for gfortran

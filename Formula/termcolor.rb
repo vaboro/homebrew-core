@@ -6,10 +6,9 @@ class Termcolor < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863" => :catalina
-    sha256 "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863" => :mojave
-    sha256 "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863"
+    sha256 cellar: :any_skip_relocation, mojave:      "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bf8dbd74a3f8661b2dcc5968698dc6d0797d32ad4022744fca1c3c2ac1e7b863"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +30,6 @@ class Termcolor < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
-    assert_match /Hello Colorful World/, shell_output("./test")
+    assert_match(/Hello Colorful World/, shell_output("./test"))
   end
 end

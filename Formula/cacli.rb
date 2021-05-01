@@ -6,10 +6,9 @@ class Cacli < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "63f761d1b56137cdb4a2d94e5894c7a43ac28f8d9f7f36c2011da7ea21445c9e" => :catalina
-    sha256 "6b8148ab93f63cc8342a2b77356c1154d875f710edceacaac4258d36d1ccb108" => :mojave
-    sha256 "6dbca926050f4ca29a073d05591e818690d9a3d3cae0dffc7d658aab9afef02d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "63f761d1b56137cdb4a2d94e5894c7a43ac28f8d9f7f36c2011da7ea21445c9e"
+    sha256 cellar: :any_skip_relocation, mojave:      "6b8148ab93f63cc8342a2b77356c1154d875f710edceacaac4258d36d1ccb108"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6dbca926050f4ca29a073d05591e818690d9a3d3cae0dffc7d658aab9afef02d"
   end
 
   depends_on "go" => :build

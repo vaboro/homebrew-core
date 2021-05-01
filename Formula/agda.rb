@@ -24,9 +24,9 @@ class Agda < Formula
 
   bottle do
     rebuild 2
-    sha256 "c2d27dd1e42cee97bd2d4d19d38e027e627df890025265dceab6454d662a3b3e" => :catalina
-    sha256 "664bd4405aebb3eab9c982257425e439a1e03514053f9ddbda08e4257cc2a4d3" => :mojave
-    sha256 "f3d520dba93d25d02aeb32b4493aab265e41ef70d161777745a25d203d1dd1e5" => :high_sierra
+    sha256 catalina:    "c2d27dd1e42cee97bd2d4d19d38e027e627df890025265dceab6454d662a3b3e"
+    sha256 mojave:      "664bd4405aebb3eab9c982257425e439a1e03514053f9ddbda08e4257cc2a4d3"
+    sha256 high_sierra: "f3d520dba93d25d02aeb32b4493aab265e41ef70d161777745a25d203d1dd1e5"
   end
 
   head do

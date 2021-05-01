@@ -7,10 +7,9 @@ class Kepubify < Formula
   head "https://github.com/pgaskin/kepubify.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "909eb48b05c2575f31327ec94a9b51ab662b04a79ecc6dfa9e43e7eb4301a6a7" => :catalina
-    sha256 "6cc87c82960a3529e9a237904f07ae97bd99545646a16ca3115b058340bdb89e" => :mojave
-    sha256 "743129150ee8405e4e17600a71326c04e3bd32c848ffe253ec52f81e64af0316" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "909eb48b05c2575f31327ec94a9b51ab662b04a79ecc6dfa9e43e7eb4301a6a7"
+    sha256 cellar: :any_skip_relocation, mojave:      "6cc87c82960a3529e9a237904f07ae97bd99545646a16ca3115b058340bdb89e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "743129150ee8405e4e17600a71326c04e3bd32c848ffe253ec52f81e64af0316"
   end
 
   depends_on "go" => :build

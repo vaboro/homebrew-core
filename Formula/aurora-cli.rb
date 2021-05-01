@@ -11,17 +11,17 @@ class AuroraCli < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b3b61ca0da323c10be32bfb19af28a48b7cf393729076c3ce6608c69d79bff7d" => :catalina
-    sha256 "4aec30f08b06a40ec584c4c570181e5e04909009e4bc8ce2d18f84a0e282629d" => :mojave
-    sha256 "0a1b506e5d75c9fa8d587bfc9945e78c9cb5342c17a4062d18aafb942e111eca" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b3b61ca0da323c10be32bfb19af28a48b7cf393729076c3ce6608c69d79bff7d"
+    sha256 cellar: :any_skip_relocation, mojave:      "4aec30f08b06a40ec584c4c570181e5e04909009e4bc8ce2d18f84a0e282629d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0a1b506e5d75c9fa8d587bfc9945e78c9cb5342c17a4062d18aafb942e111eca"
   end
+
+  disable! because: :does_not_build
 
   depends_on "python@3.7"
 
   # Does not build on Catalina
   # Has been moved to the Apache Attic: https://github.com/apache/attic-aurora
-  disable! because: :does_not_build
 
   def install
     # No pants yet for Mojave, so we force High Sierra binaries there

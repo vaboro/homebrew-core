@@ -9,13 +9,12 @@ class Smpeg < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "929cb2fe89f7525acbf38a269bde8aaf07f7b2d406007ee9df2d21051a0ccba6" => :catalina
-    sha256 "6e826bd49ceb171cc36877c0498d8ccfc3c614f39b684728e0c307b69942d58c" => :mojave
-    sha256 "2779c8aba2aed376076e53fc9e2e694e8b5fabca0096ae91eed786b73ef3704f" => :high_sierra
-    sha256 "9ac1a1c83a9861b8762ab711d709e67bf020204fb1c1b5907b244d83ced4ab2c" => :sierra
-    sha256 "a4bf36f39959150e1f0cd83c8f58761ce59acdee50f591a1f695665b7517728a" => :el_capitan
+    sha256 cellar: :any, catalina:    "929cb2fe89f7525acbf38a269bde8aaf07f7b2d406007ee9df2d21051a0ccba6"
+    sha256 cellar: :any, mojave:      "6e826bd49ceb171cc36877c0498d8ccfc3c614f39b684728e0c307b69942d58c"
+    sha256 cellar: :any, high_sierra: "2779c8aba2aed376076e53fc9e2e694e8b5fabca0096ae91eed786b73ef3704f"
+    sha256 cellar: :any, sierra:      "9ac1a1c83a9861b8762ab711d709e67bf020204fb1c1b5907b244d83ced4ab2c"
+    sha256 cellar: :any, el_capitan:  "a4bf36f39959150e1f0cd83c8f58761ce59acdee50f591a1f695665b7517728a"
   end
 
   depends_on "autoconf" => :build

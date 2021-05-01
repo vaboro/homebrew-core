@@ -11,9 +11,9 @@ class LinkGrammar < Formula
   end
 
   bottle do
-    sha256 "e38c9f157ec985be94ed5e792442f5d81c00b71d0b84164ed146d8ab3fbb46dd" => :catalina
-    sha256 "4e9b86a609145b67983faa850c0918500cdcb1da5ab5f1ecb945cabdc8533b74" => :mojave
-    sha256 "391cc292bef0a6eb3b21add8bf427f0fcc0122ec59b41003387df27a1c51803c" => :high_sierra
+    sha256 catalina:    "e38c9f157ec985be94ed5e792442f5d81c00b71d0b84164ed146d8ab3fbb46dd"
+    sha256 mojave:      "4e9b86a609145b67983faa850c0918500cdcb1da5ab5f1ecb945cabdc8533b74"
+    sha256 high_sierra: "391cc292bef0a6eb3b21add8bf427f0fcc0122ec59b41003387df27a1c51803c"
   end
 
   depends_on "ant" => :build

@@ -10,10 +10,9 @@ class Whatmp3 < Formula
   head "https://github.com/RecursiveForest/whatmp3.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :catalina
-    sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :mojave
-    sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5"
+    sha256 cellar: :any_skip_relocation, mojave:      "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5"
   end
 
   depends_on "flac"

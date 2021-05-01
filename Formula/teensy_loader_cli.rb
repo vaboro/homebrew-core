@@ -8,10 +8,9 @@ class TeensyLoaderCli < Formula
   head "https://github.com/PaulStoffregen/teensy_loader_cli.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "05c0f806839f8af46bcf6d95bf58247805a5293d4c704d38c2934799b6aa9f1f" => :catalina
-    sha256 "13a4a0fe8cf9b185003da32206bf330c215a9e0ee99bc4c7a901c474f553e7b1" => :mojave
-    sha256 "58f22f026085148841808fb0a9ec9f5f7558c1ef6fbf46a2ec2a0fea8b9f1c18" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "05c0f806839f8af46bcf6d95bf58247805a5293d4c704d38c2934799b6aa9f1f"
+    sha256 cellar: :any_skip_relocation, mojave:      "13a4a0fe8cf9b185003da32206bf330c215a9e0ee99bc4c7a901c474f553e7b1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "58f22f026085148841808fb0a9ec9f5f7558c1ef6fbf46a2ec2a0fea8b9f1c18"
   end
 
   def install
@@ -26,6 +25,6 @@ class TeensyLoaderCli < Formula
 
   test do
     output = shell_output("#{bin}/teensy_loader_cli 2>&1", 1)
-    assert_match /Filename must be specified/, output
+    assert_match(/Filename must be specified/, output)
   end
 end

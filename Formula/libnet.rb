@@ -6,10 +6,9 @@ class Libnet < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "0ecfbf2539a6e051ca8aa5962c0ee7cb57ffd173cf654b0eec8152c1a3fbf133" => :catalina
-    sha256 "cadba638a54f4d5646a3510439ab89317ed23df3c45b12704b78065bb127fbc4" => :mojave
-    sha256 "44e7b11e8f900f9d6f8e0d1a5deed99c46078dd2dbc997937f713ce5a1ac0f38" => :high_sierra
+    sha256 cellar: :any, catalina:    "0ecfbf2539a6e051ca8aa5962c0ee7cb57ffd173cf654b0eec8152c1a3fbf133"
+    sha256 cellar: :any, mojave:      "cadba638a54f4d5646a3510439ab89317ed23df3c45b12704b78065bb127fbc4"
+    sha256 cellar: :any, high_sierra: "44e7b11e8f900f9d6f8e0d1a5deed99c46078dd2dbc997937f713ce5a1ac0f38"
   end
 
   depends_on "doxygen" => :build

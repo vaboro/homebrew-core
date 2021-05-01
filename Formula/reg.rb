@@ -6,10 +6,9 @@ class Reg < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "566141035e7c94c92a4422addea68ea86431916055d14bfe5e20de79c3a6451c" => :catalina
-    sha256 "fc74e858cf6aa00783292b40d24ddbe0597d53c0e2f04c66dbbb0f103cbb50ec" => :mojave
-    sha256 "6c834ffc790787be203c01f7d153971f34d4c75f70245058717e4a13f0afcf79" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "566141035e7c94c92a4422addea68ea86431916055d14bfe5e20de79c3a6451c"
+    sha256 cellar: :any_skip_relocation, mojave:      "fc74e858cf6aa00783292b40d24ddbe0597d53c0e2f04c66dbbb0f103cbb50ec"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6c834ffc790787be203c01f7d153971f34d4c75f70245058717e4a13f0afcf79"
   end
 
   depends_on "go" => :build

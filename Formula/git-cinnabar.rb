@@ -7,10 +7,9 @@ class GitCinnabar < Formula
   head "https://github.com/glandium/git-cinnabar.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "63fcc4e7b3080280b06da11e5c86f17d5f120984ea104f9983f4e9b4a12ba9bc" => :catalina
-    sha256 "384bddafdfea606547c363e9f53a0ddf97ccd5a407077c3200019e43e8d4853e" => :mojave
-    sha256 "8db1f3570d953a49235634aac491322fd68132c036b959fb9c5ff6960f1b4b58" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "63fcc4e7b3080280b06da11e5c86f17d5f120984ea104f9983f4e9b4a12ba9bc"
+    sha256 cellar: :any_skip_relocation, mojave:      "384bddafdfea606547c363e9f53a0ddf97ccd5a407077c3200019e43e8d4853e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8db1f3570d953a49235634aac491322fd68132c036b959fb9c5ff6960f1b4b58"
   end
 
   depends_on :macos # Due to Python 2

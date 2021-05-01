@@ -9,10 +9,9 @@ class Bogofilter < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "2f2d4c414683f922e687d054e71619a0455560aac2522484132099fbddcc6a77" => :catalina
-    sha256 "d7df5e0d29f4fcbc9eafc129ddfd993dc785ee3a4bf79b70b0dce9b5f31f7be4" => :mojave
-    sha256 "c7998fa1651590e6aaf27f8fe014a7b0e305a48a02de4cdcb9ba53f1c84bd1e7" => :high_sierra
+    sha256 cellar: :any, catalina:    "2f2d4c414683f922e687d054e71619a0455560aac2522484132099fbddcc6a77"
+    sha256 cellar: :any, mojave:      "d7df5e0d29f4fcbc9eafc129ddfd993dc785ee3a4bf79b70b0dce9b5f31f7be4"
+    sha256 cellar: :any, high_sierra: "c7998fa1651590e6aaf27f8fe014a7b0e305a48a02de4cdcb9ba53f1c84bd1e7"
   end
 
   depends_on "berkeley-db"

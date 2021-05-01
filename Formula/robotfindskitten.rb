@@ -12,9 +12,9 @@ class Robotfindskitten < Formula
   end
 
   bottle do
-    sha256 "fa1f963cf39fb320c4b8e0867a05c9e96944d59d6c18222a9d6b33acb4384622" => :catalina
-    sha256 "8b25c148f43ad7c70d43810639b7c812cbd612b347386be3f7e913b4d0cc14b5" => :mojave
-    sha256 "9c6b045c69a6ff5e74f4f184ec109d3bfd293c7dab223e87ba80e7bb150e8dae" => :high_sierra
+    sha256 catalina:    "fa1f963cf39fb320c4b8e0867a05c9e96944d59d6c18222a9d6b33acb4384622"
+    sha256 mojave:      "8b25c148f43ad7c70d43810639b7c812cbd612b347386be3f7e913b4d0cc14b5"
+    sha256 high_sierra: "9c6b045c69a6ff5e74f4f184ec109d3bfd293c7dab223e87ba80e7bb150e8dae"
   end
 
   depends_on "autoconf" => :build

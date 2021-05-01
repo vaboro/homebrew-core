@@ -7,11 +7,10 @@ class Nxengine < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "9184041001a3035713542230c9e4a536491919ff0459cc79f294366ab20719a5" => :catalina
-    sha256 "69ef501ebc7a488fc46b4546b91288c7b8dc1cfdadb2bc1ee73611dd062f38e5" => :mojave
-    sha256 "79eece70c7ab5ddb92c8c711a609b996456ff5b7c6c8a008166a351e6889797f" => :high_sierra
+    sha256 cellar: :any, catalina:    "9184041001a3035713542230c9e4a536491919ff0459cc79f294366ab20719a5"
+    sha256 cellar: :any, mojave:      "69ef501ebc7a488fc46b4546b91288c7b8dc1cfdadb2bc1ee73611dd062f38e5"
+    sha256 cellar: :any, high_sierra: "79eece70c7ab5ddb92c8c711a609b996456ff5b7c6c8a008166a351e6889797f"
   end
 
   depends_on "sdl"
@@ -45,8 +44,8 @@ class Nxengine < Formula
               /(mkdir)\((".+")/,
               "char dir[256]; strcpy(dir, \"#{var}/nxengine/\"); strcat(dir, \\2); \\1(dir"
     inreplace "extract/extractfiles.cpp" do |s|
-      s.gsub! /char \*dir = strdup\((fname)\);/,
-             "char *dir = (char *)malloc(256); strcpy(dir, \"#{var}/nxengine/\"); strcat(dir, \\1);"
+      s.gsub!(/char \*dir = strdup\((fname)\);/,
+             "char *dir = (char *)malloc(256); strcpy(dir, \"#{var}/nxengine/\"); strcat(dir, \\1);")
       s.gsub! "strchr", "strrchr"
     end
 

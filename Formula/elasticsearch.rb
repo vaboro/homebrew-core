@@ -6,10 +6,9 @@ class Elasticsearch < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6cef7f769428a47c864edccc30b043153fa239fc5c5545b661975b7cef17efe7" => :catalina
-    sha256 "812838714ceb91031ae6ccc4b762a42fc2f52a8f43dbb9b74e3222a2a6c2b6cd" => :mojave
-    sha256 "666d9a971e6f8a603a96feac7afaaf95e6d88eabf4ecc3d6f1b1f02ff928fa3e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6cef7f769428a47c864edccc30b043153fa239fc5c5545b661975b7cef17efe7"
+    sha256 cellar: :any_skip_relocation, mojave:      "812838714ceb91031ae6ccc4b762a42fc2f52a8f43dbb9b74e3222a2a6c2b6cd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "666d9a971e6f8a603a96feac7afaaf95e6d88eabf4ecc3d6f1b1f02ff928fa3e"
   end
 
   depends_on "gradle" => :build

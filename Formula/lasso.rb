@@ -6,10 +6,9 @@ class Lasso < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "aecca2fc642d36e34cd455c69c22e9218c7189069cfebeeedace812308d3b09c" => :catalina
-    sha256 "aa800d43d4a10ef664f5cfbd323d1417bbafe5a59f6110814b74cd4eecfc51be" => :mojave
-    sha256 "ef80d2303bf630a7c077f404f948eaf0e960afb81b8dced7853cee50ccc2b7dc" => :high_sierra
+    sha256 cellar: :any, catalina:    "aecca2fc642d36e34cd455c69c22e9218c7189069cfebeeedace812308d3b09c"
+    sha256 cellar: :any, mojave:      "aa800d43d4a10ef664f5cfbd323d1417bbafe5a59f6110814b74cd4eecfc51be"
+    sha256 cellar: :any, high_sierra: "ef80d2303bf630a7c077f404f948eaf0e960afb81b8dced7853cee50ccc2b7dc"
   end
 
   depends_on "pkg-config" => :build

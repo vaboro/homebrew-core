@@ -1,5 +1,5 @@
 class Cling < Formula
-  desc "The cling C++ interpreter"
+  desc "C++ interpreter"
   homepage "https://root.cern.ch/cling"
   url "https://github.com/root-project/cling.git",
       tag:      "v0.6",
@@ -14,10 +14,9 @@ class Cling < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9ab4ced2f1cda06858656f78b5ffb7fd1ab680d8b26680e353e71eb7b6c5601b" => :catalina
-    sha256 "e630699239fadc14a1d6b2a62474a9e6c21f187642af66f92df1a49d5e7c899c" => :mojave
-    sha256 "381326c7944d38195c9b8507db18aa35fa636dc8c08f876472db0d7577ce597b" => :high_sierra
+    sha256 cellar: :any, catalina:    "9ab4ced2f1cda06858656f78b5ffb7fd1ab680d8b26680e353e71eb7b6c5601b"
+    sha256 cellar: :any, mojave:      "e630699239fadc14a1d6b2a62474a9e6c21f187642af66f92df1a49d5e7c899c"
+    sha256 cellar: :any, high_sierra: "381326c7944d38195c9b8507db18aa35fa636dc8c08f876472db0d7577ce597b"
   end
 
   depends_on "cmake" => :build

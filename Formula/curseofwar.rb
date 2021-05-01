@@ -7,10 +7,9 @@ class Curseofwar < Formula
   head "https://github.com/a-nikolaev/curseofwar.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ddd5726a8951c2ec18c9f26bbed80d2d22baeef02eb6e1f313d4591f0db7064b" => :catalina
-    sha256 "5847323530aec077f4a17d4c4eb78ee0f90499940dbce3608aba6d4f39e3719e" => :mojave
-    sha256 "b2a0646e145b7ef8f502b6f544d106c05c90974c0f8972285a5dfa753305eece" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ddd5726a8951c2ec18c9f26bbed80d2d22baeef02eb6e1f313d4591f0db7064b"
+    sha256 cellar: :any_skip_relocation, mojave:      "5847323530aec077f4a17d4c4eb78ee0f90499940dbce3608aba6d4f39e3719e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b2a0646e145b7ef8f502b6f544d106c05c90974c0f8972285a5dfa753305eece"
   end
 
   def install

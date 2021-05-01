@@ -11,9 +11,9 @@ class Lesstif < Formula
 
   bottle do
     rebuild 2
-    sha256 "c38e2d072aeade356f5bab6e974fbbeb910259c1fe9d2ed8c352f7b67ca5bd0c" => :catalina
-    sha256 "a7b26f9ad83bbca9c88de347bc96c616eee9c6d5f0a68caca19b4cffa1347def" => :mojave
-    sha256 "bb253ab1835a89928a7c9edb904416b75876cedd50f62647e2d6044fcb55f4f4" => :high_sierra
+    sha256 catalina:    "c38e2d072aeade356f5bab6e974fbbeb910259c1fe9d2ed8c352f7b67ca5bd0c"
+    sha256 mojave:      "a7b26f9ad83bbca9c88de347bc96c616eee9c6d5f0a68caca19b4cffa1347def"
+    sha256 high_sierra: "bb253ab1835a89928a7c9edb904416b75876cedd50f62647e2d6044fcb55f4f4"
   end
 
   depends_on "freetype"
@@ -55,8 +55,8 @@ class Lesstif < Formula
 
   def caveats
     <<~EOS
-      The man page for Core.3 has been renamed to LessTifCore.3 to 
-      avoid conflicts with CORE.3 from Perl in case-insensitive file 
+      The man page for Core.3 has been renamed to LessTifCore.3 to#{" "}
+      avoid conflicts with CORE.3 from Perl in case-insensitive file#{" "}
       systems. Please use "man LessTifCore" instead.
     EOS
   end

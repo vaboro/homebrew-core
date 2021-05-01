@@ -7,10 +7,9 @@ class N < Formula
   head "https://github.com/tj/n.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4" => :catalina
-    sha256 "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4" => :mojave
-    sha256 "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4"
+    sha256 cellar: :any_skip_relocation, mojave:      "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dbd70d6eeb53d38588d27d22ee4e3b6f05129dc7f97bc0449f52113c0a12b1b4"
   end
 
   def install

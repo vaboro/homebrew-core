@@ -7,11 +7,10 @@ class Certigo < Formula
   head "https://github.com/square/certigo.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "9cb3d249c87ed65409a4e4a0e7841bbb8ab9192dea06df8f78f28f0fcbec4550" => :catalina
-    sha256 "85d39ea2806bbd5ea750486132343d2dc36d5cc37ac0048d4561c40d20826fde" => :mojave
-    sha256 "0ec7c22fe619af5e5178f4387f2731909ff02d4379ec62784f3625d2a63c358c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9cb3d249c87ed65409a4e4a0e7841bbb8ab9192dea06df8f78f28f0fcbec4550"
+    sha256 cellar: :any_skip_relocation, mojave:      "85d39ea2806bbd5ea750486132343d2dc36d5cc37ac0048d4561c40d20826fde"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0ec7c22fe619af5e5178f4387f2731909ff02d4379ec62784f3625d2a63c358c"
   end
 
   depends_on "go" => :build

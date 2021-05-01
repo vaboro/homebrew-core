@@ -8,10 +8,9 @@ class Natalie < Formula
   head "https://github.com/krzyzanowskim/Natalie.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "218ec8bb0ac3ac4de7a6fa8489f3ad7013b1beb051a7c0e74a6e37ade79eee6c" => :catalina
-    sha256 "9dcc093fc648175eb165aec20413246ace7427d0d3c4a9884d37cfad9a851dca" => :mojave
-    sha256 "dd51e00a1969ffdd478e954bed48bedd1c5a9813b67931aa146711f49cb58223" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "218ec8bb0ac3ac4de7a6fa8489f3ad7013b1beb051a7c0e74a6e37ade79eee6c"
+    sha256 cellar: :any_skip_relocation, mojave:      "9dcc093fc648175eb165aec20413246ace7427d0d3c4a9884d37cfad9a851dca"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dd51e00a1969ffdd478e954bed48bedd1c5a9813b67931aa146711f49cb58223"
   end
 
   depends_on xcode: ["9.4", :build]

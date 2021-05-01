@@ -12,9 +12,9 @@ class GstPluginsBase < Formula
   end
 
   bottle do
-    sha256 "6a4bc0eb83b7da19c9bdf7dd90c5a6ac0b48893042a43bac03dcbfeef340e592" => :catalina
-    sha256 "f07de5c70880b4c54bf89a1dc60c4ce69330314fb90fea344c2b5f3b6025d8de" => :mojave
-    sha256 "f25b8273bc5fd5d921dde74831b9ccb6bb3fc123c7565027017a459176732a1d" => :high_sierra
+    sha256 catalina:    "6a4bc0eb83b7da19c9bdf7dd90c5a6ac0b48893042a43bac03dcbfeef340e592"
+    sha256 mojave:      "f07de5c70880b4c54bf89a1dc60c4ce69330314fb90fea344c2b5f3b6025d8de"
+    sha256 high_sierra: "f25b8273bc5fd5d921dde74831b9ccb6bb3fc123c7565027017a459176732a1d"
   end
 
   depends_on "gobject-introspection" => :build

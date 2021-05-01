@@ -13,10 +13,9 @@ class Duck < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "cf4a22c4d615cb9762d766deb6976c288d446eaac670e4991928f5e1648fa3b4" => :catalina
-    sha256 "8ce4c07561ec7909fd0be36d118b0f24c97dc3d29176cc4f7f4152775dd2370c" => :mojave
-    sha256 "56db96447ba14c145183ad58231bd3f3d680d5eb0fb10c3da23790f3656f2e6e" => :high_sierra
+    sha256 cellar: :any, catalina:    "cf4a22c4d615cb9762d766deb6976c288d446eaac670e4991928f5e1648fa3b4"
+    sha256 cellar: :any, mojave:      "8ce4c07561ec7909fd0be36d118b0f24c97dc3d29176cc4f7f4152775dd2370c"
+    sha256 cellar: :any, high_sierra: "56db96447ba14c145183ad58231bd3f3d680d5eb0fb10c3da23790f3656f2e6e"
   end
 
   depends_on "ant" => :build

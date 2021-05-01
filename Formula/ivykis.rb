@@ -11,11 +11,10 @@ class Ivykis < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "5da36891f20e60db1a94b7eafeaf35605a0a4b18e833721aec01ab68399653a3" => :catalina
-    sha256 "dd4fa86f2988dd4c913fc443131ce519ebf034ff492b4760f323ca663fb1744c" => :mojave
-    sha256 "1409aa60298ac27959cf5370b70d158843524e5f5638e28e9607ac7e8783b11e" => :high_sierra
+    sha256 cellar: :any, catalina:    "5da36891f20e60db1a94b7eafeaf35605a0a4b18e833721aec01ab68399653a3"
+    sha256 cellar: :any, mojave:      "dd4fa86f2988dd4c913fc443131ce519ebf034ff492b4760f323ca663fb1744c"
+    sha256 cellar: :any, high_sierra: "1409aa60298ac27959cf5370b70d158843524e5f5638e28e9607ac7e8783b11e"
   end
 
   depends_on "autoconf" => :build

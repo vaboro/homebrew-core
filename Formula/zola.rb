@@ -6,10 +6,9 @@ class Zola < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "74f1a61560783117b70c2dcd9e962e70739d86a7185099b79684faed1a9506b5" => :catalina
-    sha256 "58b73515856df5385cc960bfdb8871e948594c50a2dc50dae3ad17463e4922c4" => :mojave
-    sha256 "316bc92a2962c51801f71f16fb250d6e1983afce289e390936b147943cc16127" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "74f1a61560783117b70c2dcd9e962e70739d86a7185099b79684faed1a9506b5"
+    sha256 cellar: :any_skip_relocation, mojave:      "58b73515856df5385cc960bfdb8871e948594c50a2dc50dae3ad17463e4922c4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "316bc92a2962c51801f71f16fb250d6e1983afce289e390936b147943cc16127"
   end
 
   depends_on "cmake" => :build

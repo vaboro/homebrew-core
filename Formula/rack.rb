@@ -8,11 +8,10 @@ class Rack < Formula
   head "https://github.com/rackspace/rack.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "8cf224e3f734308bef6c0ef3cd9aa3a63aa4fdedd9ee626e2ee91099affc83c2" => :catalina
-    sha256 "a50004c910fc4cbb34404fabf20bfcab87dcf6d7ce510a96c72fecbdc8d458cc" => :mojave
-    sha256 "5e33e2bc51e9cf346ed59eabbef5849a170619be2a7b034b19d71a1a25a72fcb" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8cf224e3f734308bef6c0ef3cd9aa3a63aa4fdedd9ee626e2ee91099affc83c2"
+    sha256 cellar: :any_skip_relocation, mojave:      "a50004c910fc4cbb34404fabf20bfcab87dcf6d7ce510a96c72fecbdc8d458cc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5e33e2bc51e9cf346ed59eabbef5849a170619be2a7b034b19d71a1a25a72fcb"
   end
 
   depends_on "go" => :build

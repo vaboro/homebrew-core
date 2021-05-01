@@ -8,10 +8,9 @@ class Buildozer < Formula
   head "https://github.com/bazelbuild/buildtools.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :catalina
-    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :mojave
-    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70"
+    sha256 cellar: :any_skip_relocation, mojave:      "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70"
   end
 
   depends_on "bazelisk" => :build

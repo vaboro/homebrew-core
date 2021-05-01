@@ -8,10 +8,9 @@ class SshVault < Formula
   head "https://github.com/ssh-vault/ssh-vault.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d12a7148614bb8fbc97e0e7f72fe04e18da0cd7fb54ee1e5b9308757a2377e83" => :catalina
-    sha256 "7b7874972e68f117d14f5027895b6259320abe8db5deda72da09875c507755b1" => :mojave
-    sha256 "c6cf671474c67600ddac7bbcae909797c8ba26e16692533b5e82faa153ea9d77" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d12a7148614bb8fbc97e0e7f72fe04e18da0cd7fb54ee1e5b9308757a2377e83"
+    sha256 cellar: :any_skip_relocation, mojave:      "7b7874972e68f117d14f5027895b6259320abe8db5deda72da09875c507755b1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c6cf671474c67600ddac7bbcae909797c8ba26e16692533b5e82faa153ea9d77"
   end
 
   depends_on "dep" => :build

@@ -12,10 +12,9 @@ class Fobis < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "104e8f11c941242b015df06420e81ea0073eb81ed250b7d7983ed43847161d9d" => :catalina
-    sha256 "c103d6fa1e9f8ecc1fbf674608941ac233939f9ffe8a4df0a4259c551f33d243" => :mojave
-    sha256 "58f63b0ebc24609ac19135f4a133b178e76413d7804b8dc53fa5c02895438069" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "104e8f11c941242b015df06420e81ea0073eb81ed250b7d7983ed43847161d9d"
+    sha256 cellar: :any_skip_relocation, mojave:      "c103d6fa1e9f8ecc1fbf674608941ac233939f9ffe8a4df0a4259c551f33d243"
+    sha256 cellar: :any_skip_relocation, high_sierra: "58f63b0ebc24609ac19135f4a133b178e76413d7804b8dc53fa5c02895438069"
   end
 
   depends_on "gcc" # for gfortran
@@ -58,6 +57,6 @@ class Fobis < Formula
       end program
     EOS
     system "#{bin}/FoBiS.py", "build", "-compiler", "gnu"
-    assert_match /Hello FoBiS/, shell_output(testpath/"test-prog")
+    assert_match(/Hello FoBiS/, shell_output(testpath/"test-prog"))
   end
 end

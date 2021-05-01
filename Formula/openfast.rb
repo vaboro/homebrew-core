@@ -6,10 +6,9 @@ class Openfast < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "4002905c49121e6d207f019001aafe98fe40e001a8e0507c91e36a5942f2e528" => :catalina
-    sha256 "975d21ae1596c7ed4f23119e7008d61c88d386eff9ff29bc3ad594cbea722c25" => :mojave
-    sha256 "36c1b0f032d686639382774346c7c71f25fc09db6ff1733b46939c4728199f1d" => :high_sierra
+    sha256 cellar: :any, catalina:    "4002905c49121e6d207f019001aafe98fe40e001a8e0507c91e36a5942f2e528"
+    sha256 cellar: :any, mojave:      "975d21ae1596c7ed4f23119e7008d61c88d386eff9ff29bc3ad594cbea722c25"
+    sha256 cellar: :any, high_sierra: "36c1b0f032d686639382774346c7c71f25fc09db6ff1733b46939c4728199f1d"
   end
 
   depends_on "cmake" => :build

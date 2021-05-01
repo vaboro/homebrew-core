@@ -12,9 +12,9 @@ class Mgba < Formula
   end
 
   bottle do
-    sha256 "c50ed180ffa0e36df07915aa62fecfa586c5ba2225be460fbd84ff09a8842803" => :catalina
-    sha256 "fc0c39c89c6c6dddc8dff172371264c55968c8ea7436da91352f98e558e8bb90" => :mojave
-    sha256 "349b00ebf36aab83875dfa08b516611f79608afaec4ce52060ff8df73f2a336c" => :high_sierra
+    sha256 catalina:    "c50ed180ffa0e36df07915aa62fecfa586c5ba2225be460fbd84ff09a8842803"
+    sha256 mojave:      "fc0c39c89c6c6dddc8dff172371264c55968c8ea7436da91352f98e558e8bb90"
+    sha256 high_sierra: "349b00ebf36aab83875dfa08b516611f79608afaec4ce52060ff8df73f2a336c"
   end
 
   depends_on "cmake" => :build

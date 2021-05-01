@@ -8,9 +8,9 @@ class Appledoc < Formula
 
   bottle do
     rebuild 1
-    sha256 "35ced2445cb6f9744a2b8ef09d1f5d504aefe4995a8463639bf4fa8b5271e5f8" => :catalina
-    sha256 "dd27c7222d181acb351bf33921ef203fcafc4df3e06618ad99b16cf069dd646c" => :mojave
-    sha256 "ccae984913f4bcd3c0ff8f9d527a3330445c432af0bf98da315edbea83ccd0a5" => :high_sierra
+    sha256 catalina:    "35ced2445cb6f9744a2b8ef09d1f5d504aefe4995a8463639bf4fa8b5271e5f8"
+    sha256 mojave:      "dd27c7222d181acb351bf33921ef203fcafc4df3e06618ad99b16cf069dd646c"
+    sha256 high_sierra: "ccae984913f4bcd3c0ff8f9d527a3330445c432af0bf98da315edbea83ccd0a5"
   end
 
   depends_on xcode: :build

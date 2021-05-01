@@ -6,10 +6,9 @@ class Mandown < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "09ad2e54a3b54c9687580b4499f4c5247dfd2e18fb64230b3c255fbc7df1c5be" => :catalina
-    sha256 "9186b868866dd17f080343297e145161f3fe6303701a12bd0a47f8ef246f6630" => :mojave
-    sha256 "acf617ed0300f38b429ed05504c47bb9e403441316d335ae83bf28c18baa63a6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "09ad2e54a3b54c9687580b4499f4c5247dfd2e18fb64230b3c255fbc7df1c5be"
+    sha256 cellar: :any_skip_relocation, mojave:      "9186b868866dd17f080343297e145161f3fe6303701a12bd0a47f8ef246f6630"
+    sha256 cellar: :any_skip_relocation, high_sierra: "acf617ed0300f38b429ed05504c47bb9e403441316d335ae83bf28c18baa63a6"
   end
 
   uses_from_macos "libxml2"

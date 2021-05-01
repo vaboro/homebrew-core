@@ -6,10 +6,9 @@ class ShadowsocksLibev < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "1c324cc200e2c895d672f36f239e2c48588ced81ea9716643a0b2b36757fb7e9" => :catalina
-    sha256 "83a23ecda43df6ef6097aa728de12f4dab8f1595cc9197ef8e29b4b1e5fd8822" => :mojave
-    sha256 "d6f9af357976033c8965e8b8bc7d52a8023b1ec797378f9dd292e74a43c0b134" => :high_sierra
+    sha256 cellar: :any, catalina:    "1c324cc200e2c895d672f36f239e2c48588ced81ea9716643a0b2b36757fb7e9"
+    sha256 cellar: :any, mojave:      "83a23ecda43df6ef6097aa728de12f4dab8f1595cc9197ef8e29b4b1e5fd8822"
+    sha256 cellar: :any, high_sierra: "d6f9af357976033c8965e8b8bc7d52a8023b1ec797378f9dd292e74a43c0b134"
   end
 
   head do

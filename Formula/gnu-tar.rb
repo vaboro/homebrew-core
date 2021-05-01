@@ -11,11 +11,10 @@ class GnuTar < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "158cb67ea9e02435d671013b4d0d7369822758d9f7ff400ce2512a03f2f7f4e4" => :catalina
-    sha256 "1034894e78bb22b0fcf0c8114666d4dc3eb82345a5ca83797ca3bda367d998ac" => :mojave
-    sha256 "3771cead286229786d9d92a7697bc6e0de576ec9cae1f881017884ceb3e24f17" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "158cb67ea9e02435d671013b4d0d7369822758d9f7ff400ce2512a03f2f7f4e4"
+    sha256 cellar: :any_skip_relocation, mojave:      "1034894e78bb22b0fcf0c8114666d4dc3eb82345a5ca83797ca3bda367d998ac"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3771cead286229786d9d92a7697bc6e0de576ec9cae1f881017884ceb3e24f17"
   end
 
   head do
@@ -68,8 +67,8 @@ class GnuTar < Formula
   test do
     (testpath/"test").write("test")
     system bin/"gtar", "-czvf", "test.tar.gz", "test"
-    assert_match /test/, shell_output("#{bin}/gtar -xOzf test.tar.gz")
+    assert_match(/test/, shell_output("#{bin}/gtar -xOzf test.tar.gz"))
 
-    assert_match /test/, shell_output("#{opt_libexec}/gnubin/tar -xOzf test.tar.gz")
+    assert_match(/test/, shell_output("#{opt_libexec}/gnubin/tar -xOzf test.tar.gz"))
   end
 end

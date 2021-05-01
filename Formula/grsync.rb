@@ -10,9 +10,9 @@ class Grsync < Formula
   end
 
   bottle do
-    sha256 "07f40176b0bfb08d3b461fceb2d4e18f249354ef60a57dd550c11c31d26fee6a" => :catalina
-    sha256 "b0bf1fe191950905e46c81953e93a72c6c6c185c146b1a79d09e388348e1c5f1" => :mojave
-    sha256 "741b7306a6373fc2d86a416a2def2a06c1fd25ab6b30585755faa8326c497c2b" => :high_sierra
+    sha256 catalina:    "07f40176b0bfb08d3b461fceb2d4e18f249354ef60a57dd550c11c31d26fee6a"
+    sha256 mojave:      "b0bf1fe191950905e46c81953e93a72c6c6c185c146b1a79d09e388348e1c5f1"
+    sha256 high_sierra: "741b7306a6373fc2d86a416a2def2a06c1fd25ab6b30585755faa8326c497c2b"
   end
 
   depends_on "intltool" => :build

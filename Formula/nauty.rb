@@ -6,10 +6,9 @@ class Nauty < Formula
   sha256 "76ca5d196e402c83a987f90c28ff706bcc5a333bb4a8fbb979a62d3b99c34e77"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5d118260b6fdabceb476c1421e4b4dd41d3027943b623ff7a4dc81baf6e284b9" => :catalina
-    sha256 "2fa3783663f6e67d9a6e42c492c68412fdeeff7201d81e557b75927ff50b78f1" => :mojave
-    sha256 "a5333c52eecb023c23be9638ebd916606db43f8f7ef1d7ada4877ca00355d65a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5d118260b6fdabceb476c1421e4b4dd41d3027943b623ff7a4dc81baf6e284b9"
+    sha256 cellar: :any_skip_relocation, mojave:      "2fa3783663f6e67d9a6e42c492c68412fdeeff7201d81e557b75927ff50b78f1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a5333c52eecb023c23be9638ebd916606db43f8f7ef1d7ada4877ca00355d65a"
   end
 
   def install
@@ -40,8 +39,8 @@ class Nauty < Formula
     out1 = shell_output("#{bin}/geng -ud1D7t 11 2>&1")
     out2 = shell_output("#{bin}/genrang -r3 114 100 | #{bin}/countg --nedDr -q")
 
-    assert_match /92779 graphs generated/, out1
-    assert_match /100 graphs : n=114; e=171; mindeg=3; maxdeg=3; regular/, out2
+    assert_match(/92779 graphs generated/, out1)
+    assert_match(/100 graphs : n=114; e=171; mindeg=3; maxdeg=3; regular/, out2)
 
     # test that the library is installed and linkable-against
     (testpath/"test.c").write <<~EOS

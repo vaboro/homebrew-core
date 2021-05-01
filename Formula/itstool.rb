@@ -8,10 +8,9 @@ class Itstool < Formula
   head "https://github.com/itstool/itstool.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20" => :catalina
-    sha256 "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20" => :mojave
-    sha256 "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20"
+    sha256 cellar: :any_skip_relocation, mojave:      "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20"
+    sha256 cellar: :any_skip_relocation, high_sierra: "73238debce4f4c1e9922427a22312161d0400d70f22b642137689b4431ba0a20"
   end
 
   depends_on "autoconf" => :build

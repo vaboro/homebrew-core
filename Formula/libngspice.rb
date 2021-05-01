@@ -10,9 +10,9 @@ class Libngspice < Formula
   end
 
   bottle do
-    sha256 "841f339c398271eb34271fbcdfc0bb8fadf9d17946366f4d846b1e4d6787b54d" => :catalina
-    sha256 "2e23db9a3e98328340cb5d1f91d784d23cd29108b2dd3a598a133effc0e2b983" => :mojave
-    sha256 "a82395ca8c0b71c8ac9727ac327f31123bd88453632d00d7efbc6f2240cd1f31" => :high_sierra
+    sha256 catalina:    "841f339c398271eb34271fbcdfc0bb8fadf9d17946366f4d846b1e4d6787b54d"
+    sha256 mojave:      "2e23db9a3e98328340cb5d1f91d784d23cd29108b2dd3a598a133effc0e2b983"
+    sha256 high_sierra: "a82395ca8c0b71c8ac9727ac327f31123bd88453632d00d7efbc6f2240cd1f31"
   end
 
   head do

@@ -12,11 +12,10 @@ class Libsamplerate < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "36215e2af706686ca333a685a08121d4516d831d0ab99e4188002b7ceb5886c9" => :catalina
-    sha256 "cf0ae6a23af23ce858c7c4301e3c487013d46bca1859cf2b5642068a3b7da861" => :mojave
-    sha256 "6003a546793b85dcba886124b962a3ea332ea35cacce64a1cb1af9af94437807" => :high_sierra
+    sha256 cellar: :any, catalina:    "36215e2af706686ca333a685a08121d4516d831d0ab99e4188002b7ceb5886c9"
+    sha256 cellar: :any, mojave:      "cf0ae6a23af23ce858c7c4301e3c487013d46bca1859cf2b5642068a3b7da861"
+    sha256 cellar: :any, high_sierra: "6003a546793b85dcba886124b962a3ea332ea35cacce64a1cb1af9af94437807"
   end
 
   depends_on "pkg-config" => :build

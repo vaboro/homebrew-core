@@ -7,10 +7,9 @@ class Mvtools < Formula
   head "https://github.com/dubhater/vapoursynth-mvtools.git"
 
   bottle do
-    cellar :any
-    sha256 "0da74491af99cf7cb20d4387d449af550b94abdf6f5330fd95da083689bb80b0" => :catalina
-    sha256 "9349ea16136c2d54c9f132af9e5c1768f486ce4ed6bcababf3f1f2f1944a7389" => :mojave
-    sha256 "d8dfbb4ea0e148a954fb50745230b3827f4e02457d739599d2fdec76e31058d8" => :high_sierra
+    sha256 cellar: :any, catalina:    "0da74491af99cf7cb20d4387d449af550b94abdf6f5330fd95da083689bb80b0"
+    sha256 cellar: :any, mojave:      "9349ea16136c2d54c9f132af9e5c1768f486ce4ed6bcababf3f1f2f1944a7389"
+    sha256 cellar: :any, high_sierra: "d8dfbb4ea0e148a954fb50745230b3827f4e02457d739599d2fdec76e31058d8"
   end
 
   depends_on "autoconf" => :build

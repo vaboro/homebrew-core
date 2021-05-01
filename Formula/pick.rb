@@ -7,10 +7,9 @@ class Pick < Formula
   head "https://github.com/mptre/pick.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "754879e53b48743051bb1571bb4b6180a415ac36af8deaf335f5c193326d232f" => :catalina
-    sha256 "55596e8ab28fd4fc36d064f6395c38ce51314bcc0d2f2f3862515a683bc92182" => :mojave
-    sha256 "0fc521881c760d4f9e4f8625795716e0e1c0e1ed1522ccb5efd055313b2729bc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "754879e53b48743051bb1571bb4b6180a415ac36af8deaf335f5c193326d232f"
+    sha256 cellar: :any_skip_relocation, mojave:      "55596e8ab28fd4fc36d064f6395c38ce51314bcc0d2f2f3862515a683bc92182"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0fc521881c760d4f9e4f8625795716e0e1c0e1ed1522ccb5efd055313b2729bc"
   end
 
   uses_from_macos "ncurses"
@@ -29,7 +28,7 @@ class Pick < Formula
       w.write "foo\nbar\nbaz\n\x04"
       sleep 1
       w.write "\n"
-      assert_match /foo\r\nbar\r\nbaz\r\n\^D.*foo\r\n\z/, r.read
+      assert_match(/foo\r\nbar\r\nbaz\r\n\^D.*foo\r\n\z/, r.read)
     end
   end
 end

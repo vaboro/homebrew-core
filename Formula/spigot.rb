@@ -12,10 +12,9 @@ class Spigot < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c0f39e9c1b93310f7a4c02a8c1be709dfd4f2dc83e32498b07a9deb4b30aaa32" => :catalina
-    sha256 "5c612e702e1610bcdbbc1f5c121017eb0b49b62c4f4f07b8dd3833fb8dfba550" => :mojave
-    sha256 "885c712c8e738092e669b36cdbeadb354057bf8eb3f9af572a2716e61bab1d8c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c0f39e9c1b93310f7a4c02a8c1be709dfd4f2dc83e32498b07a9deb4b30aaa32"
+    sha256 cellar: :any_skip_relocation, mojave:      "5c612e702e1610bcdbbc1f5c121017eb0b49b62c4f4f07b8dd3833fb8dfba550"
+    sha256 cellar: :any_skip_relocation, high_sierra: "885c712c8e738092e669b36cdbeadb354057bf8eb3f9af572a2716e61bab1d8c"
   end
 
   on_linux do

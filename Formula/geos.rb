@@ -11,10 +11,9 @@ class Geos < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "96668ef5d3512c74d8b9c029d36d52171e1d26e90935f4a108f51101c34df313" => :catalina
-    sha256 "32ad6e55282b63e933ca43309989943da06bd34eb151b8ca2f81ca70eb4ef146" => :mojave
-    sha256 "f17377d259393a9c0a7dd2ce41b7af6a09c2f4c137afe267ed7650adccc86c3f" => :high_sierra
+    sha256 cellar: :any, catalina:    "96668ef5d3512c74d8b9c029d36d52171e1d26e90935f4a108f51101c34df313"
+    sha256 cellar: :any, mojave:      "32ad6e55282b63e933ca43309989943da06bd34eb151b8ca2f81ca70eb4ef146"
+    sha256 cellar: :any, high_sierra: "f17377d259393a9c0a7dd2ce41b7af6a09c2f4c137afe267ed7650adccc86c3f"
   end
 
   depends_on "swig" => :build
@@ -23,8 +22,8 @@ class Geos < Formula
   def install
     # https://trac.osgeo.org/geos/ticket/771
     inreplace "configure" do |s|
-      s.gsub! /PYTHON_CPPFLAGS=.*/, %Q(PYTHON_CPPFLAGS="#{`python3-config --includes`.strip}")
-      s.gsub! /PYTHON_LDFLAGS=.*/, 'PYTHON_LDFLAGS="-Wl,-undefined,dynamic_lookup"'
+      s.gsub!(/PYTHON_CPPFLAGS=.*/, %Q(PYTHON_CPPFLAGS="#{`python3-config --includes`.strip}"))
+      s.gsub!(/PYTHON_LDFLAGS=.*/, 'PYTHON_LDFLAGS="-Wl,-undefined,dynamic_lookup"')
     end
 
     system "./configure", "--disable-dependency-tracking",

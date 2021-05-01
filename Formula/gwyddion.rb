@@ -11,9 +11,9 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 "4172123e804c37db82b8b2ce473f36f4f644f1c2af6029f4e36a35576f792635" => :catalina
-    sha256 "a7d84f53539e1f9d77e0f11ccddd17a000733bf50d169c1af567ed157755502f" => :mojave
-    sha256 "e9a3d12639dc7018e50a0b422b5ea144a651c692818b9e7eb5b168670b8462d3" => :high_sierra
+    sha256 catalina:    "4172123e804c37db82b8b2ce473f36f4f644f1c2af6029f4e36a35576f792635"
+    sha256 mojave:      "a7d84f53539e1f9d77e0f11ccddd17a000733bf50d169c1af567ed157755502f"
+    sha256 high_sierra: "e9a3d12639dc7018e50a0b422b5ea144a651c692818b9e7eb5b168670b8462d3"
   end
 
   depends_on "pkg-config" => :build

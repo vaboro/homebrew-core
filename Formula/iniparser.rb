@@ -7,11 +7,10 @@ class Iniparser < Formula
   head "https://github.com/ndevilla/iniparser.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bcda9d9c41e5ecf09a748eae0c6054c92ce858df53d835e5454310ea4f731a8c" => :catalina
-    sha256 "69dde8e886645f5b89f83f36835c18449afe7f6c4f119d466d7f204e994952c7" => :mojave
-    sha256 "cec20d33114e7a5811acb41f9f9a36a411ffd2eebb7d537167b9b541b03fff8d" => :high_sierra
-    sha256 "7ad8eb3b8a66c08b78d2d9d3db18bd50e842d1c5962600ad0c9c8244d296dea8" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bcda9d9c41e5ecf09a748eae0c6054c92ce858df53d835e5454310ea4f731a8c"
+    sha256 cellar: :any_skip_relocation, mojave:      "69dde8e886645f5b89f83f36835c18449afe7f6c4f119d466d7f204e994952c7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cec20d33114e7a5811acb41f9f9a36a411ffd2eebb7d537167b9b541b03fff8d"
+    sha256 cellar: :any_skip_relocation, sierra:      "7ad8eb3b8a66c08b78d2d9d3db18bd50e842d1c5962600ad0c9c8244d296dea8"
   end
 
   conflicts_with "fastbit", because: "both install `include/dictionary.h`"

@@ -11,10 +11,9 @@ class Xrootd < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "197ab8bf8564530157d3956408bc15a95ab3b7dc3616ee312292ce325cec655f" => :catalina
-    sha256 "fda59892c853f5dbd525c3495d4bbd3776a93e762681e56afb82263f77908d63" => :mojave
-    sha256 "d832213cdad3ef90e8c8bbf8f777b772ee00c0a10b2bb4005a2773d5383c808b" => :high_sierra
+    sha256 cellar: :any, catalina:    "197ab8bf8564530157d3956408bc15a95ab3b7dc3616ee312292ce325cec655f"
+    sha256 cellar: :any, mojave:      "fda59892c853f5dbd525c3495d4bbd3776a93e762681e56afb82263f77908d63"
+    sha256 cellar: :any, high_sierra: "d832213cdad3ef90e8c8bbf8f777b772ee00c0a10b2bb4005a2773d5383c808b"
   end
 
   depends_on "cmake" => :build

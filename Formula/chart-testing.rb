@@ -7,11 +7,10 @@ class ChartTesting < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "b94f0fab8f35f89ce25ec4c8610af7310639899b1534b0907a4f96fb13c0c016" => :catalina
-    sha256 "58bfd0469d42422dc48b74cda82effc8f1baec442201a77ec2b8753c9810d5ae" => :mojave
-    sha256 "97661974290727c2832803f74bcf0277d01192adc2b65432714b0c376e01bb99" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b94f0fab8f35f89ce25ec4c8610af7310639899b1534b0907a4f96fb13c0c016"
+    sha256 cellar: :any_skip_relocation, mojave:      "58bfd0469d42422dc48b74cda82effc8f1baec442201a77ec2b8753c9810d5ae"
+    sha256 cellar: :any_skip_relocation, high_sierra: "97661974290727c2832803f74bcf0277d01192adc2b65432714b0c376e01bb99"
   end
 
   depends_on "go" => :build
@@ -31,7 +30,7 @@ class ChartTesting < Formula
 
   test do
     assert_match "Lint and test", shell_output("#{bin}/ct --help")
-    assert_match /Version:\s+#{version}/, shell_output("#{bin}/ct version")
+    assert_match(/Version:\s+#{version}/, shell_output("#{bin}/ct version"))
 
     # Lint an empty Helm chart that we create with `helm create`
     system "helm", "create", "testchart"

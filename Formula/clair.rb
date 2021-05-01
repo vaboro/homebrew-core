@@ -6,10 +6,9 @@ class Clair < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d310d5c7a3596a17612fd5b56d6c321129ecfae40d4fa7dc5032056c863b4dc3" => :catalina
-    sha256 "8b48f7520edfa1b74124b848de69802f127d476968a7c5471bd6174a43fc9899" => :mojave
-    sha256 "6ea27e3eed1bbf53401a81d55d138e1f808a9cfb52ca857316b1c371258b9c34" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d310d5c7a3596a17612fd5b56d6c321129ecfae40d4fa7dc5032056c863b4dc3"
+    sha256 cellar: :any_skip_relocation, mojave:      "8b48f7520edfa1b74124b848de69802f127d476968a7c5471bd6174a43fc9899"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6ea27e3eed1bbf53401a81d55d138e1f808a9cfb52ca857316b1c371258b9c34"
   end
 
   depends_on "go" => :build

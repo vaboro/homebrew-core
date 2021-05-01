@@ -10,23 +10,22 @@ class Sleepwatcher < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "45c9c42ac76f9e9f85b0dbc2cb2251fe74448322196ac0ba10b93c416121db2a" => :catalina
-    sha256 "eb160c23f9d92aed8d4bdfa24607a5bb343ad65dd487cb7a8570ac479bd05dd7" => :mojave
-    sha256 "2c050aa5845cdf24b06f17bc1b4191941e4cf57cf1092f17fe35fe0e7f28159a" => :high_sierra
-    sha256 "0cecea617ee9334f717a2e2e0424b944dedcc7cd403776c1cf6ff67352b96f4c" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "45c9c42ac76f9e9f85b0dbc2cb2251fe74448322196ac0ba10b93c416121db2a"
+    sha256 cellar: :any_skip_relocation, mojave:      "eb160c23f9d92aed8d4bdfa24607a5bb343ad65dd487cb7a8570ac479bd05dd7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2c050aa5845cdf24b06f17bc1b4191941e4cf57cf1092f17fe35fe0e7f28159a"
+    sha256 cellar: :any_skip_relocation, sierra:      "0cecea617ee9334f717a2e2e0424b944dedcc7cd403776c1cf6ff67352b96f4c"
   end
 
   def install
     # Adjust Makefile to build native binary only
     inreplace "sources/Makefile" do |s|
-      s.gsub! /^(CFLAGS)_PPC.*$/, "\\1 = #{ENV.cflags} -prebind"
-      s.gsub! /^(CFLAGS_I386|CFLAGS_X86_64)/, "#\\1"
+      s.gsub!(/^(CFLAGS)_PPC.*$/, "\\1 = #{ENV.cflags} -prebind")
+      s.gsub!(/^(CFLAGS_I386|CFLAGS_X86_64)/, "#\\1")
       s.change_make_var! "BINDIR", "$(PREFIX)/sbin"
       s.change_make_var! "MANDIR", "$(PREFIX)/share/man"
-      s.gsub! /^(.*?)CFLAGS_I386(.*?)[.]i386/, "\\1CFLAGS\\2"
-      s.gsub! /^(.*?CFLAGS_X86_64.*?[.]x86_64)/, "#\\1"
-      s.gsub! /^(\t(lipo|rm).*?[.](i386|x86_64))/, "#\\1"
+      s.gsub!(/^(.*?)CFLAGS_I386(.*?)[.]i386/, "\\1CFLAGS\\2")
+      s.gsub!(/^(.*?CFLAGS_X86_64.*?[.]x86_64)/, "#\\1")
+      s.gsub!(/^(\t(lipo|rm).*?[.](i386|x86_64))/, "#\\1")
       s.gsub! "-o root -g wheel", ""
     end
 

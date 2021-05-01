@@ -6,10 +6,9 @@ class Orientdb < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ef2465b839a30dd67f22aa7a3289d828521643e2c33d05246dd6b44fbb45bae7" => :catalina
-    sha256 "a28ce4d0f02308ba641d1cf897a188b8883c555da30a119651b7aa05c73eca32" => :mojave
-    sha256 "dd002904aa68d93e9c76e55662df768b90cce7cbbf2c2734f0a1fb4a08ed9a67" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ef2465b839a30dd67f22aa7a3289d828521643e2c33d05246dd6b44fbb45bae7"
+    sha256 cellar: :any_skip_relocation, mojave:      "a28ce4d0f02308ba641d1cf897a188b8883c555da30a119651b7aa05c73eca32"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dd002904aa68d93e9c76e55662df768b90cce7cbbf2c2734f0a1fb4a08ed9a67"
   end
 
   depends_on "maven" => :build
@@ -102,8 +101,6 @@ class Orientdb < Formula
     inreplace "#{testpath}/orientdb-server-config.xml", "</properties>",
       "  <entry name=\"server.database.path\" value=\"#{testpath}\" />\n    </properties>"
 
-    begin
-      assert_match "OrientDB console v.#{version}", pipe_output("#{bin}/orientdb-console \"exit;\"")
-    end
+    assert_match "OrientDB console v.#{version}", pipe_output("#{bin}/orientdb-console \"exit;\"")
   end
 end

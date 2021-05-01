@@ -9,10 +9,9 @@ class SourceToImage < Formula
   head "https://github.com/openshift/source-to-image.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1082f391a8b448d93865d97431856b29ca5c2d845686f04c5ae4425dc0ead5c5" => :catalina
-    sha256 "db15e9cff473ac13375703f67b00907016001d2888b4a89c6ec065b2dc460d76" => :mojave
-    sha256 "3c107497236774e24628577c13c67372d9814967c9a6f97651d8c05935bd8aa0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1082f391a8b448d93865d97431856b29ca5c2d845686f04c5ae4425dc0ead5c5"
+    sha256 cellar: :any_skip_relocation, mojave:      "db15e9cff473ac13375703f67b00907016001d2888b4a89c6ec065b2dc460d76"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3c107497236774e24628577c13c67372d9814967c9a6f97651d8c05935bd8aa0"
   end
 
   depends_on "go" => :build

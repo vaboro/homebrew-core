@@ -7,10 +7,9 @@ class Cbc < Formula
   license "EPL-1.0"
 
   bottle do
-    cellar :any
-    sha256 "56fee588e216483d5b63e6e6f61dc824325da64f61fcaa7af3c3f6692c0a004d" => :catalina
-    sha256 "d415cd6ac5c7afdda6e54d74e1acf76282ad81170333690bcd2ae3c08babdff5" => :mojave
-    sha256 "e1c7da5d2d650279cbc41a2dd6fe36d39f6298de743b59a27fbde6645f8f748b" => :high_sierra
+    sha256 cellar: :any, catalina:    "56fee588e216483d5b63e6e6f61dc824325da64f61fcaa7af3c3f6692c0a004d"
+    sha256 cellar: :any, mojave:      "d415cd6ac5c7afdda6e54d74e1acf76282ad81170333690bcd2ae3c08babdff5"
+    sha256 cellar: :any, high_sierra: "e1c7da5d2d650279cbc41a2dd6fe36d39f6298de743b59a27fbde6645f8f748b"
   end
 
   depends_on "pkg-config" => :build

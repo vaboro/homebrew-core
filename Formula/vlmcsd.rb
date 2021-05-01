@@ -7,10 +7,9 @@ class Vlmcsd < Formula
   head "https://github.com/Wind4/vlmcsd.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3f3cc34de780b15b2c5eb32660f79a95bd28674c7cebb78452f9f8888d9d8b38" => :catalina
-    sha256 "512da18ff22fe4dbc539aa31020acad022fdf6b19c6b14d49a361e1615af58fb" => :mojave
-    sha256 "0cb2abe0a85b0ca14602d565b6ef3c69afa1f466123b37503936dfe064581b54" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3f3cc34de780b15b2c5eb32660f79a95bd28674c7cebb78452f9f8888d9d8b38"
+    sha256 cellar: :any_skip_relocation, mojave:      "512da18ff22fe4dbc539aa31020acad022fdf6b19c6b14d49a361e1615af58fb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0cb2abe0a85b0ca14602d565b6ef3c69afa1f466123b37503936dfe064581b54"
   end
 
   depends_on "make" => :build
@@ -72,9 +71,9 @@ class Vlmcsd < Formula
 
   test do
     output = shell_output("#{bin}/vlmcsd -V")
-    assert_match /vlmcsd/, output
+    assert_match(/vlmcsd/, output)
     output = shell_output("#{bin}/vlmcs -V")
-    assert_match /vlmcs/, output
+    assert_match(/vlmcs/, output)
     begin
       pid = fork do
         exec "#{bin}/vlmcsd", "-D"
@@ -83,7 +82,7 @@ class Vlmcsd < Formula
       # the running status of vlmcsd
       sleep 2
       output = shell_output("#{bin}/vlmcs")
-      assert_match /successful/, output
+      assert_match(/successful/, output)
       sleep 2
     ensure
       Process.kill 9, pid

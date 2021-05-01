@@ -6,10 +6,9 @@ class Gearman < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "3a1a4bc57288dea7905134d9290c88a04273f7cc6361646694324e3bc9eb42d3" => :catalina
-    sha256 "582d1de464569352536501e2aa832a9bc540220eae335b682411ecadffbfe198" => :mojave
-    sha256 "8664f5b9c91ef99190cb70000758aa3d50f68afcad01d2e8cac234adf6a5424c" => :high_sierra
+    sha256 cellar: :any, catalina:    "3a1a4bc57288dea7905134d9290c88a04273f7cc6361646694324e3bc9eb42d3"
+    sha256 cellar: :any, mojave:      "582d1de464569352536501e2aa832a9bc540220eae335b682411ecadffbfe198"
+    sha256 cellar: :any, high_sierra: "8664f5b9c91ef99190cb70000758aa3d50f68afcad01d2e8cac234adf6a5424c"
   end
 
   depends_on "pkg-config" => :build
@@ -80,6 +79,6 @@ class Gearman < Formula
   end
 
   test do
-    assert_match /gearman\s*Error in usage/, shell_output("#{bin}/gearman --version 2>&1", 1)
+    assert_match(/gearman\s*Error in usage/, shell_output("#{bin}/gearman --version 2>&1", 1))
   end
 end

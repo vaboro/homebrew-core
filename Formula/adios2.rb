@@ -8,9 +8,9 @@ class Adios2 < Formula
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   bottle do
-    sha256 "549ce3b6de7131b44c4b8403685cf8addc18d22439d437071474c067309b57e7" => :catalina
-    sha256 "c90a3bf6d0176b0bd19aafbca19b20a0347d71f5176f38840bb10c4683d2b3e3" => :mojave
-    sha256 "52fb482680fc9d96709dba546c045e5f1cf4526a9165d8abebde862d4bac3256" => :high_sierra
+    sha256 catalina:    "549ce3b6de7131b44c4b8403685cf8addc18d22439d437071474c067309b57e7"
+    sha256 mojave:      "c90a3bf6d0176b0bd19aafbca19b20a0347d71f5176f38840bb10c4683d2b3e3"
+    sha256 high_sierra: "52fb482680fc9d96709dba546c045e5f1cf4526a9165d8abebde862d4bac3256"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,11 @@ class Onetime < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b55bb2391f7518b4139e2e57f851d0805329191be23630a6cf4d2a154a0e416c" => :catalina
-    sha256 "0394155a2171bb959017a677a428403c0220c8f1cf39af2af72ce95f921396ed" => :mojave
-    sha256 "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0" => :high_sierra
-    sha256 "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0" => :sierra
-    sha256 "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "b55bb2391f7518b4139e2e57f851d0805329191be23630a6cf4d2a154a0e416c"
+    sha256 cellar: :any_skip_relocation, mojave:      "0394155a2171bb959017a677a428403c0220c8f1cf39af2af72ce95f921396ed"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0"
+    sha256 cellar: :any_skip_relocation, sierra:      "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "9f73f9cdb465fce1aefc3cf80c00bc8e43b41a33c3e999fb3ec531251cfc3da0"
   end
 
   # Fixes the Makefile to permit destination specification

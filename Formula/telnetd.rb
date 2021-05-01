@@ -6,10 +6,9 @@ class Telnetd < Formula
   license all_of: ["BSD-4-Clause-UC", "BSD-3-Clause"]
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "16f053b3bdfe04dcad271f63cd1f7e6ccc312ddb410081f4f729d12bc80eceb9" => :catalina
-    sha256 "cde731ff626ebda39ecadc5b6ed2014429cb2afb99521fd967a2176d127d94b7" => :mojave
-    sha256 "d31eb6a8f79b8f9eb2417dce87c6508b8837207d4f8df48bdd5fd1d833f1b757" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "16f053b3bdfe04dcad271f63cd1f7e6ccc312ddb410081f4f729d12bc80eceb9"
+    sha256 cellar: :any_skip_relocation, mojave:      "cde731ff626ebda39ecadc5b6ed2014429cb2afb99521fd967a2176d127d94b7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d31eb6a8f79b8f9eb2417dce87c6508b8837207d4f8df48bdd5fd1d833f1b757"
   end
 
   depends_on xcode: :build

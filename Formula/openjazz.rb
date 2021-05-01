@@ -7,10 +7,9 @@ class Openjazz < Formula
   head "https://github.com/AlisterT/openjazz.git"
 
   bottle do
-    cellar :any
-    sha256 "9f6f4144256364824f4c16c430aaa738e6675f031f8bd7eaa76fa33d4d367430" => :catalina
-    sha256 "06066b8e0bf792d894ceb24ed1ec5409ad896982db87ecab8c07278eabdc3f98" => :mojave
-    sha256 "b5684fc3faa686f06f9600e8c4bb9c787c7cbf3eb100fc8a64a52502e84ce2ca" => :high_sierra
+    sha256 cellar: :any, catalina:    "9f6f4144256364824f4c16c430aaa738e6675f031f8bd7eaa76fa33d4d367430"
+    sha256 cellar: :any, mojave:      "06066b8e0bf792d894ceb24ed1ec5409ad896982db87ecab8c07278eabdc3f98"
+    sha256 cellar: :any, high_sierra: "b5684fc3faa686f06f9600e8c4bb9c787c7cbf3eb100fc8a64a52502e84ce2ca"
   end
 
   depends_on "autoconf" => :build

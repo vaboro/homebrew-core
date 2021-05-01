@@ -10,9 +10,9 @@ class Amtk < Formula
   end
 
   bottle do
-    sha256 "89e24e19e0614b13d387b9c0d2ccf89ac15f485edf49c7c39bcaa4f80deba3c1" => :catalina
-    sha256 "004425110c03c91144cfd53df0f6141b05e38d86b64e96303cd6760db9e66a42" => :mojave
-    sha256 "67ad617a78c6922647c2af49225a5f4b8fd7eff3635d0e7f8b4320687b896b60" => :high_sierra
+    sha256 catalina:    "89e24e19e0614b13d387b9c0d2ccf89ac15f485edf49c7c39bcaa4f80deba3c1"
+    sha256 mojave:      "004425110c03c91144cfd53df0f6141b05e38d86b64e96303cd6760db9e66a42"
+    sha256 high_sierra: "67ad617a78c6922647c2af49225a5f4b8fd7eff3635d0e7f8b4320687b896b60"
   end
 
   depends_on "gobject-introspection" => :build

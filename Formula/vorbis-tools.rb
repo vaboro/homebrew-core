@@ -11,11 +11,10 @@ class VorbisTools < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "71a81bbeec2d79ddd7f39858cf66a450fac9d542824c30a064298229d6637594" => :catalina
-    sha256 "c3e402519ad170a0a37d80d394d8afbe905985784f8ea5d93fcc84a4486a9977" => :mojave
-    sha256 "e929c31331ffcb58d21cb086184ed747185dd8d0f4b7ee1b98134cabe44490bc" => :high_sierra
+    sha256 cellar: :any, catalina:    "71a81bbeec2d79ddd7f39858cf66a450fac9d542824c30a064298229d6637594"
+    sha256 cellar: :any, mojave:      "c3e402519ad170a0a37d80d394d8afbe905985784f8ea5d93fcc84a4486a9977"
+    sha256 cellar: :any, high_sierra: "e929c31331ffcb58d21cb086184ed747185dd8d0f4b7ee1b98134cabe44490bc"
   end
 
   depends_on "pkg-config" => :build

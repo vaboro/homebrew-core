@@ -11,9 +11,9 @@ class Lighttpd < Formula
   end
 
   bottle do
-    sha256 "7cb7b6026dbba9a3afde8a0e2e2740499564687fb61ee6c49d5cabc29f780a2d" => :catalina
-    sha256 "432da2049539f4416d952ecdfcfefc5b5230447edaebfd63b958a92581ae57ab" => :mojave
-    sha256 "c7e9b87c219d8bf64561c185c6fcc68c2caafded7a4e980d379fd4fbbe00bd1d" => :high_sierra
+    sha256 catalina:    "7cb7b6026dbba9a3afde8a0e2e2740499564687fb61ee6c49d5cabc29f780a2d"
+    sha256 mojave:      "432da2049539f4416d952ecdfcfefc5b5230447edaebfd63b958a92581ae57ab"
+    sha256 high_sierra: "c7e9b87c219d8bf64561c185c6fcc68c2caafded7a4e980d379fd4fbbe00bd1d"
   end
 
   depends_on "autoconf" => :build

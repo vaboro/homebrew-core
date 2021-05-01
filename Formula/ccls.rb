@@ -7,9 +7,9 @@ class Ccls < Formula
   head "https://github.com/MaskRay/ccls.git"
 
   bottle do
-    sha256 "826b74e4e2f5ed44734b1776e960fb4485bbd20ee6383dc9bc426ca2fed9ba03" => :catalina
-    sha256 "f32c94ebdd1b65fa75a32701573dfb1c87d16a339f57f261712ead133caeab3f" => :mojave
-    sha256 "fe0edff63df20a3c4624ce335c73276299f60d5bfad836c1acba32ce7435de18" => :high_sierra
+    sha256 catalina:    "826b74e4e2f5ed44734b1776e960fb4485bbd20ee6383dc9bc426ca2fed9ba03"
+    sha256 mojave:      "f32c94ebdd1b65fa75a32701573dfb1c87d16a339f57f261712ead133caeab3f"
+    sha256 high_sierra: "fe0edff63df20a3c4624ce335c73276299f60d5bfad836c1acba32ce7435de18"
   end
 
   depends_on "cmake" => :build

@@ -6,10 +6,9 @@ class Faust < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "48f36d87c5d99c94dd5480fd24aacf1d12f7a1e0910c7c51d1486d00c732ead7" => :catalina
-    sha256 "1e1c7d96ce8b9aae9742fa9933e3b9f400a0396fb37f1acc493b7af99cee53fe" => :mojave
-    sha256 "a304cdfea4858109db24f99a54f16b95ad451804fd569d1b601bb4ba01921452" => :high_sierra
+    sha256 cellar: :any, catalina:    "48f36d87c5d99c94dd5480fd24aacf1d12f7a1e0910c7c51d1486d00c732ead7"
+    sha256 cellar: :any, mojave:      "1e1c7d96ce8b9aae9742fa9933e3b9f400a0396fb37f1acc493b7af99cee53fe"
+    sha256 cellar: :any, high_sierra: "a304cdfea4858109db24f99a54f16b95ad451804fd569d1b601bb4ba01921452"
   end
 
   depends_on "cmake" => :build

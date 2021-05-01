@@ -10,9 +10,9 @@ class SimpleScan < Formula
   end
 
   bottle do
-    sha256 "1fef462043b0581c3c8f87d9fbbd36942447cb7d91a99134f62b446e08945d79" => :catalina
-    sha256 "af8f8b195ba4b8bcdd23ef18cfff5bc6b75ff60b02b0a6c16ad8186193e19018" => :mojave
-    sha256 "f883982bc960fc7713445421f8ed2406f7b88a41082a918e606b96de1c571069" => :high_sierra
+    sha256 catalina:    "1fef462043b0581c3c8f87d9fbbd36942447cb7d91a99134f62b446e08945d79"
+    sha256 mojave:      "af8f8b195ba4b8bcdd23ef18cfff5bc6b75ff60b02b0a6c16ad8186193e19018"
+    sha256 high_sierra: "f883982bc960fc7713445421f8ed2406f7b88a41082a918e606b96de1c571069"
   end
 
   depends_on "itstool" => :build

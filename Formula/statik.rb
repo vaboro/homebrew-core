@@ -10,10 +10,9 @@ class Statik < Formula
   head "https://github.com/thanethomson/statik.git"
 
   bottle do
-    cellar :any
-    sha256 "cab701f93b5c776a91b46f83140f92fd39885e0ce99d50374116c3b437b2fe8e" => :catalina
-    sha256 "9b83cfba38b5dec6a411291ec401908fa7e5017c22ebbfb269c78094edfd41a7" => :mojave
-    sha256 "87917f38bc4ef1f2121d82f8f697b451d5ef46e0e10df7b6538348f5b8a39d97" => :high_sierra
+    sha256 cellar: :any, catalina:    "cab701f93b5c776a91b46f83140f92fd39885e0ce99d50374116c3b437b2fe8e"
+    sha256 cellar: :any, mojave:      "9b83cfba38b5dec6a411291ec401908fa7e5017c22ebbfb269c78094edfd41a7"
+    sha256 cellar: :any, high_sierra: "87917f38bc4ef1f2121d82f8f697b451d5ef46e0e10df7b6538348f5b8a39d97"
   end
 
   depends_on "libpq"

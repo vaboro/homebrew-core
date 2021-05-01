@@ -7,10 +7,9 @@ class Jvgrep < Formula
   head "https://github.com/mattn/jvgrep.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791" => :catalina
-    sha256 "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791" => :mojave
-    sha256 "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791"
+    sha256 cellar: :any_skip_relocation, mojave:      "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fa73d4fa22c06a91abae4fb577d8000897a95687de102fa09258a2f726801791"
   end
 
   depends_on "go" => :build

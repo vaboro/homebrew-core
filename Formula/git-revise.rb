@@ -9,10 +9,9 @@ class GitRevise < Formula
   head "https://github.com/mystor/git-revise.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "644bd8885dfc27b0cb84294b7195a296b1c1d56af5b870db7af109a93d80e2a0" => :catalina
-    sha256 "a9a61b083fc459b407488d8ef7e2439059702e89eaa19c9a5a8c0e1fb8f1a7c7" => :mojave
-    sha256 "1d15213e6e0220d5e97dd8991b4545d0789a3b907fff1a0996255ea675a1a94b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "644bd8885dfc27b0cb84294b7195a296b1c1d56af5b870db7af109a93d80e2a0"
+    sha256 cellar: :any_skip_relocation, mojave:      "a9a61b083fc459b407488d8ef7e2439059702e89eaa19c9a5a8c0e1fb8f1a7c7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1d15213e6e0220d5e97dd8991b4545d0789a3b907fff1a0996255ea675a1a94b"
   end
 
   depends_on "python@3.8"

@@ -7,10 +7,9 @@ class Twtxt < Formula
   revision 4
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f02a3756e562ada9942eeac14cadb2113f22b67935b4d1e3a30a2890b3312855" => :catalina
-    sha256 "42f444d72bfcb08a0f105628d4883e03c5ff522b6eda4f390f9434b79bc1fdb6" => :mojave
-    sha256 "93e9cd335a6dd161246501db8e5fcbc9d38d5c4ab07136e47a3742359c043c59" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f02a3756e562ada9942eeac14cadb2113f22b67935b4d1e3a30a2890b3312855"
+    sha256 cellar: :any_skip_relocation, mojave:      "42f444d72bfcb08a0f105628d4883e03c5ff522b6eda4f390f9434b79bc1fdb6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "93e9cd335a6dd161246501db8e5fcbc9d38d5c4ab07136e47a3742359c043c59"
   end
 
   depends_on "python@3.8"

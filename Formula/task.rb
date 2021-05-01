@@ -7,13 +7,13 @@ class Task < Formula
   head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "2.6.0", shallow: false
 
   bottle do
-    sha256 "24c80011867aa34766864a4bbac071493fb45c93bd3e08b3e9979b3ba4780fa2" => :catalina
-    sha256 "bba98b6bdfb3f79f1434229d8ade4b0622119320353da0eb8fec39809d66947d" => :mojave
-    sha256 "6a651be957b736bef14633efedef011a81c49ee37178eae4d8ef863549d7c584" => :high_sierra
-    sha256 "d1cb582ab9ee211ec154690634b5988f8058ead31000c74d5cdfa949d319d0ed" => :sierra
-    sha256 "07aa2c19ae6d7a9a46b286bfc48fa970aa9a9e0237e034bbaab354dcfc4f6848" => :el_capitan
-    sha256 "113fc7ce057c51ea14021006a4106c25d29e361e4b70113e33fb7a83e57ee8d1" => :yosemite
-    sha256 "7888e42210edb6691ff57d056585536abd318d62b43a898bb98e286373519164" => :mavericks
+    sha256 catalina:    "24c80011867aa34766864a4bbac071493fb45c93bd3e08b3e9979b3ba4780fa2"
+    sha256 mojave:      "bba98b6bdfb3f79f1434229d8ade4b0622119320353da0eb8fec39809d66947d"
+    sha256 high_sierra: "6a651be957b736bef14633efedef011a81c49ee37178eae4d8ef863549d7c584"
+    sha256 sierra:      "d1cb582ab9ee211ec154690634b5988f8058ead31000c74d5cdfa949d319d0ed"
+    sha256 el_capitan:  "07aa2c19ae6d7a9a46b286bfc48fa970aa9a9e0237e034bbaab354dcfc4f6848"
+    sha256 yosemite:    "113fc7ce057c51ea14021006a4106c25d29e361e4b70113e33fb7a83e57ee8d1"
+    sha256 mavericks:   "7888e42210edb6691ff57d056585536abd318d62b43a898bb98e286373519164"
   end
 
   depends_on "cmake" => :build

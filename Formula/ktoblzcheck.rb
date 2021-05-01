@@ -11,9 +11,9 @@ class Ktoblzcheck < Formula
   end
 
   bottle do
-    sha256 "93495421d21c635d04637865d68c922d70ed0112b01929d113d21cd533afabc1" => :catalina
-    sha256 "447d1889a2350c704d8c4d276c8122f8ecd24b906f5b4944e39bdbb77bf39962" => :mojave
-    sha256 "242eca7d985cf7d70b78a2838d96a7b91b1e67b68ca7376919296bc253a99540" => :high_sierra
+    sha256 catalina:    "93495421d21c635d04637865d68c922d70ed0112b01929d113d21cd533afabc1"
+    sha256 mojave:      "447d1889a2350c704d8c4d276c8122f8ecd24b906f5b4944e39bdbb77bf39962"
+    sha256 high_sierra: "242eca7d985cf7d70b78a2838d96a7b91b1e67b68ca7376919296bc253a99540"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,7 @@ class Ktoblzcheck < Formula
   end
 
   test do
-    assert_match /Ok/, shell_output("#{bin}/ktoblzcheck --outformat=oneline 10000000 123456789")
-    assert_match /unknown/, shell_output("#{bin}/ktoblzcheck --outformat=oneline 12345678 100000000", 3)
+    assert_match(/Ok/, shell_output("#{bin}/ktoblzcheck --outformat=oneline 10000000 123456789"))
+    assert_match(/unknown/, shell_output("#{bin}/ktoblzcheck --outformat=oneline 12345678 100000000", 3))
   end
 end

@@ -6,10 +6,9 @@ class LunchyGo < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3a3db921e9e82d0b87f24c5763980b6fec6e332fbb6ce4833b57e58aa8402f71" => :catalina
-    sha256 "e372d1c35dbb73f11c6a826bd3bc5385f3376ebaa809972b8799a3c8483bcd09" => :mojave
-    sha256 "7c2f3349ecf308bb53264577a1061714731126210996d17c2f7578c3bfc56056" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3a3db921e9e82d0b87f24c5763980b6fec6e332fbb6ce4833b57e58aa8402f71"
+    sha256 cellar: :any_skip_relocation, mojave:      "e372d1c35dbb73f11c6a826bd3bc5385f3376ebaa809972b8799a3c8483bcd09"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7c2f3349ecf308bb53264577a1061714731126210996d17c2f7578c3bfc56056"
   end
 
   depends_on "go" => :build

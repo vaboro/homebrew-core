@@ -6,10 +6,9 @@ class Zstd < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "2375c206a934090c4ba53362d038e4e191d8dd09eec734e8e72106089aa24e9d" => :catalina
-    sha256 "86b04bfd318315486d772b29d30b361e734a74269ae48805eeb3eae1d562b984" => :mojave
-    sha256 "61de5a45183f4d029c66024d645ad44b0a625d58f9f583b47af42346a7c90fe5" => :high_sierra
+    sha256 cellar: :any, catalina:    "2375c206a934090c4ba53362d038e4e191d8dd09eec734e8e72106089aa24e9d"
+    sha256 cellar: :any, mojave:      "86b04bfd318315486d772b29d30b361e734a74269ae48805eeb3eae1d562b984"
+    sha256 cellar: :any, high_sierra: "61de5a45183f4d029c66024d645ad44b0a625d58f9f583b47af42346a7c90fe5"
   end
 
   depends_on "cmake" => :build

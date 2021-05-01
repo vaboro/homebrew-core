@@ -7,11 +7,10 @@ class Pacvim < Formula
   head "https://github.com/jmoon018/PacVim.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "85bd0087ecc54716772881e46ce00553ee037eb2ea200d34d5db28709092369f" => :catalina
-    sha256 "e2ecd6cc1337adb4c9e760c50a83ae04a8cb86495d3c1ea167bfa5930d7a16a0" => :mojave
-    sha256 "b8ef8cdba34802db97fba770e013393973e908e11486b87a4f5189f139e468dc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "85bd0087ecc54716772881e46ce00553ee037eb2ea200d34d5db28709092369f"
+    sha256 cellar: :any_skip_relocation, mojave:      "e2ecd6cc1337adb4c9e760c50a83ae04a8cb86495d3c1ea167bfa5930d7a16a0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b8ef8cdba34802db97fba770e013393973e908e11486b87a4f5189f139e468dc"
   end
 
   uses_from_macos "ncurses"

@@ -7,10 +7,9 @@ class Direnv < Formula
   head "https://github.com/direnv/direnv.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "073d42ded5dbe7bb69c70b460bbb1b680bbc21ba2452be480fb68166a69317de" => :catalina
-    sha256 "ebd09d4943561e66c1c4a9261c47fb965b10c058391fe8897888d2adb8f68ec2" => :mojave
-    sha256 "cbd28cdd37c3a1577ef59374be3aae1c445a5f2dd79cdb57cbc5aae2908866c7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "073d42ded5dbe7bb69c70b460bbb1b680bbc21ba2452be480fb68166a69317de"
+    sha256 cellar: :any_skip_relocation, mojave:      "ebd09d4943561e66c1c4a9261c47fb965b10c058391fe8897888d2adb8f68ec2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cbd28cdd37c3a1577ef59374be3aae1c445a5f2dd79cdb57cbc5aae2908866c7"
   end
 
   depends_on "go" => :build

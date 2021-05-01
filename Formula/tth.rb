@@ -10,10 +10,9 @@ class Tth < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "795276a9b4c2cdf1373585d536d7df254966ecc16463b0f5579465cf76a052c8" => :catalina
-    sha256 "9a6621aa12fee28e032ed5c73d5e385ac20249d9ef6714581a7cb3608f4490c5" => :mojave
-    sha256 "c73b8efe4532752cb6ae1c524c3988e3d105e60456b7aa0ba0b77dc1da06b669" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "795276a9b4c2cdf1373585d536d7df254966ecc16463b0f5579465cf76a052c8"
+    sha256 cellar: :any_skip_relocation, mojave:      "9a6621aa12fee28e032ed5c73d5e385ac20249d9ef6714581a7cb3608f4490c5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c73b8efe4532752cb6ae1c524c3988e3d105e60456b7aa0ba0b77dc1da06b669"
   end
 
   def install

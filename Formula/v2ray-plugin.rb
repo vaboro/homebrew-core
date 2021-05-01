@@ -12,10 +12,9 @@ class V2rayPlugin < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "891f541e150a393ff20caa78eb79ef12f60929fb9e5b35826e2e639c46a61dc2" => :catalina
-    sha256 "cb8ff7b812aa561f9e23935461968ba1c26cbe393c599aab4e1753b37702748b" => :mojave
-    sha256 "f11b330c3dc9c445b757188057c93ce94de89f03f4adfa1a8c6405f5ba66b400" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "891f541e150a393ff20caa78eb79ef12f60929fb9e5b35826e2e639c46a61dc2"
+    sha256 cellar: :any_skip_relocation, mojave:      "cb8ff7b812aa561f9e23935461968ba1c26cbe393c599aab4e1753b37702748b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f11b330c3dc9c445b757188057c93ce94de89f03f4adfa1a8c6405f5ba66b400"
   end
 
   depends_on "go" => :build

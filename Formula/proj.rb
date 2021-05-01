@@ -6,9 +6,9 @@ class Proj < Formula
   license "MIT"
 
   bottle do
-    sha256 "71574389bbcaaab542e8a9c9ce21aee6d9498d6a8693c454cbf69023a97f925a" => :catalina
-    sha256 "858f2ae2da4aeb24e724c02d44c3bd9c5b43f7e64ae3799c5976cb479e70d77e" => :mojave
-    sha256 "565076941c141b5af73000490f3db26e6872b59f768e7727b07094d99c26c68a" => :high_sierra
+    sha256 catalina:    "71574389bbcaaab542e8a9c9ce21aee6d9498d6a8693c454cbf69023a97f925a"
+    sha256 mojave:      "858f2ae2da4aeb24e724c02d44c3bd9c5b43f7e64ae3799c5976cb479e70d77e"
+    sha256 high_sierra: "565076941c141b5af73000490f3db26e6872b59f768e7727b07094d99c26c68a"
   end
 
   head do

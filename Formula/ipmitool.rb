@@ -12,11 +12,10 @@ class Ipmitool < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "926d5c49a0a1b9411e45c54e412403003266c27127059edb50b40e07adaf2260" => :catalina
-    sha256 "3bf8d00d62c2e1dc781493d448062ad365ac8e7c73010ee37ba2040a48513c10" => :mojave
-    sha256 "04462f0b4129d34cbf7e8e5c72591360e89dd6d6cef20008567015d57ab611c4" => :high_sierra
-    sha256 "f08f0e5717ff8ccf031ca738eb4995b39db5d37b802800b6e0b6c154f6fed830" => :sierra
+    sha256 cellar: :any, catalina:    "926d5c49a0a1b9411e45c54e412403003266c27127059edb50b40e07adaf2260"
+    sha256 cellar: :any, mojave:      "3bf8d00d62c2e1dc781493d448062ad365ac8e7c73010ee37ba2040a48513c10"
+    sha256 cellar: :any, high_sierra: "04462f0b4129d34cbf7e8e5c72591360e89dd6d6cef20008567015d57ab611c4"
+    sha256 cellar: :any, sierra:      "f08f0e5717ff8ccf031ca738eb4995b39db5d37b802800b6e0b6c154f6fed830"
   end
 
   depends_on "openssl@1.1"

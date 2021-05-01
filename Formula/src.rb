@@ -11,10 +11,9 @@ class Src < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446" => :catalina
-    sha256 "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446" => :mojave
-    sha256 "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446"
+    sha256 cellar: :any_skip_relocation, mojave:      "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446"
+    sha256 cellar: :any_skip_relocation, high_sierra: "312d165d1840e28a6c33df33248a7236dc2c524ee792b575b2774afe5597e446"
   end
 
   head do
@@ -34,7 +33,7 @@ class Src < Formula
     require "pty"
     (testpath/"test.txt").write "foo"
     PTY.spawn("sh", "-c", "#{bin}/src commit -m hello test.txt; #{bin}/src status test.txt") do |r, _w, _pid|
-      assert_match /^=\s*test.txt/, r.read
+      assert_match(/^=\s*test.txt/, r.read)
     end
   end
 end

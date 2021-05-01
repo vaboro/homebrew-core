@@ -10,10 +10,9 @@ class Ode < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b033d3a8ddb92602728fbe921f5f421fed220c1d5293333d43801bf259a16cd5" => :catalina
-    sha256 "0967cc5799fe66b3afff2c1fb9832e6d4ee7dde03f1388818de9d4b87581b4f8" => :mojave
-    sha256 "7c794395db9cbb9d8d8c7a60d787c0747c527c4a177ef975e4bd6d4a8da1eb32" => :high_sierra
+    sha256 cellar: :any, catalina:    "b033d3a8ddb92602728fbe921f5f421fed220c1d5293333d43801bf259a16cd5"
+    sha256 cellar: :any, mojave:      "0967cc5799fe66b3afff2c1fb9832e6d4ee7dde03f1388818de9d4b87581b4f8"
+    sha256 cellar: :any, high_sierra: "7c794395db9cbb9d8d8c7a60d787c0747c527c4a177ef975e4bd6d4a8da1eb32"
   end
 
   depends_on "autoconf" => :build

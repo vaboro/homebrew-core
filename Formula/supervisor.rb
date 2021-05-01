@@ -7,11 +7,10 @@ class Supervisor < Formula
   sha256 "05031f36ad15cad47fb56f01d8e075f952ae39ba8ce492ea790ebb310e3f0368"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "baf24c9b9b0ce2463148d676f1f985d090edde2b5393417cce8e4d9df93d3523" => :catalina
-    sha256 "8987e771d53dea6bee2955f83a1fd4255af39cca86bb02ae518bc1a7daca2f6b" => :mojave
-    sha256 "7a13e792368a2fbba5c426860206f7acf18b5625312f33a97d1cc97e9c5f71c4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "baf24c9b9b0ce2463148d676f1f985d090edde2b5393417cce8e4d9df93d3523"
+    sha256 cellar: :any_skip_relocation, mojave:      "8987e771d53dea6bee2955f83a1fd4255af39cca86bb02ae518bc1a7daca2f6b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7a13e792368a2fbba5c426860206f7acf18b5625312f33a97d1cc97e9c5f71c4"
   end
 
   depends_on "python@3.8"
@@ -21,7 +20,7 @@ class Supervisor < Formula
       s.gsub! %r{/tmp/supervisor\.sock}, var/"run/supervisor.sock"
       s.gsub! %r{/tmp/supervisord\.log}, var/"log/supervisord.log"
       s.gsub! %r{/tmp/supervisord\.pid}, var/"run/supervisord.pid"
-      s.gsub! /^;\[include\]$/, "[include]"
+      s.gsub!(/^;\[include\]$/, "[include]")
       s.gsub! %r{^;files = relative/directory/\*\.ini$}, "files = #{etc}/supervisor.d/*.ini"
     end
 

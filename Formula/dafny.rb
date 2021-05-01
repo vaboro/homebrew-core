@@ -6,10 +6,9 @@ class Dafny < Formula
   revision 2
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "00cfdeb5892e2834b144a6e4c816a50d594440882327e65a771f9e72cd13f82d" => :catalina
-    sha256 "4b0bb8f5e2385b99318cc85ff38496e87814d5658f5dd4054fdc7d2a0a8ebc07" => :mojave
-    sha256 "4b64f7c46ab2fdfb997ca918c81e0d423609f565bdd405eaa9a2d7e848295ab7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "00cfdeb5892e2834b144a6e4c816a50d594440882327e65a771f9e72cd13f82d"
+    sha256 cellar: :any_skip_relocation, mojave:      "4b0bb8f5e2385b99318cc85ff38496e87814d5658f5dd4054fdc7d2a0a8ebc07"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4b64f7c46ab2fdfb997ca918c81e0d423609f565bdd405eaa9a2d7e848295ab7"
   end
 
   depends_on "mono-libgdiplus" => :build

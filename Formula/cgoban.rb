@@ -10,10 +10,9 @@ class Cgoban < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6b8613fe9566746c60a0ec45830b5c687d54cbaa6107179906248fa6094e856d" => :catalina
-    sha256 "fd7177595494fb367982e080af14fb7a249d6651a73a1b33f63394f9546fc837" => :mojave
-    sha256 "38bb87533d7c54253a2836af87c326651dda87c046f3803189308b155651e825" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6b8613fe9566746c60a0ec45830b5c687d54cbaa6107179906248fa6094e856d"
+    sha256 cellar: :any_skip_relocation, mojave:      "fd7177595494fb367982e080af14fb7a249d6651a73a1b33f63394f9546fc837"
+    sha256 cellar: :any_skip_relocation, high_sierra: "38bb87533d7c54253a2836af87c326651dda87c046f3803189308b155651e825"
   end
 
   depends_on :x11

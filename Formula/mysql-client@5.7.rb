@@ -5,9 +5,9 @@ class MysqlClientAT57 < Formula
   sha256 "00f514124de2bad1ba7b380cbbd46e316cae7fc7bc3a5621456cabf352f27978"
 
   bottle do
-    sha256 "f6708680504eee30c923cd496380cd75e6e90b8b48c4b5fc76497e26d012d2b0" => :catalina
-    sha256 "a10197d6594410082510efcb27ab460265a1235ae9e7c8b8c3b604396cf9ef0c" => :mojave
-    sha256 "d1c843f81568ad49b6856d76b04d96069f9ddafcfe27162dee92ea0e7373cc97" => :high_sierra
+    sha256 catalina:    "f6708680504eee30c923cd496380cd75e6e90b8b48c4b5fc76497e26d012d2b0"
+    sha256 mojave:      "a10197d6594410082510efcb27ab460265a1235ae9e7c8b8c3b604396cf9ef0c"
+    sha256 high_sierra: "d1c843f81568ad49b6856d76b04d96069f9ddafcfe27162dee92ea0e7373cc97"
   end
 
   keg_only :versioned_formula

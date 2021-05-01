@@ -13,10 +13,9 @@ class AwsShell < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "80649fd9dfb5ef9c0506db4f74e0a4ff275617a718249cbc12d2c62efb46657f" => :catalina
-    sha256 "174cce4bc60dfa38babc3bae1dd3b1ab8614c2339340eaaf438012724ebc3646" => :mojave
-    sha256 "e59a26cea8549c99c0f6586db2f85d9400b53911902ec9ebdac1e6379d2518ac" => :high_sierra
+    sha256 cellar: :any, catalina:    "80649fd9dfb5ef9c0506db4f74e0a4ff275617a718249cbc12d2c62efb46657f"
+    sha256 cellar: :any, mojave:      "174cce4bc60dfa38babc3bae1dd3b1ab8614c2339340eaaf438012724ebc3646"
+    sha256 cellar: :any, high_sierra: "e59a26cea8549c99c0f6586db2f85d9400b53911902ec9ebdac1e6379d2518ac"
   end
 
   depends_on "python@3.8"

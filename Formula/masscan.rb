@@ -12,12 +12,11 @@ class Masscan < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "480e77a29b46bf529743f0d4e21a8e69d55e41d19bbb4e3b1665d329c8b3e94f" => :catalina
-    sha256 "6de3b12cbe718062781ee5bddad15a3f4835dafe77210f3ecba59d4e11e733e3" => :mojave
-    sha256 "20a6281fb4adb9aec9fd7bddf8da30bc2ae8f5bec6daa5b468444916859017fd" => :high_sierra
-    sha256 "729b4ce06557da726edbf7e6e570ed1ff96ca3e0bc42d9399f9ed96aa48ef2a2" => :sierra
-    sha256 "9aa4359e82e1b467f24d7e813ee8919dbc5cf32a182fd6eafcadc015bcd97955" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "480e77a29b46bf529743f0d4e21a8e69d55e41d19bbb4e3b1665d329c8b3e94f"
+    sha256 cellar: :any_skip_relocation, mojave:      "6de3b12cbe718062781ee5bddad15a3f4835dafe77210f3ecba59d4e11e733e3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "20a6281fb4adb9aec9fd7bddf8da30bc2ae8f5bec6daa5b468444916859017fd"
+    sha256 cellar: :any_skip_relocation, sierra:      "729b4ce06557da726edbf7e6e570ed1ff96ca3e0bc42d9399f9ed96aa48ef2a2"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "9aa4359e82e1b467f24d7e813ee8919dbc5cf32a182fd6eafcadc015bcd97955"
   end
 
   def install

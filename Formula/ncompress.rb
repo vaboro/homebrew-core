@@ -12,10 +12,9 @@ class Ncompress < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cc232677371ee83d7af62598553c028e11071e309d8620818965b94d2a43b9a4" => :catalina
-    sha256 "c5d28fad3558616e2347c16a3aa8a353c7c5b0317c175a1b99e5d6e0f6bae736" => :mojave
-    sha256 "b1fa7c42647c420dd48849ad9fb0f05da911ef3bec9459f9ba3892de2d05a58b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "cc232677371ee83d7af62598553c028e11071e309d8620818965b94d2a43b9a4"
+    sha256 cellar: :any_skip_relocation, mojave:      "c5d28fad3558616e2347c16a3aa8a353c7c5b0317c175a1b99e5d6e0f6bae736"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b1fa7c42647c420dd48849ad9fb0f05da911ef3bec9459f9ba3892de2d05a58b"
   end
 
   keg_only :provided_by_macos

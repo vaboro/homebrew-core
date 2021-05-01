@@ -6,11 +6,10 @@ class Kompose < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "49e2f40f406d9de4c53a4cdfe4c5e33f2725521dd6e37b42fbe27ee2e004ac89" => :catalina
-    sha256 "90a31f44f8dfc99b19485f753c27150e693882f2e35f2f5baaadb7c0e367ebf9" => :mojave
-    sha256 "753239b64a99b54c4e808d628b6ecb697a5f3f91b7c2211b0a666254472c8a14" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "49e2f40f406d9de4c53a4cdfe4c5e33f2725521dd6e37b42fbe27ee2e004ac89"
+    sha256 cellar: :any_skip_relocation, mojave:      "90a31f44f8dfc99b19485f753c27150e693882f2e35f2f5baaadb7c0e367ebf9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "753239b64a99b54c4e808d628b6ecb697a5f3f91b7c2211b0a666254472c8a14"
   end
 
   depends_on "go" => :build

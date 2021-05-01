@@ -7,10 +7,9 @@ class Microplane < Formula
   head "https://github.com/Clever/microplane.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "adfd90c4bbc09e44720f246cd719c508d7215b5ab6f9ad756c37018874e92dc4" => :catalina
-    sha256 "2e5906f81eb7ad280b115c22cd2e88a28daf2b612bb7f35744ace27ab0d2dd9c" => :mojave
-    sha256 "c5a414e1fa758fcb3d8b8a57b7edf3ea9174a7a71646d9a8e0f10dd2c07fb6ef" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "adfd90c4bbc09e44720f246cd719c508d7215b5ab6f9ad756c37018874e92dc4"
+    sha256 cellar: :any_skip_relocation, mojave:      "2e5906f81eb7ad280b115c22cd2e88a28daf2b612bb7f35744ace27ab0d2dd9c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c5a414e1fa758fcb3d8b8a57b7edf3ea9174a7a71646d9a8e0f10dd2c07fb6ef"
   end
 
   depends_on "dep" => :build

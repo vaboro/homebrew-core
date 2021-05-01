@@ -12,10 +12,9 @@ class Coredns < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "717eb60a8e16116051725b2717cad72aa288038c08087981a4afdbf707bbec7f" => :catalina
-    sha256 "f9cea81b5c945bdf7201d9104236a71a624816093a5479fe695de727eff5682e" => :mojave
-    sha256 "9de8f7e481877045fdb18aad99723773a18f5a7de5c0aea1965ddece445e5092" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "717eb60a8e16116051725b2717cad72aa288038c08087981a4afdbf707bbec7f"
+    sha256 cellar: :any_skip_relocation, mojave:      "f9cea81b5c945bdf7201d9104236a71a624816093a5479fe695de727eff5682e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9de8f7e481877045fdb18aad99723773a18f5a7de5c0aea1965ddece445e5092"
   end
 
   depends_on "go" => :build

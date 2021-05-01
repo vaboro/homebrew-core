@@ -6,10 +6,9 @@ class Rke < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ed2861b932970dd5fdedae695208f82ff22c8a5069d33badb8f8e0c6a0042fc2" => :catalina
-    sha256 "8d5de39b4d8477ffdde29e56bfd894fe24545eaf0684290e53f8dc579c425aa6" => :mojave
-    sha256 "d49c1a3f544d638b6291975a16f0ed0416b11f3ebad7bb524dd7fbab1ddb5a1e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ed2861b932970dd5fdedae695208f82ff22c8a5069d33badb8f8e0c6a0042fc2"
+    sha256 cellar: :any_skip_relocation, mojave:      "8d5de39b4d8477ffdde29e56bfd894fe24545eaf0684290e53f8dc579c425aa6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d49c1a3f544d638b6291975a16f0ed0416b11f3ebad7bb524dd7fbab1ddb5a1e"
   end
 
   depends_on "go" => :build

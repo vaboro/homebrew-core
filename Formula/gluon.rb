@@ -12,10 +12,9 @@ class Gluon < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a33dc9492de59e81d955a15cc08683642a2b9212f634ac34b05dc655a3b78b0b" => :catalina
-    sha256 "8afb0cf0ee97de2828321adb5998543c6b2fc1a923da02974ddf6a789bbf3d1b" => :mojave
-    sha256 "aa7eb03685fd24f3b5a2f1f71268279cff482cbcda5c998a1850c209bd22ea47" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a33dc9492de59e81d955a15cc08683642a2b9212f634ac34b05dc655a3b78b0b"
+    sha256 cellar: :any_skip_relocation, mojave:      "8afb0cf0ee97de2828321adb5998543c6b2fc1a923da02974ddf6a789bbf3d1b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "aa7eb03685fd24f3b5a2f1f71268279cff482cbcda5c998a1850c209bd22ea47"
   end
 
   depends_on "rust" => :build

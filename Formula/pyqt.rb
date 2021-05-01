@@ -10,10 +10,9 @@ class Pyqt < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a17f79ba93b629d68857864a9b35130b4cd56c650f4c80226fb9c983d40ef199" => :catalina
-    sha256 "6bc5f85f905eb25f9bfc9e23da8af4d23ba77745ace301fe4d3e8b93ad9a27b7" => :mojave
-    sha256 "6a823bc3eedf914192f63d8d21d4fc66ee32399100cb9b79b044dfd60fa401bb" => :high_sierra
+    sha256 cellar: :any, catalina:    "a17f79ba93b629d68857864a9b35130b4cd56c650f4c80226fb9c983d40ef199"
+    sha256 cellar: :any, mojave:      "6bc5f85f905eb25f9bfc9e23da8af4d23ba77745ace301fe4d3e8b93ad9a27b7"
+    sha256 cellar: :any, high_sierra: "6a823bc3eedf914192f63d8d21d4fc66ee32399100cb9b79b044dfd60fa401bb"
   end
 
   depends_on "python@3.8"

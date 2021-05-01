@@ -10,10 +10,9 @@ class TwoLame < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9ba9f3afb14f2ac2fa911046a83ee50ed6a93d747f0c305788a61b4138e5fe5a" => :catalina
-    sha256 "77d5c37574ecdf0d857e09f47e9de5eda3049fe8cd1486942a6a62a4baae6f06" => :mojave
-    sha256 "153c7085434a1bce73b0ce704f37997179d6e53614a7014546b9b4d3f80dec97" => :high_sierra
+    sha256 cellar: :any, catalina:    "9ba9f3afb14f2ac2fa911046a83ee50ed6a93d747f0c305788a61b4138e5fe5a"
+    sha256 cellar: :any, mojave:      "77d5c37574ecdf0d857e09f47e9de5eda3049fe8cd1486942a6a62a4baae6f06"
+    sha256 cellar: :any, high_sierra: "153c7085434a1bce73b0ce704f37997179d6e53614a7014546b9b4d3f80dec97"
   end
 
   def install

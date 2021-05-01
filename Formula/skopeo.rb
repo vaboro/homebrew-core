@@ -6,9 +6,9 @@ class Skopeo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "4d31286940caac405ba936c66c5f1e5c97daaa79a761f1bb8ed715eb1da0b046" => :catalina
-    sha256 "87b9ee585ee1fd5d8843726425da1b4880da1d92d55844562db736f439cc3618" => :mojave
-    sha256 "0d716998a47a2ecfc3abca2406a9b3a9ea02137250788fcb3e8c7f0e74337b38" => :high_sierra
+    sha256 catalina:    "4d31286940caac405ba936c66c5f1e5c97daaa79a761f1bb8ed715eb1da0b046"
+    sha256 mojave:      "87b9ee585ee1fd5d8843726425da1b4880da1d92d55844562db736f439cc3618"
+    sha256 high_sierra: "0d716998a47a2ecfc3abca2406a9b3a9ea02137250788fcb3e8c7f0e74337b38"
   end
 
   depends_on "go" => :build
@@ -54,7 +54,7 @@ class Skopeo < Formula
 
     # https://github.com/Homebrew/homebrew-core/pull/47766
     # https://github.com/Homebrew/homebrew-core/pull/45834
-    assert_match /Invalid destination name test: Invalid image name .+, expected colon-separated transport:reference/,
-                 shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1)
+    assert_match(/Invalid destination name test: Invalid image name .+, expected colon-separated transport:reference/,
+                 shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1))
   end
 end

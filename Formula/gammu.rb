@@ -7,9 +7,9 @@ class Gammu < Formula
   head "https://github.com/gammu/gammu.git"
 
   bottle do
-    sha256 "31de777eebd433187faa9f4c903e9adee6f1fc7376764819e88bf6564dec7095" => :catalina
-    sha256 "e9436fa704b9bb1008b95f742b59f830a7fd717c24c97565f71989273a6eef58" => :mojave
-    sha256 "fb23d0dd21c8a5f48155b3ea71f445d99ea86ce7f5c968266782fa52990a6267" => :high_sierra
+    sha256 catalina:    "31de777eebd433187faa9f4c903e9adee6f1fc7376764819e88bf6564dec7095"
+    sha256 mojave:      "e9436fa704b9bb1008b95f742b59f830a7fd717c24c97565f71989273a6eef58"
+    sha256 high_sierra: "fb23d0dd21c8a5f48155b3ea71f445d99ea86ce7f5c968266782fa52990a6267"
   end
 
   depends_on "cmake" => :build

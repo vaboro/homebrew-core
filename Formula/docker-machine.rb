@@ -8,11 +8,10 @@ class DockerMachine < Formula
   head "https://github.com/docker/machine.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "99b50d9809a0aa881e01686e3356fbd17fa61e5a5e8cb937a2a9e9ff103be097" => :catalina
-    sha256 "cc56a9c37702ecaeea1a5034326d87fa145fbc4cb613d151756571b78ca8f1ab" => :mojave
-    sha256 "320ef0f8b7fba8e679c784f854155314c7bdcbc4e7d43fd11dbce6e0e3e0f85b" => :high_sierra
-    sha256 "23a2165e741ea1a9321476d3037a5d76bc24bd494ae0bd8b16f35e3248c0aa77" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "99b50d9809a0aa881e01686e3356fbd17fa61e5a5e8cb937a2a9e9ff103be097"
+    sha256 cellar: :any_skip_relocation, mojave:      "cc56a9c37702ecaeea1a5034326d87fa145fbc4cb613d151756571b78ca8f1ab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "320ef0f8b7fba8e679c784f854155314c7bdcbc4e7d43fd11dbce6e0e3e0f85b"
+    sha256 cellar: :any_skip_relocation, sierra:      "23a2165e741ea1a9321476d3037a5d76bc24bd494ae0bd8b16f35e3248c0aa77"
   end
 
   depends_on "automake" => :build

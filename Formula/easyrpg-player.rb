@@ -10,10 +10,9 @@ class EasyrpgPlayer < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "41e511a22bb391abf5eeadf943f5b15096247172fbd5903c5b655dbd37113067" => :catalina
-    sha256 "f045884bc432cfb9d5f12d58511d9be9c963a3f9394f58213d12fb8640ab4fc3" => :mojave
-    sha256 "4469eaf8e9a0e3c1761a35f33a1aee36fda74bd07752ad3245ef9f766fe9ffe7" => :high_sierra
+    sha256 cellar: :any, catalina:    "41e511a22bb391abf5eeadf943f5b15096247172fbd5903c5b655dbd37113067"
+    sha256 cellar: :any, mojave:      "f045884bc432cfb9d5f12d58511d9be9c963a3f9394f58213d12fb8640ab4fc3"
+    sha256 cellar: :any, high_sierra: "4469eaf8e9a0e3c1761a35f33a1aee36fda74bd07752ad3245ef9f766fe9ffe7"
   end
 
   depends_on "pkg-config" => :build
@@ -38,6 +37,6 @@ class EasyrpgPlayer < Formula
   end
 
   test do
-    assert_match /EasyRPG Player #{version}$/, shell_output("#{bin}/easyrpg-player -v")
+    assert_match(/EasyRPG Player #{version}$/, shell_output("#{bin}/easyrpg-player -v"))
   end
 end

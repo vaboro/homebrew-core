@@ -11,12 +11,11 @@ class Libsigsegv < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "aae3e97886b24afb8daf0bafdf9dc02c5fa3d18392611cf68dfd88b663deb87b" => :catalina
-    sha256 "3b92bc3dfb8000bfac2b9ebdef436acdf0047d1c98b3ed250f0a332d84ba869a" => :mojave
-    sha256 "5fea960fc3cc9f168749e36e37efbf53f3030d4a3fc2f2602f182d3dcafd5a17" => :high_sierra
-    sha256 "158f90f84a050e266c23299745b7553321c304649e9f88afcf34d73ef08f95a1" => :sierra
-    sha256 "b9808096e671482dffd3c4b7ea330d8fc58027bee92c6a774b953fefc1606eb1" => :el_capitan
+    sha256 cellar: :any, catalina:    "aae3e97886b24afb8daf0bafdf9dc02c5fa3d18392611cf68dfd88b663deb87b"
+    sha256 cellar: :any, mojave:      "3b92bc3dfb8000bfac2b9ebdef436acdf0047d1c98b3ed250f0a332d84ba869a"
+    sha256 cellar: :any, high_sierra: "5fea960fc3cc9f168749e36e37efbf53f3030d4a3fc2f2602f182d3dcafd5a17"
+    sha256 cellar: :any, sierra:      "158f90f84a050e266c23299745b7553321c304649e9f88afcf34d73ef08f95a1"
+    sha256 cellar: :any, el_capitan:  "b9808096e671482dffd3c4b7ea330d8fc58027bee92c6a774b953fefc1606eb1"
   end
 
   def install
@@ -70,6 +69,6 @@ class Libsigsegv < Formula
     EOS
 
     system ENV.cc, "test.c", "-L#{lib}", "-lsigsegv", "-o", "test"
-    assert_match /Test passed/, shell_output("./test")
+    assert_match(/Test passed/, shell_output("./test"))
   end
 end

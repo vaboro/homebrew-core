@@ -13,10 +13,9 @@ class Clisp < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "d71cf96b9d303ec2de1cb091043a0ad1befa590bbe3ee027f7f94c03daf9f6a1" => :mojave
-    sha256 "5bf6cb7c640be9841f8a433f2bdbbd872aaf01352355d8765266d19a699e23c1" => :high_sierra
-    sha256 "a34dc97249cc2e5001dff9561137c8a4ebc010e6da3be23735d711566e4d7312" => :sierra
+    sha256 cellar: :any, mojave:      "d71cf96b9d303ec2de1cb091043a0ad1befa590bbe3ee027f7f94c03daf9f6a1"
+    sha256 cellar: :any, high_sierra: "5bf6cb7c640be9841f8a433f2bdbbd872aaf01352355d8765266d19a699e23c1"
+    sha256 cellar: :any, sierra:      "a34dc97249cc2e5001dff9561137c8a4ebc010e6da3be23735d711566e4d7312"
   end
 
   depends_on "libsigsegv"

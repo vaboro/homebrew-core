@@ -7,10 +7,9 @@ class Libmatroska < Formula
   head "https://github.com/Matroska-Org/libmatroska.git"
 
   bottle do
-    cellar :any
-    sha256 "78373c5516fdadee736e360c5e94a80ca3e3092ab9ca44fd88f31c2a08f8fc5a" => :catalina
-    sha256 "a1c46ddc10694208aae53738cd9927674e076b805180149a1104b4a04bdc19b0" => :mojave
-    sha256 "74faf2d3e6539e847538cfbd9f7a86abacb7272d83cfa1d36094f9295f66727f" => :high_sierra
+    sha256 cellar: :any, catalina:    "78373c5516fdadee736e360c5e94a80ca3e3092ab9ca44fd88f31c2a08f8fc5a"
+    sha256 cellar: :any, mojave:      "a1c46ddc10694208aae53738cd9927674e076b805180149a1104b4a04bdc19b0"
+    sha256 cellar: :any, high_sierra: "74faf2d3e6539e847538cfbd9f7a86abacb7272d83cfa1d36094f9295f66727f"
   end
 
   depends_on "cmake" => :build

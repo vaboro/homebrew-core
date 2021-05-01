@@ -11,9 +11,9 @@ class Hbase < Formula
   end
 
   bottle do
-    sha256 "fdf0eb89433c3c1d3b6432a5261f9a433dba0c1d128cba544d1a69861d931c07" => :catalina
-    sha256 "cf38cab402d016cfed0c937b67ea84fc4faf620121f422a673b81b422fd2356f" => :mojave
-    sha256 "fd9352d2ba177f23ae5388fe63f7abdc528d7d9013a03a2c022c926456b0268e" => :high_sierra
+    sha256 catalina:    "fdf0eb89433c3c1d3b6432a5261f9a433dba0c1d128cba544d1a69861d931c07"
+    sha256 mojave:      "cf38cab402d016cfed0c937b67ea84fc4faf620121f422a673b81b422fd2356f"
+    sha256 high_sierra: "fd9352d2ba177f23ae5388fe63f7abdc528d7d9013a03a2c022c926456b0268e"
   end
 
   depends_on "ant" => :build
@@ -56,15 +56,15 @@ class Hbase < Formula
       # upstream bugs for ipv6 incompatibility:
       # https://issues.apache.org/jira/browse/HADOOP-8568
       # https://issues.apache.org/jira/browse/HADOOP-3619
-      s.gsub! /^# export HBASE_OPTS$/,
-              "export HBASE_OPTS=\"-Djava.net.preferIPv4Stack=true -XX:+UseConcMarkSweepGC\""
-      s.gsub! /^# export JAVA_HOME=.*/,
-              "export JAVA_HOME=\"${JAVA_HOME:-#{java_home}}\""
+      s.gsub!(/^# export HBASE_OPTS$/,
+              "export HBASE_OPTS=\"-Djava.net.preferIPv4Stack=true -XX:+UseConcMarkSweepGC\"")
+      s.gsub!(/^# export JAVA_HOME=.*/,
+              "export JAVA_HOME=\"${JAVA_HOME:-#{java_home}}\"")
 
       # Default `$HBASE_HOME/logs` is unsuitable as it would cause writes to the
       # formula's prefix. Provide a better default but still allow override.
-      s.gsub! /^# export HBASE_LOG_DIR=.*$/,
-              "export HBASE_LOG_DIR=\"${HBASE_LOG_DIR:-#{var}/log/hbase}\""
+      s.gsub!(/^# export HBASE_LOG_DIR=.*$/,
+              "export HBASE_LOG_DIR=\"${HBASE_LOG_DIR:-#{var}/log/hbase}\"")
     end
 
     # makes hbase usable out of the box
@@ -160,9 +160,9 @@ class Hbase < Formula
 
     cp_r (libexec/"conf"), testpath
     inreplace (testpath/"conf/hbase-site.xml") do |s|
-      s.gsub! /(hbase.rootdir.*)\n.*/, "\\1\n<value>file://#{testpath}/hbase</value>"
-      s.gsub! /(hbase.zookeeper.property.dataDir.*)\n.*/, "\\1\n<value>#{testpath}/zookeeper</value>"
-      s.gsub! /(hbase.zookeeper.property.clientPort.*)\n.*/, "\\1\n<value>#{port}</value>"
+      s.gsub!(/(hbase.rootdir.*)\n.*/, "\\1\n<value>file://#{testpath}/hbase</value>")
+      s.gsub!(/(hbase.zookeeper.property.dataDir.*)\n.*/, "\\1\n<value>#{testpath}/zookeeper</value>")
+      s.gsub!(/(hbase.zookeeper.property.clientPort.*)\n.*/, "\\1\n<value>#{port}</value>")
     end
 
     ENV["HBASE_LOG_DIR"]  = testpath/"logs"

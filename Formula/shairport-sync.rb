@@ -12,9 +12,9 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 "3c2a973fbbe200704e35737226fd4e7ed6edad9f389253602fe5d14c50bb171e" => :catalina
-    sha256 "afe30af9e783c581888b525d7e3aab13e09e9812e9f717ad258c9cbb996da8a4" => :mojave
-    sha256 "d08952f97ce3a3f7e10a602322d0fdb23d8553586b4a7ad6b01af927f9969e1f" => :high_sierra
+    sha256 catalina:    "3c2a973fbbe200704e35737226fd4e7ed6edad9f389253602fe5d14c50bb171e"
+    sha256 mojave:      "afe30af9e783c581888b525d7e3aab13e09e9812e9f717ad258c9cbb996da8a4"
+    sha256 high_sierra: "d08952f97ce3a3f7e10a602322d0fdb23d8553586b4a7ad6b01af927f9969e1f"
   end
 
   depends_on "autoconf" => :build

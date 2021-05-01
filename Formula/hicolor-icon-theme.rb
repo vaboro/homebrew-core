@@ -6,13 +6,12 @@ class HicolorIconTheme < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8ba8d6065b652396583c55a0e73cff0007f96064a330ac20499ff1d887771eb8" => :catalina
-    sha256 "5ba4bb6a7e89f5fb0d43504d68d657a536be9540d4cc72552bd5965e15a82b91" => :mojave
-    sha256 "b33f58b98a6ca6bb72777eaf7b7a4bb393d5cc9ced6954dd7a7e52e18c214799" => :high_sierra
-    sha256 "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0" => :sierra
-    sha256 "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0" => :el_capitan
-    sha256 "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "8ba8d6065b652396583c55a0e73cff0007f96064a330ac20499ff1d887771eb8"
+    sha256 cellar: :any_skip_relocation, mojave:      "5ba4bb6a7e89f5fb0d43504d68d657a536be9540d4cc72552bd5965e15a82b91"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b33f58b98a6ca6bb72777eaf7b7a4bb393d5cc9ced6954dd7a7e52e18c214799"
+    sha256 cellar: :any_skip_relocation, sierra:      "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0"
+    sha256 cellar: :any_skip_relocation, yosemite:    "cd8699f3944eb87b76fc89e4ca69f19df5d66aa8a4c89d636660d299e807f5b0"
   end
 
   head do

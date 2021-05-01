@@ -11,10 +11,9 @@ class Kafka < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a00316528e00fe0a5ff2771d1883f25f186481d77de8a79dfaf491be076de3ee" => :catalina
-    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :mojave
-    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a00316528e00fe0a5ff2771d1883f25f186481d77de8a79dfaf491be076de3ee"
+    sha256 cellar: :any_skip_relocation, mojave:      "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428"
+    sha256 cellar: :any_skip_relocation, high_sierra: "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428"
   end
 
   # Related to https://issues.apache.org/jira/browse/KAFKA-2034
@@ -22,7 +21,7 @@ class Kafka < Formula
   # if you do not have Java 1.8 installed you cannot used the bottled version of Kafka
   pour_bottle? do
     reason "The bottle requires Java 1.8."
-    satisfy { quiet_system("/usr/libexec/java_home --version 1.8 --failfast") }
+    satisfy { quiet_system("/usr/libexec/java_home", "--version", "1.8", "--failfast") }
   end
 
   depends_on java: "1.8"

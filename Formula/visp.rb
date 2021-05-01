@@ -11,9 +11,9 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 "b67f5b9be81b216ce94ed985da5fe8498d8d63b8b36ea66b2bd46861812fa20d" => :catalina
-    sha256 "868090cf0386991a92e9b65871489cfc473058365b9ff2a06b16d788e1d0d9c2" => :mojave
-    sha256 "181281113036ccbe8470db5b8b196b4f02dbf64831b615ecb7a451657485be36" => :high_sierra
+    sha256 catalina:    "b67f5b9be81b216ce94ed985da5fe8498d8d63b8b36ea66b2bd46861812fa20d"
+    sha256 mojave:      "868090cf0386991a92e9b65871489cfc473058365b9ff2a06b16d788e1d0d9c2"
+    sha256 high_sierra: "181281113036ccbe8470db5b8b196b4f02dbf64831b615ecb7a451657485be36"
   end
 
   depends_on "cmake" => :build
@@ -44,12 +44,12 @@ class Visp < Formula
 
     # Avoid superenv shim references
     inreplace "CMakeLists.txt" do |s|
-      s.sub! /CMake build tool:"\s+\${CMAKE_BUILD_TOOL}/,
-             "CMake build tool:            gmake\""
-      s.sub! /C\+\+ Compiler:"\s+\${VISP_COMPILER_STR}/,
-             "C++ Compiler:                clang++\""
-      s.sub! /C Compiler:"\s+\${CMAKE_C_COMPILER}/,
-             "C Compiler:                  clang\""
+      s.sub!(/CMake build tool:"\s+\${CMAKE_BUILD_TOOL}/,
+             "CMake build tool:            gmake\"")
+      s.sub!(/C\+\+ Compiler:"\s+\${VISP_COMPILER_STR}/,
+             "C++ Compiler:                clang++\"")
+      s.sub!(/C Compiler:"\s+\${CMAKE_C_COMPILER}/,
+             "C Compiler:                  clang\"")
     end
 
     system "cmake", ".", "-DBUILD_DEMOS=OFF",

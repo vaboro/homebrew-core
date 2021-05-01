@@ -6,9 +6,8 @@ class Xclogparser < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ebab01462344c61739a95f2fbcdf19548e3845b5fedd01326e6d8826417550ba" => :catalina
-    sha256 "a13650a1540031bc4657443317b9d72f4ed2c033335480de88b145c2ad13b4b9" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "ebab01462344c61739a95f2fbcdf19548e3845b5fedd01326e6d8826417550ba"
+    sha256 cellar: :any_skip_relocation, mojave:   "a13650a1540031bc4657443317b9d72f4ed2c033335480de88b145c2ad13b4b9"
   end
 
   depends_on xcode: "11.0"

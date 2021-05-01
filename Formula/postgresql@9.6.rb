@@ -11,9 +11,9 @@ class PostgresqlAT96 < Formula
   end
 
   bottle do
-    sha256 "81b3a3ac4e549641e48fe4f291b32266603858cff2ceb6242f2725deb20bdd9a" => :catalina
-    sha256 "b515085fd803628a5979a34402fa7296e95c437bc5805ec08acd69b43ac11c6a" => :mojave
-    sha256 "59593120c3bce07fa0c130eda3f1b0aef1cc2ed254b822fd9ed416d7469a8da2" => :high_sierra
+    sha256 catalina:    "81b3a3ac4e549641e48fe4f291b32266603858cff2ceb6242f2725deb20bdd9a"
+    sha256 mojave:      "b515085fd803628a5979a34402fa7296e95c437bc5805ec08acd69b43ac11c6a"
+    sha256 high_sierra: "59593120c3bce07fa0c130eda3f1b0aef1cc2ed254b822fd9ed416d7469a8da2"
   end
 
   keg_only :versioned_formula

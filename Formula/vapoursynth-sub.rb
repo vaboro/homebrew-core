@@ -8,10 +8,9 @@ class VapoursynthSub < Formula
   head "https://github.com/vapoursynth/vapoursynth.git"
 
   bottle do
-    cellar :any
-    sha256 "61aa955a21de088cb8f53ef014a6ed0bbca3435ee70ac958f38bdec42540ca79" => :catalina
-    sha256 "deeea5620be2867e3fab4a89bbf93074bf9e8d10a3b01fba9e8161f333293bd3" => :mojave
-    sha256 "1f4e14c3572fcb8e1e65b59f41639bab5a7e28ff4509de6af42afc8e7f8931ff" => :high_sierra
+    sha256 cellar: :any, catalina:    "61aa955a21de088cb8f53ef014a6ed0bbca3435ee70ac958f38bdec42540ca79"
+    sha256 cellar: :any, mojave:      "deeea5620be2867e3fab4a89bbf93074bf9e8d10a3b01fba9e8161f333293bd3"
+    sha256 cellar: :any, high_sierra: "1f4e14c3572fcb8e1e65b59f41639bab5a7e28ff4509de6af42afc8e7f8931ff"
   end
 
   depends_on "autoconf" => :build

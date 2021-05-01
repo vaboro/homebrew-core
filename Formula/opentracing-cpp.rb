@@ -6,10 +6,9 @@ class OpentracingCpp < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "151a5af54448492f668979eb3a0e9fb92e2e1a99cb6766ba3985a9a88f26526a" => :catalina
-    sha256 "5a10c35e98785ee6567c241e845e3fd24a2fa52f15ade1d4e6a91f939752bd8c" => :mojave
-    sha256 "7747ffc077d879fbbbf4509e65fcfc154f238c9c92482bf94d1fb176156be563" => :high_sierra
+    sha256 cellar: :any, catalina:    "151a5af54448492f668979eb3a0e9fb92e2e1a99cb6766ba3985a9a88f26526a"
+    sha256 cellar: :any, mojave:      "5a10c35e98785ee6567c241e845e3fd24a2fa52f15ade1d4e6a91f939752bd8c"
+    sha256 cellar: :any, high_sierra: "7747ffc077d879fbbbf4509e65fcfc154f238c9c92482bf94d1fb176156be563"
   end
 
   depends_on "cmake" => :build

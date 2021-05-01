@@ -11,11 +11,10 @@ class Wmctrl < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "7fffdc3399b2af15b638dfb642e44e0c148df088828f307c1f9440e38049cd5a" => :catalina
-    sha256 "2223922cda28d81580d85d01fa697284102d10226df76d57660bd92093fd46c5" => :mojave
-    sha256 "59b55236fd42a64f6ccc8587a5580a25afd330a137b62e7258568042e8b1b525" => :high_sierra
-    sha256 "cbdb379f9b1264847f74c0ea01e0a5412645b442d3c069708bfbe209b845b873" => :sierra
+    sha256 cellar: :any, catalina:    "7fffdc3399b2af15b638dfb642e44e0c148df088828f307c1f9440e38049cd5a"
+    sha256 cellar: :any, mojave:      "2223922cda28d81580d85d01fa697284102d10226df76d57660bd92093fd46c5"
+    sha256 cellar: :any, high_sierra: "59b55236fd42a64f6ccc8587a5580a25afd330a137b62e7258568042e8b1b525"
+    sha256 cellar: :any, sierra:      "cbdb379f9b1264847f74c0ea01e0a5412645b442d3c069708bfbe209b845b873"
   end
 
   depends_on "pkg-config" => :build

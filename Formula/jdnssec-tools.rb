@@ -13,10 +13,9 @@ class JdnssecTools < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b" => :catalina
-    sha256 "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b" => :mojave
-    sha256 "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
+    sha256 cellar: :any_skip_relocation, mojave:      "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
   end
 
   depends_on "openjdk"
@@ -38,7 +37,7 @@ class JdnssecTools < Formula
       6FjcP4Lbuds/44U7U8du224Q8jTrZ 57Yvj4VDQKc=)",
     )
 
-    assert_match /D4C3D5552B8679FAEEBC317E5F048B614B2E5F607DC57F1553182D49AB2179F7/,
-      shell_output("#{bin}/jdnssec-dstool -d 2 powerdns.com.key")
+    assert_match(/D4C3D5552B8679FAEEBC317E5F048B614B2E5F607DC57F1553182D49AB2179F7/,
+      shell_output("#{bin}/jdnssec-dstool -d 2 powerdns.com.key"))
   end
 end

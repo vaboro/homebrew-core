@@ -6,11 +6,10 @@ class Rawgl < Formula
   head "https://github.com/cyxx/rawgl.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "96bd31a9298e14d5b4db183c8833d6e1e6bb10344193f49e1681a13cecc0c276" => :catalina
-    sha256 "59d92a845f19239386ea16af01ae174ab61bedeade38b55e492895b55656f576" => :mojave
-    sha256 "fb7f71cbce3b517ba8946cea53611c7577a2f1b1618a5f27dd0b67f23e278a25" => :high_sierra
+    sha256 cellar: :any, catalina:    "96bd31a9298e14d5b4db183c8833d6e1e6bb10344193f49e1681a13cecc0c276"
+    sha256 cellar: :any, mojave:      "59d92a845f19239386ea16af01ae174ab61bedeade38b55e492895b55656f576"
+    sha256 cellar: :any, high_sierra: "fb7f71cbce3b517ba8946cea53611c7577a2f1b1618a5f27dd0b67f23e278a25"
   end
 
   depends_on "sdl2"

@@ -6,10 +6,9 @@ class Llnode < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "7cae66b1f165be9e0167179b2512b232c367d226f0dd902e3a9ab9b5268592c3" => :catalina
-    sha256 "be4240e396ba27163184e031a6037461786ad13ae3c206e8f3461d546a472f01" => :mojave
-    sha256 "eed224951b899923a307415072bc9c4402e85d9e0d5f0aedc214cf1106f15935" => :high_sierra
+    sha256 cellar: :any, catalina:    "7cae66b1f165be9e0167179b2512b232c367d226f0dd902e3a9ab9b5268592c3"
+    sha256 cellar: :any, mojave:      "be4240e396ba27163184e031a6037461786ad13ae3c206e8f3461d546a472f01"
+    sha256 cellar: :any, high_sierra: "eed224951b899923a307415072bc9c4402e85d9e0d5f0aedc214cf1106f15935"
   end
 
   depends_on "node" => :build

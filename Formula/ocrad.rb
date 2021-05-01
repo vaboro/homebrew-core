@@ -11,11 +11,10 @@ class Ocrad < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6533cd452587714531d20b4aa74ea7fc1e323ff893c8a7c9729655ede1ec9df7" => :catalina
-    sha256 "3d1c85bb36faedf5ab12f78e8c3511dcc4164561ba8bc09924b48f6aa3fa0b37" => :mojave
-    sha256 "ba9b30eeabc11634502e30fd9a730d5727668550f9708d46fbefc03bcb3917de" => :high_sierra
-    sha256 "903ce6530395c0973418020561ddd60da739f3a36e865500776922e18975460b" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6533cd452587714531d20b4aa74ea7fc1e323ff893c8a7c9729655ede1ec9df7"
+    sha256 cellar: :any_skip_relocation, mojave:      "3d1c85bb36faedf5ab12f78e8c3511dcc4164561ba8bc09924b48f6aa3fa0b37"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ba9b30eeabc11634502e30fd9a730d5727668550f9708d46fbefc03bcb3917de"
+    sha256 cellar: :any_skip_relocation, sierra:      "903ce6530395c0973418020561ddd60da739f3a36e865500776922e18975460b"
   end
 
   def install

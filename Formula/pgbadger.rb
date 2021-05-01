@@ -7,10 +7,9 @@ class Pgbadger < Formula
   head "https://github.com/darold/pgbadger.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4" => :catalina
-    sha256 "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4" => :mojave
-    sha256 "a9350663298d12192751ea780e97581a2d715a0ee90295f12a8abf3e8ba84995" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4"
+    sha256 cellar: :any_skip_relocation, mojave:      "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a9350663298d12192751ea780e97581a2d715a0ee90295f12a8abf3e8ba84995"
   end
 
   def install

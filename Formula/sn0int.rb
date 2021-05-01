@@ -6,11 +6,10 @@ class Sn0int < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "5a6cc5bdf07a29ebf714aff83d338394d030780aaf69dda387499ca0db8138f2" => :catalina
-    sha256 "75c89017e8f92cc2ef2a1701554a2047ec1a4a42806bc47081c7af42935a8043" => :mojave
-    sha256 "0cf32130ed1155b959935202031f7d71c34f141a46c726233836e402c9bd8bc8" => :high_sierra
+    sha256 cellar: :any, catalina:    "5a6cc5bdf07a29ebf714aff83d338394d030780aaf69dda387499ca0db8138f2"
+    sha256 cellar: :any, mojave:      "75c89017e8f92cc2ef2a1701554a2047ec1a4a42806bc47081c7af42935a8043"
+    sha256 cellar: :any, high_sierra: "0cf32130ed1155b959935202031f7d71c34f141a46c726233836e402c9bd8bc8"
   end
 
   depends_on "pkg-config" => :build

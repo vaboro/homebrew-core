@@ -11,11 +11,10 @@ class Cflow < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a8b7329845d3c42a17efc7af96025a1a2839ae129afd7126e977d0a245853f45" => :catalina
-    sha256 "a96f9cf3cb35851c27ed602f6a05489da2d64e75ab6daccecc3e23156d9fe968" => :mojave
-    sha256 "50a816924cb91e1c4055923285ea3ceb0d815b4641477906ae5f6abdae337d52" => :high_sierra
-    sha256 "5e88f5310c34255947032f24227cf779aa8a42fe595f585605e814f001f4a151" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a8b7329845d3c42a17efc7af96025a1a2839ae129afd7126e977d0a245853f45"
+    sha256 cellar: :any_skip_relocation, mojave:      "a96f9cf3cb35851c27ed602f6a05489da2d64e75ab6daccecc3e23156d9fe968"
+    sha256 cellar: :any_skip_relocation, high_sierra: "50a816924cb91e1c4055923285ea3ceb0d815b4641477906ae5f6abdae337d52"
+    sha256 cellar: :any_skip_relocation, sierra:      "5e88f5310c34255947032f24227cf779aa8a42fe595f585605e814f001f4a151"
   end
 
   def install
@@ -64,6 +63,6 @@ class Cflow < Formula
       }
     EOS
 
-    assert_match /getpwuid()/, shell_output("#{bin}/cflow --main who_am_i #{testpath}/whoami.c")
+    assert_match(/getpwuid()/, shell_output("#{bin}/cflow --main who_am_i #{testpath}/whoami.c"))
   end
 end

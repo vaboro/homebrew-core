@@ -6,10 +6,9 @@ class VampPluginSdk < Formula
   head "https://code.soundsoftware.ac.uk/hg/vamp-plugin-sdk", using: :hg
 
   bottle do
-    cellar :any
-    sha256 "b31926ceedbd7f79dc9783da8092b543c549d800705d9d8e8d8d0fd451d093de" => :catalina
-    sha256 "ee8d69d0b8c72e3e9ed1c79bfa7ca6650d10e36a2b110215b3d803f841ae2ec0" => :mojave
-    sha256 "834812edc745c782511f1397fb5e3e6995b9fd25b42426ec784cd5610dbc9eb4" => :high_sierra
+    sha256 cellar: :any, catalina:    "b31926ceedbd7f79dc9783da8092b543c549d800705d9d8e8d8d0fd451d093de"
+    sha256 cellar: :any, mojave:      "ee8d69d0b8c72e3e9ed1c79bfa7ca6650d10e36a2b110215b3d803f841ae2ec0"
+    sha256 cellar: :any, high_sierra: "834812edc745c782511f1397fb5e3e6995b9fd25b42426ec784cd5610dbc9eb4"
   end
 
   depends_on "automake" => :build
@@ -35,10 +34,10 @@ class VampPluginSdk < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-Wl,-dylib", "-o", "test.dylib"
-    assert_match /Usage:/, shell_output("#{bin}/vamp-rdf-template-generator 2>&1", 2)
+    assert_match(/Usage:/, shell_output("#{bin}/vamp-rdf-template-generator 2>&1", 2))
 
     cp "#{lib}/vamp/vamp-example-plugins.so", testpath/"vamp-example-plugins.dylib"
     ENV["VAMP_PATH"]=testpath
-    assert_match /amplitudefollower/, shell_output("#{bin}/vamp-simple-host -l")
+    assert_match(/amplitudefollower/, shell_output("#{bin}/vamp-simple-host -l"))
   end
 end

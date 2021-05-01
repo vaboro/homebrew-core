@@ -5,10 +5,9 @@ class Apachetop < Formula
   sha256 "88abf58ee5d7882e4cc3fa2462865ebbf0e8f872fdcec5186abe16e7bff3d4a5"
 
   bottle do
-    cellar :any
-    sha256 "da48ab193d519f9a3ce1f90d1f6b4f4b9adee43a6a57435329d7a04e2a27e154" => :catalina
-    sha256 "a71dffc1d92dad7331f5e935395a20bb3ba953889f5083e92bcd7e4388a71ab5" => :mojave
-    sha256 "1bab24050249ddcf4f69b48b6568cf8e0464722d1a91cf3c1b6a21da0fdf4462" => :high_sierra
+    sha256 cellar: :any, catalina:    "da48ab193d519f9a3ce1f90d1f6b4f4b9adee43a6a57435329d7a04e2a27e154"
+    sha256 cellar: :any, mojave:      "a71dffc1d92dad7331f5e935395a20bb3ba953889f5083e92bcd7e4388a71ab5"
+    sha256 cellar: :any, high_sierra: "1bab24050249ddcf4f69b48b6568cf8e0464722d1a91cf3c1b6a21da0fdf4462"
   end
 
   depends_on "autoconf" => :build

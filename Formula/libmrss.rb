@@ -6,11 +6,10 @@ class Libmrss < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "03a62a0d10dd05156876128388b1081c329a00f38d71d6e8b52bff20b3d40fbe" => :catalina
-    sha256 "66000637d850285b2fd66f2fc00ae5a3096690ec84b8280037c39bff3246612c" => :mojave
-    sha256 "234ec50cc4eabdd5433abb2d27f1e359c468db4fda10a36eb2c9278034a4e000" => :high_sierra
+    sha256 cellar: :any, catalina:    "03a62a0d10dd05156876128388b1081c329a00f38d71d6e8b52bff20b3d40fbe"
+    sha256 cellar: :any, mojave:      "66000637d850285b2fd66f2fc00ae5a3096690ec84b8280037c39bff3246612c"
+    sha256 cellar: :any, high_sierra: "234ec50cc4eabdd5433abb2d27f1e359c468db4fda10a36eb2c9278034a4e000"
   end
 
   depends_on "pkg-config" => :build

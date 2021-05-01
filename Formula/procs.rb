@@ -6,10 +6,9 @@ class Procs < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c56900f3f1a6a66a14fc30bd4957bb628a668d970640b7b6372833112ad8f57f" => :catalina
-    sha256 "33a33dbedac7200f13e22253a450d66d784274eff7a94ba5f034ba0c79a66dad" => :mojave
-    sha256 "427cd09af3e3d8990bb971a312daa1daa9bd63f0b64b56e13c5694bdcbfcc492" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c56900f3f1a6a66a14fc30bd4957bb628a668d970640b7b6372833112ad8f57f"
+    sha256 cellar: :any_skip_relocation, mojave:      "33a33dbedac7200f13e22253a450d66d784274eff7a94ba5f034ba0c79a66dad"
+    sha256 cellar: :any_skip_relocation, high_sierra: "427cd09af3e3d8990bb971a312daa1daa9bd63f0b64b56e13c5694bdcbfcc492"
   end
 
   depends_on "rust" => :build

@@ -6,11 +6,10 @@ class Hss < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "709da9ba5497dd3d76b8b425f6a74c8b6014e23a0a85b5b1498d6ac0137b15cd" => :catalina
-    sha256 "bc7f0e8a54effd65cae855164b7ea0d287af079ceec01accebb74f476e04c863" => :mojave
-    sha256 "e6b884c0c3f45c0365c39d65f644281c0079899b96d7835ad7fdab6e2e67c338" => :high_sierra
-    sha256 "4d23f98a3af8e2facd71c61616a207bb7c990bb2b9c5c52ca9a772cc6aecd0be" => :sierra
+    sha256 cellar: :any, catalina:    "709da9ba5497dd3d76b8b425f6a74c8b6014e23a0a85b5b1498d6ac0137b15cd"
+    sha256 cellar: :any, mojave:      "bc7f0e8a54effd65cae855164b7ea0d287af079ceec01accebb74f476e04c863"
+    sha256 cellar: :any, high_sierra: "e6b884c0c3f45c0365c39d65f644281c0079899b96d7835ad7fdab6e2e67c338"
+    sha256 cellar: :any, sierra:      "4d23f98a3af8e2facd71c61616a207bb7c990bb2b9c5c52ca9a772cc6aecd0be"
   end
 
   depends_on "readline"

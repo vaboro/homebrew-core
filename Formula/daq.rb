@@ -11,10 +11,9 @@ class Daq < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "3b1f25eab6e2c04f4b5e609a1d3e72c3eb55eb12d4a7acb61f43ae815bd10347" => :catalina
-    sha256 "8d57a1f8536259612d6ce312b54a96e8d0fd5527000593d11765baf095d1fd2d" => :mojave
-    sha256 "861fbfd197f0cef898687b427cfa259d6dbf15b2eace0036477910177b8c4c16" => :high_sierra
+    sha256 cellar: :any, catalina:    "3b1f25eab6e2c04f4b5e609a1d3e72c3eb55eb12d4a7acb61f43ae815bd10347"
+    sha256 cellar: :any, mojave:      "8d57a1f8536259612d6ce312b54a96e8d0fd5527000593d11765baf095d1fd2d"
+    sha256 cellar: :any, high_sierra: "861fbfd197f0cef898687b427cfa259d6dbf15b2eace0036477910177b8c4c16"
   end
 
   depends_on "autoconf" => :build

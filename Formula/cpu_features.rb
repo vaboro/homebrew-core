@@ -6,11 +6,10 @@ class CpuFeatures < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cf7f7d47468e2c0cf321c22c86adb2c734920559b1a63553b1688ed0e4a39b73" => :catalina
-    sha256 "b2736429ca74d23173266aab1d3ee6fea58ee963e0042391d803b26d322838d7" => :mojave
-    sha256 "0d8119f02b609f5cfcac19177bd669668686c549bb138fbe2a0aa391df7dc838" => :high_sierra
-    sha256 "d703ec98a4f4913ac50c872475e7c37e6c439326db607297fa14cd438e75f919" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "cf7f7d47468e2c0cf321c22c86adb2c734920559b1a63553b1688ed0e4a39b73"
+    sha256 cellar: :any_skip_relocation, mojave:      "b2736429ca74d23173266aab1d3ee6fea58ee963e0042391d803b26d322838d7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0d8119f02b609f5cfcac19177bd669668686c549bb138fbe2a0aa391df7dc838"
+    sha256 cellar: :any_skip_relocation, sierra:      "d703ec98a4f4913ac50c872475e7c37e6c439326db607297fa14cd438e75f919"
   end
 
   depends_on "cmake" => :build
@@ -22,12 +21,12 @@ class CpuFeatures < Formula
 
   test do
     output = shell_output(bin/"list_cpu_features")
-    assert_match /^arch\s*:/, output
-    assert_match /^brand\s*:/, output
-    assert_match /^family\s*:/, output
-    assert_match /^model\s*:/, output
-    assert_match /^stepping\s*:/, output
-    assert_match /^uarch\s*:/, output
-    assert_match /^flags\s*:/, output
+    assert_match(/^arch\s*:/, output)
+    assert_match(/^brand\s*:/, output)
+    assert_match(/^family\s*:/, output)
+    assert_match(/^model\s*:/, output)
+    assert_match(/^stepping\s*:/, output)
+    assert_match(/^uarch\s*:/, output)
+    assert_match(/^flags\s*:/, output)
   end
 end

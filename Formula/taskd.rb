@@ -8,11 +8,10 @@ class Taskd < Formula
   head "https://github.com/GothenburgBitFactory/taskserver.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "88580976ecb71d4f74d814ff06c88c2082565fee61c7ff8e7f506bce19b460d4" => :catalina
-    sha256 "225bedd463f0344572ec985bbb49693dc0b6d5c095c87a5157bcfc437317c1d7" => :mojave
-    sha256 "f9737943f0b2877414bf8c0d957a88d79010334a145be6420fd93f64b9569cb3" => :high_sierra
+    sha256 cellar: :any, catalina:    "88580976ecb71d4f74d814ff06c88c2082565fee61c7ff8e7f506bce19b460d4"
+    sha256 cellar: :any, mojave:      "225bedd463f0344572ec985bbb49693dc0b6d5c095c87a5157bcfc437317c1d7"
+    sha256 cellar: :any, high_sierra: "f9737943f0b2877414bf8c0d957a88d79010334a145be6420fd93f64b9569cb3"
   end
 
   depends_on "cmake" => :build

@@ -6,10 +6,9 @@ class Mat2 < Formula
   license "LGPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911" => :catalina
-    sha256 "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911" => :mojave
-    sha256 "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911"
+    sha256 cellar: :any_skip_relocation, mojave:      "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911"
+    sha256 cellar: :any_skip_relocation, high_sierra: "34a6c1014ecd99466de27658a669939047ab794d2d6272b483066a52988fb911"
   end
 
   depends_on "exiftool"

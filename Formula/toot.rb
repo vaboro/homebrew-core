@@ -7,10 +7,9 @@ class Toot < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "96f4f491b9448368e35619e8910420eba8528a61857c8114c238ed279e6cffae" => :catalina
-    sha256 "72ff4aa79f3b3bd508a7c76a906d5dc0901f1206ae6eb417d50638a97a4bf9b2" => :mojave
-    sha256 "f8e4e2f82a44d0c9f054264d2cb9e0cd01f3f25cea91d7c861689bad7814add0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "96f4f491b9448368e35619e8910420eba8528a61857c8114c238ed279e6cffae"
+    sha256 cellar: :any_skip_relocation, mojave:      "72ff4aa79f3b3bd508a7c76a906d5dc0901f1206ae6eb417d50638a97a4bf9b2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f8e4e2f82a44d0c9f054264d2cb9e0cd01f3f25cea91d7c861689bad7814add0"
   end
 
   depends_on "python@3.8"

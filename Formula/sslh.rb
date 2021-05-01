@@ -7,10 +7,9 @@ class Sslh < Formula
   head "https://github.com/yrutschle/sslh.git"
 
   bottle do
-    cellar :any
-    sha256 "4f2c4bfc6b9252f00f42629992debe0953976633f721e03f585997ad085efb39" => :catalina
-    sha256 "4cc621a49194971597f1295b201dcbea188608b646eaa6b3a3cfd3fbfc9f4533" => :mojave
-    sha256 "b632286e7df5075fc5b5d19fad5957647ec0c6b5796b972ac62bd6132521f734" => :high_sierra
+    sha256 cellar: :any, catalina:    "4f2c4bfc6b9252f00f42629992debe0953976633f721e03f585997ad085efb39"
+    sha256 cellar: :any, mojave:      "4cc621a49194971597f1295b201dcbea188608b646eaa6b3a3cfd3fbfc9f4533"
+    sha256 cellar: :any, high_sierra: "b632286e7df5075fc5b5d19fad5957647ec0c6b5796b972ac62bd6132521f734"
   end
 
   depends_on "libconfig"

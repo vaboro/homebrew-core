@@ -13,9 +13,9 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 "9389b112e1243aeeba892aa4159fade1d4cddaf6f9e9cd134f7ae4e5c48949b6" => :catalina
-    sha256 "c6296f9a1093aea18b386efc82ed8c3a5c870560c1c32b189639644dd396f5ea" => :mojave
-    sha256 "130e42b66db744081ad7e25e3f71dc70c2923e25e0476ef0e306514081ed1aca" => :high_sierra
+    sha256 catalina:    "9389b112e1243aeeba892aa4159fade1d4cddaf6f9e9cd134f7ae4e5c48949b6"
+    sha256 mojave:      "c6296f9a1093aea18b386efc82ed8c3a5c870560c1c32b189639644dd396f5ea"
+    sha256 high_sierra: "130e42b66db744081ad7e25e3f71dc70c2923e25e0476ef0e306514081ed1aca"
   end
 
   depends_on "cmake" => :build

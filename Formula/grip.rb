@@ -13,10 +13,9 @@ class Grip < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f3af5ab0c40d11f8fcbd2dec4dcbadca3b24d0eef5c3626484601ec8d98ddb20" => :catalina
-    sha256 "4f3bef6a20d2693b4a816dba62d2bba912f8d92163a65b0aadbf68479627f040" => :mojave
-    sha256 "820f10c78b49556e81eb7680fa9c0129b666a76bdc8316bbeab14f40a71601ca" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f3af5ab0c40d11f8fcbd2dec4dcbadca3b24d0eef5c3626484601ec8d98ddb20"
+    sha256 cellar: :any_skip_relocation, mojave:      "4f3bef6a20d2693b4a816dba62d2bba912f8d92163a65b0aadbf68479627f040"
+    sha256 cellar: :any_skip_relocation, high_sierra: "820f10c78b49556e81eb7680fa9c0129b666a76bdc8316bbeab14f40a71601ca"
   end
 
   depends_on "python@3.8"

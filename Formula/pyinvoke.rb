@@ -10,10 +10,9 @@ class Pyinvoke < Formula
   head "https://github.com/pyinvoke/invoke.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6e576690387b7433b3795c926672cebc76f51c1a78d64798db3a9b4fba2a584e" => :catalina
-    sha256 "576bd35748ea63fcc0a8bd6f42e68755e34c3736b5233adb0f86293dcaf912f3" => :mojave
-    sha256 "44224c0c6d1c175ddccf9bc20dcc6a0b3c48bd7ab72a30fde8f40db055406eee" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6e576690387b7433b3795c926672cebc76f51c1a78d64798db3a9b4fba2a584e"
+    sha256 cellar: :any_skip_relocation, mojave:      "576bd35748ea63fcc0a8bd6f42e68755e34c3736b5233adb0f86293dcaf912f3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "44224c0c6d1c175ddccf9bc20dcc6a0b3c48bd7ab72a30fde8f40db055406eee"
   end
 
   depends_on "python@3.8"

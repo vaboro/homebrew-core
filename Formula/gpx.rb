@@ -7,14 +7,13 @@ class Gpx < Formula
   head "https://github.com/markwal/GPX.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cc71031bc580eeaea3319c3a4e0534feec061620d5c21fca74f7245193413b70" => :catalina
-    sha256 "3a4ae78b868644f171e9005ba2da3169dfb969e607e239280345ae32b0369ced" => :mojave
-    sha256 "057c877225787dc6468db8beb07505870510d9b421e46a1fb7b9b76ad48b0ac4" => :high_sierra
-    sha256 "e51f98467745f27e906fa4d1152cb7fe7e73c2606872f2c9eba8d54fa250a32e" => :sierra
-    sha256 "29621a041a78876e963bdd922c6ea5203f102dbbcd87038d3ade22eca6bafb29" => :el_capitan
-    sha256 "451eab6ecaf8a42858ae0d71cfa141bc14fd3d0608285bc1a677422fcc8a662e" => :yosemite
-    sha256 "d1fdd06431d4efa1043c364c34d1e2f1fd0d904aa58047829ec0beda4aa47340" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "cc71031bc580eeaea3319c3a4e0534feec061620d5c21fca74f7245193413b70"
+    sha256 cellar: :any_skip_relocation, mojave:      "3a4ae78b868644f171e9005ba2da3169dfb969e607e239280345ae32b0369ced"
+    sha256 cellar: :any_skip_relocation, high_sierra: "057c877225787dc6468db8beb07505870510d9b421e46a1fb7b9b76ad48b0ac4"
+    sha256 cellar: :any_skip_relocation, sierra:      "e51f98467745f27e906fa4d1152cb7fe7e73c2606872f2c9eba8d54fa250a32e"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "29621a041a78876e963bdd922c6ea5203f102dbbcd87038d3ade22eca6bafb29"
+    sha256 cellar: :any_skip_relocation, yosemite:    "451eab6ecaf8a42858ae0d71cfa141bc14fd3d0608285bc1a677422fcc8a662e"
+    sha256 cellar: :any_skip_relocation, mavericks:   "d1fdd06431d4efa1043c364c34d1e2f1fd0d904aa58047829ec0beda4aa47340"
   end
 
   def install

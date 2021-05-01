@@ -7,10 +7,9 @@ class Vultr < Formula
   head "https://github.com/JamesClonk/vultr.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a73bd34611c56aefe57e5491191ae90109f779f49ecacee332c0e55745e84c89" => :catalina
-    sha256 "bce926c779ee605e3f36d9135dfd08bb898f62440cf04e5bcd991afd517931f2" => :mojave
-    sha256 "5f6278c15bd1487cbdee6b871057074b1a548a9dfba7a98b202d3ccbc12966c2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a73bd34611c56aefe57e5491191ae90109f779f49ecacee332c0e55745e84c89"
+    sha256 cellar: :any_skip_relocation, mojave:      "bce926c779ee605e3f36d9135dfd08bb898f62440cf04e5bcd991afd517931f2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5f6278c15bd1487cbdee6b871057074b1a548a9dfba7a98b202d3ccbc12966c2"
   end
 
   depends_on "go" => :build

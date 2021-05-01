@@ -7,10 +7,9 @@ class IcalBuddy < Formula
   head "https://github.com/DavidKaluta/icalBuddy64.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1" => :catalina
-    sha256 "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1" => :mojave
-    sha256 "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1"
+    sha256 cellar: :any_skip_relocation, mojave:      "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4f621e8b12e2c2e5e7c9fdd97ee973b7d4b14ce58eb5a5f7a9db32243f0f99f1"
   end
 
   def install

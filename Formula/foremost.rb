@@ -11,11 +11,10 @@ class Foremost < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "3ce88077de06f1f58980822adeed92ca6db4b32bad5ed24aa3912dc8f0a1a47f" => :catalina
-    sha256 "2255dbe5608916e081e46f1d332fcfc9b47265630827a472c4166daa061ea373" => :mojave
-    sha256 "4411ec156c431a8715ba5d74f101c8f4e54793001424729dde2e305abf570558" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3ce88077de06f1f58980822adeed92ca6db4b32bad5ed24aa3912dc8f0a1a47f"
+    sha256 cellar: :any_skip_relocation, mojave:      "2255dbe5608916e081e46f1d332fcfc9b47265630827a472c4166daa061ea373"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4411ec156c431a8715ba5d74f101c8f4e54793001424729dde2e305abf570558"
   end
 
   def install

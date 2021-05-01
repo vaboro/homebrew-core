@@ -6,10 +6,9 @@ class Rgxg < Formula
   license "Zlib"
 
   bottle do
-    cellar :any
-    sha256 "4a07550d93bedfa3b2ac3cb77a8484951321697ca9384d2c2a0301ea261aa954" => :catalina
-    sha256 "b410fe9ea150e0fb52326e4f7ce6642f946098b0713c5741c64699de3f55f762" => :mojave
-    sha256 "286318be76fc55c094da739c44176d5babd814df1e4f0462711aea283db042f5" => :high_sierra
+    sha256 cellar: :any, catalina:    "4a07550d93bedfa3b2ac3cb77a8484951321697ca9384d2c2a0301ea261aa954"
+    sha256 cellar: :any, mojave:      "b410fe9ea150e0fb52326e4f7ce6642f946098b0713c5741c64699de3f55f762"
+    sha256 cellar: :any, high_sierra: "286318be76fc55c094da739c44176d5babd814df1e4f0462711aea283db042f5"
   end
 
   def install

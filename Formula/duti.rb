@@ -13,10 +13,9 @@ class Duti < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5fe04375afd229149721ce8a0cd66fe7a372fa5a5dce11084616d2a979aa47fe" => :catalina
-    sha256 "ffb23db168b014703e505ef2d76d7bc431efd5d4d1244833d9b2ddf5723133a6" => :mojave
-    sha256 "e495d02894655b516f79fa10671f5d768cae04c5b73c1aa077f8b0c573584cbf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5fe04375afd229149721ce8a0cd66fe7a372fa5a5dce11084616d2a979aa47fe"
+    sha256 cellar: :any_skip_relocation, mojave:      "ffb23db168b014703e505ef2d76d7bc431efd5d4d1244833d9b2ddf5723133a6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e495d02894655b516f79fa10671f5d768cae04c5b73c1aa077f8b0c573584cbf"
   end
 
   depends_on "autoconf" => :build

@@ -11,12 +11,11 @@ class GnuTime < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "9a1d1160f85f46b3022dc4d978dfafe6b3a02fc97446bc51f8b1ae4580b7c69a" => :catalina
-    sha256 "dc007b95e2f9fb0df3380da55d3c9337529b1a4a3cd762972eb88512f567ea1c" => :mojave
-    sha256 "ad5d776c38e43f16fad8976770eeaa18e40562c166fa65fdaa12af61981c7b90" => :high_sierra
-    sha256 "d51ef948a5a87281175fef771cb28469cbdb3085e3c51ad325d780ff921cc013" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9a1d1160f85f46b3022dc4d978dfafe6b3a02fc97446bc51f8b1ae4580b7c69a"
+    sha256 cellar: :any_skip_relocation, mojave:      "dc007b95e2f9fb0df3380da55d3c9337529b1a4a3cd762972eb88512f567ea1c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ad5d776c38e43f16fad8976770eeaa18e40562c166fa65fdaa12af61981c7b90"
+    sha256 cellar: :any_skip_relocation, sierra:      "d51ef948a5a87281175fef771cb28469cbdb3085e3c51ad325d780ff921cc013"
   end
 
   def install

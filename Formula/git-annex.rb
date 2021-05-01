@@ -12,10 +12,9 @@ class GitAnnex < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a224d9b376d6f79840c9a28381241a93a4f9119ba95d201124a621bc8a354cb1" => :catalina
-    sha256 "290ccf441f05d8216eaa27378022b19d70edd26ed4b7a919bb54e94291365e1f" => :mojave
-    sha256 "9d84fd3247b4aa83680d3523858f6a36196512e9b7b72ebac05954b0a725daa3" => :high_sierra
+    sha256 cellar: :any, catalina:    "a224d9b376d6f79840c9a28381241a93a4f9119ba95d201124a621bc8a354cb1"
+    sha256 cellar: :any, mojave:      "290ccf441f05d8216eaa27378022b19d70edd26ed4b7a919bb54e94291365e1f"
+    sha256 cellar: :any, high_sierra: "9d84fd3247b4aa83680d3523858f6a36196512e9b7b72ebac05954b0a725daa3"
   end
 
   depends_on "cabal-install" => :build
@@ -67,7 +66,7 @@ class GitAnnex < Formula
     system "git", "annex", "init"
     (testpath/"Hello.txt").write "Hello!"
     assert !File.symlink?("Hello.txt")
-    assert_match /^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add .")
+    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
     assert File.symlink?("Hello.txt")
 

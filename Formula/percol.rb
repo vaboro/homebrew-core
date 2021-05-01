@@ -8,10 +8,9 @@ class Percol < Formula
   head "https://github.com/mooz/percol.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea" => :catalina
-    sha256 "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea" => :mojave
-    sha256 "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea"
+    sha256 cellar: :any_skip_relocation, mojave:      "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e09b635ba6745c7beacd38c6a48d3d8637d0894618fc4e4ce1fdd8113d227cea"
   end
 
   depends_on "python@3.8"

@@ -12,10 +12,9 @@ class Ibex < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6c0ab52bf081342e3467176f3f777ca5825df8fae28e10d70cdad41978728a8c" => :catalina
-    sha256 "9ce827d5149844bcef31509aff4f4700865029ed6c21d941fc6d1301c1ab6a06" => :mojave
-    sha256 "ae4bc25a0504f206517129a809afa42c26bba93f93573c4cba97cddd0726f63f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6c0ab52bf081342e3467176f3f777ca5825df8fae28e10d70cdad41978728a8c"
+    sha256 cellar: :any_skip_relocation, mojave:      "9ce827d5149844bcef31509aff4f4700865029ed6c21d941fc6d1301c1ab6a06"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ae4bc25a0504f206517129a809afa42c26bba93f93573c4cba97cddd0726f63f"
   end
 
   depends_on "bison" => :build

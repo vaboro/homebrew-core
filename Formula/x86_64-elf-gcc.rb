@@ -1,5 +1,5 @@
 class X8664ElfGcc < Formula
-  desc "The GNU compiler collection for x86_64-elf"
+  desc "GNU compiler collection for x86_64-elf"
   homepage "https://gcc.gnu.org"
   url "https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
@@ -10,9 +10,9 @@ class X8664ElfGcc < Formula
   end
 
   bottle do
-    sha256 "fabfa58ff9baa00f65192dac31f63133e8c98b1b2bf4ef49ba451f6331ed2cc2" => :catalina
-    sha256 "6775f752210fe04754eca0de749d7243e436da6a24118660faca5bbf62eedb16" => :mojave
-    sha256 "ef83d1c3909cc2d7b42d5dca74909c548f653d34a55d141f8d5402992214d622" => :high_sierra
+    sha256 catalina:    "fabfa58ff9baa00f65192dac31f63133e8c98b1b2bf4ef49ba451f6331ed2cc2"
+    sha256 mojave:      "6775f752210fe04754eca0de749d7243e436da6a24118660faca5bbf62eedb16"
+    sha256 high_sierra: "ef83d1c3909cc2d7b42d5dca74909c548f653d34a55d141f8d5402992214d622"
   end
 
   depends_on "gmp"

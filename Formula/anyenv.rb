@@ -6,10 +6,9 @@ class Anyenv < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :catalina
-    sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :mojave
-    sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b"
+    sha256 cellar: :any_skip_relocation, mojave:      "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b"
   end
 
   def install

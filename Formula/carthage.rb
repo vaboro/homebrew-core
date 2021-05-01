@@ -9,10 +9,9 @@ class Carthage < Formula
   head "https://github.com/Carthage/Carthage.git", shallow: false
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fdaacafff1566fa7b1e42e68e108da69aa7578dc82f4736272dca10283c9cba2" => :catalina
-    sha256 "1da29ca0b1d8e79bec5e548f5ab2433890ebc3fc9007f5fdb70d9e3be281dbb7" => :mojave
-    sha256 "130fcb9bc06ef8e7f1c5ac9af0d155bd347db039b2cf80fa0fef764b3627ffbf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fdaacafff1566fa7b1e42e68e108da69aa7578dc82f4736272dca10283c9cba2"
+    sha256 cellar: :any_skip_relocation, mojave:      "1da29ca0b1d8e79bec5e548f5ab2433890ebc3fc9007f5fdb70d9e3be281dbb7"
+    sha256 cellar: :any_skip_relocation, high_sierra: "130fcb9bc06ef8e7f1c5ac9af0d155bd347db039b2cf80fa0fef764b3627ffbf"
   end
 
   depends_on xcode: ["10.0", :build]

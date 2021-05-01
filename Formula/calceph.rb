@@ -6,10 +6,9 @@ class Calceph < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    cellar :any
-    sha256 "ff929e5e068babbef00d17b01c0c7fd21de40572da6afb09fd86682d38db1ed0" => :catalina
-    sha256 "38c27cb1518f4a9392db30923905aff6699953a8dcacd5e7bb4cb57d06623e41" => :mojave
-    sha256 "7c2ca014b2180796d059837204b96f5dc8493baccb1d44bd8fda6375c39f27d5" => :high_sierra
+    sha256 cellar: :any, catalina:    "ff929e5e068babbef00d17b01c0c7fd21de40572da6afb09fd86682d38db1ed0"
+    sha256 cellar: :any, mojave:      "38c27cb1518f4a9392db30923905aff6699953a8dcacd5e7bb4cb57d06623e41"
+    sha256 cellar: :any, high_sierra: "7c2ca014b2180796d059837204b96f5dc8493baccb1d44bd8fda6375c39f27d5"
   end
 
   depends_on "gcc" # for gfortran

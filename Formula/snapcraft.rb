@@ -9,11 +9,10 @@ class Snapcraft < Formula
   license "GPL-3.0-only"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "bb8ce137c1bbce0b9d23f51e221c4ec71f3079460c0c2cacd20a7025687f7096" => :catalina
-    sha256 "3ab2d90c55d4ea0cdf37be359cf14af5876e68550e4088e87f587c1e7362c3bc" => :mojave
-    sha256 "25cac31d618c02b882b4220e18578f5b01a7ac5aa1fc42581f633ebb2591062f" => :high_sierra
+    sha256 cellar: :any, catalina:    "bb8ce137c1bbce0b9d23f51e221c4ec71f3079460c0c2cacd20a7025687f7096"
+    sha256 cellar: :any, mojave:      "3ab2d90c55d4ea0cdf37be359cf14af5876e68550e4088e87f587c1e7362c3bc"
+    sha256 cellar: :any, high_sierra: "25cac31d618c02b882b4220e18578f5b01a7ac5aa1fc42581f633ebb2591062f"
   end
 
   depends_on "libsodium"

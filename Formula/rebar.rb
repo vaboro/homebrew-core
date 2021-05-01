@@ -7,14 +7,13 @@ class Rebar < Formula
   head "https://github.com/rebar/rebar.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "9cf28b95d6114a6eb76e9378f117745bad0c4e304feebae67fb545a6166410b8" => :catalina
-    sha256 "6c6b5ff9c5b90070a6dcd9bc8d6a6b96807ed74eee4229389f30e3716b347bb8" => :mojave
-    sha256 "d5a5ed085e413f898c5a2f36f0696343b08e592d901bcb01ddc9c41098a8aadf" => :high_sierra
-    sha256 "9deae896b5a7656fdbbbcdb134f17f776b9ba3b320a007a9ea84c97f1242ea76" => :sierra
-    sha256 "dc9934c431b8435022a1b47400d04357ef1da4bc579e523c14d9e6ddf9d44715" => :el_capitan
-    sha256 "30b03e9b4d9405d3131cbc4d4303797496d264fafed8f708a7a862e73e2e99ea" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "9cf28b95d6114a6eb76e9378f117745bad0c4e304feebae67fb545a6166410b8"
+    sha256 cellar: :any_skip_relocation, mojave:      "6c6b5ff9c5b90070a6dcd9bc8d6a6b96807ed74eee4229389f30e3716b347bb8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d5a5ed085e413f898c5a2f36f0696343b08e592d901bcb01ddc9c41098a8aadf"
+    sha256 cellar: :any_skip_relocation, sierra:      "9deae896b5a7656fdbbbcdb134f17f776b9ba3b320a007a9ea84c97f1242ea76"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "dc9934c431b8435022a1b47400d04357ef1da4bc579e523c14d9e6ddf9d44715"
+    sha256 cellar: :any_skip_relocation, yosemite:    "30b03e9b4d9405d3131cbc4d4303797496d264fafed8f708a7a862e73e2e99ea"
   end
 
   depends_on "erlang"

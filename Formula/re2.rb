@@ -9,10 +9,9 @@ class Re2 < Formula
   head "https://github.com/google/re2.git"
 
   bottle do
-    cellar :any
-    sha256 "6ea685673f2cccce319d1c03da2fdc65796174f32d4c6acaa10774f48f52e6de" => :catalina
-    sha256 "b565f33e82a0017a9c7933ce816f201087471920f8a2762e70346b41165ea02a" => :mojave
-    sha256 "c2be399e6c6776cdc9e579a1c941756145059ace6f98d3adfd836e08cc4836d8" => :high_sierra
+    sha256 cellar: :any, catalina:    "6ea685673f2cccce319d1c03da2fdc65796174f32d4c6acaa10774f48f52e6de"
+    sha256 cellar: :any, mojave:      "b565f33e82a0017a9c7933ce816f201087471920f8a2762e70346b41165ea02a"
+    sha256 cellar: :any, high_sierra: "c2be399e6c6776cdc9e579a1c941756145059ace6f98d3adfd836e08cc4836d8"
   end
 
   depends_on "cmake" => :build

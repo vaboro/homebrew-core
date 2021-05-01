@@ -7,10 +7,9 @@ class Pulledpork < Formula
   head "https://github.com/shirkdog/pulledpork.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f1e692043de24e99030c5e07a4c11269e091af1748f2bf910048f016358581b6" => :catalina
-    sha256 "8f4884077fee641db519a021f0b47c739165546b8dd8b07a4ea4d1a2f8918aaf" => :mojave
-    sha256 "00f4875c0b5e47644250f39845f90f9a78f10152f489d5c103046f48cd0d5f0a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f1e692043de24e99030c5e07a4c11269e091af1748f2bf910048f016358581b6"
+    sha256 cellar: :any_skip_relocation, mojave:      "8f4884077fee641db519a021f0b47c739165546b8dd8b07a4ea4d1a2f8918aaf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "00f4875c0b5e47644250f39845f90f9a78f10152f489d5c103046f48cd0d5f0a"
   end
 
   depends_on "openssl@1.1"

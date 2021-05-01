@@ -6,10 +6,9 @@ class Partio < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "2f968d33da264dca45bec37b40d60bac33d47c158e2ba7ccf3c3589c0fdc5535" => :catalina
-    sha256 "7b6a89f27d152c1ad4593d9df79e79efa4757058b404802b41e68e5c85191eb9" => :mojave
-    sha256 "2a3dbcd7e576aa70904b21e5cee1b733720d2322b1f5ab8fb9064a31b7ed9531" => :high_sierra
+    sha256 cellar: :any, catalina:    "2f968d33da264dca45bec37b40d60bac33d47c158e2ba7ccf3c3589c0fdc5535"
+    sha256 cellar: :any, mojave:      "7b6a89f27d152c1ad4593d9df79e79efa4757058b404802b41e68e5c85191eb9"
+    sha256 cellar: :any, high_sierra: "2a3dbcd7e576aa70904b21e5cee1b733720d2322b1f5ab8fb9064a31b7ed9531"
   end
 
   depends_on "cmake" => :build

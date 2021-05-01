@@ -1,7 +1,7 @@
 class Notifiers < Formula
   include Language::Python::Virtualenv
 
-  desc "The easy way to send notifications"
+  desc "Easy way to send notifications"
   homepage "https://pypi.org/project/notifiers/"
   url "https://files.pythonhosted.org/packages/4f/36/4c300f55949b9be84284d51253ae48d564dc2c4f2bffb94f26c8c1485f07/notifiers-1.2.1.tar.gz"
   sha256 "34625af405f4aa19293eaaefe145ccc92c6018ae9798f53a03a7fcc996e541aa"
@@ -12,10 +12,9 @@ class Notifiers < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "627cae6d4d4620c83fe486beea84a42868880ba68aedbee156a23d4d9fa0047e" => :catalina
-    sha256 "011b44eafa3ba60a890f050f45c3c0356cabdc449797ceb1ed6cf2c42d844fc0" => :mojave
-    sha256 "99759b6553b572f9b417f500f75c1f6d1a8006265154be77877229ff70683d0a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "627cae6d4d4620c83fe486beea84a42868880ba68aedbee156a23d4d9fa0047e"
+    sha256 cellar: :any_skip_relocation, mojave:      "011b44eafa3ba60a890f050f45c3c0356cabdc449797ceb1ed6cf2c42d844fc0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "99759b6553b572f9b417f500f75c1f6d1a8006265154be77877229ff70683d0a"
   end
 
   depends_on "python@3.8"

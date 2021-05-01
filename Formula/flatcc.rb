@@ -7,10 +7,9 @@ class Flatcc < Formula
   head "https://github.com/dvidelabs/flatcc.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f1f1cd7532305f48b008fb1f3687d9369a88f184902a8992fd77789410841b4e" => :catalina
-    sha256 "74651142d2c732bfbe671d78cdcf3357189c9b3d3cb7078bf9e882ad9ca6b053" => :mojave
-    sha256 "9e37511cd8069fb56ff15e72f0184d1908f9d4948ebd57d2b430c760cac60aa6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f1f1cd7532305f48b008fb1f3687d9369a88f184902a8992fd77789410841b4e"
+    sha256 cellar: :any_skip_relocation, mojave:      "74651142d2c732bfbe671d78cdcf3357189c9b3d3cb7078bf9e882ad9ca6b053"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9e37511cd8069fb56ff15e72f0184d1908f9d4948ebd57d2b430c760cac60aa6"
   end
 
   depends_on "cmake" => :build

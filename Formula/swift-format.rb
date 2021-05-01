@@ -9,8 +9,7 @@ class SwiftFormat < Formula
   head "https://github.com/apple/swift-format.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d8f72c33efc125e2904e1bec2c8942cca75d75cf81dcab7fcf08ba124af16170" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "d8f72c33efc125e2904e1bec2c8942cca75d75cf81dcab7fcf08ba124af16170"
   end
 
   depends_on xcode: ["11.4", :build]

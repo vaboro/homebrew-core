@@ -6,14 +6,13 @@ class Tidyp < Formula
   license "Zlib"
 
   bottle do
-    cellar :any
-    sha256 "ed67353f58e09c04387453c92536d7980c3408391bae0db77f3af421779cee57" => :catalina
-    sha256 "234868d17b7ca6e890d0adc4e339e2a35c81b3c72f0fd8487d1d3352b03fddc5" => :mojave
-    sha256 "52ef5e1d78ef5a3404e2345683fc03a61b0fad8084b74508473a042b1858b54c" => :high_sierra
-    sha256 "6b5b65c1476004cc973fff0992dfaf77887b5a5df583ac31fc22665d250b538a" => :sierra
-    sha256 "5274bb4cd33d9c15d8c73dbe4cfb54e686da29cd29093adba549024fe520b82c" => :el_capitan
-    sha256 "710962782d909bf11987f8b147d7e141ccba48643ab2db02c7f267d6cf871dd9" => :yosemite
-    sha256 "7501f78d5f8e549fec7f689cd24aafa716e2097744ec78359d8092183469e4c8" => :mavericks
+    sha256 cellar: :any, catalina:    "ed67353f58e09c04387453c92536d7980c3408391bae0db77f3af421779cee57"
+    sha256 cellar: :any, mojave:      "234868d17b7ca6e890d0adc4e339e2a35c81b3c72f0fd8487d1d3352b03fddc5"
+    sha256 cellar: :any, high_sierra: "52ef5e1d78ef5a3404e2345683fc03a61b0fad8084b74508473a042b1858b54c"
+    sha256 cellar: :any, sierra:      "6b5b65c1476004cc973fff0992dfaf77887b5a5df583ac31fc22665d250b538a"
+    sha256 cellar: :any, el_capitan:  "5274bb4cd33d9c15d8c73dbe4cfb54e686da29cd29093adba549024fe520b82c"
+    sha256 cellar: :any, yosemite:    "710962782d909bf11987f8b147d7e141ccba48643ab2db02c7f267d6cf871dd9"
+    sha256 cellar: :any, mavericks:   "7501f78d5f8e549fec7f689cd24aafa716e2097744ec78359d8092183469e4c8"
   end
 
   uses_from_macos "libxslt" => :build

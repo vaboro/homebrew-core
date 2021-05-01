@@ -10,11 +10,10 @@ class Mcrypt < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "c9d3313218375e8bca6e22b00fcb47f11550c386ae64422bb59869af161cf6eb" => :catalina
-    sha256 "b79e4ba583c523e382d1cc08430c96252c8e048cc1661ab3a9bed90468c8b06c" => :mojave
-    sha256 "e11c2a7a1caf26c2a1d3d171d3291888e065ba0328f6934882cffcaec72475cd" => :high_sierra
+    sha256 cellar: :any, catalina:    "c9d3313218375e8bca6e22b00fcb47f11550c386ae64422bb59869af161cf6eb"
+    sha256 cellar: :any, mojave:      "b79e4ba583c523e382d1cc08430c96252c8e048cc1661ab3a9bed90468c8b06c"
+    sha256 cellar: :any, high_sierra: "e11c2a7a1caf26c2a1d3d171d3291888e065ba0328f6934882cffcaec72475cd"
   end
 
   depends_on "mhash"

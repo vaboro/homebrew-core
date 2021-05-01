@@ -7,10 +7,9 @@ class Inja < Formula
   head "https://github.com/pantor/inja.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2d2e56f3daecf8306ebb2df948024c6ce7115e26cc160496538ca05900c6d8a5" => :catalina
-    sha256 "22ea5918d1033829ab77202e877ce6f79d0bcb965feee60081004654a3ea60b4" => :mojave
-    sha256 "9a67ee6245a22e809dd4c7fc29227b42bbc443f58bb24fdc7258929a99c7d0f3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2d2e56f3daecf8306ebb2df948024c6ce7115e26cc160496538ca05900c6d8a5"
+    sha256 cellar: :any_skip_relocation, mojave:      "22ea5918d1033829ab77202e877ce6f79d0bcb965feee60081004654a3ea60b4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9a67ee6245a22e809dd4c7fc29227b42bbc443f58bb24fdc7258929a99c7d0f3"
   end
 
   depends_on "cmake" => :build

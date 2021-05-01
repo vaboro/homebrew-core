@@ -10,12 +10,11 @@ class Gtkglext < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "4c7037249d9b85ad1aefe7aa015dfd6d6228572c735d3771bb4f4d093c7eb402" => :catalina
-    sha256 "47e6df4903aa0d42f746daad8e0069e6136468cb7e43ca19aa244ca375347c6c" => :mojave
-    sha256 "032ee12c02c6b7cd99a5fcd13ec0d34218ce2201d7e326f33154b9123b7f18df" => :high_sierra
-    sha256 "c4a324a42081a1fe90112ec887f5a1d8b0bd5284453e4b01ae357332fbd69de7" => :sierra
+    sha256 cellar: :any, catalina:    "4c7037249d9b85ad1aefe7aa015dfd6d6228572c735d3771bb4f4d093c7eb402"
+    sha256 cellar: :any, mojave:      "47e6df4903aa0d42f746daad8e0069e6136468cb7e43ca19aa244ca375347c6c"
+    sha256 cellar: :any, high_sierra: "032ee12c02c6b7cd99a5fcd13ec0d34218ce2201d7e326f33154b9123b7f18df"
+    sha256 cellar: :any, sierra:      "c4a324a42081a1fe90112ec887f5a1d8b0bd5284453e4b01ae357332fbd69de7"
   end
 
   depends_on "pkg-config" => :build

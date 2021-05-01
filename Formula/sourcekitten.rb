@@ -8,9 +8,8 @@ class Sourcekitten < Formula
   head "https://github.com/jpsim/SourceKitten.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "62d580db4dc8cba7f301b35a2f67a87306a848bd89783de233f0651072316fcd" => :catalina
-    sha256 "ba6360a1c7c67910f838bd40db22d5344150e9df576652b4727679705a436d8b" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "62d580db4dc8cba7f301b35a2f67a87306a848bd89783de233f0651072316fcd"
+    sha256 cellar: :any_skip_relocation, mojave:   "ba6360a1c7c67910f838bd40db22d5344150e9df576652b4727679705a436d8b"
   end
 
   depends_on xcode: ["10.2", :build]

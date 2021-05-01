@@ -11,14 +11,13 @@ class Ucl < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5de2305d5da25469e7bf27d2e776a6e22b20806940ad1dea16d18b39a1125f7e" => :catalina
-    sha256 "b676bbfb2ff44a3ff71e96a11bc8ae86ea2466029faea800427196d3ece8261e" => :mojave
-    sha256 "95bba447faa9e980720b780e1db69bf59e72f026a19a965bbb1b18f3de9230de" => :high_sierra
-    sha256 "b2019331517fea2505cb2d25eebbdf6ceb9a45378525d0e36a096ea3c45ad9a8" => :sierra
-    sha256 "d56b0d36a68a2bc558742eac0c6632612180797cc45520389b5d87f09c23b1bd" => :el_capitan
-    sha256 "32a54309c092854fc5a4a443a1e9d33fb677ff257d983ea7d5b0eb7bb90d3b2e" => :yosemite
-    sha256 "3c334012766dce80dac49d279be1be1ae4a1fc5df188cc19a25ba1bec84305a9" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "5de2305d5da25469e7bf27d2e776a6e22b20806940ad1dea16d18b39a1125f7e"
+    sha256 cellar: :any_skip_relocation, mojave:      "b676bbfb2ff44a3ff71e96a11bc8ae86ea2466029faea800427196d3ece8261e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "95bba447faa9e980720b780e1db69bf59e72f026a19a965bbb1b18f3de9230de"
+    sha256 cellar: :any_skip_relocation, sierra:      "b2019331517fea2505cb2d25eebbdf6ceb9a45378525d0e36a096ea3c45ad9a8"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "d56b0d36a68a2bc558742eac0c6632612180797cc45520389b5d87f09c23b1bd"
+    sha256 cellar: :any_skip_relocation, yosemite:    "32a54309c092854fc5a4a443a1e9d33fb677ff257d983ea7d5b0eb7bb90d3b2e"
+    sha256 cellar: :any_skip_relocation, mavericks:   "3c334012766dce80dac49d279be1be1ae4a1fc5df188cc19a25ba1bec84305a9"
   end
 
   def install

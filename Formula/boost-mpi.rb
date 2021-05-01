@@ -8,9 +8,9 @@ class BoostMpi < Formula
   head "https://github.com/boostorg/boost.git"
 
   bottle do
-    sha256 "c9f768e84953960f029ca0e4742169492ce7f78f63b70c9262efd6f483014006" => :catalina
-    sha256 "23ea2a6c362ba43697d1d583b90c56446030faadf5878cdd12a0a369a2cb872f" => :mojave
-    sha256 "2d02ebd7d916d416d0921b58b454e1f7e214450f0f61b1823bc49eafcbf98f38" => :high_sierra
+    sha256 catalina:    "c9f768e84953960f029ca0e4742169492ce7f78f63b70c9262efd6f483014006"
+    sha256 mojave:      "23ea2a6c362ba43697d1d583b90c56446030faadf5878cdd12a0a369a2cb872f"
+    sha256 high_sierra: "2d02ebd7d916d416d0921b58b454e1f7e214450f0f61b1823bc49eafcbf98f38"
   end
 
   depends_on "boost"

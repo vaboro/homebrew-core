@@ -7,10 +7,9 @@ class Harfbuzz < Formula
   head "https://github.com/harfbuzz/harfbuzz.git"
 
   bottle do
-    cellar :any
-    sha256 "daeed137364e3e37450e763fafb14fdd53bd4cd2bdd93b579392947f7d5b7ea3" => :catalina
-    sha256 "938b10d5b93eea376f6dad45c0291af8d37cf2ab76cc98cd5b2e01457ab7f642" => :mojave
-    sha256 "ace431a79de604e58a5998b5d59f9aa95769e3ba6851dead56cfbe63bfd61379" => :high_sierra
+    sha256 cellar: :any, catalina:    "daeed137364e3e37450e763fafb14fdd53bd4cd2bdd93b579392947f7d5b7ea3"
+    sha256 cellar: :any, mojave:      "938b10d5b93eea376f6dad45c0291af8d37cf2ab76cc98cd5b2e01457ab7f642"
+    sha256 cellar: :any, high_sierra: "ace431a79de604e58a5998b5d59f9aa95769e3ba6851dead56cfbe63bfd61379"
   end
 
   depends_on "meson" => :build

@@ -11,11 +11,10 @@ class Zile < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "854315aad2cba51fa2b556ebce95ffb0d402a491420e900de898a22c95c082e3" => :catalina
-    sha256 "812e96a8ffe6c3baaece7400306b588bfd1eb1442f943a73f34b4066ab6b0f44" => :mojave
-    sha256 "d0cefa1b959efdf8344907a229bff4ea03cf9856b2d028a509e0b8e0a046a7f2" => :high_sierra
+    sha256 cellar: :any, catalina:    "854315aad2cba51fa2b556ebce95ffb0d402a491420e900de898a22c95c082e3"
+    sha256 cellar: :any, mojave:      "812e96a8ffe6c3baaece7400306b588bfd1eb1442f943a73f34b4066ab6b0f44"
+    sha256 cellar: :any, high_sierra: "d0cefa1b959efdf8344907a229bff4ea03cf9856b2d028a509e0b8e0a046a7f2"
   end
 
   depends_on "help2man" => :build

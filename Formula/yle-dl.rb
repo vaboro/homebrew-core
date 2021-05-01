@@ -7,10 +7,9 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "513097c2d1d174c14eec82353155dca6efcded472ee4fce426c9c01f28821010" => :catalina
-    sha256 "63de53da03bec566091483b0cb3b362fa41c1111cfb25c0cc55836e40e016dd4" => :mojave
-    sha256 "7ba726d1b94eb47170aa85b1f173c68a2e52514127692467fbd47068085b32d7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "513097c2d1d174c14eec82353155dca6efcded472ee4fce426c9c01f28821010"
+    sha256 cellar: :any_skip_relocation, mojave:      "63de53da03bec566091483b0cb3b362fa41c1111cfb25c0cc55836e40e016dd4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7ba726d1b94eb47170aa85b1f173c68a2e52514127692467fbd47068085b32d7"
   end
 
   depends_on "python@3.8"

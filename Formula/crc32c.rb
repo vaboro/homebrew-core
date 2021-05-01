@@ -7,10 +7,9 @@ class Crc32c < Formula
   head "https://github.com/google/crc32c.git"
 
   bottle do
-    cellar :any
-    sha256 "8ac4299583c3155c0410e246277214110bbbe453df5cc6b67694c67ba722bfbc" => :catalina
-    sha256 "f5e232ed8a57eea6b226f4596f94281ea4ea5467c626e83a1576e74aee32711e" => :mojave
-    sha256 "a8f21980c0fee7ffb9911b1eaa1bf7641940b4bb798a7dbd508ae60a6c1a46a8" => :high_sierra
+    sha256 cellar: :any, catalina:    "8ac4299583c3155c0410e246277214110bbbe453df5cc6b67694c67ba722bfbc"
+    sha256 cellar: :any, mojave:      "f5e232ed8a57eea6b226f4596f94281ea4ea5467c626e83a1576e74aee32711e"
+    sha256 cellar: :any, high_sierra: "a8f21980c0fee7ffb9911b1eaa1bf7641940b4bb798a7dbd508ae60a6c1a46a8"
   end
 
   depends_on "cmake" => :build

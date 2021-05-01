@@ -12,10 +12,9 @@ class Fossil < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "79dddedf515aa4c145161b6511f99f8864656f19cd3935be77cf92bac60e1eb0" => :catalina
-    sha256 "0366a7a4642f1805d593fd8c357df989cb811280afbef101bbc07fdcec4391d7" => :mojave
-    sha256 "87006ce88d4bc52e452b06f2a10f8151930af1e0b6c14bace7eeb486505fd5b9" => :high_sierra
+    sha256 cellar: :any, catalina:    "79dddedf515aa4c145161b6511f99f8864656f19cd3935be77cf92bac60e1eb0"
+    sha256 cellar: :any, mojave:      "0366a7a4642f1805d593fd8c357df989cb811280afbef101bbc07fdcec4391d7"
+    sha256 cellar: :any, high_sierra: "87006ce88d4bc52e452b06f2a10f8151930af1e0b6c14bace7eeb486505fd5b9"
   end
 
   depends_on "openssl@1.1"

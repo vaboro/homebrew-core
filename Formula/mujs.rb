@@ -9,10 +9,9 @@ class Mujs < Formula
   head "https://github.com/ccxvii/mujs.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3b78a1dd9611f016c24fd19bcd764031cbd7a514e156ff04b9a5b0c75d2bfe44" => :catalina
-    sha256 "94cfe788bc39fb1f5042ab6ce565fbaa98568362698d6fc2441487a3a79f27e5" => :mojave
-    sha256 "b074364d9806ef46e750c685f27368882185592c5cb3f825da345c05340845ed" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3b78a1dd9611f016c24fd19bcd764031cbd7a514e156ff04b9a5b0c75d2bfe44"
+    sha256 cellar: :any_skip_relocation, mojave:      "94cfe788bc39fb1f5042ab6ce565fbaa98568362698d6fc2441487a3a79f27e5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b074364d9806ef46e750c685f27368882185592c5cb3f825da345c05340845ed"
   end
 
   def install

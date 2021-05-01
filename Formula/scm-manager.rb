@@ -5,12 +5,11 @@ class ScmManager < Formula
   sha256 "8628e82f3bfd452412260dd2d82c2e76ee57013223171f2908d75cbc6258f261"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "521d84a5445594de2d018af2a9f0291ab0a8495e8fe878b56913ee92173a2241" => :catalina
-    sha256 "d28ad275b745fb546973c9d451df374f994eaeade2d351732ab31a7141260372" => :mojave
-    sha256 "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14" => :high_sierra
-    sha256 "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14" => :sierra
-    sha256 "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "521d84a5445594de2d018af2a9f0291ab0a8495e8fe878b56913ee92173a2241"
+    sha256 cellar: :any_skip_relocation, mojave:      "d28ad275b745fb546973c9d451df374f994eaeade2d351732ab31a7141260372"
+    sha256 cellar: :any_skip_relocation, high_sierra: "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14"
+    sha256 cellar: :any_skip_relocation, sierra:      "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "42e177bd72cba3b27750308aeeaf8afa0ec8cc553b8a9acf1a02a6d5a698ce14"
   end
 
   depends_on java: "1.8"

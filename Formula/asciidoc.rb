@@ -9,10 +9,9 @@ class Asciidoc < Formula
   head "https://github.com/asciidoc/asciidoc-py3.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613" => :catalina
-    sha256 "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613" => :mojave
-    sha256 "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613"
+    sha256 cellar: :any_skip_relocation, mojave:      "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1a03ae32bc7bdbc1eecca5fa6bbe6dd6ec3e95a62e40943d159b51b790c4d613"
   end
 
   depends_on "autoconf" => :build

@@ -12,14 +12,13 @@ class Libart < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "54ca46ebc37bba1fdc39e8b28c166202e7d488d93cc5b4acfb042a14adec84f9" => :catalina
-    sha256 "5fc8b240a975efcb5bd3992afd4d01c0a393a306a4a66192cb9a10e580bcf4d3" => :mojave
-    sha256 "c5ae59f4955fd1b4e3c49976b06609d56c5079d2b0f6e0675b356b1eb09181cd" => :high_sierra
-    sha256 "e9e14623ba0284a89dd09c7be72393619582c5d0489891cd1f654b6c26b0fabc" => :sierra
-    sha256 "18fb7a842650151fef102efadefa52aa12dc3f597ace95b8e25efe6518a65d2e" => :el_capitan
-    sha256 "006a9bf5e40ea99cdb4a10b7a2a2ac6a249f511254be1954a937dac0e50a6f0d" => :yosemite
-    sha256 "276eafd432499ab988a21d9e87104d744e82cf1adf4cc55d47639b1f72ab410a" => :mavericks
+    sha256 cellar: :any, catalina:    "54ca46ebc37bba1fdc39e8b28c166202e7d488d93cc5b4acfb042a14adec84f9"
+    sha256 cellar: :any, mojave:      "5fc8b240a975efcb5bd3992afd4d01c0a393a306a4a66192cb9a10e580bcf4d3"
+    sha256 cellar: :any, high_sierra: "c5ae59f4955fd1b4e3c49976b06609d56c5079d2b0f6e0675b356b1eb09181cd"
+    sha256 cellar: :any, sierra:      "e9e14623ba0284a89dd09c7be72393619582c5d0489891cd1f654b6c26b0fabc"
+    sha256 cellar: :any, el_capitan:  "18fb7a842650151fef102efadefa52aa12dc3f597ace95b8e25efe6518a65d2e"
+    sha256 cellar: :any, yosemite:    "006a9bf5e40ea99cdb4a10b7a2a2ac6a249f511254be1954a937dac0e50a6f0d"
+    sha256 cellar: :any, mavericks:   "276eafd432499ab988a21d9e87104d744e82cf1adf4cc55d47639b1f72ab410a"
   end
 
   def install

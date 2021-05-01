@@ -7,10 +7,9 @@ class Libvpx < Formula
   head "https://chromium.googlesource.com/webm/libvpx.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "19a684e5b0a2109b40a6c412517ad8639200c76d8bd527e98fc24d9589bb1c4e" => :catalina
-    sha256 "c813698920d7e5144ae45f9922477cc30ed4f7ee81463977b01d50af43e0be19" => :mojave
-    sha256 "13e231eb9c8158e84df24a58c8b96f3f57e9202ad680b4be3bbaf7e67f40aaac" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "19a684e5b0a2109b40a6c412517ad8639200c76d8bd527e98fc24d9589bb1c4e"
+    sha256 cellar: :any_skip_relocation, mojave:      "c813698920d7e5144ae45f9922477cc30ed4f7ee81463977b01d50af43e0be19"
+    sha256 cellar: :any_skip_relocation, high_sierra: "13e231eb9c8158e84df24a58c8b96f3f57e9202ad680b4be3bbaf7e67f40aaac"
   end
 
   depends_on "yasm" => :build

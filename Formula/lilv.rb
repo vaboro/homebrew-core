@@ -6,10 +6,9 @@ class Lilv < Formula
   license "ISC"
 
   bottle do
-    cellar :any
-    sha256 "b772a0b962e14b7ae737f3bdf5778b34092e86eeca19e2c520395777b87be9cd" => :catalina
-    sha256 "01c5b495e5c288e19a325164f482cc3058865b118f2d5c05a52e44db5deec302" => :mojave
-    sha256 "63c518910af136ca8b4f685924ccd3e6f2687cd061cd561c4aab69af7fa62361" => :high_sierra
+    sha256 cellar: :any, catalina:    "b772a0b962e14b7ae737f3bdf5778b34092e86eeca19e2c520395777b87be9cd"
+    sha256 cellar: :any, mojave:      "01c5b495e5c288e19a325164f482cc3058865b118f2d5c05a52e44db5deec302"
+    sha256 cellar: :any, high_sierra: "63c518910af136ca8b4f685924ccd3e6f2687cd061cd561c4aab69af7fa62361"
   end
 
   depends_on "pkg-config" => :build

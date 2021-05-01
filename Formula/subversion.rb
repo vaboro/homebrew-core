@@ -13,9 +13,9 @@ class Subversion < Formula
 
   bottle do
     rebuild 1
-    sha256 "84dfd162eaa16691be6605ae5b2aa30ede25483c2a3da54bf05ff0f6b5767864" => :catalina
-    sha256 "0f84bf07d4a1949129d1be29e3e2d991f4fbec4c38acfd4757918fe9eafbcf6c" => :mojave
-    sha256 "cc20920a8095c8ba91f722f6d3fc5dc392fa075afdcc2d5055df677e8260312a" => :high_sierra
+    sha256 catalina:    "84dfd162eaa16691be6605ae5b2aa30ede25483c2a3da54bf05ff0f6b5767864"
+    sha256 mojave:      "0f84bf07d4a1949129d1be29e3e2d991f4fbec4c38acfd4757918fe9eafbcf6c"
+    sha256 high_sierra: "cc20920a8095c8ba91f722f6d3fc5dc392fa075afdcc2d5055df677e8260312a"
   end
 
   head do

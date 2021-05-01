@@ -12,10 +12,9 @@ class Asio < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "89dff3c575014d571875ebaf43772705c605f95ed9424a235a7755b13d523c37" => :catalina
-    sha256 "46d36e13b0f13a1d0e02be143bb96f244fecbc3525d1ca8fcb560b1a8ecaf095" => :mojave
-    sha256 "f074033735a3dab5d4d6962aab8f9b948dcc6d2148b74fe3706f4d35def11cff" => :high_sierra
+    sha256 cellar: :any, catalina:    "89dff3c575014d571875ebaf43772705c605f95ed9424a235a7755b13d523c37"
+    sha256 cellar: :any, mojave:      "46d36e13b0f13a1d0e02be143bb96f244fecbc3525d1ca8fcb560b1a8ecaf095"
+    sha256 cellar: :any, high_sierra: "f074033735a3dab5d4d6962aab8f9b948dcc6d2148b74fe3706f4d35def11cff"
   end
 
   depends_on "autoconf" => :build
@@ -50,7 +49,7 @@ class Asio < Formula
     end
     sleep 1
     begin
-      assert_match /404 Not Found/, shell_output("curl http://127.0.0.1:#{port}")
+      assert_match(/404 Not Found/, shell_output("curl http://127.0.0.1:#{port}"))
     ensure
       Process.kill 9, pid
       Process.wait pid

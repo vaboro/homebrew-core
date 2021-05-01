@@ -18,10 +18,9 @@ class Curaengine < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b1b33c714035d7400481caec6af52fe0cd9cceb2ca9f6d528bfd12393e16ff73" => :catalina
-    sha256 "7463c7161e156ae11f125994dc7eae5b95e2b6a2a7df3f3582e835cc2eddfaa2" => :mojave
-    sha256 "da76f6f441244dfd0543b07a07fa02a84f04a494a189148d3e3784789136f861" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b1b33c714035d7400481caec6af52fe0cd9cceb2ca9f6d528bfd12393e16ff73"
+    sha256 cellar: :any_skip_relocation, mojave:      "7463c7161e156ae11f125994dc7eae5b95e2b6a2a7df3f3582e835cc2eddfaa2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "da76f6f441244dfd0543b07a07fa02a84f04a494a189148d3e3784789136f861"
   end
 
   depends_on "cmake" => :build

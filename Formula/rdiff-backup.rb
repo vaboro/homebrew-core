@@ -6,10 +6,9 @@ class RdiffBackup < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "4ceb0c2146ca9ad88e9d05dd27b294568127a2b97695368045789428a82ab4b3" => :catalina
-    sha256 "c761dd827e1cba2dfe9b946768af39034a8d844e8014bfcedd4729412d22861d" => :mojave
-    sha256 "62f0c516b83e424aac3bea2a31fd624d27543e070363d238a02e2b9ebae40dae" => :high_sierra
+    sha256 cellar: :any, catalina:    "4ceb0c2146ca9ad88e9d05dd27b294568127a2b97695368045789428a82ab4b3"
+    sha256 cellar: :any, mojave:      "c761dd827e1cba2dfe9b946768af39034a8d844e8014bfcedd4729412d22861d"
+    sha256 cellar: :any, high_sierra: "62f0c516b83e424aac3bea2a31fd624d27543e070363d238a02e2b9ebae40dae"
   end
 
   depends_on "librsync"

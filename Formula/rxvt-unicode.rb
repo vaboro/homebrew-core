@@ -6,12 +6,12 @@ class RxvtUnicode < Formula
   revision 3
 
   bottle do
-    sha256 "d17b7410c97c5f95f1abbf7de7e49249995b23303696b8f7a2eed7c0924fe818" => :catalina
-    sha256 "126bda5982eb1d785cdaf84ab108024d85c3904cc3039514f13e12ebb80652a9" => :mojave
-    sha256 "01a97a5842a1507ae1e9c99d973811e300d0aac95b3fb744e8181918b6ac11eb" => :high_sierra
-    sha256 "2946f3abe2481ad6e4f52be7a9e51259bcd0846f38602e74384343946479eb4a" => :sierra
-    sha256 "5d6060cc30061763809d7255b8654309be0a709fccdcda1b799f0fac16fd085d" => :el_capitan
-    sha256 "9b674dd3738ab25fa6145680f92ca036df470ced089448abcb6647439320e075" => :yosemite
+    sha256 catalina:    "d17b7410c97c5f95f1abbf7de7e49249995b23303696b8f7a2eed7c0924fe818"
+    sha256 mojave:      "126bda5982eb1d785cdaf84ab108024d85c3904cc3039514f13e12ebb80652a9"
+    sha256 high_sierra: "01a97a5842a1507ae1e9c99d973811e300d0aac95b3fb744e8181918b6ac11eb"
+    sha256 sierra:      "2946f3abe2481ad6e4f52be7a9e51259bcd0846f38602e74384343946479eb4a"
+    sha256 el_capitan:  "5d6060cc30061763809d7255b8654309be0a709fccdcda1b799f0fac16fd085d"
+    sha256 yosemite:    "9b674dd3738ab25fa6145680f92ca036df470ced089448abcb6647439320e075"
   end
 
   depends_on "pkg-config" => :build

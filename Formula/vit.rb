@@ -10,10 +10,9 @@ class Vit < Formula
   head "https://github.com/scottkosty/vit.git", branch: "2.x"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6d70b6f12fc488da934b045dd9acbd3e11c275e815330da15962834d7cf897f9" => :catalina
-    sha256 "c41b171a5b91015b5b291125081f135ef2c2fc3a7025e78dfaa42fed706d8ba2" => :mojave
-    sha256 "3498a07d7d7ebc8011585ca12a60657e97f28712f77b2d35ccd54bf6acc79a5c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6d70b6f12fc488da934b045dd9acbd3e11c275e815330da15962834d7cf897f9"
+    sha256 cellar: :any_skip_relocation, mojave:      "c41b171a5b91015b5b291125081f135ef2c2fc3a7025e78dfaa42fed706d8ba2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3498a07d7d7ebc8011585ca12a60657e97f28712f77b2d35ccd54bf6acc79a5c"
   end
 
   depends_on "python@3.8"

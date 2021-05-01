@@ -9,9 +9,9 @@ class Bcoin < Formula
   head "https://github.com/bcoin-org/bcoin.git"
 
   bottle do
-    sha256 "108903ff8f06a500be27e4108b65c4462c469f778a23b41b697f21c99d19df5f" => :catalina
-    sha256 "c8bec139df5f6b3e8b40179dab802dee9b7480d80c5503f620d8ac843479e274" => :mojave
-    sha256 "aaaccce8be6e2c06276627d4ce705039530ba228b378b5f670bc83124f649b32" => :high_sierra
+    sha256 catalina:    "108903ff8f06a500be27e4108b65c4462c469f778a23b41b697f21c99d19df5f"
+    sha256 mojave:      "c8bec139df5f6b3e8b40179dab802dee9b7480d80c5503f620d8ac843479e274"
+    sha256 high_sierra: "aaaccce8be6e2c06276627d4ce705039530ba228b378b5f670bc83124f649b32"
   end
 
   depends_on "python@3.8" => :build

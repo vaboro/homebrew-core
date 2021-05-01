@@ -6,10 +6,9 @@ class RangeV3 < Formula
   license "BSL-1.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6" => :catalina
-    sha256 "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6" => :mojave
-    sha256 "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6"
+    sha256 cellar: :any_skip_relocation, mojave:      "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bffbe0872b344db9b7838d3a63b10e95df57385d26bfaeffc4da5a3d940893c6"
   end
 
   depends_on "cmake" => :build

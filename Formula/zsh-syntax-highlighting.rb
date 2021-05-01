@@ -8,10 +8,9 @@ class ZshSyntaxHighlighting < Formula
   head "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :catalina
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :mojave
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b"
+    sha256 cellar: :any_skip_relocation, mojave:      "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b"
   end
 
   uses_from_macos "zsh"

@@ -6,10 +6,9 @@ class Libdvdread < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "83bebe58015f6f34973afa003934f183e7ac9202f5e579cfd12536f9ceac1719" => :catalina
-    sha256 "7405838fee2b93209c2bd0834db89c2a2334a94f7d368feb87599da1b08062f6" => :mojave
-    sha256 "c881a8c1c872d922f45bf8a692b9d79b5f6ade1a2f4a48d470d05491bc017436" => :high_sierra
+    sha256 cellar: :any, catalina:    "83bebe58015f6f34973afa003934f183e7ac9202f5e579cfd12536f9ceac1719"
+    sha256 cellar: :any, mojave:      "7405838fee2b93209c2bd0834db89c2a2334a94f7d368feb87599da1b08062f6"
+    sha256 cellar: :any, high_sierra: "c881a8c1c872d922f45bf8a692b9d79b5f6ade1a2f4a48d470d05491bc017436"
   end
 
   head do

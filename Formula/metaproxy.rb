@@ -5,10 +5,9 @@ class Metaproxy < Formula
   sha256 "61ba411cadf7c2689cfa120568bed666a68cfb5efacdec488e054d3ef4f30177"
 
   bottle do
-    cellar :any
-    sha256 "a209d1ac13cb8014558068155a556301ea9dd5067e69e6a986b9128070246628" => :catalina
-    sha256 "8f4f2416e154d2e7f877dc68ce9dea75a26b0b3fa5f178cd0ff62dd7e50d5419" => :mojave
-    sha256 "6cce930bf3e212fbaaab5cb521c3417474719e1289fbd7db9b2117fa943fc9a9" => :high_sierra
+    sha256 cellar: :any, catalina:    "a209d1ac13cb8014558068155a556301ea9dd5067e69e6a986b9128070246628"
+    sha256 cellar: :any, mojave:      "8f4f2416e154d2e7f877dc68ce9dea75a26b0b3fa5f178cd0ff62dd7e50d5419"
+    sha256 cellar: :any, high_sierra: "6cce930bf3e212fbaaab5cb521c3417474719e1289fbd7db9b2117fa943fc9a9"
   end
 
   depends_on "pkg-config" => :build

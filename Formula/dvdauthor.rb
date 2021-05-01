@@ -11,10 +11,9 @@ class Dvdauthor < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "669b5fe5348ceb668f9ff55c4942c240f585eb5167e2dfbe1142442fcf7b776b" => :catalina
-    sha256 "3e4e46c56905c289d31d167e75ee3b033a197fc0dda4b6b56dec752ac9773c51" => :mojave
-    sha256 "55cee6a535eec67fc4f1ea65c2283d69c420d32933d9bcd6106168796ba1af9a" => :high_sierra
+    sha256 cellar: :any, catalina:    "669b5fe5348ceb668f9ff55c4942c240f585eb5167e2dfbe1142442fcf7b776b"
+    sha256 cellar: :any, mojave:      "3e4e46c56905c289d31d167e75ee3b033a197fc0dda4b6b56dec752ac9773c51"
+    sha256 cellar: :any, high_sierra: "55cee6a535eec67fc4f1ea65c2283d69c420d32933d9bcd6106168796ba1af9a"
   end
 
   # Dvdauthor will optionally detect ImageMagick or GraphicsMagick, too.

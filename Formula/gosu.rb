@@ -7,10 +7,9 @@ class Gosu < Formula
   head "https://github.com/gosu-lang/gosu-lang.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f727564002df8588a711228ee9da4ff92636f32cbaac3f851d4840e9c6330649" => :catalina
-    sha256 "ecd68c00bfcd4384bfb10d8ef05edb7e63b3835405514233dff3899766db4dff" => :mojave
-    sha256 "45f6fc1936fc923213326882d70aaec798e0c1cffb7b33d05f9d6f1cc0e75b6c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f727564002df8588a711228ee9da4ff92636f32cbaac3f851d4840e9c6330649"
+    sha256 cellar: :any_skip_relocation, mojave:      "ecd68c00bfcd4384bfb10d8ef05edb7e63b3835405514233dff3899766db4dff"
+    sha256 cellar: :any_skip_relocation, high_sierra: "45f6fc1936fc923213326882d70aaec798e0c1cffb7b33d05f9d6f1cc0e75b6c"
   end
 
   depends_on "maven" => :build

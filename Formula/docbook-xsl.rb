@@ -14,10 +14,9 @@ class DocbookXsl < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26" => :catalina
-    sha256 "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26" => :mojave
-    sha256 "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26"
+    sha256 cellar: :any_skip_relocation, mojave:      "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26"
+    sha256 cellar: :any_skip_relocation, high_sierra: "65a5442556a88a865ef377cb73df0b3edf9ab2240e6f4bb2d71a71eabc74fa26"
   end
 
   depends_on "docbook"

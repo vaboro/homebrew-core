@@ -6,11 +6,10 @@ class Wren < Formula
   license "MIT"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "21bb30d077f3de93293d6e6f3c41e8f923e6de7d8d04df2f48c7378f76b3d16f" => :catalina
-    sha256 "d3837f28ed556d33753beb658f22b197f0afdb2aac3b30de26b2859397123d51" => :mojave
-    sha256 "529a384d6d1665dd269ef7b6e8ea61f1edccddd5478ce82ec30839346af3d3b5" => :high_sierra
+    sha256 cellar: :any, catalina:    "21bb30d077f3de93293d6e6f3c41e8f923e6de7d8d04df2f48c7378f76b3d16f"
+    sha256 cellar: :any, mojave:      "d3837f28ed556d33753beb658f22b197f0afdb2aac3b30de26b2859397123d51"
+    sha256 cellar: :any, high_sierra: "529a384d6d1665dd269ef7b6e8ea61f1edccddd5478ce82ec30839346af3d3b5"
   end
 
   def install

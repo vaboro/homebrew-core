@@ -7,10 +7,9 @@ class Pfetch < Formula
   head "https://github.com/dylanaraps/pfetch.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570" => :catalina
-    sha256 "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570" => :mojave
-    sha256 "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570"
+    sha256 cellar: :any_skip_relocation, mojave:      "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f93914feee7f4e3cda77341c3bddf2cf51eb4b2aed01f6ace771db75078da570"
   end
 
   def install

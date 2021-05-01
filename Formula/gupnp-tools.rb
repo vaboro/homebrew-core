@@ -10,9 +10,9 @@ class GupnpTools < Formula
   end
 
   bottle do
-    sha256 "4100de40650880fa3ad8023c65e07c651aaf1286da8865a3e865f55016eb330e" => :catalina
-    sha256 "6a4d56ae6c680111619ad67125ffe3ee96944404771bbfdf7cdf6db0322a5379" => :mojave
-    sha256 "b4e8473364799562c90c9637f33b5ef999c53d7404eac8f6ce2921f62d056324" => :high_sierra
+    sha256 catalina:    "4100de40650880fa3ad8023c65e07c651aaf1286da8865a3e865f55016eb330e"
+    sha256 mojave:      "6a4d56ae6c680111619ad67125ffe3ee96944404771bbfdf7cdf6db0322a5379"
+    sha256 high_sierra: "b4e8473364799562c90c9637f33b5ef999c53d7404eac8f6ce2921f62d056324"
   end
 
   depends_on "meson" => :build

@@ -7,12 +7,11 @@ class Libass < Formula
   revision 1
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "31612c258eb45354a212ec42c240676b0b297f6a7ef7693b666f3986c14c3c26" => :catalina
-    sha256 "adf25e0a4a61f098662952861b1103493f2be98a14975b1cdd27c8aab3a9603a" => :mojave
-    sha256 "d3a3e4c2ff26d2a10991134bca875ecafcff6bc8abb193f3c78cb8c0cd57c779" => :high_sierra
-    sha256 "028e53840dcad7fa8291fddacd46be8276578a3fa8c058b04975cf56a802101d" => :sierra
+    sha256 cellar: :any, catalina:    "31612c258eb45354a212ec42c240676b0b297f6a7ef7693b666f3986c14c3c26"
+    sha256 cellar: :any, mojave:      "adf25e0a4a61f098662952861b1103493f2be98a14975b1cdd27c8aab3a9603a"
+    sha256 cellar: :any, high_sierra: "d3a3e4c2ff26d2a10991134bca875ecafcff6bc8abb193f3c78cb8c0cd57c779"
+    sha256 cellar: :any, sierra:      "028e53840dcad7fa8291fddacd46be8276578a3fa8c058b04975cf56a802101d"
   end
 
   head do

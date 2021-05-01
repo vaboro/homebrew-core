@@ -7,9 +7,9 @@ class Jobber < Formula
   head "https://github.com/dshearer/jobber.git"
 
   bottle do
-    sha256 "f34fec60aef5e18cfc6f5bb8f1e0dbb00a866a01e3e0041d6c8e055ee7c4e27e" => :catalina
-    sha256 "6bb3016d2f4200636cd51c237d04039b8bbf285d473acb37589e45fc602caf30" => :mojave
-    sha256 "1fafbf17e64ac28355dd28758441f97fbe8b7e633bde0cf48a744918c281f8da" => :high_sierra
+    sha256 catalina:    "f34fec60aef5e18cfc6f5bb8f1e0dbb00a866a01e3e0041d6c8e055ee7c4e27e"
+    sha256 mojave:      "6bb3016d2f4200636cd51c237d04039b8bbf285d473acb37589e45fc602caf30"
+    sha256 high_sierra: "1fafbf17e64ac28355dd28758441f97fbe8b7e633bde0cf48a744918c281f8da"
   end
 
   depends_on "go" => :build

@@ -12,10 +12,9 @@ class Htop < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "5bfd853dd4f051eb9a53c85ccdf21f66691f1a839036f5cff6c20a1f0ab05967" => :catalina
-    sha256 "8b577984d03fd78706384024e579dc68df3a96013fc35d251534281ff3ec7ae4" => :mojave
-    sha256 "1187ac4a948631e883539e0d2dd2362a1a64292ea562cf58ba8ec0b061150a49" => :high_sierra
+    sha256 cellar: :any, catalina:    "5bfd853dd4f051eb9a53c85ccdf21f66691f1a839036f5cff6c20a1f0ab05967"
+    sha256 cellar: :any, mojave:      "8b577984d03fd78706384024e579dc68df3a96013fc35d251534281ff3ec7ae4"
+    sha256 cellar: :any, high_sierra: "1187ac4a948631e883539e0d2dd2362a1a64292ea562cf58ba8ec0b061150a49"
   end
 
   depends_on "autoconf" => :build

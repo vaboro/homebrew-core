@@ -7,12 +7,11 @@ class Ry < Formula
   head "https://github.com/jayferd/ry.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "b82b9243f4e89e24608f21a9a46e55cad5708224749ee07da18841c3d50e38d2" => :catalina
-    sha256 "835c360df374f5ca94a753b1ce79ba61dfc9fc14e54a2bf064367b9094909677" => :mojave
-    sha256 "3e2e0b1e4104b9856ef6f5ad05caa4100ba209850c84c1db759f788eed042740" => :high_sierra
-    sha256 "3e2e0b1e4104b9856ef6f5ad05caa4100ba209850c84c1db759f788eed042740" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b82b9243f4e89e24608f21a9a46e55cad5708224749ee07da18841c3d50e38d2"
+    sha256 cellar: :any_skip_relocation, mojave:      "835c360df374f5ca94a753b1ce79ba61dfc9fc14e54a2bf064367b9094909677"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3e2e0b1e4104b9856ef6f5ad05caa4100ba209850c84c1db759f788eed042740"
+    sha256 cellar: :any_skip_relocation, sierra:      "3e2e0b1e4104b9856ef6f5ad05caa4100ba209850c84c1db759f788eed042740"
   end
 
   depends_on "bash-completion"

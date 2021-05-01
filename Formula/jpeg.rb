@@ -13,10 +13,9 @@ class Jpeg < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "8f7b82a952fb3937889c7f22da1403e5338cd320495917eb26b0c5b2e614791c" => :catalina
-    sha256 "b931e7725c83275c56f962b51b83c10f31a01ac8d823c6722edaf16d893970b1" => :mojave
-    sha256 "64286932634fbe1e0d07eacda334d2f4967b20bce0737424df56ec5eaa34ccca" => :high_sierra
+    sha256 cellar: :any, catalina:    "8f7b82a952fb3937889c7f22da1403e5338cd320495917eb26b0c5b2e614791c"
+    sha256 cellar: :any, mojave:      "b931e7725c83275c56f962b51b83c10f31a01ac8d823c6722edaf16d893970b1"
+    sha256 cellar: :any, high_sierra: "64286932634fbe1e0d07eacda334d2f4967b20bce0737424df56ec5eaa34ccca"
   end
 
   def install

@@ -13,10 +13,9 @@ class DosboxX < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "894c855137b98348bf3ff128f791c8d55024fccc06a83f1ff6bf5976627b04c5" => :catalina
-    sha256 "8e30f1c88dee6590f013874ce8b5df0832092905c5206aef9114104222ce073e" => :mojave
-    sha256 "07ee07cddd5cae6fabf84f9068d560b819c11a479bef8eaf3ab95b378ef4289a" => :high_sierra
+    sha256 cellar: :any, catalina:    "894c855137b98348bf3ff128f791c8d55024fccc06a83f1ff6bf5976627b04c5"
+    sha256 cellar: :any, mojave:      "8e30f1c88dee6590f013874ce8b5df0832092905c5206aef9114104222ce073e"
+    sha256 cellar: :any, high_sierra: "07ee07cddd5cae6fabf84f9068d560b819c11a479bef8eaf3ab95b378ef4289a"
   end
 
   depends_on "autoconf" => :build
@@ -38,6 +37,6 @@ class DosboxX < Formula
   end
 
   test do
-    assert_match /DOSBox-X version #{version}/, shell_output("#{bin}/dosbox-x -version 2>&1", 1)
+    assert_match(/DOSBox-X version #{version}/, shell_output("#{bin}/dosbox-x -version 2>&1", 1))
   end
 end

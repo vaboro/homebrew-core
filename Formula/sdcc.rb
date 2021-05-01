@@ -12,9 +12,9 @@ class Sdcc < Formula
   end
 
   bottle do
-    sha256 "876e548b2a8c31c2d45d753b59e528c82101d193398d8c158270849fe9703ece" => :catalina
-    sha256 "214547215aa0b7598ecfd80cd291bbc64bd8b2d95c867fca9653e5d0aef042d6" => :mojave
-    sha256 "1f2423cb4c4f66c34b8a68f9c7a967c4256ca438646260dbf50e7f4c0b5f8f59" => :high_sierra
+    sha256 catalina:    "876e548b2a8c31c2d45d753b59e528c82101d193398d8c158270849fe9703ece"
+    sha256 mojave:      "214547215aa0b7598ecfd80cd291bbc64bd8b2d95c867fca9653e5d0aef042d6"
+    sha256 high_sierra: "1f2423cb4c4f66c34b8a68f9c7a967c4256ca438646260dbf50e7f4c0b5f8f59"
   end
 
   depends_on "autoconf" => :build

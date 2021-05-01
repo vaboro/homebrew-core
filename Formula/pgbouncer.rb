@@ -9,10 +9,9 @@ class Pgbouncer < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "eaecbb143f281ccc047d7a63488038c2d53de7ffaf56b56e532dce7089e30106" => :catalina
-    sha256 "c86c7f6b7fa11965e9427aeb36bc334b6f7f31323d826350736813187622844f" => :mojave
-    sha256 "4e098f2929939ba16d03e194310df111929dd861e02e89f075ce726f8f67b49d" => :high_sierra
+    sha256 cellar: :any, catalina:    "eaecbb143f281ccc047d7a63488038c2d53de7ffaf56b56e532dce7089e30106"
+    sha256 cellar: :any, mojave:      "c86c7f6b7fa11965e9427aeb36bc334b6f7f31323d826350736813187622844f"
+    sha256 cellar: :any, high_sierra: "4e098f2929939ba16d03e194310df111929dd861e02e89f075ce726f8f67b49d"
   end
 
   depends_on "pkg-config" => :build
@@ -25,9 +24,9 @@ class Pgbouncer < Formula
     system "make", "install"
     bin.install "etc/mkauth.py"
     inreplace "etc/pgbouncer.ini" do |s|
-      s.gsub! /logfile = .*/, "logfile = #{var}/log/pgbouncer.log"
-      s.gsub! /pidfile = .*/, "pidfile = #{var}/run/pgbouncer.pid"
-      s.gsub! /auth_file = .*/, "auth_file = #{etc}/userlist.txt"
+      s.gsub!(/logfile = .*/, "logfile = #{var}/log/pgbouncer.log")
+      s.gsub!(/pidfile = .*/, "pidfile = #{var}/run/pgbouncer.pid")
+      s.gsub!(/auth_file = .*/, "auth_file = #{etc}/userlist.txt")
     end
     etc.install %w[etc/pgbouncer.ini etc/userlist.txt]
   end

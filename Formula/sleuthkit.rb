@@ -11,10 +11,9 @@ class Sleuthkit < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e47a99c263a1b06224fccb9eaec9caedd1311bc096880fac9960787d8d5a1635" => :catalina
-    sha256 "76edae424b8f1d0072cf26ef88c56cf72dc2d441c2fc251aebd7bc4e6aa52bde" => :mojave
-    sha256 "70cd25ef00d43c30a8812858dfd8ab7aa47e93589a5b99f5450c289464f58079" => :high_sierra
+    sha256 cellar: :any, catalina:    "e47a99c263a1b06224fccb9eaec9caedd1311bc096880fac9960787d8d5a1635"
+    sha256 cellar: :any, mojave:      "76edae424b8f1d0072cf26ef88c56cf72dc2d441c2fc251aebd7bc4e6aa52bde"
+    sha256 cellar: :any, high_sierra: "70cd25ef00d43c30a8812858dfd8ab7aa47e93589a5b99f5450c289464f58079"
   end
 
   depends_on "ant" => :build

@@ -6,10 +6,9 @@ class Daemontools < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "650688484d7de25a026916c90a0109f05d33ec8401cc007e6ae805d2cedb9a16" => :catalina
-    sha256 "d34c1e242009de743a2d58fc52bf56cd24a69eb940f74bf8af2b168f76010dd1" => :mojave
-    sha256 "a5a9bd96a04e3cbcbb15170bb7af3b7128e85d1e9c23b18bf0a76922f3beaff0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "650688484d7de25a026916c90a0109f05d33ec8401cc007e6ae805d2cedb9a16"
+    sha256 cellar: :any_skip_relocation, mojave:      "d34c1e242009de743a2d58fc52bf56cd24a69eb940f74bf8af2b168f76010dd1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a5a9bd96a04e3cbcbb15170bb7af3b7128e85d1e9c23b18bf0a76922f3beaff0"
   end
 
   def install
@@ -63,6 +62,6 @@ class Daemontools < Formula
   end
 
   test do
-    assert_match /Homebrew/, shell_output("#{bin}/softlimit -t 1 echo 'Homebrew'")
+    assert_match(/Homebrew/, shell_output("#{bin}/softlimit -t 1 echo 'Homebrew'"))
   end
 end

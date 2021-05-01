@@ -7,10 +7,9 @@ class OcamlNum < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "545f99711189baa3a903adc55ac696aa75dd954298fd6135edf11d2a4047dc3b" => :catalina
-    sha256 "26022dbe85f98f4f051dd33e1743ac7e631320a4a31583b825dcdfd69731fd5b" => :mojave
-    sha256 "50101019c768a94a15f1b387464b2280f7c8e0db8e1e1349bca070a9fb4506ba" => :high_sierra
+    sha256 cellar: :any, catalina:    "545f99711189baa3a903adc55ac696aa75dd954298fd6135edf11d2a4047dc3b"
+    sha256 cellar: :any, mojave:      "26022dbe85f98f4f051dd33e1743ac7e631320a4a31583b825dcdfd69731fd5b"
+    sha256 cellar: :any, high_sierra: "50101019c768a94a15f1b387464b2280f7c8e0db8e1e1349bca070a9fb4506ba"
   end
 
   depends_on "ocaml-findlib" => :build
@@ -23,7 +22,7 @@ class OcamlNum < Formula
     cp Formula["ocaml"].opt_lib/"ocaml/Makefile.config", lib/"ocaml"
 
     # install in #{lib}/ocaml not #{HOMEBREW_PREFIX}/lib/ocaml
-    inreplace lib/"ocaml/Makefile.config", /^prefix=#{HOMEBREW_PREFIX}$/,
+    inreplace lib/"ocaml/Makefile.config", /^prefix=#{HOMEBREW_PREFIX}$/o,
                                            "prefix=#{prefix}"
 
     system "make"

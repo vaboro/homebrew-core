@@ -6,10 +6,9 @@ class PowerlineGo < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "85b3fb674ef3946a25e14c89239effff331e6fd9de986932537066d42e62072f" => :catalina
-    sha256 "789998f2e911d299619dc48ef5065daa6c376ac79ecae129c7fa34bd1b5b95e8" => :mojave
-    sha256 "48fb69d4fc789942392ee92d5c284c819cd02d50d101739f30a8f2a2506f16af" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "85b3fb674ef3946a25e14c89239effff331e6fd9de986932537066d42e62072f"
+    sha256 cellar: :any_skip_relocation, mojave:      "789998f2e911d299619dc48ef5065daa6c376ac79ecae129c7fa34bd1b5b95e8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "48fb69d4fc789942392ee92d5c284c819cd02d50d101739f30a8f2a2506f16af"
   end
 
   depends_on "go" => :build

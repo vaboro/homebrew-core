@@ -13,10 +13,10 @@ class Ekg2 < Formula
   end
 
   bottle do
-    sha256 "e17ea1385008892e80e0d5e0d44e510f6ac30e5d86423b55c61465eccd348d36" => :catalina
-    sha256 "78778e95338d2a0a61f7d4773716d927534d24e4d5867a04038401427b07c855" => :mojave
-    sha256 "f946e56a032b9526280745e6e57f8bc42a18d12fa9ced783f5515eb600bcdf0b" => :high_sierra
-    sha256 "35f01a57bbceb1a79abfa8b035e3135d0c821bbca22a63b273e32159e517813f" => :sierra
+    sha256 catalina:    "e17ea1385008892e80e0d5e0d44e510f6ac30e5d86423b55c61465eccd348d36"
+    sha256 mojave:      "78778e95338d2a0a61f7d4773716d927534d24e4d5867a04038401427b07c855"
+    sha256 high_sierra: "f946e56a032b9526280745e6e57f8bc42a18d12fa9ced783f5515eb600bcdf0b"
+    sha256 sierra:      "35f01a57bbceb1a79abfa8b035e3135d0c821bbca22a63b273e32159e517813f"
   end
 
   depends_on "pkg-config" => :build

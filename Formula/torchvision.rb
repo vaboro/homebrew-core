@@ -7,10 +7,9 @@ class Torchvision < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "161fb00bdb69732b97969ecc3131d8d4f78d624091191ad17c8905018786a72d" => :catalina
-    sha256 "3d348ed59f04bda1e4dccffd531307714cbc596007b7daf96d4ac49e661db68e" => :mojave
-    sha256 "03e0932e274d856c1d57938d6e4d76a5edbedcc8c7d785141b1a1177494340d2" => :high_sierra
+    sha256 cellar: :any, catalina:    "161fb00bdb69732b97969ecc3131d8d4f78d624091191ad17c8905018786a72d"
+    sha256 cellar: :any, mojave:      "3d348ed59f04bda1e4dccffd531307714cbc596007b7daf96d4ac49e661db68e"
+    sha256 cellar: :any, high_sierra: "03e0932e274d856c1d57938d6e4d76a5edbedcc8c7d785141b1a1177494340d2"
   end
 
   depends_on "cmake" => :build

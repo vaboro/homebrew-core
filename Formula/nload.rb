@@ -11,11 +11,10 @@ class Nload < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "2e566035d80abd97c43955ac5fa05ba347b67dbbd10d0543faef3cf5cc7b0bfb" => :catalina
-    sha256 "1dbf614f22611f66ee49efa6b1f5a1af29066be04e461d56e9766b84aeb68077" => :mojave
-    sha256 "3bcdee6e4f2e404d0ec728620b025524de265f94fccc290b29fc81f04f85be36" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2e566035d80abd97c43955ac5fa05ba347b67dbbd10d0543faef3cf5cc7b0bfb"
+    sha256 cellar: :any_skip_relocation, mojave:      "1dbf614f22611f66ee49efa6b1f5a1af29066be04e461d56e9766b84aeb68077"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3bcdee6e4f2e404d0ec728620b025524de265f94fccc290b29fc81f04f85be36"
   end
 
   depends_on "autoconf" => :build

@@ -6,9 +6,9 @@ class Neovim < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "ade03fcf189ccd82e8b4627499113aed67a753b0e3ffa9662c15d7037f6ed617" => :catalina
-    sha256 "e68135735b24df7e1318bb71c4fef6461884b2c7a166d756b4a21bd787a329a2" => :mojave
-    sha256 "77773fc6e8ad7fd726e881850712f3995feef94548bfd6081599c5b682eb4411" => :high_sierra
+    sha256 catalina:    "ade03fcf189ccd82e8b4627499113aed67a753b0e3ffa9662c15d7037f6ed617"
+    sha256 mojave:      "e68135735b24df7e1318bb71c4fef6461884b2c7a166d756b4a21bd787a329a2"
+    sha256 high_sierra: "77773fc6e8ad7fd726e881850712f3995feef94548bfd6081599c5b682eb4411"
   end
 
   head do

@@ -7,9 +7,9 @@ class Nlopt < Formula
   head "https://github.com/stevengj/nlopt.git"
 
   bottle do
-    sha256 "67fbb937e618ea96f22cae30d9f71c3abc4d36b8e9b3d48a0ac47074189da936" => :catalina
-    sha256 "849095263f9cac072ca976169f1689ed51b04be20f89e219513bcc7db8a01937" => :mojave
-    sha256 "aef5b9054a8b604ad90fa7bb689b3daa3b671b9d65f16e53d25b7a9fa8e074d8" => :high_sierra
+    sha256 catalina:    "67fbb937e618ea96f22cae30d9f71c3abc4d36b8e9b3d48a0ac47074189da936"
+    sha256 mojave:      "849095263f9cac072ca976169f1689ed51b04be20f89e219513bcc7db8a01937"
+    sha256 high_sierra: "aef5b9054a8b604ad90fa7bb689b3daa3b671b9d65f16e53d25b7a9fa8e074d8"
   end
 
   depends_on "cmake" => [:build, :test]

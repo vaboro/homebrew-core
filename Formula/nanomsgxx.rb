@@ -7,11 +7,10 @@ class Nanomsgxx < Formula
   revision 2
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "3c094b3df14d706b6824d0f0e4ec90e2d6aace65e8f7fe484b38fc51b2fe298f" => :catalina
-    sha256 "b4e9a2d42d4307ef122c71288afed6662f0db91be922c73324abe6e5a2b08735" => :mojave
-    sha256 "c48e210289abc4d384fc1139d4565616bb04fbced6f6fae9a6817f2c710ba118" => :high_sierra
+    sha256 cellar: :any, catalina:    "3c094b3df14d706b6824d0f0e4ec90e2d6aace65e8f7fe484b38fc51b2fe298f"
+    sha256 cellar: :any, mojave:      "b4e9a2d42d4307ef122c71288afed6662f0db91be922c73324abe6e5a2b08735"
+    sha256 cellar: :any, high_sierra: "c48e210289abc4d384fc1139d4565616bb04fbced6f6fae9a6817f2c710ba118"
   end
 
   depends_on "pkg-config" => :build

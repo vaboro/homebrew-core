@@ -11,11 +11,10 @@ class X265 < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "a24f202256e98285ed39c80277b2aa5d9eba2b5f37ee7f05993b269b3033684e" => :catalina
-    sha256 "5a0033bb9c6b2cf12f5836a1ad3f887f61df55eceecedc2d3414665282e576f2" => :mojave
-    sha256 "fc09819e3bba1189d57b7708ad0fcccc359b160ea380574796d7eb4a71e139ac" => :high_sierra
+    sha256 cellar: :any, catalina:    "a24f202256e98285ed39c80277b2aa5d9eba2b5f37ee7f05993b269b3033684e"
+    sha256 cellar: :any, mojave:      "5a0033bb9c6b2cf12f5836a1ad3f887f61df55eceecedc2d3414665282e576f2"
+    sha256 cellar: :any, high_sierra: "fc09819e3bba1189d57b7708ad0fcccc359b160ea380574796d7eb4a71e139ac"
   end
 
   depends_on "cmake" => :build

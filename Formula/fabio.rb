@@ -7,10 +7,9 @@ class Fabio < Formula
   head "https://github.com/fabiolb/fabio.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "197702e971927d8224bee4a7db06d7e600bd2860bbc055f1df19e20ad2e63358" => :catalina
-    sha256 "d272c77961183cb8361d588c041161de1ecdd729e5857f19e3d4822ddaaf657c" => :mojave
-    sha256 "627bbe4f66761102c57375c327d4352a20825b744e9a653b42c308f3d08e4d45" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "197702e971927d8224bee4a7db06d7e600bd2860bbc055f1df19e20ad2e63358"
+    sha256 cellar: :any_skip_relocation, mojave:      "d272c77961183cb8361d588c041161de1ecdd729e5857f19e3d4822ddaaf657c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "627bbe4f66761102c57375c327d4352a20825b744e9a653b42c308f3d08e4d45"
   end
 
   depends_on "go" => :build
@@ -38,15 +37,18 @@ class Fabio < Formula
       false
     end
 
-    if !port_open?(localhost_ip, fabio_default_port)
-      if !port_open?(localhost_ip, consul_default_port)
+    if port_open?(localhost_ip, fabio_default_port)
+      puts "Fabio already running or Consul not available or starting fabio failed."
+      false
+    else
+      if port_open?(localhost_ip, consul_default_port)
+        puts "Consul already running"
+      else
         fork do
           exec "consul agent -dev -bind 127.0.0.1"
           puts "consul started"
         end
         sleep 30
-      else
-        puts "Consul already running"
       end
       fork do
         exec "#{bin}/fabio &>fabio-start.out&"
@@ -56,9 +58,6 @@ class Fabio < Formula
       assert_equal true, port_open?(localhost_ip, fabio_default_port)
       system "killall", "fabio" # fabio forks off from the fork...
       system "consul", "leave"
-    else
-      puts "Fabio already running or Consul not available or starting fabio failed."
-      false
     end
   end
 end

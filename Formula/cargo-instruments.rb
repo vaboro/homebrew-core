@@ -6,10 +6,9 @@ class CargoInstruments < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "570ef6a76ad8b73cec931652ce50375dc3a334ed5b9f59a0120d52f4c677b5f8" => :catalina
-    sha256 "fd54b752b6dcacb30b861039f6a16109ca83072966651f0f62a50dc0e45c4360" => :mojave
-    sha256 "7cf3cf504a8ef58922cd115a26d0cda9b922d23f29f53d1a2aece21c855e846a" => :high_sierra
+    sha256 cellar: :any, catalina:    "570ef6a76ad8b73cec931652ce50375dc3a334ed5b9f59a0120d52f4c677b5f8"
+    sha256 cellar: :any, mojave:      "fd54b752b6dcacb30b861039f6a16109ca83072966651f0f62a50dc0e45c4360"
+    sha256 cellar: :any, high_sierra: "7cf3cf504a8ef58922cd115a26d0cda9b922d23f29f53d1a2aece21c855e846a"
   end
 
   depends_on "rust" => :build

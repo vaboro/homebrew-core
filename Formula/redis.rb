@@ -12,10 +12,9 @@ class Redis < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "d015cdb6b89904d6f81ffec5227363504a956d1ebb7c04e2993733a2677360ad" => :catalina
-    sha256 "dbaa57e090b18de53777434f31270666e1e8ba9c1a7ef97ef19d2e49456cb3c9" => :mojave
-    sha256 "458627bc0cd6dfa2d0c430cac842234ea3beb10725f2b0cc7ca246ec4ffe0017" => :high_sierra
+    sha256 cellar: :any, catalina:    "d015cdb6b89904d6f81ffec5227363504a956d1ebb7c04e2993733a2677360ad"
+    sha256 cellar: :any, mojave:      "dbaa57e090b18de53777434f31270666e1e8ba9c1a7ef97ef19d2e49456cb3c9"
+    sha256 cellar: :any, high_sierra: "458627bc0cd6dfa2d0c430cac842234ea3beb10725f2b0cc7ca246ec4ffe0017"
   end
 
   depends_on "openssl@1.1"
@@ -29,7 +28,7 @@ class Redis < Formula
     inreplace "redis.conf" do |s|
       s.gsub! "/var/run/redis.pid", var/"run/redis.pid"
       s.gsub! "dir ./", "dir #{var}/db/redis/"
-      s.sub!  /^bind .*$/, "bind 127.0.0.1 ::1"
+      s.sub!(/^bind .*$/, "bind 127.0.0.1 ::1")
     end
 
     etc.install "redis.conf"

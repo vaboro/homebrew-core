@@ -11,10 +11,9 @@ class Libomp < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "8545af588b2b210708b56669365cea97eb80941fe455e69f54ad85f3bb5bc18c" => :catalina
-    sha256 "d410b199fed539dbd15de8f8fe98efc47067beca8d4271c0874ddc404567f65c" => :mojave
-    sha256 "549d7af3d026fa160c96adfbda70b2ce4cd5f21710041d78bce4c1946b9bc2ec" => :high_sierra
+    sha256 cellar: :any, catalina:    "8545af588b2b210708b56669365cea97eb80941fe455e69f54ad85f3bb5bc18c"
+    sha256 cellar: :any, mojave:      "d410b199fed539dbd15de8f8fe98efc47067beca8d4271c0874ddc404567f65c"
+    sha256 cellar: :any, high_sierra: "549d7af3d026fa160c96adfbda70b2ce4cd5f21710041d78bce4c1946b9bc2ec"
   end
 
   depends_on "cmake" => :build

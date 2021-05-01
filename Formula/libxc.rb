@@ -7,10 +7,9 @@ class Libxc < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "77bb1192676ef031b3254e36f443b48163c2e6926afc959feaa84b4952a5b642" => :catalina
-    sha256 "069042e1d8511e2025e289cb3daec98728304df3a7521aced7103581686d74c8" => :mojave
-    sha256 "e84708fbaa5746ef8d25b57d34a5127501096ffacaa448b17d5b87ad4e81ae0b" => :high_sierra
+    sha256 cellar: :any, catalina:    "77bb1192676ef031b3254e36f443b48163c2e6926afc959feaa84b4952a5b642"
+    sha256 cellar: :any, mojave:      "069042e1d8511e2025e289cb3daec98728304df3a7521aced7103581686d74c8"
+    sha256 cellar: :any, high_sierra: "e84708fbaa5746ef8d25b57d34a5127501096ffacaa448b17d5b87ad4e81ae0b"
   end
 
   depends_on "autoconf" => :build

@@ -8,10 +8,9 @@ class Kibana < Formula
   head "https://github.com/elastic/kibana.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a2d25d2bf89cf7adee42ff1cf4977a906db3d9d07b8d23dcbc2c9c660a6a3d0a" => :catalina
-    sha256 "27f62cf43515c96242609d8eea66550d9d8ea79b1de903381262e3673ae609be" => :mojave
-    sha256 "1922f3a6c69e1d3157673884428fe8116e3567a7dac5119e37d8c6a1427f41e3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a2d25d2bf89cf7adee42ff1cf4977a906db3d9d07b8d23dcbc2c9c660a6a3d0a"
+    sha256 cellar: :any_skip_relocation, mojave:      "27f62cf43515c96242609d8eea66550d9d8ea79b1de903381262e3673ae609be"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1922f3a6c69e1d3157673884428fe8116e3567a7dac5119e37d8c6a1427f41e3"
   end
 
   depends_on "python@3.8" => :build

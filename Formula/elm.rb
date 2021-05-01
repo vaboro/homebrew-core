@@ -10,10 +10,9 @@ class Elm < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e1bbfe4ff7deba3ed60eb55b81b86b6d3346325bea584802ca1212369f0fa0bb" => :catalina
-    sha256 "288eeb47caccfaa9bae220492cee8de7206d40b7760e1e309a139a2398f9710d" => :mojave
-    sha256 "7fb65ff925701c39bbc7d9a5099cd88f10a56949ae019bc8817035ed1d56edbd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e1bbfe4ff7deba3ed60eb55b81b86b6d3346325bea584802ca1212369f0fa0bb"
+    sha256 cellar: :any_skip_relocation, mojave:      "288eeb47caccfaa9bae220492cee8de7206d40b7760e1e309a139a2398f9710d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7fb65ff925701c39bbc7d9a5099cd88f10a56949ae019bc8817035ed1d56edbd"
   end
 
   depends_on "cabal-install" => :build

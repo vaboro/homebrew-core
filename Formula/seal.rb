@@ -6,10 +6,9 @@ class Seal < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "eacc96f1628b4bbd5dd9345e40ad4554d888749708d83b32f0afbba1d6951871" => :catalina
-    sha256 "f9054ec5d1823bc32e916a4d2afeb9e0a7e42ab81b1bc55ea3242ca1eb4ab654" => :mojave
-    sha256 "4a16dd91ba86088961c79009939866ed3331ab066e5d5b182ec74eebc652d910" => :high_sierra
+    sha256 cellar: :any, catalina:    "eacc96f1628b4bbd5dd9345e40ad4554d888749708d83b32f0afbba1d6951871"
+    sha256 cellar: :any, mojave:      "f9054ec5d1823bc32e916a4d2afeb9e0a7e42ab81b1bc55ea3242ca1eb4ab654"
+    sha256 cellar: :any, high_sierra: "4a16dd91ba86088961c79009939866ed3331ab066e5d5b182ec74eebc652d910"
   end
 
   depends_on "cmake" => [:build, :test]

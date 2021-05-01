@@ -7,10 +7,9 @@ class Minbif < Formula
   revision 3
 
   bottle do
-    cellar :any
-    sha256 "57dc630a96ec93b8168d569cc1ff0152f381ca52c10d2b6b7bffc1d91cbc14a2" => :catalina
-    sha256 "479cfbb3b59f2c0c05b0553188ae2497ee313b02e5850172bb7055231def61b8" => :mojave
-    sha256 "5b8a0fd609cda94163f95c7d0b6620c143b3ff127178d37a57b76493231c73cc" => :sierra
+    sha256 cellar: :any, catalina: "57dc630a96ec93b8168d569cc1ff0152f381ca52c10d2b6b7bffc1d91cbc14a2"
+    sha256 cellar: :any, mojave:   "479cfbb3b59f2c0c05b0553188ae2497ee313b02e5850172bb7055231def61b8"
+    sha256 cellar: :any, sierra:   "5b8a0fd609cda94163f95c7d0b6620c143b3ff127178d37a57b76493231c73cc"
   end
 
   depends_on "cmake" => :build

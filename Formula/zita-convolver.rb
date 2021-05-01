@@ -11,10 +11,9 @@ class ZitaConvolver < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a616c118732c9f2c3775348e598a972abab7ae67b7cb0f283884cddaa55ce93d" => :catalina
-    sha256 "e9bfda6d2d3119f93ea0d570b9b3516d44513c3eafc206543f8fb055707db8fd" => :mojave
-    sha256 "b8b3326ead45ef0e126488d9c96a181f15888a11b707278c61c2ceeee312b37d" => :high_sierra
+    sha256 cellar: :any, catalina:    "a616c118732c9f2c3775348e598a972abab7ae67b7cb0f283884cddaa55ce93d"
+    sha256 cellar: :any, mojave:      "e9bfda6d2d3119f93ea0d570b9b3516d44513c3eafc206543f8fb055707db8fd"
+    sha256 cellar: :any, high_sierra: "b8b3326ead45ef0e126488d9c96a181f15888a11b707278c61c2ceeee312b37d"
   end
 
   depends_on "fftw"

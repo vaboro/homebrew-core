@@ -11,10 +11,9 @@ class Chuck < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "95574b4ee2d10154b683e9b506e3ea83f7038e5b8a8a5b8eacfabd80006ffba0" => :catalina
-    sha256 "d55689ced88b9cf3a280b39b6a0a92ab33f7b834f6d6c704b5ac57fe755f0dc3" => :mojave
-    sha256 "bf6caf2f7ecd22b43afca372f0fd7e26fab5145aee922725ddbb237039cd1883" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "95574b4ee2d10154b683e9b506e3ea83f7038e5b8a8a5b8eacfabd80006ffba0"
+    sha256 cellar: :any_skip_relocation, mojave:      "d55689ced88b9cf3a280b39b6a0a92ab33f7b834f6d6c704b5ac57fe755f0dc3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bf6caf2f7ecd22b43afca372f0fd7e26fab5145aee922725ddbb237039cd1883"
   end
 
   depends_on xcode: :build

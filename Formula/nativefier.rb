@@ -12,10 +12,9 @@ class Nativefier < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "dffd4f49151ea3126d9b50bba08a684b1395fb2303b2c5ccab4fbf37babd8bf7" => :catalina
-    sha256 "b5d0dc978f57ad3fa38a4035c552b36d24bef8931b0e5519d2278b9a32afcf6f" => :mojave
-    sha256 "04e3e8904788a18d27e39d23c8cd4d478e1c3f25f81be3105e43b67894f4c1b8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dffd4f49151ea3126d9b50bba08a684b1395fb2303b2c5ccab4fbf37babd8bf7"
+    sha256 cellar: :any_skip_relocation, mojave:      "b5d0dc978f57ad3fa38a4035c552b36d24bef8931b0e5519d2278b9a32afcf6f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "04e3e8904788a18d27e39d23c8cd4d478e1c3f25f81be3105e43b67894f4c1b8"
   end
 
   depends_on "node"

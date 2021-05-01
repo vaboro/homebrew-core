@@ -10,9 +10,9 @@ class Gtkspell3 < Formula
   end
 
   bottle do
-    sha256 "b3b9eff2b9b11085e6b16cf50165031ab7446cd78aa125afd358747a67419bd8" => :catalina
-    sha256 "1d41a37ab6c27e572e59bf7a0aaf1f66cfbbe587fffb5e9fdcc2749c24be4b26" => :mojave
-    sha256 "590fb3c9f5b1f978d385128db8c8aec91b0285a3dbead32bc19c127d9a35bb50" => :high_sierra
+    sha256 catalina:    "b3b9eff2b9b11085e6b16cf50165031ab7446cd78aa125afd358747a67419bd8"
+    sha256 mojave:      "1d41a37ab6c27e572e59bf7a0aaf1f66cfbbe587fffb5e9fdcc2749c24be4b26"
+    sha256 high_sierra: "590fb3c9f5b1f978d385128db8c8aec91b0285a3dbead32bc19c127d9a35bb50"
   end
 
   depends_on "autoconf" => :build

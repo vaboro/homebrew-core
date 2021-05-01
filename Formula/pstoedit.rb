@@ -10,9 +10,9 @@ class Pstoedit < Formula
   end
 
   bottle do
-    sha256 "f048d902c088f0625c0c9e18d84b159493775b40e742812b040e7b517900260a" => :catalina
-    sha256 "1f3ec91e58d95e08081694b43e031ed83f13a73cecff15c55c532268282b0ad1" => :mojave
-    sha256 "22710dd8997d40cec3492c40960a9966b80b386bdbd3fed46515c66bb25053d7" => :high_sierra
+    sha256 catalina:    "f048d902c088f0625c0c9e18d84b159493775b40e742812b040e7b517900260a"
+    sha256 mojave:      "1f3ec91e58d95e08081694b43e031ed83f13a73cecff15c55c532268282b0ad1"
+    sha256 high_sierra: "22710dd8997d40cec3492c40960a9966b80b386bdbd3fed46515c66bb25053d7"
   end
 
   depends_on "pkg-config" => :build

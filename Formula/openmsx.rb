@@ -7,11 +7,10 @@ class Openmsx < Formula
   head "https://github.com/openMSX/openMSX.git"
 
   bottle do
-    cellar :any
-    sha256 "d747a6fb6c9f9a489468f55765dbe8ef19664c1feb7346a42ed3f093cc61499a" => :catalina
-    sha256 "64145c0b205a9eeb64e12f06b63440ee7c8bbba0153a0e248a1e37486815fb21" => :mojave
-    sha256 "eb64da0eff2b09fb3046903b020becc06aa8683ad398e9cea08708567fbcf194" => :high_sierra
-    sha256 "a2396de7cce4f6a317d6f8f3e38e32afb304580f08ccc798c36b0c5a933fcf8f" => :sierra
+    sha256 cellar: :any, catalina:    "d747a6fb6c9f9a489468f55765dbe8ef19664c1feb7346a42ed3f093cc61499a"
+    sha256 cellar: :any, mojave:      "64145c0b205a9eeb64e12f06b63440ee7c8bbba0153a0e248a1e37486815fb21"
+    sha256 cellar: :any, high_sierra: "eb64da0eff2b09fb3046903b020becc06aa8683ad398e9cea08708567fbcf194"
+    sha256 cellar: :any, sierra:      "a2396de7cce4f6a317d6f8f3e38e32afb304580f08ccc798c36b0c5a933fcf8f"
   end
 
   depends_on "freetype"
@@ -31,7 +30,7 @@ class Openmsx < Formula
 
     # Help finding Tcl (https://github.com/openMSX/openMSX/issues/1082)
     inreplace "build/libraries.py" do |s|
-      s.gsub! /\((distroRoot), \)/, "(\\1, '/usr', '#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework')"
+      s.gsub!(/\((distroRoot), \)/, "(\\1, '/usr', '#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework')")
       s.gsub! "lib/tcl", "."
     end
 

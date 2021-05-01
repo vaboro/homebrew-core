@@ -7,10 +7,10 @@ class Cgit < Formula
 
   bottle do
     rebuild 1
-    sha256 "6ddf371689a429df59b81cc75ef3c491c58fa1536aeafb41eef0df89196405c6" => :catalina
-    sha256 "0a8124c41a3e891d8ac8a9dc9391a1048deecb3b82a785d604bbf1d59125b010" => :mojave
-    sha256 "b5dd8fcf3e81b7d320ea39d9de0b7a3b20b6522978e01f2527e14845d80454c4" => :high_sierra
-    sha256 "7b21a1dd7536c3354280089b4521fa64e36c2d177303bf5f9ea7994b77a25f2d" => :sierra
+    sha256 catalina:    "6ddf371689a429df59b81cc75ef3c491c58fa1536aeafb41eef0df89196405c6"
+    sha256 mojave:      "0a8124c41a3e891d8ac8a9dc9391a1048deecb3b82a785d604bbf1d59125b010"
+    sha256 high_sierra: "b5dd8fcf3e81b7d320ea39d9de0b7a3b20b6522978e01f2527e14845d80454c4"
+    sha256 sierra:      "7b21a1dd7536c3354280089b4521fa64e36c2d177303bf5f9ea7994b77a25f2d"
   end
 
   depends_on "gettext"
@@ -43,6 +43,6 @@ class Cgit < Formula
 
     ENV["CGIT_CONFIG"] = testpath/"cgitrc"
     # no "Status" line means 200
-    assert_no_match /Status: .+/, shell_output("#{pkgshare}/cgit.cgi")
+    assert_no_match(/Status: .+/, shell_output("#{pkgshare}/cgit.cgi"))
   end
 end

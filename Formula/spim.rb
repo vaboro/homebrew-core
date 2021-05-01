@@ -7,9 +7,9 @@ class Spim < Formula
   head "https://svn.code.sf.net/p/spimsimulator/code/"
 
   bottle do
-    sha256 "553aee29312b5b491d20c139652f87d8bd1547abd078285c5c80a13e02a868ff" => :catalina
-    sha256 "429ed6272e9255d16227b58bbc405c58d19ecb360540d2d228a91029b62506ab" => :mojave
-    sha256 "dfb4e24f378665fee30af8a3c362b1bc13e83b33196b66b4102c400fcee99b2e" => :high_sierra
+    sha256 catalina:    "553aee29312b5b491d20c139652f87d8bd1547abd078285c5c80a13e02a868ff"
+    sha256 mojave:      "429ed6272e9255d16227b58bbc405c58d19ecb360540d2d228a91029b62506ab"
+    sha256 high_sierra: "dfb4e24f378665fee30af8a3c362b1bc13e83b33196b66b4102c400fcee99b2e"
   end
 
   def install

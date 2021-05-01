@@ -13,10 +13,9 @@ class Beancount < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ae26e4efac2cb7cd50c9c88de5ea6e30f05ee54f452bf6156b2e2a33ebc77857" => :catalina
-    sha256 "ccfc81e943ac128a947593513c078614198b6843149756f1b5be378def0ebace" => :mojave
-    sha256 "dedb54aead11e33a9a29ef57273f1fa3042e52fd2cb27990afcaee2363c6da7d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ae26e4efac2cb7cd50c9c88de5ea6e30f05ee54f452bf6156b2e2a33ebc77857"
+    sha256 cellar: :any_skip_relocation, mojave:      "ccfc81e943ac128a947593513c078614198b6843149756f1b5be378def0ebace"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dedb54aead11e33a9a29ef57273f1fa3042e52fd2cb27990afcaee2363c6da7d"
   end
 
   depends_on "python@3.8"

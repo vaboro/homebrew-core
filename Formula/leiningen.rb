@@ -7,10 +7,9 @@ class Leiningen < Formula
   head "https://github.com/technomancy/leiningen.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081" => :catalina
-    sha256 "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081" => :mojave
-    sha256 "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081"
+    sha256 cellar: :any_skip_relocation, mojave:      "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3e65cbf112fe60434c3b6f748342de048feeaa63f10da2e26721ce9e83dea081"
   end
 
   resource "jar" do

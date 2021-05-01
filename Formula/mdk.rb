@@ -12,9 +12,9 @@ class Mdk < Formula
   end
 
   bottle do
-    sha256 "11d143b7ea88fb34427d08f9755bc62fb5129b577a7a2fcc813c3cacf4c7c644" => :catalina
-    sha256 "344482a184e612e63d0839e0e254c1c27b44971dcf62dc4cba96fb45a5db4aaf" => :mojave
-    sha256 "261bdee4241a6db4a361aca51bd4b052fc4686bd9f2ece6b24391c569c1c1558" => :high_sierra
+    sha256 catalina:    "11d143b7ea88fb34427d08f9755bc62fb5129b577a7a2fcc813c3cacf4c7c644"
+    sha256 mojave:      "344482a184e612e63d0839e0e254c1c27b44971dcf62dc4cba96fb45a5db4aaf"
+    sha256 high_sierra: "261bdee4241a6db4a361aca51bd4b052fc4686bd9f2ece6b24391c569c1c1558"
   end
 
   depends_on "intltool" => :build

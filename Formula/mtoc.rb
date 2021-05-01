@@ -5,10 +5,9 @@ class Mtoc < Formula
   sha256 "830485ac7c563cd55331f643952caab2f0690dfbd01e92eb432c45098b28a5d0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2f60b3731066cf662f3d8e9451ce0f94954980100780c9e79b6e8ea066ad8def" => :catalina
-    sha256 "c9cba74c5669816e90ae2fa9110be8c9b6b9d1a90ec7d1f246687a3f512e08ab" => :mojave
-    sha256 "62587e723f38c2a51d3a951dca42df10b9aa1ac67c88d8e286b27e6957edd985" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2f60b3731066cf662f3d8e9451ce0f94954980100780c9e79b6e8ea066ad8def"
+    sha256 cellar: :any_skip_relocation, mojave:      "c9cba74c5669816e90ae2fa9110be8c9b6b9d1a90ec7d1f246687a3f512e08ab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "62587e723f38c2a51d3a951dca42df10b9aa1ac67c88d8e286b27e6957edd985"
   end
 
   depends_on "llvm" => :build

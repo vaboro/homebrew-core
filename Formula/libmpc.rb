@@ -10,10 +10,9 @@ class Libmpc < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "94f1002674d74f582bf3d87079c2b3ddbb4b6add13d4bd7b522acd7bda419bba" => :catalina
-    sha256 "5896218dabc22de4582cde53ce464263a6675eece309f52c6a262b02e5b6dc60" => :mojave
-    sha256 "b48ea39caa145b937b7158c73218e2d98f045bbb6186b48eb1873f45e6a51dea" => :high_sierra
+    sha256 cellar: :any, catalina:    "94f1002674d74f582bf3d87079c2b3ddbb4b6add13d4bd7b522acd7bda419bba"
+    sha256 cellar: :any, mojave:      "5896218dabc22de4582cde53ce464263a6675eece309f52c6a262b02e5b6dc60"
+    sha256 cellar: :any, high_sierra: "b48ea39caa145b937b7158c73218e2d98f045bbb6186b48eb1873f45e6a51dea"
   end
 
   depends_on "gmp"

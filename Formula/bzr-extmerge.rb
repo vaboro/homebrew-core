@@ -17,6 +17,6 @@ class BzrExtmerge < Formula
   end
 
   test do
-    assert_match /Calls an external merge program/, shell_output("bzr help extmerge")
+    assert_match(/Calls an external merge program/, shell_output("bzr help extmerge"))
   end
 end

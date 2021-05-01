@@ -7,10 +7,9 @@ class Gssh < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "170b7e0b5c81eb30f12471b8342f23179d5febff44835297d1648c124cd94733" => :catalina
-    sha256 "d4f7b427c456b891a7604988bba90850c81da7d9714788383ab6e9083a763d1c" => :mojave
-    sha256 "51e468107da90b71b335a7dcdf0ff6149930634a8625cf2019d45add410d2852" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "170b7e0b5c81eb30f12471b8342f23179d5febff44835297d1648c124cd94733"
+    sha256 cellar: :any_skip_relocation, mojave:      "d4f7b427c456b891a7604988bba90850c81da7d9714788383ab6e9083a763d1c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "51e468107da90b71b335a7dcdf0ff6149930634a8625cf2019d45add410d2852"
   end
 
   depends_on "openjdk@11"

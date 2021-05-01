@@ -12,10 +12,9 @@ class Instalooter < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0dd79c703d6348809dd3d2ad5af9cc78c73793df7a79659902499bd097d4053c" => :catalina
-    sha256 "6306aaebc9b021e81c5311247e5611f1936b187e3393a18fc4105ab9b64ea206" => :mojave
-    sha256 "085db0739c583a65fbdf72da04ad31e4187450b1cd51a44b4524d1c06524eb9d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0dd79c703d6348809dd3d2ad5af9cc78c73793df7a79659902499bd097d4053c"
+    sha256 cellar: :any_skip_relocation, mojave:      "6306aaebc9b021e81c5311247e5611f1936b187e3393a18fc4105ab9b64ea206"
+    sha256 cellar: :any_skip_relocation, high_sierra: "085db0739c583a65fbdf72da04ad31e4187450b1cd51a44b4524d1c06524eb9d"
   end
 
   depends_on "python@3.8"

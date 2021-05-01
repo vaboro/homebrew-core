@@ -7,11 +7,10 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "d601aa195a3baf397390550894de8d39e6602a082154fa5facdfcbe64e3abffc" => :catalina
-    sha256 "2e1004341c9ea81972212ce180a258bc162528b6eac46e67c8bc03538c3cfe40" => :mojave
-    sha256 "e1efb8aec2b87e2facdb824971718d6fa531caa5043b10e811dc86a6c5e1e797" => :high_sierra
+    sha256 cellar: :any, catalina:    "d601aa195a3baf397390550894de8d39e6602a082154fa5facdfcbe64e3abffc"
+    sha256 cellar: :any, mojave:      "2e1004341c9ea81972212ce180a258bc162528b6eac46e67c8bc03538c3cfe40"
+    sha256 cellar: :any, high_sierra: "e1efb8aec2b87e2facdb824971718d6fa531caa5043b10e811dc86a6c5e1e797"
   end
 
   depends_on "cmake" => :build

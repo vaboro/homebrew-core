@@ -9,10 +9,9 @@ class Bear < Formula
   head "https://github.com/rizsotto/Bear.git"
 
   bottle do
-    cellar :any
-    sha256 "afa96da76034b3e1a89da1238efa1078f0a4d0ee508a7b2928a1917848223c29" => :catalina
-    sha256 "5371f81233e1805fede6e16414e14b51e2b95d86751be84b839838f860b66a9c" => :mojave
-    sha256 "34bef61a47160710ac0ff55896dd34f21476c86b01f18304337264f9dba3d798" => :high_sierra
+    sha256 cellar: :any, catalina:    "afa96da76034b3e1a89da1238efa1078f0a4d0ee508a7b2928a1917848223c29"
+    sha256 cellar: :any, mojave:      "5371f81233e1805fede6e16414e14b51e2b95d86751be84b839838f860b66a9c"
+    sha256 cellar: :any, high_sierra: "34bef61a47160710ac0ff55896dd34f21476c86b01f18304337264f9dba3d798"
   end
 
   depends_on "cmake" => :build

@@ -10,10 +10,9 @@ class Gitup < Formula
   revision 2
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "61b9abe9e481e9fa3a86074756d065f48f92cf71420e6855e95ad1ecdc92cecb" => :catalina
-    sha256 "2e1fb0d6519682a80737b73136fd6cf1c81928d993e88e835cb053725ff40bf2" => :mojave
-    sha256 "63c2169d68aed5aca9a91bba014cdb96238b61316267691dd7c63ef566b89fc8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "61b9abe9e481e9fa3a86074756d065f48f92cf71420e6855e95ad1ecdc92cecb"
+    sha256 cellar: :any_skip_relocation, mojave:      "2e1fb0d6519682a80737b73136fd6cf1c81928d993e88e835cb053725ff40bf2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "63c2169d68aed5aca9a91bba014cdb96238b61316267691dd7c63ef566b89fc8"
   end
 
   depends_on "python@3.8"

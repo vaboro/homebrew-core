@@ -11,9 +11,9 @@ class Gettext < Formula
   end
 
   bottle do
-    sha256 "cdea54f52b7c36ebcb5fe26a1cf736d7cd6fd5f2fd016dd8357a8624ffd6b5f8" => :catalina
-    sha256 "99707d4dcc731faf980333365a694e9500f2f012f84c0bcb6d8cb5d620c2ce08" => :mojave
-    sha256 "5ac5783e31205b92907b46bfaaa142620aea7ee3fc4d996876b0913fd2315695" => :high_sierra
+    sha256 catalina:    "cdea54f52b7c36ebcb5fe26a1cf736d7cd6fd5f2fd016dd8357a8624ffd6b5f8"
+    sha256 mojave:      "99707d4dcc731faf980333365a694e9500f2f012f84c0bcb6d8cb5d620c2ce08"
+    sha256 high_sierra: "5ac5783e31205b92907b46bfaaa142620aea7ee3fc4d996876b0913fd2315695"
   end
 
   uses_from_macos "ncurses"

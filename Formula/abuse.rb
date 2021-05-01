@@ -11,13 +11,12 @@ class Abuse < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "669679d60bb64b08d940f9f7c4b29faf340ff081d62b66f1764087db466fffe2" => :catalina
-    sha256 "e2dd02d540aabb2943823051e4bf80ea1fbb80da1725462fb314f53a0c6800b2" => :mojave
-    sha256 "3fdc2ccd00bf320b994747d982b5cbde4b73c45c094c9a0f89acf13aea3eb847" => :high_sierra
-    sha256 "6971b6eebf4c00eaaed72a1104a49be63861eabc95d679a0c84040398e320059" => :sierra
-    sha256 "456dfbfb6e7486d0c5a50ac01423efabf5243b08d3235c83477681090a42c652" => :el_capitan
-    sha256 "3ca083d0d99c00ad26f306c026ef35ee565a24f0171b94457deb64d5e170edf9" => :yosemite
+    sha256 cellar: :any, catalina:    "669679d60bb64b08d940f9f7c4b29faf340ff081d62b66f1764087db466fffe2"
+    sha256 cellar: :any, mojave:      "e2dd02d540aabb2943823051e4bf80ea1fbb80da1725462fb314f53a0c6800b2"
+    sha256 cellar: :any, high_sierra: "3fdc2ccd00bf320b994747d982b5cbde4b73c45c094c9a0f89acf13aea3eb847"
+    sha256 cellar: :any, sierra:      "6971b6eebf4c00eaaed72a1104a49be63861eabc95d679a0c84040398e320059"
+    sha256 cellar: :any, el_capitan:  "456dfbfb6e7486d0c5a50ac01423efabf5243b08d3235c83477681090a42c652"
+    sha256 cellar: :any, yosemite:    "3ca083d0d99c00ad26f306c026ef35ee565a24f0171b94457deb64d5e170edf9"
   end
 
   depends_on "autoconf" => :build

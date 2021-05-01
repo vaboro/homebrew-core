@@ -10,9 +10,9 @@ class Avfs < Formula
   end
 
   bottle do
-    sha256 "6f496a30b6bd1c8eba1005e4bc0da26b53353effab3f447cf8d43a669ad7a6b5" => :catalina
-    sha256 "1e75ce4753a0d9a9af12e4a718537a9e2398fd535413b72505dd126a33610fe6" => :mojave
-    sha256 "690fbe0161f0c5ce4ec737e67624b54bfcd7825efa8b554e1773691365dcd6ed" => :high_sierra
+    sha256 catalina:    "6f496a30b6bd1c8eba1005e4bc0da26b53353effab3f447cf8d43a669ad7a6b5"
+    sha256 mojave:      "1e75ce4753a0d9a9af12e4a718537a9e2398fd535413b72505dd126a33610fe6"
+    sha256 high_sierra: "690fbe0161f0c5ce4ec737e67624b54bfcd7825efa8b554e1773691365dcd6ed"
   end
 
   depends_on "pkg-config" => :build

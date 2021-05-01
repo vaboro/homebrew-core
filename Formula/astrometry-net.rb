@@ -8,10 +8,9 @@ class AstrometryNet < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "3bc7c8dfe2e54468e9afad45a2146b217e5888158615d3c98c7d4c95ead028a9" => :catalina
-    sha256 "710713585ca331943ba15fb88aefef6d251e78b11f9765e99a4d9752982411c1" => :mojave
-    sha256 "81b1052ddf30d7f91b934c72603347430dc8046ec2f315d1d7f62dec972c39b8" => :high_sierra
+    sha256 cellar: :any, catalina:    "3bc7c8dfe2e54468e9afad45a2146b217e5888158615d3c98c7d4c95ead028a9"
+    sha256 cellar: :any, mojave:      "710713585ca331943ba15fb88aefef6d251e78b11f9765e99a4d9752982411c1"
+    sha256 cellar: :any, high_sierra: "81b1052ddf30d7f91b934c72603347430dc8046ec2f315d1d7f62dec972c39b8"
   end
 
   depends_on "pkg-config" => :build

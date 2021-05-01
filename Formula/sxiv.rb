@@ -7,10 +7,9 @@ class Sxiv < Formula
   head "https://github.com/muennich/sxiv.git"
 
   bottle do
-    cellar :any
-    sha256 "76166fe7a568a675abf485137b4df514f4f0c187edc0502f298d0f482aa7ac80" => :catalina
-    sha256 "1dc370bc45941faf5aeb36014160748df67446f4b51010c73a1ecc3851aed811" => :mojave
-    sha256 "544f9660a23d0370a6cd3b5fe6ff207bf21a12dcac6aaea5dc35735b09fc258c" => :high_sierra
+    sha256 cellar: :any, catalina:    "76166fe7a568a675abf485137b4df514f4f0c187edc0502f298d0f482aa7ac80"
+    sha256 cellar: :any, mojave:      "1dc370bc45941faf5aeb36014160748df67446f4b51010c73a1ecc3851aed811"
+    sha256 cellar: :any, high_sierra: "544f9660a23d0370a6cd3b5fe6ff207bf21a12dcac6aaea5dc35735b09fc258c"
   end
 
   depends_on "giflib"

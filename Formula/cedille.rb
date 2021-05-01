@@ -19,9 +19,9 @@ class Cedille < Formula
   end
 
   bottle do
-    sha256 "f35c0eb5cfe557eea19c757244345a8761354ab34b59cba492f40b997b246ffa" => :catalina
-    sha256 "31cbfd570e8ec6a98991f5fe66b2b3b5865f1fbfcffa7cf6ba7d8509fc904eee" => :mojave
-    sha256 "fdffd4669a910e9435e09c7dbef6c85694cbd107e07c945c808ff2bdef3eee3b" => :high_sierra
+    sha256 catalina:    "f35c0eb5cfe557eea19c757244345a8761354ab34b59cba492f40b997b246ffa"
+    sha256 mojave:      "31cbfd570e8ec6a98991f5fe66b2b3b5865f1fbfcffa7cf6ba7d8509fc904eee"
+    sha256 high_sierra: "fdffd4669a910e9435e09c7dbef6c85694cbd107e07c945c808ff2bdef3eee3b"
   end
 
   head do

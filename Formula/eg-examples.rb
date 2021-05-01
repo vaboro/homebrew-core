@@ -12,10 +12,9 @@ class EgExamples < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "66b8e36ffd66967947c4c31ac1c111210030bbb6072fa79a18f86ad75422b5d2" => :catalina
-    sha256 "4384a8ac2ec7ea33981e29466989bfe56aec532635c2d1f1e079ee70b41d2a86" => :mojave
-    sha256 "ea5150fcaec60e13589296f700b39aa7ee1b210f989bea1deee548fdeaf849b5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "66b8e36ffd66967947c4c31ac1c111210030bbb6072fa79a18f86ad75422b5d2"
+    sha256 cellar: :any_skip_relocation, mojave:      "4384a8ac2ec7ea33981e29466989bfe56aec532635c2d1f1e079ee70b41d2a86"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ea5150fcaec60e13589296f700b39aa7ee1b210f989bea1deee548fdeaf849b5"
   end
 
   depends_on "python@3.8"

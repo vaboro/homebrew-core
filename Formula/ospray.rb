@@ -7,9 +7,8 @@ class Ospray < Formula
   head "https://github.com/ospray/ospray.git"
 
   bottle do
-    cellar :any
-    sha256 "f6b816e4ce29195586af8305a27bcb49f366bf08cc761ee85deb8eb69165f897" => :catalina
-    sha256 "044aa16b8c07c9188a242d12f1ca809844bfaf2606777427dfd761d611135642" => :mojave
+    sha256 cellar: :any, catalina: "f6b816e4ce29195586af8305a27bcb49f366bf08cc761ee85deb8eb69165f897"
+    sha256 cellar: :any, mojave:   "044aa16b8c07c9188a242d12f1ca809844bfaf2606777427dfd761d611135642"
   end
 
   depends_on "cmake" => :build

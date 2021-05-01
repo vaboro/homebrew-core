@@ -6,10 +6,9 @@ class Lesspipe < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6078a8d92ebaee0b4decf8951f6ede33432f15a8e700bf5180257e38ae15a30c" => :catalina
-    sha256 "509e6fbbdb6329be9b6405067a1c16e715c89a6d5dd0621a766e2e7b36157cdf" => :mojave
-    sha256 "59920e52a34aaa64ff44c8d0cb4b157559ec767da77c86d827bd983030f42aa9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6078a8d92ebaee0b4decf8951f6ede33432f15a8e700bf5180257e38ae15a30c"
+    sha256 cellar: :any_skip_relocation, mojave:      "509e6fbbdb6329be9b6405067a1c16e715c89a6d5dd0621a766e2e7b36157cdf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "59920e52a34aaa64ff44c8d0cb4b157559ec767da77c86d827bd983030f42aa9"
   end
 
   def install
@@ -31,6 +30,6 @@ class Lesspipe < Formula
     system "tar", "-cvzf", "homebrew.tar.gz", "file1.txt", "file2.txt"
 
     assert_predicate testpath/"homebrew.tar.gz", :exist?
-    assert_match /file2.txt/, shell_output("tar tvzf homebrew.tar.gz | #{bin}/tarcolor")
+    assert_match(/file2.txt/, shell_output("tar tvzf homebrew.tar.gz | #{bin}/tarcolor"))
   end
 end

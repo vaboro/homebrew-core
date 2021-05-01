@@ -6,10 +6,9 @@ class Meilisearch < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "db8b2f5d64c940949a264a601655760c51323b681697d622fa31695de2944751" => :catalina
-    sha256 "a3ea3148f9f047081de0ab6a21382d3ac59de3b6a72b2d6dc883124475a9c251" => :mojave
-    sha256 "206e2e3031a58dd886817e136cf6e0ce52128eec5f1837eba64d54a75733907e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "db8b2f5d64c940949a264a601655760c51323b681697d622fa31695de2944751"
+    sha256 cellar: :any_skip_relocation, mojave:      "a3ea3148f9f047081de0ab6a21382d3ac59de3b6a72b2d6dc883124475a9c251"
+    sha256 cellar: :any_skip_relocation, high_sierra: "206e2e3031a58dd886817e136cf6e0ce52128eec5f1837eba64d54a75733907e"
   end
 
   depends_on "rust" => :build

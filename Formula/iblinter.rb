@@ -7,9 +7,8 @@ class Iblinter < Formula
   head "https://github.com/IBDecodable/IBLinter.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9c1ef57667d9068b21544871f750357897b123e3d6e329982ad06f96affb2c15" => :catalina
-    sha256 "0a7c93d98d2f992934b88700d3ee0a203d575c65cd58786163fdab9fd209c0a0" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "9c1ef57667d9068b21544871f750357897b123e3d6e329982ad06f96affb2c15"
+    sha256 cellar: :any_skip_relocation, mojave:   "0a7c93d98d2f992934b88700d3ee0a203d575c65cd58786163fdab9fd209c0a0"
   end
 
   depends_on xcode: ["10.2", :build]

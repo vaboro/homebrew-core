@@ -12,10 +12,9 @@ class Codespell < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fb3fb87c3d707656b5c796fd40a13b6e7d0170f5cc4db6361751074b1f089bcf" => :catalina
-    sha256 "f44c96916092e661dfa53499d3570b98bba5fbcf964751f55c775e0aee68b37c" => :mojave
-    sha256 "752254907866753d1941f39193d67cb2fbaa54f294d6d0f4a1f11cd8a8247aae" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fb3fb87c3d707656b5c796fd40a13b6e7d0170f5cc4db6361751074b1f089bcf"
+    sha256 cellar: :any_skip_relocation, mojave:      "f44c96916092e661dfa53499d3570b98bba5fbcf964751f55c775e0aee68b37c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "752254907866753d1941f39193d67cb2fbaa54f294d6d0f4a1f11cd8a8247aae"
   end
 
   depends_on "python@3.8"

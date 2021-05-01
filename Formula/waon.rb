@@ -6,14 +6,13 @@ class Waon < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "47eaaeeea5b323dced48d444ffc21c2f16b86443271952bceac22abd788ebd8f" => :catalina
-    sha256 "22b3f3cc1a0796db2bf6b808b7157a2e1cacf30b6437998a9f5bdc9482bbfbf8" => :mojave
-    sha256 "5c3c49f0740bfcf9d34fd9468af3d9caa8f19c53ee1d25f8d69442d63859c9ab" => :high_sierra
-    sha256 "d7fd9859544bf3ccb739942f0db00928469356f4d82ab7848cdba2ae5c5e99e9" => :sierra
-    sha256 "6f09559eaf287022f280991b44b5f4e86435fafda167c97a78239602183a3758" => :el_capitan
-    sha256 "a16c4df918f59a71396d7c4a5806bafe4bda4a89d3aeb2a52d8dfd41ce6c0432" => :yosemite
-    sha256 "7469ec9aa8f549c1294ddb362f8ec2473466c5b027007f3c14fb49984353d813" => :mavericks
+    sha256 cellar: :any, catalina:    "47eaaeeea5b323dced48d444ffc21c2f16b86443271952bceac22abd788ebd8f"
+    sha256 cellar: :any, mojave:      "22b3f3cc1a0796db2bf6b808b7157a2e1cacf30b6437998a9f5bdc9482bbfbf8"
+    sha256 cellar: :any, high_sierra: "5c3c49f0740bfcf9d34fd9468af3d9caa8f19c53ee1d25f8d69442d63859c9ab"
+    sha256 cellar: :any, sierra:      "d7fd9859544bf3ccb739942f0db00928469356f4d82ab7848cdba2ae5c5e99e9"
+    sha256 cellar: :any, el_capitan:  "6f09559eaf287022f280991b44b5f4e86435fafda167c97a78239602183a3758"
+    sha256 cellar: :any, yosemite:    "a16c4df918f59a71396d7c4a5806bafe4bda4a89d3aeb2a52d8dfd41ce6c0432"
+    sha256 cellar: :any, mavericks:   "7469ec9aa8f549c1294ddb362f8ec2473466c5b027007f3c14fb49984353d813"
   end
 
   depends_on "pkg-config" => :build

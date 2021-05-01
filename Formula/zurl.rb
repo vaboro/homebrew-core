@@ -7,10 +7,9 @@ class Zurl < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "34df5e2569529b11cfdb776fbb7693bd2be133f6f79ebf058a6ec9e40c14b3e7" => :catalina
-    sha256 "461956a45a61737a7ecd8c4e4a22f9511341f72a07bc5e05551771c94e264055" => :mojave
-    sha256 "b6c5d64251514191c0f987ef18481bce8f8a06f4de292c39c21112c939a3c9cf" => :high_sierra
+    sha256 cellar: :any, catalina:    "34df5e2569529b11cfdb776fbb7693bd2be133f6f79ebf058a6ec9e40c14b3e7"
+    sha256 cellar: :any, mojave:      "461956a45a61737a7ecd8c4e4a22f9511341f72a07bc5e05551771c94e264055"
+    sha256 cellar: :any, high_sierra: "b6c5d64251514191c0f987ef18481bce8f8a06f4de292c39c21112c939a3c9cf"
   end
 
   depends_on "pkg-config" => :build

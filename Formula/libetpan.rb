@@ -7,10 +7,9 @@ class Libetpan < Formula
   head "https://github.com/dinhviethoa/libetpan.git", branch: "master"
 
   bottle do
-    cellar :any
-    sha256 "2effe5528f31ea1edcdd0baf468bb1ebbfb0061cb8bf131f2636b5db6cc20550" => :catalina
-    sha256 "ba4948b8f0169ee43ba18b0dbea0564bfd5a2c625834f6f5a5c4b9ac1d725334" => :mojave
-    sha256 "6a2f29f42a39d9d3eee7bca1974118fdd8d44a745f61af686aa40c449157b733" => :high_sierra
+    sha256 cellar: :any, catalina:    "2effe5528f31ea1edcdd0baf468bb1ebbfb0061cb8bf131f2636b5db6cc20550"
+    sha256 cellar: :any, mojave:      "ba4948b8f0169ee43ba18b0dbea0564bfd5a2c625834f6f5a5c4b9ac1d725334"
+    sha256 cellar: :any, high_sierra: "6a2f29f42a39d9d3eee7bca1974118fdd8d44a745f61af686aa40c449157b733"
   end
 
   depends_on xcode: :build

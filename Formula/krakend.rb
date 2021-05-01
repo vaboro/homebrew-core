@@ -6,10 +6,9 @@ class Krakend < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3b2c4d19653b8c43580f994349beb23e70d5b2a1c2c187d54d8c1481d072a7ea" => :catalina
-    sha256 "d7dcdd8038f317dba6b12533b5750235f3e12fd2e584de5b4e5a56f29428e092" => :mojave
-    sha256 "db6cc9c73c230995752276f410b742b848d718ab9e6c6b783a6dfc3035f96dc9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3b2c4d19653b8c43580f994349beb23e70d5b2a1c2c187d54d8c1481d072a7ea"
+    sha256 cellar: :any_skip_relocation, mojave:      "d7dcdd8038f317dba6b12533b5750235f3e12fd2e584de5b4e5a56f29428e092"
+    sha256 cellar: :any_skip_relocation, high_sierra: "db6cc9c73c230995752276f410b742b848d718ab9e6c6b783a6dfc3035f96dc9"
   end
 
   depends_on "go" => :build

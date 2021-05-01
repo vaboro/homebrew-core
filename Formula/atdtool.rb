@@ -13,10 +13,9 @@ class Atdtool < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f02a78aa9dbb19e8ca8670a6890f3d51949d014e6890ba5039fd9695bc1f46ce" => :catalina
-    sha256 "17b2ed63f8b4f8aa53e367572b53344fa3e6fa8569e5a9fb48f3a0d5257d04cc" => :mojave
-    sha256 "0f301757a596e02344c15171a834557e19e4c4145fd440cd9e960b72993e459a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f02a78aa9dbb19e8ca8670a6890f3d51949d014e6890ba5039fd9695bc1f46ce"
+    sha256 cellar: :any_skip_relocation, mojave:      "17b2ed63f8b4f8aa53e367572b53344fa3e6fa8569e5a9fb48f3a0d5257d04cc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0f301757a596e02344c15171a834557e19e4c4145fd440cd9e960b72993e459a"
   end
 
   depends_on "python@3.8"

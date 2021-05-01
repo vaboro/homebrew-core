@@ -6,9 +6,9 @@ class Scrcpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "ba6b589a05badb63cddb4d6624980d525c6b71e01509e9661f04de457d971803" => :catalina
-    sha256 "5390385c2d1813d566fd6657183188b162856010db9d767a8cdbae12b6a11e44" => :mojave
-    sha256 "74e4d0a9ad2d6b105822b8d716bd88093317d12a234c58a5c4691b61c2c35796" => :high_sierra
+    sha256 catalina:    "ba6b589a05badb63cddb4d6624980d525c6b71e01509e9661f04de457d971803"
+    sha256 mojave:      "5390385c2d1813d566fd6657183188b162856010db9d767a8cdbae12b6a11e44"
+    sha256 high_sierra: "74e4d0a9ad2d6b105822b8d716bd88093317d12a234c58a5c4691b61c2c35796"
   end
 
   depends_on "meson" => :build

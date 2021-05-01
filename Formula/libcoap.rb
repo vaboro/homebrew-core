@@ -6,10 +6,9 @@ class Libcoap < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "344f2a098d9f1767d50135fbf4ae3bdf893a079ebf8a54f248811673fa437e39" => :catalina
-    sha256 "012f1efcb1655479c531df4db98eb481d83971751edffb99b4ca8c50592cd27c" => :mojave
-    sha256 "a68df19a4ca87c677173c14b534848592bb35e46a715ca066bcd114f8c735236" => :high_sierra
+    sha256 cellar: :any, catalina:    "344f2a098d9f1767d50135fbf4ae3bdf893a079ebf8a54f248811673fa437e39"
+    sha256 cellar: :any, mojave:      "012f1efcb1655479c531df4db98eb481d83971751edffb99b4ca8c50592cd27c"
+    sha256 cellar: :any, high_sierra: "a68df19a4ca87c677173c14b534848592bb35e46a715ca066bcd114f8c735236"
   end
 
   depends_on "autoconf" => :build

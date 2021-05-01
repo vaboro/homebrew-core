@@ -10,10 +10,10 @@ class Dopewars < Formula
   end
 
   bottle do
-    sha256 "f2e1a3e2e6199fc550af9afc8204b0292a34976f85ec2448fee549b434048c34" => :catalina
-    sha256 "8bb4cbd11a3db0bbdbdd283d531742c9485dc1d86b57b9986f3b86da01947807" => :mojave
-    sha256 "3808bf43bb96b796624f8ffb855b176ea2a908f3b9477fd7d07a1f960dff0ef2" => :high_sierra
-    sha256 "db1c91122cf53f166a5811595bbf84b63227818ca11877b78a21592686a975f2" => :sierra
+    sha256 catalina:    "f2e1a3e2e6199fc550af9afc8204b0292a34976f85ec2448fee549b434048c34"
+    sha256 mojave:      "8bb4cbd11a3db0bbdbdd283d531742c9485dc1d86b57b9986f3b86da01947807"
+    sha256 high_sierra: "3808bf43bb96b796624f8ffb855b176ea2a908f3b9477fd7d07a1f960dff0ef2"
+    sha256 sierra:      "db1c91122cf53f166a5811595bbf84b63227818ca11877b78a21592686a975f2"
   end
 
   depends_on "pkg-config" => :build

@@ -14,10 +14,9 @@ class Passpie < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "29a24482b5c955a6d14b7a285d6937c04ab89a53f110c8343221d2ccef2cb508" => :catalina
-    sha256 "9f524fdab59188aab2b53fe7c3e5084ecdc27149dd742abffdfb13af074ba0ee" => :mojave
-    sha256 "acac2254266a3c741c15e28403482e67517d447dc4a4c0411934ec93ab902945" => :high_sierra
+    sha256 cellar: :any, catalina:    "29a24482b5c955a6d14b7a285d6937c04ab89a53f110c8343221d2ccef2cb508"
+    sha256 cellar: :any, mojave:      "9f524fdab59188aab2b53fe7c3e5084ecdc27149dd742abffdfb13af074ba0ee"
+    sha256 cellar: :any, high_sierra: "acac2254266a3c741c15e28403482e67517d447dc4a4c0411934ec93ab902945"
   end
 
   depends_on "gnupg"

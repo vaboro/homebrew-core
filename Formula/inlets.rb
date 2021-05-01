@@ -12,10 +12,9 @@ class Inlets < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2665dd5a147240033c67120a95284423d1f47a347377b81c0d71cf3bea1f5b85" => :catalina
-    sha256 "3add1c9d7ce619e937576a8f1b353cdc1a9c18d13cfe3cd600a2c24138f571a4" => :mojave
-    sha256 "aba2e2c5234909362bd382d56dc76ecd9024ece8c2eedc9f0c7832075935c4be" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2665dd5a147240033c67120a95284423d1f47a347377b81c0d71cf3bea1f5b85"
+    sha256 cellar: :any_skip_relocation, mojave:      "3add1c9d7ce619e937576a8f1b353cdc1a9c18d13cfe3cd600a2c24138f571a4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "aba2e2c5234909362bd382d56dc76ecd9024ece8c2eedc9f0c7832075935c4be"
   end
 
   depends_on "go" => :build
@@ -79,8 +78,8 @@ class Inlets < Formula
 
       # Basic --version test
       inlets_version = shell_output("#{bin}/inlets version")
-      assert_match /\s#{commit}$/, inlets_version
-      assert_match /\s#{version}$/, inlets_version
+      assert_match(/\s#{commit}$/, inlets_version)
+      assert_match(/\s#{version}$/, inlets_version)
 
       # Client/Server e2e test
       # This test involves establishing a client-server inlets tunnel on the

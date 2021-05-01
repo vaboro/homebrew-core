@@ -6,10 +6,9 @@ class GitRemoteGcrypt < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "40fe96f458da47660ec153c19efc0271f9f8bcd987cf328081873adecffd6a88" => :catalina
-    sha256 "c475f8f9a231038a1dcebdf37d14255ed9abb8e242cb0fe5a5216c3727ced1f1" => :mojave
-    sha256 "40fe96f458da47660ec153c19efc0271f9f8bcd987cf328081873adecffd6a88" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "40fe96f458da47660ec153c19efc0271f9f8bcd987cf328081873adecffd6a88"
+    sha256 cellar: :any_skip_relocation, mojave:      "c475f8f9a231038a1dcebdf37d14255ed9abb8e242cb0fe5a5216c3727ced1f1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "40fe96f458da47660ec153c19efc0271f9f8bcd987cf328081873adecffd6a88"
   end
 
   depends_on "docutils" => :build

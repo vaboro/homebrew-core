@@ -12,9 +12,9 @@ class GnuChess < Formula
   end
 
   bottle do
-    sha256 "85423112485c7dbe474c99c93008b8a7a7a8c9a9737bbda3e372fde8674cbef1" => :catalina
-    sha256 "4bc514e190844faa459fbbc204c7bdd4699cb6cd09011811ae0999429343f0da" => :mojave
-    sha256 "81883d1506513bdb4feff2617b492237aef06a2f17f3bd4eb81e68142c4d73af" => :high_sierra
+    sha256 catalina:    "85423112485c7dbe474c99c93008b8a7a7a8c9a9737bbda3e372fde8674cbef1"
+    sha256 mojave:      "4bc514e190844faa459fbbc204c7bdd4699cb6cd09011811ae0999429343f0da"
+    sha256 high_sierra: "81883d1506513bdb4feff2617b492237aef06a2f17f3bd4eb81e68142c4d73af"
   end
 
   head do

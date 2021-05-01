@@ -10,9 +10,9 @@ class Libgdata < Formula
   end
 
   bottle do
-    sha256 "c93f83c348b673c9768be22ae9e1119d5eb86ff94bd28e95976c2dca47f5defe" => :catalina
-    sha256 "e84e22686408f68d77b239d0cdc476f33e677f8aa66405ba4506513e31eafe2c" => :mojave
-    sha256 "0320d28747a36cf8451eff40a16bc25c9735e287888177c2c1f1ec93a835cf56" => :high_sierra
+    sha256 catalina:    "c93f83c348b673c9768be22ae9e1119d5eb86ff94bd28e95976c2dca47f5defe"
+    sha256 mojave:      "e84e22686408f68d77b239d0cdc476f33e677f8aa66405ba4506513e31eafe2c"
+    sha256 high_sierra: "0320d28747a36cf8451eff40a16bc25c9735e287888177c2c1f1ec93a835cf56"
   end
 
   depends_on "gobject-introspection" => :build

@@ -7,10 +7,9 @@ class Lc0 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b1cba1d650e0933b19fc8ef6f866af1d988dede7ecbd1c3d2cf97e2bb4b3db41" => :catalina
-    sha256 "bb4ae26a8b02c935e3f3e33e864223ea4d2b907df76ba3fbf07bc1f3b6b60fbd" => :mojave
-    sha256 "a3a61d73914a71d5633b08c9a10591d2bf2e4896fcfbd463fe21fa8a97d4f445" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b1cba1d650e0933b19fc8ef6f866af1d988dede7ecbd1c3d2cf97e2bb4b3db41"
+    sha256 cellar: :any_skip_relocation, mojave:      "bb4ae26a8b02c935e3f3e33e864223ea4d2b907df76ba3fbf07bc1f3b6b60fbd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a3a61d73914a71d5633b08c9a10591d2bf2e4896fcfbd463fe21fa8a97d4f445"
   end
 
   depends_on "meson" => :build
@@ -35,7 +34,7 @@ class Lc0 < Formula
   end
 
   test do
-    assert_match /^bestmove e2e4$/,
-      shell_output("lc0 benchmark --backend=blas --nodes=1 --num-positions=1")
+    assert_match(/^bestmove e2e4$/,
+      shell_output("lc0 benchmark --backend=blas --nodes=1 --num-positions=1"))
   end
 end

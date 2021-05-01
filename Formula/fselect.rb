@@ -6,10 +6,9 @@ class Fselect < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7efd5dc19e81217d688b06223c7803892cd95a906e842ab2000c0992ddf42ca1" => :catalina
-    sha256 "020cb9b7a9a051042deae41ed35583e44af1e00602646a665418e5127f6a3011" => :mojave
-    sha256 "2f25c750b2dbbf58ceddf122cbf681eb9368201bca13ed8f5664978f1eedd22b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7efd5dc19e81217d688b06223c7803892cd95a906e842ab2000c0992ddf42ca1"
+    sha256 cellar: :any_skip_relocation, mojave:      "020cb9b7a9a051042deae41ed35583e44af1e00602646a665418e5127f6a3011"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2f25c750b2dbbf58ceddf122cbf681eb9368201bca13ed8f5664978f1eedd22b"
   end
 
   depends_on "rust" => :build

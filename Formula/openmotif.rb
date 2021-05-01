@@ -10,11 +10,11 @@ class Openmotif < Formula
   end
 
   bottle do
-    sha256 "a997ddf37cc71329a09ca6616cbf0ef63bbe1a477a65a94781fdb72d8ec15822" => :catalina
-    sha256 "f9eec7b02d0e04b8a41a5c7e3b8c0096c9156100fe888ee663742dca1298f7c5" => :mojave
-    sha256 "ca0c7a96b098ed5efc2dace2cb1b9bc2447c8f1cf0780e882bfee691160466e0" => :high_sierra
-    sha256 "21120a7b3aab57d5660c480ab5f1924cbfb31e8625674bf02704971f103616f9" => :sierra
-    sha256 "bef02966fb2d72ac23235c8038cdf864cefe47d1cb905fac08a9194d7c9ed554" => :el_capitan
+    sha256 catalina:    "a997ddf37cc71329a09ca6616cbf0ef63bbe1a477a65a94781fdb72d8ec15822"
+    sha256 mojave:      "f9eec7b02d0e04b8a41a5c7e3b8c0096c9156100fe888ee663742dca1298f7c5"
+    sha256 high_sierra: "ca0c7a96b098ed5efc2dace2cb1b9bc2447c8f1cf0780e882bfee691160466e0"
+    sha256 sierra:      "21120a7b3aab57d5660c480ab5f1924cbfb31e8625674bf02704971f103616f9"
+    sha256 el_capitan:  "bef02966fb2d72ac23235c8038cdf864cefe47d1cb905fac08a9194d7c9ed554"
   end
 
   depends_on "pkg-config" => :build
@@ -39,6 +39,6 @@ class Openmotif < Formula
   end
 
   test do
-    assert_match /no source file specified/, pipe_output("#{bin}/uil 2>&1")
+    assert_match(/no source file specified/, pipe_output("#{bin}/uil 2>&1"))
   end
 end

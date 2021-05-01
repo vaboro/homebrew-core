@@ -6,12 +6,11 @@ class Nvi < Formula
   revision 5
 
   bottle do
-    cellar :any
-    sha256 "433ad12463c8b8f36f78295307d75b9886799b9dd924e2e483667c302a7a8b47" => :catalina
-    sha256 "b5ccb501038dfbb0e14241a2f5efe0c731e05ca0adc2690a473178252f5c0313" => :mojave
-    sha256 "dcaa5dd43e6edfc5c8188761cc8aad6b80a06abc7382b8ceac4d92498354b5c4" => :high_sierra
-    sha256 "1327ea05ec82ec05e9ec7b00b95ac3f7329b198a613385042a0814265b393f13" => :sierra
-    sha256 "e188b0a9fa040c6a11f7ed6338d28d96428e11cfa019aaa1d0aa69e0f2b87bc3" => :el_capitan
+    sha256 cellar: :any, catalina:    "433ad12463c8b8f36f78295307d75b9886799b9dd924e2e483667c302a7a8b47"
+    sha256 cellar: :any, mojave:      "b5ccb501038dfbb0e14241a2f5efe0c731e05ca0adc2690a473178252f5c0313"
+    sha256 cellar: :any, high_sierra: "dcaa5dd43e6edfc5c8188761cc8aad6b80a06abc7382b8ceac4d92498354b5c4"
+    sha256 cellar: :any, sierra:      "1327ea05ec82ec05e9ec7b00b95ac3f7329b198a613385042a0814265b393f13"
+    sha256 cellar: :any, el_capitan:  "e188b0a9fa040c6a11f7ed6338d28d96428e11cfa019aaa1d0aa69e0f2b87bc3"
   end
 
   depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.

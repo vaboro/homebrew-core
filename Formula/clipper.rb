@@ -6,11 +6,10 @@ class Clipper < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "6e16549f9930f652364f727cf42ea04608d92f172e7916c85900c3b6feb98df0" => :catalina
-    sha256 "2216327dbb3a341f14db9d2da767749d00e460917bcf1098665948e24eeb2e8b" => :mojave
-    sha256 "a2230d8cb54b244b82ea5f5c47cebabe2f63a6b9dc1b98d47cd4a0fcd4eb743f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6e16549f9930f652364f727cf42ea04608d92f172e7916c85900c3b6feb98df0"
+    sha256 cellar: :any_skip_relocation, mojave:      "2216327dbb3a341f14db9d2da767749d00e460917bcf1098665948e24eeb2e8b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a2230d8cb54b244b82ea5f5c47cebabe2f63a6b9dc1b98d47cd4a0fcd4eb743f"
   end
 
   depends_on "go" => :build

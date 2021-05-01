@@ -7,10 +7,10 @@ class Pinfo < Formula
   revision 1
 
   bottle do
-    sha256 "a41b568910292b2119d0f63f53d5015d781b03576a58f08d397535560d407bf5" => :catalina
-    sha256 "b81b1202add75d938802681618f5bf95dd245e03ff80f5f0ca67a5ba8b7bfb84" => :mojave
-    sha256 "84edf6ec00f570004abc6f3d0335196b513a4a52e589919ca1e70c35b31525cc" => :high_sierra
-    sha256 "9b8e3d359081d68626f86cab8b048926b6471f8ca1be8e47ca8625e22da5021f" => :sierra
+    sha256 catalina:    "a41b568910292b2119d0f63f53d5015d781b03576a58f08d397535560d407bf5"
+    sha256 mojave:      "b81b1202add75d938802681618f5bf95dd245e03ff80f5f0ca67a5ba8b7bfb84"
+    sha256 high_sierra: "84edf6ec00f570004abc6f3d0335196b513a4a52e589919ca1e70c35b31525cc"
+    sha256 sierra:      "9b8e3d359081d68626f86cab8b048926b6471f8ca1be8e47ca8625e22da5021f"
   end
 
   depends_on "autoconf" => :build

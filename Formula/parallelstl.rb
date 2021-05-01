@@ -7,10 +7,9 @@ class Parallelstl < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11" => :catalina
-    sha256 "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11" => :mojave
-    sha256 "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11"
+    sha256 cellar: :any_skip_relocation, mojave:      "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5b3837f32d57d6d5398da1127eb4bba489a85821ae32e125fc486edb3abbca11"
   end
 
   depends_on "cmake" => :build

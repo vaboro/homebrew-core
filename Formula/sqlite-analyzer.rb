@@ -7,10 +7,9 @@ class SqliteAnalyzer < Formula
   license "blessing"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9e59b093b696037bde52e57a1993961dde8233fbb7305157da8be0e54a986804" => :catalina
-    sha256 "c76502517f95848e816532390f2b9a49b0a49b304da4b534bf299161a94d60ce" => :mojave
-    sha256 "b43f737792c6eaaa3cb36af271d37bbb50e8f1232614ae38c314b84411616bc1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9e59b093b696037bde52e57a1993961dde8233fbb7305157da8be0e54a986804"
+    sha256 cellar: :any_skip_relocation, mojave:      "c76502517f95848e816532390f2b9a49b0a49b304da4b534bf299161a94d60ce"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b43f737792c6eaaa3cb36af271d37bbb50e8f1232614ae38c314b84411616bc1"
   end
 
   def install

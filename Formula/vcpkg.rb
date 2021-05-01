@@ -7,10 +7,9 @@ class Vcpkg < Formula
   head "https://github.com/microsoft/vcpkg.git"
 
   bottle do
-    cellar :any
-    sha256 "35363b2d066c920dcde30159e28b580e346f33064accaa79f789759816eef61a" => :catalina
-    sha256 "055f677516a5474e4964f7bb5fdb6f05e91913b8aea32aba56918cb7d31fe34b" => :mojave
-    sha256 "b1cab740efdb40b575553ad9bd96cd457482e16d0246315b69a996f753b72a85" => :high_sierra
+    sha256 cellar: :any, catalina:    "35363b2d066c920dcde30159e28b580e346f33064accaa79f789759816eef61a"
+    sha256 cellar: :any, mojave:      "055f677516a5474e4964f7bb5fdb6f05e91913b8aea32aba56918cb7d31fe34b"
+    sha256 cellar: :any, high_sierra: "b1cab740efdb40b575553ad9bd96cd457482e16d0246315b69a996f753b72a85"
   end
 
   depends_on "cmake" => :build

@@ -12,10 +12,9 @@ class Epstool < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3ef026d6cc575da86e43741df6a9f5419269bea22e8db6c6296811112678c690" => :catalina
-    sha256 "497608077aea90c569aab7929a8a9ea19d91ba70f4743d982bcb63c1d3a48d7b" => :mojave
-    sha256 "47ab226f0e5d93a3b91b43d519de370d046410946e280958ef9106fdbc4ef115" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3ef026d6cc575da86e43741df6a9f5419269bea22e8db6c6296811112678c690"
+    sha256 cellar: :any_skip_relocation, mojave:      "497608077aea90c569aab7929a8a9ea19d91ba70f4743d982bcb63c1d3a48d7b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "47ab226f0e5d93a3b91b43d519de370d046410946e280958ef9106fdbc4ef115"
   end
 
   depends_on "ghostscript"

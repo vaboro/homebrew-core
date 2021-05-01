@@ -10,11 +10,10 @@ class Theora < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 3
-    sha256 "69f9b7922ddae2c007ad5329d53067838e2208051f3a54926f8cb46a7753b1a3" => :catalina
-    sha256 "243d34cb232ae0f7b45d7e2973c247ae68a57d8a4c50a2ee9e2bc7aeeabe5c78" => :mojave
-    sha256 "4b5021649d047cbd556387ca6a8bd535cd8f9129be0a48f2d21bde8fb957a3b1" => :high_sierra
+    sha256 cellar: :any, catalina:    "69f9b7922ddae2c007ad5329d53067838e2208051f3a54926f8cb46a7753b1a3"
+    sha256 cellar: :any, mojave:      "243d34cb232ae0f7b45d7e2973c247ae68a57d8a4c50a2ee9e2bc7aeeabe5c78"
+    sha256 cellar: :any, high_sierra: "4b5021649d047cbd556387ca6a8bd535cd8f9129be0a48f2d21bde8fb957a3b1"
   end
 
   head do

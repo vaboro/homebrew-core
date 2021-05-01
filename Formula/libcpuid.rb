@@ -7,10 +7,9 @@ class Libcpuid < Formula
   head "https://github.com/anrieff/libcpuid.git"
 
   bottle do
-    cellar :any
-    sha256 "df477785b9f155d2ed62f8d9213301bbfe32235f2337eff3e1d549bec2f92a7a" => :catalina
-    sha256 "cad37d2a433cab21c1776b0815efa0dba907c31444d81c7770f27df296ff9cd9" => :mojave
-    sha256 "e1370567a0f5ea7504d2f254a1b375006a19f6b68a5948fb4d51febfdfd194cc" => :high_sierra
+    sha256 cellar: :any, catalina:    "df477785b9f155d2ed62f8d9213301bbfe32235f2337eff3e1d549bec2f92a7a"
+    sha256 cellar: :any, mojave:      "cad37d2a433cab21c1776b0815efa0dba907c31444d81c7770f27df296ff9cd9"
+    sha256 cellar: :any, high_sierra: "e1370567a0f5ea7504d2f254a1b375006a19f6b68a5948fb4d51febfdfd194cc"
   end
 
   depends_on "autoconf" => :build

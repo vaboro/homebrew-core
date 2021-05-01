@@ -11,9 +11,9 @@ class Texinfo < Formula
   end
 
   bottle do
-    sha256 "0686381d97b0448c10d11eaba59722c029d17c8423c17ad524b76ec086790f44" => :catalina
-    sha256 "419fccc89f850de008e954984c65eea9b7f82940178f7ee439e42c2c892a2e52" => :mojave
-    sha256 "a634a1bd15d3d7735e4934fcf26bfa295ce17108912ae7451d2761c6d578de6a" => :high_sierra
+    sha256 catalina:    "0686381d97b0448c10d11eaba59722c029d17c8423c17ad524b76ec086790f44"
+    sha256 mojave:      "419fccc89f850de008e954984c65eea9b7f82940178f7ee439e42c2c892a2e52"
+    sha256 high_sierra: "a634a1bd15d3d7735e4934fcf26bfa295ce17108912ae7451d2761c6d578de6a"
   end
 
   depends_on "gettext" if MacOS.version <= :high_sierra

@@ -12,9 +12,9 @@ class SourceHighlight < Formula
   end
 
   bottle do
-    sha256 "a53d8ff1e0e9631023af43429e7702319951a0cdecfdc186f59807ed94b69fc7" => :catalina
-    sha256 "1b6058fe3438ef1eaed5f9fd7d84c2e99a82f5dde673201b5987846734f425cd" => :mojave
-    sha256 "f54f7d667efc1887b15d0d9b0bc6cc144470a3f1030daadcdb7ff1caac1ba457" => :high_sierra
+    sha256 catalina:    "a53d8ff1e0e9631023af43429e7702319951a0cdecfdc186f59807ed94b69fc7"
+    sha256 mojave:      "1b6058fe3438ef1eaed5f9fd7d84c2e99a82f5dde673201b5987846734f425cd"
+    sha256 high_sierra: "f54f7d667efc1887b15d0d9b0bc6cc144470a3f1030daadcdb7ff1caac1ba457"
   end
 
   depends_on "boost"
@@ -29,6 +29,6 @@ class SourceHighlight < Formula
   end
 
   test do
-    assert_match /GNU Source-highlight #{version}/, shell_output("#{bin}/source-highlight -V")
+    assert_match(/GNU Source-highlight #{version}/, shell_output("#{bin}/source-highlight -V"))
   end
 end

@@ -13,9 +13,9 @@ class Softhsm < Formula
   end
 
   bottle do
-    sha256 "69963f95aad110c6dcadab15613ee928f1358b714d71f4e7252da9b885eac7cd" => :catalina
-    sha256 "4a17c51934b0adc317cfc49069d52b3fa2fcb9a852808a7b0dfe2de28cf4b3b3" => :mojave
-    sha256 "cd17fa2e8538ca99b5963d60074578c91839740e7f87cc292b9b8f4f67dd99d8" => :high_sierra
+    sha256 catalina:    "69963f95aad110c6dcadab15613ee928f1358b714d71f4e7252da9b885eac7cd"
+    sha256 mojave:      "4a17c51934b0adc317cfc49069d52b3fa2fcb9a852808a7b0dfe2de28cf4b3b3"
+    sha256 high_sierra: "cd17fa2e8538ca99b5963d60074578c91839740e7f87cc292b9b8f4f67dd99d8"
   end
 
   depends_on "openssl@1.1"

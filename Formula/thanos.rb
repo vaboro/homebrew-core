@@ -6,10 +6,9 @@ class Thanos < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8a70056641e1886b19b0478061f1771822f4201fdd96e06c7953b7842f3c1e83" => :catalina
-    sha256 "e4de7bdda7f6d433c32bbb00ffbba10d94a3870303b7165afd625f35f71062b9" => :mojave
-    sha256 "7425526c2c895f489da382413c7abadc89628a22e030f40b01b0f00e719ef13c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8a70056641e1886b19b0478061f1771822f4201fdd96e06c7953b7842f3c1e83"
+    sha256 cellar: :any_skip_relocation, mojave:      "e4de7bdda7f6d433c32bbb00ffbba10d94a3870303b7165afd625f35f71062b9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7425526c2c895f489da382413c7abadc89628a22e030f40b01b0f00e719ef13c"
   end
 
   depends_on "go" => :build

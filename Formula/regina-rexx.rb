@@ -9,9 +9,9 @@ class ReginaRexx < Formula
   end
 
   bottle do
-    sha256 "7d39d4158fe41ecbd85c8c05f27d1b291883730ae1b745e1920e14ab41dfa0dc" => :catalina
-    sha256 "396fe213db316516ff28a135217b9c660969244494cb8807111e71b37d5451c9" => :mojave
-    sha256 "c8e204d8fb1154c31a4be3d571f4bbcc9e9b9ec5406feb61be82f7c567f9c8a7" => :high_sierra
+    sha256 catalina:    "7d39d4158fe41ecbd85c8c05f27d1b291883730ae1b745e1920e14ab41dfa0dc"
+    sha256 mojave:      "396fe213db316516ff28a135217b9c660969244494cb8807111e71b37d5451c9"
+    sha256 high_sierra: "c8e204d8fb1154c31a4be3d571f4bbcc9e9b9ec5406feb61be82f7c567f9c8a7"
   end
 
   def install

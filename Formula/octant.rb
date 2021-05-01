@@ -8,10 +8,9 @@ class Octant < Formula
   head "https://github.com/vmware-tanzu/octant.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "045c41be854cf5f2ec83304604cfd15999c6388acf1dcd75aac9ae1e853fe49b" => :catalina
-    sha256 "296b65276242af120db56456c2ace8e2055d14bef0a098a87d4ff1bdd4d182f0" => :mojave
-    sha256 "9451ccb5b446694ac3d1c0f7053e01fade89337ee9aad425e3b1de64d645febe" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "045c41be854cf5f2ec83304604cfd15999c6388acf1dcd75aac9ae1e853fe49b"
+    sha256 cellar: :any_skip_relocation, mojave:      "296b65276242af120db56456c2ace8e2055d14bef0a098a87d4ff1bdd4d182f0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9451ccb5b446694ac3d1c0f7053e01fade89337ee9aad425e3b1de64d645febe"
   end
 
   depends_on "go" => :build

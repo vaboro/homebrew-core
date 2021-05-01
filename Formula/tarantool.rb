@@ -7,10 +7,9 @@ class Tarantool < Formula
   head "https://github.com/tarantool/tarantool.git", branch: "2.3", shallow: false
 
   bottle do
-    cellar :any
-    sha256 "e013978027f78ed680b09fd07ddc19045852ea6eb158a98af580826dd363cbb9" => :catalina
-    sha256 "8cd34bf1c2129621a127a59406037a18a2ebe2c3d11d08d8397766568d2057a4" => :mojave
-    sha256 "a66ae22addde4398e8d5300799c839ce404bae2925f2f94a0b95a0b40af7ac81" => :high_sierra
+    sha256 cellar: :any, catalina:    "e013978027f78ed680b09fd07ddc19045852ea6eb158a98af580826dd363cbb9"
+    sha256 cellar: :any, mojave:      "8cd34bf1c2129621a127a59406037a18a2ebe2c3d11d08d8397766568d2057a4"
+    sha256 cellar: :any, high_sierra: "a66ae22addde4398e8d5300799c839ce404bae2925f2f94a0b95a0b40af7ac81"
   end
 
   depends_on "autoconf" => :build

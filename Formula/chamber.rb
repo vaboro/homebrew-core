@@ -7,10 +7,9 @@ class Chamber < Formula
   head "https://github.com/segmentio/chamber.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8371eee8ce1d24a682597422a12b651ef6cdbabe3ef81c9678ee8f460401d063" => :catalina
-    sha256 "fe13b0ef1b110c43034f0e4ce3c414c68f199bcc5147ba2dda16608ab6673a05" => :mojave
-    sha256 "948c865eb11c46e8d662dad8db21f39d53476a99bfb5475aa1fdb68b5cd86201" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8371eee8ce1d24a682597422a12b651ef6cdbabe3ef81c9678ee8f460401d063"
+    sha256 cellar: :any_skip_relocation, mojave:      "fe13b0ef1b110c43034f0e4ce3c414c68f199bcc5147ba2dda16608ab6673a05"
+    sha256 cellar: :any_skip_relocation, high_sierra: "948c865eb11c46e8d662dad8db21f39d53476a99bfb5475aa1fdb68b5cd86201"
   end
 
   depends_on "go" => :build

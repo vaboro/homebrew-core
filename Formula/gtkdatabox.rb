@@ -10,10 +10,9 @@ class Gtkdatabox < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e85124ef7180c8803f8700e9269a47d3b5841c1cdace25e6914a50a0b7389dd1" => :catalina
-    sha256 "bfb185bdad65010d94e7ec0d343f11dafb0135adecf0480a43b705a54b062ff1" => :mojave
-    sha256 "f0b09b52354b68f4bc4e2d01dcd970f5f5f6f549141dd75af3734a9b3c1f0b2f" => :high_sierra
+    sha256 cellar: :any, catalina:    "e85124ef7180c8803f8700e9269a47d3b5841c1cdace25e6914a50a0b7389dd1"
+    sha256 cellar: :any, mojave:      "bfb185bdad65010d94e7ec0d343f11dafb0135adecf0480a43b705a54b062ff1"
+    sha256 cellar: :any, high_sierra: "f0b09b52354b68f4bc4e2d01dcd970f5f5f6f549141dd75af3734a9b3c1f0b2f"
   end
 
   depends_on "pkg-config" => :build

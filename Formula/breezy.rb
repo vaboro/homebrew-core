@@ -12,11 +12,10 @@ class Breezy < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "62d9eebeddd2d53cc2fd55a8279ef68569432e9efafd808c80b32960221d4591" => :catalina
-    sha256 "351b1dd293f3be714605174c0f1cd4d2baade3679a6f57b00c97b4f085d2291d" => :mojave
-    sha256 "3e8d6bc11b32867e0243b9459981358cdf3628314e89e3927b3cfb9fb1f767f8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "62d9eebeddd2d53cc2fd55a8279ef68569432e9efafd808c80b32960221d4591"
+    sha256 cellar: :any_skip_relocation, mojave:      "351b1dd293f3be714605174c0f1cd4d2baade3679a6f57b00c97b4f085d2291d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3e8d6bc11b32867e0243b9459981358cdf3628314e89e3927b3cfb9fb1f767f8"
   end
 
   depends_on "cython" => :build

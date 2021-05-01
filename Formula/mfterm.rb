@@ -7,10 +7,9 @@ class Mfterm < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "1c9230a17ab7102f4b171e37a972ade6c7e2d5708102a17ea5494be0b1d1a42e" => :catalina
-    sha256 "2b4c61222b70b25c523c6083efd85ff53f1187a6afd7d88115f12cb788fa6b13" => :mojave
-    sha256 "c481733fcc5f8057aac9fa38d5445a88e6faf54a016533bcc72eba2335d9754b" => :high_sierra
+    sha256 cellar: :any, catalina:    "1c9230a17ab7102f4b171e37a972ade6c7e2d5708102a17ea5494be0b1d1a42e"
+    sha256 cellar: :any, mojave:      "2b4c61222b70b25c523c6083efd85ff53f1187a6afd7d88115f12cb788fa6b13"
+    sha256 cellar: :any, high_sierra: "c481733fcc5f8057aac9fa38d5445a88e6faf54a016533bcc72eba2335d9754b"
   end
 
   head do

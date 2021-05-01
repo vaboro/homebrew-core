@@ -7,10 +7,9 @@ class Dsvpn < Formula
   head "https://github.com/jedisct1/dsvpn.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a08464eca0167991c580594ecd9f1893a7be6d1cb522ceb385ff1883dca507c3" => :catalina
-    sha256 "31a8359d756b673788aad04e1b776c0e1d5b6331f7e64494d3c6680280ea11ec" => :mojave
-    sha256 "d34ff5d83b0b259c5051de2e2e8cf4599679d1d7e61dd282065afb0516fe62b1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a08464eca0167991c580594ecd9f1893a7be6d1cb522ceb385ff1883dca507c3"
+    sha256 cellar: :any_skip_relocation, mojave:      "31a8359d756b673788aad04e1b776c0e1d5b6331f7e64494d3c6680280ea11ec"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d34ff5d83b0b259c5051de2e2e8cf4599679d1d7e61dd282065afb0516fe62b1"
   end
 
   def install

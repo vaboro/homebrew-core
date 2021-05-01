@@ -6,10 +6,9 @@ class Libspng < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "ec4ab7110d00fffa808a99bdbbc3a2c6715de32b37f26c2815f1b5cfd2811f94" => :catalina
-    sha256 "f4f385dc73f061ffa6c90e1a6083c0c855ec3c6c91f844e241e52ce9cc016669" => :mojave
-    sha256 "825c72b4148b1d39003ba95a0b10bf7cf020c6b4144858eaaa97ce6dbdd6bace" => :high_sierra
+    sha256 cellar: :any, catalina:    "ec4ab7110d00fffa808a99bdbbc3a2c6715de32b37f26c2815f1b5cfd2811f94"
+    sha256 cellar: :any, mojave:      "f4f385dc73f061ffa6c90e1a6083c0c855ec3c6c91f844e241e52ce9cc016669"
+    sha256 cellar: :any, high_sierra: "825c72b4148b1d39003ba95a0b10bf7cf020c6b4144858eaaa97ce6dbdd6bace"
   end
 
   depends_on "meson" => :build

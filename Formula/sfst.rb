@@ -6,10 +6,9 @@ class Sfst < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "84cf35e5f7804382eac45103635c4f1584e3c2dbdb675ee1ad432cc47dd5a2a0" => :catalina
-    sha256 "a956b48189601556994daa06e47f9b287419de7aecd893912309e05aca32fec0" => :mojave
-    sha256 "1036f8a78616f1c3ade380ac0c240dd68598f976cb4d937ef06b88c607a14be3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "84cf35e5f7804382eac45103635c4f1584e3c2dbdb675ee1ad432cc47dd5a2a0"
+    sha256 cellar: :any_skip_relocation, mojave:      "a956b48189601556994daa06e47f9b287419de7aecd893912309e05aca32fec0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1036f8a78616f1c3ade380ac0c240dd68598f976cb4d937ef06b88c607a14be3"
   end
 
   def install

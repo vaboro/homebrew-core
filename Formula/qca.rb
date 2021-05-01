@@ -23,10 +23,9 @@ class Qca < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "2a841d8b078e42054b374449de243111a63a150b90381bd080349952f8335599" => :catalina
-    sha256 "c44e0329bf19868a6b06da56b370e411ee7d5dff8c0532e1a40a0720dc54f30e" => :mojave
-    sha256 "7c5bb96e14843f75764c83eec5a6fde61e5c53cdab6e9ac5f02fce94acff75c6" => :high_sierra
+    sha256 cellar: :any, catalina:    "2a841d8b078e42054b374449de243111a63a150b90381bd080349952f8335599"
+    sha256 cellar: :any, mojave:      "c44e0329bf19868a6b06da56b370e411ee7d5dff8c0532e1a40a0720dc54f30e"
+    sha256 cellar: :any, high_sierra: "7c5bb96e14843f75764c83eec5a6fde61e5c53cdab6e9ac5f02fce94acff75c6"
   end
 
   depends_on "cmake" => :build

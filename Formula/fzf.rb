@@ -7,10 +7,9 @@ class Fzf < Formula
   head "https://github.com/junegunn/fzf.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cbb9e58e5e31c066239bef3997685b7d329e5b404d6f975cb5fdc7d2267bbe95" => :catalina
-    sha256 "dffc3afebed9d1cf1ca65bbd5c3bd691d58f642b834b3be620fb0019ac3ba947" => :mojave
-    sha256 "2ffc38ada61090825862af5b7839a8297013a1f331ebfec94faeb6ca4541e35b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "cbb9e58e5e31c066239bef3997685b7d329e5b404d6f975cb5fdc7d2267bbe95"
+    sha256 cellar: :any_skip_relocation, mojave:      "dffc3afebed9d1cf1ca65bbd5c3bd691d58f642b834b3be620fb0019ac3ba947"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2ffc38ada61090825862af5b7839a8297013a1f331ebfec94faeb6ca4541e35b"
   end
 
   depends_on "go" => :build

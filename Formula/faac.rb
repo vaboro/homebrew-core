@@ -10,12 +10,11 @@ class Faac < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "5687b72d43334c52e8b4daa4eda547d9541812807bf7b89d63be9a1e487ae78f" => :catalina
-    sha256 "27f7a5da217b0cb75caa8fd33bd19dc5a1f741b290f30b0c5491bc3a84aed38c" => :mojave
-    sha256 "73e02bf58df497bf2c35e8374c000fc8ed989c167b559b9efe2f5874687fe849" => :high_sierra
-    sha256 "9ed007e0aaeaddb47d284a81f2783c6ddcf9af86e0ed1da1a9b94aa84dfd1a34" => :sierra
-    sha256 "4dd46a72ce3a5355efa42038df34b9bfda51ae6265be89eb09f1b8957ef3653d" => :el_capitan
+    sha256 cellar: :any, catalina:    "5687b72d43334c52e8b4daa4eda547d9541812807bf7b89d63be9a1e487ae78f"
+    sha256 cellar: :any, mojave:      "27f7a5da217b0cb75caa8fd33bd19dc5a1f741b290f30b0c5491bc3a84aed38c"
+    sha256 cellar: :any, high_sierra: "73e02bf58df497bf2c35e8374c000fc8ed989c167b559b9efe2f5874687fe849"
+    sha256 cellar: :any, sierra:      "9ed007e0aaeaddb47d284a81f2783c6ddcf9af86e0ed1da1a9b94aa84dfd1a34"
+    sha256 cellar: :any, el_capitan:  "4dd46a72ce3a5355efa42038df34b9bfda51ae6265be89eb09f1b8957ef3653d"
   end
 
   def install

@@ -6,10 +6,9 @@ class Immudb < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bfbce54ccbcaf6d248b364617f027f480c8ba433663157fdd9dc3f3df976c341" => :catalina
-    sha256 "f8259385cafe85d377618b9eb62487242e4750fd12182aef30a81e6cd0a4ae4f" => :mojave
-    sha256 "d1d91c2269d7d53b1c61377a870af664f9f3d93e33eb6de3ecea24b9a1be2705" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bfbce54ccbcaf6d248b364617f027f480c8ba433663157fdd9dc3f3df976c341"
+    sha256 cellar: :any_skip_relocation, mojave:      "f8259385cafe85d377618b9eb62487242e4750fd12182aef30a81e6cd0a4ae4f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d1d91c2269d7d53b1c61377a870af664f9f3d93e33eb6de3ecea24b9a1be2705"
   end
 
   depends_on "go" => :build

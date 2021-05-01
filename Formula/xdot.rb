@@ -12,10 +12,9 @@ class Xdot < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4" => :catalina
-    sha256 "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4" => :mojave
-    sha256 "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4"
+    sha256 cellar: :any_skip_relocation, mojave:      "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a92e47d64ecc06ba29af228325bb6ca78f063e410a26a5458e016660a600b3b4"
   end
 
   depends_on "adwaita-icon-theme"

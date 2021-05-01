@@ -7,10 +7,9 @@ class Eureka < Formula
   head "https://github.com/simeg/eureka.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "78923a432ed0b00a266aba6680ad1b1c948e7c31a74b32babad1ffe45bc7dc20" => :catalina
-    sha256 "88b2371865f81cf092a3ab85c757bba880a3e3aef9c379ef880972fb75f80d93" => :mojave
-    sha256 "ef7f1bde80157ad17a9a789028bd0b0fee6e62f93f66b545a15c8bd753a58767" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "78923a432ed0b00a266aba6680ad1b1c948e7c31a74b32babad1ffe45bc7dc20"
+    sha256 cellar: :any_skip_relocation, mojave:      "88b2371865f81cf092a3ab85c757bba880a3e3aef9c379ef880972fb75f80d93"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ef7f1bde80157ad17a9a789028bd0b0fee6e62f93f66b545a15c8bd753a58767"
   end
 
   depends_on "rust" => :build

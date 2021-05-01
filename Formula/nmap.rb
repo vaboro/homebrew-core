@@ -14,9 +14,9 @@ class Nmap < Formula
 
   bottle do
     rebuild 1
-    sha256 "e1ba8b92c348e3d04c89f4ffc50800d480dd45ca34726a4f7e3fe7974b0bb651" => :catalina
-    sha256 "fb166b6d77a7a1df2a38a58f5123d51bd3ace308c736094c2c9b5a2591f405ee" => :mojave
-    sha256 "8edad05b0f4fc20552dd6c1b573a7fa6bf2d03568b014ee60c1153980fb43649" => :high_sierra
+    sha256 catalina:    "e1ba8b92c348e3d04c89f4ffc50800d480dd45ca34726a4f7e3fe7974b0bb651"
+    sha256 mojave:      "fb166b6d77a7a1df2a38a58f5123d51bd3ace308c736094c2c9b5a2591f405ee"
+    sha256 high_sierra: "8edad05b0f4fc20552dd6c1b573a7fa6bf2d03568b014ee60c1153980fb43649"
   end
 
   depends_on "openssl@1.1"

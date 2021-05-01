@@ -8,10 +8,9 @@ class Lbzip2 < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6643ba1c0f17a13e742383c69112df62c1d6bce80e6833d717df4e112922deb5" => :catalina
-    sha256 "5f7f053aac95586cdcacb2528fe4540bd16522707e9d7bbbf8e6d38012378e06" => :mojave
-    sha256 "3d4e0de242b81f83ba2addd163688647288fb17f3a3ae3ccd37a2e62f20871d4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6643ba1c0f17a13e742383c69112df62c1d6bce80e6833d717df4e112922deb5"
+    sha256 cellar: :any_skip_relocation, mojave:      "5f7f053aac95586cdcacb2528fe4540bd16522707e9d7bbbf8e6d38012378e06"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3d4e0de242b81f83ba2addd163688647288fb17f3a3ae3ccd37a2e62f20871d4"
   end
 
   # Fix crash on macOS >= 10.13.

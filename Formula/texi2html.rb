@@ -10,11 +10,10 @@ class Texi2html < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb" => :catalina
-    sha256 "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb" => :mojave
-    sha256 "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
+    sha256 cellar: :any_skip_relocation, mojave:      "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
   end
 
   depends_on "gettext"
@@ -35,6 +34,6 @@ class Texi2html < Formula
       @bye
     EOS
     system "#{bin}/texi2html", "test.texinfo"
-    assert_match /Hello World!/, File.read("test.html")
+    assert_match(/Hello World!/, File.read("test.html"))
   end
 end

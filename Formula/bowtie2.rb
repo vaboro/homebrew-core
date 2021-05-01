@@ -6,10 +6,9 @@ class Bowtie2 < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "fd107ab602165eac36dc748124cc6688f8eccf63ff9a64ebcf82fa4db45b5788" => :catalina
-    sha256 "ca70730942c77835fc3ee267dd6c284d51351af0f59db282876ca9ada2ce4672" => :mojave
-    sha256 "61597b46c1e6bd55d74c89e107342c4bdb5014d3a7ea37628d544b6f429bef9c" => :high_sierra
+    sha256 cellar: :any, catalina:    "fd107ab602165eac36dc748124cc6688f8eccf63ff9a64ebcf82fa4db45b5788"
+    sha256 cellar: :any, mojave:      "ca70730942c77835fc3ee267dd6c284d51351af0f59db282876ca9ada2ce4672"
+    sha256 cellar: :any, high_sierra: "61597b46c1e6bd55d74c89e107342c4bdb5014d3a7ea37628d544b6f429bef9c"
   end
 
   depends_on "tbb"

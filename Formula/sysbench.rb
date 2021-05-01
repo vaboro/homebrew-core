@@ -6,10 +6,9 @@ class Sysbench < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "2ca0e854823e63ecf84b27d81d0ea722aeae784fed39b436fed738fcd4450489" => :catalina
-    sha256 "ec55acf85be8a3cfbd57a72f1d67aad2104e545ec32464010d673c205075c809" => :mojave
-    sha256 "84363a4b7267f936a6e168fb4ed30fa21970ff1483bb81a5fba2bbe25d611cfc" => :high_sierra
+    sha256 cellar: :any, catalina:    "2ca0e854823e63ecf84b27d81d0ea722aeae784fed39b436fed738fcd4450489"
+    sha256 cellar: :any, mojave:      "ec55acf85be8a3cfbd57a72f1d67aad2104e545ec32464010d673c205075c809"
+    sha256 cellar: :any, high_sierra: "84363a4b7267f936a6e168fb4ed30fa21970ff1483bb81a5fba2bbe25d611cfc"
   end
 
   depends_on "autoconf" => :build

@@ -7,10 +7,9 @@ class AmqpCpp < Formula
   head "https://github.com/CopernicaMarketingSoftware/AMQP-CPP.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1bc7470b4ede09d2c270b3581f0e0c791943f050be7c2695dfc6f983a5dfc93a" => :catalina
-    sha256 "dc608777daa46c2b4ac309992b6e958446e812efcd511f4670cef9dc9cf10aeb" => :mojave
-    sha256 "2e4c08dc2967f679c6dc9179dd6d1513309843bf40ab56fee369f863a44e3912" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1bc7470b4ede09d2c270b3581f0e0c791943f050be7c2695dfc6f983a5dfc93a"
+    sha256 cellar: :any_skip_relocation, mojave:      "dc608777daa46c2b4ac309992b6e958446e812efcd511f4670cef9dc9cf10aeb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2e4c08dc2967f679c6dc9179dd6d1513309843bf40ab56fee369f863a44e3912"
   end
 
   depends_on "cmake" => :build

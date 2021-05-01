@@ -10,9 +10,9 @@ class Clutter < Formula
   end
 
   bottle do
-    sha256 "ccec39ce9c941de753798e466b8cfc2a69612319d8b5a422f6e4bde49db305b1" => :catalina
-    sha256 "43da6f50107059a3c9b215e77d29724f9e71a17fd89f5e72a200cd021e32f471" => :mojave
-    sha256 "2a1f93e956dbfc9dc4f3c47dd8923b224ed155f3b8dbf32df74f365a65052bbb" => :high_sierra
+    sha256 catalina:    "ccec39ce9c941de753798e466b8cfc2a69612319d8b5a422f6e4bde49db305b1"
+    sha256 mojave:      "43da6f50107059a3c9b215e77d29724f9e71a17fd89f5e72a200cd021e32f471"
+    sha256 high_sierra: "2a1f93e956dbfc9dc4f3c47dd8923b224ed155f3b8dbf32df74f365a65052bbb"
   end
 
   depends_on "gobject-introspection" => :build

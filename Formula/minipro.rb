@@ -6,10 +6,9 @@ class Minipro < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "eca0b4a6206491f7d429f75032bf16312078ac7bd36fffc8b97dc19b9999dbc4" => :catalina
-    sha256 "a636a9d69994308ecc1340ed93285171e04c5c25f3ad7c970d31d11e7c6123cd" => :mojave
-    sha256 "0969900d68207aab7fc9edca1d49f8816d2bf48a754af904ffa57466463b9c28" => :high_sierra
+    sha256 cellar: :any, catalina:    "eca0b4a6206491f7d429f75032bf16312078ac7bd36fffc8b97dc19b9999dbc4"
+    sha256 cellar: :any, mojave:      "a636a9d69994308ecc1340ed93285171e04c5c25f3ad7c970d31d11e7c6123cd"
+    sha256 cellar: :any, high_sierra: "0969900d68207aab7fc9edca1d49f8816d2bf48a754af904ffa57466463b9c28"
   end
 
   depends_on "pkg-config" => :build
@@ -28,8 +27,8 @@ class Minipro < Formula
     assert_match "miniprohex by Al Williams", output_miniprohex
 
     output_minipro_read_nonexistent = shell_output("#{bin}/minipro -p \"ST21C325@DIP7\" -b 2>&1", 1)
-    if (!output_minipro_read_nonexistent.include? "Device ST21C325@DIP7 not found!") &&
-       (!output_minipro_read_nonexistent.include? "Error opening device")
+    if output_minipro_read_nonexistent.exclude?("Device ST21C325@DIP7 not found!") &&
+       output_minipro_read_nonexistent.exclude?("Error opening device")
       raise "Error validating minipro device database."
     end
   end

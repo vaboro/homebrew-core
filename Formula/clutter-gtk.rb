@@ -10,9 +10,9 @@ class ClutterGtk < Formula
   end
 
   bottle do
-    sha256 "4b5c17d3567f1a5c03f98ccc8d9275f07fa733770d4ee741800505b8894442a1" => :catalina
-    sha256 "665ed256370965e0f1e8660bf1f0372a7e5a9ea0fde176c06cb4c8e390a0739c" => :mojave
-    sha256 "90929f36d6105b2b046e32f2d661c91305b785da535a7654fde19eb89617008e" => :high_sierra
+    sha256 catalina:    "4b5c17d3567f1a5c03f98ccc8d9275f07fa733770d4ee741800505b8894442a1"
+    sha256 mojave:      "665ed256370965e0f1e8660bf1f0372a7e5a9ea0fde176c06cb4c8e390a0739c"
+    sha256 high_sierra: "90929f36d6105b2b046e32f2d661c91305b785da535a7654fde19eb89617008e"
   end
 
   depends_on "gobject-introspection" => :build

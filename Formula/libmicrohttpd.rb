@@ -10,10 +10,9 @@ class Libmicrohttpd < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "4b726d32231d5178a6e9fb1eff7a4a2e27776fe434fb5e40ecff377ac300719c" => :catalina
-    sha256 "03c40981973ceca4b9efbe13d28254378fceba98b45470492a9d677595ce1d0c" => :mojave
-    sha256 "87f16499f102b9bf25d31bce38bd396d0d09a8517b036ba2ad57bf9ace7709a5" => :high_sierra
+    sha256 cellar: :any, catalina:    "4b726d32231d5178a6e9fb1eff7a4a2e27776fe434fb5e40ecff377ac300719c"
+    sha256 cellar: :any, mojave:      "03c40981973ceca4b9efbe13d28254378fceba98b45470492a9d677595ce1d0c"
+    sha256 cellar: :any, high_sierra: "87f16499f102b9bf25d31bce38bd396d0d09a8517b036ba2ad57bf9ace7709a5"
   end
 
   depends_on "gnutls"
@@ -33,6 +32,6 @@ class Libmicrohttpd < Formula
       "return 0",
       "printf(\"daemon %p\", daemon) ; return 0"
     system ENV.cc, "-o", "foo", "simplepost.c", "-I#{include}", "-L#{lib}", "-lmicrohttpd"
-    assert_match /daemon 0x[0-9a-f]+[1-9a-f]+/, pipe_output("./foo")
+    assert_match(/daemon 0x[0-9a-f]+[1-9a-f]+/, pipe_output("./foo"))
   end
 end

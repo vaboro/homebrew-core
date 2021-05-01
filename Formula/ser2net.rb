@@ -11,10 +11,9 @@ class Ser2net < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ae75303b4163f8f89366652ef7fafea5af5e158cb8f38b60ba11d71802f5b437" => :catalina
-    sha256 "05f13e77292479fa8f605d854fe853d57b078b3afee2038c1bdf12470e670664" => :mojave
-    sha256 "5888f6158084ff46d3d863ad468dd0a776bc84116a7100a85e5b9fbbfc781291" => :high_sierra
+    sha256 cellar: :any, catalina:    "ae75303b4163f8f89366652ef7fafea5af5e158cb8f38b60ba11d71802f5b437"
+    sha256 cellar: :any, mojave:      "05f13e77292479fa8f605d854fe853d57b078b3afee2038c1bdf12470e670664"
+    sha256 cellar: :any, high_sierra: "5888f6158084ff46d3d863ad468dd0a776bc84116a7100a85e5b9fbbfc781291"
   end
 
   depends_on "libyaml"

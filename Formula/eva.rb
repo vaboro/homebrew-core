@@ -7,10 +7,9 @@ class Eva < Formula
   head "https://github.com/NerdyPepper/eva.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "351a6e7946aa8597d3c321b47aec89d487f49261146dc1f04cdaadb380f5021a" => :catalina
-    sha256 "efed876746895ddcf247f4c90d7b90f1333129d8cc8f789789555045047e1260" => :mojave
-    sha256 "706a6ad7ac61b8e8e1247fe1b52ead8c6c5b7b76fe750148a6a38904f3a4ef23" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "351a6e7946aa8597d3c321b47aec89d487f49261146dc1f04cdaadb380f5021a"
+    sha256 cellar: :any_skip_relocation, mojave:      "efed876746895ddcf247f4c90d7b90f1333129d8cc8f789789555045047e1260"
+    sha256 cellar: :any_skip_relocation, high_sierra: "706a6ad7ac61b8e8e1247fe1b52ead8c6c5b7b76fe750148a6a38904f3a4ef23"
   end
 
   depends_on "rust" => :build

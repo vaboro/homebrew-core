@@ -1,5 +1,5 @@
 class Gedit < Formula
-  desc "The GNOME text editor"
+  desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
   url "https://download.gnome.org/sources/gedit/3.38/gedit-3.38.0.tar.xz"
   sha256 "46cf06806de58f6e5e95e34fd98ad0b2c0c50b3dae6d23ca57d16d5cc41856f8"
@@ -10,9 +10,9 @@ class Gedit < Formula
   end
 
   bottle do
-    sha256 "20f526cd2c9cd65e6d3d5745291abab24e90da2297ba9cf3d968fb0a8bca61f1" => :catalina
-    sha256 "829baca554b2379332b40b23726cd07ea5df9c3bb0cde67b91e215aef73fd67f" => :mojave
-    sha256 "4466c99c2f70ddcacda0dd99c52bbc5d0f7094e4153144e8c20ae0300b2dabce" => :high_sierra
+    sha256 catalina:    "20f526cd2c9cd65e6d3d5745291abab24e90da2297ba9cf3d968fb0a8bca61f1"
+    sha256 mojave:      "829baca554b2379332b40b23726cd07ea5df9c3bb0cde67b91e215aef73fd67f"
+    sha256 high_sierra: "4466c99c2f70ddcacda0dd99c52bbc5d0f7094e4153144e8c20ae0300b2dabce"
   end
 
   depends_on "itstool" => :build

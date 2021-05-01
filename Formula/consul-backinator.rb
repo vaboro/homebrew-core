@@ -7,12 +7,11 @@ class ConsulBackinator < Formula
   head "https://github.com/myENA/consul-backinator.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "576e5b76d9ea50e2e68d6aa48ee434d26654a08f4c17f4dbb720aeafe59abc19" => :catalina
-    sha256 "b7504895bfee3e1f3c9318de55a7c60cb256d3d433766f3178fcea7260c04863" => :mojave
-    sha256 "f77ec3bd0fa7598d79ca30469140e989ddae59dbb5512d0aa22f0c21190dcd02" => :high_sierra
-    sha256 "c52eaf11b850dea9c74b96d94157d25ee1912e52423628105c8b8d9240a2e52a" => :sierra
-    sha256 "bb39c88ad9e3e5aa6b12ea08bbd6ec2b31601d0c14f943aaaf10bfcf14cc5b8d" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "576e5b76d9ea50e2e68d6aa48ee434d26654a08f4c17f4dbb720aeafe59abc19"
+    sha256 cellar: :any_skip_relocation, mojave:      "b7504895bfee3e1f3c9318de55a7c60cb256d3d433766f3178fcea7260c04863"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f77ec3bd0fa7598d79ca30469140e989ddae59dbb5512d0aa22f0c21190dcd02"
+    sha256 cellar: :any_skip_relocation, sierra:      "c52eaf11b850dea9c74b96d94157d25ee1912e52423628105c8b8d9240a2e52a"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "bb39c88ad9e3e5aa6b12ea08bbd6ec2b31601d0c14f943aaaf10bfcf14cc5b8d"
   end
 
   depends_on "glide" => :build

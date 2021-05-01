@@ -11,11 +11,10 @@ class Minidlna < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "9c63cdc32709d5a6d837a58114a9f856395f1587cce6635a0d159587ccd3d474" => :catalina
-    sha256 "9e63dd6d1d5dc2725c63e3b0496ca8ce24c9499513d981ff8ee4542948eab6ce" => :mojave
-    sha256 "01b76bd1171aa3d056296186cf4ff88989c75033e379b88a8e3487fbbb299137" => :high_sierra
+    sha256 cellar: :any, catalina:    "9c63cdc32709d5a6d837a58114a9f856395f1587cce6635a0d159587ccd3d474"
+    sha256 cellar: :any, mojave:      "9e63dd6d1d5dc2725c63e3b0496ca8ce24c9499513d981ff8ee4542948eab6ce"
+    sha256 cellar: :any, high_sierra: "01b76bd1171aa3d056296186cf4ff88989c75033e379b88a8e3487fbbb299137"
   end
 
   head do
@@ -115,6 +114,6 @@ class Minidlna < Formula
     end
     sleep 2
 
-    assert_match /MiniDLNA #{version}/, shell_output("curl localhost:#{port}")
+    assert_match(/MiniDLNA #{version}/, shell_output("curl localhost:#{port}"))
   end
 end

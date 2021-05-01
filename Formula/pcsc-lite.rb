@@ -10,10 +10,9 @@ class PcscLite < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "650bd1cb922417a5ef04f6667261e9b11393ebbd24750f6332ed067716a5e192" => :catalina
-    sha256 "fca41c0447251ec74156c0dd68e6b38b695d9f14d7176c329964c223cfb983e6" => :mojave
-    sha256 "4fc95dd4040b9ac313724c6db99937949dc18013c8a59839f806885e0d5e2e50" => :high_sierra
+    sha256 cellar: :any, catalina:    "650bd1cb922417a5ef04f6667261e9b11393ebbd24750f6332ed067716a5e192"
+    sha256 cellar: :any, mojave:      "fca41c0447251ec74156c0dd68e6b38b695d9f14d7176c329964c223cfb983e6"
+    sha256 cellar: :any, high_sierra: "4fc95dd4040b9ac313724c6db99937949dc18013c8a59839f806885e0d5e2e50"
   end
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"

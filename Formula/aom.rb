@@ -7,11 +7,10 @@ class Aom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "c4a83e9bc36bc1fe6633d8a4fef10436e5c79e825352e6562d776dcff6dbcd08" => :catalina
-    sha256 "96537ef620ea5035ffbb643db83edc9fc7e7995fbcd08ebd16fef74d5e17b411" => :mojave
-    sha256 "39d14687b9a45a50f921a19e23b935799d052686854bb247ed59235bcc28c59d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c4a83e9bc36bc1fe6633d8a4fef10436e5c79e825352e6562d776dcff6dbcd08"
+    sha256 cellar: :any_skip_relocation, mojave:      "96537ef620ea5035ffbb643db83edc9fc7e7995fbcd08ebd16fef74d5e17b411"
+    sha256 cellar: :any_skip_relocation, high_sierra: "39d14687b9a45a50f921a19e23b935799d052686854bb247ed59235bcc28c59d"
   end
 
   depends_on "cmake" => :build

@@ -9,10 +9,9 @@ class ZabbixCli < Formula
   head "https://github.com/unioslo/zabbix-cli.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3ce4d420b9ddaf208d8cdc5c1b22358ac39f1cd4e6473bb2765bbedb5eb82c9d" => :catalina
-    sha256 "b663824f576794bc31d1d55ebcce1d2352cc1c3675d0c75f957d7f410e8ca766" => :mojave
-    sha256 "6158e91d1699b5117714310bdf8850e185eb9b358c70d3a89a6d0fefd7856482" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3ce4d420b9ddaf208d8cdc5c1b22358ac39f1cd4e6473bb2765bbedb5eb82c9d"
+    sha256 cellar: :any_skip_relocation, mojave:      "b663824f576794bc31d1d55ebcce1d2352cc1c3675d0c75f957d7f410e8ca766"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6158e91d1699b5117714310bdf8850e185eb9b358c70d3a89a6d0fefd7856482"
   end
 
   depends_on "python@3.8"

@@ -6,10 +6,9 @@ class GoBindata < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2b83e2976473f2310d488db6c3b20c27c844ce0eae86d2787fb1f5081da7fc98" => :catalina
-    sha256 "658b8c27208d0e31241c811ea52fde269354d79804e95db8fc6bf9b9dd5f89c5" => :mojave
-    sha256 "e2c10e8a03c3393d7500bd085e2a9f36285ccd75cd38a989517c2aaba55f5586" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2b83e2976473f2310d488db6c3b20c27c844ce0eae86d2787fb1f5081da7fc98"
+    sha256 cellar: :any_skip_relocation, mojave:      "658b8c27208d0e31241c811ea52fde269354d79804e95db8fc6bf9b9dd5f89c5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e2c10e8a03c3393d7500bd085e2a9f36285ccd75cd38a989517c2aaba55f5586"
   end
 
   depends_on "go"

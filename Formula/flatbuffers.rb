@@ -7,10 +7,9 @@ class Flatbuffers < Formula
   head "https://github.com/google/flatbuffers.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6af7ac37134539beb7c1003bd2cf8d1e530606cac616239acf4d2b1df31b0dbc" => :catalina
-    sha256 "270bebda4048754554cd587d48db10ee5fe1a2795ef6e881cafd1b8f90c7af78" => :mojave
-    sha256 "f45982e6ca71b10e59c607b9d984108e1b18fc84b8c52dd23325b6b9211e407f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6af7ac37134539beb7c1003bd2cf8d1e530606cac616239acf4d2b1df31b0dbc"
+    sha256 cellar: :any_skip_relocation, mojave:      "270bebda4048754554cd587d48db10ee5fe1a2795ef6e881cafd1b8f90c7af78"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f45982e6ca71b10e59c607b9d984108e1b18fc84b8c52dd23325b6b9211e407f"
   end
 
   depends_on "cmake" => :build

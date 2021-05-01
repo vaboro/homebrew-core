@@ -6,10 +6,9 @@ class UtilLinux < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "b2b01c8554fdc4071e16bbe74c2956bdeb748b1a62eef4e6314aad005d7227c7" => :catalina
-    sha256 "55bcb266293b3780e934b4cabf6885247fdd2d40bf7a27715142b263de3256d4" => :mojave
-    sha256 "c464328c920e63e017ef642aefed04ad9d34c755064e9ce41d6362b1d119f74a" => :high_sierra
+    sha256 cellar: :any, catalina:    "b2b01c8554fdc4071e16bbe74c2956bdeb748b1a62eef4e6314aad005d7227c7"
+    sha256 cellar: :any, mojave:      "55bcb266293b3780e934b4cabf6885247fdd2d40bf7a27715142b263de3256d4"
+    sha256 cellar: :any, high_sierra: "c464328c920e63e017ef642aefed04ad9d34c755064e9ce41d6362b1d119f74a"
   end
 
   keg_only "macOS provides the uuid.h header"
@@ -98,7 +97,7 @@ class UtilLinux < Formula
       sum.insert 0, ((stat.mode & (2 ** index)).zero? ? "-" : flag)
     end
 
-    out = shell_output("#{bin}/namei -lx /usr").split("\n").last.split(" ")
+    out = shell_output("#{bin}/namei -lx /usr").split("\n").last.split
     assert_equal ["d#{perms}", owner, group, "usr"], out
   end
 end

@@ -6,10 +6,9 @@ class Draco < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "54ea5852087b08f08945c7a73f6fc3b9d91958e6f23685c9848e08c2bce1ac03" => :catalina
-    sha256 "cd40c18a7c54185a154785e7245ae1b3ddeff275a96854488e625f9a1b6701a5" => :mojave
-    sha256 "341560bdd2d7831f274feaa1646f10c79a00618d8c00f9522e885f23af1f2f87" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "54ea5852087b08f08945c7a73f6fc3b9d91958e6f23685c9848e08c2bce1ac03"
+    sha256 cellar: :any_skip_relocation, mojave:      "cd40c18a7c54185a154785e7245ae1b3ddeff275a96854488e625f9a1b6701a5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "341560bdd2d7831f274feaa1646f10c79a00618d8c00f9522e885f23af1f2f87"
   end
 
   depends_on "cmake" => :build

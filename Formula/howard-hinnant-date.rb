@@ -6,10 +6,9 @@ class HowardHinnantDate < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "336157e546ea77db5ec3c0360b4e873e8c6ec265aa6dedb2fe19d45a6df207fb" => :catalina
-    sha256 "20a35158d9c478a553baae673544620546db6f31825f9e052a0bbf07086e773e" => :mojave
-    sha256 "f23b72ea88d5c0bc12f2e93dff65ba6a9867d88831294fc5c770f2d0a39762fa" => :high_sierra
+    sha256 cellar: :any, catalina:    "336157e546ea77db5ec3c0360b4e873e8c6ec265aa6dedb2fe19d45a6df207fb"
+    sha256 cellar: :any, mojave:      "20a35158d9c478a553baae673544620546db6f31825f9e052a0bbf07086e773e"
+    sha256 cellar: :any, high_sierra: "f23b72ea88d5c0bc12f2e93dff65ba6a9867d88831294fc5c770f2d0a39762fa"
   end
 
   depends_on "cmake" => :build

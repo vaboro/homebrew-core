@@ -11,10 +11,9 @@ class Less < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a76b3f1fb43e1e0ab566a70eca5430afa744d6d87430b55e9a5b98160834c8b9" => :catalina
-    sha256 "2ee3f16d15855ab88ad87067085c0f2dd58c90c5b91ae51499ae0548a24693b2" => :mojave
-    sha256 "46cd5ba33b6a1d00cfa3993712ea617bce5b6c9908b016a72413f370eda714be" => :high_sierra
+    sha256 cellar: :any, catalina:    "a76b3f1fb43e1e0ab566a70eca5430afa744d6d87430b55e9a5b98160834c8b9"
+    sha256 cellar: :any, mojave:      "2ee3f16d15855ab88ad87067085c0f2dd58c90c5b91ae51499ae0548a24693b2"
+    sha256 cellar: :any, high_sierra: "46cd5ba33b6a1d00cfa3993712ea617bce5b6c9908b016a72413f370eda714be"
   end
 
   depends_on "pcre"

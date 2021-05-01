@@ -10,10 +10,9 @@ class Libftdi < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "2ac29fc67dacd7c6e2c73e93114019d0df07aaeac7678c74402289d91d128d00" => :catalina
-    sha256 "e267d6e573aad2f1372f5731bf2be30177d5b4feb6c30b0ac96b8933f545983a" => :mojave
-    sha256 "5610431987b6b03db32ebed2c24b5007ffad77343cee35bfd23ed93470539846" => :high_sierra
+    sha256 cellar: :any, catalina:    "2ac29fc67dacd7c6e2c73e93114019d0df07aaeac7678c74402289d91d128d00"
+    sha256 cellar: :any, mojave:      "e267d6e573aad2f1372f5731bf2be30177d5b4feb6c30b0ac96b8933f545983a"
+    sha256 cellar: :any, high_sierra: "5610431987b6b03db32ebed2c24b5007ffad77343cee35bfd23ed93470539846"
   end
 
   depends_on "cmake" => :build

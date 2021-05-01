@@ -7,10 +7,9 @@ class Bup < Formula
   head "https://github.com/bup/bup.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3bf19221bf74b4df029c16bc0d2c329ffa8c15299bd8d1ec3bf2fb5b33ef71d6" => :catalina
-    sha256 "9c0ece72b212d56a83ebe5540c68851e9fd759dabe05db787cc438aedce022de" => :mojave
-    sha256 "9c9515da16e8ba9ed333922a486a042da64e4f7d0986298a8c82420c83b06a7f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3bf19221bf74b4df029c16bc0d2c329ffa8c15299bd8d1ec3bf2fb5b33ef71d6"
+    sha256 cellar: :any_skip_relocation, mojave:      "9c0ece72b212d56a83ebe5540c68851e9fd759dabe05db787cc438aedce022de"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9c9515da16e8ba9ed333922a486a042da64e4f7d0986298a8c82420c83b06a7f"
   end
 
   depends_on "pandoc" => :build

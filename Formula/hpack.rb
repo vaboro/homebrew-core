@@ -7,10 +7,9 @@ class Hpack < Formula
   head "https://github.com/sol/hpack.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e230f0684178727141cfb242d235de3f062a056816c06c1e882ad3c2caf34c35" => :catalina
-    sha256 "cc6b80c259ea44fdb961fc758c9472264b48ce481f5c9d436c325493d7d13c0a" => :mojave
-    sha256 "197fe924cebba40e09bf85adb60beeb889e576cc8600b1e92361f20a5e9c0a04" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e230f0684178727141cfb242d235de3f062a056816c06c1e882ad3c2caf34c35"
+    sha256 cellar: :any_skip_relocation, mojave:      "cc6b80c259ea44fdb961fc758c9472264b48ce481f5c9d436c325493d7d13c0a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "197fe924cebba40e09bf85adb60beeb889e576cc8600b1e92361f20a5e9c0a04"
   end
 
   depends_on "cabal-install" => :build

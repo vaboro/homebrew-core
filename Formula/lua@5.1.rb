@@ -9,12 +9,11 @@ class LuaAT51 < Formula
   revision 8
 
   bottle do
-    cellar :any
-    sha256 "bbc328f48c0cf137907ccabe206f75cc7ade66cf76cafe82ced3a5f885c73da8" => :catalina
-    sha256 "4578b515c3e1a255f766d7fa542e632007ac2de8282e207b92192d0bb9bafd11" => :mojave
-    sha256 "d374b94b3e4b9af93cb5c04086f4a9836c06953b4b1941c68a92986ba57356b1" => :high_sierra
-    sha256 "67ce3661b56fe8dd0daf6f94b7da31a9516b00ae85d9bbe9eabd7ed2e1dbb324" => :sierra
-    sha256 "e43d1c75fe4462c5dca2d95ebee9b0e4897c872f03c4331d5898a06a408cbcb3" => :el_capitan
+    sha256 cellar: :any, catalina:    "bbc328f48c0cf137907ccabe206f75cc7ade66cf76cafe82ced3a5f885c73da8"
+    sha256 cellar: :any, mojave:      "4578b515c3e1a255f766d7fa542e632007ac2de8282e207b92192d0bb9bafd11"
+    sha256 cellar: :any, high_sierra: "d374b94b3e4b9af93cb5c04086f4a9836c06953b4b1941c68a92986ba57356b1"
+    sha256 cellar: :any, sierra:      "67ce3661b56fe8dd0daf6f94b7da31a9516b00ae85d9bbe9eabd7ed2e1dbb324"
+    sha256 cellar: :any, el_capitan:  "e43d1c75fe4462c5dca2d95ebee9b0e4897c872f03c4331d5898a06a408cbcb3"
   end
 
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy

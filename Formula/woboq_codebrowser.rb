@@ -6,11 +6,10 @@ class WoboqCodebrowser < Formula
   revision 3
 
   bottle do
-    cellar :any
-    sha256 "1785b502be3a5893629c65428066323ecec0d513917e7ce3f4c4e6245aa75340" => :catalina
-    sha256 "f8aa32aaefa2b3ed4c1d6867d0b4b1945429a09043c5a6649801a3cf62d99a10" => :mojave
-    sha256 "6aca9d134daeb173b56d1d3b0122c21b461c119add8feca1c52bef0ad91c267d" => :high_sierra
-    sha256 "6dccc1dbb8c14362b3df29dc93bdfa010ad5de7e734d99a34918f28dc9f8035c" => :sierra
+    sha256 cellar: :any, catalina:    "1785b502be3a5893629c65428066323ecec0d513917e7ce3f4c4e6245aa75340"
+    sha256 cellar: :any, mojave:      "f8aa32aaefa2b3ed4c1d6867d0b4b1945429a09043c5a6649801a3cf62d99a10"
+    sha256 cellar: :any, high_sierra: "6aca9d134daeb173b56d1d3b0122c21b461c119add8feca1c52bef0ad91c267d"
+    sha256 cellar: :any, sierra:      "6dccc1dbb8c14362b3df29dc93bdfa010ad5de7e734d99a34918f28dc9f8035c"
   end
 
   depends_on "cmake" => :build

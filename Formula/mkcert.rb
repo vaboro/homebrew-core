@@ -6,10 +6,9 @@ class Mkcert < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b7cc76858dc35c6d3aabb07242ab6f5f079c4cb85deea4a9f66114528980914b" => :catalina
-    sha256 "9100c7f044d91e6ca0c483ed572217de28daa34c04fa6e2a130116175ba162e9" => :mojave
-    sha256 "f7d3255bc7f40e66bc75fd6ebfacc6b02c91514f412de9cf4b85b0d332bc4931" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b7cc76858dc35c6d3aabb07242ab6f5f079c4cb85deea4a9f66114528980914b"
+    sha256 cellar: :any_skip_relocation, mojave:      "9100c7f044d91e6ca0c483ed572217de28daa34c04fa6e2a130116175ba162e9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f7d3255bc7f40e66bc75fd6ebfacc6b02c91514f412de9cf4b85b0d332bc4931"
   end
 
   depends_on "go" => :build

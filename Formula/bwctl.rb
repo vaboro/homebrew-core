@@ -6,11 +6,10 @@ class Bwctl < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "125c3592d5a34d3913dde26356ee894136716f6b224ab1d8bc14ab487fbd2633" => :catalina
-    sha256 "b4e91dbfca063d51a0280dffde519e9d4e5d66d0e0a301936dbbe86239e295a3" => :mojave
-    sha256 "2d326aaaa5c9031fd668569cbd68627d84884389b4883282d82259af152b12c3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "125c3592d5a34d3913dde26356ee894136716f6b224ab1d8bc14ab487fbd2633"
+    sha256 cellar: :any_skip_relocation, mojave:      "b4e91dbfca063d51a0280dffde519e9d4e5d66d0e0a301936dbbe86239e295a3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2d326aaaa5c9031fd668569cbd68627d84884389b4883282d82259af152b12c3"
   end
 
   # https://software.internet2.edu/bwctl/

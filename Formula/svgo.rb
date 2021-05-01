@@ -8,10 +8,9 @@ class Svgo < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "48a66950681297bed8bf89dbcfeab2c34147784bccdd5ac92f5664b73f530457" => :catalina
-    sha256 "631a5e5bf726f9f3a2c53ddfc7fd5061953bf905208972091c77ea7a10e41599" => :mojave
-    sha256 "5fe6407fa998ce2431d435e24bd565332d939b680fb624ddbfd5ad2316799305" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "48a66950681297bed8bf89dbcfeab2c34147784bccdd5ac92f5664b73f530457"
+    sha256 cellar: :any_skip_relocation, mojave:      "631a5e5bf726f9f3a2c53ddfc7fd5061953bf905208972091c77ea7a10e41599"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5fe6407fa998ce2431d435e24bd565332d939b680fb624ddbfd5ad2316799305"
   end
 
   depends_on "node"
@@ -24,6 +23,6 @@ class Svgo < Formula
   test do
     cp test_fixtures("test.svg"), testpath
     system bin/"svgo", "test.svg", "-o", "test.min.svg"
-    assert_match /^<svg /, (testpath/"test.min.svg").read
+    assert_match(/^<svg /, (testpath/"test.min.svg").read)
   end
 end

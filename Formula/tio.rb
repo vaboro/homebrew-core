@@ -6,10 +6,9 @@ class Tio < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a630b860983adbd4c2691538739850ef934aeafcfa33c5561a00e3db2b355e88" => :catalina
-    sha256 "f33b4bc0d653c0f2111f0c30865395d2cadfe524f33ab1c84c843e54ec432ed9" => :mojave
-    sha256 "1241b11c102b527fd43225a3283290fe5488889a9e0919e7b4b536ddcb4a4d83" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a630b860983adbd4c2691538739850ef934aeafcfa33c5561a00e3db2b355e88"
+    sha256 cellar: :any_skip_relocation, mojave:      "f33b4bc0d653c0f2111f0c30865395d2cadfe524f33ab1c84c843e54ec432ed9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1241b11c102b527fd43225a3283290fe5488889a9e0919e7b4b536ddcb4a4d83"
   end
 
   def install
@@ -24,6 +23,6 @@ class Tio < Formula
   test do
     # Test that tio emits the correct error output when run with an argument that is not a tty.
     # Use `script` to run tio with its stdio attached to a PTY, otherwise it will complain about that instead.
-    assert_match /Error: Not a tty device/, shell_output("script -q /dev/null #{bin}/tio /dev/null", 1).strip
+    assert_match(/Error: Not a tty device/, shell_output("script -q /dev/null #{bin}/tio /dev/null", 1).strip)
   end
 end

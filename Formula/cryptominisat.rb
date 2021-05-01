@@ -14,9 +14,9 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 "6de78ffbfa1ae394f9e0ce868ae7a49412014d63fcaccb22dfefc8909564a18b" => :catalina
-    sha256 "f1120dbb776e906bfc0773dd4088df95cbc845d5ca5d26d375dfba9187c00656" => :mojave
-    sha256 "5aae642269d3a275db8f77e2ec202884d612ee7f00b406cc892f74c175372486" => :high_sierra
+    sha256 catalina:    "6de78ffbfa1ae394f9e0ce868ae7a49412014d63fcaccb22dfefc8909564a18b"
+    sha256 mojave:      "f1120dbb776e906bfc0773dd4088df95cbc845d5ca5d26d375dfba9187c00656"
+    sha256 high_sierra: "5aae642269d3a275db8f77e2ec202884d612ee7f00b406cc892f74c175372486"
   end
 
   depends_on "cmake" => :build
@@ -40,7 +40,7 @@ class Cryptominisat < Formula
       -1 2 3 0
     EOS
     result = shell_output("#{bin}/cryptominisat5 simple.cnf", 20)
-    assert_match /s UNSATISFIABLE/, result
+    assert_match(/s UNSATISFIABLE/, result)
 
     (testpath/"test.py").write <<~EOS
       import pycryptosat

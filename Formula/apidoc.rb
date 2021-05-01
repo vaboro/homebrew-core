@@ -8,10 +8,9 @@ class Apidoc < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c61fa821d8fff7c5a1dc82b9a7e8f1256299cd042054148b69cbbb88e646c7aa" => :catalina
-    sha256 "5af452f07506102633a26f2407e56f5f190d8fc0579d2df468c433a0e8e2d5c6" => :mojave
-    sha256 "def407d3837157a7cace0286b075f0f3e4df1b069ba4d53e67b769f497385d6a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c61fa821d8fff7c5a1dc82b9a7e8f1256299cd042054148b69cbbb88e646c7aa"
+    sha256 cellar: :any_skip_relocation, mojave:      "5af452f07506102633a26f2407e56f5f190d8fc0579d2df468c433a0e8e2d5c6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "def407d3837157a7cace0286b075f0f3e4df1b069ba4d53e67b769f497385d6a"
   end
 
   depends_on "node"

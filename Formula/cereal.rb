@@ -7,10 +7,9 @@ class Cereal < Formula
   head "https://github.com/USCiLab/cereal.git", branch: "develop"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d" => :catalina
-    sha256 "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d" => :mojave
-    sha256 "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d"
+    sha256 cellar: :any_skip_relocation, mojave:      "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a8320898b751c2df4777d1fd77f9982a812972b46630fa060b21e412c545a14d"
   end
 
   depends_on "cmake" => :build

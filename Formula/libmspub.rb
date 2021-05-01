@@ -11,10 +11,9 @@ class Libmspub < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "704fcbb77c0ac89235fab6ed93549c23b9b29ad58e68ba2383af41c96cac4577" => :catalina
-    sha256 "bbb95b438d2c8c5997f4bf6f1ada7dc1de4f93063f4355df3624981858b36f52" => :mojave
-    sha256 "fbc7a283a2068f6c519d3d83e25d2f68394e60580e9cdd4fb4a2ba7ccb840019" => :high_sierra
+    sha256 cellar: :any, catalina:    "704fcbb77c0ac89235fab6ed93549c23b9b29ad58e68ba2383af41c96cac4577"
+    sha256 cellar: :any, mojave:      "bbb95b438d2c8c5997f4bf6f1ada7dc1de4f93063f4355df3624981858b36f52"
+    sha256 cellar: :any, high_sierra: "fbc7a283a2068f6c519d3d83e25d2f68394e60580e9cdd4fb4a2ba7ccb840019"
   end
 
   depends_on "boost" => :build

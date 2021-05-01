@@ -1,5 +1,5 @@
 class Librdkafka < Formula
-  desc "The Apache Kafka C/C++ library"
+  desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
   url "https://github.com/edenhill/librdkafka/archive/v1.5.0.tar.gz"
   sha256 "f7fee59fdbf1286ec23ef0b35b2dfb41031c8727c90ced6435b8cf576f23a656"
@@ -12,9 +12,9 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 "de52443a4f2739cdf63dda80c8baf58bca86a5d836ceea9704d009b7977a3ee4" => :catalina
-    sha256 "00ab941019a34002e2face071b15810aa224b26c1d0322cb02768eb6b937ad42" => :mojave
-    sha256 "80617f9dd06dd50e6c103b4bdbff40957ecae1755c85d7b6cb395b411bb37e2f" => :high_sierra
+    sha256 catalina:    "de52443a4f2739cdf63dda80c8baf58bca86a5d836ceea9704d009b7977a3ee4"
+    sha256 mojave:      "00ab941019a34002e2face071b15810aa224b26c1d0322cb02768eb6b937ad42"
+    sha256 high_sierra: "80617f9dd06dd50e6c103b4bdbff40957ecae1755c85d7b6cb395b411bb37e2f"
   end
 
   depends_on "pkg-config" => :build

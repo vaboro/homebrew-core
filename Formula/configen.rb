@@ -7,9 +7,8 @@ class Configen < Formula
   head "https://github.com/theappbusiness/ConfigGenerator.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9bdb2988618d5a1e9291a8579207d9dad1092f377d29d13af68cf6ef5afcb202" => :catalina
-    sha256 "befb8801be997ff110c9ca0b817fed82b4e233842f5afe05e7ae372a10c4007f" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "9bdb2988618d5a1e9291a8579207d9dad1092f377d29d13af68cf6ef5afcb202"
+    sha256 cellar: :any_skip_relocation, mojave:   "befb8801be997ff110c9ca0b817fed82b4e233842f5afe05e7ae372a10c4007f"
   end
 
   depends_on xcode: ["10.2", :build]

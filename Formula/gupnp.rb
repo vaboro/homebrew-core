@@ -12,10 +12,9 @@ class Gupnp < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "054503ec95766bbf5ef2fa8b15415898b2386d0659417cade2d615cf635235b3" => :catalina
-    sha256 "7cb92f536e1c498df40267f173322451c4afa631ed364c0d99d7eade7bc73756" => :mojave
-    sha256 "a691fa65b88e39d8b09b87f68890436d0848fbf6f0ab2423fc417b9e46a0fff8" => :high_sierra
+    sha256 cellar: :any, catalina:    "054503ec95766bbf5ef2fa8b15415898b2386d0659417cade2d615cf635235b3"
+    sha256 cellar: :any, mojave:      "7cb92f536e1c498df40267f173322451c4afa631ed364c0d99d7eade7bc73756"
+    sha256 cellar: :any, high_sierra: "a691fa65b88e39d8b09b87f68890436d0848fbf6f0ab2423fc417b9e46a0fff8"
   end
 
   depends_on "docbook-xsl" => :build

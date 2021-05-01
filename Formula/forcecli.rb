@@ -7,10 +7,9 @@ class Forcecli < Formula
   head "https://github.com/ForceCLI/force.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b4e2f2425b38eb74ed2cff1b2ab9bfb99210f5a527bc82f3c2abafbd4a21d94e" => :catalina
-    sha256 "168945571441dec3ee1eece262ab3f8363e831a4ff585748355b31a59de24feb" => :mojave
-    sha256 "6597c18df4c105cda4053a33da3536c16bb5560d46caeb28b0040c4e50fa3d75" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b4e2f2425b38eb74ed2cff1b2ab9bfb99210f5a527bc82f3c2abafbd4a21d94e"
+    sha256 cellar: :any_skip_relocation, mojave:      "168945571441dec3ee1eece262ab3f8363e831a4ff585748355b31a59de24feb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6597c18df4c105cda4053a33da3536c16bb5560d46caeb28b0040c4e50fa3d75"
   end
 
   depends_on "go" => :build

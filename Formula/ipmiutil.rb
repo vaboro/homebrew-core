@@ -9,10 +9,9 @@ class Ipmiutil < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ad8fc089b714a2286884168e7ce78e4cfb9a2c045e7daf9ee77eae3524bb0f8f" => :catalina
-    sha256 "af41d4e3592cea0b3151276cff34bfabc810b47af165dc16436e8af30877e52e" => :mojave
-    sha256 "502b711bfa0411d970ac6fc5dabd65e04a0a80b0bf0adead2fa1e965f2079050" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ad8fc089b714a2286884168e7ce78e4cfb9a2c045e7daf9ee77eae3524bb0f8f"
+    sha256 cellar: :any_skip_relocation, mojave:      "af41d4e3592cea0b3151276cff34bfabc810b47af165dc16436e8af30877e52e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "502b711bfa0411d970ac6fc5dabd65e04a0a80b0bf0adead2fa1e965f2079050"
   end
 
   depends_on "autoconf" => :build

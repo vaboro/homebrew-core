@@ -7,10 +7,9 @@ class Arb < Formula
   head "https://github.com/fredrik-johansson/arb.git"
 
   bottle do
-    cellar :any
-    sha256 "9315171ee0802ba4fc1e1e8b799f387126c2c2a9adbc8501d659acd3781ad042" => :catalina
-    sha256 "2674198ab1752ca366e40c6a0b46b62ea85c6035f28c49239658082d6054b3b1" => :mojave
-    sha256 "0560ad466e4bcbe318c00619c86366f13d1265c178bbcdaea034c4064ee0d55e" => :high_sierra
+    sha256 cellar: :any, catalina:    "9315171ee0802ba4fc1e1e8b799f387126c2c2a9adbc8501d659acd3781ad042"
+    sha256 cellar: :any, mojave:      "2674198ab1752ca366e40c6a0b46b62ea85c6035f28c49239658082d6054b3b1"
+    sha256 cellar: :any, high_sierra: "0560ad466e4bcbe318c00619c86366f13d1265c178bbcdaea034c4064ee0d55e"
   end
 
   depends_on "cmake" => :build

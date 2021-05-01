@@ -6,9 +6,9 @@ class Dateutils < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 "25d5db665c0591e56c4ec698656a5519f20417473e3cb763299d804bc735a9a5" => :catalina
-    sha256 "3124ddab0439b64bcfc95057ee52c7c902e684898a2d96832732819682fba75c" => :mojave
-    sha256 "310bbe8e2d4d039d065fb9bc5cd33ced2fc45f970057f21a205ff0004d6921e0" => :high_sierra
+    sha256 catalina:    "25d5db665c0591e56c4ec698656a5519f20417473e3cb763299d804bc735a9a5"
+    sha256 mojave:      "3124ddab0439b64bcfc95057ee52c7c902e684898a2d96832732819682fba75c"
+    sha256 high_sierra: "310bbe8e2d4d039d065fb9bc5cd33ced2fc45f970057f21a205ff0004d6921e0"
   end
 
   head do

@@ -7,10 +7,9 @@ class IsoCodes < Formula
   head "https://salsa.debian.org/iso-codes-team/iso-codes.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313" => :catalina
-    sha256 "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313" => :mojave
-    sha256 "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313"
+    sha256 cellar: :any_skip_relocation, mojave:      "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313"
+    sha256 cellar: :any_skip_relocation, high_sierra: "de9e461920f45e7a41272e45c365bc03fce3897a52b14b22b5953967d595e313"
   end
 
   depends_on "gettext" => :build

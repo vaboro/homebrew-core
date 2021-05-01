@@ -8,10 +8,9 @@ class Veclibfort < Formula
   head "https://github.com/mcg1969/vecLibFort.git"
 
   bottle do
-    cellar :any
-    sha256 "bacc73e19f66c5b9cbd1436cbac4a6256a638724961bc17a79a844a0c5635712" => :catalina
-    sha256 "a3d1f23a1ce7f3044b50ba81baf3c1ee058070baa33a7d2a8ea14827ac6d0650" => :mojave
-    sha256 "072c7d553e857a6b4c760f921b9eb6281e7d91c5911f5257915bf6de8bdee97e" => :high_sierra
+    sha256 cellar: :any, catalina:    "bacc73e19f66c5b9cbd1436cbac4a6256a638724961bc17a79a844a0c5635712"
+    sha256 cellar: :any, mojave:      "a3d1f23a1ce7f3044b50ba81baf3c1ee058070baa33a7d2a8ea14827ac6d0650"
+    sha256 cellar: :any, high_sierra: "072c7d553e857a6b4c760f921b9eb6281e7d91c5911f5257915bf6de8bdee97e"
   end
 
   depends_on "gcc" # for gfortran

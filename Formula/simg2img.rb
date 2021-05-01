@@ -7,10 +7,9 @@ class Simg2img < Formula
   head "https://github.com/anestisb/android-simg2img.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a79238cc3b241a3c9f2635b2ce230107f4372db3df7678dcc0857f8c7ef40581" => :catalina
-    sha256 "eb4046906b4bc9b2508ed5a7bbd0c9cfd2bab387c9891dbbf396c64374fdef6d" => :mojave
-    sha256 "677aa2ecb11b6c0df59eb44cd75b7bc66d7f99607a4a5e0b5f9137d42428efc5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a79238cc3b241a3c9f2635b2ce230107f4372db3df7678dcc0857f8c7ef40581"
+    sha256 cellar: :any_skip_relocation, mojave:      "eb4046906b4bc9b2508ed5a7bbd0c9cfd2bab387c9891dbbf396c64374fdef6d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "677aa2ecb11b6c0df59eb44cd75b7bc66d7f99607a4a5e0b5f9137d42428efc5"
   end
 
   def install

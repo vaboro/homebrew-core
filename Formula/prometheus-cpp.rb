@@ -9,10 +9,9 @@ class PrometheusCpp < Formula
   head "https://github.com/jupp0r/prometheus-cpp.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8a7554ae3fc4618f5b405aa365f2c48192304406a5aba72611110cb909e1669f" => :catalina
-    sha256 "c843326804e9e84640a31254e793e15b7956aa69be769d8bd0d6888bf7933a0f" => :mojave
-    sha256 "3b9b31ccd9421f6777605f7c0b1921b0dca02a3be8c143b5468e32ccf7b36536" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8a7554ae3fc4618f5b405aa365f2c48192304406a5aba72611110cb909e1669f"
+    sha256 cellar: :any_skip_relocation, mojave:      "c843326804e9e84640a31254e793e15b7956aa69be769d8bd0d6888bf7933a0f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3b9b31ccd9421f6777605f7c0b1921b0dca02a3be8c143b5468e32ccf7b36536"
   end
 
   depends_on "cmake" => :build

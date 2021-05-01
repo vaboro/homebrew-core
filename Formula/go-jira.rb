@@ -6,10 +6,9 @@ class GoJira < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8362c93c0af122bacd0390a1240756b172977af20ad1165b59b95b9b4e0acfad" => :catalina
-    sha256 "51724496ecbd240470d031fadb9b85986dff93fdb5ff028bff0524f1df17c83b" => :mojave
-    sha256 "23fe226171b1385c9cc3ba3fa37e64c90770737d4bb40586b2130771b37141a0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8362c93c0af122bacd0390a1240756b172977af20ad1165b59b95b9b4e0acfad"
+    sha256 cellar: :any_skip_relocation, mojave:      "51724496ecbd240470d031fadb9b85986dff93fdb5ff028bff0524f1df17c83b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "23fe226171b1385c9cc3ba3fa37e64c90770737d4bb40586b2130771b37141a0"
   end
 
   depends_on "go" => :build

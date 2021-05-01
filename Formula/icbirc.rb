@@ -10,13 +10,12 @@ class Icbirc < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c1a639673100e6c8f2f5116b11c4c7a8b38cc0af73841c4d13e611f7605a8c1e" => :catalina
-    sha256 "c353062cf16183b658ca999e477f2f4ac6040dd8d3a995fe2736a382d989ca8e" => :mojave
-    sha256 "e258e2ca2bf835d76b7d509eac5417629451068c85fe729cbab7fc64e89df9c0" => :high_sierra
-    sha256 "cbec4e472c640a63081f12723fc9d144f00aa00c9229ce5bfc2edd99199aee74" => :sierra
-    sha256 "2f943e4af7a9c1e2524d9583b0ef5539988f68f56a8f8c483b2c2d1990fff21d" => :el_capitan
-    sha256 "c4fdfe55febee01d5fc84bdc7bb49ad6bb2366f6f5a54dfbb851ee891a67c5a3" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "c1a639673100e6c8f2f5116b11c4c7a8b38cc0af73841c4d13e611f7605a8c1e"
+    sha256 cellar: :any_skip_relocation, mojave:      "c353062cf16183b658ca999e477f2f4ac6040dd8d3a995fe2736a382d989ca8e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e258e2ca2bf835d76b7d509eac5417629451068c85fe729cbab7fc64e89df9c0"
+    sha256 cellar: :any_skip_relocation, sierra:      "cbec4e472c640a63081f12723fc9d144f00aa00c9229ce5bfc2edd99199aee74"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "2f943e4af7a9c1e2524d9583b0ef5539988f68f56a8f8c483b2c2d1990fff21d"
+    sha256 cellar: :any_skip_relocation, yosemite:    "c4fdfe55febee01d5fc84bdc7bb49ad6bb2366f6f5a54dfbb851ee891a67c5a3"
   end
 
   depends_on "bsdmake" => :build

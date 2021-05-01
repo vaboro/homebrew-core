@@ -12,10 +12,9 @@ class Wxpython < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c00e5a4248024ff9528f3b99f6c3f16f34f66bd84dc8573333bf986e0016b7d0" => :catalina
-    sha256 "16ecec9c2da446443644964dea15098743e22d53965b28eb7f513cbea4bd90d2" => :mojave
-    sha256 "1146036d785708cfb9f5ea97f3a7ea01583278ccea4cffbfd408c5cb22b067de" => :high_sierra
+    sha256 cellar: :any, catalina:    "c00e5a4248024ff9528f3b99f6c3f16f34f66bd84dc8573333bf986e0016b7d0"
+    sha256 cellar: :any, mojave:      "16ecec9c2da446443644964dea15098743e22d53965b28eb7f513cbea4bd90d2"
+    sha256 cellar: :any, high_sierra: "1146036d785708cfb9f5ea97f3a7ea01583278ccea4cffbfd408c5cb22b067de"
   end
 
   depends_on "freetype"

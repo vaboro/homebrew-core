@@ -7,10 +7,9 @@ class Nfdump < Formula
   head "https://github.com/phaag/nfdump.git"
 
   bottle do
-    cellar :any
-    sha256 "783bf2b6d71040e8d1a55288e6ea7bd6bfd5cfcac9c3e0850ffbac9dfa7edc4e" => :catalina
-    sha256 "602ab449a2352aa7366978cdc7fb57ee1dcf9d8ca8979a8226492cfd85920591" => :mojave
-    sha256 "880c24b712d459b4c0a4402ef33b8c96fffd8815f6096dd538f30332c97c13ac" => :high_sierra
+    sha256 cellar: :any, catalina:    "783bf2b6d71040e8d1a55288e6ea7bd6bfd5cfcac9c3e0850ffbac9dfa7edc4e"
+    sha256 cellar: :any, mojave:      "602ab449a2352aa7366978cdc7fb57ee1dcf9d8ca8979a8226492cfd85920591"
+    sha256 cellar: :any, high_sierra: "880c24b712d459b4c0a4402ef33b8c96fffd8815f6096dd538f30332c97c13ac"
   end
 
   depends_on "autoconf" => :build

@@ -6,10 +6,9 @@ class KubernetesServiceCatalogClient < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d17afa1cc5c192ba9ff73777a71d288744b52f08d49c3ca3eb0b57d46f529873" => :catalina
-    sha256 "0fc4e96709b5f3a71afe4a526e70842b28b5aad677af9c6de7f3dcc62b94d891" => :mojave
-    sha256 "4dda09b950c138a452a3a66d6742ef912761ac0365cc725ca9fad39189496690" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d17afa1cc5c192ba9ff73777a71d288744b52f08d49c3ca3eb0b57d46f529873"
+    sha256 cellar: :any_skip_relocation, mojave:      "0fc4e96709b5f3a71afe4a526e70842b28b5aad677af9c6de7f3dcc62b94d891"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4dda09b950c138a452a3a66d6742ef912761ac0365cc725ca9fad39189496690"
   end
 
   depends_on "go" => :build

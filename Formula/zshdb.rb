@@ -15,10 +15,9 @@ class Zshdb < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704" => :catalina
-    sha256 "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704" => :mojave
-    sha256 "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704"
+    sha256 cellar: :any_skip_relocation, mojave:      "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2bdc583e95b4d4bd92624d48ce804561e3a337792dbba74f451a2507eb939704"
   end
 
   head do

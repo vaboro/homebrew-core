@@ -7,13 +7,12 @@ class Cheapglk < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "91d3c4e89b0750585d52206bf25054eb2db72af798e0d4e1c33021177b92ae13" => :catalina
-    sha256 "d57b00a86e3d1c76f43d8f034c1dfe77d23da3d34637449040fdedd21f6a4a63" => :mojave
-    sha256 "47c6f59d902a306b30c6255f65fd7626e32d5c39800fd80daeada852e95994f2" => :high_sierra
-    sha256 "d76d29db8ea0201fcef949e02cbddb1c06311dece796a263192ffef487a3aa2c" => :sierra
-    sha256 "497a5399738c026d318d3213b764f20fb80ccea94181919fad2e80eb75086055" => :el_capitan
-    sha256 "8351c9dec39fd8e860e50a8e693e1c648def81c3ddcbdd3a856f656d585b0082" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "91d3c4e89b0750585d52206bf25054eb2db72af798e0d4e1c33021177b92ae13"
+    sha256 cellar: :any_skip_relocation, mojave:      "d57b00a86e3d1c76f43d8f034c1dfe77d23da3d34637449040fdedd21f6a4a63"
+    sha256 cellar: :any_skip_relocation, high_sierra: "47c6f59d902a306b30c6255f65fd7626e32d5c39800fd80daeada852e95994f2"
+    sha256 cellar: :any_skip_relocation, sierra:      "d76d29db8ea0201fcef949e02cbddb1c06311dece796a263192ffef487a3aa2c"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "497a5399738c026d318d3213b764f20fb80ccea94181919fad2e80eb75086055"
+    sha256 cellar: :any_skip_relocation, yosemite:    "8351c9dec39fd8e860e50a8e693e1c648def81c3ddcbdd3a856f656d585b0082"
   end
 
   keg_only "it conflicts with other Glk libraries"

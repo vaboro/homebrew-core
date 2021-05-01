@@ -12,10 +12,9 @@ class Libu2fServer < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "3a5038a64a9820c04a4ad1067ebcf8076936474cc5c18a0d93f7c986adcf0169" => :catalina
-    sha256 "a1d26284fa87629ecf5bf965433cd6eeba9eb151e064e22a47ca42a115d5e15c" => :mojave
-    sha256 "03e06751297ad4aab253d7b1f742fd5c2ad8d79b35836eb132c3c82c20b485e6" => :high_sierra
+    sha256 cellar: :any, catalina:    "3a5038a64a9820c04a4ad1067ebcf8076936474cc5c18a0d93f7c986adcf0169"
+    sha256 cellar: :any, mojave:      "a1d26284fa87629ecf5bf965433cd6eeba9eb151e064e22a47ca42a115d5e15c"
+    sha256 cellar: :any, high_sierra: "03e06751297ad4aab253d7b1f742fd5c2ad8d79b35836eb132c3c82c20b485e6"
   end
 
   depends_on "check" => :build

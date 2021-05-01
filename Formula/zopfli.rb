@@ -7,10 +7,9 @@ class Zopfli < Formula
   head "https://github.com/google/zopfli.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "aa44f1667254347800d442b6347d6df658e3ee24386d2284cce8e88a27e87d6d" => :catalina
-    sha256 "521a5185b6881c878be60af7df7c673f5845255f957b88d01307eb9220407a52" => :mojave
-    sha256 "fb474057725b73aa00261b10d000474cb05c020b7d951d085dcf9ed5b0973030" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "aa44f1667254347800d442b6347d6df658e3ee24386d2284cce8e88a27e87d6d"
+    sha256 cellar: :any_skip_relocation, mojave:      "521a5185b6881c878be60af7df7c673f5845255f957b88d01307eb9220407a52"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fb474057725b73aa00261b10d000474cb05c020b7d951d085dcf9ed5b0973030"
   end
 
   def install

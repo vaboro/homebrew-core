@@ -7,10 +7,9 @@ class Nnn < Formula
   head "https://github.com/jarun/nnn.git"
 
   bottle do
-    cellar :any
-    sha256 "db823ba37ee3cf5c16a06d5dcf84307ec7b0dc2dc7c83d9ee9cdd87755c06856" => :catalina
-    sha256 "cc21b0159efe6087265de581033cb6737ceee1613c2857c613408b3da6ff1aa6" => :mojave
-    sha256 "5ec7be04b6cce16cf8b14bd365fce2628e6438e09233cd62311c34227631f2cd" => :high_sierra
+    sha256 cellar: :any, catalina:    "db823ba37ee3cf5c16a06d5dcf84307ec7b0dc2dc7c83d9ee9cdd87755c06856"
+    sha256 cellar: :any, mojave:      "cc21b0159efe6087265de581033cb6737ceee1613c2857c613408b3da6ff1aa6"
+    sha256 cellar: :any, high_sierra: "5ec7be04b6cce16cf8b14bd365fce2628e6438e09233cd62311c34227631f2cd"
   end
 
   depends_on "readline"

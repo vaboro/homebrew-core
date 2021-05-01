@@ -6,10 +6,9 @@ class Abseil < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "43368dc236c3e6371d904edda75e5a8dae8127ded5b2f9ff9a0a15b4ddf103d0" => :catalina
-    sha256 "68ed0a482bd727a10fc0cf2e2e76c0307dc2d5eba8c9e4a2c0990a1dc68825b9" => :mojave
-    sha256 "bed9e2b638d6c044d31fe88bd04b225eb33548650890084ebb0657a574f7fcee" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "43368dc236c3e6371d904edda75e5a8dae8127ded5b2f9ff9a0a15b4ddf103d0"
+    sha256 cellar: :any_skip_relocation, mojave:      "68ed0a482bd727a10fc0cf2e2e76c0307dc2d5eba8c9e4a2c0990a1dc68825b9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bed9e2b638d6c044d31fe88bd04b225eb33548650890084ebb0657a574f7fcee"
   end
 
   depends_on "cmake" => :build

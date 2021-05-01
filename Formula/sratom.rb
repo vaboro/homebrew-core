@@ -6,10 +6,9 @@ class Sratom < Formula
   license "ISC"
 
   bottle do
-    cellar :any
-    sha256 "cec8ea9efb598554185a2195c3a5be91abf9b4b09e4d9400c9709155d2963c2c" => :catalina
-    sha256 "b25239c1f3dabe314ec5fa91879d2f691fc83d4b23ed176022310b8b10a37e2c" => :mojave
-    sha256 "c699c13f94f2fae5b4df4e68ccfe674c218e15f80302c1cf661038f75030a26a" => :high_sierra
+    sha256 cellar: :any, catalina:    "cec8ea9efb598554185a2195c3a5be91abf9b4b09e4d9400c9709155d2963c2c"
+    sha256 cellar: :any, mojave:      "b25239c1f3dabe314ec5fa91879d2f691fc83d4b23ed176022310b8b10a37e2c"
+    sha256 cellar: :any, high_sierra: "c699c13f94f2fae5b4df4e68ccfe674c218e15f80302c1cf661038f75030a26a"
   end
 
   depends_on "pkg-config" => :build

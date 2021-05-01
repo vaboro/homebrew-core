@@ -6,11 +6,10 @@ class Dehydrated < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "844e6e0618f99e44fb74c86abfed902f82e6c67ac9879f41a1f1bd0922554730" => :catalina
-    sha256 "376b14fa1047117a1779c583cd73139b7e4e8d3dafae240bac62912580aae571" => :mojave
-    sha256 "376b14fa1047117a1779c583cd73139b7e4e8d3dafae240bac62912580aae571" => :high_sierra
-    sha256 "1b4042e46b66cb78a1f4a423d742bfe3110f12ea8d26177ff0f05d2aea24d6b2" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "844e6e0618f99e44fb74c86abfed902f82e6c67ac9879f41a1f1bd0922554730"
+    sha256 cellar: :any_skip_relocation, mojave:      "376b14fa1047117a1779c583cd73139b7e4e8d3dafae240bac62912580aae571"
+    sha256 cellar: :any_skip_relocation, high_sierra: "376b14fa1047117a1779c583cd73139b7e4e8d3dafae240bac62912580aae571"
+    sha256 cellar: :any_skip_relocation, sierra:      "1b4042e46b66cb78a1f4a423d742bfe3110f12ea8d26177ff0f05d2aea24d6b2"
   end
 
   def install

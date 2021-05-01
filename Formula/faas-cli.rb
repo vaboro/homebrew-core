@@ -7,10 +7,9 @@ class FaasCli < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "74e0979caa804d1e2771cc7bb8ca334f3e45a5e8b2f33abc63b21d7fccd6bab3" => :catalina
-    sha256 "e8ac72ff95820dd19650bf8c2f3257d22e11b3dd10a28721f4a4bf328258a5e9" => :mojave
-    sha256 "7c81a7145f3a9acd9c348abcc5229cea7a8afcb1b6469a189d0e74a5b3650fdd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "74e0979caa804d1e2771cc7bb8ca334f3e45a5e8b2f33abc63b21d7fccd6bab3"
+    sha256 cellar: :any_skip_relocation, mojave:      "e8ac72ff95820dd19650bf8c2f3257d22e11b3dd10a28721f4a4bf328258a5e9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7c81a7145f3a9acd9c348abcc5229cea7a8afcb1b6469a189d0e74a5b3650fdd"
   end
 
   depends_on "go" => :build
@@ -76,8 +75,8 @@ class FaasCli < Formula
       stable_resource = stable.instance_variable_get(:@resource)
       commit = stable_resource.instance_variable_get(:@specs)[:revision]
       faas_cli_version = shell_output("#{bin}/faas-cli version")
-      assert_match /\s#{commit}$/, faas_cli_version
-      assert_match /\s#{version}$/, faas_cli_version
+      assert_match(/\s#{commit}$/, faas_cli_version)
+      assert_match(/\s#{version}$/, faas_cli_version)
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

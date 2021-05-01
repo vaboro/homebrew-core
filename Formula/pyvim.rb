@@ -12,10 +12,9 @@ class Pyvim < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "00673aa2851bbd2112035bf5fcb7e4ee5a7a594f5b43c0cf14a27f3727058902" => :catalina
-    sha256 "3526d256cf5ab2be293f7b3a0d80ef648b9847780456de3b21992ec79bb58af6" => :mojave
-    sha256 "b2c764a4186e90c37d43af45fe31432f74ea12566af67a7a9a1103d388fd168c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "00673aa2851bbd2112035bf5fcb7e4ee5a7a594f5b43c0cf14a27f3727058902"
+    sha256 cellar: :any_skip_relocation, mojave:      "3526d256cf5ab2be293f7b3a0d80ef648b9847780456de3b21992ec79bb58af6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b2c764a4186e90c37d43af45fe31432f74ea12566af67a7a9a1103d388fd168c"
   end
 
   depends_on "python@3.8"

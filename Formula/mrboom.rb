@@ -6,10 +6,9 @@ class Mrboom < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "d85ec4ab953ce62ec26b3f632943f4155c7b4b06a6c7bfeec4af334bd3453c5d" => :catalina
-    sha256 "8a4663dd80ed90899b51c5a568b1a8330b06441eba93cfa70e773514dbba4b2d" => :mojave
-    sha256 "a3c07658f4050be94c37c341f262b7c82a808dd696f349841aa0e83b07eaf8e7" => :high_sierra
+    sha256 cellar: :any, catalina:    "d85ec4ab953ce62ec26b3f632943f4155c7b4b06a6c7bfeec4af334bd3453c5d"
+    sha256 cellar: :any, mojave:      "8a4663dd80ed90899b51c5a568b1a8330b06441eba93cfa70e773514dbba4b2d"
+    sha256 cellar: :any, high_sierra: "a3c07658f4050be94c37c341f262b7c82a808dd696f349841aa0e83b07eaf8e7"
   end
 
   depends_on "cmake" => :build

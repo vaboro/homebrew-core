@@ -11,9 +11,9 @@ class Libofx < Formula
   end
 
   bottle do
-    sha256 "aa4c73d9fe09d54bc4fb0a1dde14bd927949f4d0ce100dae987f03df79236958" => :catalina
-    sha256 "9b731e873dee237f2723fd05aa7f88b0e64f29197297c33e9def68112d7c2fc8" => :mojave
-    sha256 "7c561c3c928ad133d1763afe6a9d25b784d236411f00085151740f3505b164b3" => :high_sierra
+    sha256 catalina:    "aa4c73d9fe09d54bc4fb0a1dde14bd927949f4d0ce100dae987f03df79236958"
+    sha256 mojave:      "9b731e873dee237f2723fd05aa7f88b0e64f29197297c33e9def68112d7c2fc8"
+    sha256 high_sierra: "7c561c3c928ad133d1763afe6a9d25b784d236411f00085151740f3505b164b3"
   end
 
   depends_on "open-sp"

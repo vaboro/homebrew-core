@@ -6,10 +6,9 @@ class Joshua < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982" => :catalina
-    sha256 "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982" => :mojave
-    sha256 "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982"
+    sha256 cellar: :any_skip_relocation, mojave:      "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982"
+    sha256 cellar: :any_skip_relocation, high_sierra: "126f37758cb9f1ace827883911906cab4976bf5f211b200ed0e2f307fae87982"
   end
 
   depends_on "openjdk"

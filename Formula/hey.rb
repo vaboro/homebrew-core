@@ -6,10 +6,9 @@ class Hey < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "972cc3f6a520467db11ab9cef3aa5311c6813c203c23bb0173363a00a45cfc07" => :catalina
-    sha256 "af9934ac04900c142879a97bcc9b376e25f4928239c0bb9bd68fdad0e4174ead" => :mojave
-    sha256 "67fbe5a4b3574ea9025607e02b56c49572d4f184bcf1ae49fb5cb3eb05ede26c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "972cc3f6a520467db11ab9cef3aa5311c6813c203c23bb0173363a00a45cfc07"
+    sha256 cellar: :any_skip_relocation, mojave:      "af9934ac04900c142879a97bcc9b376e25f4928239c0bb9bd68fdad0e4174ead"
+    sha256 cellar: :any_skip_relocation, high_sierra: "67fbe5a4b3574ea9025607e02b56c49572d4f184bcf1ae49fb5cb3eb05ede26c"
   end
 
   depends_on "go" => :build

@@ -12,10 +12,9 @@ class Jrnl < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "fb6d2b1efb05d963283fd9dc09789aaf65f9d8856e04e248e0ac735edfc43613" => :catalina
-    sha256 "0b78d9c9d59b85e3499f19eb2d53999c6cac8f1b6636e4edffdbacb62bc838b4" => :mojave
-    sha256 "807b86ba7af383a7f75d41a1cc4125f8c7c5c1fece598ff30df42098259b4b79" => :high_sierra
+    sha256 cellar: :any, catalina:    "fb6d2b1efb05d963283fd9dc09789aaf65f9d8856e04e248e0ac735edfc43613"
+    sha256 cellar: :any, mojave:      "0b78d9c9d59b85e3499f19eb2d53999c6cac8f1b6636e4edffdbacb62bc838b4"
+    sha256 cellar: :any, high_sierra: "807b86ba7af383a7f75d41a1cc4125f8c7c5c1fece598ff30df42098259b4b79"
   end
 
   depends_on "python@3.8"

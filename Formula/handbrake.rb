@@ -7,9 +7,8 @@ class Handbrake < Formula
   head "https://github.com/HandBrake/HandBrake.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "79cad2f66f656641da650bac57445c033ed6e23ac4707a96b1bdd38298fba007" => :catalina
-    sha256 "7930401b64b3960fb96edf3da3d3b235fe881c1282b9db2be303e99a5b15d473" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "79cad2f66f656641da650bac57445c033ed6e23ac4707a96b1bdd38298fba007"
+    sha256 cellar: :any_skip_relocation, mojave:   "7930401b64b3960fb96edf3da3d3b235fe881c1282b9db2be303e99a5b15d473"
   end
 
   depends_on "autoconf" => :build

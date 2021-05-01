@@ -11,10 +11,9 @@ class Libprotoident < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "f7bdcc25564854f28b3a0c308bcad5d17f71f186c05b8ab356752c9d0d11f31b" => :catalina
-    sha256 "47e13c727609ab739bb59a74232870ba82ddb2ce8c4e5b145f3e92fc3383edd6" => :mojave
-    sha256 "2be3c3bcd3b921e264a9bf8ff730d95af2d3a8aee252d849aba1b88d30d49892" => :high_sierra
+    sha256 cellar: :any, catalina:    "f7bdcc25564854f28b3a0c308bcad5d17f71f186c05b8ab356752c9d0d11f31b"
+    sha256 cellar: :any, mojave:      "47e13c727609ab739bb59a74232870ba82ddb2ce8c4e5b145f3e92fc3383edd6"
+    sha256 cellar: :any, high_sierra: "2be3c3bcd3b921e264a9bf8ff730d95af2d3a8aee252d849aba1b88d30d49892"
   end
 
   depends_on "libflowmanager"

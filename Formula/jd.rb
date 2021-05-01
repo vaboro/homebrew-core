@@ -6,10 +6,9 @@ class Jd < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e096231d88fa92e9215345a34de8b5dceb5e3217a22681107f81b935b9090619" => :catalina
-    sha256 "0a33823d7919a0218e895685903d718bc3013e13710166797cfa332895c6a4e1" => :mojave
-    sha256 "fed5e72e199dd94ef0f34b506f689de867ac8f938641a9738e99dc8f4c27cbe6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e096231d88fa92e9215345a34de8b5dceb5e3217a22681107f81b935b9090619"
+    sha256 cellar: :any_skip_relocation, mojave:      "0a33823d7919a0218e895685903d718bc3013e13710166797cfa332895c6a4e1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fed5e72e199dd94ef0f34b506f689de867ac8f938641a9738e99dc8f4c27cbe6"
   end
 
   depends_on "go" => :build

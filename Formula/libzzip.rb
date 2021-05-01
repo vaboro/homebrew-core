@@ -6,10 +6,9 @@ class Libzzip < Formula
   license "LGPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "e5d1924bd3078e0ec191022a1472b9fed24df6217bca8a96eaa3124baa63fee1" => :catalina
-    sha256 "e6060c02eaeb6df911ae74896181c261c1b235891f4a470e2afe8aea3c4846e5" => :mojave
-    sha256 "18edacbb19f463f1481eae261ec25f4c643c659703ff1d1d2ae59b28684a0fc3" => :high_sierra
+    sha256 cellar: :any, catalina:    "e5d1924bd3078e0ec191022a1472b9fed24df6217bca8a96eaa3124baa63fee1"
+    sha256 cellar: :any, mojave:      "e6060c02eaeb6df911ae74896181c261c1b235891f4a470e2afe8aea3c4846e5"
+    sha256 cellar: :any, high_sierra: "18edacbb19f463f1481eae261ec25f4c643c659703ff1d1d2ae59b28684a0fc3"
   end
 
   depends_on "cmake" => :build

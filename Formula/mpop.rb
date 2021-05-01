@@ -6,9 +6,9 @@ class Mpop < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 "4d62437fccd5d773e888126e465f1cea07fdcbdc7f0b5fb826267d78747cfa0c" => :catalina
-    sha256 "e2638049d1e7b182aa5ad981436660969d029ee3a7b2afe0cb3a3906817578f3" => :mojave
-    sha256 "0576fae054e001c3fd7954c5b013323aa0bb54d37c7c51b400cef87144d690a1" => :high_sierra
+    sha256 catalina:    "4d62437fccd5d773e888126e465f1cea07fdcbdc7f0b5fb826267d78747cfa0c"
+    sha256 mojave:      "e2638049d1e7b182aa5ad981436660969d029ee3a7b2afe0cb3a3906817578f3"
+    sha256 high_sierra: "0576fae054e001c3fd7954c5b013323aa0bb54d37c7c51b400cef87144d690a1"
   end
 
   depends_on "pkg-config" => :build

@@ -7,10 +7,9 @@ class GitArchiveAll < Formula
   head "https://github.com/Kentzo/git-archive-all.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79" => :catalina
-    sha256 "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79" => :mojave
-    sha256 "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79"
+    sha256 cellar: :any_skip_relocation, mojave:      "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d83a7c27f97788c8a76ba8fc708a30795e6bede82329dd32e39a8dee6b907a79"
   end
 
   def install

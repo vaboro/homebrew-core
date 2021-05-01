@@ -11,10 +11,9 @@ class Po4a < Formula
   head "https://github.com/mquinson/po4a.git"
 
   bottle do
-    cellar :any
-    sha256 "8caa5beaaa149a61cc1e491e2d38311dfaf4d5079bb059e407a97338780d6674" => :catalina
-    sha256 "d6fab13fda127a91eeadbb7e4d031cc7e9d0f7292fef8579539db76228b908f9" => :mojave
-    sha256 "31ef1111f0d6d4a1ff0f50d37dbacaef5e0d017fa0f95c621d4d395bcda9b616" => :high_sierra
+    sha256 cellar: :any, catalina:    "8caa5beaaa149a61cc1e491e2d38311dfaf4d5079bb059e407a97338780d6674"
+    sha256 cellar: :any, mojave:      "d6fab13fda127a91eeadbb7e4d031cc7e9d0f7292fef8579539db76228b908f9"
+    sha256 cellar: :any, high_sierra: "31ef1111f0d6d4a1ff0f50d37dbacaef5e0d017fa0f95c621d4d395bcda9b616"
   end
 
   depends_on "docbook-xsl" => :build

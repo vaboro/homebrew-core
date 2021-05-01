@@ -6,10 +6,9 @@ class Carton < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6b297651d53363d8e300cfa3f1dd30b3a3b26bc12d42d869cf3ae994edca0daa" => :catalina
-    sha256 "dad7e5f481b721f027a956e13d4c0845e3d9dfd40c823296d206ed0b0a0e9f15" => :mojave
-    sha256 "08a660d4f27f1159886a6fddbebe7b082d1b755fdcaa2c4bc31b50dfadc15e43" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6b297651d53363d8e300cfa3f1dd30b3a3b26bc12d42d869cf3ae994edca0daa"
+    sha256 cellar: :any_skip_relocation, mojave:      "dad7e5f481b721f027a956e13d4c0845e3d9dfd40c823296d206ed0b0a0e9f15"
+    sha256 cellar: :any_skip_relocation, high_sierra: "08a660d4f27f1159886a6fddbebe7b082d1b755fdcaa2c4bc31b50dfadc15e43"
   end
 
   depends_on "perl"

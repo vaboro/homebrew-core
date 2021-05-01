@@ -7,10 +7,9 @@ class Pc6001vx < Formula
   head "https://github.com/eighttails/PC6001VX.git"
 
   bottle do
-    cellar :any
-    sha256 "6710d77319faeafe8e4f3719a79827311065a3faa7f04bb30393209b6357b067" => :catalina
-    sha256 "c7276580bc2c742722fbe10c6a69ccddd9e68dd26682e42a560131962302fdf3" => :mojave
-    sha256 "f7b5e4e335a22a6962a6ff2f7844ed64672243307abe97fe6324afac2636788c" => :high_sierra
+    sha256 cellar: :any, catalina:    "6710d77319faeafe8e4f3719a79827311065a3faa7f04bb30393209b6357b067"
+    sha256 cellar: :any, mojave:      "c7276580bc2c742722fbe10c6a69ccddd9e68dd26682e42a560131962302fdf3"
+    sha256 cellar: :any, high_sierra: "f7b5e4e335a22a6962a6ff2f7844ed64672243307abe97fe6324afac2636788c"
   end
 
   depends_on "pkg-config" => :build

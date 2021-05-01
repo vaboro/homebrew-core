@@ -7,10 +7,9 @@ class Rtorrent < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "fb9d292ae3f773162316eac2516bcc12a5a63718d4638aa4ff08a7d57e8a853e" => :catalina
-    sha256 "7bdf998faac16a4411e0f52ef906e09dff47507cef2b1218ac59b82d9298ae72" => :mojave
-    sha256 "ac0c6f9edd1fc875266e08a9d7576251d8be88f86162e5a431b10a5c5bb5f0b0" => :high_sierra
+    sha256 cellar: :any, catalina:    "fb9d292ae3f773162316eac2516bcc12a5a63718d4638aa4ff08a7d57e8a853e"
+    sha256 cellar: :any, mojave:      "7bdf998faac16a4411e0f52ef906e09dff47507cef2b1218ac59b82d9298ae72"
+    sha256 cellar: :any, high_sierra: "ac0c6f9edd1fc875266e08a9d7576251d8be88f86162e5a431b10a5c5bb5f0b0"
   end
 
   depends_on "autoconf" => :build

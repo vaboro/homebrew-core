@@ -6,10 +6,9 @@ class Libde265 < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    cellar :any
-    sha256 "119771a3c4b3da418886e2142d27d93191e37ecdebb46d07060f8f7b85fbb1c4" => :catalina
-    sha256 "97450df80726024f5e1f099a4df07555caeead0a89b225ccf895aca0f033d98f" => :mojave
-    sha256 "b1961f6dc7dbba259edafcee3b57741177ba9c6c6b1ccf43337167ec4d0cb246" => :high_sierra
+    sha256 cellar: :any, catalina:    "119771a3c4b3da418886e2142d27d93191e37ecdebb46d07060f8f7b85fbb1c4"
+    sha256 cellar: :any, mojave:      "97450df80726024f5e1f099a4df07555caeead0a89b225ccf895aca0f033d98f"
+    sha256 cellar: :any, high_sierra: "b1961f6dc7dbba259edafcee3b57741177ba9c6c6b1ccf43337167ec4d0cb246"
   end
 
   def install

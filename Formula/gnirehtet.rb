@@ -8,10 +8,9 @@ class Gnirehtet < Formula
   head "https://github.com/Genymobile/gnirehtet.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6f65def77cc1708e7a1ae8e85dfe2cbede4717225e8a5c2f7a9f09c8271282f3" => :catalina
-    sha256 "7ebc9b16c6d6856be8604388d4ca2bfc9cc2c4ec02e255f1a462be681283c6e8" => :mojave
-    sha256 "a57d5039af819db991968751511a63874cd0c20d1d10fe106ef92e83b216eb38" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6f65def77cc1708e7a1ae8e85dfe2cbede4717225e8a5c2f7a9f09c8271282f3"
+    sha256 cellar: :any_skip_relocation, mojave:      "7ebc9b16c6d6856be8604388d4ca2bfc9cc2c4ec02e255f1a462be681283c6e8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a57d5039af819db991968751511a63874cd0c20d1d10fe106ef92e83b216eb38"
   end
 
   depends_on "rust" => :build

@@ -12,10 +12,9 @@ class Tcping < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2cf829fa6b3feab933a12f8fbc9fc1e8d585a304f31d918f26ba0d502f4772ab" => :catalina
-    sha256 "d769f344e5bdda11b8f0ce6c931e865e982166b3b504cdce33d58c9029786c60" => :mojave
-    sha256 "e0d7d617ac3f98158cd25a08728f9f44cce132101368cae250cced7dbb6a0f7a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2cf829fa6b3feab933a12f8fbc9fc1e8d585a304f31d918f26ba0d502f4772ab"
+    sha256 cellar: :any_skip_relocation, mojave:      "d769f344e5bdda11b8f0ce6c931e865e982166b3b504cdce33d58c9029786c60"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e0d7d617ac3f98158cd25a08728f9f44cce132101368cae250cced7dbb6a0f7a"
   end
 
   def install

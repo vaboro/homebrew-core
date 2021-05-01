@@ -11,12 +11,11 @@ class Jnettop < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "d519f88b031322183f9cfd7303f9d139aecd807037f5d5043997acb2d3324cab" => :catalina
-    sha256 "902b1e9e69c982a84e38b09e2f0b15bc84af94028fb32138fd769efffbc6ddbc" => :mojave
-    sha256 "944957cbac7c457d3c4ee130e8ac457ebf0f2387c7231fa2b85ead897cc77e8a" => :high_sierra
-    sha256 "190334e1019dc9957918164f3fe920607f735edcba3a24296cc634fdd4a70e54" => :sierra
+    sha256 cellar: :any, catalina:    "d519f88b031322183f9cfd7303f9d139aecd807037f5d5043997acb2d3324cab"
+    sha256 cellar: :any, mojave:      "902b1e9e69c982a84e38b09e2f0b15bc84af94028fb32138fd769efffbc6ddbc"
+    sha256 cellar: :any, high_sierra: "944957cbac7c457d3c4ee130e8ac457ebf0f2387c7231fa2b85ead897cc77e8a"
+    sha256 cellar: :any, sierra:      "190334e1019dc9957918164f3fe920607f735edcba3a24296cc634fdd4a70e54"
   end
 
   depends_on "pkg-config" => :build

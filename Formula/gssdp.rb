@@ -10,10 +10,9 @@ class Gssdp < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9cda1333eede84e831da2553e50989bd5721460b0ab046c95414305c11e29adc" => :catalina
-    sha256 "de497cd6d3225d91ce49ef33b23928bb8af0d5cdebea072e06c8cf022a7a5dda" => :mojave
-    sha256 "c6c767ccfe0b7220929d94ce06d3c4d5f8f172ab03e2a65900d96e1f2b151595" => :high_sierra
+    sha256 cellar: :any, catalina:    "9cda1333eede84e831da2553e50989bd5721460b0ab046c95414305c11e29adc"
+    sha256 cellar: :any, mojave:      "de497cd6d3225d91ce49ef33b23928bb8af0d5cdebea072e06c8cf022a7a5dda"
+    sha256 cellar: :any, high_sierra: "c6c767ccfe0b7220929d94ce06d3c4d5f8f172ab03e2a65900d96e1f2b151595"
   end
 
   depends_on "gobject-introspection" => :build

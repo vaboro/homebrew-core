@@ -12,10 +12,9 @@ class GitSubrepo < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002" => :catalina
-    sha256 "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002" => :mojave
-    sha256 "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002"
+    sha256 cellar: :any_skip_relocation, mojave:      "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002"
+    sha256 cellar: :any_skip_relocation, high_sierra: "499beadca28680001847d8ee797f15595b629017a4b434e775ae4d3309277002"
   end
 
   depends_on "bash"
@@ -28,7 +27,7 @@ class GitSubrepo < Formula
     # Remove test for $GIT_SUBREPO_ROOT in completion script
     # https://github.com/ingydotnet/git-subrepo/issues/183
     inreplace "share/zsh-completion/_git-subrepo",
-              /^if [[ -z $GIT_SUBREPO_ROOT ]].*?^fi$/m, ""
+              /^if [[ -z $GIT_SUBREPO]].*?^fi$/m, ""
 
     mv "share/completion.bash", "share/git-subrepo"
     bash_completion.install "share/git-subrepo"

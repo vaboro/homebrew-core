@@ -11,10 +11,9 @@ class GstRtspServer < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "3ef73f86673c247ec2faae71c33077455e82300df84069f97cdd55bd2b3ee566" => :catalina
-    sha256 "4cbeba91af2a31517a1c8286c9033a0041dff5220c4be34f5ce24e3e55a25e40" => :mojave
-    sha256 "1d17fa0457fd7359dc439967851e9b659c76e9ad194fefa9dcda752688a9f5db" => :high_sierra
+    sha256 cellar: :any, catalina:    "3ef73f86673c247ec2faae71c33077455e82300df84069f97cdd55bd2b3ee566"
+    sha256 cellar: :any, mojave:      "4cbeba91af2a31517a1c8286c9033a0041dff5220c4be34f5ce24e3e55a25e40"
+    sha256 cellar: :any, high_sierra: "1d17fa0457fd7359dc439967851e9b659c76e9ad194fefa9dcda752688a9f5db"
   end
 
   depends_on "gobject-introspection" => :build
@@ -42,6 +41,6 @@ class GstRtspServer < Formula
   test do
     gst = Formula["gstreamer"].opt_bin/"gst-inspect-1.0"
     output = shell_output("#{gst} --gst-plugin-path #{lib} --plugin rtspclientsink")
-    assert_match /\s#{version}\s/, output
+    assert_match(/\s#{version}\s/, output)
   end
 end

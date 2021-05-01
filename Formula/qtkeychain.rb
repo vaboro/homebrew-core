@@ -6,10 +6,9 @@ class Qtkeychain < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "fc74803523e8bcaff20f75ad93ecdc73eedb133e98e944cc569b686bb7b14706" => :catalina
-    sha256 "ecb65ad1c7ad4d6d13e1e954009866967c76c2473c0e7409735dc77cad09f16e" => :mojave
-    sha256 "bc583e9bcea87e8c2c13dedbe3cde99cf34e9c59af2f142bcfabc0569bf8c12e" => :high_sierra
+    sha256 cellar: :any, catalina:    "fc74803523e8bcaff20f75ad93ecdc73eedb133e98e944cc569b686bb7b14706"
+    sha256 cellar: :any, mojave:      "ecb65ad1c7ad4d6d13e1e954009866967c76c2473c0e7409735dc77cad09f16e"
+    sha256 cellar: :any, high_sierra: "bc583e9bcea87e8c2c13dedbe3cde99cf34e9c59af2f142bcfabc0569bf8c12e"
   end
 
   depends_on "cmake" => :build

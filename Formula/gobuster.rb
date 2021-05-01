@@ -7,11 +7,10 @@ class Gobuster < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "d6616ba0e64ee406559414e2c6325f46b0ddc16fc20dde42cad3e3fc7d3df223" => :catalina
-    sha256 "068251847cb8be7e495f093d86468eec1d6459f9a4daa0ba6b7936b49cc14735" => :mojave
-    sha256 "98d0266e847077f64dbff9bac8db93e0d3044425efc4992374be23ddb94d7d3d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d6616ba0e64ee406559414e2c6325f46b0ddc16fc20dde42cad3e3fc7d3df223"
+    sha256 cellar: :any_skip_relocation, mojave:      "068251847cb8be7e495f093d86468eec1d6459f9a4daa0ba6b7936b49cc14735"
+    sha256 cellar: :any_skip_relocation, high_sierra: "98d0266e847077f64dbff9bac8db93e0d3044425efc4992374be23ddb94d7d3d"
   end
 
   depends_on "go" => :build

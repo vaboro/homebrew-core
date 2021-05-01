@@ -6,10 +6,9 @@ class Ghz < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3fa715dc67889126add290e9d201486732f34721a57af5f695822ac3e3fa53db" => :catalina
-    sha256 "c37c86755c10416fdae46fb7bbe2dc94af1aeeb091f99a0a2b093bb677fac87a" => :mojave
-    sha256 "48cee2048b7787f72a1c3033c006f9c78600c075250b4620d6dcc9cefc9aae75" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3fa715dc67889126add290e9d201486732f34721a57af5f695822ac3e3fa53db"
+    sha256 cellar: :any_skip_relocation, mojave:      "c37c86755c10416fdae46fb7bbe2dc94af1aeeb091f99a0a2b093bb677fac87a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "48cee2048b7787f72a1c3033c006f9c78600c075250b4620d6dcc9cefc9aae75"
   end
 
   depends_on "go" => :build

@@ -6,10 +6,9 @@ class Kubie < Formula
   license "Zlib"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "955b6ae1436406d41e9ef9ffe6df4ac571d8259becf59b51c71d938367c826a4" => :catalina
-    sha256 "3f000617f7175dbc8df85d68b8720863fec9c1f2bae2a49d5d636feb856a3a0c" => :mojave
-    sha256 "43e175dfd87c5f3b1dad37d2588b4063d8e1f57c16d11d84ed5d901dd948f94f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "955b6ae1436406d41e9ef9ffe6df4ac571d8259becf59b51c71d938367c826a4"
+    sha256 cellar: :any_skip_relocation, mojave:      "3f000617f7175dbc8df85d68b8720863fec9c1f2bae2a49d5d636feb856a3a0c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "43e175dfd87c5f3b1dad37d2588b4063d8e1f57c16d11d84ed5d901dd948f94f"
   end
 
   depends_on "rust" => :build

@@ -6,10 +6,9 @@ class Glslang < Formula
   head "https://github.com/KhronosGroup/glslang.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9db9f4d0af3d3945270e3fcfbb2e502f377f15d76810facf80862093a18b7a5d" => :catalina
-    sha256 "24e6cb49dac7d598a0d12e055a67cd036196eb8cfb7f688b58240219e1a144b9" => :mojave
-    sha256 "02af3328d6edf389d340d0c106c4366f575e5abf8db478e6b5c6fc99111b2c2c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9db9f4d0af3d3945270e3fcfbb2e502f377f15d76810facf80862093a18b7a5d"
+    sha256 cellar: :any_skip_relocation, mojave:      "24e6cb49dac7d598a0d12e055a67cd036196eb8cfb7f688b58240219e1a144b9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "02af3328d6edf389d340d0c106c4366f575e5abf8db478e6b5c6fc99111b2c2c"
   end
 
   depends_on "cmake" => :build

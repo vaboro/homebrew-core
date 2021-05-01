@@ -8,10 +8,9 @@ class Dasm < Formula
   version_scheme 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a55169cf45fc0d3d61dc77f69c0817fed7b28b66206a93e2c8f7715f867199ac" => :catalina
-    sha256 "45e8803c881a3ca3a3c7c1c45a5fd55185ba804765b0512971d798c04b1626fd" => :mojave
-    sha256 "b6c8d3f75172985f0f60172e654785fee331070fdd4c0fa58c4247db8c0ac192" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a55169cf45fc0d3d61dc77f69c0817fed7b28b66206a93e2c8f7715f867199ac"
+    sha256 cellar: :any_skip_relocation, mojave:      "45e8803c881a3ca3a3c7c1c45a5fd55185ba804765b0512971d798c04b1626fd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b6c8d3f75172985f0f60172e654785fee331070fdd4c0fa58c4247db8c0ac192"
   end
 
   def install

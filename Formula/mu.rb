@@ -17,10 +17,9 @@ class Mu < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c2db643c69aaae50c5127dafd2018de2239c344c2b3a1cacb80cdb77d3710469" => :catalina
-    sha256 "c547ba5d0d7272e92a75c0c4476979b4e56066c6e1c5b98eff408bc5f87f7d8a" => :mojave
-    sha256 "a7f8c294053aa05cfe1942361471f4f27cf0c2631940952d44ebe1c6455adab0" => :high_sierra
+    sha256 cellar: :any, catalina:    "c2db643c69aaae50c5127dafd2018de2239c344c2b3a1cacb80cdb77d3710469"
+    sha256 cellar: :any, mojave:      "c547ba5d0d7272e92a75c0c4476979b4e56066c6e1c5b98eff408bc5f87f7d8a"
+    sha256 cellar: :any, high_sierra: "a7f8c294053aa05cfe1942361471f4f27cf0c2631940952d44ebe1c6455adab0"
   end
 
   head do

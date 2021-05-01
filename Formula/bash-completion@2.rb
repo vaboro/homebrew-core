@@ -11,10 +11,9 @@ class BashCompletionAT2 < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :catalina
-    sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :mojave
-    sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192"
+    sha256 cellar: :any_skip_relocation, mojave:      "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192"
   end
 
   head do
@@ -24,10 +23,9 @@ class BashCompletionAT2 < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "bash"
+  keg_only :versioned_formula
 
-  conflicts_with "bash-completion",
-    because: "each are different versions of the same formula"
+  depends_on "bash"
 
   def install
     inreplace "bash_completion" do |s|

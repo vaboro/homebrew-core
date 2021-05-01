@@ -8,10 +8,9 @@ class Ddgr < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319" => :catalina
-    sha256 "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319" => :mojave
-    sha256 "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319"
+    sha256 cellar: :any_skip_relocation, mojave:      "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319"
+    sha256 cellar: :any_skip_relocation, high_sierra: "08367098555c6cd274eee9906f0f9092742c9c182c3f54bcc6673fdfd32ac319"
   end
 
   depends_on "python@3.8"

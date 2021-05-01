@@ -11,11 +11,10 @@ class Rpm2cpio < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8655ba73b79595a55d289c2c969e027f2034c0af88263f9fa8c5cb8a1184a823" => :catalina
-    sha256 "081902485154a2061d890e6421a55d15bfe5072c05109c79e0ef50f2a11b96e5" => :mojave
-    sha256 "804dccff2726a9ac18a1002cd8adb06aacd07ce1fff93b995c042d4e78775176" => :high_sierra
-    sha256 "05f2a6011c554efb2c2196fdf08bfc6f7c6fd6d4e32530399888aabcc73ca339" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8655ba73b79595a55d289c2c969e027f2034c0af88263f9fa8c5cb8a1184a823"
+    sha256 cellar: :any_skip_relocation, mojave:      "081902485154a2061d890e6421a55d15bfe5072c05109c79e0ef50f2a11b96e5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "804dccff2726a9ac18a1002cd8adb06aacd07ce1fff93b995c042d4e78775176"
+    sha256 cellar: :any_skip_relocation, sierra:      "05f2a6011c554efb2c2196fdf08bfc6f7c6fd6d4e32530399888aabcc73ca339"
   end
 
   depends_on "xz"

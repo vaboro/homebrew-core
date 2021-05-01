@@ -6,11 +6,10 @@ class Loc < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "2a8ac9341661cefa1221418aa2cb5cdd5207108ade6803ab5af34ca01d0aef13" => :catalina
-    sha256 "008db46fed420d7ec698d46e059a4913368af4d8f0b2f4f8502a39ee392b830d" => :mojave
-    sha256 "f4241a70db520e24c587649bf7b8db0f743afaf00b01ebee5934bee7e88ae42e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2a8ac9341661cefa1221418aa2cb5cdd5207108ade6803ab5af34ca01d0aef13"
+    sha256 cellar: :any_skip_relocation, mojave:      "008db46fed420d7ec698d46e059a4913368af4d8f0b2f4f8502a39ee392b830d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f4241a70db520e24c587649bf7b8db0f743afaf00b01ebee5934bee7e88ae42e"
   end
 
   depends_on "rust" => :build

@@ -1,4 +1,4 @@
-# Note: pull from git tag to get submodules
+# NOTE: pull from git tag to get submodules
 class Hubflow < Formula
   desc "GitFlow for GitHub"
   homepage "https://datasift.github.io/gitflow/"

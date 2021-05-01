@@ -9,10 +9,9 @@ class Atomicparsley < Formula
   head "https://github.com/wez/atomicparsley.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6bc22e04f5d2863e73010606d823eb0768d637165d190d3889db3780bbbb724c" => :catalina
-    sha256 "204e206047f48cdffef4fa91f81dbce6db370f002dd883000798d91f2916c391" => :mojave
-    sha256 "ce2509fe2cc72c18b6b82c9df5e802e2503f61ebf841833618a974ac21fc92c3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6bc22e04f5d2863e73010606d823eb0768d637165d190d3889db3780bbbb724c"
+    sha256 cellar: :any_skip_relocation, mojave:      "204e206047f48cdffef4fa91f81dbce6db370f002dd883000798d91f2916c391"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ce2509fe2cc72c18b6b82c9df5e802e2503f61ebf841833618a974ac21fc92c3"
   end
 
   depends_on "cmake" => :build

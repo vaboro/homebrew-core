@@ -7,10 +7,9 @@ class Austin < Formula
   head "https://github.com/P403n1x87/austin.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d54d25854d57ba21937ee4cf57bf9948f084e38afb19723150c787e2742697c2" => :catalina
-    sha256 "7e87587953588d5f50dbdaa09d731653f1fa354913da4bcc43a34b505cfde2fa" => :mojave
-    sha256 "700f3399a63c70da0b0ee0a3be9d64a886ea503a7ea9192062998a63d8a7f23b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d54d25854d57ba21937ee4cf57bf9948f084e38afb19723150c787e2742697c2"
+    sha256 cellar: :any_skip_relocation, mojave:      "7e87587953588d5f50dbdaa09d731653f1fa354913da4bcc43a34b505cfde2fa"
+    sha256 cellar: :any_skip_relocation, high_sierra: "700f3399a63c70da0b0ee0a3be9d64a886ea503a7ea9192062998a63d8a7f23b"
   end
 
   depends_on "autoconf" => :build

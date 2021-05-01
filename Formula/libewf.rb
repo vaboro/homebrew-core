@@ -11,10 +11,9 @@ class Libewf < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "43d8ba6c2441f65080f257a7239fe468be70cb2578ec2106230edd1164e967b6" => :catalina
-    sha256 "4c5482f8f1c97f9c3f3687bccd9c3628b314699bc26743e641f2ae573bf95eeb" => :mojave
-    sha256 "cae6fd2f38855fd15f8a50b644d0817181fed055aef85b7793759d7703a833d4" => :high_sierra
+    sha256 cellar: :any, catalina:    "43d8ba6c2441f65080f257a7239fe468be70cb2578ec2106230edd1164e967b6"
+    sha256 cellar: :any, mojave:      "4c5482f8f1c97f9c3f3687bccd9c3628b314699bc26743e641f2ae573bf95eeb"
+    sha256 cellar: :any, high_sierra: "cae6fd2f38855fd15f8a50b644d0817181fed055aef85b7793759d7703a833d4"
   end
 
   head do

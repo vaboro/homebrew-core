@@ -10,14 +10,13 @@ class GnomeCommon < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a2499bb22344a9d8da6807a7a3cb3ebbf525f954d2e6f028953cae230e040106" => :catalina
-    sha256 "abae5e0fbfb6d9995ca705f512c606efc426b17e0aee0e323f62bdb6daebdcf6" => :mojave
-    sha256 "1a24d488923e1d73f30e541bf1fcd4956d73e4d0f11c32e5133946cb6a1c546b" => :high_sierra
-    sha256 "6aae778f648ed18eb63e49a5764fa98431683dcaff1d42280d9cdd464b727312" => :sierra
-    sha256 "a5ad22711bdc05e9dbe4c4891ad06f146bc81b4d0d7d737d582f32e36f4e6fc7" => :el_capitan
-    sha256 "7e3512e3a7c39f759ab9f3642831961b355f3f83ae6e19a26fdaf91739870e23" => :yosemite
-    sha256 "a96e5dedc2888b6caa326da0abd8eb7d3f1426407e8bef82a6ba0f41adb7016a" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "a2499bb22344a9d8da6807a7a3cb3ebbf525f954d2e6f028953cae230e040106"
+    sha256 cellar: :any_skip_relocation, mojave:      "abae5e0fbfb6d9995ca705f512c606efc426b17e0aee0e323f62bdb6daebdcf6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1a24d488923e1d73f30e541bf1fcd4956d73e4d0f11c32e5133946cb6a1c546b"
+    sha256 cellar: :any_skip_relocation, sierra:      "6aae778f648ed18eb63e49a5764fa98431683dcaff1d42280d9cdd464b727312"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "a5ad22711bdc05e9dbe4c4891ad06f146bc81b4d0d7d737d582f32e36f4e6fc7"
+    sha256 cellar: :any_skip_relocation, yosemite:    "7e3512e3a7c39f759ab9f3642831961b355f3f83ae6e19a26fdaf91739870e23"
+    sha256 cellar: :any_skip_relocation, mavericks:   "a96e5dedc2888b6caa326da0abd8eb7d3f1426407e8bef82a6ba0f41adb7016a"
   end
 
   def install

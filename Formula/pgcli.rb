@@ -12,10 +12,9 @@ class Pgcli < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "33762e29fe9be52d07d9500b3bb497afca3494ba73b7729e82047f531fe347ca" => :catalina
-    sha256 "dfc4edc73356fb8059808ae8a502fccf3df013caec1a39e18e6766b39a42ae5c" => :mojave
-    sha256 "42814524bbec67d415d06d991c17c0decd429c9a072d86c122d92bdf56affa5a" => :high_sierra
+    sha256 cellar: :any, catalina:    "33762e29fe9be52d07d9500b3bb497afca3494ba73b7729e82047f531fe347ca"
+    sha256 cellar: :any, mojave:      "dfc4edc73356fb8059808ae8a502fccf3df013caec1a39e18e6766b39a42ae5c"
+    sha256 cellar: :any, high_sierra: "42814524bbec67d415d06d991c17c0decd429c9a072d86c122d92bdf56affa5a"
   end
 
   depends_on "libpq"

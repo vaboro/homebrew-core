@@ -7,10 +7,9 @@ class SwitchLanPlay < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "caa1992416c8eae4c281af3166238bb2bf8104c1d91d7dc37a2abd8715712ccc" => :catalina
-    sha256 "62da027220b8d01270c8459cec638744ed06eac2ec046ccff56729b7f126eacf" => :mojave
-    sha256 "41a10e6d0ce45410763c4774afa4286a8c633ac60348c0d0963e33cbef855c1d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "caa1992416c8eae4c281af3166238bb2bf8104c1d91d7dc37a2abd8715712ccc"
+    sha256 cellar: :any_skip_relocation, mojave:      "62da027220b8d01270c8459cec638744ed06eac2ec046ccff56729b7f126eacf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "41a10e6d0ce45410763c4774afa4286a8c633ac60348c0d0963e33cbef855c1d"
   end
 
   depends_on "cmake" => :build

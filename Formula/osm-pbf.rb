@@ -7,12 +7,11 @@ class OsmPbf < Formula
   revision 5
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "db4cb3b0e482ef14c640c0b0bad82b0a766a6552d165920af671c04ba5b4af4f" => :catalina
-    sha256 "3199cc807995df84916d63c216d0a2793ed8af5513bed9488d397e4efcf745c2" => :mojave
-    sha256 "68e5bf0c9924719525b0522da2656ae43a7cdb11bcdf3a6c05e481c3f5b242ec" => :high_sierra
-    sha256 "c4f104fa72861e982b9071e656675a3ed3c4bf2d37fddeab3c5eb952d7864d9b" => :sierra
-    sha256 "6e6902ebcdb50d95ab0aeeb9fcc086956eb768110f1646839dba876b1f31c643" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "db4cb3b0e482ef14c640c0b0bad82b0a766a6552d165920af671c04ba5b4af4f"
+    sha256 cellar: :any_skip_relocation, mojave:      "3199cc807995df84916d63c216d0a2793ed8af5513bed9488d397e4efcf745c2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "68e5bf0c9924719525b0522da2656ae43a7cdb11bcdf3a6c05e481c3f5b242ec"
+    sha256 cellar: :any_skip_relocation, sierra:      "c4f104fa72861e982b9071e656675a3ed3c4bf2d37fddeab3c5eb952d7864d9b"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "6e6902ebcdb50d95ab0aeeb9fcc086956eb768110f1646839dba876b1f31c643"
   end
 
   depends_on "protobuf"

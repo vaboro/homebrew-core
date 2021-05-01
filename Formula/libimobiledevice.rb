@@ -6,10 +6,9 @@ class Libimobiledevice < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "eb7f28d86797461d5ef859d00629176e1ce3234790ef17b9ee3f9c9990a664e2" => :catalina
-    sha256 "5143eaf34011a22dd1951f10495a7568e77a2e862fb9f4dbae9bab2f784f926e" => :mojave
-    sha256 "072d224a0fa2a77bccde27eee39b65300a387613b41f07fc677108a7812ec003" => :high_sierra
+    sha256 cellar: :any, catalina:    "eb7f28d86797461d5ef859d00629176e1ce3234790ef17b9ee3f9c9990a664e2"
+    sha256 cellar: :any, mojave:      "5143eaf34011a22dd1951f10495a7568e77a2e862fb9f4dbae9bab2f784f926e"
+    sha256 cellar: :any, high_sierra: "072d224a0fa2a77bccde27eee39b65300a387613b41f07fc677108a7812ec003"
   end
 
   head do

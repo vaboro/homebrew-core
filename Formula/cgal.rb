@@ -6,10 +6,9 @@ class Cgal < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "32e9001290a10651e48983e09428d78f2d843026eb5af8063c09ceba39c662bc" => :catalina
-    sha256 "032fb1d8fe7689b503521d48d6ca2350db3e4e7d88d7299cb524aea79fc5f37f" => :mojave
-    sha256 "63ab79803298b439d6db6bc99f9153572ca11dae66f1251058c9cf5f7327c81b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "32e9001290a10651e48983e09428d78f2d843026eb5af8063c09ceba39c662bc"
+    sha256 cellar: :any_skip_relocation, mojave:      "032fb1d8fe7689b503521d48d6ca2350db3e4e7d88d7299cb524aea79fc5f37f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "63ab79803298b439d6db6bc99f9153572ca11dae66f1251058c9cf5f7327c81b"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -8,9 +8,9 @@ class Distcc < Formula
   head "https://github.com/distcc/distcc.git"
 
   bottle do
-    sha256 "3a6363381e34f80e4c589ae8029cac12f60fa317db23c1d1ef4a0419a88b562d" => :catalina
-    sha256 "b1dd27aba40dd04de69f094f07d6a474045d83cc09c7972ab07c6ad77e750109" => :mojave
-    sha256 "feff6f640a0b3154242e6f0a1567cd0a93b523f033fddd1ac5702bc47f0ea805" => :high_sierra
+    sha256 catalina:    "3a6363381e34f80e4c589ae8029cac12f60fa317db23c1d1ef4a0419a88b562d"
+    sha256 mojave:      "b1dd27aba40dd04de69f094f07d6a474045d83cc09c7972ab07c6ad77e750109"
+    sha256 high_sierra: "feff6f640a0b3154242e6f0a1567cd0a93b523f033fddd1ac5702bc47f0ea805"
   end
 
   depends_on "autoconf" => :build

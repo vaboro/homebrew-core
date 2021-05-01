@@ -9,11 +9,10 @@ class Rtptools < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "62a46aec907b497ca92c8a07731cf56b3a2b986850acbcb203aa87e94e945abe" => :catalina
-    sha256 "51fe1b7831b60ee5ca438c11f72094149dbee5f96209a965997209fd6ac95742" => :mojave
-    sha256 "e96df17dfe878ecb9e87a938579a21d514e31dbf8e5e6b743264dac23e42501c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "62a46aec907b497ca92c8a07731cf56b3a2b986850acbcb203aa87e94e945abe"
+    sha256 cellar: :any_skip_relocation, mojave:      "51fe1b7831b60ee5ca438c11f72094149dbee5f96209a965997209fd6ac95742"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e96df17dfe878ecb9e87a938579a21d514e31dbf8e5e6b743264dac23e42501c"
   end
 
   def install

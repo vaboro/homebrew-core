@@ -10,10 +10,9 @@ class GnomeAutoar < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e98e396441864f69d9866921363bbff8fe3a0e6e7048e9fcebfa98d0f8e3100c" => :catalina
-    sha256 "8f87552420faa2d64fee8cf655a15c58eb988bba92284b00e4fcb3cf2f10ce82" => :mojave
-    sha256 "bc17062bdb3f3b299c5122ffd887ff872d22f9d3021faed94db07da9687d096c" => :high_sierra
+    sha256 cellar: :any, catalina:    "e98e396441864f69d9866921363bbff8fe3a0e6e7048e9fcebfa98d0f8e3100c"
+    sha256 cellar: :any, mojave:      "8f87552420faa2d64fee8cf655a15c58eb988bba92284b00e4fcb3cf2f10ce82"
+    sha256 cellar: :any, high_sierra: "bc17062bdb3f3b299c5122ffd887ff872d22f9d3021faed94db07da9687d096c"
   end
 
   depends_on "pkg-config" => :build

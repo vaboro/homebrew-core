@@ -11,10 +11,9 @@ class Pike < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ae20ba3c7fd69c026892555798559bd2da90d53dc3cf07eb5d7423af505082d5" => :catalina
-    sha256 "ff1e2f11d0beec51cc41d9eb566a80cbf53b51933158c6083054e3b91dfa251c" => :mojave
-    sha256 "10eb373d72d3c178dc1f560a7e1c35f8b6dc51412d7eb4f4cf4f751109d4fd9d" => :high_sierra
+    sha256 cellar: :any, catalina:    "ae20ba3c7fd69c026892555798559bd2da90d53dc3cf07eb5d7423af505082d5"
+    sha256 cellar: :any, mojave:      "ff1e2f11d0beec51cc41d9eb566a80cbf53b51933158c6083054e3b91dfa251c"
+    sha256 cellar: :any, high_sierra: "10eb373d72d3c178dc1f560a7e1c35f8b6dc51412d7eb4f4cf4f751109d4fd9d"
   end
 
   depends_on "gmp"

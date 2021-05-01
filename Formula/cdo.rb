@@ -6,10 +6,9 @@ class Cdo < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "7642f67bf1e8b5eb28faa6b31b9c5c8800d971d584a2b8ef5c218fd39f3929c4" => :catalina
-    sha256 "6bee75bcd2637789145bcfb627c6faf7f4eb2a156ada667ddcfa9c97ad374666" => :mojave
-    sha256 "1f7aef8ac91a7f368b6e571537a59d8a83220657b8a051d7a85ac820a67cb853" => :high_sierra
+    sha256 cellar: :any, catalina:    "7642f67bf1e8b5eb28faa6b31b9c5c8800d971d584a2b8ef5c218fd39f3929c4"
+    sha256 cellar: :any, mojave:      "6bee75bcd2637789145bcfb627c6faf7f4eb2a156ada667ddcfa9c97ad374666"
+    sha256 cellar: :any, high_sierra: "1f7aef8ac91a7f368b6e571537a59d8a83220657b8a051d7a85ac820a67cb853"
   end
 
   depends_on "eccodes"

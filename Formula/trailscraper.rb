@@ -8,10 +8,9 @@ class Trailscraper < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "41aad6155d9d4b2dcba4d53ed476b332bd49bca7a12de90275860aa02a65ad92" => :catalina
-    sha256 "6d4cfca0f6bacecde59b6371e5226ff4b464fcf1995698cf93e64a8fc90e2b7e" => :mojave
-    sha256 "51d3136645481a1692b49bbc3f1c428d55e52e7fc6fe54e1e3006dcdaa821d31" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "41aad6155d9d4b2dcba4d53ed476b332bd49bca7a12de90275860aa02a65ad92"
+    sha256 cellar: :any_skip_relocation, mojave:      "6d4cfca0f6bacecde59b6371e5226ff4b464fcf1995698cf93e64a8fc90e2b7e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "51d3136645481a1692b49bbc3f1c428d55e52e7fc6fe54e1e3006dcdaa821d31"
   end
 
   depends_on "python@3.8"

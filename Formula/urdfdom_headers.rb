@@ -5,10 +5,9 @@ class UrdfdomHeaders < Formula
   sha256 "76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c" => :catalina
-    sha256 "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c" => :mojave
-    sha256 "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c"
+    sha256 cellar: :any_skip_relocation, mojave:      "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c6840c3177042a718ae29bc8238e5ec20dbcde4f9269b3042f8eed1a2aa6292c"
   end
 
   depends_on "cmake" => :build

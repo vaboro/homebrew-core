@@ -10,10 +10,9 @@ class Ford < Formula
   head "https://github.com/cmacmackin/ford.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3eb76094046483b936f34931c7b93c9d793478c6228579b1c8c456093981befc" => :catalina
-    sha256 "8990b0e28b63d0351570feec384adff4b97bd5cdca722c829a63d45d2a15dd20" => :mojave
-    sha256 "6c9d98f4b9b0716dc0de0f0afd61024e68b073dd6baea816ff65cd838b31e90b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3eb76094046483b936f34931c7b93c9d793478c6228579b1c8c456093981befc"
+    sha256 cellar: :any_skip_relocation, mojave:      "8990b0e28b63d0351570feec384adff4b97bd5cdca722c829a63d45d2a15dd20"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6c9d98f4b9b0716dc0de0f0afd61024e68b073dd6baea816ff65cd838b31e90b"
   end
 
   depends_on "graphviz"

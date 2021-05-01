@@ -8,11 +8,10 @@ class Chipmunk < Formula
   head "https://github.com/slembcke/Chipmunk2D.git"
 
   bottle do
-    cellar :any
-    sha256 "b71191c2c1e4859cb9d5e77b8684612dec1c191780a0b1d56afc04ada66da036" => :catalina
-    sha256 "16292e5518bae60c6990a6f1565e1416f91ffe1c878ab43b58465bb2a24d3d11" => :mojave
-    sha256 "5370b9d8db489d6b8944c23fd4906768c84d87e22f054ca3381c7ee527233f4d" => :high_sierra
-    sha256 "c92a9c1134a272244ca3936b2c94431df7ed7002a9eec99f6914fe1128adae12" => :sierra
+    sha256 cellar: :any, catalina:    "b71191c2c1e4859cb9d5e77b8684612dec1c191780a0b1d56afc04ada66da036"
+    sha256 cellar: :any, mojave:      "16292e5518bae60c6990a6f1565e1416f91ffe1c878ab43b58465bb2a24d3d11"
+    sha256 cellar: :any, high_sierra: "5370b9d8db489d6b8944c23fd4906768c84d87e22f054ca3381c7ee527233f4d"
+    sha256 cellar: :any, sierra:      "c92a9c1134a272244ca3936b2c94431df7ed7002a9eec99f6914fe1128adae12"
   end
 
   depends_on "cmake" => :build

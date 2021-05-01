@@ -6,10 +6,9 @@ class Libvmaf < Formula
   license "BSD-2-Clause-Patent"
 
   bottle do
-    cellar :any
-    sha256 "3ff54681fdedd65aa05925a0a5deb941e2b48ecdc946bb83358013e4a53f46f3" => :catalina
-    sha256 "fe3f8995fa8ce2c13af693e40581dc93e63e22821fa3fe007430a2acd3bca6da" => :mojave
-    sha256 "c701af393db9948a5d804607237678b232a32d7501de39c482095353c5f7d3b6" => :high_sierra
+    sha256 cellar: :any, catalina:    "3ff54681fdedd65aa05925a0a5deb941e2b48ecdc946bb83358013e4a53f46f3"
+    sha256 cellar: :any, mojave:      "fe3f8995fa8ce2c13af693e40581dc93e63e22821fa3fe007430a2acd3bca6da"
+    sha256 cellar: :any, high_sierra: "c701af393db9948a5d804607237678b232a32d7501de39c482095353c5f7d3b6"
   end
 
   depends_on "meson" => :build

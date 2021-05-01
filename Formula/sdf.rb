@@ -5,11 +5,10 @@ class Sdf < Formula
   sha256 "181ae979118d75c6163f2acec8e455952f3033378a4518b0b829d26a96e10b3d"
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "fe35832ac1cd23d4a30259ed3e2745543ee7641cf3cb774c092916acb135558f" => :catalina
-    sha256 "bb23a4a58c726d8e86346151dd3f59bfd9185585dcaffcebfa73882abc6bd3ca" => :mojave
-    sha256 "e4229bab3c8cfda42089e5371aef014a0fea214be9b7c8a99537077268fec106" => :high_sierra
+    sha256 cellar: :any, catalina:    "fe35832ac1cd23d4a30259ed3e2745543ee7641cf3cb774c092916acb135558f"
+    sha256 cellar: :any, mojave:      "bb23a4a58c726d8e86346151dd3f59bfd9185585dcaffcebfa73882abc6bd3ca"
+    sha256 cellar: :any, high_sierra: "e4229bab3c8cfda42089e5371aef014a0fea214be9b7c8a99537077268fec106"
   end
 
   depends_on "pkg-config" => :build

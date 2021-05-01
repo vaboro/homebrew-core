@@ -7,10 +7,9 @@ class Oauth2l < Formula
   head "https://github.com/google/oauth2l.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4dedbbebe5996581e6a6c41500abded4f96b0d888e7b68e64584b846d196967e" => :catalina
-    sha256 "3cdb4abb44ae3fa046446c28a54225ab46efa736a6cc5dcab80d7156c8f78348" => :mojave
-    sha256 "d52fe266287cba01a822204ae32770cff65a244011a69f5306d9d38071c6385a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4dedbbebe5996581e6a6c41500abded4f96b0d888e7b68e64584b846d196967e"
+    sha256 cellar: :any_skip_relocation, mojave:      "3cdb4abb44ae3fa046446c28a54225ab46efa736a6cc5dcab80d7156c8f78348"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d52fe266287cba01a822204ae32770cff65a244011a69f5306d9d38071c6385a"
   end
 
   depends_on "go" => :build

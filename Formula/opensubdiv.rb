@@ -6,9 +6,9 @@ class Opensubdiv < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "ef8b813dc962503a90798c4327805730eb6eba3989dfa7a3a137ea6021777e56" => :catalina
-    sha256 "8b00f0fe55b6163755170a122fa3dbceaf740fe806ae6b856a37cd7b5928a856" => :mojave
-    sha256 "41f202b119fff15151d6d2c8259b71c94f9d129141fc16992e6b75552b0b1ec7" => :high_sierra
+    sha256 catalina:    "ef8b813dc962503a90798c4327805730eb6eba3989dfa7a3a137ea6021777e56"
+    sha256 mojave:      "8b00f0fe55b6163755170a122fa3dbceaf740fe806ae6b856a37cd7b5928a856"
+    sha256 high_sierra: "41f202b119fff15151d6d2c8259b71c94f9d129141fc16992e6b75552b0b1ec7"
   end
 
   depends_on "cmake" => :build

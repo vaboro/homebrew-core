@@ -7,10 +7,9 @@ class Hexgui < Formula
   head "https://github.com/apetresc/hexgui.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ab36302c111ad3164f4746d80d937ec736f84967a90ee6cb8f9afc1f22e5f0dd" => :catalina
-    sha256 "643b91090287bcafbd5aefcfd68c177580f22a2d179cb57bad865494cfc41c82" => :mojave
-    sha256 "69dc43fc44aa2fbf83144c672aeb4e73b1471569fef39bdb20ee1653ea6c0c28" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ab36302c111ad3164f4746d80d937ec736f84967a90ee6cb8f9afc1f22e5f0dd"
+    sha256 cellar: :any_skip_relocation, mojave:      "643b91090287bcafbd5aefcfd68c177580f22a2d179cb57bad865494cfc41c82"
+    sha256 cellar: :any_skip_relocation, high_sierra: "69dc43fc44aa2fbf83144c672aeb4e73b1471569fef39bdb20ee1653ea6c0c28"
   end
 
   depends_on "ant" => :build
@@ -23,6 +22,6 @@ class Hexgui < Formula
   end
 
   test do
-    assert_match /^HexGui #{version} .*/, shell_output("#{bin}/hexgui -version").chomp
+    assert_match(/^HexGui #{version} .*/, shell_output("#{bin}/hexgui -version").chomp)
   end
 end

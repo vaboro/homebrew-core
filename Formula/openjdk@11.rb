@@ -6,10 +6,9 @@ class OpenjdkAT11 < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "5cf17a69c7f88b8f721959391d89eafcf1dc6ebcbe5f1496b99448ac9fce0c1d" => :catalina
-    sha256 "a575ebd198211a770bf0fce657c2393c19064d13621dfc88fc6104cadb205250" => :mojave
-    sha256 "ebbda44a7ef9c6d4af36185b8fbdbc16f403c9705696b49b2bd477110d7900ad" => :high_sierra
+    sha256 cellar: :any, catalina:    "5cf17a69c7f88b8f721959391d89eafcf1dc6ebcbe5f1496b99448ac9fce0c1d"
+    sha256 cellar: :any, mojave:      "a575ebd198211a770bf0fce657c2393c19064d13621dfc88fc6104cadb205250"
+    sha256 cellar: :any, high_sierra: "ebbda44a7ef9c6d4af36185b8fbdbc16f403c9705696b49b2bd477110d7900ad"
   end
 
   keg_only :versioned_formula

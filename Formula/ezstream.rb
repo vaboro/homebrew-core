@@ -5,10 +5,9 @@ class Ezstream < Formula
   sha256 "fc4bf494897a8b1cf75dceefb1eb22ebd36967e5c3b5ce2af9858dbb94cf1157"
 
   bottle do
-    cellar :any
-    sha256 "5dbee1cca793b44cd470bd858b3c6f53bd82c48609468fefe11fc79ba495fe56" => :catalina
-    sha256 "fe97ee0a48df55d159cbd9f9cb7c066cc003ff430fb211f83a95df41a2e555e2" => :mojave
-    sha256 "7714b3b155984c561dabce8a39c2668658cce995ee582aaca387fde476b38914" => :high_sierra
+    sha256 cellar: :any, catalina:    "5dbee1cca793b44cd470bd858b3c6f53bd82c48609468fefe11fc79ba495fe56"
+    sha256 cellar: :any, mojave:      "fe97ee0a48df55d159cbd9f9cb7c066cc003ff430fb211f83a95df41a2e555e2"
+    sha256 cellar: :any, high_sierra: "7714b3b155984c561dabce8a39c2668658cce995ee582aaca387fde476b38914"
   end
 
   depends_on "check" => :build

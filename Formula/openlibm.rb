@@ -5,10 +5,9 @@ class Openlibm < Formula
   sha256 "d4b252b71c74571fe5b39d42dee03ccca4bb238827e6a2c9ba108dbca2d3e879"
 
   bottle do
-    cellar :any
-    sha256 "f1e3e0273605b2433a5d44d99a10d8dcb31631965dc8bf02e322aaa7d3cb124b" => :catalina
-    sha256 "ad3fdd38f3f3e49739ade208a42d3212ded50bcff0aeda3593da46f162649398" => :mojave
-    sha256 "051c797563aca3ae42f5aaa50e7f92bb5692716e420638b9f689302118604e69" => :high_sierra
+    sha256 cellar: :any, catalina:    "f1e3e0273605b2433a5d44d99a10d8dcb31631965dc8bf02e322aaa7d3cb124b"
+    sha256 cellar: :any, mojave:      "ad3fdd38f3f3e49739ade208a42d3212ded50bcff0aeda3593da46f162649398"
+    sha256 cellar: :any, high_sierra: "051c797563aca3ae42f5aaa50e7f92bb5692716e420638b9f689302118604e69"
   end
 
   keg_only :provided_by_macos

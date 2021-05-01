@@ -12,10 +12,9 @@ class ErlangAT21 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "80da11f173ac7d9b658613ad9931e33ee042905e8e2decac288c1767324bbe5a" => :catalina
-    sha256 "daf05823fc6b27636118a957e08799a3ff4de0ac33a033ecd9b895047f300312" => :mojave
-    sha256 "94a90bf5c009855d8ef5b5f0251cf63d327602b58ab2e0251533e710eb6ef4d7" => :high_sierra
+    sha256 cellar: :any, catalina:    "80da11f173ac7d9b658613ad9931e33ee042905e8e2decac288c1767324bbe5a"
+    sha256 cellar: :any, mojave:      "daf05823fc6b27636118a957e08799a3ff4de0ac33a033ecd9b895047f300312"
+    sha256 cellar: :any, high_sierra: "94a90bf5c009855d8ef5b5f0251cf63d327602b58ab2e0251533e710eb6ef4d7"
   end
 
   keg_only :versioned_formula
@@ -97,26 +96,26 @@ class ErlangAT21 < Formula
   test do
     system "#{bin}/erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
     (testpath/"factorial").write <<~EOS
-      #!#{bin}/escript
-      %% -*- erlang -*-
-      %%! -smp enable -sname factorial -mnesia debug verbose
-      main([String]) ->
-          try
-              N = list_to_integer(String),
-              F = fac(N),
-              io:format("factorial ~w = ~w\n", [N,F])
-          catch
-              _:_ ->
-                  usage()
-          end;
-      main(_) ->
-          usage().
-      
-      usage() ->
-          io:format("usage: factorial integer\n").
-      
-      fac(0) -> 1;
-      fac(N) -> N * fac(N-1).
+            #!#{bin}/escript
+            %% -*- erlang -*-
+            %%! -smp enable -sname factorial -mnesia debug verbose
+            main([String]) ->
+                try
+                    N = list_to_integer(String),
+                    F = fac(N),
+                    io:format("factorial ~w = ~w\n", [N,F])
+                catch
+                    _:_ ->
+                        usage()
+                end;
+            main(_) ->
+                usage().
+      #{"      "}
+            usage() ->
+                io:format("usage: factorial integer\n").
+      #{"      "}
+            fac(0) -> 1;
+            fac(N) -> N * fac(N-1).
     EOS
     chmod 0755, "factorial"
     assert_match "usage: factorial integer", shell_output("./factorial")

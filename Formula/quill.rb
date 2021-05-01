@@ -7,10 +7,9 @@ class Quill < Formula
   head "https://github.com/odygrd/quill.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "28af658907cc0cb9b01675e951afbdf074afbd128a763e5e8d4067869ae9146b" => :catalina
-    sha256 "643497902d7e23557b543e45972405765d5f3555a852f82907bf3443ed2c5e24" => :mojave
-    sha256 "c46e30954680dde579499619460aff56f8bb495bef0b81f524f3782659634e24" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "28af658907cc0cb9b01675e951afbdf074afbd128a763e5e8d4067869ae9146b"
+    sha256 cellar: :any_skip_relocation, mojave:      "643497902d7e23557b543e45972405765d5f3555a852f82907bf3443ed2c5e24"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c46e30954680dde579499619460aff56f8bb495bef0b81f524f3782659634e24"
   end
 
   depends_on "cmake" => :build

@@ -6,11 +6,10 @@ class Viewvc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "d56de2b10e8bd8f161071b9d39ae435ee1fc70e4be5056b39d48dec7e77f185e" => :catalina
-    sha256 "6cd2fbb98cdc1ff4f689aae5ebea8cf4bee6f078671f812c492758274f22a5d6" => :mojave
-    sha256 "19c07a79667814ccb1b14b6214a3d5fcca65ec31381e6e46a5db3ac3f72fc2d4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d56de2b10e8bd8f161071b9d39ae435ee1fc70e4be5056b39d48dec7e77f185e"
+    sha256 cellar: :any_skip_relocation, mojave:      "6cd2fbb98cdc1ff4f689aae5ebea8cf4bee6f078671f812c492758274f22a5d6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "19c07a79667814ccb1b14b6214a3d5fcca65ec31381e6e46a5db3ac3f72fc2d4"
   end
 
   depends_on :macos # Due to Python 2 (https://github.com/viewvc/viewvc/issues/138)

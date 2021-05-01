@@ -6,10 +6,9 @@ class Fastbit < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "31e723c0610621033859357ab2a6dc373cf955847ab5c3dcf32696d260fa0de3" => :catalina
-    sha256 "0f9a32fe10c3e5c6e2826009f247bc55064ad5612dcda9724cda203c8b18e00e" => :mojave
-    sha256 "a7d7330e664e04191fe183050b588e4d3ad13aa101553f8f6965deb708c96d72" => :high_sierra
+    sha256 cellar: :any, catalina:    "31e723c0610621033859357ab2a6dc373cf955847ab5c3dcf32696d260fa0de3"
+    sha256 cellar: :any, mojave:      "0f9a32fe10c3e5c6e2826009f247bc55064ad5612dcda9724cda203c8b18e00e"
+    sha256 cellar: :any, high_sierra: "a7d7330e664e04191fe183050b588e4d3ad13aa101553f8f6965deb708c96d72"
   end
 
   depends_on "openjdk"

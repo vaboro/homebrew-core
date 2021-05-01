@@ -11,10 +11,9 @@ class Dnsperf < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "29ce167d9cac25446abbab3948a4de2b66bead70576bca24f13bda51c1d79de4" => :catalina
-    sha256 "4cc4b444f46fe98328a3d07c70672b6e963b7b530a10515a02a1f40eab1b2d42" => :mojave
-    sha256 "d2bad43d4858579143f5f01aab16ca5fe8a528b3fe81051ee212ebefc7e4a057" => :high_sierra
+    sha256 cellar: :any, catalina:    "29ce167d9cac25446abbab3948a4de2b66bead70576bca24f13bda51c1d79de4"
+    sha256 cellar: :any, mojave:      "4cc4b444f46fe98328a3d07c70672b6e963b7b530a10515a02a1f40eab1b2d42"
+    sha256 cellar: :any, high_sierra: "d2bad43d4858579143f5f01aab16ca5fe8a528b3fe81051ee212ebefc7e4a057"
   end
 
   depends_on "pkg-config" => :build

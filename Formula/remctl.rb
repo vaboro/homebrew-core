@@ -10,10 +10,9 @@ class Remctl < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0c94a53cbd26ed882a5b4c8f973562120dd1cf0a6f76457d392cc5fe59d5ee89" => :catalina
-    sha256 "3472db7e7bd12cb03c12b6dc2db8168439a24eef73bde7fbec775a41db628042" => :mojave
-    sha256 "777fb3b5f47e4da6caeacba3c4959a38ebf7113a89555aebe74d41854c70104a" => :high_sierra
+    sha256 cellar: :any, catalina:    "0c94a53cbd26ed882a5b4c8f973562120dd1cf0a6f76457d392cc5fe59d5ee89"
+    sha256 cellar: :any, mojave:      "3472db7e7bd12cb03c12b6dc2db8168439a24eef73bde7fbec775a41db628042"
+    sha256 cellar: :any, high_sierra: "777fb3b5f47e4da6caeacba3c4959a38ebf7113a89555aebe74d41854c70104a"
   end
 
   depends_on "libevent"

@@ -10,10 +10,9 @@ class Byobu < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6" => :catalina
-    sha256 "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6" => :mojave
-    sha256 "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6"
+    sha256 cellar: :any_skip_relocation, mojave:      "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "39b468dabc1497338b4511f9f565f9adcdd058a99207de345da28b18a0826ae6"
   end
 
   head do

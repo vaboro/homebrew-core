@@ -12,10 +12,9 @@ class Capnp < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "741c2079361cdb5881a60684190bc4aa98ff9cc6f8d29aa46880e809ac1b06c3" => :catalina
-    sha256 "f389012b8211b70af4fa7d2eed8db8ad399ef2bdc98e286fb57a4b1beb93dfe4" => :mojave
-    sha256 "9c3beb8d8db3b372e4d2fd07d99a553fde6ff53824c6cfec82c3db41e212bc5b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "741c2079361cdb5881a60684190bc4aa98ff9cc6f8d29aa46880e809ac1b06c3"
+    sha256 cellar: :any_skip_relocation, mojave:      "f389012b8211b70af4fa7d2eed8db8ad399ef2bdc98e286fb57a4b1beb93dfe4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9c3beb8d8db3b372e4d2fd07d99a553fde6ff53824c6cfec82c3db41e212bc5b"
   end
 
   depends_on "cmake" => :build

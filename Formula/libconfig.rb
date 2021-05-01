@@ -7,11 +7,10 @@ class Libconfig < Formula
   head "https://github.com/hyperrealm/libconfig.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "5133affbfe2df2eccf05017748542e521e70a8db8763c8d8e39e00aec78fe3f8" => :catalina
-    sha256 "b1c005fc0d3a811efcef915d8e84d9cc2828d6c35c5649f71fab3c714b2ae1ea" => :mojave
-    sha256 "5762b7106a3e4ecc470193cd8abcfd40de090c456d42b413e545402246d73f69" => :high_sierra
+    sha256 cellar: :any, catalina:    "5133affbfe2df2eccf05017748542e521e70a8db8763c8d8e39e00aec78fe3f8"
+    sha256 cellar: :any, mojave:      "b1c005fc0d3a811efcef915d8e84d9cc2828d6c35c5649f71fab3c714b2ae1ea"
+    sha256 cellar: :any, high_sierra: "5762b7106a3e4ecc470193cd8abcfd40de090c456d42b413e545402246d73f69"
   end
 
   depends_on "autoconf" => :build

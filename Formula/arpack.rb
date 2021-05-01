@@ -8,10 +8,9 @@ class Arpack < Formula
   head "https://github.com/opencollab/arpack-ng.git"
 
   bottle do
-    cellar :any
-    sha256 "c4d53dfa06e56a05dfe6c53020a8c5d867b6cf9d0cc37de9b6debc80d1af0d44" => :catalina
-    sha256 "a5b2d5d34b7c9650d54b7985a4edf979e9c43ddc29830676f042c112f4025967" => :mojave
-    sha256 "152d4a439d8309460a8d2da947eb611aa5c6dd9fa77bba9afa2db60c09f807f4" => :high_sierra
+    sha256 cellar: :any, catalina:    "c4d53dfa06e56a05dfe6c53020a8c5d867b6cf9d0cc37de9b6debc80d1af0d44"
+    sha256 cellar: :any, mojave:      "a5b2d5d34b7c9650d54b7985a4edf979e9c43ddc29830676f042c112f4025967"
+    sha256 cellar: :any, high_sierra: "152d4a439d8309460a8d2da947eb611aa5c6dd9fa77bba9afa2db60c09f807f4"
   end
 
   depends_on "autoconf" => :build

@@ -6,10 +6,9 @@ class Fargatecli < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4cf90341de4a444842414de2364ae5ed51283008dfd99739cde4fcd00583f50a" => :catalina
-    sha256 "193a1ca57966d54bc0ebaaa5b28397448f2ecc0276d6f69b4adc20acd8324553" => :mojave
-    sha256 "c5b6d73103fdab97321d13426271177f03bb1240db637f8d252678e376e7f129" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4cf90341de4a444842414de2364ae5ed51283008dfd99739cde4fcd00583f50a"
+    sha256 cellar: :any_skip_relocation, mojave:      "193a1ca57966d54bc0ebaaa5b28397448f2ecc0276d6f69b4adc20acd8324553"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c5b6d73103fdab97321d13426271177f03bb1240db637f8d252678e376e7f129"
   end
 
   depends_on "go" => :build

@@ -7,10 +7,9 @@ class Shfmt < Formula
   head "https://github.com/mvdan/sh.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "42bd98e64ae352448f09fdc2b56a71e36e3659e382338447e94d20f4d7befcff" => :catalina
-    sha256 "d58c28c678be4be515c4a22e99338f7b1120a9f9d2eb004b6d7863a284ad5295" => :mojave
-    sha256 "127c0adf737c2de8d0a23850249b7cbc22fe5f864434c331ed521d4f00f3f3f7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "42bd98e64ae352448f09fdc2b56a71e36e3659e382338447e94d20f4d7befcff"
+    sha256 cellar: :any_skip_relocation, mojave:      "d58c28c678be4be515c4a22e99338f7b1120a9f9d2eb004b6d7863a284ad5295"
+    sha256 cellar: :any_skip_relocation, high_sierra: "127c0adf737c2de8d0a23850249b7cbc22fe5f864434c331ed521d4f00f3f3f7"
   end
 
   depends_on "go" => :build

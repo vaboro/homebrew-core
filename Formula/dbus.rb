@@ -12,9 +12,9 @@ class Dbus < Formula
   end
 
   bottle do
-    sha256 "23513ea5d75203fe4374ab37cc4226f23f34ec604449ef572fd6a2b48a612ff3" => :catalina
-    sha256 "912da7c3211a981762dc45e4f67fbedd1afd379459a40244340c83caa4134382" => :mojave
-    sha256 "6c98efff3cb8fdbba552351a2953f85953f053e12a8af891461118d37affdb73" => :high_sierra
+    sha256 catalina:    "23513ea5d75203fe4374ab37cc4226f23f34ec604449ef572fd6a2b48a612ff3"
+    sha256 mojave:      "912da7c3211a981762dc45e4f67fbedd1afd379459a40244340c83caa4134382"
+    sha256 high_sierra: "6c98efff3cb8fdbba552351a2953f85953f053e12a8af891461118d37affdb73"
   end
 
   head do

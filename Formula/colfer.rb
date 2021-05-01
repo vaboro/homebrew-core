@@ -6,10 +6,9 @@ class Colfer < Formula
   license "CC0-1.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8" => :catalina
-    sha256 "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8" => :mojave
-    sha256 "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8"
+    sha256 cellar: :any_skip_relocation, mojave:      "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dfdb2743960de62ee18ab35a7ead3d2d8de4207cc6ffa11ff0d8ebf393a591e8"
   end
 
   depends_on "go" => :build

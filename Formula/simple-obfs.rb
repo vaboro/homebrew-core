@@ -8,12 +8,11 @@ class SimpleObfs < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "64ac7bb71b3dd0a0d087d7f981c53516abfb294f709d84cb969b192456310c51" => :catalina
-    sha256 "7d00695065a2e780f6a93d98d3d2a96ebe4c02fe48e52e30cea4fefe353100e8" => :mojave
-    sha256 "08024887dc9fba3f56425181dd34dba1ecf185dad688b85d20a7b70ec07afbae" => :high_sierra
-    sha256 "831de4a180d61c801397ead63a0130d8d2eb102afb526ef81bcecb2f9d1d029b" => :sierra
-    sha256 "eccfcd8d4016297999d730fd185624b42e903f7dfac43bd6227c337c2b3aafea" => :el_capitan
+    sha256 cellar: :any, catalina:    "64ac7bb71b3dd0a0d087d7f981c53516abfb294f709d84cb969b192456310c51"
+    sha256 cellar: :any, mojave:      "7d00695065a2e780f6a93d98d3d2a96ebe4c02fe48e52e30cea4fefe353100e8"
+    sha256 cellar: :any, high_sierra: "08024887dc9fba3f56425181dd34dba1ecf185dad688b85d20a7b70ec07afbae"
+    sha256 cellar: :any, sierra:      "831de4a180d61c801397ead63a0130d8d2eb102afb526ef81bcecb2f9d1d029b"
+    sha256 cellar: :any, el_capitan:  "eccfcd8d4016297999d730fd185624b42e903f7dfac43bd6227c337c2b3aafea"
   end
 
   depends_on "asciidoc" => :build

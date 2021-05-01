@@ -8,10 +8,9 @@ class Libffi < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "dd94d39946f53a8f11f78e998f22e46be9666bb265f80bb4714d5d63c1e16a68" => :catalina
-    sha256 "d6e5efd7521676dfc58fcba567514b898091c8580df4d6253f5dd40a7ee67c82" => :mojave
-    sha256 "7065f0d426921fa069c2494beded9de61e8720954f3f346103c8f871daa4ff8b" => :high_sierra
+    sha256 cellar: :any, catalina:    "dd94d39946f53a8f11f78e998f22e46be9666bb265f80bb4714d5d63c1e16a68"
+    sha256 cellar: :any, mojave:      "d6e5efd7521676dfc58fcba567514b898091c8580df4d6253f5dd40a7ee67c82"
+    sha256 cellar: :any, high_sierra: "7065f0d426921fa069c2494beded9de61e8720954f3f346103c8f871daa4ff8b"
   end
 
   head do

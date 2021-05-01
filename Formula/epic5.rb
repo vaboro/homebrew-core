@@ -12,9 +12,9 @@ class Epic5 < Formula
   end
 
   bottle do
-    sha256 "c9aceac94f6264f34f915b36cd0787a636fea6487ecd1795530800b98861160a" => :catalina
-    sha256 "41bc8ef329eec3234db4b238933e4d1048ca27519ad0464683a79a8038c8e646" => :mojave
-    sha256 "e7a0f24c252fe24ad8d0425da98026fde6dbc0187bd94b6584e562d36ea92573" => :high_sierra
+    sha256 catalina:    "c9aceac94f6264f34f915b36cd0787a636fea6487ecd1795530800b98861160a"
+    sha256 mojave:      "41bc8ef329eec3234db4b238933e4d1048ca27519ad0464683a79a8038c8e646"
+    sha256 high_sierra: "e7a0f24c252fe24ad8d0425da98026fde6dbc0187bd94b6584e562d36ea92573"
   end
 
   depends_on "openssl@1.1"

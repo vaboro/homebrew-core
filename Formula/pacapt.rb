@@ -6,10 +6,9 @@ class Pacapt < Formula
   license "Fair"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2" => :catalina
-    sha256 "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2" => :mojave
-    sha256 "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2"
+    sha256 cellar: :any_skip_relocation, mojave:      "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "88560339524e9f110cb58ddd3e8744cc44d6e24f86c0b9ca05ef01a059c55be2"
   end
 
   def install

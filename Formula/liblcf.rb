@@ -8,10 +8,9 @@ class Liblcf < Formula
   head "https://github.com/EasyRPG/liblcf.git"
 
   bottle do
-    cellar :any
-    sha256 "1765ea5fd438e35c255104fcf3670f4fb20b44b0d88dfc5579deeb95fd0567a1" => :catalina
-    sha256 "626aeacfaba89b8d5bb57945c4f82c33758e7a78de2b2d87261e6e83e874a7bc" => :mojave
-    sha256 "b508d5fd894f0962328296f0d292eb3cd88e48d42d20e75934b7b9abad62c53a" => :high_sierra
+    sha256 cellar: :any, catalina:    "1765ea5fd438e35c255104fcf3670f4fb20b44b0d88dfc5579deeb95fd0567a1"
+    sha256 cellar: :any, mojave:      "626aeacfaba89b8d5bb57945c4f82c33758e7a78de2b2d87261e6e83e874a7bc"
+    sha256 cellar: :any, high_sierra: "b508d5fd894f0962328296f0d292eb3cd88e48d42d20e75934b7b9abad62c53a"
   end
 
   depends_on "pkg-config" => :build

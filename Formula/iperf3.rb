@@ -6,10 +6,9 @@ class Iperf3 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "de2b4908fa73a967a17802a38447db1292e77842635eb905cda9fb776544e4fd" => :catalina
-    sha256 "a17ff5710f6dd6cf26d85044be605580b4174e03f4b655f37b18279bf072f10c" => :mojave
-    sha256 "ab41072fd6fb38994bbcedd1fa1cd1ad78feef49ecf56e45d0dcc96812cdf666" => :high_sierra
+    sha256 cellar: :any, catalina:    "de2b4908fa73a967a17802a38447db1292e77842635eb905cda9fb776544e4fd"
+    sha256 cellar: :any, mojave:      "a17ff5710f6dd6cf26d85044be605580b4174e03f4b655f37b18279bf072f10c"
+    sha256 cellar: :any, high_sierra: "ab41072fd6fb38994bbcedd1fa1cd1ad78feef49ecf56e45d0dcc96812cdf666"
   end
 
   head do

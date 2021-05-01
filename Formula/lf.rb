@@ -6,10 +6,9 @@ class Lf < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a1bb783c227f7c75a701d786fd0ffadd577ef09f4fe1aef0125e1f03a81ba106" => :catalina
-    sha256 "92bbce3dd69010267a5ff66cd3472494ae9e11e7661fb0089bb44fb97fa24d77" => :mojave
-    sha256 "05f7e48eccdff3dd0d2fb35ef82d7e9596e4a57b5b37c672e2f2e5a06af080fb" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a1bb783c227f7c75a701d786fd0ffadd577ef09f4fe1aef0125e1f03a81ba106"
+    sha256 cellar: :any_skip_relocation, mojave:      "92bbce3dd69010267a5ff66cd3472494ae9e11e7661fb0089bb44fb97fa24d77"
+    sha256 cellar: :any_skip_relocation, high_sierra: "05f7e48eccdff3dd0d2fb35ef82d7e9596e4a57b5b37c672e2f2e5a06af080fb"
   end
 
   depends_on "go" => :build

@@ -8,10 +8,9 @@ class Lcm < Formula
   head "https://github.com/lcm-proj/lcm.git"
 
   bottle do
-    cellar :any
-    sha256 "aa4335f0aebe0e8cd91d939d682dbf04ee7f25461967b377ff75133717be9fd4" => :catalina
-    sha256 "8186cc599f880aa2028db0af661119beb7fa8a4422557d63837ab2937d265af5" => :mojave
-    sha256 "46c787c483e3f1c9cfb62b64c3ffab3b83688d00156046d67208071b9b048e8a" => :high_sierra
+    sha256 cellar: :any, catalina:    "aa4335f0aebe0e8cd91d939d682dbf04ee7f25461967b377ff75133717be9fd4"
+    sha256 cellar: :any, mojave:      "8186cc599f880aa2028db0af661119beb7fa8a4422557d63837ab2937d265af5"
+    sha256 cellar: :any, high_sierra: "46c787c483e3f1c9cfb62b64c3ffab3b83688d00156046d67208071b9b048e8a"
   end
 
   depends_on "cmake" => :build

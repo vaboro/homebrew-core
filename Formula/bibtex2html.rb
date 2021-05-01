@@ -10,11 +10,10 @@ class Bibtex2html < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "e9c4f95aaae6ddb40473a8c4349dbd9455c58e71ea4f580c8aa268292578464d" => :catalina
-    sha256 "1a56c6ff9929a75570f231a4fd8b1a4e367d82a8a632c4a45f126b1845ff8ff3" => :mojave
-    sha256 "e2b32aea9dcfb51cff11b8014425975198b73b3a74f48c2f7103e01ef2ec7a9b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e9c4f95aaae6ddb40473a8c4349dbd9455c58e71ea4f580c8aa268292578464d"
+    sha256 cellar: :any_skip_relocation, mojave:      "1a56c6ff9929a75570f231a4fd8b1a4e367d82a8a632c4a45f126b1845ff8ff3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e2b32aea9dcfb51cff11b8014425975198b73b3a74f48c2f7103e01ef2ec7a9b"
   end
 
   depends_on "ocaml" => :build
@@ -42,7 +41,7 @@ class Bibtex2html < Formula
       }
     EOS
     system "#{bin}/bib2bib", "test.bib", "--remove", "pages", "-ob", "out.bib"
-    assert /pages\s*=\s*\{3--4\}/ !~ File.read("out.bib")
-    assert_match /pages\s*=\s*\{3--4\}/, File.read("test.bib")
+    assert(/pages\s*=\s*\{3--4\}/ !~ File.read("out.bib"))
+    assert_match(/pages\s*=\s*\{3--4\}/, File.read("test.bib"))
   end
 end

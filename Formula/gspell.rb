@@ -10,9 +10,9 @@ class Gspell < Formula
   end
 
   bottle do
-    sha256 "b7165cc3def086000bc01e62724c5ae303200ca3eff64f681ead49f80313db20" => :catalina
-    sha256 "eb478bbf00c69404e64f21db962abdcd237d146a326d2779aaeae08f6414b8a2" => :mojave
-    sha256 "24dd633197c7ea490125a506db6379f7b134efdd1f7426bb6d9c0830c1b09f98" => :high_sierra
+    sha256 catalina:    "b7165cc3def086000bc01e62724c5ae303200ca3eff64f681ead49f80313db20"
+    sha256 mojave:      "eb478bbf00c69404e64f21db962abdcd237d146a326d2779aaeae08f6414b8a2"
+    sha256 high_sierra: "24dd633197c7ea490125a506db6379f7b134efdd1f7426bb6d9c0830c1b09f98"
   end
 
   depends_on "autoconf" => :build

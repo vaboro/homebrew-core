@@ -7,10 +7,9 @@ class Hub < Formula
   head "https://github.com/github/hub.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fdf05855839a9d7ec6e7bee6796e3cb5fc473500cffc002366cf98c09a805b69" => :catalina
-    sha256 "bcbae9c683d76f3395665467ba0f0c00c60c12c84022f72faba4b8981724b563" => :mojave
-    sha256 "8800cda4532784bf764ea6116a06c81d8d90bb3d36d8ecf295e64f9dd647c4ad" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "fdf05855839a9d7ec6e7bee6796e3cb5fc473500cffc002366cf98c09a805b69"
+    sha256 cellar: :any_skip_relocation, mojave:      "bcbae9c683d76f3395665467ba0f0c00c60c12c84022f72faba4b8981724b563"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8800cda4532784bf764ea6116a06c81d8d90bb3d36d8ecf295e64f9dd647c4ad"
   end
 
   depends_on "go" => :build

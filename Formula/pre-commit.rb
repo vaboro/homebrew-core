@@ -8,10 +8,9 @@ class PreCommit < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "16fedb26ac5b237eecb5ab73a2a4aef5a7f1c87cd9bb1409c523a0e00f3fa572" => :catalina
-    sha256 "ea8e2a1eedfe8a1ea1035e39601d5974ce166dee4395ceb0ea388af577b64a18" => :mojave
-    sha256 "a9701f56135259c2896d7fdc83bd299aedb70dbda1c909c243d899ed800a317f" => :high_sierra
+    sha256 cellar: :any, catalina:    "16fedb26ac5b237eecb5ab73a2a4aef5a7f1c87cd9bb1409c523a0e00f3fa572"
+    sha256 cellar: :any, mojave:      "ea8e2a1eedfe8a1ea1035e39601d5974ce166dee4395ceb0ea388af577b64a18"
+    sha256 cellar: :any, high_sierra: "a9701f56135259c2896d7fdc83bd299aedb70dbda1c909c243d899ed800a317f"
   end
 
   depends_on "libyaml"

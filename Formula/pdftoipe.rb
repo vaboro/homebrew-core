@@ -6,10 +6,9 @@ class Pdftoipe < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    cellar :any
-    sha256 "2da5d6c4fb60ef9368920736a8c2892e2c877a4e4f2bbca6333312cb48f8dbb0" => :catalina
-    sha256 "384eac41ae723a0dda928c61ad5eef6a1eb18f6c70ae106d45a3f5a493c35f82" => :mojave
-    sha256 "8c1da079c97c63f3f5c6f5ded98d3b039ae146b2322685c62024bdf99d82b3a6" => :high_sierra
+    sha256 cellar: :any, catalina:    "2da5d6c4fb60ef9368920736a8c2892e2c877a4e4f2bbca6333312cb48f8dbb0"
+    sha256 cellar: :any, mojave:      "384eac41ae723a0dda928c61ad5eef6a1eb18f6c70ae106d45a3f5a493c35f82"
+    sha256 cellar: :any, high_sierra: "8c1da079c97c63f3f5c6f5ded98d3b039ae146b2322685c62024bdf99d82b3a6"
   end
 
   depends_on "pkg-config" => :build

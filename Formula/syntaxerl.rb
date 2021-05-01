@@ -6,13 +6,12 @@ class Syntaxerl < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7e37cdaf043add132428e29854d4d1cd0aa5dc039387671ba000b9ae26267d6a" => :catalina
-    sha256 "569cf5e87181031c9b13dd6cb2f4fe17967d4392c87a2db30d498883a05106c6" => :mojave
-    sha256 "2b4c6e6d7e7413fe81e5107e80841f5a8c4bbddec9e12f3f53c92bedd5fced3b" => :high_sierra
-    sha256 "0e0ac8402dd61720eeca50047b173f7500dc38bd7cceb37915c4425b7492044e" => :sierra
-    sha256 "648f30c4fb2db062f4c9f27d3c73cf679181e7183a5b7b83b5670624d88b27d5" => :el_capitan
-    sha256 "80ea1737253a2115722350d6a6456ba48ae853674bb91f7a8b685e7b8311eb74" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "7e37cdaf043add132428e29854d4d1cd0aa5dc039387671ba000b9ae26267d6a"
+    sha256 cellar: :any_skip_relocation, mojave:      "569cf5e87181031c9b13dd6cb2f4fe17967d4392c87a2db30d498883a05106c6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2b4c6e6d7e7413fe81e5107e80841f5a8c4bbddec9e12f3f53c92bedd5fced3b"
+    sha256 cellar: :any_skip_relocation, sierra:      "0e0ac8402dd61720eeca50047b173f7500dc38bd7cceb37915c4425b7492044e"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "648f30c4fb2db062f4c9f27d3c73cf679181e7183a5b7b83b5670624d88b27d5"
+    sha256 cellar: :any_skip_relocation, yosemite:    "80ea1737253a2115722350d6a6456ba48ae853674bb91f7a8b685e7b8311eb74"
   end
 
   depends_on "erlang"

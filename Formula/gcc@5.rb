@@ -1,5 +1,5 @@
 class GccAT5 < Formula
-  desc "The GNU Compiler Collection"
+  desc "GNU Compiler Collection"
   homepage "https://gcc.gnu.org/"
   url "https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz"
@@ -12,7 +12,7 @@ class GccAT5 < Formula
   end
 
   bottle do
-    sha256 "7fc31bed73398ba401db3107151a3b0ae301ddc60e017a45bd3d69ac1b400235" => :high_sierra
+    sha256 high_sierra: "7fc31bed73398ba401db3107151a3b0ae301ddc60e017a45bd3d69ac1b400235"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

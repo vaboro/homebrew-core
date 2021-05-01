@@ -6,11 +6,10 @@ class Geph2 < Formula
   license "GPL-3.0-only"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1" => :catalina
-    sha256 "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1" => :mojave
-    sha256 "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1"
+    sha256 cellar: :any_skip_relocation, mojave:      "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6a596d4f5c73bdaf166874f9ad4c8721d8ccbbe39da45541b00293a4b55675d1"
   end
 
   depends_on "go" => :build

@@ -10,10 +10,9 @@ class Xorriso < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ba9353c38b3109630b543faf56f9f8431ec225db32e5f446495528879fcdc361" => :catalina
-    sha256 "e85cf1dfeb93797ef41680738cbde8fdf02aecb8040681742c2c89c82659c871" => :mojave
-    sha256 "341b85b60e1762c6ffca661940ce5e1958b1f2aab89f49da0865466ad1badc5a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ba9353c38b3109630b543faf56f9f8431ec225db32e5f446495528879fcdc361"
+    sha256 cellar: :any_skip_relocation, mojave:      "e85cf1dfeb93797ef41680738cbde8fdf02aecb8040681742c2c89c82659c871"
+    sha256 cellar: :any_skip_relocation, high_sierra: "341b85b60e1762c6ffca661940ce5e1958b1f2aab89f49da0865466ad1badc5a"
   end
 
   uses_from_macos "zlib"

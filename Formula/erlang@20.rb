@@ -12,16 +12,15 @@ class ErlangAT20 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "130019a8e459654a92e7267b60932867c8c27957d5bd5b791e358407e6d2755b" => :catalina
-    sha256 "5e1003bf97321f4cf5cd57b062b752c2d92bcbb457ab5e992309790b7827fd1f" => :mojave
-    sha256 "a401feb22927ecc0e649f3f2f7aeba331725b6390985f826ed5639d59732ee6a" => :high_sierra
+    sha256 cellar: :any, catalina:    "130019a8e459654a92e7267b60932867c8c27957d5bd5b791e358407e6d2755b"
+    sha256 cellar: :any, mojave:      "5e1003bf97321f4cf5cd57b062b752c2d92bcbb457ab5e992309790b7827fd1f"
+    sha256 cellar: :any, high_sierra: "a401feb22927ecc0e649f3f2f7aeba331725b6390985f826ed5639d59732ee6a"
   end
 
   # Deprecated with OTP-23 release (https://erlang.org/pipermail/erlang-questions/2020-July/099747.html)
-  deprecate! date: "2020-05-13", because: :unsupported
-
   keg_only :versioned_formula
+
+  deprecate! date: "2020-05-13", because: :unsupported
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

@@ -7,10 +7,9 @@ class Embree < Formula
   head "https://github.com/embree/embree.git"
 
   bottle do
-    cellar :any
-    sha256 "c2314a12cbbdf6719d2273059abadfe6011f9d687846fff186d1e9936f3835fc" => :catalina
-    sha256 "98e880b02ee28bf5f7b30d5f1490e8675c00a868a4fe2f7cf3ccdc663b93a613" => :mojave
-    sha256 "2c9d9b8609732beaf03fd4eece181dbea33d2f11325f7062657be84db8ba8dfd" => :high_sierra
+    sha256 cellar: :any, catalina:    "c2314a12cbbdf6719d2273059abadfe6011f9d687846fff186d1e9936f3835fc"
+    sha256 cellar: :any, mojave:      "98e880b02ee28bf5f7b30d5f1490e8675c00a868a4fe2f7cf3ccdc663b93a613"
+    sha256 cellar: :any, high_sierra: "2c9d9b8609732beaf03fd4eece181dbea33d2f11325f7062657be84db8ba8dfd"
   end
 
   depends_on "cmake" => :build

@@ -10,11 +10,10 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "691d5407fef2bc374ac3b7c2fafbe46a6bc0f9ed609f98812b24fec33ab9bd27" => :catalina
-    sha256 "1b3a464579d9ef25b3bdd9276119efffd0134fda5c5dc27051a35f1b21c00cfd" => :mojave
-    sha256 "55c1f996fb523c2727d2b103f0a5ecfd7a073f55ff9a7230bb609d22bbf5a576" => :high_sierra
-    sha256 "e3c9cf45d97099e818c667d23af8352e6d1bba0e3b609cdddee654f2a9da80cf" => :sierra
+    sha256 cellar: :any, catalina:    "691d5407fef2bc374ac3b7c2fafbe46a6bc0f9ed609f98812b24fec33ab9bd27"
+    sha256 cellar: :any, mojave:      "1b3a464579d9ef25b3bdd9276119efffd0134fda5c5dc27051a35f1b21c00cfd"
+    sha256 cellar: :any, high_sierra: "55c1f996fb523c2727d2b103f0a5ecfd7a073f55ff9a7230bb609d22bbf5a576"
+    sha256 cellar: :any, sierra:      "e3c9cf45d97099e818c667d23af8352e6d1bba0e3b609cdddee654f2a9da80cf"
   end
 
   depends_on "pkg-config" => :build

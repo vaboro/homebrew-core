@@ -9,10 +9,9 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a2478744f1af2f5f7c88cf397f9b0909aa7ccbd9006bb47bae8d0d7de47e827a" => :catalina
-    sha256 "94952b16808a3e0428e3403f495d163532079a93ed7e1d1c56b0946f8bc354f4" => :mojave
-    sha256 "ced26761fb874fe209564d63067b40713ae17de01c7bb16baed6b8e75675abc6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a2478744f1af2f5f7c88cf397f9b0909aa7ccbd9006bb47bae8d0d7de47e827a"
+    sha256 cellar: :any_skip_relocation, mojave:      "94952b16808a3e0428e3403f495d163532079a93ed7e1d1c56b0946f8bc354f4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ced26761fb874fe209564d63067b40713ae17de01c7bb16baed6b8e75675abc6"
   end
 
   depends_on "python@3.8"

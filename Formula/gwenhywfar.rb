@@ -10,9 +10,9 @@ class Gwenhywfar < Formula
   end
 
   bottle do
-    sha256 "5bef8974fffb05b11aa019bc1a541753e60f6d9ffb385ccaf73a655ee105e325" => :catalina
-    sha256 "1cdd978aa9a8be025d4cea29b7e8ed1a619718c1707419c0e847c575811c68eb" => :mojave
-    sha256 "c683f99d5a7082b155717c0f77ee4f9d384a140f589d1dc0e8cac6af64a99f58" => :high_sierra
+    sha256 catalina:    "5bef8974fffb05b11aa019bc1a541753e60f6d9ffb385ccaf73a655ee105e325"
+    sha256 mojave:      "1cdd978aa9a8be025d4cea29b7e8ed1a619718c1707419c0e847c575811c68eb"
+    sha256 high_sierra: "c683f99d5a7082b155717c0f77ee4f9d384a140f589d1dc0e8cac6af64a99f58"
   end
 
   depends_on "gettext"

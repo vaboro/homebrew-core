@@ -6,10 +6,9 @@ class Wal2json < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ec25d4dffbb7b4205565f2ec5ad6c17fa62a965d841a75b475b11bd7ff759c51" => :catalina
-    sha256 "fbe884982b54b6d4c17a608f8f861368322cc7f74024b20516632f83ccc7fbe4" => :mojave
-    sha256 "f382e783fbba2a97a79f0bda4db61211e3fbc4b5d2d859daa777ffa6845dc8ac" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ec25d4dffbb7b4205565f2ec5ad6c17fa62a965d841a75b475b11bd7ff759c51"
+    sha256 cellar: :any_skip_relocation, mojave:      "fbe884982b54b6d4c17a608f8f861368322cc7f74024b20516632f83ccc7fbe4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f382e783fbba2a97a79f0bda4db61211e3fbc4b5d2d859daa777ffa6845dc8ac"
   end
 
   depends_on "postgresql"

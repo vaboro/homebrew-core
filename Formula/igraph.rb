@@ -6,10 +6,9 @@ class Igraph < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "3005e637b6cb7cbed28b6dc997d480f8a1917c4118852a107ae0b59936d20698" => :catalina
-    sha256 "81181b904e63af33766a9c967f5ae42a11dadc8e72ba80604804636e663414ce" => :mojave
-    sha256 "40791d18478711af9cc497917ce7b34af179538bd719108d04be073faec57db9" => :high_sierra
+    sha256 cellar: :any, catalina:    "3005e637b6cb7cbed28b6dc997d480f8a1917c4118852a107ae0b59936d20698"
+    sha256 cellar: :any, mojave:      "81181b904e63af33766a9c967f5ae42a11dadc8e72ba80604804636e663414ce"
+    sha256 cellar: :any, high_sierra: "40791d18478711af9cc497917ce7b34af179538bd719108d04be073faec57db9"
   end
 
   depends_on "glpk"

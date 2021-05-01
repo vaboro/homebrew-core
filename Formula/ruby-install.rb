@@ -7,10 +7,9 @@ class RubyInstall < Formula
   head "https://github.com/postmodern/ruby-install.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :catalina
-    sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :mojave
-    sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a"
+    sha256 cellar: :any_skip_relocation, mojave:      "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a"
   end
 
   def install

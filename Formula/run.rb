@@ -6,10 +6,9 @@ class Run < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e" => :catalina
-    sha256 "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e" => :mojave
-    sha256 "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e"
+    sha256 cellar: :any_skip_relocation, mojave:      "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4a2329ae36f59ed71c1b6364828c465a27f92506cd77e9a7c8217def3e2b7c9e"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,11 @@ class Resty < Formula
   head "https://github.com/micha/resty.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cb5ad84cbacf18282a5ad172a48471d0e7ac007e4799f358fff049b8309aa27f" => :catalina
-    sha256 "beee774062f1c32a72f203d0c8c5b0900ce85589c32b385ade712b74e5e1c73b" => :mojave
-    sha256 "e65c38b826157c35f2e3acd50846be691b6b1a6231a23c62567c24a052d0dc7e" => :high_sierra
-    sha256 "fb754eb95b4cb573eef1807f5dcddab59e021a4326022a9fb8126fb8e80ff247" => :sierra
-    sha256 "435854dd9bc54f09e46f3f895fc0801ce90a30b23b8d9f109f361f89666fcfe1" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "cb5ad84cbacf18282a5ad172a48471d0e7ac007e4799f358fff049b8309aa27f"
+    sha256 cellar: :any_skip_relocation, mojave:      "beee774062f1c32a72f203d0c8c5b0900ce85589c32b385ade712b74e5e1c73b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e65c38b826157c35f2e3acd50846be691b6b1a6231a23c62567c24a052d0dc7e"
+    sha256 cellar: :any_skip_relocation, sierra:      "fb754eb95b4cb573eef1807f5dcddab59e021a4326022a9fb8126fb8e80ff247"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "435854dd9bc54f09e46f3f895fc0801ce90a30b23b8d9f109f361f89666fcfe1"
   end
 
   conflicts_with "nss", because: "both install `pp` binaries"

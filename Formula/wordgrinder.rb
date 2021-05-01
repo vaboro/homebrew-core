@@ -7,10 +7,9 @@ class Wordgrinder < Formula
   head "https://github.com/davidgiven/wordgrinder.git"
 
   bottle do
-    cellar :any
-    sha256 "79fa0f89e7e123f7746ab934514834eaaecd35fa228a64e243d620825e508f7d" => :catalina
-    sha256 "daa17cb7ea4b7ad382352a18b359deaa7f1a9cd8b2c7c8949b2f6dca41f0674c" => :mojave
-    sha256 "735f8f1c7d405d11e0fd464d937d3f943c192c939126ca610a388f145da1a7da" => :high_sierra
+    sha256 cellar: :any, catalina:    "79fa0f89e7e123f7746ab934514834eaaecd35fa228a64e243d620825e508f7d"
+    sha256 cellar: :any, mojave:      "daa17cb7ea4b7ad382352a18b359deaa7f1a9cd8b2c7c8949b2f6dca41f0674c"
+    sha256 cellar: :any, high_sierra: "735f8f1c7d405d11e0fd464d937d3f943c192c939126ca610a388f145da1a7da"
   end
 
   depends_on "ninja" => :build

@@ -12,10 +12,9 @@ class PandocIncludeCode < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ac41312b8211cc0602ac60025e9a0ef4a7f0479faabd56448858482ca09c9b8e" => :catalina
-    sha256 "9f874b1fafe67861e38814a6411205a6f85c0808b6720ecd4cd68ada756ea484" => :mojave
-    sha256 "d1a27c16d094b12858cddc4bc06744cdcfa1bd0d30b7de10030b4a0c7efbe058" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ac41312b8211cc0602ac60025e9a0ef4a7f0479faabd56448858482ca09c9b8e"
+    sha256 cellar: :any_skip_relocation, mojave:      "9f874b1fafe67861e38814a6411205a6f85c0808b6720ecd4cd68ada756ea484"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d1a27c16d094b12858cddc4bc06744cdcfa1bd0d30b7de10030b4a0c7efbe058"
   end
 
   depends_on "cabal-install" => :build

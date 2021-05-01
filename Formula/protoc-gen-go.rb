@@ -7,10 +7,9 @@ class ProtocGenGo < Formula
   head "https://github.com/golang/protobuf.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :catalina
-    sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :mojave
-    sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb"
+    sha256 cellar: :any_skip_relocation, mojave:      "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb"
   end
 
   depends_on "go" => :build

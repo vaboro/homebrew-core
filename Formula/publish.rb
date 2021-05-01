@@ -7,8 +7,7 @@ class Publish < Formula
   head "https://github.com/JohnSundell/Publish.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "08f17da7227cb766787838cb6c1d53ac0498cbde6245da0470f8379e84b476aa" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "08f17da7227cb766787838cb6c1d53ac0498cbde6245da0470f8379e84b476aa"
   end
 
   # https://github.com/JohnSundell/Publish#system-requirements

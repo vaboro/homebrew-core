@@ -6,10 +6,9 @@ class Minizip2 < Formula
   license "Zlib"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1e27e8b43a651ef11893cb6ce591c05b1d0bc86c092c633faa43140657a63ee3" => :catalina
-    sha256 "a878c57c455068783abeec0704ad27da5cffd5b28eae9a2f0f57b2077650e187" => :mojave
-    sha256 "e76bd49d513bfe9939d35c41451ff76807f9230b31b8761e34a26877414d2519" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1e27e8b43a651ef11893cb6ce591c05b1d0bc86c092c633faa43140657a63ee3"
+    sha256 cellar: :any_skip_relocation, mojave:      "a878c57c455068783abeec0704ad27da5cffd5b28eae9a2f0f57b2077650e187"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e76bd49d513bfe9939d35c41451ff76807f9230b31b8761e34a26877414d2519"
   end
 
   depends_on "cmake" => :build

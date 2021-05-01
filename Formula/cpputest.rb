@@ -7,11 +7,10 @@ class Cpputest < Formula
   head "https://github.com/cpputest/cpputest.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "9e06d26ed7a552c818c7f1d6bb68ef16e7185238a14bdf0ae337a410ecb46384" => :catalina
-    sha256 "59881c464ae17f1a2381145f78f614d174c83fbe8f4900e362e9a6830fcf446e" => :mojave
-    sha256 "9cea67d4098efe30dd499d1a999467800ff91a9e7954ec6407b03d181a20761d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9e06d26ed7a552c818c7f1d6bb68ef16e7185238a14bdf0ae337a410ecb46384"
+    sha256 cellar: :any_skip_relocation, mojave:      "59881c464ae17f1a2381145f78f614d174c83fbe8f4900e362e9a6830fcf446e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9cea67d4098efe30dd499d1a999467800ff91a9e7954ec6407b03d181a20761d"
   end
 
   depends_on "cmake" => :build
@@ -41,6 +40,6 @@ class Cpputest < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lCppUTest", "-o", "test"
-    assert_match /OK \(1 tests/, shell_output("./test")
+    assert_match(/OK \(1 tests/, shell_output("./test"))
   end
 end

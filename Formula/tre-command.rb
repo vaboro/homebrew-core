@@ -7,10 +7,9 @@ class TreCommand < Formula
   head "https://github.com/dduan/tre.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "850e60da6af3a6a385a6f176b89f48808d3000682cc639203dc722aa8dddbab0" => :catalina
-    sha256 "2c3ac22146a844ede3c8f2689e6ec00ff8dcddf4432fee2783d8cccfdf1d9e8f" => :mojave
-    sha256 "de1035a4023926ae8a8be54d00d3749c079a2954a8de25594a00584da71192d9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "850e60da6af3a6a385a6f176b89f48808d3000682cc639203dc722aa8dddbab0"
+    sha256 cellar: :any_skip_relocation, mojave:      "2c3ac22146a844ede3c8f2689e6ec00ff8dcddf4432fee2783d8cccfdf1d9e8f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "de1035a4023926ae8a8be54d00d3749c079a2954a8de25594a00584da71192d9"
   end
 
   depends_on "rust" => :build

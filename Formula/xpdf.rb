@@ -11,10 +11,9 @@ class Xpdf < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ed4f85ea9e8246acb38d96b12013b66a8dfb21346a7de192fd7904c91c0a4898" => :catalina
-    sha256 "703b0341d6887119375ab0ba7c3d6accfbb25cfcc5e459009c6cb09977e2005d" => :mojave
-    sha256 "29808204a425d8896f855bb9f7e2e09a365a0fe577d6f522fed0a3e2f866695b" => :high_sierra
+    sha256 cellar: :any, catalina:    "ed4f85ea9e8246acb38d96b12013b66a8dfb21346a7de192fd7904c91c0a4898"
+    sha256 cellar: :any, mojave:      "703b0341d6887119375ab0ba7c3d6accfbb25cfcc5e459009c6cb09977e2005d"
+    sha256 cellar: :any, high_sierra: "29808204a425d8896f855bb9f7e2e09a365a0fe577d6f522fed0a3e2f866695b"
   end
 
   depends_on "cmake" => :build

@@ -13,9 +13,9 @@ class Freeswitch < Formula
   end
 
   bottle do
-    sha256 "e8e37ac077a81b0194ebfcf995d60a9135db73f99e280de0699e22cd62b96ac6" => :catalina
-    sha256 "63fa94a3a25cfe4d0942b76143be5a53685292000ca94b0b1bd734a14cb6aa35" => :mojave
-    sha256 "f5e6f7a40d0b6582fb0e2b41e0e76681723df812c1fc5c6e3315c46ce2a6158d" => :high_sierra
+    sha256 catalina:    "e8e37ac077a81b0194ebfcf995d60a9135db73f99e280de0699e22cd62b96ac6"
+    sha256 mojave:      "63fa94a3a25cfe4d0942b76143be5a53685292000ca94b0b1bd734a14cb6aa35"
+    sha256 high_sierra: "f5e6f7a40d0b6582fb0e2b41e0e76681723df812c1fc5c6e3315c46ce2a6158d"
   end
 
   depends_on "apr-util" => :build

@@ -6,11 +6,10 @@ class Ghr < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "7fd9ae651a7adbedd46e266e04260fa221c84cf1595c04e644f3e720f8f76a48" => :catalina
-    sha256 "322df199f2e51c91d348638c3d7baed79c8e542755fe51634cc2c06ea99150a9" => :mojave
-    sha256 "941dce22c70f320d75f5e961c3cfc33f837f6ee113a5a06c445e57cbdcfa34fb" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7fd9ae651a7adbedd46e266e04260fa221c84cf1595c04e644f3e720f8f76a48"
+    sha256 cellar: :any_skip_relocation, mojave:      "322df199f2e51c91d348638c3d7baed79c8e542755fe51634cc2c06ea99150a9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "941dce22c70f320d75f5e961c3cfc33f837f6ee113a5a06c445e57cbdcfa34fb"
   end
 
   depends_on "go" => :build

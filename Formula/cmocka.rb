@@ -7,11 +7,10 @@ class Cmocka < Formula
   head "https://git.cryptomilk.org/projects/cmocka.git"
 
   bottle do
-    cellar :any
-    sha256 "719b81c50a85d95dfc0bdd88b52e5642cc81e22f95776fc8d92065217bef879e" => :catalina
-    sha256 "a05bfdbe08b08dc01db59d0c2c724b2a58c4f9e12c260dc5865e27dd456e7771" => :mojave
-    sha256 "c4fc9fe8a73b23206c0db8907c2f67dea482d689afea18c5e746556aff8098b5" => :high_sierra
-    sha256 "a8d32491c7cfd1670be11c022faa07619d7821a4328fb034e76f225933b5c4dc" => :sierra
+    sha256 cellar: :any, catalina:    "719b81c50a85d95dfc0bdd88b52e5642cc81e22f95776fc8d92065217bef879e"
+    sha256 cellar: :any, mojave:      "a05bfdbe08b08dc01db59d0c2c724b2a58c4f9e12c260dc5865e27dd456e7771"
+    sha256 cellar: :any, high_sierra: "c4fc9fe8a73b23206c0db8907c2f67dea482d689afea18c5e746556aff8098b5"
+    sha256 cellar: :any, sierra:      "a8d32491c7cfd1670be11c022faa07619d7821a4328fb034e76f225933b5c4dc"
   end
 
   depends_on "cmake" => :build

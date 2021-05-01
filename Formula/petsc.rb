@@ -11,9 +11,9 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 "abec654e141659c7e5cd3f0af53aa8ce749a99f6dff1921de17301da2dafa756" => :catalina
-    sha256 "ff5e68fe44cfe9ddd8cad5880e209ade58778cb722808712e4c7b846d523512e" => :mojave
-    sha256 "58fedc8046a041fb44e2c40f71f7468ae1e8cbc2fc96251e74586cc51a421623" => :high_sierra
+    sha256 catalina:    "abec654e141659c7e5cd3f0af53aa8ce749a99f6dff1921de17301da2dafa756"
+    sha256 mojave:      "ff5e68fe44cfe9ddd8cad5880e209ade58778cb722808712e4c7b846d523512e"
+    sha256 high_sierra: "58fedc8046a041fb44e2c40f71f7468ae1e8cbc2fc96251e74586cc51a421623"
   end
 
   depends_on "hdf5"
@@ -51,7 +51,7 @@ class Petsc < Formula
     # This PETSc example prints several lines of output. The last line contains
     # an error norm, expected to be small.
     line = output.lines.last
-    assert_match /^Norm of error .+, Iterations/, line, "Unexpected output format"
+    assert_match(/^Norm of error .+, Iterations/, line, "Unexpected output format")
     error = line.split[3].to_f
     assert (error >= 0.0 && error < 1.0e-13), "Error norm too large"
   end

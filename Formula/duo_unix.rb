@@ -10,9 +10,9 @@ class DuoUnix < Formula
   end
 
   bottle do
-    sha256 "67a6ff6605578e287fc862f6fb2ee9360dea7c22f8fbaa97a1bf18dd13db5ec0" => :catalina
-    sha256 "753e3f0d60c4c0404a6e347d052bc1ed4bd1e66b43170675549a36d4fe736f25" => :mojave
-    sha256 "8e707bc378fa13dfd92fb39e0de055c58f2470973fe80edc41bf500e4863128a" => :high_sierra
+    sha256 catalina:    "67a6ff6605578e287fc862f6fb2ee9360dea7c22f8fbaa97a1bf18dd13db5ec0"
+    sha256 mojave:      "753e3f0d60c4c0404a6e347d052bc1ed4bd1e66b43170675549a36d4fe736f25"
+    sha256 high_sierra: "8e707bc378fa13dfd92fb39e0de055c58f2470973fe80edc41bf500e4863128a"
   end
 
   depends_on "autoconf" => :build

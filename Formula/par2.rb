@@ -11,10 +11,9 @@ class Par2 < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "26609c45028599a4845f68cda2a5cd08c2a0dc37ae3987d4abf86aed99499f50" => :catalina
-    sha256 "cded10d8f18c5ab236ceb624854afb672681bd1a86f21e47d70de793db378580" => :mojave
-    sha256 "35477bcfecd91b7fe885739737f576b63545aab51ba997bc60f9a74927b775dc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "26609c45028599a4845f68cda2a5cd08c2a0dc37ae3987d4abf86aed99499f50"
+    sha256 cellar: :any_skip_relocation, mojave:      "cded10d8f18c5ab236ceb624854afb672681bd1a86f21e47d70de793db378580"
+    sha256 cellar: :any_skip_relocation, high_sierra: "35477bcfecd91b7fe885739737f576b63545aab51ba997bc60f9a74927b775dc"
   end
 
   def install

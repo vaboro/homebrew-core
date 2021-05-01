@@ -7,10 +7,9 @@ class Uncrustify < Formula
   head "https://github.com/uncrustify/uncrustify.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8071c9d74d2ed2fdd69c8b9f665dbbcf364cb961796d014adcee6ad71be37e67" => :catalina
-    sha256 "9ede4664a01943bc10c07e643a2c4af2de8c1d91a534a954c78d92780f235b35" => :mojave
-    sha256 "60ffa3330811d4499f928eb7124d6981c1afb24ec0c86a4325d2804c65189828" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8071c9d74d2ed2fdd69c8b9f665dbbcf364cb961796d014adcee6ad71be37e67"
+    sha256 cellar: :any_skip_relocation, mojave:      "9ede4664a01943bc10c07e643a2c4af2de8c1d91a534a954c78d92780f235b35"
+    sha256 cellar: :any_skip_relocation, high_sierra: "60ffa3330811d4499f928eb7124d6981c1afb24ec0c86a4325d2804c65189828"
   end
 
   depends_on "cmake" => :build

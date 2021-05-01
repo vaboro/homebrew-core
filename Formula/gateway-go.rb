@@ -7,10 +7,9 @@ class GatewayGo < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a7f46eb4d8257be3f24c84f971fa6d95582172abda87aeb1e3f6ffb1d85752e6" => :catalina
-    sha256 "083175571da3825c9c159c03a7028b01aa065baca9aeda5f0f6ef9916e2c8f74" => :mojave
-    sha256 "6c6e994988b6f09dc0ff80d51a45b14153834f573746f726c3d00585b1869e8d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a7f46eb4d8257be3f24c84f971fa6d95582172abda87aeb1e3f6ffb1d85752e6"
+    sha256 cellar: :any_skip_relocation, mojave:      "083175571da3825c9c159c03a7028b01aa065baca9aeda5f0f6ef9916e2c8f74"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6c6e994988b6f09dc0ff80d51a45b14153834f573746f726c3d00585b1869e8d"
   end
 
   depends_on "go" => :build

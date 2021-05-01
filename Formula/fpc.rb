@@ -14,11 +14,10 @@ class Fpc < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "2a17877832cf7554835fd5c35d27931c4197604f9ea8161411bfa49746e8ad60" => :catalina
-    sha256 "84a01f7ad8382fab6aa36bad5378009be66d1d0cd8870fe235b2f5d22102c4fd" => :mojave
-    sha256 "96603ce0f998b1eb7c5b0e15b4ad49bbcca2b9943276ddf46d224f844f04582d" => :high_sierra
+    sha256 cellar: :any, catalina:    "2a17877832cf7554835fd5c35d27931c4197604f9ea8161411bfa49746e8ad60"
+    sha256 cellar: :any, mojave:      "84a01f7ad8382fab6aa36bad5378009be66d1d0cd8870fe235b2f5d22102c4fd"
+    sha256 cellar: :any, high_sierra: "96603ce0f998b1eb7c5b0e15b4ad49bbcca2b9943276ddf46d224f844f04582d"
   end
 
   resource "bootstrap" do

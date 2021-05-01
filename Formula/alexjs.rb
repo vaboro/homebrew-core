@@ -8,10 +8,9 @@ class Alexjs < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "dd0ebbe18ac855859f8b69f721e326cfee8d8ee19ea4af51adf801eca3b0e300" => :catalina
-    sha256 "3fc471e69908b83d73a42a20cdfd7467f79a921055aafdf03f6f4520138285b1" => :mojave
-    sha256 "f3d30248e5219818a6b4fdadf2bbaf4e27949576f05b51322765189583042aaf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dd0ebbe18ac855859f8b69f721e326cfee8d8ee19ea4af51adf801eca3b0e300"
+    sha256 cellar: :any_skip_relocation, mojave:      "3fc471e69908b83d73a42a20cdfd7467f79a921055aafdf03f6f4520138285b1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f3d30248e5219818a6b4fdadf2bbaf4e27949576f05b51322765189583042aaf"
   end
 
   depends_on "node"

@@ -7,11 +7,10 @@ class AutoconfAT213 < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "d3b4d6e06ae6749fc60fa437f1f5c2ae85a91f6979ca897e08b854f920c222a0" => :catalina
-    sha256 "5257ef101823cbf8d20693e27bf4505aec149c7d588459fedc2791a7906eb444" => :mojave
-    sha256 "5257ef101823cbf8d20693e27bf4505aec149c7d588459fedc2791a7906eb444" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d3b4d6e06ae6749fc60fa437f1f5c2ae85a91f6979ca897e08b854f920c222a0"
+    sha256 cellar: :any_skip_relocation, mojave:      "5257ef101823cbf8d20693e27bf4505aec149c7d588459fedc2791a7906eb444"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5257ef101823cbf8d20693e27bf4505aec149c7d588459fedc2791a7906eb444"
   end
 
   def install

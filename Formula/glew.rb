@@ -12,11 +12,10 @@ class Glew < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "3181853e5ec2d8e0b24842c06b2882fce2d3ff89d83f4647bfee755005e165ca" => :catalina
-    sha256 "04ad309f33a1355e3e29251cf60ad24058b53443352c74d30624ec470b0428a1" => :mojave
-    sha256 "1b5e8d521625cfabd6e429e4111d74cd68fdc4efbde826a6b5bbee1a7261e801" => :high_sierra
+    sha256 cellar: :any, catalina:    "3181853e5ec2d8e0b24842c06b2882fce2d3ff89d83f4647bfee755005e165ca"
+    sha256 cellar: :any, mojave:      "04ad309f33a1355e3e29251cf60ad24058b53443352c74d30624ec470b0428a1"
+    sha256 cellar: :any, high_sierra: "1b5e8d521625cfabd6e429e4111d74cd68fdc4efbde826a6b5bbee1a7261e801"
   end
 
   depends_on "cmake" => :build

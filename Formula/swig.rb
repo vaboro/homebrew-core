@@ -10,9 +10,9 @@ class Swig < Formula
   end
 
   bottle do
-    sha256 "530e80b7e7dcd28469b52fc3b668683a97b72642ebf2b6d4e6708d14f05e7286" => :catalina
-    sha256 "50afb5930cb37af2e400f0369f6da15b1d4922c1f72f45d13e7e3f8bd9d6d27b" => :mojave
-    sha256 "8bab440005b048ce454a3dd50ba608e1f85391edd73e9e40510269e923cad238" => :high_sierra
+    sha256 catalina:    "530e80b7e7dcd28469b52fc3b668683a97b72642ebf2b6d4e6708d14f05e7286"
+    sha256 mojave:      "50afb5930cb37af2e400f0369f6da15b1d4922c1f72f45d13e7e3f8bd9d6d27b"
+    sha256 high_sierra: "8bab440005b048ce454a3dd50ba608e1f85391edd73e9e40510269e923cad238"
   end
 
   head do

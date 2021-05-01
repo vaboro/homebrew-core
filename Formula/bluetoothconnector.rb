@@ -7,9 +7,8 @@ class Bluetoothconnector < Formula
   head "https://github.com/lapfelix/BluetoothConnector.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "38d8b5c89fd8fee4a746eadaceb399d5b7e1148db2cee896381b6e093aef56e3" => :catalina
-    sha256 "1a0c1e83b5640a35c48ba982f1b7cf5b1bebdda6fd4957368262c3e001c740e3" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "38d8b5c89fd8fee4a746eadaceb399d5b7e1148db2cee896381b6e093aef56e3"
+    sha256 cellar: :any_skip_relocation, mojave:   "1a0c1e83b5640a35c48ba982f1b7cf5b1bebdda6fd4957368262c3e001c740e3"
   end
 
   depends_on xcode: ["11.0", :build]

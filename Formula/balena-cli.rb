@@ -1,7 +1,7 @@
 require "language/node"
 
 class BalenaCli < Formula
-  desc "The official balena CLI tool"
+  desc "Official balena CLI tool"
   homepage "https://www.balena.io/docs/reference/cli/"
   # balena-cli should only be updated every 10 releases on multiples of 10
   url "https://registry.npmjs.org/balena-cli/-/balena-cli-12.20.0.tgz"
@@ -13,9 +13,9 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256 "e9ee324951631c0267b7eae820edcd3de0c39d205e422e616cd4655c6fd5be9c" => :catalina
-    sha256 "7077786834009a3fcceb791b659c85a781f0dffd4e4fa23a80e27cac44da67d5" => :mojave
-    sha256 "eda936c203059ae4666a1dbbeb6ccf42d4fb44b8029ce006362bbcfa316defdc" => :high_sierra
+    sha256 catalina:    "e9ee324951631c0267b7eae820edcd3de0c39d205e422e616cd4655c6fd5be9c"
+    sha256 mojave:      "7077786834009a3fcceb791b659c85a781f0dffd4e4fa23a80e27cac44da67d5"
+    sha256 high_sierra: "eda936c203059ae4666a1dbbeb6ccf42d4fb44b8029ce006362bbcfa316defdc"
   end
 
   depends_on "node"

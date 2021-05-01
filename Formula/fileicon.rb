@@ -6,10 +6,9 @@ class Fileicon < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92" => :catalina
-    sha256 "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92" => :mojave
-    sha256 "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92"
+    sha256 cellar: :any_skip_relocation, mojave:      "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92"
+    sha256 cellar: :any_skip_relocation, high_sierra: "154c80c94f29f209b78252e71d914647a8300c66c02acda672b8574e8e704e92"
   end
 
   def install

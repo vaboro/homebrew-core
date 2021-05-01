@@ -12,10 +12,9 @@ class Xxh < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "38aa5b005f8a9c85093fec703ed5e8aeca30a4047424ddb828528dac12301d03" => :catalina
-    sha256 "a3e7ca6207304577b2c30d0b77c08905cccdee2833f9251013ab997948c74ca8" => :mojave
-    sha256 "2d3575fd4c91dc612d4463c6b359aeae566b6c294866e75716a74becae130980" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "38aa5b005f8a9c85093fec703ed5e8aeca30a4047424ddb828528dac12301d03"
+    sha256 cellar: :any_skip_relocation, mojave:      "a3e7ca6207304577b2c30d0b77c08905cccdee2833f9251013ab997948c74ca8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2d3575fd4c91dc612d4463c6b359aeae566b6c294866e75716a74becae130980"
   end
 
   depends_on "python@3.8"

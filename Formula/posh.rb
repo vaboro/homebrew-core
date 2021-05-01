@@ -6,10 +6,9 @@ class Posh < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9a30988f801e9c31ad6fefd48a232a5c95990300eb396a4c32a991176f8350b6" => :catalina
-    sha256 "20157fe0e9ff5389d07f85079a3137112cd6ad5bff5081d247e8778a082281c8" => :mojave
-    sha256 "bfee90257c267d2bd68ec3501887901179f4464d3e6d5b9afb42580ef1db4677" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9a30988f801e9c31ad6fefd48a232a5c95990300eb396a4c32a991176f8350b6"
+    sha256 cellar: :any_skip_relocation, mojave:      "20157fe0e9ff5389d07f85079a3137112cd6ad5bff5081d247e8778a082281c8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bfee90257c267d2bd68ec3501887901179f4464d3e6d5b9afb42580ef1db4677"
   end
 
   depends_on "autoconf" => :build

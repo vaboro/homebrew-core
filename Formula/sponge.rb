@@ -6,11 +6,10 @@ class Sponge < Formula
   license "GPL-2.0-only"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "b913bb8811814b0541192ab204784859bc30af5003cf8d2b462722003d2038f9" => :catalina
-    sha256 "19df51f19f13b1742b5f81bebd1c68cf2bb7d9693c3dae587e171ab57cb7fdca" => :mojave
-    sha256 "c25d99fcacc21592944ed74b6390ce8f81d60dbd03e2122b75a544542ec18cb8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b913bb8811814b0541192ab204784859bc30af5003cf8d2b462722003d2038f9"
+    sha256 cellar: :any_skip_relocation, mojave:      "19df51f19f13b1742b5f81bebd1c68cf2bb7d9693c3dae587e171ab57cb7fdca"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c25d99fcacc21592944ed74b6390ce8f81d60dbd03e2122b75a544542ec18cb8"
   end
 
   conflicts_with "moreutils", because: "both install a `sponge` executable"

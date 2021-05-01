@@ -8,10 +8,9 @@ class Ipopt < Formula
   head "https://github.com/coin-or/Ipopt.git"
 
   bottle do
-    cellar :any
-    sha256 "d7a39ffbd4228581ca59ffb091b997aebd40a41038c60809baea596ebcd2e871" => :catalina
-    sha256 "1147231684595f18ffe44e3a2852ece5456fc4dbfe7455f6a853dd4ef4e055c0" => :mojave
-    sha256 "4d9b8a8cc3091182b49fd4a38bf55f4ca7e953d326af64e247db419c42f8859c" => :high_sierra
+    sha256 cellar: :any, catalina:    "d7a39ffbd4228581ca59ffb091b997aebd40a41038c60809baea596ebcd2e871"
+    sha256 cellar: :any, mojave:      "1147231684595f18ffe44e3a2852ece5456fc4dbfe7455f6a853dd4ef4e055c0"
+    sha256 cellar: :any, high_sierra: "4d9b8a8cc3091182b49fd4a38bf55f4ca7e953d326af64e247db419c42f8859c"
   end
 
   depends_on "pkg-config" => [:build, :test]

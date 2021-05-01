@@ -11,9 +11,9 @@ class Binutils < Formula
   end
 
   bottle do
-    sha256 "0493e76c9a163b6417716741bf01dc4e66f49c3e2a265a44042475aac43ab2c0" => :catalina
-    sha256 "4a90201366ce8c935d9372d4b4f5438e6b3fdea3f738a3d6441ecf4946039601" => :mojave
-    sha256 "b361b8cf1de6cabdb990cdd2d8b1fc7e1cf7ad9b8190d7f9feb11bf2579ecadb" => :high_sierra
+    sha256 catalina:    "0493e76c9a163b6417716741bf01dc4e66f49c3e2a265a44042475aac43ab2c0"
+    sha256 mojave:      "4a90201366ce8c935d9372d4b4f5438e6b3fdea3f738a3d6441ecf4946039601"
+    sha256 high_sierra: "b361b8cf1de6cabdb990cdd2d8b1fc7e1cf7ad9b8190d7f9feb11bf2579ecadb"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"

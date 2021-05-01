@@ -16,11 +16,10 @@ class Parallel < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "a7cb843b66ce52d0782f612edda3833718be72adc165776079256648788306c1" => :catalina
-    sha256 "5a1f7e2fb880f35fc891fcce8a0e1c2c0c65ccfda9e15f3b47d830898b897bbd" => :mojave
-    sha256 "45342decbb00fbe375e0fced35278827a485e91c2af8de29a5f2eed4697404ab" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a7cb843b66ce52d0782f612edda3833718be72adc165776079256648788306c1"
+    sha256 cellar: :any_skip_relocation, mojave:      "5a1f7e2fb880f35fc891fcce8a0e1c2c0c65ccfda9e15f3b47d830898b897bbd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "45342decbb00fbe375e0fced35278827a485e91c2af8de29a5f2eed4697404ab"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"

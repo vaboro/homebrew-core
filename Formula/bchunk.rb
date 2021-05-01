@@ -7,12 +7,11 @@ class Bchunk < Formula
   head "https://github.com/hessu/bchunk.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b9f7bc758711585d7a016b7b3ddefe3256a368c00b21c51691481c7fbfc2823a" => :catalina
-    sha256 "232935a7e7291016af594df742848d851ceca12ff9c06e183485c6a184c1df38" => :mojave
-    sha256 "d6183607b5b987345ee3380263819f1d5e12f2f3cc9f6fd55accfbf92c26d5ef" => :high_sierra
-    sha256 "95ef5fddc2234902187dde834690fb5957bd99ce11403e3d0f8881a705bb8f27" => :sierra
-    sha256 "665af973709071e982939f37ba39c79c6e41f7f18277d65670475ba9d8315f94" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "b9f7bc758711585d7a016b7b3ddefe3256a368c00b21c51691481c7fbfc2823a"
+    sha256 cellar: :any_skip_relocation, mojave:      "232935a7e7291016af594df742848d851ceca12ff9c06e183485c6a184c1df38"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d6183607b5b987345ee3380263819f1d5e12f2f3cc9f6fd55accfbf92c26d5ef"
+    sha256 cellar: :any_skip_relocation, sierra:      "95ef5fddc2234902187dde834690fb5957bd99ce11403e3d0f8881a705bb8f27"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "665af973709071e982939f37ba39c79c6e41f7f18277d65670475ba9d8315f94"
   end
 
   def install

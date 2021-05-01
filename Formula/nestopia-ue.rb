@@ -7,9 +7,9 @@ class NestopiaUe < Formula
   head "https://github.com/0ldsk00l/nestopia.git"
 
   bottle do
-    sha256 "19acd9260a874dec614062d0362a5936a0d9322e9fe66f0f8426d0dec67a6dd6" => :catalina
-    sha256 "e41a57949e9ebeffd1fa72de619da0dc2bbc813adf1b83922a0151362a9b9f04" => :mojave
-    sha256 "dc7632deb424cbfd112350aa1ddad0d1b0715cce9ebfda0bbbd8e77640cea044" => :high_sierra
+    sha256 catalina:    "19acd9260a874dec614062d0362a5936a0d9322e9fe66f0f8426d0dec67a6dd6"
+    sha256 mojave:      "e41a57949e9ebeffd1fa72de619da0dc2bbc813adf1b83922a0151362a9b9f04"
+    sha256 high_sierra: "dc7632deb424cbfd112350aa1ddad0d1b0715cce9ebfda0bbbd8e77640cea044"
   end
 
   depends_on "autoconf" => :build
@@ -32,6 +32,6 @@ class NestopiaUe < Formula
   end
 
   test do
-    assert_match /Nestopia UE #{version}$/, shell_output("#{bin}/nestopia --version")
+    assert_match(/Nestopia UE #{version}$/, shell_output("#{bin}/nestopia --version"))
   end
 end

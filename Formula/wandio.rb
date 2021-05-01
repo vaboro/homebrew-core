@@ -11,10 +11,9 @@ class Wandio < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "028d07a97370b37fc28a2f2045bf3e4a9241d9c49f5eea2e635960ced7b6453c" => :catalina
-    sha256 "a16a370f4bd6d2acd415f305fb99b2bfba1b86f666c68877d01bd90ddcb7522b" => :mojave
-    sha256 "29602aec2851811108e97397e6310f091f5e5fe0844f9cfcd6657193d9c53ff4" => :high_sierra
+    sha256 cellar: :any, catalina:    "028d07a97370b37fc28a2f2045bf3e4a9241d9c49f5eea2e635960ced7b6453c"
+    sha256 cellar: :any, mojave:      "a16a370f4bd6d2acd415f305fb99b2bfba1b86f666c68877d01bd90ddcb7522b"
+    sha256 cellar: :any, high_sierra: "29602aec2851811108e97397e6310f091f5e5fe0844f9cfcd6657193d9c53ff4"
   end
 
   def install

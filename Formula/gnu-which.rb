@@ -12,12 +12,11 @@ class GnuWhich < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 3
-    sha256 "f9e6512591096a9f53067ea4a0b5b9f8516515b49fd5bdabfc6e31c1c0c876f2" => :catalina
-    sha256 "170008e80a4cc5f1e45b3445f9fb6f099d7700aa6dd825602f6d32316c27735b" => :mojave
-    sha256 "66446416b0dc367076ab38cfc9775d8c201fc571b1a2cd2fc0197daa6b83882a" => :high_sierra
-    sha256 "68ea3522ec318c9b25d711ce4405b4cd6a41edca20b7df008adc499ab794c4fa" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f9e6512591096a9f53067ea4a0b5b9f8516515b49fd5bdabfc6e31c1c0c876f2"
+    sha256 cellar: :any_skip_relocation, mojave:      "170008e80a4cc5f1e45b3445f9fb6f099d7700aa6dd825602f6d32316c27735b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "66446416b0dc367076ab38cfc9775d8c201fc571b1a2cd2fc0197daa6b83882a"
+    sha256 cellar: :any_skip_relocation, sierra:      "68ea3522ec318c9b25d711ce4405b4cd6a41edca20b7df008adc499ab794c4fa"
   end
 
   def install

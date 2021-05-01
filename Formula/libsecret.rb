@@ -10,9 +10,9 @@ class Libsecret < Formula
   end
 
   bottle do
-    sha256 "6b63c9ade94d5428c76332662178a0ea47ea682478cc2a0d189acb5d9480b562" => :catalina
-    sha256 "cf7e3aee821a63ef75f9ad9d33061d6dbd358b1bb07873d991f4b4e877842fef" => :mojave
-    sha256 "d88253d0c70ec7cf66c6f7d4f3b2894d0cd68cfd381dbd3087860bdbeddde945" => :high_sierra
+    sha256 catalina:    "6b63c9ade94d5428c76332662178a0ea47ea682478cc2a0d189acb5d9480b562"
+    sha256 mojave:      "cf7e3aee821a63ef75f9ad9d33061d6dbd358b1bb07873d991f4b4e877842fef"
+    sha256 high_sierra: "d88253d0c70ec7cf66c6f7d4f3b2894d0cd68cfd381dbd3087860bdbeddde945"
   end
 
   depends_on "docbook-xsl" => :build

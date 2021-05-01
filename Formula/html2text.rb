@@ -7,10 +7,9 @@ class Html2text < Formula
   head "https://github.com/grobian/html2text.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "567d2c7e25a24c445ad54074e9ff3ee6edfce3fe7fe960966dcd49a488b2affb" => :catalina
-    sha256 "55a8fe864bc8e05e7e2fa0085e22adb251fdeeee3fd463e326224a3dff78c773" => :mojave
-    sha256 "b0c913f98f9169669395d57c28c45d7d6c1dc68c13fdb82ba52a04fefdb00bc5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "567d2c7e25a24c445ad54074e9ff3ee6edfce3fe7fe960966dcd49a488b2affb"
+    sha256 cellar: :any_skip_relocation, mojave:      "55a8fe864bc8e05e7e2fa0085e22adb251fdeeee3fd463e326224a3dff78c773"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b0c913f98f9169669395d57c28c45d7d6c1dc68c13fdb82ba52a04fefdb00bc5"
   end
 
   def install

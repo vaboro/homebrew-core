@@ -13,10 +13,9 @@ class S3cmd < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ea18ab2445955c20de54537447b5930de60cf8e927fe291f662760d50c0df8db" => :catalina
-    sha256 "737880ee8c7e9d73848eec50d87b1b7da7762a8b8d6172fd1f4be173888e18fe" => :mojave
-    sha256 "4d2c498462eba573c43413ec16f4681a8e604b67ff6739351900e500e2be5923" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ea18ab2445955c20de54537447b5930de60cf8e927fe291f662760d50c0df8db"
+    sha256 cellar: :any_skip_relocation, mojave:      "737880ee8c7e9d73848eec50d87b1b7da7762a8b8d6172fd1f4be173888e18fe"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4d2c498462eba573c43413ec16f4681a8e604b67ff6739351900e500e2be5923"
   end
 
   depends_on "python@3.8"

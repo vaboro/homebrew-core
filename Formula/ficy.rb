@@ -7,13 +7,12 @@ class Ficy < Formula
   head "https://github.com/wavexx/fIcy.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "eae06b7876eea9fcaa55315522e96b3346cdd4316fd4c329a200fd681d382efd" => :catalina
-    sha256 "fe5ec58f592b05a79f1a1f867ceedf29b342c10659bb9167cef924ddc9260d72" => :mojave
-    sha256 "a47243a3eddfb8b8aa8ddb337de2ec09b80385bcdf6922a858a50d4a5d79cc47" => :high_sierra
-    sha256 "c8e04a4eb2cf74a46ed02c14c18bb13b06dcdc8703f5913744e904492efe64d8" => :sierra
-    sha256 "b3230fe854623e9ef87868b028a7c3cdfa7b08cdd749def59312cbc47c510bec" => :el_capitan
-    sha256 "ba35c8e07903b74a37daf9131f26a578320f79252aa95e9ca7a5921065cd2a51" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "eae06b7876eea9fcaa55315522e96b3346cdd4316fd4c329a200fd681d382efd"
+    sha256 cellar: :any_skip_relocation, mojave:      "fe5ec58f592b05a79f1a1f867ceedf29b342c10659bb9167cef924ddc9260d72"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a47243a3eddfb8b8aa8ddb337de2ec09b80385bcdf6922a858a50d4a5d79cc47"
+    sha256 cellar: :any_skip_relocation, sierra:      "c8e04a4eb2cf74a46ed02c14c18bb13b06dcdc8703f5913744e904492efe64d8"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "b3230fe854623e9ef87868b028a7c3cdfa7b08cdd749def59312cbc47c510bec"
+    sha256 cellar: :any_skip_relocation, yosemite:    "ba35c8e07903b74a37daf9131f26a578320f79252aa95e9ca7a5921065cd2a51"
   end
 
   def install

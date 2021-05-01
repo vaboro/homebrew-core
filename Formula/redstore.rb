@@ -6,14 +6,13 @@ class Redstore < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "f473645a1903ac48caf0bea886c13636ca093c4ca6f57f83ce9ffc4864f88ee5" => :catalina
-    sha256 "a17c99ed5d7162eb742eef7b8764c64082fff26895baa81cb26cb75ced03db5e" => :mojave
-    sha256 "fbd9814ed5e35fb1c964d6f581edebfc35e7d35cba0b89ea735247131c5559ac" => :high_sierra
-    sha256 "e507eab072e33f0cee1ca08efb51ab06d65cee3a64248ec6badbd4f601f5c674" => :sierra
-    sha256 "5ae64e4a536011ef3f68d2e8b4253624f60995025064de38f3a38308dd005421" => :el_capitan
-    sha256 "1c891f4297c26269136c5caa5be3ab721cbb8e5b53c83daf3440082df4edf6a2" => :yosemite
-    sha256 "55e35fe682d2bfd5b4e13d7e66302d79033766056e55b0031ce649ad582b30e3" => :mavericks
+    sha256 cellar: :any, catalina:    "f473645a1903ac48caf0bea886c13636ca093c4ca6f57f83ce9ffc4864f88ee5"
+    sha256 cellar: :any, mojave:      "a17c99ed5d7162eb742eef7b8764c64082fff26895baa81cb26cb75ced03db5e"
+    sha256 cellar: :any, high_sierra: "fbd9814ed5e35fb1c964d6f581edebfc35e7d35cba0b89ea735247131c5559ac"
+    sha256 cellar: :any, sierra:      "e507eab072e33f0cee1ca08efb51ab06d65cee3a64248ec6badbd4f601f5c674"
+    sha256 cellar: :any, el_capitan:  "5ae64e4a536011ef3f68d2e8b4253624f60995025064de38f3a38308dd005421"
+    sha256 cellar: :any, yosemite:    "1c891f4297c26269136c5caa5be3ab721cbb8e5b53c83daf3440082df4edf6a2"
+    sha256 cellar: :any, mavericks:   "55e35fe682d2bfd5b4e13d7e66302d79033766056e55b0031ce649ad582b30e3"
   end
 
   depends_on "pkg-config" => :build

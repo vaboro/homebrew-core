@@ -11,11 +11,10 @@ class Xmp < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "dc4399be2df77f0534bf1151201fd52b61694df7285bd58d9c1fe16522f199f6" => :catalina
-    sha256 "197be59a2a0c3495aeed49eeeedea65b060534f4ff5ad234cdd35f6da19fb9e1" => :mojave
-    sha256 "c76b4335844295d6daaaaca97f462828d39a9ce511c859d0ebf66165b12a6354" => :high_sierra
+    sha256 cellar: :any, catalina:    "dc4399be2df77f0534bf1151201fd52b61694df7285bd58d9c1fe16522f199f6"
+    sha256 cellar: :any, mojave:      "197be59a2a0c3495aeed49eeeedea65b060534f4ff5ad234cdd35f6da19fb9e1"
+    sha256 cellar: :any, high_sierra: "c76b4335844295d6daaaaca97f462828d39a9ce511c859d0ebf66165b12a6354"
   end
 
   head do

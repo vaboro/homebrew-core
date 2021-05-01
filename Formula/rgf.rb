@@ -6,10 +6,9 @@ class Rgf < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "6de68732658233225c9b6bac4d685e9e11a51748f140e3213dee4bbda47f0a14" => :catalina
-    sha256 "4ec45f0308dbbe42ddb35ada76473f5d9cead2fb118fa5d71a5ef3a8ce684435" => :mojave
-    sha256 "8887ef17fd595310b43d6ef940a28608fced9c828f012a0d991929c8d44a0ab4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6de68732658233225c9b6bac4d685e9e11a51748f140e3213dee4bbda47f0a14"
+    sha256 cellar: :any_skip_relocation, mojave:      "4ec45f0308dbbe42ddb35ada76473f5d9cead2fb118fa5d71a5ef3a8ce684435"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8887ef17fd595310b43d6ef940a28608fced9c828f012a0d991929c8d44a0ab4"
   end
 
   depends_on "cmake" => :build

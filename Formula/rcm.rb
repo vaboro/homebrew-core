@@ -6,10 +6,9 @@ class Rcm < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "86ac10a7254567afb24c9816f6a80dd90a81bc8cd8619c112e59c0950929ef14" => :catalina
-    sha256 "44c9524d9d5ce8ea5310fe6681b040d6c685cec693446f617686f82929d83c6b" => :mojave
-    sha256 "7130060f9a26eda6a704eb06bda4c04a4cc0b0980f1c9d3fc5dce876fa5a3fdf" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "86ac10a7254567afb24c9816f6a80dd90a81bc8cd8619c112e59c0950929ef14"
+    sha256 cellar: :any_skip_relocation, mojave:      "44c9524d9d5ce8ea5310fe6681b040d6c685cec693446f617686f82929d83c6b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7130060f9a26eda6a704eb06bda4c04a4cc0b0980f1c9d3fc5dce876fa5a3fdf"
   end
 
   def install
@@ -26,6 +25,6 @@ class Rcm < Formula
       	name = Test User
       	email = test@test.com
     EOS
-    assert_match /[Moving|Linking].../x, shell_output("#{bin}/mkrc -v ~/.gitconfig")
+    assert_match(/[Moving|Lk].../x, shell_output("#{bin}/mkrc -v ~/.gitconfig"))
   end
 end

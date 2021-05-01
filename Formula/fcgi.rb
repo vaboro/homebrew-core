@@ -7,10 +7,9 @@ class Fcgi < Formula
   license "OML"
 
   bottle do
-    cellar :any
-    sha256 "3905f7f3dec32a296b831f224a4f2cc75089c60b8a0137ce0b25e37466ffba8a" => :catalina
-    sha256 "a43c52588cc652fcc1d9be4d89393212875732349bd4dbdda4068f985db10628" => :mojave
-    sha256 "3ee3183f46dd8f38eee932f685e8d6a52fd0c0c2a1797bb25d62ad973b1405ed" => :high_sierra
+    sha256 cellar: :any, catalina:    "3905f7f3dec32a296b831f224a4f2cc75089c60b8a0137ce0b25e37466ffba8a"
+    sha256 cellar: :any, mojave:      "a43c52588cc652fcc1d9be4d89393212875732349bd4dbdda4068f985db10628"
+    sha256 cellar: :any, high_sierra: "3ee3183f46dd8f38eee932f685e8d6a52fd0c0c2a1797bb25d62ad973b1405ed"
   end
 
   depends_on "autoconf" => :build

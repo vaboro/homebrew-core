@@ -15,9 +15,9 @@ class Unbound < Formula
   end
 
   bottle do
-    sha256 "7e5335d2a33ade460682fd38c9b401921dcdacf151e5d16ecb5b0ee4ef522794" => :catalina
-    sha256 "4a08f87a4d17bb7c6dc83eae148347e9e9bcffd8424f2d7b4b28fcbef218af17" => :mojave
-    sha256 "9750bd78f47903e80196a08652bba12909bd399076a0b496130127144597f45f" => :high_sierra
+    sha256 catalina:    "7e5335d2a33ade460682fd38c9b401921dcdacf151e5d16ecb5b0ee4ef522794"
+    sha256 mojave:      "4a08f87a4d17bb7c6dc83eae148347e9e9bcffd8424f2d7b4b28fcbef218af17"
+    sha256 high_sierra: "9750bd78f47903e80196a08652bba12909bd399076a0b496130127144597f45f"
   end
 
   depends_on "libevent"

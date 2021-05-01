@@ -7,10 +7,9 @@ class Miller < Formula
   head "https://github.com/johnkerl/miller.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f723f639b78b03e09657ec505aaac48b7971fbe924b4269f860f1bc97f7db9cc" => :catalina
-    sha256 "36c0835f067998aa8458762915d3cfaf8304170fe47433c43f7001a302110e08" => :mojave
-    sha256 "e034b65d138c356931f0c29d5808d6d8cbc3468bfb7a0007edd37637f0dd265b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f723f639b78b03e09657ec505aaac48b7971fbe924b4269f860f1bc97f7db9cc"
+    sha256 cellar: :any_skip_relocation, mojave:      "36c0835f067998aa8458762915d3cfaf8304170fe47433c43f7001a302110e08"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e034b65d138c356931f0c29d5808d6d8cbc3468bfb7a0007edd37637f0dd265b"
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +36,6 @@ class Miller < Formula
       4,5,6
     EOS
     output = pipe_output("#{bin}/mlr --csvlite cut -f a test.csv")
-    assert_match /a\n1\n4\n/, output
+    assert_match(/a\n1\n4\n/, output)
   end
 end

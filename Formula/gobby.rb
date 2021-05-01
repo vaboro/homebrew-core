@@ -8,10 +8,12 @@ class Gobby < Formula
   head "https://github.com/gobby/gobby"
 
   bottle do
-    sha256 "5e2914adc88813352b11d1db5e69d2aa9b4612b7fb4ae05443a18b9426a0f26d" => :catalina
-    sha256 "d55e74b24f3d03968afa85eff7473316e8c0816a137d82e26e24e089b42cc3b4" => :mojave
-    sha256 "76ec450b768f0d27bb032cfb34e337002ee9f45a547a07c01e03b73e03413ad0" => :high_sierra
+    sha256 catalina:    "5e2914adc88813352b11d1db5e69d2aa9b4612b7fb4ae05443a18b9426a0f26d"
+    sha256 mojave:      "d55e74b24f3d03968afa85eff7473316e8c0816a137d82e26e24e089b42cc3b4"
+    sha256 high_sierra: "76ec450b768f0d27bb032cfb34e337002ee9f45a547a07c01e03b73e03413ad0"
   end
+
+  disable! date: "2018-08-26", because: :unmaintained
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
@@ -25,7 +27,6 @@ class Gobby < Formula
   depends_on "libxml++"
 
   # open issue since 2017-04-23, https://github.com/gobby/gobby/issues/143
-  disable! date: "2018-08-26", because: :unmaintained
 
   # Necessary to remove mandatory gtk-mac-integration
   # it's badly broken as it depends on an ancient version of ige-mac-integration

@@ -11,10 +11,9 @@ class Chafa < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "f8285220cba2737c58bea611f3c0b653b3c5e1306b8cef3ff33642ed26260fb8" => :catalina
-    sha256 "a483480366443ac91c52ebab6a06d0995a541098ce163a03c6cef71c0829be1c" => :mojave
-    sha256 "272891299f7962a49755de583274a21a49759e020418586fa0e7cdfe7c8e2202" => :high_sierra
+    sha256 cellar: :any, catalina:    "f8285220cba2737c58bea611f3c0b653b3c5e1306b8cef3ff33642ed26260fb8"
+    sha256 cellar: :any, mojave:      "a483480366443ac91c52ebab6a06d0995a541098ce163a03c6cef71c0829be1c"
+    sha256 cellar: :any, high_sierra: "272891299f7962a49755de583274a21a49759e020418586fa0e7cdfe7c8e2202"
   end
 
   depends_on "pkg-config" => :build

@@ -9,10 +9,9 @@ class Alot < Formula
   head "https://github.com/pazz/alot.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cca5bf15902a29f1160c3b8b9e6f9735332ee6d7a104af00b30c607854e2c9a4" => :catalina
-    sha256 "393a400bace4c3b8b40ec6cf0dd05c40ad5951d0058ed0a4ac28a15ecd1cfb56" => :mojave
-    sha256 "eac11abd553dd7f75db76aba7edf0875c35b2f30b4a23d6e761e7cd3f0f88487" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "cca5bf15902a29f1160c3b8b9e6f9735332ee6d7a104af00b30c607854e2c9a4"
+    sha256 cellar: :any_skip_relocation, mojave:      "393a400bace4c3b8b40ec6cf0dd05c40ad5951d0058ed0a4ac28a15ecd1cfb56"
+    sha256 cellar: :any_skip_relocation, high_sierra: "eac11abd553dd7f75db76aba7edf0875c35b2f30b4a23d6e761e7cd3f0f88487"
   end
 
   depends_on "sphinx-doc" => :build

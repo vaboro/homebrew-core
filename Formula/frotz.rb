@@ -7,9 +7,9 @@ class Frotz < Formula
   head "https://gitlab.com/DavidGriffith/frotz.git"
 
   bottle do
-    sha256 "1ed32dda7751fc0fe562cded7e618b7e5d9717e0342520d001f21d2094aaf5e8" => :catalina
-    sha256 "c71a655ef6d2906e9d094c6383d0a5a2f69d8c6e1c52352159a1a639c9003cea" => :mojave
-    sha256 "aa55fbacadbb897b30ec469d0f652ad4674b1c844072d5e47f02d152d3da6b9c" => :high_sierra
+    sha256 catalina:    "1ed32dda7751fc0fe562cded7e618b7e5d9717e0342520d001f21d2094aaf5e8"
+    sha256 mojave:      "c71a655ef6d2906e9d094c6383d0a5a2f69d8c6e1c52352159a1a639c9003cea"
+    sha256 high_sierra: "aa55fbacadbb897b30ec469d0f652ad4674b1c844072d5e47f02d152d3da6b9c"
   end
 
   depends_on "pkg-config" => :build

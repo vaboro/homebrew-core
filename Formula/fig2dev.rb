@@ -10,9 +10,9 @@ class Fig2dev < Formula
   end
 
   bottle do
-    sha256 "0ffe4d06ce3f489b724facdae111d0358ac5a902733f5c2ccedab8f4f3759893" => :catalina
-    sha256 "f640a65192bbae6f8801e6f07d57ff8d24ffda78ea471dacaa1b33684a7858ae" => :mojave
-    sha256 "1020f0333374fbfcb88d3bf2b2ca89b40c83f7863968f4d28dad1654ff9905df" => :high_sierra
+    sha256 catalina:    "0ffe4d06ce3f489b724facdae111d0358ac5a902733f5c2ccedab8f4f3759893"
+    sha256 mojave:      "f640a65192bbae6f8801e6f07d57ff8d24ffda78ea471dacaa1b33684a7858ae"
+    sha256 high_sierra: "1020f0333374fbfcb88d3bf2b2ca89b40c83f7863968f4d28dad1654ff9905df"
   end
 
   depends_on "ghostscript"

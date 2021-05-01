@@ -10,10 +10,9 @@ class Libnids < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0cd6c420a38ea61eb8abe96b6b2f754bddf1ca5583b3dbccfb1b268990426764" => :catalina
-    sha256 "175d04b2db4bc65923eed696272339f4533ea8277ec64f01ba6a2b9a6019c8d6" => :mojave
-    sha256 "e9e968ec057ae597b39c45ff1e804fde87f265c6783e62cb70e009ecc4aafd05" => :high_sierra
+    sha256 cellar: :any, catalina:    "0cd6c420a38ea61eb8abe96b6b2f754bddf1ca5583b3dbccfb1b268990426764"
+    sha256 cellar: :any, mojave:      "175d04b2db4bc65923eed696272339f4533ea8277ec64f01ba6a2b9a6019c8d6"
+    sha256 cellar: :any, high_sierra: "e9e968ec057ae597b39c45ff1e804fde87f265c6783e62cb70e009ecc4aafd05"
   end
 
   depends_on "autoconf" => :build

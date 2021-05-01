@@ -11,10 +11,9 @@ class Libpst < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "5c106b4d8bab127e674d0d2c8d69b60431b0eda93ef9c6efcd46f3aeb8aabd11" => :catalina
-    sha256 "bdd85c6f92d23eb95c0c0211857e2371dfc2853589b6dbaba4a02fdc28974d36" => :mojave
-    sha256 "77a6520ed29669112fb05cbfcfaccf95ba70522ec2e3f361a176a5570953ae2f" => :high_sierra
+    sha256 cellar: :any, catalina:    "5c106b4d8bab127e674d0d2c8d69b60431b0eda93ef9c6efcd46f3aeb8aabd11"
+    sha256 cellar: :any, mojave:      "bdd85c6f92d23eb95c0c0211857e2371dfc2853589b6dbaba4a02fdc28974d36"
+    sha256 cellar: :any, high_sierra: "77a6520ed29669112fb05cbfcfaccf95ba70522ec2e3f361a176a5570953ae2f"
   end
 
   depends_on "pkg-config" => :build

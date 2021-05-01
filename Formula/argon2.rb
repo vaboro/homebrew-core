@@ -8,11 +8,10 @@ class Argon2 < Formula
   head "https://github.com/P-H-C/phc-winner-argon2.git"
 
   bottle do
-    cellar :any
-    sha256 "f8e550c8597728bb9edc5a548497fd7b1219203932cd0f93ecc97a4fbf0bdad8" => :catalina
-    sha256 "a76192a41826619fc399e7f6de5e6cb1c8a5fbe6bea4f2c1554daa830fa0e296" => :mojave
-    sha256 "830016982e60870f50b3f6fc9a215d8cc4bda6061595f4883f7c11ab19ecba39" => :high_sierra
-    sha256 "21889ac6ed40c792f1b372b5aa0d6b3be1be86577a4c1b06b08569124d2d0da2" => :sierra
+    sha256 cellar: :any, catalina:    "f8e550c8597728bb9edc5a548497fd7b1219203932cd0f93ecc97a4fbf0bdad8"
+    sha256 cellar: :any, mojave:      "a76192a41826619fc399e7f6de5e6cb1c8a5fbe6bea4f2c1554daa830fa0e296"
+    sha256 cellar: :any, high_sierra: "830016982e60870f50b3f6fc9a215d8cc4bda6061595f4883f7c11ab19ecba39"
+    sha256 cellar: :any, sierra:      "21889ac6ed40c792f1b372b5aa0d6b3be1be86577a4c1b06b08569124d2d0da2"
   end
 
   def install

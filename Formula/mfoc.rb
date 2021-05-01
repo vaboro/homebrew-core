@@ -7,10 +7,9 @@ class Mfoc < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "14c431c29b0b0e746d1533606ab13097a84b853c13d4399672027cf9256dad32" => :catalina
-    sha256 "ff9f6c43ef70b8ae6fee40c43cf5f0acd6f72acd5507874e75d82703aeed5fc3" => :mojave
-    sha256 "83a0236f5971e007e67e620730d458f8dcdcb7ff7770cc97c07407a771dbf69a" => :high_sierra
+    sha256 cellar: :any, catalina:    "14c431c29b0b0e746d1533606ab13097a84b853c13d4399672027cf9256dad32"
+    sha256 cellar: :any, mojave:      "ff9f6c43ef70b8ae6fee40c43cf5f0acd6f72acd5507874e75d82703aeed5fc3"
+    sha256 cellar: :any, high_sierra: "83a0236f5971e007e67e620730d458f8dcdcb7ff7770cc97c07407a771dbf69a"
   end
 
   depends_on "pkg-config" => :build

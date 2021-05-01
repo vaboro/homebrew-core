@@ -1,5 +1,5 @@
 class GccAT49 < Formula
-  desc "The GNU Compiler Collection"
+  desc "GNU Compiler Collection"
   homepage "https://gcc.gnu.org/"
   url "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2"
@@ -12,7 +12,7 @@ class GccAT49 < Formula
   end
 
   bottle do
-    sha256 "cb153d98245bcbe4809dc19adf688f642285154b19fe907c7de3cb71652b0ec6" => :high_sierra
+    sha256 high_sierra: "cb153d98245bcbe4809dc19adf688f642285154b19fe907c7de3cb71652b0ec6"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

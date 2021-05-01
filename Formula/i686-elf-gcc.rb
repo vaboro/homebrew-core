@@ -1,5 +1,5 @@
 class I686ElfGcc < Formula
-  desc "The GNU compiler collection for i686-elf"
+  desc "GNU compiler collection for i686-elf"
   homepage "https://gcc.gnu.org"
   url "https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
@@ -11,9 +11,9 @@ class I686ElfGcc < Formula
   end
 
   bottle do
-    sha256 "8e258af70b398807c115631de8a1dc8c6ebdb3be870fe26410c14e91a7659a58" => :catalina
-    sha256 "4c14d4308435c164f92de628f8e1b97a63692fb0b3ff083c083a64fed1c72870" => :mojave
-    sha256 "c8d9a65d529d5c9219b451dfd724c7df0275df5f9c6138eb3db173b783c07372" => :high_sierra
+    sha256 catalina:    "8e258af70b398807c115631de8a1dc8c6ebdb3be870fe26410c14e91a7659a58"
+    sha256 mojave:      "4c14d4308435c164f92de628f8e1b97a63692fb0b3ff083c083a64fed1c72870"
+    sha256 high_sierra: "c8d9a65d529d5c9219b451dfd724c7df0275df5f9c6138eb3db173b783c07372"
   end
 
   depends_on "gmp"

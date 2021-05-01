@@ -12,11 +12,10 @@ class BbftpClient < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3adb6837d00aae2dd6425d06aa6ccf9450e8d6eaac66d4be597a7d97866d30a2" => :catalina
-    sha256 "bbb282078bb4f4390bf219a319a1d20020a76e14fb853afc473e7f59f3f71a01" => :mojave
-    sha256 "33ccc8c932f462488401f3963c1c5aff2ab489e16c1df067c619c5b6a791ced7" => :high_sierra
-    sha256 "535b7b8db22c9ef92ba7ecf8fea093c3d0c9bc5c01d99277fb2ff04d9272b843" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3adb6837d00aae2dd6425d06aa6ccf9450e8d6eaac66d4be597a7d97866d30a2"
+    sha256 cellar: :any_skip_relocation, mojave:      "bbb282078bb4f4390bf219a319a1d20020a76e14fb853afc473e7f59f3f71a01"
+    sha256 cellar: :any_skip_relocation, high_sierra: "33ccc8c932f462488401f3963c1c5aff2ab489e16c1df067c619c5b6a791ced7"
+    sha256 cellar: :any_skip_relocation, sierra:      "535b7b8db22c9ef92ba7ecf8fea093c3d0c9bc5c01d99277fb2ff04d9272b843"
   end
 
   def install

@@ -6,12 +6,11 @@ class Cwlogs < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b28a57d8b6d5801ccbbbb9227952f9bd67935a62a0ddcaefddec2650a5296eba" => :catalina
-    sha256 "094c93934776870df7b417ea5099a604fd8312e1bfa67f27628fa73f2c5dc388" => :mojave
-    sha256 "1c07bb31b455ea7e28f55854424b9fbcba9f9ab9e352f759377d7152b1b3c367" => :high_sierra
-    sha256 "b3528646611cd4f462bafe83c25c84f551e191629a93a84b11c872f9e86b720f" => :sierra
-    sha256 "6384495666e5235c5969ccd1688092fe335a5147b31156e1cb658a41594ae594" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "b28a57d8b6d5801ccbbbb9227952f9bd67935a62a0ddcaefddec2650a5296eba"
+    sha256 cellar: :any_skip_relocation, mojave:      "094c93934776870df7b417ea5099a604fd8312e1bfa67f27628fa73f2c5dc388"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1c07bb31b455ea7e28f55854424b9fbcba9f9ab9e352f759377d7152b1b3c367"
+    sha256 cellar: :any_skip_relocation, sierra:      "b3528646611cd4f462bafe83c25c84f551e191629a93a84b11c872f9e86b720f"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "6384495666e5235c5969ccd1688092fe335a5147b31156e1cb658a41594ae594"
   end
 
   depends_on "go" => :build

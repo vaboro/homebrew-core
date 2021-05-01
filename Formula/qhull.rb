@@ -13,10 +13,9 @@ class Qhull < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "45f8b6efc0a77e4fd613ef527d6c55545908f860106d4355bd753ad07a934bd1" => :catalina
-    sha256 "61a2fab7f2854401bdffe54b889a1e2b9d90f6a11e52aba80688875b8f7d08a5" => :mojave
-    sha256 "36e0e4a621e0c89746584562634768ccb93e71fc500230133620db030b1cc05a" => :high_sierra
+    sha256 cellar: :any, catalina:    "45f8b6efc0a77e4fd613ef527d6c55545908f860106d4355bd753ad07a934bd1"
+    sha256 cellar: :any, mojave:      "61a2fab7f2854401bdffe54b889a1e2b9d90f6a11e52aba80688875b8f7d08a5"
+    sha256 cellar: :any, high_sierra: "36e0e4a621e0c89746584562634768ccb93e71fc500230133620db030b1cc05a"
   end
 
   depends_on "cmake" => :build

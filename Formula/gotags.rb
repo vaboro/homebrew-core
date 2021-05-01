@@ -7,11 +7,10 @@ class Gotags < Formula
   head "https://github.com/jstemmer/gotags.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "c1b5430e2c3544fc021bc9bbc35c33a1f2c4482a30dbbc8d4977c1f0ee5638a1" => :catalina
-    sha256 "4413278c3b7f4d8783b9009a986dc91a2a5d3749430105a4297f2cec960a5344" => :mojave
-    sha256 "095f81ef736207a6806af1613a7ab5a0ba3837b4f94f85260aa1bceba3535fea" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c1b5430e2c3544fc021bc9bbc35c33a1f2c4482a30dbbc8d4977c1f0ee5638a1"
+    sha256 cellar: :any_skip_relocation, mojave:      "4413278c3b7f4d8783b9009a986dc91a2a5d3749430105a4297f2cec960a5344"
+    sha256 cellar: :any_skip_relocation, high_sierra: "095f81ef736207a6806af1613a7ab5a0ba3837b4f94f85260aa1bceba3535fea"
   end
 
   depends_on "go" => :build
@@ -30,6 +29,6 @@ class Gotags < Formula
       }
     EOS
 
-    assert_match /^Bar.*test.go.*$/, shell_output("#{bin}/gotags #{testpath}/test.go")
+    assert_match(/^Bar.*test.go.*$/, shell_output("#{bin}/gotags #{testpath}/test.go"))
   end
 end

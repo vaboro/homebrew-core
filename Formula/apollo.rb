@@ -8,12 +8,13 @@ class Apollo < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd" => :catalina
-    sha256 "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd" => :mojave
-    sha256 "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd"
+    sha256 cellar: :any_skip_relocation, mojave:      "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd"
+    sha256 cellar: :any_skip_relocation, high_sierra: "81b2a6a1110da6cf58c6725eb6e2c331668fa39d01644e0a754a2eb9241fdccd"
   end
+
+  deprecate! date: "2019-03-11", because: :deprecated_upstream
 
   depends_on "openjdk"
 
@@ -30,7 +31,6 @@ class Apollo < Formula
   end
 
   # https://github.com/apache/activemq-apollo/commit/049d68bf3f94cdf62ded5426d3cad4ef3e3c56ca
-  deprecate! date: "2019-03-11", because: :deprecated_upstream
 
   def install
     prefix.install_metafiles

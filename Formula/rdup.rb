@@ -8,10 +8,9 @@ class Rdup < Formula
   head "https://github.com/miekg/rdup.git"
 
   bottle do
-    cellar :any
-    sha256 "cf02c3004b312a3d90c6e47227f35e39319736270be76d7e4b0705568a21abec" => :catalina
-    sha256 "fb091d60536b72e20dc5e1448d9876e7b2eaefd16d40f2bfbf7bba48059af348" => :mojave
-    sha256 "417244fe66e0f47ab1afea65e9a52db01c15ac2f5db5e150ad65d80b2e85e2cc" => :high_sierra
+    sha256 cellar: :any, catalina:    "cf02c3004b312a3d90c6e47227f35e39319736270be76d7e4b0705568a21abec"
+    sha256 cellar: :any, mojave:      "fb091d60536b72e20dc5e1448d9876e7b2eaefd16d40f2bfbf7bba48059af348"
+    sha256 cellar: :any, high_sierra: "417244fe66e0f47ab1afea65e9a52db01c15ac2f5db5e150ad65d80b2e85e2cc"
   end
 
   depends_on "autoconf" => :build

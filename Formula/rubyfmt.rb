@@ -6,10 +6,9 @@ class Rubyfmt < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b" => :catalina
-    sha256 "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b" => :mojave
-    sha256 "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b"
+    sha256 cellar: :any_skip_relocation, mojave:      "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8d9ed80d496220e02b9df146c41870079116cf798ab90734212d3cdc6080bb8b"
   end
 
   uses_from_macos "ruby"

@@ -6,10 +6,9 @@ class Synscan < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "0e99e8f964f270377bd7dc6c0ecfae64682f3b2831776d7723f200c159623ac6" => :catalina
-    sha256 "aba139d4f46b1248a796f26dccb6399fd6f6eadd94b7777f5218d3a0599f0bad" => :mojave
-    sha256 "4364e517dd2b231cd711be4ccebdfe802e1ef6f7cacfaff46e987790c90c21f8" => :high_sierra
+    sha256 cellar: :any, catalina:    "0e99e8f964f270377bd7dc6c0ecfae64682f3b2831776d7723f200c159623ac6"
+    sha256 cellar: :any, mojave:      "aba139d4f46b1248a796f26dccb6399fd6f6eadd94b7777f5218d3a0599f0bad"
+    sha256 cellar: :any, high_sierra: "4364e517dd2b231cd711be4ccebdfe802e1ef6f7cacfaff46e987790c90c21f8"
   end
 
   depends_on "libpcap"

@@ -6,13 +6,12 @@ class Xlispstat < Formula
   sha256 "9bf165eb3f92384373dab34f9a56ec8455ff9e2bf7dff6485e807767e6ce6cf4"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b75a56962e29ab9557eea7218de105ff6a989ce1e473642b29951baebeaa69ce" => :catalina
-    sha256 "c9b40607436fb010b8c7bdbf20a9bc377f18c5958eca6a8a1439bf29c2721810" => :mojave
-    sha256 "a2847ae5a3820e85b826117f59a809981fcbfe325abd2f38760cf8003ab9814b" => :high_sierra
-    sha256 "0180be9b973a87ff7feb72dbaebed8a46f857e1f670e864276e43cc294515870" => :sierra
-    sha256 "f83a1cc043c82daf6bf4fa9717f090e10e04388544d79771ce8b6848c880b757" => :el_capitan
-    sha256 "c4004c8fc128a187c35923eff3cb0c5a641f7928aff558559279d5d98abe849d" => :yosemite
+    sha256 cellar: :any_skip_relocation, catalina:    "b75a56962e29ab9557eea7218de105ff6a989ce1e473642b29951baebeaa69ce"
+    sha256 cellar: :any_skip_relocation, mojave:      "c9b40607436fb010b8c7bdbf20a9bc377f18c5958eca6a8a1439bf29c2721810"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a2847ae5a3820e85b826117f59a809981fcbfe325abd2f38760cf8003ab9814b"
+    sha256 cellar: :any_skip_relocation, sierra:      "0180be9b973a87ff7feb72dbaebed8a46f857e1f670e864276e43cc294515870"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "f83a1cc043c82daf6bf4fa9717f090e10e04388544d79771ce8b6848c880b757"
+    sha256 cellar: :any_skip_relocation, yosemite:    "c4004c8fc128a187c35923eff3cb0c5a641f7928aff558559279d5d98abe849d"
   end
 
   depends_on :x11

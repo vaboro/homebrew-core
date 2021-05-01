@@ -12,9 +12,8 @@ class Plank < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "fc6838079a8a975c9bb77d17a050aa722d8446fcf9f62ca9fe09c8822d8651b4" => :catalina
-    sha256 "04d2dddb094914fa219304fea8f6e5aa3315c2e51b63ef4077fcf25a54c8b268" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "fc6838079a8a975c9bb77d17a050aa722d8446fcf9f62ca9fe09c8822d8651b4"
+    sha256 cellar: :any_skip_relocation, mojave:   "04d2dddb094914fa219304fea8f6e5aa3315c2e51b63ef4077fcf25a54c8b268"
   end
 
   depends_on xcode: ["11.3", :build]

@@ -1,5 +1,5 @@
 class Acl2 < Formula
-  desc "The logic and programming language in which you can model computer systems"
+  desc "Logic and programming language in which you can model computer systems"
   homepage "https://www.cs.utexas.edu/users/moore/acl2/index.html"
   url "https://github.com/acl2/acl2/archive/8.3.tar.gz"
   sha256 "45eedddb36b2eff889f0dba2b96fc7a9b1cf23992fcfdf909bc179f116f2c5ea"
@@ -7,9 +7,9 @@ class Acl2 < Formula
   revision 1
 
   bottle do
-    sha256 "f10bf6bb9f106ba04c007ccb4d1b833c4a487c03d9126d2e3d8680fdce2baf50" => :catalina
-    sha256 "438d018f33e42045f7fa2e071c4478591a1c1d2871f99fe1b4e296baf724b601" => :mojave
-    sha256 "10454cc660da273aef8c19402b8546a5ea78e26f41ab35ccbd8a3746a22111c8" => :high_sierra
+    sha256 catalina:    "f10bf6bb9f106ba04c007ccb4d1b833c4a487c03d9126d2e3d8680fdce2baf50"
+    sha256 mojave:      "438d018f33e42045f7fa2e071c4478591a1c1d2871f99fe1b4e296baf724b601"
+    sha256 high_sierra: "10454cc660da273aef8c19402b8546a5ea78e26f41ab35ccbd8a3746a22111c8"
   end
 
   depends_on "sbcl"

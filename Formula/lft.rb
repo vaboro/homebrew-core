@@ -10,10 +10,9 @@ class Lft < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c0b69000709a507f2ec0cc2ff286910e6f2629169367828cfdc26e184654f787" => :catalina
-    sha256 "83d6fa2b78fb9780fecb9287407825d1731f1c91da30bb75b15f26e632e0720b" => :mojave
-    sha256 "e0370a6053bedd5c24f62583c2d19c3d0d2fab2fa5cf9003561e60694dad8642" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c0b69000709a507f2ec0cc2ff286910e6f2629169367828cfdc26e184654f787"
+    sha256 cellar: :any_skip_relocation, mojave:      "83d6fa2b78fb9780fecb9287407825d1731f1c91da30bb75b15f26e632e0720b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e0370a6053bedd5c24f62583c2d19c3d0d2fab2fa5cf9003561e60694dad8642"
   end
 
   def install

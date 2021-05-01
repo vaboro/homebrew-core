@@ -7,11 +7,10 @@ class Pdf2svg < Formula
   revision 5
 
   bottle do
-    cellar :any
-    sha256 "8350da4f06838454cf26788b9ea27cbd9255d567be906d4fde5dea332b035734" => :catalina
-    sha256 "3999f52a6638bd2090feabd62cf91112a6b98bf6577a112771941ec6781eabd8" => :mojave
-    sha256 "9477928316e8a5cb7edc7d03568a22a2f2fb87e1440a96e100c79695c1b5cde9" => :high_sierra
-    sha256 "ec7f985d7a62787268265f4e05c87d59926a7f242c22972e32418e7cfaa5448e" => :sierra
+    sha256 cellar: :any, catalina:    "8350da4f06838454cf26788b9ea27cbd9255d567be906d4fde5dea332b035734"
+    sha256 cellar: :any, mojave:      "3999f52a6638bd2090feabd62cf91112a6b98bf6577a112771941ec6781eabd8"
+    sha256 cellar: :any, high_sierra: "9477928316e8a5cb7edc7d03568a22a2f2fb87e1440a96e100c79695c1b5cde9"
+    sha256 cellar: :any, sierra:      "ec7f985d7a62787268265f4e05c87d59926a7f242c22972e32418e7cfaa5448e"
   end
 
   depends_on "pkg-config" => :build

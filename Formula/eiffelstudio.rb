@@ -6,11 +6,10 @@ class Eiffelstudio < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "a75094bbba27a570e33d7efb5136526da56a8328c0177ad7ca4dff6e217ba49e" => :catalina
-    sha256 "8a7764d27dccc50a8bd8d34175591c90bd52ef8c3e3bf256a941cfccbd0e7f84" => :mojave
-    sha256 "1204b20cd8146aeb89dc15b904ee792cfe6dd7141bc30536beba436efa667cea" => :high_sierra
-    sha256 "4f8f7374ec1a2032334dd13ddf00d93b3feda22c75d884f7c0f8fe799f27643b" => :sierra
+    sha256 cellar: :any, catalina:    "a75094bbba27a570e33d7efb5136526da56a8328c0177ad7ca4dff6e217ba49e"
+    sha256 cellar: :any, mojave:      "8a7764d27dccc50a8bd8d34175591c90bd52ef8c3e3bf256a941cfccbd0e7f84"
+    sha256 cellar: :any, high_sierra: "1204b20cd8146aeb89dc15b904ee792cfe6dd7141bc30536beba436efa667cea"
+    sha256 cellar: :any, sierra:      "4f8f7374ec1a2032334dd13ddf00d93b3feda22c75d884f7c0f8fe799f27643b"
   end
 
   depends_on "pkg-config" => :build

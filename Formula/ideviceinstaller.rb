@@ -6,10 +6,9 @@ class Ideviceinstaller < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "6ee12db78e8c224c0eb0cf88eb4f43242eb1ba672eb006636273b99b75b02a87" => :catalina
-    sha256 "6ed5e4f7ace33fd5f4d1b4c6b9f0fd519836080e170b981e63942087698351c6" => :mojave
-    sha256 "0dfe944eaa47cad87ad22f70dbbcefdb6b27bbeb83ca1f7a229827c03054c07c" => :high_sierra
+    sha256 cellar: :any, catalina:    "6ee12db78e8c224c0eb0cf88eb4f43242eb1ba672eb006636273b99b75b02a87"
+    sha256 cellar: :any, mojave:      "6ed5e4f7ace33fd5f4d1b4c6b9f0fd519836080e170b981e63942087698351c6"
+    sha256 cellar: :any, high_sierra: "0dfe944eaa47cad87ad22f70dbbcefdb6b27bbeb83ca1f7a229827c03054c07c"
   end
 
   head do

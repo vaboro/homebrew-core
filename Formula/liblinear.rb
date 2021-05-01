@@ -7,10 +7,9 @@ class Liblinear < Formula
   head "https://github.com/cjlin1/liblinear.git"
 
   bottle do
-    cellar :any
-    sha256 "7f87690e48b1c1ad17cff21494d81e0c7539c13dcb8e2f90d810e99165ef3013" => :catalina
-    sha256 "8c884bdc5cc931e6d4762561518b8b1836785c09fea1cbb034ddd1182519bb62" => :mojave
-    sha256 "dd26a959a98b379ce158256166f638b8f5ac23f636052c7a41975c2320b2173f" => :high_sierra
+    sha256 cellar: :any, catalina:    "7f87690e48b1c1ad17cff21494d81e0c7539c13dcb8e2f90d810e99165ef3013"
+    sha256 cellar: :any, mojave:      "8c884bdc5cc931e6d4762561518b8b1836785c09fea1cbb034ddd1182519bb62"
+    sha256 cellar: :any, high_sierra: "dd26a959a98b379ce158256166f638b8f5ac23f636052c7a41975c2320b2173f"
   end
 
   # Fix sonames

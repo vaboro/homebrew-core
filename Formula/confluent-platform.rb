@@ -35,8 +35,8 @@ class ConfluentPlatform < Formula
     # due to sandbox-exec.
     # The message "unable to load config" means that the execution will succeed
     # if the user has write permission.
-    assert_match /unable to load config/, shell_output("#{bin}/confluent 2>&1", 1)
+    assert_match(/unable to load config/, shell_output("#{bin}/confluent 2>&1", 1))
 
-    assert_match /usage: confluent-hub/, shell_output("#{bin}/confluent-hub help")
+    assert_match(/usage: confluent-hub/, shell_output("#{bin}/confluent-hub help"))
   end
 end

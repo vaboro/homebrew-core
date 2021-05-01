@@ -6,10 +6,9 @@ class Cli53 < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "65f9f13eb5c2f53afcb697f9699f8dd6b9df5f400908a2d3423879f8ca895942" => :catalina
-    sha256 "73ec9efeaf423dd32530bd4a547b11522b54dd5666942735268bb7690479ff09" => :mojave
-    sha256 "190e2e02b890cf099ca52d1468b224d16c82840a3a534db83a2aed5553b07bfc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "65f9f13eb5c2f53afcb697f9699f8dd6b9df5f400908a2d3423879f8ca895942"
+    sha256 cellar: :any_skip_relocation, mojave:      "73ec9efeaf423dd32530bd4a547b11522b54dd5666942735268bb7690479ff09"
+    sha256 cellar: :any_skip_relocation, high_sierra: "190e2e02b890cf099ca52d1468b224d16c82840a3a534db83a2aed5553b07bfc"
   end
 
   depends_on "go" => :build

@@ -16,14 +16,13 @@ class Mongrel2 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "a8fec9c22f23f3347c2ffff44b25e07920ba8dd7e24c0001f0b3fc73fce07407" => :catalina
-    sha256 "cfda97fdc8cf6fa5ee0b4f1b48b07840b1560bd73ced286bb574f838148e6f25" => :mojave
-    sha256 "67696f654ab1d878ac7c2a3fa254b0ee86c1d444578045997a971ca44189b2fe" => :high_sierra
-    sha256 "293b0edc8bcc0b7e3a97748a6accbc5000916ed145fd467aeb809303438a207a" => :sierra
-    sha256 "7a6880cbc814b084a3ac91e379b7a720438951e31a18119c232f976fded229c3" => :el_capitan
-    sha256 "0b2926fe3d79ab934e95f0e5c067e8bb23b6900b99255482defee9388a0dee07" => :yosemite
-    sha256 "dd07092a2384c243fcd8c54ed67f2a728f3da698276540fc1c9b201eb3c5cbbb" => :mavericks
+    sha256 cellar: :any, catalina:    "a8fec9c22f23f3347c2ffff44b25e07920ba8dd7e24c0001f0b3fc73fce07407"
+    sha256 cellar: :any, mojave:      "cfda97fdc8cf6fa5ee0b4f1b48b07840b1560bd73ced286bb574f838148e6f25"
+    sha256 cellar: :any, high_sierra: "67696f654ab1d878ac7c2a3fa254b0ee86c1d444578045997a971ca44189b2fe"
+    sha256 cellar: :any, sierra:      "293b0edc8bcc0b7e3a97748a6accbc5000916ed145fd467aeb809303438a207a"
+    sha256 cellar: :any, el_capitan:  "7a6880cbc814b084a3ac91e379b7a720438951e31a18119c232f976fded229c3"
+    sha256 cellar: :any, yosemite:    "0b2926fe3d79ab934e95f0e5c067e8bb23b6900b99255482defee9388a0dee07"
+    sha256 cellar: :any, mavericks:   "dd07092a2384c243fcd8c54ed67f2a728f3da698276540fc1c9b201eb3c5cbbb"
   end
 
   depends_on "zeromq"

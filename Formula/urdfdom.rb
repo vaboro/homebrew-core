@@ -11,10 +11,9 @@ class Urdfdom < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "1a4cf15eac5ab20085f401c827511eddd6075f2d4511f9b4a72c7388d587a91b" => :catalina
-    sha256 "8f9f55abf13706344949050a7fb077e4394daef2556a09b03deef1481eef432f" => :mojave
-    sha256 "a80e9b0bb93db5384993499150c28c883cc1f839e4e9fa7e933bf85067be1818" => :high_sierra
+    sha256 cellar: :any, catalina:    "1a4cf15eac5ab20085f401c827511eddd6075f2d4511f9b4a72c7388d587a91b"
+    sha256 cellar: :any, mojave:      "8f9f55abf13706344949050a7fb077e4394daef2556a09b03deef1481eef432f"
+    sha256 cellar: :any, high_sierra: "a80e9b0bb93db5384993499150c28c883cc1f839e4e9fa7e933bf85067be1818"
   end
 
   depends_on "cmake" => :build

@@ -12,10 +12,9 @@ class Newman < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "22e456dd51188aee5518ad13a88c28e345e7f2e5afde3c487c61d37225e67a81" => :catalina
-    sha256 "43aa0b74318ce9fbb39087c679d9b898a12dc4a3d62b85aa3b7650029fe1addf" => :mojave
-    sha256 "645bda6e706231d5278d6755db919df7509f568ed8b5b4ed7b8be2373242ea5e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "22e456dd51188aee5518ad13a88c28e345e7f2e5afde3c487c61d37225e67a81"
+    sha256 cellar: :any_skip_relocation, mojave:      "43aa0b74318ce9fbb39087c679d9b898a12dc4a3d62b85aa3b7650029fe1addf"
+    sha256 cellar: :any_skip_relocation, high_sierra: "645bda6e706231d5278d6755db919df7509f568ed8b5b4ed7b8be2373242ea5e"
   end
 
   depends_on "node"
@@ -63,7 +62,7 @@ class Newman < Formula
       }
     EOS
 
-    assert_match /newman/, shell_output("#{bin}/newman run #{path}")
+    assert_match(/newman/, shell_output("#{bin}/newman run #{path}"))
     assert_equal version.to_s, shell_output("#{bin}/newman --version").strip
   end
 end

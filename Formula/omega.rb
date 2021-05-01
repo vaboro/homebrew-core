@@ -6,9 +6,9 @@ class Omega < Formula
   license "GPL-2.0"
 
   bottle do
-    sha256 "21def29541640883bd956e842a3370d9ac7dde45bd166add19ca83013f86189f" => :catalina
-    sha256 "5625e477813a8c7bd720e17416b6dd80faf959f5d7210c3262031ba30c3e1f6e" => :mojave
-    sha256 "ff44c076ce6ad71238f2293e35ad7c8fed610dfeb5eb15e8a52c0e68d9a0b62d" => :high_sierra
+    sha256 catalina:    "21def29541640883bd956e842a3370d9ac7dde45bd166add19ca83013f86189f"
+    sha256 mojave:      "5625e477813a8c7bd720e17416b6dd80faf959f5d7210c3262031ba30c3e1f6e"
+    sha256 high_sierra: "ff44c076ce6ad71238f2293e35ad7c8fed610dfeb5eb15e8a52c0e68d9a0b62d"
   end
 
   depends_on "pkg-config" => :build

@@ -7,10 +7,9 @@ class OpenalSoft < Formula
   head "https://github.com/kcat/openal-soft.git"
 
   bottle do
-    cellar :any
-    sha256 "b62337bb563eaaacec777b6861de4b6ba1d33ad8e19418b4b5a0cdfb37473fcf" => :catalina
-    sha256 "f6448e18550e62cd283bebe24e98f6253c5c18758aeb7c44f3816f1840082b25" => :mojave
-    sha256 "26dbb8819cd991e4a901f3f90f0cc2339c9e4220330329dcf7caa37b14d048d7" => :high_sierra
+    sha256 cellar: :any, catalina:    "b62337bb563eaaacec777b6861de4b6ba1d33ad8e19418b4b5a0cdfb37473fcf"
+    sha256 cellar: :any, mojave:      "f6448e18550e62cd283bebe24e98f6253c5c18758aeb7c44f3816f1840082b25"
+    sha256 cellar: :any, high_sierra: "26dbb8819cd991e4a901f3f90f0cc2339c9e4220330329dcf7caa37b14d048d7"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenAL.framework"

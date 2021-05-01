@@ -6,9 +6,9 @@ class S6 < Formula
   license "ISC"
 
   bottle do
-    sha256 "94906378d458e78a0909dc89bd5672ca8d33645b1b070be4974ac7ebe0f3aa15" => :catalina
-    sha256 "e4024234358147987f7f6f599b73ddfd9bbe5e5fd414efcbc53577045a1dbb78" => :mojave
-    sha256 "d6be4dd0697c711c1e35fe25e4f1365bcb1c198ab8fc8c3f3d7169b29ccb4372" => :high_sierra
+    sha256 catalina:    "94906378d458e78a0909dc89bd5672ca8d33645b1b070be4974ac7ebe0f3aa15"
+    sha256 mojave:      "e4024234358147987f7f6f599b73ddfd9bbe5e5fd414efcbc53577045a1dbb78"
+    sha256 high_sierra: "d6be4dd0697c711c1e35fe25e4f1365bcb1c198ab8fc8c3f3d7169b29ccb4372"
   end
 
   resource "skalibs" do

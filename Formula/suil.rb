@@ -6,9 +6,9 @@ class Suil < Formula
   license "ISC"
 
   bottle do
-    sha256 "588d837f629e7850d05a28f561852bd990229623748baf8c13be9337dc5d8e2a" => :catalina
-    sha256 "1497f4ef4de7dc80b8f79913ecc46203ddd3dc1f0afa117fed6ba4c3f448a4d9" => :mojave
-    sha256 "811369571b4c28268a130c040b8019ebf77fa26b4410022891b45d7ad2c03eb3" => :high_sierra
+    sha256 catalina:    "588d837f629e7850d05a28f561852bd990229623748baf8c13be9337dc5d8e2a"
+    sha256 mojave:      "1497f4ef4de7dc80b8f79913ecc46203ddd3dc1f0afa117fed6ba4c3f448a4d9"
+    sha256 high_sierra: "811369571b4c28268a130c040b8019ebf77fa26b4410022891b45d7ad2c03eb3"
   end
 
   depends_on "pkg-config" => :build

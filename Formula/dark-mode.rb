@@ -7,9 +7,8 @@ class DarkMode < Formula
   head "https://github.com/sindresorhus/dark-mode.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b9ce8876210cccd70e87ed5781a313f4b2705330453cd4af7ff2474f659d184e" => :catalina
-    sha256 "bfb3cbcc43a333d6ca8ef8c52c89dc6d0cc23938f4e4fbd6ac13683e4ad63bd6" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "b9ce8876210cccd70e87ed5781a313f4b2705330453cd4af7ff2474f659d184e"
+    sha256 cellar: :any_skip_relocation, mojave:   "bfb3cbcc43a333d6ca8ef8c52c89dc6d0cc23938f4e4fbd6ac13683e4ad63bd6"
   end
 
   depends_on xcode: :build

@@ -1,15 +1,14 @@
 class Doctest < Formula
-  desc "The fastest feature-rich C++11/14/17/20 single-header testing framework"
+  desc "Fastest feature-rich C++11/14/17/20 single-header testing framework"
   homepage "https://github.com/onqtam/doctest"
   url "https://github.com/onqtam/doctest/archive/2.4.0.tar.gz"
   sha256 "f689f48e92c088928d88d8481e769c8e804f0a608b484ab8ef3d6ab6045b5444"
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0" => :catalina
-    sha256 "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0" => :mojave
-    sha256 "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0"
+    sha256 cellar: :any_skip_relocation, mojave:      "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "55ddcbc1b4b27cbe269c830a60b89eb77f33be335ebbc277db4f6fdb27fc9ec0"
   end
 
   depends_on "cmake" => :build

@@ -6,10 +6,9 @@ class OpenImageDenoise < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any
-    sha256 "36e3eaab701c477b99a8dd45ee9280de718aeb561429d9583cb2a387b9eace13" => :catalina
-    sha256 "3fae1d44be63e61401450dc6c3f0afe8b56bbf138e8c764e915911677749ee05" => :mojave
-    sha256 "768e611cdf47486bcd8167cd2532b944f10f2fe0d7895d7f0403989529932e06" => :high_sierra
+    sha256 cellar: :any, catalina:    "36e3eaab701c477b99a8dd45ee9280de718aeb561429d9583cb2a387b9eace13"
+    sha256 cellar: :any, mojave:      "3fae1d44be63e61401450dc6c3f0afe8b56bbf138e8c764e915911677749ee05"
+    sha256 cellar: :any, high_sierra: "768e611cdf47486bcd8167cd2532b944f10f2fe0d7895d7f0403989529932e06"
   end
 
   depends_on "cmake" => :build

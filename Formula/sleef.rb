@@ -7,10 +7,9 @@ class Sleef < Formula
   head "https://github.com/shibatch/sleef.git"
 
   bottle do
-    cellar :any
-    sha256 "87ddfa37e9405dfc66c35295295e5f09e497fb1bc8c07c9e0f38560aeb46398f" => :catalina
-    sha256 "f9e95775f5e41924f42eae7c4ae1f567229a49989e1f8a380d55355e37680d9c" => :mojave
-    sha256 "353ca63589a038009ad9b39dadcf3ef4c46153f738fcfb07d58a25dfc37e945a" => :high_sierra
+    sha256 cellar: :any, catalina:    "87ddfa37e9405dfc66c35295295e5f09e497fb1bc8c07c9e0f38560aeb46398f"
+    sha256 cellar: :any, mojave:      "f9e95775f5e41924f42eae7c4ae1f567229a49989e1f8a380d55355e37680d9c"
+    sha256 cellar: :any, high_sierra: "353ca63589a038009ad9b39dadcf3ef4c46153f738fcfb07d58a25dfc37e945a"
   end
 
   depends_on "cmake" => :build

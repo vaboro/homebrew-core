@@ -14,10 +14,9 @@ class GitReview < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8bb267cb74c37af45200381f60f84dc49af52a0d2eed65c23db6e582d0d407b9" => :catalina
-    sha256 "acd209ffed9affc75582b7ef94e3232abc0f2ab6490b634fc9abcb53a2e0f08d" => :mojave
-    sha256 "cb9721c5b767816de394884dbb83a7274b43fcb495015d445253d3820ac07b32" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8bb267cb74c37af45200381f60f84dc49af52a0d2eed65c23db6e582d0d407b9"
+    sha256 cellar: :any_skip_relocation, mojave:      "acd209ffed9affc75582b7ef94e3232abc0f2ab6490b634fc9abcb53a2e0f08d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cb9721c5b767816de394884dbb83a7274b43fcb495015d445253d3820ac07b32"
   end
 
   depends_on "python@3.8"

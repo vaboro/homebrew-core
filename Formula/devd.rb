@@ -7,11 +7,10 @@ class Devd < Formula
   head "https://github.com/cortesi/devd.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "26a21f49c1abdafb1be22d48bc4186c18c0ff53620cc60a35ac778ed22a46c5a" => :catalina
-    sha256 "21b10d2ef5cdb6a11cb0fa64da6cb4ef5049d5bc9bc411ad4192127224709f2e" => :mojave
-    sha256 "2cc541a0a844b83e60b89f79e1f296d391737fb635f1bd43ff5dd022a07dc67b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "26a21f49c1abdafb1be22d48bc4186c18c0ff53620cc60a35ac778ed22a46c5a"
+    sha256 cellar: :any_skip_relocation, mojave:      "21b10d2ef5cdb6a11cb0fa64da6cb4ef5049d5bc9bc411ad4192127224709f2e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2cc541a0a844b83e60b89f79e1f296d391737fb635f1bd43ff5dd022a07dc67b"
   end
 
   depends_on "go" => :build

@@ -8,10 +8,9 @@ class Spdlog < Formula
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
-    cellar :any
-    sha256 "04276c895db91e7bf90bae4aef73a39b7a8b018bf3c2a34dda50609723b96b47" => :catalina
-    sha256 "4c40c947691b56bbbc586b0a15d511f351d8980b8534229047558a801ddf33c9" => :mojave
-    sha256 "df958e08b8bfed9c6e4b9ce3e8148706e414634d27ca0ec6f50bda60caccd1f8" => :high_sierra
+    sha256 cellar: :any, catalina:    "04276c895db91e7bf90bae4aef73a39b7a8b018bf3c2a34dda50609723b96b47"
+    sha256 cellar: :any, mojave:      "4c40c947691b56bbbc586b0a15d511f351d8980b8534229047558a801ddf33c9"
+    sha256 cellar: :any, high_sierra: "df958e08b8bfed9c6e4b9ce3e8148706e414634d27ca0ec6f50bda60caccd1f8"
   end
 
   depends_on "cmake" => :build

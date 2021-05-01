@@ -11,10 +11,9 @@ class Xvid < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ace5fea6272f3594b5c8fca6f1fe03c41c50a14af8599751571c5e44a49a5a53" => :catalina
-    sha256 "4e119534a1351c85799944eb35f6f5675192e67e077fb3452f73f210a57eabe3" => :mojave
-    sha256 "79ea46af3061561427ab0af36b09d61e057084c76f655ec21074fba375a36b01" => :high_sierra
+    sha256 cellar: :any, catalina:    "ace5fea6272f3594b5c8fca6f1fe03c41c50a14af8599751571c5e44a49a5a53"
+    sha256 cellar: :any, mojave:      "4e119534a1351c85799944eb35f6f5675192e67e077fb3452f73f210a57eabe3"
+    sha256 cellar: :any, high_sierra: "79ea46af3061561427ab0af36b09d61e057084c76f655ec21074fba375a36b01"
   end
 
   def install

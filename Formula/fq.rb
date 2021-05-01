@@ -7,9 +7,9 @@ class Fq < Formula
   head "https://github.com/circonus-labs/fq.git"
 
   bottle do
-    sha256 "cca321d03043680c3e666e064a22ea8dc68ee65e239160393356f96713b48c47" => :catalina
-    sha256 "d0b2de2159e496bbe939ad72a64ce637551787cb44a4e822372e33c049ee3f6f" => :mojave
-    sha256 "58c430bd24667e0209009d9b3aae0c1fc07e857dc16ec5f19c9b568afeba0d68" => :high_sierra
+    sha256 catalina:    "cca321d03043680c3e666e064a22ea8dc68ee65e239160393356f96713b48c47"
+    sha256 mojave:      "d0b2de2159e496bbe939ad72a64ce637551787cb44a4e822372e33c049ee3f6f"
+    sha256 high_sierra: "58c430bd24667e0209009d9b3aae0c1fc07e857dc16ec5f19c9b568afeba0d68"
   end
 
   depends_on "concurrencykit"
@@ -27,7 +27,7 @@ class Fq < Formula
     pid = fork { exec sbin/"fqd", "-D", "-c", testpath/"test.sqlite" }
     sleep 1
     begin
-      assert_match /Circonus Fq Operational Dashboard/, shell_output("curl 127.0.0.1:8765")
+      assert_match(/Circonus Fq Operational Dashboard/, shell_output("curl 127.0.0.1:8765"))
     ensure
       Process.kill 9, pid
       Process.wait pid

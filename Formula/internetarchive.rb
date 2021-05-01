@@ -12,10 +12,9 @@ class Internetarchive < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "29143e0646a76b758ab3c2237a2dff1cd3b3daec589fdffd78185b7d7a28ebb3" => :catalina
-    sha256 "39083e62f37c3b06fb397601ede192d8c60dbbb65f11398933594e131242ab9c" => :mojave
-    sha256 "32d59ff6566c18d997d4558aef73c9f6ae4ea076ec302fb8c8cfcd312b43d563" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "29143e0646a76b758ab3c2237a2dff1cd3b3daec589fdffd78185b7d7a28ebb3"
+    sha256 cellar: :any_skip_relocation, mojave:      "39083e62f37c3b06fb397601ede192d8c60dbbb65f11398933594e131242ab9c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "32d59ff6566c18d997d4558aef73c9f6ae4ea076ec302fb8c8cfcd312b43d563"
   end
 
   depends_on "python@3.8"

@@ -1,7 +1,7 @@
 class Osc < Formula
   include Language::Python::Virtualenv
 
-  desc "The command-line interface to work with an Open Build Service"
+  desc "Command-line interface to work with an Open Build Service"
   homepage "https://github.com/openSUSE/osc"
   url "https://github.com/openSUSE/osc/archive/0.170.0.tar.gz"
   sha256 "137d199fd2dad149eda2263155a800459f8553a5162fd7aaa947175e399272df"
@@ -9,10 +9,9 @@ class Osc < Formula
   head "https://github.com/openSUSE/osc.git"
 
   bottle do
-    cellar :any
-    sha256 "6f7b7924a56578ae1a1b414da03835554903cd10737f5c4c21c932880254cfca" => :catalina
-    sha256 "5cb73eaa794a8bc687a42d5d19c768d59e9fdfb28e44c05d30425cc4867555aa" => :mojave
-    sha256 "7b413c1f238bd4f33df5a80e6b63de2005024e1e854fd07ff158d8a8644ec1f2" => :high_sierra
+    sha256 cellar: :any, catalina:    "6f7b7924a56578ae1a1b414da03835554903cd10737f5c4c21c932880254cfca"
+    sha256 cellar: :any, mojave:      "5cb73eaa794a8bc687a42d5d19c768d59e9fdfb28e44c05d30425cc4867555aa"
+    sha256 cellar: :any, high_sierra: "7b413c1f238bd4f33df5a80e6b63de2005024e1e854fd07ff158d8a8644ec1f2"
   end
 
   depends_on "swig" => :build

@@ -12,9 +12,9 @@ class Libetonyek < Formula
 
   bottle do
     rebuild 1
-    sha256 "fe426f3577057ac3a73b9527b01124e5f916872b505f12e8224674d72a700c5b" => :catalina
-    sha256 "b51d5847f87fba35e67703d248f0552a4e03eb6fc4e35ba5a180f41fec68fdeb" => :mojave
-    sha256 "d86fef6a245db1b767d8965362eae4782af35b2c2b14e819ae7d436790f909cd" => :high_sierra
+    sha256 catalina:    "fe426f3577057ac3a73b9527b01124e5f916872b505f12e8224674d72a700c5b"
+    sha256 mojave:      "b51d5847f87fba35e67703d248f0552a4e03eb6fc4e35ba5a180f41fec68fdeb"
+    sha256 high_sierra: "d86fef6a245db1b767d8965362eae4782af35b2c2b14e819ae7d436790f909cd"
   end
 
   depends_on "boost" => :build

@@ -6,11 +6,10 @@ class Pilosa < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1480f6130114fb66f695ea0c0a64b1f882339d057b6e40c6c50f996249a5190f" => :catalina
-    sha256 "b07bcd3693cdc789a45fdce1b3257b3ca85b018eb65f1cbb45234d41ff935902" => :mojave
-    sha256 "245160b3bc6e7e6a4b27d3081580c0616e8004ea1b9420367801c2193417caea" => :high_sierra
-    sha256 "6b9489e424aca469bafc5e7c7ec20470009c713ce1a843efc7ee6b884fb216da" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1480f6130114fb66f695ea0c0a64b1f882339d057b6e40c6c50f996249a5190f"
+    sha256 cellar: :any_skip_relocation, mojave:      "b07bcd3693cdc789a45fdce1b3257b3ca85b018eb65f1cbb45234d41ff935902"
+    sha256 cellar: :any_skip_relocation, high_sierra: "245160b3bc6e7e6a4b27d3081580c0616e8004ea1b9420367801c2193417caea"
+    sha256 cellar: :any_skip_relocation, sierra:      "6b9489e424aca469bafc5e7c7ec20470009c713ce1a843efc7ee6b884fb216da"
   end
 
   depends_on "go" => :build

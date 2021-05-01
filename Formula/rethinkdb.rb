@@ -1,5 +1,5 @@
 class Rethinkdb < Formula
-  desc "The open-source database for the realtime web"
+  desc "Open-source database for the realtime web"
   homepage "https://rethinkdb.com/"
   url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.0.tgz"
   sha256 "bfb0708710595c6762f42e25613adec692cf568201cd61da74c254f49fa9ee4c"
@@ -12,10 +12,9 @@ class Rethinkdb < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "1c2ef66f6bf7d2efdf55b377032955905186c74a0dacf1306665671931e1159c" => :catalina
-    sha256 "5db706fb3f48f378771f5076d167e3d3dc5441b328e3b194e7337fe7bd7dde97" => :mojave
-    sha256 "7d37fba07988bc8adc4ef0dece038adf443b02d868fdf22d018360fb8958383b" => :high_sierra
+    sha256 cellar: :any, catalina:    "1c2ef66f6bf7d2efdf55b377032955905186c74a0dacf1306665671931e1159c"
+    sha256 cellar: :any, mojave:      "5db706fb3f48f378771f5076d167e3d3dc5441b328e3b194e7337fe7bd7dde97"
+    sha256 cellar: :any, high_sierra: "7d37fba07988bc8adc4ef0dece038adf443b02d868fdf22d018360fb8958383b"
   end
 
   depends_on "boost" => :build

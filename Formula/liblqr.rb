@@ -8,11 +8,10 @@ class Liblqr < Formula
   head "https://github.com/carlobaldassi/liblqr.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "18803ed552ae07c1998c87ba6c4ebaee1ec5eaab843c2cfa2cc3775f0b55da23" => :catalina
-    sha256 "83054ddb4fffb94ea12f609a90082220a451bfdc793284d104f1fdeaf4aa8fd6" => :mojave
-    sha256 "43e9b4f518364d436b53c89b1ac42e2cfdcafc47fad1ba711bd6456122e47d62" => :high_sierra
+    sha256 cellar: :any, catalina:    "18803ed552ae07c1998c87ba6c4ebaee1ec5eaab843c2cfa2cc3775f0b55da23"
+    sha256 cellar: :any, mojave:      "83054ddb4fffb94ea12f609a90082220a451bfdc793284d104f1fdeaf4aa8fd6"
+    sha256 cellar: :any, high_sierra: "43e9b4f518364d436b53c89b1ac42e2cfdcafc47fad1ba711bd6456122e47d62"
   end
 
   depends_on "pkg-config" => :build

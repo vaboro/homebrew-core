@@ -11,9 +11,9 @@ class Gtksourceview3 < Formula
   end
 
   bottle do
-    sha256 "b34db76dca1649cd3ecb7a0e62904c093381902199b427d444e5974f3017c8ed" => :catalina
-    sha256 "fdd26532623b2ab2f6333c51ea0bb2addca737ab79b74c18ea4e5d49d687ce89" => :mojave
-    sha256 "310d80ce58f5e77fa2b3ca1867e081a1c03c2da31d7560faf8e0f218378e5a17" => :high_sierra
+    sha256 catalina:    "b34db76dca1649cd3ecb7a0e62904c093381902199b427d444e5974f3017c8ed"
+    sha256 mojave:      "fdd26532623b2ab2f6333c51ea0bb2addca737ab79b74c18ea4e5d49d687ce89"
+    sha256 high_sierra: "310d80ce58f5e77fa2b3ca1867e081a1c03c2da31d7560faf8e0f218378e5a17"
   end
 
   depends_on "autoconf" => :build

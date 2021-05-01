@@ -7,10 +7,9 @@ class Chezmoi < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d2a219e5e7f459ad41bf562461108687942e513888a72663b5557ca849dcf1f0" => :catalina
-    sha256 "ea6bb2de05ac3add80c4f116474137a268dbfa86a51db35a6a5f02e0183bb6d3" => :mojave
-    sha256 "ab4b776fcf2c27e3042cd7f04f324730f4b620240e970696fc90b287fc816d68" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d2a219e5e7f459ad41bf562461108687942e513888a72663b5557ca849dcf1f0"
+    sha256 cellar: :any_skip_relocation, mojave:      "ea6bb2de05ac3add80c4f116474137a268dbfa86a51db35a6a5f02e0183bb6d3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ab4b776fcf2c27e3042cd7f04f324730f4b620240e970696fc90b287fc816d68"
   end
 
   depends_on "go" => :build

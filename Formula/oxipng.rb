@@ -6,10 +6,9 @@ class Oxipng < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b718645e952cd09e9b9b950b738bcfa7d81d24d2ccc94d3db6c76da1232ff932" => :catalina
-    sha256 "b646164d98e8fa1cde4ccd2f2f00620f43a14dbb3c1714c24aef9a49c4cc9e96" => :mojave
-    sha256 "b99d3c1bd4936a71b6948fca53644a2791efbf59260b57d3bb2cdea57ee8c746" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b718645e952cd09e9b9b950b738bcfa7d81d24d2ccc94d3db6c76da1232ff932"
+    sha256 cellar: :any_skip_relocation, mojave:      "b646164d98e8fa1cde4ccd2f2f00620f43a14dbb3c1714c24aef9a49c4cc9e96"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b99d3c1bd4936a71b6948fca53644a2791efbf59260b57d3bb2cdea57ee8c746"
   end
 
   depends_on "rust" => :build

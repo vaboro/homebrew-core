@@ -8,9 +8,9 @@ class Standardese < Formula
   head "https://github.com/standardese/standardese.git"
 
   bottle do
-    sha256 "3a6177527aeb08bb005443637fae7c50628a2247b3d96341453651ca93de8604" => :catalina
-    sha256 "7e2747a2add19d88ac060dabe43e6aee9634aaed0c3508bb2c1ce1de1a255361" => :mojave
-    sha256 "4dabd9a1d6e5a106223975185dad5d9d56c87eea471d7b8db7661ed92fbaac67" => :high_sierra
+    sha256 catalina:    "3a6177527aeb08bb005443637fae7c50628a2247b3d96341453651ca93de8604"
+    sha256 mojave:      "7e2747a2add19d88ac060dabe43e6aee9634aaed0c3508bb2c1ce1de1a255361"
+    sha256 high_sierra: "4dabd9a1d6e5a106223975185dad5d9d56c87eea471d7b8db7661ed92fbaac67"
   end
 
   depends_on "cmake" => :build

@@ -6,11 +6,10 @@ class Rc < Formula
   sha256 "5ed26334dd0c1a616248b15ad7c90ca678ae3066fa02c5ddd0e6936f9af9bfd8"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ab871610d857058773a87f70ad995a5e02fdeb1e6fe3d699e2051892ce60af84" => :catalina
-    sha256 "f14ceeb0e4315379e2052e39a24fafb529f841428b1a64e3009cfd62769b9e4a" => :mojave
-    sha256 "c2ee55c504be78889adc7d0cba962528f995bf222dc77ce5a6b930210851294e" => :high_sierra
-    sha256 "627e45477eabd5854e3c5f39af5290befd43d03b385d1b20f0ce4b49636fd2d9" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ab871610d857058773a87f70ad995a5e02fdeb1e6fe3d699e2051892ce60af84"
+    sha256 cellar: :any_skip_relocation, mojave:      "f14ceeb0e4315379e2052e39a24fafb529f841428b1a64e3009cfd62769b9e4a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c2ee55c504be78889adc7d0cba962528f995bf222dc77ce5a6b930210851294e"
+    sha256 cellar: :any_skip_relocation, sierra:      "627e45477eabd5854e3c5f39af5290befd43d03b385d1b20f0ce4b49636fd2d9"
   end
 
   def install

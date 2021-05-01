@@ -7,11 +7,10 @@ class Lnav < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ada56b43c4f4301dd5c6a48502a4f801c1871b95c84aad6aeebfb0370ef4bc97" => :catalina
-    sha256 "2c6e7bd10eb78c6f476739be3e106012d6decce1d8ff1ae1a51c55f3cea2c688" => :mojave
-    sha256 "bc796136677ca2b4bee92decf2d517ee0a92a6ea2d476b45a350d5aff367c948" => :high_sierra
-    sha256 "91968b3b06733d667459ca2ffb81e82b91d10e4710c22f72a739e2eed203ba1e" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ada56b43c4f4301dd5c6a48502a4f801c1871b95c84aad6aeebfb0370ef4bc97"
+    sha256 cellar: :any_skip_relocation, mojave:      "2c6e7bd10eb78c6f476739be3e106012d6decce1d8ff1ae1a51c55f3cea2c688"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bc796136677ca2b4bee92decf2d517ee0a92a6ea2d476b45a350d5aff367c948"
+    sha256 cellar: :any_skip_relocation, sierra:      "91968b3b06733d667459ca2ffb81e82b91d10e4710c22f72a739e2eed203ba1e"
   end
 
   head do

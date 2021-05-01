@@ -11,10 +11,9 @@ class Lcov < Formula
   head "https://github.com/linux-test-project/lcov.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1c84487473440a6f7971ecf25f2b8b5022d23a230d16e863825b43944788e3be" => :catalina
-    sha256 "41ebe534e6bf4166e88d0eb59ac04d28df457a86fb514fc610ca485386bd06b4" => :mojave
-    sha256 "9c3a3586283d61ae1f1ce30145b613ebdc50e28a7656cf4b4f4e935408f4c147" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1c84487473440a6f7971ecf25f2b8b5022d23a230d16e863825b43944788e3be"
+    sha256 cellar: :any_skip_relocation, mojave:      "41ebe534e6bf4166e88d0eb59ac04d28df457a86fb514fc610ca485386bd06b4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9c3a3586283d61ae1f1ce30145b613ebdc50e28a7656cf4b4f4e935408f4c147"
   end
 
   depends_on "gcc" => :test

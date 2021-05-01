@@ -7,9 +7,9 @@ class Fortio < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "417add724f9ce2c25ecd4c9d51f5a2ea8c8f47aa3e0eee14073d8484aa63470c" => :catalina
-    sha256 "08641ce3940d51524eb1429008cbf27dec43d194799d99d4bb979b87dab00fc2" => :mojave
-    sha256 "227a5f28fb2ca38eb404cae9712b040da3c86d7449e921e20179f2d0dd086d85" => :high_sierra
+    sha256 catalina:    "417add724f9ce2c25ecd4c9d51f5a2ea8c8f47aa3e0eee14073d8484aa63470c"
+    sha256 mojave:      "08641ce3940d51524eb1429008cbf27dec43d194799d99d4bb979b87dab00fc2"
+    sha256 high_sierra: "227a5f28fb2ca38eb404cae9712b040da3c86d7449e921e20179f2d0dd086d85"
   end
 
   depends_on "go" => :build
@@ -29,7 +29,7 @@ class Fortio < Formula
       end
       sleep 2
       output = shell_output("#{bin}/fortio load http://localhost:#{port}/ 2>&1")
-      assert_match /^All\sdone/, output.lines.last
+      assert_match(/^All\sdone/, output.lines.last)
     ensure
       Process.kill("SIGTERM", pid)
     end

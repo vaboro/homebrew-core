@@ -9,10 +9,9 @@ class ReconNg < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "7b4b03cc22d532fa9dbef0f5b705bbf8fb2df69d75d124f06f171e7f9609c048" => :catalina
-    sha256 "db7c9ed3ef46fb0b192f3fe4194902991b09afeeb56b766c9b212a8deed679b9" => :mojave
-    sha256 "497f43629d955ccd254e1db15fa6ac4ebaea01a34023e8ffbfa5c0a1a0511af2" => :high_sierra
+    sha256 cellar: :any, catalina:    "7b4b03cc22d532fa9dbef0f5b705bbf8fb2df69d75d124f06f171e7f9609c048"
+    sha256 cellar: :any, mojave:      "db7c9ed3ef46fb0b192f3fe4194902991b09afeeb56b766c9b212a8deed679b9"
+    sha256 cellar: :any, high_sierra: "497f43629d955ccd254e1db15fa6ac4ebaea01a34023e8ffbfa5c0a1a0511af2"
   end
 
   depends_on "libyaml"

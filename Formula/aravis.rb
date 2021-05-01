@@ -10,9 +10,9 @@ class Aravis < Formula
   end
 
   bottle do
-    sha256 "90c41ee46b73d25dba0bff7320bb190946c0725c07adcceaa1f438bb6f15e062" => :catalina
-    sha256 "503b363c8582ec6cbd0ebfe940909f3cfd5ef2c5a77fdac7c3c574c77f98f3e5" => :mojave
-    sha256 "c29d201d259e362616933f038d2b9b2cc109ede3a90a0821a8318296e9b10d1b" => :high_sierra
+    sha256 catalina:    "90c41ee46b73d25dba0bff7320bb190946c0725c07adcceaa1f438bb6f15e062"
+    sha256 mojave:      "503b363c8582ec6cbd0ebfe940909f3cfd5ef2c5a77fdac7c3c574c77f98f3e5"
+    sha256 high_sierra: "c29d201d259e362616933f038d2b9b2cc109ede3a90a0821a8318296e9b10d1b"
   end
 
   depends_on "gobject-introspection" => :build
@@ -47,6 +47,6 @@ class Aravis < Formula
 
   test do
     output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.dylib")
-    assert_match /Description *Aravis Video Source/, output
+    assert_match(/Description *Aravis Video Source/, output)
   end
 end

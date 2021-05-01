@@ -8,11 +8,10 @@ class AwsIamAuthenticator < Formula
   head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "82bd2279cb53c5343d73da2db1ec715b991f805bf67e76bbb2c2958a926f17a5" => :catalina
-    sha256 "c754eb2b9da4ec648a9f3d33a480387438d4216fd191118ee932222087fc0198" => :mojave
-    sha256 "16400cd25292b76959d9636b34afaf15d3c3e71ad21ae1409a110925efc6d058" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "82bd2279cb53c5343d73da2db1ec715b991f805bf67e76bbb2c2958a926f17a5"
+    sha256 cellar: :any_skip_relocation, mojave:      "c754eb2b9da4ec648a9f3d33a480387438d4216fd191118ee932222087fc0198"
+    sha256 cellar: :any_skip_relocation, high_sierra: "16400cd25292b76959d9636b34afaf15d3c3e71ad21ae1409a110925efc6d058"
   end
 
   depends_on "go" => :build

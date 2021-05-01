@@ -6,11 +6,10 @@ class SoundTouch < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "89d1037259a1c68865339b7dbdc837f22f397a33772d45c1296d9137ebc28a58" => :catalina
-    sha256 "39081044f19ddcb8982560fb86e8c9b621c94e8bfc2de6eb4e398ba0fb2a2b9e" => :mojave
-    sha256 "6d6651a6a7cc88c83279a49d2d676f8baf7731316f41dff3b0c77ac2d2fe7fb6" => :high_sierra
-    sha256 "4b55c5ffffbba6f1c16f9a82860d3a0316b1d2bc478a6f7ac59e4cb36d70342a" => :sierra
+    sha256 cellar: :any, catalina:    "89d1037259a1c68865339b7dbdc837f22f397a33772d45c1296d9137ebc28a58"
+    sha256 cellar: :any, mojave:      "39081044f19ddcb8982560fb86e8c9b621c94e8bfc2de6eb4e398ba0fb2a2b9e"
+    sha256 cellar: :any, high_sierra: "6d6651a6a7cc88c83279a49d2d676f8baf7731316f41dff3b0c77ac2d2fe7fb6"
+    sha256 cellar: :any, sierra:      "4b55c5ffffbba6f1c16f9a82860d3a0316b1d2bc478a6f7ac59e4cb36d70342a"
   end
 
   depends_on "autoconf" => :build
@@ -30,6 +29,6 @@ class SoundTouch < Formula
   end
 
   test do
-    assert_match /SoundStretch v#{version} -/, shell_output("#{bin}/soundstretch 2>&1", 255)
+    assert_match(/SoundStretch v#{version} -/, shell_output("#{bin}/soundstretch 2>&1", 255))
   end
 end

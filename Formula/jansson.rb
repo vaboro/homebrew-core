@@ -11,10 +11,9 @@ class Jansson < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e6a942f77821fd65810d4bc20e6938364a5e40cd7c8510c4b090731573bd0088" => :catalina
-    sha256 "587acdadd1ea8bcf22c316f55a32084f530280a7e24f0864e0e420718d0d1b7f" => :mojave
-    sha256 "38085c147eb40d58df8a91a44e7544d4ceb248aa25f54bdd8a3b10c1a214d9e9" => :high_sierra
+    sha256 cellar: :any, catalina:    "e6a942f77821fd65810d4bc20e6938364a5e40cd7c8510c4b090731573bd0088"
+    sha256 cellar: :any, mojave:      "587acdadd1ea8bcf22c316f55a32084f530280a7e24f0864e0e420718d0d1b7f"
+    sha256 cellar: :any, high_sierra: "38085c147eb40d58df8a91a44e7544d4ceb248aa25f54bdd8a3b10c1a214d9e9"
   end
 
   def install

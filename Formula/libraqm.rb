@@ -6,11 +6,10 @@ class Libraqm < Formula
   license "MIT"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "c216caedf4a6709818f70525be9c1bbea6872d35b5ddd7e967de5e06fa48d626" => :catalina
-    sha256 "637d5a3258bb8928c537479687e82234ab0729650b23e00bcf5215fd3b6377b3" => :mojave
-    sha256 "a7bf34866571bbcb37fc95c13d985c18494625bb34d08325aa9970c22a330e91" => :high_sierra
+    sha256 cellar: :any, catalina:    "c216caedf4a6709818f70525be9c1bbea6872d35b5ddd7e967de5e06fa48d626"
+    sha256 cellar: :any, mojave:      "637d5a3258bb8928c537479687e82234ab0729650b23e00bcf5215fd3b6377b3"
+    sha256 cellar: :any, high_sierra: "a7bf34866571bbcb37fc95c13d985c18494625bb34d08325aa9970c22a330e91"
   end
 
   depends_on "autoconf" => :build

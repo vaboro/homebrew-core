@@ -7,10 +7,9 @@ class KibanaAT6 < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "14afbf843c4d5c49a9d954d97d14dfe5191441cdf80ae81b0938ce0f1caf0ab4" => :catalina
-    sha256 "a61a2125471d6f22601d938f4626f0d962cec6b17bc511bcff67ca6ce8d14655" => :mojave
-    sha256 "3c72706fade6f3ecf040761629a7a51bb709614e61d197285a268fd7f65f647d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "14afbf843c4d5c49a9d954d97d14dfe5191441cdf80ae81b0938ce0f1caf0ab4"
+    sha256 cellar: :any_skip_relocation, mojave:      "a61a2125471d6f22601d938f4626f0d962cec6b17bc511bcff67ca6ce8d14655"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3c72706fade6f3ecf040761629a7a51bb709614e61d197285a268fd7f65f647d"
   end
 
   keg_only :versioned_formula
@@ -83,6 +82,6 @@ class KibanaAT6 < Formula
 
   test do
     ENV["BABEL_CACHE_PATH"] = testpath/".babelcache.json"
-    assert_match /#{version}/, shell_output("#{bin}/kibana -V")
+    assert_match(/#{version}/, shell_output("#{bin}/kibana -V"))
   end
 end

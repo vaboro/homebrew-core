@@ -6,10 +6,9 @@ class Talisman < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8758511aeed8d27bcaa43e9bd9ec26c590a9fc37521928e3fa51e83c9b428437" => :catalina
-    sha256 "415556d7b5452882edd12d6960064dba3817f96813a10647c72b7b3d9c47bd0a" => :mojave
-    sha256 "bf9faf2467cc4471ab2ff610c7b846263396f571e4f99d44e33716753f1af39b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8758511aeed8d27bcaa43e9bd9ec26c590a9fc37521928e3fa51e83c9b428437"
+    sha256 cellar: :any_skip_relocation, mojave:      "415556d7b5452882edd12d6960064dba3817f96813a10647c72b7b3d9c47bd0a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "bf9faf2467cc4471ab2ff610c7b846263396f571e4f99d44e33716753f1af39b"
   end
 
   depends_on "go" => :build

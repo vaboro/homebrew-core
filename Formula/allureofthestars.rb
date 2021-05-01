@@ -16,9 +16,9 @@ class Allureofthestars < Formula
 
   bottle do
     rebuild 3
-    sha256 "cdcc579293d895e65bdfd907c2ab4d66db89e0389f78df9acaf1ea556ea47c63" => :catalina
-    sha256 "4b18f47a9ade6d260030488503b5bb3021ae523cf3b54960c8092495f0ffd47c" => :mojave
-    sha256 "2a056d85e8a4794158435ca324f7bc81d8dcb098770ec1d3d288dfcc77553c47" => :high_sierra
+    sha256 catalina:    "cdcc579293d895e65bdfd907c2ab4d66db89e0389f78df9acaf1ea556ea47c63"
+    sha256 mojave:      "4b18f47a9ade6d260030488503b5bb3021ae523cf3b54960c8092495f0ffd47c"
+    sha256 high_sierra: "2a056d85e8a4794158435ca324f7bc81d8dcb098770ec1d3d288dfcc77553c47"
   end
 
   depends_on "cabal-install" => :build

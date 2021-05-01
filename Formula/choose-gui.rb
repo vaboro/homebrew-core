@@ -6,11 +6,10 @@ class ChooseGui < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "397e6aaafb87524e0baa3f52376814a3d5e5dcf87e909719116742b57a513e4b" => :catalina
-    sha256 "b1f2b4a734d1cb3eca56eddac1a0a0c89a1bb1a57f4b3412843e971fd24a01ad" => :mojave
-    sha256 "7b5031da703f0297a387fc3f8220e28070b120c91ae4989327164955eedc56d6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "397e6aaafb87524e0baa3f52376814a3d5e5dcf87e909719116742b57a513e4b"
+    sha256 cellar: :any_skip_relocation, mojave:      "b1f2b4a734d1cb3eca56eddac1a0a0c89a1bb1a57f4b3412843e971fd24a01ad"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7b5031da703f0297a387fc3f8220e28070b120c91ae4989327164955eedc56d6"
   end
 
   depends_on xcode: :build

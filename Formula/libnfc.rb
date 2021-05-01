@@ -6,9 +6,9 @@ class Libnfc < Formula
   license "LGPL-3.0"
 
   bottle do
-    sha256 "6659f67e40774cdb8e95548c03542bbc123ccabc0f4a6160504c03e43fa43c26" => :catalina
-    sha256 "9bc90c84f89408a8960289a668af7ad9b7b17d34a02996b83ec960c5cbefafeb" => :mojave
-    sha256 "8e6abd4d61ef9aff76ef25b092806b95614c07a9e46a0e13ca6e915271454a92" => :high_sierra
+    sha256 catalina:    "6659f67e40774cdb8e95548c03542bbc123ccabc0f4a6160504c03e43fa43c26"
+    sha256 mojave:      "9bc90c84f89408a8960289a668af7ad9b7b17d34a02996b83ec960c5cbefafeb"
+    sha256 high_sierra: "8e6abd4d61ef9aff76ef25b092806b95614c07a9e46a0e13ca6e915271454a92"
   end
 
   head do

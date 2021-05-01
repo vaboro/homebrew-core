@@ -12,10 +12,9 @@ class Zookeeper < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "bfcc5a911c89d2b1d535a4f2dfad833cc89b84d410fdc9bce4adda5d4abfe4cb" => :catalina
-    sha256 "799dcedfc580923f05b1634fead93e5b4d570bf499f4c52e732cb123d3d9a928" => :mojave
-    sha256 "1e47078cd2e2275fff519fd4f258d9b3df93f79499ba03534cba8dac56877bd0" => :high_sierra
+    sha256 cellar: :any, catalina:    "bfcc5a911c89d2b1d535a4f2dfad833cc89b84d410fdc9bce4adda5d4abfe4cb"
+    sha256 cellar: :any, mojave:      "799dcedfc580923f05b1634fead93e5b4d570bf499f4c52e732cb123d3d9a928"
+    sha256 cellar: :any, high_sierra: "1e47078cd2e2275fff519fd4f258d9b3df93f79499ba03534cba8dac56877bd0"
   end
 
   depends_on "autoconf" => :build

@@ -9,10 +9,9 @@ class IosSim < Formula
   head "https://github.com/ios-control/ios-sim.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8c48bcbabb9ddb5b3781c16a2af67518881ff23bd5d7f0723436cb438ef7088e" => :catalina
-    sha256 "87ddbe7f7341fa207ac5d4a1212e81a3fe838c474bdbcbc2c7239ac2bf8ccc7e" => :mojave
-    sha256 "ddbe9d541710ab4dd219db3f766e878ff8698dcd88c25a247e5c44e165ea2773" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8c48bcbabb9ddb5b3781c16a2af67518881ff23bd5d7f0723436cb438ef7088e"
+    sha256 cellar: :any_skip_relocation, mojave:      "87ddbe7f7341fa207ac5d4a1212e81a3fe838c474bdbcbc2c7239ac2bf8ccc7e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ddbe9d541710ab4dd219db3f766e878ff8698dcd88c25a247e5c44e165ea2773"
   end
 
   depends_on "node"

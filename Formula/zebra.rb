@@ -10,9 +10,9 @@ class Zebra < Formula
   end
 
   bottle do
-    sha256 "afeaecb814a1b297a58c4785c5407695b7a42a70cb33549799c36ec5be2e4450" => :catalina
-    sha256 "6784d0a5e6422f1da04389e08fc792bc9b429fe15e535ca42c3e16ecfc1beddd" => :mojave
-    sha256 "0ed9dfd1cb9920547b445c89ddb4c8a41ef4518d713ef953b7602cf8a2c7fa12" => :high_sierra
+    sha256 catalina:    "afeaecb814a1b297a58c4785c5407695b7a42a70cb33549799c36ec5be2e4450"
+    sha256 mojave:      "6784d0a5e6422f1da04389e08fc792bc9b429fe15e535ca42c3e16ecfc1beddd"
+    sha256 high_sierra: "0ed9dfd1cb9920547b445c89ddb4c8a41ef4518d713ef953b7602cf8a2c7fa12"
   end
 
   depends_on "icu4c"

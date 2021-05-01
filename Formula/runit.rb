@@ -5,11 +5,10 @@ class Runit < Formula
   sha256 "6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "c6e5b49ab3601824db1969967c5ba4a0d35fa65841cfa2ec1d50fcca968fcf05" => :catalina
-    sha256 "3c684c031305f98a2d24e904b6fc3301a71f0089e84e814028bad8ab05658cae" => :mojave
-    sha256 "a66fbfb0258db267c5a3a3d7790fe4b5224478e7ecc1377a9a877118d5e27be5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c6e5b49ab3601824db1969967c5ba4a0d35fa65841cfa2ec1d50fcca968fcf05"
+    sha256 cellar: :any_skip_relocation, mojave:      "3c684c031305f98a2d24e904b6fc3301a71f0089e84e814028bad8ab05658cae"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a66fbfb0258db267c5a3a3d7790fe4b5224478e7ecc1377a9a877118d5e27be5"
   end
 
   def install

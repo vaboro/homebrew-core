@@ -6,9 +6,9 @@ class GuileAT2 < Formula
   sha256 "cdf776ea5f29430b1258209630555beea6d2be5481f9da4d64986b077ff37504"
 
   bottle do
-    sha256 "2821f055df7815abc7467a42f1bd90a09672261a9aad4ce994111a59a2ce6dbe" => :catalina
-    sha256 "78e5fd69581a54b8d7c701e1fc03d96660b80a2699d7dad701cdd2865a5f2442" => :mojave
-    sha256 "2832668210b0ef94ae0596c7e27aca846f76453719df6a9103e34af9e885d031" => :high_sierra
+    sha256 catalina:    "2821f055df7815abc7467a42f1bd90a09672261a9aad4ce994111a59a2ce6dbe"
+    sha256 mojave:      "78e5fd69581a54b8d7c701e1fc03d96660b80a2699d7dad701cdd2865a5f2442"
+    sha256 high_sierra: "2832668210b0ef94ae0596c7e27aca846f76453719df6a9103e34af9e885d031"
   end
 
   keg_only :versioned_formula

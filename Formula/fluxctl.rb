@@ -12,10 +12,9 @@ class Fluxctl < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b731245d5b42da469ecf3d70081318f08c2cbf3ae52e5528843d038c3a937de3" => :catalina
-    sha256 "c2971b5466e75550d245f3ba2fa452ba739f90d987353d59f07ba62a17bc0545" => :mojave
-    sha256 "92797cd1fbd6d1c0b31a2f3366ed8199224f6d8f042cd854ce681e632c76c30d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b731245d5b42da469ecf3d70081318f08c2cbf3ae52e5528843d038c3a937de3"
+    sha256 cellar: :any_skip_relocation, mojave:      "c2971b5466e75550d245f3ba2fa452ba739f90d987353d59f07ba62a17bc0545"
+    sha256 cellar: :any_skip_relocation, high_sierra: "92797cd1fbd6d1c0b31a2f3366ed8199224f6d8f042cd854ce681e632c76c30d"
   end
 
   depends_on "go" => :build

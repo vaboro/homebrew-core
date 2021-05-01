@@ -11,9 +11,9 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 "224bfcd1dcc583280d917610dc35a2fcf6696e28911ce2b06fd07ae612761a37" => :catalina
-    sha256 "fc06d01b383aeeba481e00aacba60ee3a2dbaf25c49cff1662a546d6a6df2135" => :mojave
-    sha256 "84c698649f37d4165ed627a053ab1e89c2201d436692341559e132440e22e84c" => :high_sierra
+    sha256 catalina:    "224bfcd1dcc583280d917610dc35a2fcf6696e28911ce2b06fd07ae612761a37"
+    sha256 mojave:      "fc06d01b383aeeba481e00aacba60ee3a2dbaf25c49cff1662a546d6a6df2135"
+    sha256 high_sierra: "84c698649f37d4165ed627a053ab1e89c2201d436692341559e132440e22e84c"
   end
 
   depends_on "pkg-config" => :build

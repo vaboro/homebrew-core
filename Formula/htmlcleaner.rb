@@ -11,10 +11,9 @@ class Htmlcleaner < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d32d3ccb0c576385b2fcbd5111f0e896097e2053be0a3abf4b76a2b5abbec890" => :catalina
-    sha256 "7162a51e9f957229cc7a8bb0e2248167dedb252047c11e5790183738b4d1e694" => :mojave
-    sha256 "a7274303c16fa42855699269a96e6fc3466371b68a8198c218d689a0ca39c1b8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d32d3ccb0c576385b2fcbd5111f0e896097e2053be0a3abf4b76a2b5abbec890"
+    sha256 cellar: :any_skip_relocation, mojave:      "7162a51e9f957229cc7a8bb0e2248167dedb252047c11e5790183738b4d1e694"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a7274303c16fa42855699269a96e6fc3466371b68a8198c218d689a0ca39c1b8"
   end
 
   depends_on "maven" => :build

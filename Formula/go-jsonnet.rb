@@ -7,10 +7,9 @@ class GoJsonnet < Formula
   head "https://github.com/google/go-jsonnet.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5c476a536e168be0cf65a7850c05563c5363356774057bd9cfc8aa11cb0e0df6" => :catalina
-    sha256 "6dda575e3b152664a76776a23ceec61a471fc0baedbb4062e784d4f917a76b15" => :mojave
-    sha256 "3f98a99da047fabc9a1fee8b32585c86f2e370a6a278e7d27cef8f7a050006c5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5c476a536e168be0cf65a7850c05563c5363356774057bd9cfc8aa11cb0e0df6"
+    sha256 cellar: :any_skip_relocation, mojave:      "6dda575e3b152664a76776a23ceec61a471fc0baedbb4062e784d4f917a76b15"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3f98a99da047fabc9a1fee8b32585c86f2e370a6a278e7d27cef8f7a050006c5"
   end
 
   depends_on "go" => :build

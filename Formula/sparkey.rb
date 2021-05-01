@@ -7,10 +7,9 @@ class Sparkey < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "b7e64101995d257df010edb67bafcd60745f09c7b0ebb9650c817eb7343f1899" => :catalina
-    sha256 "438c323c343b7aade2da46316d24bcc4d5c7a95910a43914d70125af14a17636" => :mojave
-    sha256 "4acbb473ce3be942b808af45789ccb7ede8199c728f7c381cd0dda1a105c8a9e" => :high_sierra
+    sha256 cellar: :any, catalina:    "b7e64101995d257df010edb67bafcd60745f09c7b0ebb9650c817eb7343f1899"
+    sha256 cellar: :any, mojave:      "438c323c343b7aade2da46316d24bcc4d5c7a95910a43914d70125af14a17636"
+    sha256 cellar: :any, high_sierra: "4acbb473ce3be942b808af45789ccb7ede8199c728f7c381cd0dda1a105c8a9e"
   end
 
   depends_on "autoconf" => :build

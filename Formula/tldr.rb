@@ -8,11 +8,10 @@ class Tldr < Formula
   head "https://github.com/tldr-pages/tldr-c-client.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "41a6db2e28eeae00ff6d1888948d8b7d0f01cd67b3f271341b856cded07ba6ca" => :catalina
-    sha256 "7f10022d0c6648741457c2562bc5e521d8dd88dfc4c4d68d1c886739ffd7eb45" => :mojave
-    sha256 "c932bd8516b6690c45dcbf90ced6ad94d4a0aa5a366de532fe90c4ab82b9a2ad" => :high_sierra
+    sha256 cellar: :any, catalina:    "41a6db2e28eeae00ff6d1888948d8b7d0f01cd67b3f271341b856cded07ba6ca"
+    sha256 cellar: :any, mojave:      "7f10022d0c6648741457c2562bc5e521d8dd88dfc4c4d68d1c886739ffd7eb45"
+    sha256 cellar: :any, high_sierra: "c932bd8516b6690c45dcbf90ced6ad94d4a0aa5a366de532fe90c4ab82b9a2ad"
   end
 
   depends_on "pkg-config" => :build

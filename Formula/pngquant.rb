@@ -12,11 +12,10 @@ class Pngquant < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "6212657919215e9f140239aa7df37b97d1b9820543e884bc4af45ef0deda523a" => :catalina
-    sha256 "0c90b318acdfa38b8fb7a0bea76c5932a9c1bfb00f2a866bbd30781631876e33" => :mojave
-    sha256 "da0955f28f17ef1b50dc15256f80b5742c0c940d1c6ce683990edde6fffd642a" => :high_sierra
+    sha256 cellar: :any, catalina:    "6212657919215e9f140239aa7df37b97d1b9820543e884bc4af45ef0deda523a"
+    sha256 cellar: :any, mojave:      "0c90b318acdfa38b8fb7a0bea76c5932a9c1bfb00f2a866bbd30781631876e33"
+    sha256 cellar: :any, high_sierra: "da0955f28f17ef1b50dc15256f80b5742c0c940d1c6ce683990edde6fffd642a"
   end
 
   depends_on "pkg-config" => :build

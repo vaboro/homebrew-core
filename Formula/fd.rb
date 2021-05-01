@@ -7,10 +7,9 @@ class Fd < Formula
   head "https://github.com/sharkdp/fd.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "4625e56da438b94dfe331a2fe1df759b140931241af097df91f29d8ac314f2d3" => :catalina
-    sha256 "d002e8d8de192b6fad189ff7830d4fe9fc7d4ca9e81aa5ac66bb5200c590703a" => :mojave
-    sha256 "c269bbc76090614e7262c81e1b21d784050a71a51a5921686845f0d3c0855400" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "4625e56da438b94dfe331a2fe1df759b140931241af097df91f29d8ac314f2d3"
+    sha256 cellar: :any_skip_relocation, mojave:      "d002e8d8de192b6fad189ff7830d4fe9fc7d4ca9e81aa5ac66bb5200c590703a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c269bbc76090614e7262c81e1b21d784050a71a51a5921686845f0d3c0855400"
   end
 
   depends_on "rust" => :build

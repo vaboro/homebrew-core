@@ -10,14 +10,13 @@ class Docx2txt < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5fd07512b1396d0cda3b025352da258523470374318723c5d0bdf41a7d174e8c" => :catalina
-    sha256 "b7540b467b577f25c72f86a0d23581f6eb613bcd6482de7ea5b01405cf2f6358" => :mojave
-    sha256 "fb8efe02d448cdbda874a9fe06b11ebd0ace98b88d4e1792aab632fd0371e178" => :high_sierra
-    sha256 "001618f763145ba1027169c8b7f687cd1ceacd09bc5b4c7e64e61deaa2a1ec4c" => :sierra
-    sha256 "c3a67138c91e968e6c2a6ff1033bca0fe8527ebdcaaa208194c073b4f75dd453" => :el_capitan
-    sha256 "78154a4b95613538a9d508c521d74d0bc6b398b005de4468b4cb4e62c3208b8e" => :yosemite
-    sha256 "2d9f0f37b4c6c5a37f22a4b0e7cdc6d440e842d2d3e7df433ccebf1b03cf80cd" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "5fd07512b1396d0cda3b025352da258523470374318723c5d0bdf41a7d174e8c"
+    sha256 cellar: :any_skip_relocation, mojave:      "b7540b467b577f25c72f86a0d23581f6eb613bcd6482de7ea5b01405cf2f6358"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fb8efe02d448cdbda874a9fe06b11ebd0ace98b88d4e1792aab632fd0371e178"
+    sha256 cellar: :any_skip_relocation, sierra:      "001618f763145ba1027169c8b7f687cd1ceacd09bc5b4c7e64e61deaa2a1ec4c"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "c3a67138c91e968e6c2a6ff1033bca0fe8527ebdcaaa208194c073b4f75dd453"
+    sha256 cellar: :any_skip_relocation, yosemite:    "78154a4b95613538a9d508c521d74d0bc6b398b005de4468b4cb4e62c3208b8e"
+    sha256 cellar: :any_skip_relocation, mavericks:   "2d9f0f37b4c6c5a37f22a4b0e7cdc6d440e842d2d3e7df433ccebf1b03cf80cd"
   end
 
   resource "sample_doc" do

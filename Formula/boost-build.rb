@@ -13,10 +13,9 @@ class BoostBuild < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f6bb502b7848e98f4b184c2bf2604cc005e4bad599b1078a35119c2e8a2dccf1" => :catalina
-    sha256 "68b1dea12cdbab911e66842020a3f66690b85612ccf539e337ed71129747ed89" => :mojave
-    sha256 "2422cb690b00b75fa6dd4bfe63e7a775abd7659a537a627aec33115af051907e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f6bb502b7848e98f4b184c2bf2604cc005e4bad599b1078a35119c2e8a2dccf1"
+    sha256 cellar: :any_skip_relocation, mojave:      "68b1dea12cdbab911e66842020a3f66690b85612ccf539e337ed71129747ed89"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2422cb690b00b75fa6dd4bfe63e7a775abd7659a537a627aec33115af051907e"
   end
 
   conflicts_with "b2-tools", because: "both install `b2` binaries"

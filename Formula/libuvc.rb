@@ -7,13 +7,12 @@ class Libuvc < Formula
   head "https://github.com/ktossell/libuvc.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "4051cd7aa8dbf7a5e940a85f8c38900829e66cabfb00be22a592dd3a421e3cca" => :catalina
-    sha256 "1ff736e2499c4da037ff74ea31ebe2be23defd7e316ad974ff57cd9a712c7445" => :mojave
-    sha256 "c0ec2076095af1c5154bc43d18a5869b5678f026f1b3c76964f136e4ada07717" => :high_sierra
-    sha256 "1888941024fe1b8ca44f15b98e51390872286c0145806fbd0a61999bab225905" => :sierra
-    sha256 "4defbab7e171c20da065eb5e4f2b11b5b27165efbd850e742674be281f3a0fcd" => :el_capitan
+    sha256 cellar: :any, catalina:    "4051cd7aa8dbf7a5e940a85f8c38900829e66cabfb00be22a592dd3a421e3cca"
+    sha256 cellar: :any, mojave:      "1ff736e2499c4da037ff74ea31ebe2be23defd7e316ad974ff57cd9a712c7445"
+    sha256 cellar: :any, high_sierra: "c0ec2076095af1c5154bc43d18a5869b5678f026f1b3c76964f136e4ada07717"
+    sha256 cellar: :any, sierra:      "1888941024fe1b8ca44f15b98e51390872286c0145806fbd0a61999bab225905"
+    sha256 cellar: :any, el_capitan:  "4defbab7e171c20da065eb5e4f2b11b5b27165efbd850e742674be281f3a0fcd"
   end
 
   depends_on "cmake" => :build

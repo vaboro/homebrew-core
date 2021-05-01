@@ -12,10 +12,9 @@ class CheckPostgres < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2f164aefe3706e144350278db4e9246359a8a58bba1f16fae289344553e33b64" => :catalina
-    sha256 "2f164aefe3706e144350278db4e9246359a8a58bba1f16fae289344553e33b64" => :mojave
-    sha256 "e0ae2298e162d333e8833ad294906ba369ac5adaf704b8478ebf54c7a134b9f4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2f164aefe3706e144350278db4e9246359a8a58bba1f16fae289344553e33b64"
+    sha256 cellar: :any_skip_relocation, mojave:      "2f164aefe3706e144350278db4e9246359a8a58bba1f16fae289344553e33b64"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e0ae2298e162d333e8833ad294906ba369ac5adaf704b8478ebf54c7a134b9f4"
   end
 
   depends_on "postgresql"
@@ -33,6 +32,6 @@ class CheckPostgres < Formula
     # This test verifies that check_postgres fails correctly, assuming
     # that no server is running at that port.
     output = shell_output("#{bin}/check_postgres --action=connection --port=65432", 2)
-    assert_match /POSTGRES_CONNECTION CRITICAL/, output
+    assert_match(/POSTGRES_CONNECTION CRITICAL/, output)
   end
 end

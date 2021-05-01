@@ -7,10 +7,9 @@ class Openh264 < Formula
   head "https://github.com/cisco/openh264.git"
 
   bottle do
-    cellar :any
-    sha256 "40bbd156c791be70467bebecb927745edc9b54dd46aa2c4a317562a4cf1dce8e" => :catalina
-    sha256 "952ae4b5cafae14722588046032ee363b7b027178aa30ec450e4ee916b85eb4b" => :mojave
-    sha256 "de7a5593d7a401e606b44d88347e83651508538d2461e4510b024f41b8b0f42e" => :high_sierra
+    sha256 cellar: :any, catalina:    "40bbd156c791be70467bebecb927745edc9b54dd46aa2c4a317562a4cf1dce8e"
+    sha256 cellar: :any, mojave:      "952ae4b5cafae14722588046032ee363b7b027178aa30ec450e4ee916b85eb4b"
+    sha256 cellar: :any, high_sierra: "de7a5593d7a401e606b44d88347e83651508538d2461e4510b024f41b8b0f42e"
   end
 
   depends_on "nasm" => :build

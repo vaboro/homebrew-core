@@ -6,10 +6,9 @@ class HasuraCli < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "85e902904e462772a3f45e236178195a61a71daf53ca2dd488e8aafbd5374be7" => :catalina
-    sha256 "204859c85e1cbe73eeffb0a02641f23d607ead9aa4a90337c9c6e64a1b219c3e" => :mojave
-    sha256 "0b2eac67491041cf2ff84dc7a1b5668ee47c8aab366edc8fda3f943347f396ee" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "85e902904e462772a3f45e236178195a61a71daf53ca2dd488e8aafbd5374be7"
+    sha256 cellar: :any_skip_relocation, mojave:      "204859c85e1cbe73eeffb0a02641f23d607ead9aa4a90337c9c6e64a1b219c3e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0b2eac67491041cf2ff84dc7a1b5668ee47c8aab366edc8fda3f943347f396ee"
   end
 
   depends_on "go" => :build

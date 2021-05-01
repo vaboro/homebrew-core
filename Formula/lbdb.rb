@@ -11,11 +11,10 @@ class Lbdb < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "838c923b4c208ace533b34a2eba8b78c348bd3cc89fdbdb36c42a45b7e592f52" => :catalina
-    sha256 "a02ea4967e809c9254dac7726c7ee9365e1ba99a8eef68fe6dfd4de34d2fa5af" => :mojave
-    sha256 "0e5c126d7cb1c5ed3211ee1758a388597b00f32c3fb22c0420919e3667371ee2" => :high_sierra
-    sha256 "d22e5b8b66ab51d8c6d324330178284c9b35e3ef17362724089e1e979e9c05d4" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "838c923b4c208ace533b34a2eba8b78c348bd3cc89fdbdb36c42a45b7e592f52"
+    sha256 cellar: :any_skip_relocation, mojave:      "a02ea4967e809c9254dac7726c7ee9365e1ba99a8eef68fe6dfd4de34d2fa5af"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0e5c126d7cb1c5ed3211ee1758a388597b00f32c3fb22c0420919e3667371ee2"
+    sha256 cellar: :any_skip_relocation, sierra:      "d22e5b8b66ab51d8c6d324330178284c9b35e3ef17362724089e1e979e9c05d4"
   end
 
   depends_on "abook"

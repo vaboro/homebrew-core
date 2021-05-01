@@ -9,10 +9,9 @@ class FbiServefiles < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d04625bf981ccec4ad79cc872fa7eefcd2cadbdf4b62b09f6d5e4e692325b2d5" => :catalina
-    sha256 "2654398f6f8d65a5f24371a32c9f11f1bb5b02ce309056b9e9a13d38dbac2fc0" => :mojave
-    sha256 "b0aae581bf9247f6e282df341dfcffed362587539e7a443433d376319837961f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d04625bf981ccec4ad79cc872fa7eefcd2cadbdf4b62b09f6d5e4e692325b2d5"
+    sha256 cellar: :any_skip_relocation, mojave:      "2654398f6f8d65a5f24371a32c9f11f1bb5b02ce309056b9e9a13d38dbac2fc0"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b0aae581bf9247f6e282df341dfcffed362587539e7a443433d376319837961f"
   end
 
   depends_on "python@3.8"

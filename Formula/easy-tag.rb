@@ -10,9 +10,9 @@ class EasyTag < Formula
   end
 
   bottle do
-    sha256 "6fda43462f5a0942e376131e368c1bbf77ce073342bbaa2b78287f96761ab062" => :catalina
-    sha256 "7740222af438d4b9a7dc9b176d0bc3f76a96e523b041ed48a6e4d542fc660684" => :mojave
-    sha256 "150b21e06df0c5a2299ad2c4ed0b020237c1c13d570f4ad4b09549fc0a52eba2" => :high_sierra
+    sha256 catalina:    "6fda43462f5a0942e376131e368c1bbf77ce073342bbaa2b78287f96761ab062"
+    sha256 mojave:      "7740222af438d4b9a7dc9b176d0bc3f76a96e523b041ed48a6e4d542fc660684"
+    sha256 high_sierra: "150b21e06df0c5a2299ad2c4ed0b020237c1c13d570f4ad4b09549fc0a52eba2"
   end
 
   depends_on "intltool" => :build

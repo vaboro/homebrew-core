@@ -11,10 +11,9 @@ class Latex2html < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f5448ddd27e175bc6cf388581f3332a188bc52a15c69d41b8002cc5303471cf4" => :catalina
-    sha256 "fc170658ac170d9bf484a05d99fc052fdefdf9d39ada1cb0b2cffa20950e7ed5" => :mojave
-    sha256 "1057bbb3c6c991e3ce62425b2b11852558d40be5fab478560784ee2b60ec2591" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f5448ddd27e175bc6cf388581f3332a188bc52a15c69d41b8002cc5303471cf4"
+    sha256 cellar: :any_skip_relocation, mojave:      "fc170658ac170d9bf484a05d99fc052fdefdf9d39ada1cb0b2cffa20950e7ed5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1057bbb3c6c991e3ce62425b2b11852558d40be5fab478560784ee2b60ec2591"
   end
 
   depends_on "ghostscript"
@@ -38,6 +37,6 @@ class Latex2html < Formula
       \\end{document}
     EOS
     system "#{bin}/latex2html", "test.tex"
-    assert_match /Experimental Setup/, File.read("test/test.html")
+    assert_match(/Experimental Setup/, File.read("test/test.html"))
   end
 end

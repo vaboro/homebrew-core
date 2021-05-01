@@ -11,9 +11,9 @@ class Gegl < Formula
   end
 
   bottle do
-    sha256 "31cbb2a6960a6f2a1d48d30a8facd05c378ec29545eb8ba88b385b95c56f4e60" => :catalina
-    sha256 "e40645711d7f5e2b2c511fb3c05981b99c4191faf2385dde53cbf20eed9f4319" => :mojave
-    sha256 "ed58d1d1d9c5f388c24276436f03497ba59d33b34a14541b21df8887af9d4bcf" => :high_sierra
+    sha256 catalina:    "31cbb2a6960a6f2a1d48d30a8facd05c378ec29545eb8ba88b385b95c56f4e60"
+    sha256 mojave:      "e40645711d7f5e2b2c511fb3c05981b99c4191faf2385dde53cbf20eed9f4319"
+    sha256 high_sierra: "ed58d1d1d9c5f388c24276436f03497ba59d33b34a14541b21df8887af9d4bcf"
   end
 
   head do

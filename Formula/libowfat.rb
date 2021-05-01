@@ -12,10 +12,9 @@ class Libowfat < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2424abb2cccd7f41582ea49ccbee60dbecc436c843d9531c0e7c68c35b9330a4" => :catalina
-    sha256 "08041ad3f0edd4b20e6ed1f6c768414aa7241940a14386c1dffd04caa5ef70ca" => :mojave
-    sha256 "4740574a0e5184f8b371b1a7571304810b4fb29a92d60cf54979387dab3448c5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2424abb2cccd7f41582ea49ccbee60dbecc436c843d9531c0e7c68c35b9330a4"
+    sha256 cellar: :any_skip_relocation, mojave:      "08041ad3f0edd4b20e6ed1f6c768414aa7241940a14386c1dffd04caa5ef70ca"
+    sha256 cellar: :any_skip_relocation, high_sierra: "4740574a0e5184f8b371b1a7571304810b4fb29a92d60cf54979387dab3448c5"
   end
 
   patch do

@@ -6,10 +6,9 @@ class Gifski < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    cellar :any
-    sha256 "25e42fe5ad4a1c284eb10c752e9bdcf65e2bfdfee0b91550d01a6e48dd1714e9" => :catalina
-    sha256 "9e802fa5a121cbcba1a8d7f9d8e3f76545b04a4fa530a519cf68b7742ad2d843" => :mojave
-    sha256 "342d5512bf5f78a13a09a0237c18de0f18245b350a249e3f62072ab72baf26aa" => :high_sierra
+    sha256 cellar: :any, catalina:    "25e42fe5ad4a1c284eb10c752e9bdcf65e2bfdfee0b91550d01a6e48dd1714e9"
+    sha256 cellar: :any, mojave:      "9e802fa5a121cbcba1a8d7f9d8e3f76545b04a4fa530a519cf68b7742ad2d843"
+    sha256 cellar: :any, high_sierra: "342d5512bf5f78a13a09a0237c18de0f18245b350a249e3f62072ab72baf26aa"
   end
 
   depends_on "pkg-config" => :build

@@ -6,9 +6,8 @@ class Mint < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cc7a17ee517fe97f12852c71252896c9ca30dfe8236f816f2990b2d0553ff5b3" => :catalina
-    sha256 "f70e96558839243a845c67f15defbd8718ad5a9e094ae1c1b998ac9faf4399b0" => :mojave
+    sha256 cellar: :any_skip_relocation, catalina: "cc7a17ee517fe97f12852c71252896c9ca30dfe8236f816f2990b2d0553ff5b3"
+    sha256 cellar: :any_skip_relocation, mojave:   "f70e96558839243a845c67f15defbd8718ad5a9e094ae1c1b998ac9faf4399b0"
   end
 
   depends_on xcode: ["10.2", :build]

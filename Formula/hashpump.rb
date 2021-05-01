@@ -12,10 +12,9 @@ class Hashpump < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "117ca0966fcc664caacd251d564dbebde369b0a5b6c9a35242c898f5b12f232e" => :catalina
-    sha256 "71b04dff8cc052944d44566bd79385236db3af53fea647381e587d13503bb148" => :mojave
-    sha256 "e7dc1492f0177f7e186deebccb47428861cd2525bbb352959a2b69608f86de3f" => :high_sierra
+    sha256 cellar: :any, catalina:    "117ca0966fcc664caacd251d564dbebde369b0a5b6c9a35242c898f5b12f232e"
+    sha256 cellar: :any, mojave:      "71b04dff8cc052944d44566bd79385236db3af53fea647381e587d13503bb148"
+    sha256 cellar: :any, high_sierra: "e7dc1492f0177f7e186deebccb47428861cd2525bbb352959a2b69608f86de3f"
   end
 
   depends_on "openssl@1.1"
@@ -40,8 +39,8 @@ class Hashpump < Formula
     output = `#{bin}/hashpump -s '6d5f807e23db210bc254a28be2d6759a0f5f5d99' \\
       -d 'count=10&lat=37.351&user_id=1&long=-119.827&waffle=eggo' \\
       -a '&waffle=liege' -k 14`
-    assert_match /0e41270260895979317fff3898ab85668953aaa2/, output
-    assert_match /&waffle=liege/, output
+    assert_match(/0e41270260895979317fff3898ab85668953aaa2/, output)
+    assert_match(/&waffle=liege/, output)
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

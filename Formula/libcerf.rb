@@ -12,10 +12,9 @@ class Libcerf < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "d1be9525402c49ed718ae3192d0990be1964428f740dd76812db78cbc7225037" => :catalina
-    sha256 "9027ca30f7747171aba44efcd83cfbe65f5db46441077b143a6c2cdc23bcffa8" => :mojave
-    sha256 "2551e26f4b79121e409a411901585d8aff3348921ba42e75e9947824962ac8d0" => :high_sierra
+    sha256 cellar: :any, catalina:    "d1be9525402c49ed718ae3192d0990be1964428f740dd76812db78cbc7225037"
+    sha256 cellar: :any, mojave:      "9027ca30f7747171aba44efcd83cfbe65f5db46441077b143a6c2cdc23bcffa8"
+    sha256 cellar: :any, high_sierra: "2551e26f4b79121e409a411901585d8aff3348921ba42e75e9947824962ac8d0"
   end
 
   depends_on "cmake" => :build

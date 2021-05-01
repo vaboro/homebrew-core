@@ -7,10 +7,9 @@ class Stockfish < Formula
   head "https://github.com/official-stockfish/Stockfish.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "04832aaf954ad2c9f50909fc8d03958e445a9e784d4c43b04d5cdcbd8232b4dd" => :catalina
-    sha256 "a2fd4c1073710d99d49a34e4a77399915e13829dab269774beb71f48e087461f" => :mojave
-    sha256 "9c65cfd27113438abd3823e5172b58816b9081f8b41123e32da8c72d590121e2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "04832aaf954ad2c9f50909fc8d03958e445a9e784d4c43b04d5cdcbd8232b4dd"
+    sha256 cellar: :any_skip_relocation, mojave:      "a2fd4c1073710d99d49a34e4a77399915e13829dab269774beb71f48e087461f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9c65cfd27113438abd3823e5172b58816b9081f8b41123e32da8c72d590121e2"
   end
 
   def install

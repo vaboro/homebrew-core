@@ -6,9 +6,9 @@ class Sngrep < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 "28a9d6bf75bdc1a95d3878b0f081abf44d743d916b6d15a9ed4dba2a872b6cdf" => :catalina
-    sha256 "5e75eef195f7bae03c030391f4f21f5ab5f1eb36e444a90d70833eb40e8cc4fb" => :mojave
-    sha256 "03b884145f781a12ad892765a61f743093fc2477f51faff426c7226d6617ed2e" => :high_sierra
+    sha256 catalina:    "28a9d6bf75bdc1a95d3878b0f081abf44d743d916b6d15a9ed4dba2a872b6cdf"
+    sha256 mojave:      "5e75eef195f7bae03c030391f4f21f5ab5f1eb36e444a90d70833eb40e8cc4fb"
+    sha256 high_sierra: "03b884145f781a12ad892765a61f743093fc2477f51faff426c7226d6617ed2e"
   end
 
   depends_on "autoconf" => :build

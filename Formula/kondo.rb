@@ -6,10 +6,9 @@ class Kondo < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3bf874b00e0c442d3887e076389c3bca0d1f1d2830713d179d8377ae2a5eb5cb" => :catalina
-    sha256 "f4cb386aa743645639124f47729afcb5b9a545a97eb3ab6785aa0dfbc432a18f" => :mojave
-    sha256 "1636cef203700859a8bcf48b315325192fe6a3fa0a0fa05df89e23e28833f161" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3bf874b00e0c442d3887e076389c3bca0d1f1d2830713d179d8377ae2a5eb5cb"
+    sha256 cellar: :any_skip_relocation, mojave:      "f4cb386aa743645639124f47729afcb5b9a545a97eb3ab6785aa0dfbc432a18f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1636cef203700859a8bcf48b315325192fe6a3fa0a0fa05df89e23e28833f161"
   end
 
   depends_on "rust" => :build

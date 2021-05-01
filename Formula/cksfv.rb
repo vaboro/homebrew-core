@@ -6,14 +6,13 @@ class Cksfv < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ee0e6d47bba7ece1e9d3f89db630ba943d2e85834d1b2c7c4307e449f8de517f" => :catalina
-    sha256 "fcefe9fe38fb4555760f8d7e651f19aca85115583f896ba602b1396e71547743" => :mojave
-    sha256 "095a3a02e99d3f018472202e65231212c818750cd91d42c32a95957b407c1d4b" => :high_sierra
-    sha256 "4414da8e35f9d69a0e04e4a1942745f98b5234891a04935627248e2e6954e17d" => :sierra
-    sha256 "41d81d535cfa41b4eb03709e646b0bdc36a78f99c8e15746b7eb289a98afbb97" => :el_capitan
-    sha256 "9885cadccdeec56d0f665bad80655cfba3397c3ff2958c7a44af514a69bc8114" => :yosemite
-    sha256 "3838548d5febbed5d9db37e8634397a589bcec766ee5ec84949a17dae9b34cdd" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "ee0e6d47bba7ece1e9d3f89db630ba943d2e85834d1b2c7c4307e449f8de517f"
+    sha256 cellar: :any_skip_relocation, mojave:      "fcefe9fe38fb4555760f8d7e651f19aca85115583f896ba602b1396e71547743"
+    sha256 cellar: :any_skip_relocation, high_sierra: "095a3a02e99d3f018472202e65231212c818750cd91d42c32a95957b407c1d4b"
+    sha256 cellar: :any_skip_relocation, sierra:      "4414da8e35f9d69a0e04e4a1942745f98b5234891a04935627248e2e6954e17d"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "41d81d535cfa41b4eb03709e646b0bdc36a78f99c8e15746b7eb289a98afbb97"
+    sha256 cellar: :any_skip_relocation, yosemite:    "9885cadccdeec56d0f665bad80655cfba3397c3ff2958c7a44af514a69bc8114"
+    sha256 cellar: :any_skip_relocation, mavericks:   "3838548d5febbed5d9db37e8634397a589bcec766ee5ec84949a17dae9b34cdd"
   end
 
   def install

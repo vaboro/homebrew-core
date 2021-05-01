@@ -12,10 +12,9 @@ class Freetype < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "16500bbd77b8bbeb9a4ad432c795df313c8ac108f31a28119b794000d2ba05f2" => :catalina
-    sha256 "145f95e473addb0b3960a3d2b09ec7437bb6fc2e4083fc1161138c0be1a6921b" => :mojave
-    sha256 "c1bca74eb0c7dea15bf7e1cc317560d002483acca010b60986c1eac92abbffbc" => :high_sierra
+    sha256 cellar: :any, catalina:    "16500bbd77b8bbeb9a4ad432c795df313c8ac108f31a28119b794000d2ba05f2"
+    sha256 cellar: :any, mojave:      "145f95e473addb0b3960a3d2b09ec7437bb6fc2e4083fc1161138c0be1a6921b"
+    sha256 cellar: :any, high_sierra: "c1bca74eb0c7dea15bf7e1cc317560d002483acca010b60986c1eac92abbffbc"
   end
 
   depends_on "libpng"

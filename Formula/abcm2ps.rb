@@ -6,9 +6,9 @@ class Abcm2ps < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 "c67da1ca155904d0794fc458add9bd5cd4a446a212e3aef790083c68e9aef252" => :catalina
-    sha256 "2d592b6fae0b8b94a63cc297f0e29e6c155019f17a830151c341376dcc9d7f6e" => :mojave
-    sha256 "c11af5280e03a986554b9eafa4f2cd0dc91cb725dd35e81228eaf8d126c9660f" => :high_sierra
+    sha256 catalina:    "c67da1ca155904d0794fc458add9bd5cd4a446a212e3aef790083c68e9aef252"
+    sha256 mojave:      "2d592b6fae0b8b94a63cc297f0e29e6c155019f17a830151c341376dcc9d7f6e"
+    sha256 high_sierra: "c11af5280e03a986554b9eafa4f2cd0dc91cb725dd35e81228eaf8d126c9660f"
   end
 
   depends_on "pkg-config" => :build

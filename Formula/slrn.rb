@@ -7,10 +7,10 @@ class Slrn < Formula
   head "git://git.jedsoft.org/git/slrn.git"
 
   bottle do
-    sha256 "de190a3f3793acd7d8e50dc82231e7ad94535621bc4c37a34efcc1907c295296" => :catalina
-    sha256 "9dcfea5ecabef7b65a480fec81ab5b1dcc7a67d45bb8fab0d35821684ab56d0e" => :mojave
-    sha256 "417197dcbd30a8330f2a3a1e5171b2f3c2ed7869cca8d2fb302108ae391f4072" => :high_sierra
-    sha256 "dac0b018eb8f1d53b69ae27ca121510806f0eb9bbdcdbdd119295bd022a8faaf" => :sierra
+    sha256 catalina:    "de190a3f3793acd7d8e50dc82231e7ad94535621bc4c37a34efcc1907c295296"
+    sha256 mojave:      "9dcfea5ecabef7b65a480fec81ab5b1dcc7a67d45bb8fab0d35821684ab56d0e"
+    sha256 high_sierra: "417197dcbd30a8330f2a3a1e5171b2f3c2ed7869cca8d2fb302108ae391f4072"
+    sha256 sierra:      "dac0b018eb8f1d53b69ae27ca121510806f0eb9bbdcdbdd119295bd022a8faaf"
   end
 
   depends_on "openssl@1.1"

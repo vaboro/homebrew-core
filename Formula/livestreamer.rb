@@ -12,10 +12,9 @@ class Livestreamer < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "23a5d9a062d09bbdb506daf64a8d57ffc621f8d62823f049a54233772dc2049f" => :catalina
-    sha256 "bbdac34096cf43e0d330c8b2fabe256c62cd36c83b5fd92e018d558fa0013de8" => :mojave
-    sha256 "c5e389be81bbd2736c8edcfcb7e725c321c188a057ce43e195cdbb96223dd76f" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "23a5d9a062d09bbdb506daf64a8d57ffc621f8d62823f049a54233772dc2049f"
+    sha256 cellar: :any_skip_relocation, mojave:      "bbdac34096cf43e0d330c8b2fabe256c62cd36c83b5fd92e018d558fa0013de8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c5e389be81bbd2736c8edcfcb7e725c321c188a057ce43e195cdbb96223dd76f"
   end
 
   depends_on "python@3.8"

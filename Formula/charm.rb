@@ -8,10 +8,9 @@ class Charm < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8fceac06a83052ab1a67a5845ebc910438105e543677756c774c05b3a03a81c8" => :mojave
-    sha256 "0b0552a903e6a0a29fbf38c1d2110263df22fd5a12599e36cd60b22bc1dab71e" => :high_sierra
-    sha256 "1e3250586c714b629398dc02cd1b8168fe0cfe70a8a067d700b8b425f16d2ffa" => :sierra
+    sha256 cellar: :any_skip_relocation, mojave:      "8fceac06a83052ab1a67a5845ebc910438105e543677756c774c05b3a03a81c8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0b0552a903e6a0a29fbf38c1d2110263df22fd5a12599e36cd60b22bc1dab71e"
+    sha256 cellar: :any_skip_relocation, sierra:      "1e3250586c714b629398dc02cd1b8168fe0cfe70a8a067d700b8b425f16d2ffa"
   end
 
   depends_on "bazaar" => :build

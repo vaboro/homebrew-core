@@ -12,9 +12,9 @@ class ApacheArrowGlib < Formula
   end
 
   bottle do
-    sha256 "f3f1d7961bdb3f3ad95232a37460d1a92a88e4846c794ab2d8501bacff6d0b76" => :catalina
-    sha256 "09ea05316802811d6b5d02ead1705ed795c7209a09362f7d1bc545ad0eb92924" => :mojave
-    sha256 "d281fe60e0aa6ef2485a8172ab45e64d62549429836ea9fb0a8a4a5dee07a2cf" => :high_sierra
+    sha256 catalina:    "f3f1d7961bdb3f3ad95232a37460d1a92a88e4846c794ab2d8501bacff6d0b76"
+    sha256 mojave:      "09ea05316802811d6b5d02ead1705ed795c7209a09362f7d1bc545ad0eb92924"
+    sha256 high_sierra: "d281fe60e0aa6ef2485a8172ab45e64d62549429836ea9fb0a8a4a5dee07a2cf"
   end
 
   depends_on "gobject-introspection" => :build

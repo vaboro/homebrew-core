@@ -12,10 +12,9 @@ class Mikutter < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "6197997bd388cfc49af54bae06123d82e6208c01ae2fb1ac7386fa4771d4bf14" => :catalina
-    sha256 "73a71338fcecf984168f42385e40817c58baa7df0ccec5d3ae500f3a95f757d7" => :mojave
-    sha256 "c5d3127e03affdf0b5a19b0480c0b9cd4f96b56052d4938cdddcbb8ab6ba00cf" => :high_sierra
+    sha256 cellar: :any, catalina:    "6197997bd388cfc49af54bae06123d82e6208c01ae2fb1ac7386fa4771d4bf14"
+    sha256 cellar: :any, mojave:      "73a71338fcecf984168f42385e40817c58baa7df0ccec5d3ae500f3a95f757d7"
+    sha256 cellar: :any, high_sierra: "c5d3127e03affdf0b5a19b0480c0b9cd4f96b56052d4938cdddcbb8ab6ba00cf"
   end
 
   depends_on "gobject-introspection"

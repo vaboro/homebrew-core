@@ -9,9 +9,9 @@ class Lldpd < Formula
   end
 
   bottle do
-    sha256 "31d0013804445cc7b674ae9f7cabe736fbfab7a4d03ed88cbe205e97e76c1567" => :catalina
-    sha256 "986c8754cbb606db48dcee2230a097ec40629d5353b3c7f811be0153669fd18c" => :mojave
-    sha256 "ae25b1716c60ab6441d445af1c2053712bdc54358ae5f524cb6aff1c192b39bb" => :high_sierra
+    sha256 catalina:    "31d0013804445cc7b674ae9f7cabe736fbfab7a4d03ed88cbe205e97e76c1567"
+    sha256 mojave:      "986c8754cbb606db48dcee2230a097ec40629d5353b3c7f811be0153669fd18c"
+    sha256 high_sierra: "ae25b1716c60ab6441d445af1c2053712bdc54358ae5f524cb6aff1c192b39bb"
   end
 
   depends_on "pkg-config" => :build

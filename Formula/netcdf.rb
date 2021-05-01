@@ -14,9 +14,9 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 "0ae7c27bd0ac68071faecbd09f67fb2ce91d86b030b92488dca64851e6d40de0" => :catalina
-    sha256 "db149e5597eab59a0a908c48efc35df09735ddc8bac006c94b6a02a644822814" => :mojave
-    sha256 "c1704dcf4cd4d59e48b5e71e752c44220cc098810e67d49aaa8985cc09b5724b" => :high_sierra
+    sha256 catalina:    "0ae7c27bd0ac68071faecbd09f67fb2ce91d86b030b92488dca64851e6d40de0"
+    sha256 mojave:      "db149e5597eab59a0a908c48efc35df09735ddc8bac006c94b6a02a644822814"
+    sha256 high_sierra: "c1704dcf4cd4d59e48b5e71e752c44220cc098810e67d49aaa8985cc09b5724b"
   end
 
   depends_on "cmake" => :build
@@ -129,7 +129,7 @@ class Netcdf < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
     if head?
-      assert_match /^\d+(?:\.\d+)+/, `./test`
+      assert_match(/^\d+(?:\.\d+)+/, `./test`)
     else
       assert_equal version.to_s, `./test`
     end

@@ -7,11 +7,10 @@ class ChrubyFish < Formula
   head "https://github.com/JeanMertz/chruby-fish.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e604e4c2114b462ff23291677a171e77284dccb7a3a0444f26dc293c01890f91" => :catalina
-    sha256 "ba0ca145d65c92efa34f257219a96d94c4a82800ac5e37b71e3208ed61a82293" => :mojave
-    sha256 "1ebd01df8a1edd51c2b73568c1db57b38a672b530fd0a55d063595370d0c301d" => :high_sierra
-    sha256 "1ebd01df8a1edd51c2b73568c1db57b38a672b530fd0a55d063595370d0c301d" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e604e4c2114b462ff23291677a171e77284dccb7a3a0444f26dc293c01890f91"
+    sha256 cellar: :any_skip_relocation, mojave:      "ba0ca145d65c92efa34f257219a96d94c4a82800ac5e37b71e3208ed61a82293"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1ebd01df8a1edd51c2b73568c1db57b38a672b530fd0a55d063595370d0c301d"
+    sha256 cellar: :any_skip_relocation, sierra:      "1ebd01df8a1edd51c2b73568c1db57b38a672b530fd0a55d063595370d0c301d"
   end
 
   depends_on "chruby"
@@ -22,6 +21,6 @@ class ChrubyFish < Formula
   end
 
   test do
-    assert_match /chruby-fish/, shell_output("fish -c '. #{share}/chruby/chruby.fish; chruby --version'")
+    assert_match(/chruby-fish/, shell_output("fish -c '. #{share}/chruby/chruby.fish; chruby --version'"))
   end
 end

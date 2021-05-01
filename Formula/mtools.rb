@@ -11,10 +11,9 @@ class Mtools < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a5229fbfcd666abf4c79cd065be6a58801228460f999319a0234319ccb8aba3a" => :catalina
-    sha256 "3a9d80e7a7e9a6dd377d0030a5fbc29e509ca6dd598e24943b36169ed1512670" => :mojave
-    sha256 "ebed9be10002c3a8a68089ff43702b24f1f2c451be9e14778eaece3ad4e0cdc0" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a5229fbfcd666abf4c79cd065be6a58801228460f999319a0234319ccb8aba3a"
+    sha256 cellar: :any_skip_relocation, mojave:      "3a9d80e7a7e9a6dd377d0030a5fbc29e509ca6dd598e24943b36169ed1512670"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ebed9be10002c3a8a68089ff43702b24f1f2c451be9e14778eaece3ad4e0cdc0"
   end
 
   conflicts_with "multimarkdown", because: "both install `mmd` binaries"
@@ -43,6 +42,6 @@ class Mtools < Formula
   end
 
   test do
-    assert_match /#{version}/, shell_output("#{bin}/mtools --version")
+    assert_match(/#{version}/, shell_output("#{bin}/mtools --version"))
   end
 end

@@ -5,10 +5,9 @@ class Afflib < Formula
   sha256 "d358b07153dd08df3f35376bab0202c6103808686bab5e8486c78a18b24e2665"
 
   bottle do
-    cellar :any
-    sha256 "4cc737d25010d916fee5998d5409ac803e2051876008602af9e4df5446b820c8" => :catalina
-    sha256 "3e533865a44b9cbea70f9e5268fa48828abeb2b8ad864b8b1e3ab8e16c44ce13" => :mojave
-    sha256 "09ee4859a479fb096ffa391a21f3e0db65ae16b5953f4a5749ed49219bf51449" => :high_sierra
+    sha256 cellar: :any, catalina:    "4cc737d25010d916fee5998d5409ac803e2051876008602af9e4df5446b820c8"
+    sha256 cellar: :any, mojave:      "3e533865a44b9cbea70f9e5268fa48828abeb2b8ad864b8b1e3ab8e16c44ce13"
+    sha256 cellar: :any, high_sierra: "09ee4859a479fb096ffa391a21f3e0db65ae16b5953f4a5749ed49219bf51449"
   end
 
   depends_on "autoconf" => :build

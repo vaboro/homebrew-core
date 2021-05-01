@@ -8,10 +8,9 @@ class Functionalplus < Formula
   head "https://github.com/Dobiasd/FunctionalPlus.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :catalina
-    sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :mojave
-    sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6"
+    sha256 cellar: :any_skip_relocation, mojave:      "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6"
   end
 
   depends_on "cmake" => :build

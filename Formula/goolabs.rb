@@ -12,10 +12,9 @@ class Goolabs < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c784f76b536c01324365eae262d9fb1b6feff9eeb39173f5ea0269eae3b3d73c" => :catalina
-    sha256 "1b1fe110089fe56dbb9db0d11eb28dbe57629462c8274eb33a2fe7f9198b482d" => :mojave
-    sha256 "1705b23fe27ee59062383dc353dbf34770d1aef2378a3740e77b02c71724f001" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c784f76b536c01324365eae262d9fb1b6feff9eeb39173f5ea0269eae3b3d73c"
+    sha256 cellar: :any_skip_relocation, mojave:      "1b1fe110089fe56dbb9db0d11eb28dbe57629462c8274eb33a2fe7f9198b482d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1705b23fe27ee59062383dc353dbf34770d1aef2378a3740e77b02c71724f001"
   end
 
   depends_on "python@3.8"

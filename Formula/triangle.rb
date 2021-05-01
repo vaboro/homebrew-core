@@ -6,10 +6,9 @@ class Triangle < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a90c331e51936a58d69e47b7ce4d9925072b6024ad6b1d1fe9d75b17f2becf15" => :catalina
-    sha256 "6dc2d0aba307e988e2d4205881be47aef561ab3cea7d7bc5c378e23414782ad9" => :mojave
-    sha256 "d8859fc5b05f1faac1db7cd3130e6e8c8359724fc2162e5d6dc97d3e5198651d" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a90c331e51936a58d69e47b7ce4d9925072b6024ad6b1d1fe9d75b17f2becf15"
+    sha256 cellar: :any_skip_relocation, mojave:      "6dc2d0aba307e988e2d4205881be47aef561ab3cea7d7bc5c378e23414782ad9"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d8859fc5b05f1faac1db7cd3130e6e8c8359724fc2162e5d6dc97d3e5198651d"
   end
 
   depends_on "go" => :build

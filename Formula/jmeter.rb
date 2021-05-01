@@ -11,10 +11,9 @@ class Jmeter < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :catalina
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :mojave
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88"
+    sha256 cellar: :any_skip_relocation, mojave:      "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88"
   end
 
   resource "jmeter-plugins-manager" do

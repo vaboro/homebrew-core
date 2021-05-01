@@ -7,10 +7,9 @@ class Falcon < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "0fdfed49f1ba12e66db6a7d9f315677280600f6db52afd52c91e6e66235c3053" => :catalina
-    sha256 "d87b0664e797106f23bd5167c32988a7154d177955c2f612803999ebc4306fd9" => :mojave
-    sha256 "670ae92a7f950558ea95001b45a848ef6d3f98d5fa414ba3549032d07badca47" => :high_sierra
+    sha256 cellar: :any, catalina:    "0fdfed49f1ba12e66db6a7d9f315677280600f6db52afd52c91e6e66235c3053"
+    sha256 cellar: :any, mojave:      "d87b0664e797106f23bd5167c32988a7154d177955c2f612803999ebc4306fd9"
+    sha256 cellar: :any, high_sierra: "670ae92a7f950558ea95001b45a848ef6d3f98d5fa414ba3549032d07badca47"
   end
 
   depends_on "cmake" => :build

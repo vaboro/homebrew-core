@@ -19,6 +19,6 @@ class Sendemail < Formula
   end
 
   test do
-    assert_match /sendemail-#{Regexp.escape(version)}/, `#{bin}/sendemail`.strip
+    assert_match(/sendemail-#{Regexp.escape(version)}/, `#{bin}/sendemail`.strip)
   end
 end

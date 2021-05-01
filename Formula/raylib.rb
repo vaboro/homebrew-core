@@ -7,10 +7,9 @@ class Raylib < Formula
   head "https://github.com/raysan5/raylib.git", branch: "master"
 
   bottle do
-    cellar :any
-    sha256 "e4a993eb3b14cb555d76197d3515c2606782f0d36e37f511512acd3198a1f7a7" => :catalina
-    sha256 "889ab34922a972bcf77b40c2b931f02e136531f4716efe1d9ba8dec56ea99a58" => :mojave
-    sha256 "85002fb7e4a095c32af67f399b0974a3346595bfceb99589ddb42753aab0e13d" => :high_sierra
+    sha256 cellar: :any, catalina:    "e4a993eb3b14cb555d76197d3515c2606782f0d36e37f511512acd3198a1f7a7"
+    sha256 cellar: :any, mojave:      "889ab34922a972bcf77b40c2b931f02e136531f4716efe1d9ba8dec56ea99a58"
+    sha256 cellar: :any, high_sierra: "85002fb7e4a095c32af67f399b0974a3346595bfceb99589ddb42753aab0e13d"
   end
 
   depends_on "cmake" => :build

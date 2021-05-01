@@ -6,9 +6,9 @@ class Jailkit < Formula
 
   bottle do
     rebuild 1
-    sha256 "1bdfd57d829a6b90286601b2b13660b53cc14fe6443d0d23fa15636171c79439" => :catalina
-    sha256 "43811f3b792ddd4039767cf81882e0c46c2851ba95546c01d7c1a052c3e99f3e" => :mojave
-    sha256 "dd348dd5721fc813bb1556f13b196b684f5ef805f3c03c2bab1e3df4eef41376" => :high_sierra
+    sha256 catalina:    "1bdfd57d829a6b90286601b2b13660b53cc14fe6443d0d23fa15636171c79439"
+    sha256 mojave:      "43811f3b792ddd4039767cf81882e0c46c2851ba95546c01d7c1a052c3e99f3e"
+    sha256 high_sierra: "dd348dd5721fc813bb1556f13b196b684f5ef805f3c03c2bab1e3df4eef41376"
   end
 
   depends_on "python@3.8"

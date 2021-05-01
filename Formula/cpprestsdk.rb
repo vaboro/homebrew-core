@@ -9,10 +9,9 @@ class Cpprestsdk < Formula
   head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
 
   bottle do
-    cellar :any
-    sha256 "0b7d717716ebc8393007599ed02f9a4f8b36eef1f3dd3d54d11b0966751a4f87" => :catalina
-    sha256 "feeabdfce6c4a065961f37c38578d626a50f8e7a3939343a6ed037f535418a02" => :mojave
-    sha256 "f98e8ff4c5b371ffe541eb1fefc13a178b02c07e6fab906fd206e6c833827dfa" => :high_sierra
+    sha256 cellar: :any, catalina:    "0b7d717716ebc8393007599ed02f9a4f8b36eef1f3dd3d54d11b0966751a4f87"
+    sha256 cellar: :any, mojave:      "feeabdfce6c4a065961f37c38578d626a50f8e7a3939343a6ed037f535418a02"
+    sha256 cellar: :any, high_sierra: "f98e8ff4c5b371ffe541eb1fefc13a178b02c07e6fab906fd206e6c833827dfa"
   end
 
   depends_on "cmake" => :build

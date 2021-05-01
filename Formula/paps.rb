@@ -6,10 +6,9 @@ class Paps < Formula
   license "LGPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "4f19499edc025464f4ce74b0755ede3c404c41d131156aebd7d24ef3ca1fe64f" => :catalina
-    sha256 "2852cb269611539d7d9fa227cca164318da3d1d3acec66b7a006ea958dc31d93" => :mojave
-    sha256 "bef1ee9210f3591f0768817f4f748e49ea708742f56ce47e744bc4a1507f3f36" => :high_sierra
+    sha256 cellar: :any, catalina:    "4f19499edc025464f4ce74b0755ede3c404c41d131156aebd7d24ef3ca1fe64f"
+    sha256 cellar: :any, mojave:      "2852cb269611539d7d9fa227cca164318da3d1d3acec66b7a006ea958dc31d93"
+    sha256 cellar: :any, high_sierra: "bef1ee9210f3591f0768817f4f748e49ea708742f56ce47e744bc4a1507f3f36"
   end
 
   depends_on "autoconf" => :build

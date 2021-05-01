@@ -6,11 +6,10 @@ class Libccd < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "d243743b0d6962d55961bdda60fe8ea32bb738dea0509930d5d4114db2d52013" => :catalina
-    sha256 "05c8005ed028e5d5ca250aba9f3c69ece3af5766d91c68fa50fbcf78d139849d" => :mojave
-    sha256 "3b0a74f46d98cc57ddbff8c4f37227e8c5f528905037f346bf17104ba17b71f7" => :high_sierra
-    sha256 "63e2b6149dea77e8ece7a88f7f5f941d9606e9843bc46e4a48853858f6b4a7b3" => :sierra
+    sha256 cellar: :any, catalina:    "d243743b0d6962d55961bdda60fe8ea32bb738dea0509930d5d4114db2d52013"
+    sha256 cellar: :any, mojave:      "05c8005ed028e5d5ca250aba9f3c69ece3af5766d91c68fa50fbcf78d139849d"
+    sha256 cellar: :any, high_sierra: "3b0a74f46d98cc57ddbff8c4f37227e8c5f528905037f346bf17104ba17b71f7"
+    sha256 cellar: :any, sierra:      "63e2b6149dea77e8ece7a88f7f5f941d9606e9843bc46e4a48853858f6b4a7b3"
   end
 
   depends_on "cmake" => :build

@@ -7,10 +7,9 @@ class NlohmannJson < Formula
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :catalina
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :mojave
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b"
+    sha256 cellar: :any_skip_relocation, mojave:      "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b"
   end
 
   depends_on "cmake" => :build

@@ -12,10 +12,9 @@ class Supertux < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "671a6a888ace25b1cd8adfafea895a7bb259bee92be354e7ed4b4fbd63841f92" => :catalina
-    sha256 "e96d518a12e5cd571345abd4d778a6983062daebe845ab1a0404ee1f4ae11212" => :mojave
-    sha256 "3427130b27e209085a062bec0f853f765a34c6bf5d4fe6bedba4c7c5e408c400" => :high_sierra
+    sha256 cellar: :any, catalina:    "671a6a888ace25b1cd8adfafea895a7bb259bee92be354e7ed4b4fbd63841f92"
+    sha256 cellar: :any, mojave:      "e96d518a12e5cd571345abd4d778a6983062daebe845ab1a0404ee1f4ae11212"
+    sha256 cellar: :any, high_sierra: "3427130b27e209085a062bec0f853f765a34c6bf5d4fe6bedba4c7c5e408c400"
   end
 
   depends_on "cmake" => :build

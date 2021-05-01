@@ -7,10 +7,9 @@ class GitStandup < Formula
   head "https://github.com/kamranahmedse/git-standup.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8" => :catalina
-    sha256 "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8" => :mojave
-    sha256 "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8"
+    sha256 cellar: :any_skip_relocation, mojave:      "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "0a75c65615d92237a59492ac00867d12ab4a23865d85d5cb464d9deb1f6d8ee8"
   end
 
   def install

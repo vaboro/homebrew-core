@@ -5,10 +5,9 @@ class Mercury < Formula
   sha256 "b9c6965d41af49b4218d2444440c4860630d6f50c18dc6f1f4f8374d114f79be"
 
   bottle do
-    cellar :any
-    sha256 "8a643b7f50072e004089659525f9e08b05fdecbc031db32d591dbd4aa1fa110d" => :catalina
-    sha256 "f343d99ebc86c3eecff969e744fbea6e90400884650781bda85984978dfb6848" => :mojave
-    sha256 "6ec1305a6b2c81e8bc0c8c57aaeeace93a600e01913794d83ac3420c69959456" => :high_sierra
+    sha256 cellar: :any, catalina:    "8a643b7f50072e004089659525f9e08b05fdecbc031db32d591dbd4aa1fa110d"
+    sha256 cellar: :any, mojave:      "f343d99ebc86c3eecff969e744fbea6e90400884650781bda85984978dfb6848"
+    sha256 cellar: :any, high_sierra: "6ec1305a6b2c81e8bc0c8c57aaeeace93a600e01913794d83ac3420c69959456"
   end
 
   depends_on "openjdk"

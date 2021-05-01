@@ -10,11 +10,11 @@ class Cdrdao < Formula
   end
 
   bottle do
-    sha256 "81acc38e0a51134c0eeebf20e76dcee4e80eabfac72f0ec890e448271a96792c" => :catalina
-    sha256 "f8894deccbd18e7d5362ace73618666d9a79b233cea5dc6af367ab9e257332e0" => :mojave
-    sha256 "1efaa356872419da65763a5e28faf262b79f5a37e2eb83c06c22e9846bae188f" => :high_sierra
-    sha256 "cd0c72a2c84f084e4f5fe28df185e9154409645138e55502ffb9c4075ae4dfea" => :sierra
-    sha256 "d49e947354162d163937e801fd00468823b16d8462e179f6cfe20a84eb19ffb5" => :el_capitan
+    sha256 catalina:    "81acc38e0a51134c0eeebf20e76dcee4e80eabfac72f0ec890e448271a96792c"
+    sha256 mojave:      "f8894deccbd18e7d5362ace73618666d9a79b233cea5dc6af367ab9e257332e0"
+    sha256 high_sierra: "1efaa356872419da65763a5e28faf262b79f5a37e2eb83c06c22e9846bae188f"
+    sha256 sierra:      "cd0c72a2c84f084e4f5fe28df185e9154409645138e55502ffb9c4075ae4dfea"
+    sha256 el_capitan:  "d49e947354162d163937e801fd00468823b16d8462e179f6cfe20a84eb19ffb5"
   end
 
   depends_on "pkg-config" => :build

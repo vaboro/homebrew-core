@@ -10,10 +10,9 @@ class Glibmm < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "8b39f15570f8ec9281554ec8db93e4011ad2e13a1248047c18c7f8570a548d53" => :catalina
-    sha256 "316a5f0f84491a62cf1c48a12cd4f8d9b7f7de9aa8092f72256f5114aa8730d3" => :mojave
-    sha256 "7d224a2283e08715a1f7f286fcdc3e1c5cc277101bb3e2cc4bce488ec776cc02" => :high_sierra
+    sha256 cellar: :any, catalina:    "8b39f15570f8ec9281554ec8db93e4011ad2e13a1248047c18c7f8570a548d53"
+    sha256 cellar: :any, mojave:      "316a5f0f84491a62cf1c48a12cd4f8d9b7f7de9aa8092f72256f5114aa8730d3"
+    sha256 cellar: :any, high_sierra: "7d224a2283e08715a1f7f286fcdc3e1c5cc277101bb3e2cc4bce488ec776cc02"
   end
 
   depends_on "pkg-config" => :build

@@ -6,10 +6,9 @@ class Libaacs < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "74f17ba980a3b1d763f09869541542716979e8fe8e6ee299a00a9d5fe68bbb5b" => :catalina
-    sha256 "97fbb158456e2b35633e387e239a5ccc5e90041a0bba15a139dbf32ea4de872b" => :mojave
-    sha256 "6ac467398d3fb886cee220bd7724f1341631b1ac31220e3ee504d687347a731f" => :high_sierra
+    sha256 cellar: :any, catalina:    "74f17ba980a3b1d763f09869541542716979e8fe8e6ee299a00a9d5fe68bbb5b"
+    sha256 cellar: :any, mojave:      "97fbb158456e2b35633e387e239a5ccc5e90041a0bba15a139dbf32ea4de872b"
+    sha256 cellar: :any, high_sierra: "6ac467398d3fb886cee220bd7724f1341631b1ac31220e3ee504d687347a731f"
   end
 
   head do

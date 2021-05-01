@@ -11,10 +11,9 @@ class Datasette < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ffa9a25c204ad8f8d0ab06c7d13ebab4e26e690e7a03cd9d81ea6565efc21cc1" => :catalina
-    sha256 "7f8f1519ac2b48db0d9b9aa7aa0e9bb395b580c2e472b95b3813add42bed1476" => :mojave
-    sha256 "cee5a157f3293a7834942eb5c7d56db0c50dd37bc1c0c552906da075534c8b50" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ffa9a25c204ad8f8d0ab06c7d13ebab4e26e690e7a03cd9d81ea6565efc21cc1"
+    sha256 cellar: :any_skip_relocation, mojave:      "7f8f1519ac2b48db0d9b9aa7aa0e9bb395b580c2e472b95b3813add42bed1476"
+    sha256 cellar: :any_skip_relocation, high_sierra: "cee5a157f3293a7834942eb5c7d56db0c50dd37bc1c0c552906da075534c8b50"
   end
 
   depends_on "python@3.8"

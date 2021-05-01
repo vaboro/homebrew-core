@@ -10,12 +10,11 @@ class SpeechTools < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "88ed5cfcaf1234243702c543cff1d41471292dcf40a00ac6c5d4bd269c02de26" => :catalina
-    sha256 "49b05f1d4894a23065205b57ea9bb9eeef8e0e8b96a82a7457719197fdce9c56" => :mojave
-    sha256 "b43389631b881f76529aa4458442b819dc5be784afbf5569f9e526ce3dc7e028" => :high_sierra
-    sha256 "4d3681ee2194a92fcbad96371c499f5c2a71c59cfe8798b8092f0e57f793fca3" => :sierra
-    sha256 "a0794d1d7f424833d2fe92726d26b6ebcc8dcf63b7f9700b19e1119ed7e2ca62" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "88ed5cfcaf1234243702c543cff1d41471292dcf40a00ac6c5d4bd269c02de26"
+    sha256 cellar: :any_skip_relocation, mojave:      "49b05f1d4894a23065205b57ea9bb9eeef8e0e8b96a82a7457719197fdce9c56"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b43389631b881f76529aa4458442b819dc5be784afbf5569f9e526ce3dc7e028"
+    sha256 cellar: :any_skip_relocation, sierra:      "4d3681ee2194a92fcbad96371c499f5c2a71c59cfe8798b8092f0e57f793fca3"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "a0794d1d7f424833d2fe92726d26b6ebcc8dcf63b7f9700b19e1119ed7e2ca62"
   end
 
   conflicts_with "align", because: "both install `align` binaries"

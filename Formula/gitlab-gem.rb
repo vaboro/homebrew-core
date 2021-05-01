@@ -6,10 +6,9 @@ class GitlabGem < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "25266a76b57a3a19d41e17adc9a9989b89933f5dcaed509189bd10769fb505e6" => :catalina
-    sha256 "f232c6d9192d9d6383b2fee68c83e3649954212aaaceb205878acdd731acdc2c" => :mojave
-    sha256 "d0a85575ea14b6d88a0be7e540026b8415bca7032d8685e9fb56f270b4226cb9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "25266a76b57a3a19d41e17adc9a9989b89933f5dcaed509189bd10769fb505e6"
+    sha256 cellar: :any_skip_relocation, mojave:      "f232c6d9192d9d6383b2fee68c83e3649954212aaaceb205878acdd731acdc2c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d0a85575ea14b6d88a0be7e540026b8415bca7032d8685e9fb56f270b4226cb9"
   end
 
   uses_from_macos "ruby", since: :catalina

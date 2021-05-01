@@ -7,9 +7,9 @@ class Exult < Formula
   head "https://github.com/exult/exult.git"
 
   bottle do
-    sha256 "6b3f2e032a2a04e9e3bb2101d91af3fec63195f5e66c9174b976204465a99125" => :catalina
-    sha256 "7a3891dc200ec4d01222b3ab7fbc2d4db4d94a8b91f9144fd7e6ab3a79fd8cc7" => :mojave
-    sha256 "de9329e08a29b01601a40218bd82746a122294e5322529ca1e678e0aa63ccebb" => :high_sierra
+    sha256 catalina:    "6b3f2e032a2a04e9e3bb2101d91af3fec63195f5e66c9174b976204465a99125"
+    sha256 mojave:      "7a3891dc200ec4d01222b3ab7fbc2d4db4d94a8b91f9144fd7e6ab3a79fd8cc7"
+    sha256 high_sierra: "de9329e08a29b01601a40218bd82746a122294e5322529ca1e678e0aa63ccebb"
   end
 
   depends_on "autoconf" => :build
@@ -23,8 +23,8 @@ class Exult < Formula
   def install
     # Use ~/Library/... instead of /Library for the games
     inreplace "files/utils.cc" do |s|
-      s.gsub! /(gamehome_dir)\("\."\)/, '\1(home_dir)'
-      s.gsub! /(gamehome_dir) =/, '\1 +='
+      s.gsub!(/(gamehome_dir)\("\."\)/, '\1(home_dir)')
+      s.gsub!(/(gamehome_dir) =/, '\1 +=')
     end
 
     system "./autogen.sh"

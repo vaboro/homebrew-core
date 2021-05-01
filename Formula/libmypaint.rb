@@ -7,10 +7,9 @@ class Libmypaint < Formula
   revision 1
 
   bottle do
-    cellar :any
-    sha256 "699014970a67055822e7ee2abc92c4ea2b45e51bcd58cfa01cb24c2ed08f6a2b" => :catalina
-    sha256 "97ca6e5c0ae27513cc3af20c1256548d6a21e0a38bfdcea5a79f7fe1c0a6886d" => :mojave
-    sha256 "4260697ececf5344aa3eacd16afdd5f4eff556cee6312e49a8e5544edb71aca1" => :high_sierra
+    sha256 cellar: :any, catalina:    "699014970a67055822e7ee2abc92c4ea2b45e51bcd58cfa01cb24c2ed08f6a2b"
+    sha256 cellar: :any, mojave:      "97ca6e5c0ae27513cc3af20c1256548d6a21e0a38bfdcea5a79f7fe1c0a6886d"
+    sha256 cellar: :any, high_sierra: "4260697ececf5344aa3eacd16afdd5f4eff556cee6312e49a8e5544edb71aca1"
   end
 
   depends_on "intltool" => :build

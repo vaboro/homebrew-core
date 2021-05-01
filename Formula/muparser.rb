@@ -8,10 +8,9 @@ class Muparser < Formula
   head "https://github.com/beltoforion/muparser.git"
 
   bottle do
-    cellar :any
-    sha256 "0a1a8ee3560af0487a46b7c524cdf938b1d6e159e6c4d9689968225cd6311713" => :catalina
-    sha256 "3094837032e20cbbd5e74531a20450af6986bfd5ac83ea4df4884a538a552c85" => :mojave
-    sha256 "ca242a645a77e528c16cced97cf06bc796071c549a8d81f22bd4d9bd547828fb" => :high_sierra
+    sha256 cellar: :any, catalina:    "0a1a8ee3560af0487a46b7c524cdf938b1d6e159e6c4d9689968225cd6311713"
+    sha256 cellar: :any, mojave:      "3094837032e20cbbd5e74531a20450af6986bfd5ac83ea4df4884a538a552c85"
+    sha256 cellar: :any, high_sierra: "ca242a645a77e528c16cced97cf06bc796071c549a8d81f22bd4d9bd547828fb"
   end
 
   depends_on "cmake" => :build

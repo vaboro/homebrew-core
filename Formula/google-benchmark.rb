@@ -7,10 +7,9 @@ class GoogleBenchmark < Formula
   head "https://github.com/google/benchmark.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "432e4f98bad2a73d0f47279714d5028dfad2283f939eb745794b47272bf90f2e" => :catalina
-    sha256 "e303f9f7f9ce196aa338a18767605162d27612514cd134e7b143be0b85ffe66c" => :mojave
-    sha256 "8275a82eeb23188a166f67ace983ee9968f247840d20fb0119a5f1c0f5067c7a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "432e4f98bad2a73d0f47279714d5028dfad2283f939eb745794b47272bf90f2e"
+    sha256 cellar: :any_skip_relocation, mojave:      "e303f9f7f9ce196aa338a18767605162d27612514cd134e7b143be0b85ffe66c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8275a82eeb23188a166f67ace983ee9968f247840d20fb0119a5f1c0f5067c7a"
   end
 
   depends_on "cmake" => :build

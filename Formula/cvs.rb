@@ -16,10 +16,9 @@ class Cvs < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c80cc90d6ffbb4113745eac9386396c82b63ceee000f88acba79b7a16e05724d" => :catalina
-    sha256 "2fba5fb7a0ece4b19030e2217a9297f13d3a763303443b9f6935f48d434f636a" => :mojave
-    sha256 "eac3fab201c8e47ee3d05e95a240c2f53306e000a416956843083d7305b48da9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "c80cc90d6ffbb4113745eac9386396c82b63ceee000f88acba79b7a16e05724d"
+    sha256 cellar: :any_skip_relocation, mojave:      "2fba5fb7a0ece4b19030e2217a9297f13d3a763303443b9f6935f48d434f636a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "eac3fab201c8e47ee3d05e95a240c2f53306e000a416956843083d7305b48da9"
   end
 
   patch :p0 do

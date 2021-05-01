@@ -6,10 +6,9 @@ class Hcloud < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3d049388f418fc05c9db65c7cb74aead11b6c54d8aae3a56fe1dd8c2a95082f6" => :catalina
-    sha256 "6739ce073c50578b0325c1420eb279063e5720b3e455d58871f1dcd7ef0ab24a" => :mojave
-    sha256 "a27c5f11c68616e93450377d39e1dd270066a729c576c5bbf27ae93f6695ed7c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3d049388f418fc05c9db65c7cb74aead11b6c54d8aae3a56fe1dd8c2a95082f6"
+    sha256 cellar: :any_skip_relocation, mojave:      "6739ce073c50578b0325c1420eb279063e5720b3e455d58871f1dcd7ef0ab24a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a27c5f11c68616e93450377d39e1dd270066a729c576c5bbf27ae93f6695ed7c"
   end
 
   depends_on "go" => :build

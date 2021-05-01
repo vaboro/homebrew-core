@@ -8,9 +8,9 @@ class Lapack < Formula
   head "https://github.com/Reference-LAPACK/lapack.git"
 
   bottle do
-    sha256 "be00d33447ab0bb47a05f89517640c984cafb7723fd6fff9749de773c304f2df" => :catalina
-    sha256 "ad84de82af78dc5ee4b305c76a79a3fc18420beeac2be72d1c262936d5a9110e" => :mojave
-    sha256 "fd360d9073e8a483e88a0bca6c8dc96a8159488fa3a6009bb8cbe03747f20f4f" => :high_sierra
+    sha256 catalina:    "be00d33447ab0bb47a05f89517640c984cafb7723fd6fff9749de773c304f2df"
+    sha256 mojave:      "ad84de82af78dc5ee4b305c76a79a3fc18420beeac2be72d1c262936d5a9110e"
+    sha256 high_sierra: "fd360d9073e8a483e88a0bca6c8dc96a8159488fa3a6009bb8cbe03747f20f4f"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"

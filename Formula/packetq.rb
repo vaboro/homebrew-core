@@ -11,10 +11,9 @@ class Packetq < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f9838e0f004b12ca2b43feb321d4a90c5e2778a22fabd9b9b528b783c0ef98b4" => :catalina
-    sha256 "bc56d9875b526794212e1267b17ea7ba24a639f1efaf804fe2f528f334e2854a" => :mojave
-    sha256 "6c085b37c22ef43c3dc4bff3c68c8fb2aa02acd5ba83e6767ac3574f00e278f8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "f9838e0f004b12ca2b43feb321d4a90c5e2778a22fabd9b9b528b783c0ef98b4"
+    sha256 cellar: :any_skip_relocation, mojave:      "bc56d9875b526794212e1267b17ea7ba24a639f1efaf804fe2f528f334e2854a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6c085b37c22ef43c3dc4bff3c68c8fb2aa02acd5ba83e6767ac3574f00e278f8"
   end
 
   def install

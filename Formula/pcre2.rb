@@ -12,10 +12,9 @@ class Pcre2 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "6a1e59a5db23d684f92d2bf695601d1b466f3e9d5407f704ba4679d885d13cef" => :catalina
-    sha256 "d7be9b0193654484e40bc30dd330711cc1e72fa9bf29f854dd50458f6a827d1b" => :mojave
-    sha256 "69c4fb400d19d1910df33376974b274362ed715ab7d67ee480b5211156174784" => :high_sierra
+    sha256 cellar: :any, catalina:    "6a1e59a5db23d684f92d2bf695601d1b466f3e9d5407f704ba4679d885d13cef"
+    sha256 cellar: :any, mojave:      "d7be9b0193654484e40bc30dd330711cc1e72fa9bf29f854dd50458f6a827d1b"
+    sha256 cellar: :any, high_sierra: "69c4fb400d19d1910df33376974b274362ed715ab7d67ee480b5211156174784"
   end
 
   uses_from_macos "bzip2"

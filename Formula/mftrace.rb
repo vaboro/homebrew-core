@@ -7,10 +7,9 @@ class Mftrace < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "175bd6e04490a7aa2bc79be8057c5708eb4fd8ec36c521e111bb5dd33b472725" => :catalina
-    sha256 "de07330354ae8048feccc55e6ad551a13fedc82408718d33c5b93a96aff4ab0b" => :mojave
-    sha256 "90e60837a6d4c750d0634ff3bfc84b373b6c89a1deaa4792c82e94f52e06c072" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "175bd6e04490a7aa2bc79be8057c5708eb4fd8ec36c521e111bb5dd33b472725"
+    sha256 cellar: :any_skip_relocation, mojave:      "de07330354ae8048feccc55e6ad551a13fedc82408718d33c5b93a96aff4ab0b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "90e60837a6d4c750d0634ff3bfc84b373b6c89a1deaa4792c82e94f52e06c072"
   end
 
   head do

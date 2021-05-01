@@ -12,10 +12,9 @@ class Openstackclient < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "286bfe5a812dabcd8517bb5ccb9fc742985763cead4c54ac32db0e3c18deea12" => :catalina
-    sha256 "ed9233b480a711ef0669bd29931574decfee9f363a8b73ce4c7f12a210bab872" => :mojave
-    sha256 "6d3e12e6336f964c55726053ab33e50116574b7b165e00319526940f176123a5" => :high_sierra
+    sha256 cellar: :any, catalina:    "286bfe5a812dabcd8517bb5ccb9fc742985763cead4c54ac32db0e3c18deea12"
+    sha256 cellar: :any, mojave:      "ed9233b480a711ef0669bd29931574decfee9f363a8b73ce4c7f12a210bab872"
+    sha256 cellar: :any, high_sierra: "6d3e12e6336f964c55726053ab33e50116574b7b165e00319526940f176123a5"
   end
 
   depends_on "python@3.8"

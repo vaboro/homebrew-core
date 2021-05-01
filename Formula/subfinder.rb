@@ -7,10 +7,9 @@ class Subfinder < Formula
   head "https://github.com/projectdiscovery/subfinder.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8092d4af3074c4d0dd45204021b8dff9dd73b25453ef6776d6b22a40e0efc35e" => :catalina
-    sha256 "7a2df6832eb5d7e0f135bf4168ef83beacd98ea68829886d6f252396992f5ff2" => :mojave
-    sha256 "5443410bb4897eaad801d564850562c70b208b88a54d8865882596af19987fc6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8092d4af3074c4d0dd45204021b8dff9dd73b25453ef6776d6b22a40e0efc35e"
+    sha256 cellar: :any_skip_relocation, mojave:      "7a2df6832eb5d7e0f135bf4168ef83beacd98ea68829886d6f252396992f5ff2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5443410bb4897eaad801d564850562c70b208b88a54d8865882596af19987fc6"
   end
 
   depends_on "go" => :build

@@ -8,10 +8,9 @@ class Opencolorio < Formula
   head "https://github.com/imageworks/OpenColorIO.git"
 
   bottle do
-    cellar :any
-    sha256 "d47e35411a692bf51624ecd4958d48a24788d1e1ec0d0ceefa7b86120d7d3a0d" => :catalina
-    sha256 "8f8c1e02c9f4006463476b5dc870c3decc945e3df78fad43cfe93c4b5d1ec35e" => :mojave
-    sha256 "be544d7630cd26c9694474393de260c0114435b3bb1a7dd85b0379f49673c66b" => :high_sierra
+    sha256 cellar: :any, catalina:    "d47e35411a692bf51624ecd4958d48a24788d1e1ec0d0ceefa7b86120d7d3a0d"
+    sha256 cellar: :any, mojave:      "8f8c1e02c9f4006463476b5dc870c3decc945e3df78fad43cfe93c4b5d1ec35e"
+    sha256 cellar: :any, high_sierra: "be544d7630cd26c9694474393de260c0114435b3bb1a7dd85b0379f49673c66b"
   end
 
   depends_on "cmake" => :build

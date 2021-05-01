@@ -6,10 +6,9 @@ class CreateDmg < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be" => :catalina
-    sha256 "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be" => :mojave
-    sha256 "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be"
+    sha256 cellar: :any_skip_relocation, mojave:      "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be"
+    sha256 cellar: :any_skip_relocation, high_sierra: "42ba5df600cee3cc0c2ea3da594e2c09b710e93345f36941bf11cbece30464be"
   end
 
   def install

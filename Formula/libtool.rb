@@ -12,10 +12,9 @@ class Libtool < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "af317b35d0a394b7ef55fba4950735b0392d9f31bececebf9c412261c23a01fc" => :catalina
-    sha256 "77ca68934e7ed9b9b0b8ce17618d7f08fc5d5a95d7b845622bf57345ffb1c0d6" => :mojave
-    sha256 "60c7d86f9364e166846f8d3fb2ba969e6ca157e7ecbbb42a1de259116618c2ba" => :high_sierra
+    sha256 cellar: :any, catalina:    "af317b35d0a394b7ef55fba4950735b0392d9f31bececebf9c412261c23a01fc"
+    sha256 cellar: :any, mojave:      "77ca68934e7ed9b9b0b8ce17618d7f08fc5d5a95d7b845622bf57345ffb1c0d6"
+    sha256 cellar: :any, high_sierra: "60c7d86f9364e166846f8d3fb2ba969e6ca157e7ecbbb42a1de259116618c2ba"
   end
 
   uses_from_macos "m4" => :build

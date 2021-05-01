@@ -15,10 +15,9 @@ class Codemod < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3b32fef1fef317a4544225f6de58e0c1e970de6deb10258fe2d3f937116d5468" => :catalina
-    sha256 "da2eee278c0136d201d2c59db1876f90996600c8a00a0c2434742015846d7457" => :mojave
-    sha256 "31f1ef7e3e6867ef52f0922c807762363b3a4f1c520b0de5bbd448282f95a5e5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3b32fef1fef317a4544225f6de58e0c1e970de6deb10258fe2d3f937116d5468"
+    sha256 cellar: :any_skip_relocation, mojave:      "da2eee278c0136d201d2c59db1876f90996600c8a00a0c2434742015846d7457"
+    sha256 cellar: :any_skip_relocation, high_sierra: "31f1ef7e3e6867ef52f0922c807762363b3a4f1c520b0de5bbd448282f95a5e5"
   end
 
   depends_on "python@3.8"

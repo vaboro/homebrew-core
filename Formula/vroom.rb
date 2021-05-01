@@ -6,9 +6,8 @@ class Vroom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any
-    sha256 "b8b6ba6f23ce63a5d1fe3060c688de42bfd7191ce741bf1f133ad988d2008b8c" => :catalina
-    sha256 "598e546078bb441380537ea0fb684d6f20e3a35b8efb8f7561a399e8e4885546" => :mojave
+    sha256 cellar: :any, catalina: "b8b6ba6f23ce63a5d1fe3060c688de42bfd7191ce741bf1f133ad988d2008b8c"
+    sha256 cellar: :any, mojave:   "598e546078bb441380537ea0fb684d6f20e3a35b8efb8f7561a399e8e4885546"
   end
 
   depends_on "pkg-config" => :build

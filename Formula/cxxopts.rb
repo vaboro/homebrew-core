@@ -7,10 +7,9 @@ class Cxxopts < Formula
   head "https://github.com/jarro2783/cxxopts.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :catalina
-    sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :mojave
-    sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2"
+    sha256 cellar: :any_skip_relocation, mojave:      "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2"
   end
 
   depends_on "cmake" => :build

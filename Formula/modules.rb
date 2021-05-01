@@ -10,10 +10,9 @@ class Modules < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "cbc6ac501c2142c7919ecc9b56aa80d2e0828eb2c28060f792ab2d6da7947dec" => :catalina
-    sha256 "5f21d6a67818b08d239fb5b530d2c82d097ea161ca17fd4b378fa63f4a50bf55" => :mojave
-    sha256 "62863887e0df66d8fc99dd581a1949223d615d4bc58e4366bd0a086b42e8f94d" => :high_sierra
+    sha256 cellar: :any, catalina:    "cbc6ac501c2142c7919ecc9b56aa80d2e0828eb2c28060f792ab2d6da7947dec"
+    sha256 cellar: :any, mojave:      "5f21d6a67818b08d239fb5b530d2c82d097ea161ca17fd4b378fa63f4a50bf55"
+    sha256 cellar: :any, high_sierra: "62863887e0df66d8fc99dd581a1949223d615d4bc58e4366bd0a086b42e8f94d"
   end
 
   def install

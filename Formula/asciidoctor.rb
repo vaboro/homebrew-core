@@ -9,10 +9,9 @@ class Asciidoctor < Formula
   depends_on "ruby" if MacOS.version <= :sierra
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0a76a0014e0f52d35446749f04aa65e28cb148c689e148d412992e6e82adf8ac" => :catalina
-    sha256 "70d93211cdad629b023bd2aa74bfc6736378fc7740f9c2ccfc31ac327977f001" => :mojave
-    sha256 "a5bce7d4fc26dd7a56a80fc10a65f74966e294f2db2e2754f9bfabe95ffa605a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0a76a0014e0f52d35446749f04aa65e28cb148c689e148d412992e6e82adf8ac"
+    sha256 cellar: :any_skip_relocation, mojave:      "70d93211cdad629b023bd2aa74bfc6736378fc7740f9c2ccfc31ac327977f001"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a5bce7d4fc26dd7a56a80fc10a65f74966e294f2db2e2754f9bfabe95ffa605a"
   end
 
   resource "concurrent-ruby" do

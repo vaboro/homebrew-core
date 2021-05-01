@@ -5,14 +5,13 @@ class Dupseek < Formula
   sha256 "c046118160e4757c2f8377af17df2202d6b9f2001416bfaeb9cd29a19f075d93"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "418a32b038ecf5aa2b00598b865096a1d62be9d160d531eff3eff50ac55f9bdd" => :catalina
-    sha256 "487097be0d37b3fb4d15062dcb6a6b92dca302aa95e5a458a9e737f0e3c7efaa" => :mojave
-    sha256 "fec3e17a1d9f120895a8b70df43cc366347656f2971a461e9d7251a9ea0c0927" => :high_sierra
-    sha256 "c1782462d69bba5735a53dc65adb20beb42577fdb543debe9a7d19446fa16171" => :sierra
-    sha256 "576106465507f9281685d12dba4409e1b409f090fc6ac1397c92b5190a5416d4" => :el_capitan
-    sha256 "ec38b1caa009ca1c33efe85eb1b00cd7e37f67f3cf43b547f889e39f5be4d28a" => :yosemite
-    sha256 "ff34b6c5ac5fcf84bf532008fb5fd2b2cfd9db7736854efb09e451e54b370c37" => :mavericks
+    sha256 cellar: :any_skip_relocation, catalina:    "418a32b038ecf5aa2b00598b865096a1d62be9d160d531eff3eff50ac55f9bdd"
+    sha256 cellar: :any_skip_relocation, mojave:      "487097be0d37b3fb4d15062dcb6a6b92dca302aa95e5a458a9e737f0e3c7efaa"
+    sha256 cellar: :any_skip_relocation, high_sierra: "fec3e17a1d9f120895a8b70df43cc366347656f2971a461e9d7251a9ea0c0927"
+    sha256 cellar: :any_skip_relocation, sierra:      "c1782462d69bba5735a53dc65adb20beb42577fdb543debe9a7d19446fa16171"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "576106465507f9281685d12dba4409e1b409f090fc6ac1397c92b5190a5416d4"
+    sha256 cellar: :any_skip_relocation, yosemite:    "ec38b1caa009ca1c33efe85eb1b00cd7e37f67f3cf43b547f889e39f5be4d28a"
+    sha256 cellar: :any_skip_relocation, mavericks:   "ff34b6c5ac5fcf84bf532008fb5fd2b2cfd9db7736854efb09e451e54b370c37"
   end
 
   def install

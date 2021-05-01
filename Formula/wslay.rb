@@ -6,10 +6,9 @@ class Wslay < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "b0c31393b4065ddad22d079252f4310ccafee1c26d5ea56a58c2bc3bfa728b46" => :catalina
-    sha256 "4ea82d98c0fd0cfcc1e842dde6e0fbd15355d538876f24fa0c2ca6f05ed17926" => :mojave
-    sha256 "6aade683b7db8a32c859e54134568bdb3983d57878783d86c89e5d28c5e8db77" => :high_sierra
+    sha256 cellar: :any, catalina:    "b0c31393b4065ddad22d079252f4310ccafee1c26d5ea56a58c2bc3bfa728b46"
+    sha256 cellar: :any, mojave:      "4ea82d98c0fd0cfcc1e842dde6e0fbd15355d538876f24fa0c2ca6f05ed17926"
+    sha256 cellar: :any, high_sierra: "6aade683b7db8a32c859e54134568bdb3983d57878783d86c89e5d28c5e8db77"
   end
 
   head do

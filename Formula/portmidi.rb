@@ -11,11 +11,10 @@ class Portmidi < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "66b8773aa12201f7fa2bf44044ab32bdab1cdf763db870fde3f0bd7254c5d877" => :catalina
-    sha256 "2a6258da2f83b668c2ba85edd9e49313114af5bfb288ebc681bd4cde221279c6" => :mojave
-    sha256 "61f9a94aaca3f317c50e643b06617804d37798e32dd1cfcc1c24aecdc24aec75" => :high_sierra
+    sha256 cellar: :any, catalina:    "66b8773aa12201f7fa2bf44044ab32bdab1cdf763db870fde3f0bd7254c5d877"
+    sha256 cellar: :any, mojave:      "2a6258da2f83b668c2ba85edd9e49313114af5bfb288ebc681bd4cde221279c6"
+    sha256 cellar: :any, high_sierra: "61f9a94aaca3f317c50e643b06617804d37798e32dd1cfcc1c24aecdc24aec75"
   end
 
   depends_on "cmake" => :build

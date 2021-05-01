@@ -6,9 +6,9 @@ class Instead < Formula
   license "MIT"
 
   bottle do
-    sha256 "e447bee8716c692d07e6d58b337639a64334dfa921326810c5ae0d64b14fe72e" => :catalina
-    sha256 "128a389655c4361f48dd8ee81344682a3d4433485cf91569a71961bed0885e06" => :mojave
-    sha256 "e9029b89e6133d0f233a679a684e64d0195b283aabb6c55640f8a95ed1297f50" => :high_sierra
+    sha256 catalina:    "e447bee8716c692d07e6d58b337639a64334dfa921326810c5ae0d64b14fe72e"
+    sha256 mojave:      "128a389655c4361f48dd8ee81344682a3d4433485cf91569a71961bed0885e06"
+    sha256 high_sierra: "e9029b89e6133d0f233a679a684e64d0195b283aabb6c55640f8a95ed1297f50"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,6 @@ class Instead < Formula
   end
 
   test do
-    assert_match /INSTEAD #{version} /, shell_output("#{bin}/instead -h 2>&1")
+    assert_match(/INSTEAD #{version} /, shell_output("#{bin}/instead -h 2>&1"))
   end
 end

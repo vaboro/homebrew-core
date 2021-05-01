@@ -6,10 +6,9 @@ class Libnetworkit < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "ce41e3c47bba5ffc61f1b5ea65b908b64032b1af605e19c8a40f40f26bb946fa" => :catalina
-    sha256 "f2dab092758749672edc5058fc89e53da086e1acec7756900be0e0d7d839bf16" => :mojave
-    sha256 "94522c74e5a3867137849646c49d0e664fd298db24436bf2bfba2e7d725d9caa" => :high_sierra
+    sha256 cellar: :any, catalina:    "ce41e3c47bba5ffc61f1b5ea65b908b64032b1af605e19c8a40f40f26bb946fa"
+    sha256 cellar: :any, mojave:      "f2dab092758749672edc5058fc89e53da086e1acec7756900be0e0d7d839bf16"
+    sha256 cellar: :any, high_sierra: "94522c74e5a3867137849646c49d0e664fd298db24436bf2bfba2e7d725d9caa"
   end
 
   depends_on "cmake" => :build

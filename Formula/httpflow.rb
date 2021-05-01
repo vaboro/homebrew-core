@@ -7,10 +7,9 @@ class Httpflow < Formula
   head "https://github.com/six-ddc/httpflow.git"
 
   bottle do
-    cellar :any
-    sha256 "2b7b63f5d82139b4fc017b8848e3b29608738cd510ef1350710c6224a24079a3" => :catalina
-    sha256 "6d911ff1c720035b0b23cf994fbbb37e7d1372dcd32eb60bc54924b78b444431" => :mojave
-    sha256 "cf54de7d5e6fda49966d75a0c33580bb8e64d3d0fb6c39337a03e21fb20682d5" => :high_sierra
+    sha256 cellar: :any, catalina:    "2b7b63f5d82139b4fc017b8848e3b29608738cd510ef1350710c6224a24079a3"
+    sha256 cellar: :any, mojave:      "6d911ff1c720035b0b23cf994fbbb37e7d1372dcd32eb60bc54924b78b444431"
+    sha256 cellar: :any, high_sierra: "cf54de7d5e6fda49966d75a0c33580bb8e64d3d0fb6c39337a03e21fb20682d5"
   end
 
   depends_on "pcre"

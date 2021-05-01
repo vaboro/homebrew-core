@@ -7,10 +7,9 @@ class IamPolicyJsonToTerraform < Formula
   head "https://github.com/flosell/iam-policy-json-to-terraform.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d5aa3dea843226e508c13bd46c418d7d76e928d631863002054a0bd05b139a73" => :catalina
-    sha256 "b7d80897886195d53da78f483318c12c5873483faaf73bf42dc91dfe1d7ddfbc" => :mojave
-    sha256 "1ad4ad756d400206cc8583a53dc57e50139b45865118d13594c5cc4acef7ff75" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d5aa3dea843226e508c13bd46c418d7d76e928d631863002054a0bd05b139a73"
+    sha256 cellar: :any_skip_relocation, mojave:      "b7d80897886195d53da78f483318c12c5873483faaf73bf42dc91dfe1d7ddfbc"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1ad4ad756d400206cc8583a53dc57e50139b45865118d13594c5cc4acef7ff75"
   end
 
   depends_on "dep" => :build

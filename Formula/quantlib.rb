@@ -6,10 +6,9 @@ class Quantlib < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "bd0a2d672f32543a7b3f2fa859b64080a80499abea18d5dba84dc1c3fd1e08da" => :catalina
-    sha256 "0b94a2a8fc76cdf2a86418f58ad95068341f8eedb98a9ff23546fc5d26310933" => :mojave
-    sha256 "cb5b462641d2412e03a1f14ff1dd04fd49e11bd792fbc26431caec15713bd231" => :high_sierra
+    sha256 cellar: :any, catalina:    "bd0a2d672f32543a7b3f2fa859b64080a80499abea18d5dba84dc1c3fd1e08da"
+    sha256 cellar: :any, mojave:      "0b94a2a8fc76cdf2a86418f58ad95068341f8eedb98a9ff23546fc5d26310933"
+    sha256 cellar: :any, high_sierra: "cb5b462641d2412e03a1f14ff1dd04fd49e11bd792fbc26431caec15713bd231"
   end
 
   head do

@@ -9,10 +9,9 @@ class Libcmph < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c38019c153c728a28acbfe340cc86764285ec24edbdba5234b0593f83d355c22" => :catalina
-    sha256 "d02c761bd6b52424528bfdcd56b8d469d7cdd2e55f625c719229edb7f011889c" => :mojave
-    sha256 "abffeaf075db6387e636d43eb8fda9b76f02091bdb5533368306f899a46406c1" => :high_sierra
+    sha256 cellar: :any, catalina:    "c38019c153c728a28acbfe340cc86764285ec24edbdba5234b0593f83d355c22"
+    sha256 cellar: :any, mojave:      "d02c761bd6b52424528bfdcd56b8d469d7cdd2e55f625c719229edb7f011889c"
+    sha256 cellar: :any, high_sierra: "abffeaf075db6387e636d43eb8fda9b76f02091bdb5533368306f899a46406c1"
   end
 
   def install

@@ -6,10 +6,9 @@ class Libplist < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "20faf60d286c8ceed790a9b6e34245acf7bafacc7fcbcb390d6b62e194b323e6" => :catalina
-    sha256 "768453f8710ec1c3e074ad0ebc7723da88c2b8575e5de6962ca6f1d4a85cb61d" => :mojave
-    sha256 "02291f2f28099a73de8fa37b49962fe575a434be63af356cceff9200c6d73f37" => :high_sierra
+    sha256 cellar: :any, catalina:    "20faf60d286c8ceed790a9b6e34245acf7bafacc7fcbcb390d6b62e194b323e6"
+    sha256 cellar: :any, mojave:      "768453f8710ec1c3e074ad0ebc7723da88c2b8575e5de6962ca6f1d4a85cb61d"
+    sha256 cellar: :any, high_sierra: "02291f2f28099a73de8fa37b49962fe575a434be63af356cceff9200c6d73f37"
   end
 
   head do

@@ -6,10 +6,9 @@ class GitAbsorb < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "bdf7c3b57f49dc9ccd83d9fed9f089f994f20c3591c6f18900f4e70ee80627e6" => :catalina
-    sha256 "63d50725c92837dbd25b63560ee2b8061c8b335288230c9f3f5976b94aed6248" => :mojave
-    sha256 "c6dc732ac254cc9d5aa2ebfe5ecc4e65c95b6ed860efc22b443c1911911099f4" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "bdf7c3b57f49dc9ccd83d9fed9f089f994f20c3591c6f18900f4e70ee80627e6"
+    sha256 cellar: :any_skip_relocation, mojave:      "63d50725c92837dbd25b63560ee2b8061c8b335288230c9f3f5976b94aed6248"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c6dc732ac254cc9d5aa2ebfe5ecc4e65c95b6ed860efc22b443c1911911099f4"
   end
 
   depends_on "rust" => :build

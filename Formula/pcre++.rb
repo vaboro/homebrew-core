@@ -6,14 +6,13 @@ class Pcrexx < Formula
   license "LGPL-2.1"
 
   bottle do
-    cellar :any
-    sha256 "61b2942fa6a519289532736eaaa9754f8d0020ffca215eb8ba18324ed1682ab0" => :catalina
-    sha256 "74eb2f78269663a150978c7a221af9bb453c459f14838cbe551f9b25cba222ce" => :mojave
-    sha256 "65018b1dd42de0fc89e533f5343754cf8b07e0b989d0fc1820483fd76a36caab" => :high_sierra
-    sha256 "04da88d9c66600d7f636106f00b496e90fbd213431b7c4a2c20cc43f7e206a21" => :sierra
-    sha256 "5c30b4cbf987ad3b9a05521f83c672419b636277714838b6f7dee5a656c9868b" => :el_capitan
-    sha256 "c883ed380b38f020e7383643fedf80f4bad9ed1205592fe8127423e340c02c05" => :yosemite
-    sha256 "fd7050ff36dbb4c5605a4f0a9bb5d5de3ea01e6b959dd2026297a9ae35b99f51" => :mavericks
+    sha256 cellar: :any, catalina:    "61b2942fa6a519289532736eaaa9754f8d0020ffca215eb8ba18324ed1682ab0"
+    sha256 cellar: :any, mojave:      "74eb2f78269663a150978c7a221af9bb453c459f14838cbe551f9b25cba222ce"
+    sha256 cellar: :any, high_sierra: "65018b1dd42de0fc89e533f5343754cf8b07e0b989d0fc1820483fd76a36caab"
+    sha256 cellar: :any, sierra:      "04da88d9c66600d7f636106f00b496e90fbd213431b7c4a2c20cc43f7e206a21"
+    sha256 cellar: :any, el_capitan:  "5c30b4cbf987ad3b9a05521f83c672419b636277714838b6f7dee5a656c9868b"
+    sha256 cellar: :any, yosemite:    "c883ed380b38f020e7383643fedf80f4bad9ed1205592fe8127423e340c02c05"
+    sha256 cellar: :any, mavericks:   "fd7050ff36dbb4c5605a4f0a9bb5d5de3ea01e6b959dd2026297a9ae35b99f51"
   end
 
   depends_on "autoconf" => :build

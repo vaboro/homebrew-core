@@ -10,11 +10,10 @@ class Atkmm < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "65dca5000702ffcabc191ed84c33cef365056f4c853c8630a094c6e917b5e6c7" => :catalina
-    sha256 "41fa55c1a359635acac27990de9ef7d4c84c6e45f43b54b4fecd0c85010d5ed0" => :mojave
-    sha256 "cc4325eb5abdb8248ea4d4ec36f5ab37abfce03459034c700b92cfaa757392e8" => :high_sierra
-    sha256 "918691593ee2144c7aae041f3f83a3f961af0408329b69907a893669f267f5b1" => :sierra
+    sha256 cellar: :any, catalina:    "65dca5000702ffcabc191ed84c33cef365056f4c853c8630a094c6e917b5e6c7"
+    sha256 cellar: :any, mojave:      "41fa55c1a359635acac27990de9ef7d4c84c6e45f43b54b4fecd0c85010d5ed0"
+    sha256 cellar: :any, high_sierra: "cc4325eb5abdb8248ea4d4ec36f5ab37abfce03459034c700b92cfaa757392e8"
+    sha256 cellar: :any, sierra:      "918691593ee2144c7aae041f3f83a3f961af0408329b69907a893669f267f5b1"
   end
 
   depends_on "pkg-config" => :build

@@ -13,9 +13,9 @@ class GnuSmalltalk < Formula
   end
 
   bottle do
-    sha256 "8a00e81f1a751efeec308de2bbf2e75a1173a636a29c27cec440c121208f0fe6" => :catalina
-    sha256 "0f569ca28ff2eaa54b36780c278a7170be42ef25e6d305852323952390be7270" => :mojave
-    sha256 "2f369eed3ac62fbe0c4c257cefa0c9477ce0a806859a18d65ba565fbfdc76786" => :high_sierra
+    sha256 catalina:    "8a00e81f1a751efeec308de2bbf2e75a1173a636a29c27cec440c121208f0fe6"
+    sha256 mojave:      "0f569ca28ff2eaa54b36780c278a7170be42ef25e6d305852323952390be7270"
+    sha256 high_sierra: "2f369eed3ac62fbe0c4c257cefa0c9477ce0a806859a18d65ba565fbfdc76786"
   end
 
   depends_on "autoconf" => :build

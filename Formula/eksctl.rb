@@ -1,5 +1,5 @@
 class Eksctl < Formula
-  desc "The official CLI for Amazon EKS"
+  desc "Official CLI for Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/weaveworks/eksctl.git",
       tag:      "0.27.0",
@@ -8,10 +8,9 @@ class Eksctl < Formula
   head "https://github.com/weaveworks/eksctl.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b2b39a58c6f05bd43415efd94cb26fb583f928af2e3fdb55782d4ea3783772cf" => :catalina
-    sha256 "f0aacca80cc37f6c2178a5cd8dd5400f7e00b859ce42a1b18c3bee7f20d1b09f" => :mojave
-    sha256 "57d5cdd0bced399b2a29a1707284ba62ee2462a63cf069341845981a7271c538" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b2b39a58c6f05bd43415efd94cb26fb583f928af2e3fdb55782d4ea3783772cf"
+    sha256 cellar: :any_skip_relocation, mojave:      "f0aacca80cc37f6c2178a5cd8dd5400f7e00b859ce42a1b18c3bee7f20d1b09f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "57d5cdd0bced399b2a29a1707284ba62ee2462a63cf069341845981a7271c538"
   end
 
   depends_on "go" => :build

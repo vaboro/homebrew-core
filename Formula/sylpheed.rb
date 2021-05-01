@@ -12,10 +12,10 @@ class Sylpheed < Formula
 
   bottle do
     rebuild 1
-    sha256 "44913001d85002b75a715b3b8d12ef0fcbc3a1de152546d8fe5297544af367d6" => :catalina
-    sha256 "744efdd95f6dc3152ab39da781d5cc9ef81a5caa7310097b00a903e1e595e188" => :mojave
-    sha256 "0ec10e9ba748c3ce1bbb2502b8f9736fcdd1c72d492fdf4c58e2e3c0f6442f4b" => :high_sierra
-    sha256 "df7c4f2ede961688c72b588cb4e08702603caf19ad08d2c00721e95c9a503716" => :sierra
+    sha256 catalina:    "44913001d85002b75a715b3b8d12ef0fcbc3a1de152546d8fe5297544af367d6"
+    sha256 mojave:      "744efdd95f6dc3152ab39da781d5cc9ef81a5caa7310097b00a903e1e595e188"
+    sha256 high_sierra: "0ec10e9ba748c3ce1bbb2502b8f9736fcdd1c72d492fdf4c58e2e3c0f6442f4b"
+    sha256 sierra:      "df7c4f2ede961688c72b588cb4e08702603caf19ad08d2c00721e95c9a503716"
   end
 
   depends_on "pkg-config" => :build

@@ -7,11 +7,10 @@ class Whois < Formula
   head "https://github.com/rfc1036/whois.git"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "4c80af702b8cdc7538f9ee8691c778be40dcf54b921e90335e170dc3abb9c188" => :catalina
-    sha256 "6abbe4e3371272f0fc49261885b9a131913809173acf0c2bdc11f6dbd818741d" => :mojave
-    sha256 "501fa1f4c2909514fa4c80d5af3a2f47d88ccdb7ad978925735849f0f7d804c3" => :high_sierra
+    sha256 cellar: :any, catalina:    "4c80af702b8cdc7538f9ee8691c778be40dcf54b921e90335e170dc3abb9c188"
+    sha256 cellar: :any, mojave:      "6abbe4e3371272f0fc49261885b9a131913809173acf0c2bdc11f6dbd818741d"
+    sha256 cellar: :any, high_sierra: "501fa1f4c2909514fa4c80d5af3a2f47d88ccdb7ad978925735849f0f7d804c3"
   end
 
   keg_only :provided_by_macos

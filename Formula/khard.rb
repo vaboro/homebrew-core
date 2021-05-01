@@ -12,10 +12,9 @@ class Khard < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b6b9d1ae7f58b1ab29621e13e77d7a2398d1f50c71f7f2b97adaa93b41059396" => :catalina
-    sha256 "63573b091cc8660f1308dda5e4425225267002b2a018bbdb7631938a5b27c232" => :mojave
-    sha256 "6537fec116f6876fba671646b41cecc32cc4599cbd58b194225d3a60800cdef7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b6b9d1ae7f58b1ab29621e13e77d7a2398d1f50c71f7f2b97adaa93b41059396"
+    sha256 cellar: :any_skip_relocation, mojave:      "63573b091cc8660f1308dda5e4425225267002b2a018bbdb7631938a5b27c232"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6537fec116f6876fba671646b41cecc32cc4599cbd58b194225d3a60800cdef7"
   end
 
   depends_on "python@3.8"
@@ -88,6 +87,6 @@ class Khard < Formula
       N:Name;User
       END:VCARD
     EOS
-    assert_match /Address book: default/, shell_output("#{bin}/khard list user")
+    assert_match(/Address book: default/, shell_output("#{bin}/khard list user"))
   end
 end

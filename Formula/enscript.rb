@@ -12,10 +12,10 @@ class Enscript < Formula
   end
 
   bottle do
-    sha256 "3611a6a01c76502ae6d4b1ff13d802acc5b2a2a3f2cf647e6b9323b7e40bde7e" => :catalina
-    sha256 "a8bbba8f7d64eed40dd59a9db980b049ec786e148d31a0aeb92556959b4ad0b0" => :mojave
-    sha256 "00045dff3bdf7ac98a19236838d7af7101cc1fc002e55550312042bb2e4d7426" => :high_sierra
-    sha256 "c14fad6cfd67fa782beb7a425eb03c3ed0b8090ed751c37f5f5ec426808df25c" => :sierra
+    sha256 catalina:    "3611a6a01c76502ae6d4b1ff13d802acc5b2a2a3f2cf647e6b9323b7e40bde7e"
+    sha256 mojave:      "a8bbba8f7d64eed40dd59a9db980b049ec786e148d31a0aeb92556959b4ad0b0"
+    sha256 high_sierra: "00045dff3bdf7ac98a19236838d7af7101cc1fc002e55550312042bb2e4d7426"
+    sha256 sierra:      "c14fad6cfd67fa782beb7a425eb03c3ed0b8090ed751c37f5f5ec426808df25c"
   end
 
   depends_on "gettext"
@@ -29,7 +29,7 @@ class Enscript < Formula
   end
 
   test do
-    assert_match /GNU Enscript #{Regexp.escape(version)}/,
-                 shell_output("#{bin}/enscript -V")
+    assert_match(/GNU Enscript #{Regexp.escape(version)}/,
+                 shell_output("#{bin}/enscript -V"))
   end
 end

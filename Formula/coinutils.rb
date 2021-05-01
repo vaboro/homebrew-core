@@ -13,11 +13,10 @@ class Coinutils < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "ec360d8c70a2f54dc6ab4cbabedf3e7f801bc1ae85e630ef9884d0a79ad706f0" => :catalina
-    sha256 "eb85ec2e02aed09292625122dc05fbcf64b85d7f82cc6d001975eed43cfc1de1" => :mojave
-    sha256 "f7bfde6c8c42b6f7d3925de0577d10bcef5b171b3337ea4c70b08a8ec20c026a" => :high_sierra
+    sha256 cellar: :any, catalina:    "ec360d8c70a2f54dc6ab4cbabedf3e7f801bc1ae85e630ef9884d0a79ad706f0"
+    sha256 cellar: :any, mojave:      "eb85ec2e02aed09292625122dc05fbcf64b85d7f82cc6d001975eed43cfc1de1"
+    sha256 cellar: :any, high_sierra: "f7bfde6c8c42b6f7d3925de0577d10bcef5b171b3337ea4c70b08a8ec20c026a"
   end
 
   depends_on "pkg-config" => :build

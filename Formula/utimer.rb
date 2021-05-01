@@ -10,11 +10,10 @@ class Utimer < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "58144b80218183cb1cb0bdccd87baf86a4bddbab8b3107a2197227a15b6a4f27" => :catalina
-    sha256 "01a5bce5e1e818932e0870eaed8586a23f3a6ca24504011005fc03d86992f63e" => :mojave
-    sha256 "ef1faac8b5226cad7b83369c5139a370543316fd43102f7a8ccd15ab63f4fe6e" => :high_sierra
-    sha256 "a2bb9673b9b7909dcb080f52ea6480d2d89f3ae0fdff3c599e17587ebce406e1" => :sierra
+    sha256 cellar: :any, catalina:    "58144b80218183cb1cb0bdccd87baf86a4bddbab8b3107a2197227a15b6a4f27"
+    sha256 cellar: :any, mojave:      "01a5bce5e1e818932e0870eaed8586a23f3a6ca24504011005fc03d86992f63e"
+    sha256 cellar: :any, high_sierra: "ef1faac8b5226cad7b83369c5139a370543316fd43102f7a8ccd15ab63f4fe6e"
+    sha256 cellar: :any, sierra:      "a2bb9673b9b7909dcb080f52ea6480d2d89f3ae0fdff3c599e17587ebce406e1"
   end
 
   depends_on "intltool" => :build

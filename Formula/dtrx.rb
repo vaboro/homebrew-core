@@ -7,11 +7,10 @@ class Dtrx < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "ff3e436e50818837831ef16ca26f7d2760603bdd44d97fffefdc28dcde5fed2b" => :catalina
-    sha256 "a63cfb21c2db4163521db20851b581d739a6707315fbb0f690f470ff697c8965" => :mojave
-    sha256 "a63cfb21c2db4163521db20851b581d739a6707315fbb0f690f470ff697c8965" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ff3e436e50818837831ef16ca26f7d2760603bdd44d97fffefdc28dcde5fed2b"
+    sha256 cellar: :any_skip_relocation, mojave:      "a63cfb21c2db4163521db20851b581d739a6707315fbb0f690f470ff697c8965"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a63cfb21c2db4163521db20851b581d739a6707315fbb0f690f470ff697c8965"
   end
 
   depends_on "p7zip"

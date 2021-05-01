@@ -7,9 +7,9 @@ class Newsboat < Formula
   head "https://github.com/newsboat/newsboat.git"
 
   bottle do
-    sha256 "185195a5551a37bebb3978986b9820557e71d6f7472dc47ac23cd73689a7c3ac" => :catalina
-    sha256 "0bea20044257f4fd9128cfbed1c7d6d4c7d702128153c9f5203d4770b501e5ad" => :mojave
-    sha256 "7bc4d0c9214a3b858848c11f0b11fd3a1fa2229ad5576ab134555afb1945b031" => :high_sierra
+    sha256 catalina:    "185195a5551a37bebb3978986b9820557e71d6f7472dc47ac23cd73689a7c3ac"
+    sha256 mojave:      "0bea20044257f4fd9128cfbed1c7d6d4c7d702128153c9f5203d4770b501e5ad"
+    sha256 high_sierra: "7bc4d0c9214a3b858848c11f0b11fd3a1fa2229ad5576ab134555afb1945b031"
   end
 
   depends_on "asciidoctor" => :build
@@ -36,6 +36,6 @@ class Newsboat < Formula
 
   test do
     (testpath/"urls.txt").write "https://github.com/blog/subscribe"
-    assert_match /newsboat - Exported Feeds/m, shell_output("LC_ALL=C #{bin}/newsboat -e -u urls.txt")
+    assert_match(/newsboat - Exported Feeds/m, shell_output("LC_ALL=C #{bin}/newsboat -e -u urls.txt"))
   end
 end

@@ -11,11 +11,10 @@ class Physfs < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "31693a34c610ea382a1b0832065db2b223db549ced6fe6a2f8c569d6b58bf19a" => :catalina
-    sha256 "cb97a3a17728f3173d4c19fde495cffbddce965bbf6015e45882e3c27f267cf3" => :mojave
-    sha256 "296927566472c976a578f89c4bd6bf0f518427a53d586499a8e202896d469ee3" => :high_sierra
-    sha256 "6742501c33943dcdab748b3c2188cf6292f462b82896da001cdbcfbbcc01e489" => :sierra
+    sha256 cellar: :any, catalina:    "31693a34c610ea382a1b0832065db2b223db549ced6fe6a2f8c569d6b58bf19a"
+    sha256 cellar: :any, mojave:      "cb97a3a17728f3173d4c19fde495cffbddce965bbf6015e45882e3c27f267cf3"
+    sha256 cellar: :any, high_sierra: "296927566472c976a578f89c4bd6bf0f518427a53d586499a8e202896d469ee3"
+    sha256 cellar: :any, sierra:      "6742501c33943dcdab748b3c2188cf6292f462b82896da001cdbcfbbcc01e489"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +42,6 @@ class Physfs < Formula
       addarchive test.zip 1
       cat test.txt
     EOS
-    assert_match /Successful\.\nhomebrew/, shell_output("#{bin}/test_physfs < test 2>&1")
+    assert_match(/Successful\.\nhomebrew/, shell_output("#{bin}/test_physfs < test 2>&1"))
   end
 end

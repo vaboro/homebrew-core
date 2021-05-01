@@ -13,11 +13,10 @@ class Kustomize < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "601a07e4f64fd9cfaf6d5711affacf90021d6aff686211883b062bb2971a24e8" => :catalina
-    sha256 "cd22865db58698712c60458745895ef9e54ca77c115c8696299e93ee36fb7b84" => :mojave
-    sha256 "e165140a287fd347501dce99b3f3e873361063f1a3f70ed16e0e883388fbb6e3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "601a07e4f64fd9cfaf6d5711affacf90021d6aff686211883b062bb2971a24e8"
+    sha256 cellar: :any_skip_relocation, mojave:      "cd22865db58698712c60458745895ef9e54ca77c115c8696299e93ee36fb7b84"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e165140a287fd347501dce99b3f3e873361063f1a3f70ed16e0e883388fbb6e3"
   end
 
   depends_on "go" => :build
@@ -63,6 +62,6 @@ class Kustomize < Formula
         type: LoadBalancer
     EOS
     output = shell_output("#{bin}/kustomize build #{testpath}")
-    assert_match /type:\s+"?LoadBalancer"?/, output
+    assert_match(/type:\s+"?LoadBalancer"?/, output)
   end
 end

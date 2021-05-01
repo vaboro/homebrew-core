@@ -7,11 +7,11 @@ class Sntop < Formula
 
   bottle do
     rebuild 1
-    sha256 "886a981f2c95a8a17d4bfb44c27d99cde66faeb4f2942d1c43757e8d702509c6" => :catalina
-    sha256 "d010bc2fa761320d0d0f4948d5f95392d892e7bd7815418e9881ec90049d4036" => :mojave
-    sha256 "c22d769ddb8599acf3f03db2ef85eef5ee28e41f9ec3011e9b23f6168ceb0a76" => :high_sierra
-    sha256 "f15c15a4e2251e86e55c3bd2c75f660448e38efe9b0b57edd6d3e9301377929c" => :sierra
-    sha256 "c3f19036cf2d42ce9fa07ed6db6264b3e52ba475827903972877a8131eae60e9" => :el_capitan
+    sha256 catalina:    "886a981f2c95a8a17d4bfb44c27d99cde66faeb4f2942d1c43757e8d702509c6"
+    sha256 mojave:      "d010bc2fa761320d0d0f4948d5f95392d892e7bd7815418e9881ec90049d4036"
+    sha256 high_sierra: "c22d769ddb8599acf3f03db2ef85eef5ee28e41f9ec3011e9b23f6168ceb0a76"
+    sha256 sierra:      "f15c15a4e2251e86e55c3bd2c75f660448e38efe9b0b57edd6d3e9301377929c"
+    sha256 el_capitan:  "c3f19036cf2d42ce9fa07ed6db6264b3e52ba475827903972877a8131eae60e9"
   end
 
   depends_on "fping"

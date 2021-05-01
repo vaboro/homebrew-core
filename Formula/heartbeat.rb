@@ -8,10 +8,9 @@ class Heartbeat < Formula
   head "https://github.com/elastic/beats.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "de56c9624e799312c53a141cecbfa9270aa94538919f87baba729a8f94be8153" => :catalina
-    sha256 "5e9437a80c36905ce1720439ea46a6930231f8aeab8a871b731c2a14c2450f9d" => :mojave
-    sha256 "87dbb654c9b79722dc13b51c7e3d9107c6ee70757c4c1695612559d7f0f1d691" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "de56c9624e799312c53a141cecbfa9270aa94538919f87baba729a8f94be8153"
+    sha256 cellar: :any_skip_relocation, mojave:      "5e9437a80c36905ce1720439ea46a6930231f8aeab8a871b731c2a14c2450f9d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "87dbb654c9b79722dc13b51c7e3d9107c6ee70757c4c1695612559d7f0f1d691"
   end
 
   depends_on "go" => :build

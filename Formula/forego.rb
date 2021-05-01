@@ -7,12 +7,11 @@ class Forego < Formula
   head "https://github.com/ddollar/forego.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3004f019d2361f0831bcd83d6f7f6d581f666be9c8a5a6e0a3b81f84d3170146" => :catalina
-    sha256 "c4386b61dae5a4c4cae32db529099221663de4acb42db78e6daca3e5c018a31d" => :mojave
-    sha256 "5a855ce2b4f4bd2349b6814c11ec85f788a9be510aff4f18df582141dbc15295" => :high_sierra
-    sha256 "5a4b9261fb91507df08c7c840134a21effb2b407aa5e84474b2900f8d436f3ca" => :sierra
-    sha256 "77720ca90705c26a92248cd822d4a3b0cef329c5b16e2da62a7815cfd61f0ce2" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "3004f019d2361f0831bcd83d6f7f6d581f666be9c8a5a6e0a3b81f84d3170146"
+    sha256 cellar: :any_skip_relocation, mojave:      "c4386b61dae5a4c4cae32db529099221663de4acb42db78e6daca3e5c018a31d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5a855ce2b4f4bd2349b6814c11ec85f788a9be510aff4f18df582141dbc15295"
+    sha256 cellar: :any_skip_relocation, sierra:      "5a4b9261fb91507df08c7c840134a21effb2b407aa5e84474b2900f8d436f3ca"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "77720ca90705c26a92248cd822d4a3b0cef329c5b16e2da62a7815cfd61f0ce2"
   end
 
   depends_on "go" => :build

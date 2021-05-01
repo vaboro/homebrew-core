@@ -6,11 +6,10 @@ class Lemon < Formula
   sha256 "bc7c1cae233b6af48f4b436ee900843106a15bdb1dc810bc463d8c6aad0dd916"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "286af27372fde1ea7ea8e0eb910a3707b622e73cfc1e66f23e7fbe4bf7d3d59c" => :catalina
-    sha256 "99d4d1999862af18af2c16f3b80564e2202e3fbb17012283f0c9bdf87ef403b3" => :mojave
-    sha256 "239bfe217ab89f4e6ef9fbfcc0f82996c3d5ab835324c3b91e42314e1cb002d3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "286af27372fde1ea7ea8e0eb910a3707b622e73cfc1e66f23e7fbe4bf7d3d59c"
+    sha256 cellar: :any_skip_relocation, mojave:      "99d4d1999862af18af2c16f3b80564e2202e3fbb17012283f0c9bdf87ef403b3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "239bfe217ab89f4e6ef9fbfcc0f82996c3d5ab835324c3b91e42314e1cb002d3"
   end
 
   def install

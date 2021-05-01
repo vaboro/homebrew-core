@@ -11,11 +11,10 @@ class Rogue < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "d1837a65589cfc24e6ff05f585e4cb9991e06cecbccf119688cc95fd60dd1dc9" => :catalina
-    sha256 "fe9135c4e75abf4298cc231e0372ff8088fa57450fbd8c718e8a0fb8ac3ed723" => :mojave
-    sha256 "a65be75ef53988084ebe86a523e5fbda23205a2e5843b9015bfda312ade8e6f2" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d1837a65589cfc24e6ff05f585e4cb9991e06cecbccf119688cc95fd60dd1dc9"
+    sha256 cellar: :any_skip_relocation, mojave:      "fe9135c4e75abf4298cc231e0372ff8088fa57450fbd8c718e8a0fb8ac3ed723"
+    sha256 cellar: :any_skip_relocation, high_sierra: "a65be75ef53988084ebe86a523e5fbda23205a2e5843b9015bfda312ade8e6f2"
   end
 
   def install

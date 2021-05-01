@@ -6,10 +6,9 @@ class TtySolitaire < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8a9b3d7d5b62d5a82b3e37920d76bdd02902c4705d81d2b158b8eb605232b91f" => :catalina
-    sha256 "ad68372ed5eb8f98d1175fd9b014fb0881a6615fe05e21811ed4327ded9aa066" => :mojave
-    sha256 "d35722d89335ba81284acdde82cdb5f370860441950f3acd7290a8e821382147" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8a9b3d7d5b62d5a82b3e37920d76bdd02902c4705d81d2b158b8eb605232b91f"
+    sha256 cellar: :any_skip_relocation, mojave:      "ad68372ed5eb8f98d1175fd9b014fb0881a6615fe05e21811ed4327ded9aa066"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d35722d89335ba81284acdde82cdb5f370860441950f3acd7290a8e821382147"
   end
 
   def install

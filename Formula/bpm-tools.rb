@@ -7,12 +7,11 @@ class BpmTools < Formula
   head "https://www.pogo.org.uk/~mark/bpm-tools.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 2
-    sha256 "694afec7c21549badc5c2bf55ac3f3da588370affbaa78f1087e3bb204137f61" => :catalina
-    sha256 "56e3a889338b82d5b477c1564506e23549d9651b08260d9c9a38b5e6bd1555ab" => :mojave
-    sha256 "422342ce8dd8a50853e8289ccc936747f4a77a20803850e6481498cf8c4a12c5" => :high_sierra
-    sha256 "f1219d522f61e89606f3e607a636e406faf5f954846b48965e37cc25dbb29b87" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "694afec7c21549badc5c2bf55ac3f3da588370affbaa78f1087e3bb204137f61"
+    sha256 cellar: :any_skip_relocation, mojave:      "56e3a889338b82d5b477c1564506e23549d9651b08260d9c9a38b5e6bd1555ab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "422342ce8dd8a50853e8289ccc936747f4a77a20803850e6481498cf8c4a12c5"
+    sha256 cellar: :any_skip_relocation, sierra:      "f1219d522f61e89606f3e607a636e406faf5f954846b48965e37cc25dbb29b87"
   end
 
   def install

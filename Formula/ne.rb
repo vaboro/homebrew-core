@@ -1,5 +1,5 @@
 class Ne < Formula
-  desc "The nice editor"
+  desc "Nice editor"
   homepage "https://github.com/vigna/ne"
   url "https://github.com/vigna/ne/archive/3.3.0.tar.gz"
   sha256 "77a0c8e8564a29cd18069eebf04cee4855fae183f1e8f25d5fbb0c2651f07e6c"
@@ -7,9 +7,9 @@ class Ne < Formula
   head "https://github.com/vigna/ne.git"
 
   bottle do
-    sha256 "9c247087abcddef37c90d601611a7473b871d411340b4af1e72660fa60e829e2" => :catalina
-    sha256 "f7eb99d6a26252a621d18ec846920df9319b33c78053771bae8e39eb1997333f" => :mojave
-    sha256 "5de11e9bf7bd2cc2d703a61ba43f154fcf93534a76d195627902061cdf70b6bc" => :high_sierra
+    sha256 catalina:    "9c247087abcddef37c90d601611a7473b871d411340b4af1e72660fa60e829e2"
+    sha256 mojave:      "f7eb99d6a26252a621d18ec846920df9319b33c78053771bae8e39eb1997333f"
+    sha256 high_sierra: "5de11e9bf7bd2cc2d703a61ba43f154fcf93534a76d195627902061cdf70b6bc"
   end
 
   depends_on "texinfo" => :build

@@ -6,10 +6,9 @@ class MonoLibgdiplus < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "14bb84ad43cf17791299bcc76e3d410f7c7176f169f2cfcfcbc65bda3d8abbf8" => :catalina
-    sha256 "1e7e0566530f6cbefd2e7a57d1fdcaead797d36f07a1688e2b7a8460a0ac96f7" => :mojave
-    sha256 "3c57fe1805bb35d6bc87b1c96e99e523357226a1089b4892efc520941dbfc245" => :high_sierra
+    sha256 cellar: :any, catalina:    "14bb84ad43cf17791299bcc76e3d410f7c7176f169f2cfcfcbc65bda3d8abbf8"
+    sha256 cellar: :any, mojave:      "1e7e0566530f6cbefd2e7a57d1fdcaead797d36f07a1688e2b7a8460a0ac96f7"
+    sha256 cellar: :any, high_sierra: "3c57fe1805bb35d6bc87b1c96e99e523357226a1089b4892efc520941dbfc245"
   end
 
   depends_on "autoconf" => :build

@@ -8,10 +8,9 @@ class Godep < Formula
   head "https://github.com/tools/godep.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b5b26bb63c5aadd7c6ebae5fe8605c084668cb5e1297c318eb397db23d2240fe" => :catalina
-    sha256 "be738a1922050185a4422642d053f7bdbc7d409b263768ffc0bdb082271408c4" => :mojave
-    sha256 "9a2370c19bac903ee85f179d8562751278651d04e0e8a4f10f684f010e01e61e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b5b26bb63c5aadd7c6ebae5fe8605c084668cb5e1297c318eb397db23d2240fe"
+    sha256 cellar: :any_skip_relocation, mojave:      "be738a1922050185a4422642d053f7bdbc7d409b263768ffc0bdb082271408c4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9a2370c19bac903ee85f179d8562751278651d04e0e8a4f10f684f010e01e61e"
   end
 
   deprecate! date: "2018-01-26", because: :repo_archived

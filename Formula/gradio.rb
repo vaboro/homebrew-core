@@ -7,9 +7,9 @@ class Gradio < Formula
   revision 1
 
   bottle do
-    sha256 "80de210e71cbf7bd18f125ed1b74c58939046418905bbbbe03892b1b7d4dc8ca" => :catalina
-    sha256 "afed2590e43bb873751bf147da70228edf518aaa4da9a47a8e74a339385e7407" => :mojave
-    sha256 "772bc7cd809b085f9eaf2419ae9ddae50e80cbaaace480fe1f3d23c26bd8f164" => :high_sierra
+    sha256 catalina:    "80de210e71cbf7bd18f125ed1b74c58939046418905bbbbe03892b1b7d4dc8ca"
+    sha256 mojave:      "afed2590e43bb873751bf147da70228edf518aaa4da9a47a8e74a339385e7407"
+    sha256 high_sierra: "772bc7cd809b085f9eaf2419ae9ddae50e80cbaaace480fe1f3d23c26bd8f164"
   end
 
   deprecate! date: "2019-11-16", because: :repo_archived

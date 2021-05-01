@@ -11,9 +11,9 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 "752b23e86c8c5c54d1870ff3cee3adbb4f2bd3eb552c6a87073ba3867107354f" => :catalina
-    sha256 "7b0366448047c170843a0519611acb03a6cdf10c6f67df6b6813514a8f2d8854" => :mojave
-    sha256 "cf12c6c0ae154b545e8ca764a635a6df15ac0fba85eac7143a6564ca740283ed" => :high_sierra
+    sha256 catalina:    "752b23e86c8c5c54d1870ff3cee3adbb4f2bd3eb552c6a87073ba3867107354f"
+    sha256 mojave:      "7b0366448047c170843a0519611acb03a6cdf10c6f67df6b6813514a8f2d8854"
+    sha256 high_sierra: "cf12c6c0ae154b545e8ca764a635a6df15ac0fba85eac7143a6564ca740283ed"
   end
 
   depends_on "cmake" => :build

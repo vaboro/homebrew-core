@@ -7,11 +7,10 @@ class GitExtras < Formula
   head "https://github.com/tj/git-extras.git"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055" => :catalina
-    sha256 "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055" => :mojave
-    sha256 "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055"
+    sha256 cellar: :any_skip_relocation, mojave:      "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6bec6d92d79cabaac6e99d15c8bf1542cf97dcb190b7e77ad4eaa8e381cff055"
   end
 
   conflicts_with "git-utils",

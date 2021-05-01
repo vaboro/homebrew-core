@@ -10,10 +10,9 @@ class Discount < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "231a8ed8499ddec2aaad5731f273d84e5195a898f89fc7fc1548875c7fc7ddfe" => :catalina
-    sha256 "579d7cf9a3930a8b91b748de259387554d28f900d7e3bedd310f64f8d5cb291e" => :mojave
-    sha256 "c929af7cff8c87b6dcdf651009894659d3ca9ef7c21b1d935cf0889654b20a7b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "231a8ed8499ddec2aaad5731f273d84e5195a898f89fc7fc1548875c7fc7ddfe"
+    sha256 cellar: :any_skip_relocation, mojave:      "579d7cf9a3930a8b91b748de259387554d28f900d7e3bedd310f64f8d5cb291e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "c929af7cff8c87b6dcdf651009894659d3ca9ef7c21b1d935cf0889654b20a7b"
   end
 
   conflicts_with "markdown", because: "both install `markdown` binaries"

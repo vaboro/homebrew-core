@@ -11,10 +11,9 @@ class Libmwaw < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "c911649b2829547fe591010dcb908593de7b084c5ec88487cde17a654e84ee5f" => :catalina
-    sha256 "7f226dc382e5a67fbeb2650e97503c53e95274c38b77d34b7e047737796eb42b" => :mojave
-    sha256 "0e16cc626464cd858e158d2dca81d818ce2191ac694168f63f7252b74264e53b" => :high_sierra
+    sha256 cellar: :any, catalina:    "c911649b2829547fe591010dcb908593de7b084c5ec88487cde17a654e84ee5f"
+    sha256 cellar: :any, mojave:      "7f226dc382e5a67fbeb2650e97503c53e95274c38b77d34b7e047737796eb42b"
+    sha256 cellar: :any, high_sierra: "0e16cc626464cd858e158d2dca81d818ce2191ac694168f63f7252b74264e53b"
   end
 
   depends_on "pkg-config" => :build

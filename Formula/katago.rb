@@ -6,10 +6,9 @@ class Katago < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "c45535348f0a10f88414dc1e99e43b4c6e62534a790d2deb0422ecc52178eb9f" => :catalina
-    sha256 "813b95e5bd6e1e1828e4624daab8ef63fdb3f610fda611b5f6406c3d7e44d78d" => :mojave
-    sha256 "8fbf9ccd531dcc1ba21b01259a50f3c11de9dc586e80191637b903ab598143b5" => :high_sierra
+    sha256 cellar: :any, catalina:    "c45535348f0a10f88414dc1e99e43b4c6e62534a790d2deb0422ecc52178eb9f"
+    sha256 cellar: :any, mojave:      "813b95e5bd6e1e1828e4624daab8ef63fdb3f610fda611b5f6406c3d7e44d78d"
+    sha256 cellar: :any, high_sierra: "8fbf9ccd531dcc1ba21b01259a50f3c11de9dc586e80191637b903ab598143b5"
   end
 
   depends_on "cmake" => :build
@@ -46,6 +45,6 @@ class Katago < Formula
 
   test do
     system "#{bin}/katago", "version"
-    assert_match /All tests passed$/, shell_output("#{bin}/katago runtests").strip
+    assert_match(/All tests passed$/, shell_output("#{bin}/katago runtests").strip)
   end
 end

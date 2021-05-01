@@ -9,8 +9,7 @@ class Tracebox < Formula
   head "https://github.com/tracebox/tracebox.git"
 
   bottle do
-    cellar :any
-    sha256 "427833bcd91fe0ab0b0e05b68bd2a34043020687a57509fc034dc29088942faf" => :high_sierra
+    sha256 cellar: :any, high_sierra: "427833bcd91fe0ab0b0e05b68bd2a34043020687a57509fc034dc29088942faf"
   end
 
   depends_on "autoconf" => :build

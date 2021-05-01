@@ -5,12 +5,11 @@ class Guichan < Formula
   sha256 "eedf206eae5201eaae027b133226d0793ab9a287bfd74c5f82c7681e3684eeab"
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "fcc36306d344d47e3151ee1447e00b590cf2d079397f4302301dd7a5fca4bb6f" => :catalina
-    sha256 "20887eab0782fcd2eb3e922b1f388831057b0faaeab519e98590118853c48e3c" => :mojave
-    sha256 "c685850224a216a61b5d0fb96aeb56935deb2187f2781bac7e64668e93baf3ab" => :high_sierra
-    sha256 "d98d6bdc213bca6d4d6fbf904e91f45dd678996ae5522b194805e3bd098c87fb" => :sierra
+    sha256 cellar: :any, catalina:    "fcc36306d344d47e3151ee1447e00b590cf2d079397f4302301dd7a5fca4bb6f"
+    sha256 cellar: :any, mojave:      "20887eab0782fcd2eb3e922b1f388831057b0faaeab519e98590118853c48e3c"
+    sha256 cellar: :any, high_sierra: "c685850224a216a61b5d0fb96aeb56935deb2187f2781bac7e64668e93baf3ab"
+    sha256 cellar: :any, sierra:      "d98d6bdc213bca6d4d6fbf904e91f45dd678996ae5522b194805e3bd098c87fb"
   end
 
   depends_on "sdl_image"

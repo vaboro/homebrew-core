@@ -6,10 +6,9 @@ class Dropbear < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "50a692b78c1958e54c5d5654cebc76c35df05f85d9b5d214caa1a95547f7a90d" => :catalina
-    sha256 "8586e9012826a288865fab45cc08a0445fdee283680a24e2253f9854051a3510" => :mojave
-    sha256 "371fd2eef7a59d0bf6fb8a35ce0f03f269af567e1ad31d5111be1cb846c93b6a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "50a692b78c1958e54c5d5654cebc76c35df05f85d9b5d214caa1a95547f7a90d"
+    sha256 cellar: :any_skip_relocation, mojave:      "8586e9012826a288865fab45cc08a0445fdee283680a24e2253f9854051a3510"
+    sha256 cellar: :any_skip_relocation, high_sierra: "371fd2eef7a59d0bf6fb8a35ce0f03f269af567e1ad31d5111be1cb846c93b6a"
   end
 
   head do

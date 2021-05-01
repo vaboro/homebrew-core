@@ -7,10 +7,9 @@ class Gomplate < Formula
   head "https://github.com/hairyhenderson/gomplate.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "52cc95df2ec8d4a0c4f09ceaf3145161e435fc85106f4265ba24a5159f9019e9" => :catalina
-    sha256 "e90c04a70f742766bd71ec4fc74c3aa7f6d5fcaf1147032ec52787e5bb326445" => :mojave
-    sha256 "2fad9d3647034db30eaee6f556ba9930f8d448e287bdac70ad0b0cfa7332cf47" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "52cc95df2ec8d4a0c4f09ceaf3145161e435fc85106f4265ba24a5159f9019e9"
+    sha256 cellar: :any_skip_relocation, mojave:      "e90c04a70f742766bd71ec4fc74c3aa7f6d5fcaf1147032ec52787e5bb326445"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2fad9d3647034db30eaee6f556ba9930f8d448e287bdac70ad0b0cfa7332cf47"
   end
 
   depends_on "go" => :build

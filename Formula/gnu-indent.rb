@@ -11,10 +11,10 @@ class GnuIndent < Formula
   end
 
   bottle do
-    sha256 "82a12279be8834591a2104253ac562978b557c26b262dd8d5bfbf6e7b1103dd1" => :catalina
-    sha256 "e960e3f35f6a77daef487f54158953522f58a27caf27e39e0c17702754718ee1" => :mojave
-    sha256 "3280e6e9fc0c5cc895367291fc328dccae5f2e36606dd503b5721d449bc33eb8" => :high_sierra
-    sha256 "98bcdee2e49d7e165a07ce6468d2c1a3030db7205472d015ba516e43f5a1e0fd" => :sierra
+    sha256 catalina:    "82a12279be8834591a2104253ac562978b557c26b262dd8d5bfbf6e7b1103dd1"
+    sha256 mojave:      "e960e3f35f6a77daef487f54158953522f58a27caf27e39e0c17702754718ee1"
+    sha256 high_sierra: "3280e6e9fc0c5cc895367291fc328dccae5f2e36606dd503b5721d449bc33eb8"
+    sha256 sierra:      "98bcdee2e49d7e165a07ce6468d2c1a3030db7205472d015ba516e43f5a1e0fd"
   end
 
   depends_on "gettext"

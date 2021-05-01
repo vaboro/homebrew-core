@@ -10,9 +10,9 @@ class SagittariusScheme < Formula
   end
 
   bottle do
-    sha256 "7199d76824cd0de62da70f2eff3db66f0944c2851e4ee868359b7bdbe4685994" => :catalina
-    sha256 "d350853fda37321efe29a14f988b3039126559e489b2fb93a41ca538ca7a2f29" => :mojave
-    sha256 "8824ccf2baa439cc953d8b373010e5f00fabb51dd6837f68323993b69549bb84" => :high_sierra
+    sha256 catalina:    "7199d76824cd0de62da70f2eff3db66f0944c2851e4ee868359b7bdbe4685994"
+    sha256 mojave:      "d350853fda37321efe29a14f988b3039126559e489b2fb93a41ca538ca7a2f29"
+    sha256 high_sierra: "8824ccf2baa439cc953d8b373010e5f00fabb51dd6837f68323993b69549bb84"
   end
 
   depends_on "cmake" => :build

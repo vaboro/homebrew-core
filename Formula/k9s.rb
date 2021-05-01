@@ -7,10 +7,9 @@ class K9s < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "0d27c043bb7e723d435f1425ac34013c0d1bcb778df5a5c705fe173aa73d4fdf" => :catalina
-    sha256 "7e7feaaf383d1057390c55fe272a432d401219028caf2a90928733d923beb83d" => :mojave
-    sha256 "821e10a44332317b44e24b1070644791a09fb3ac8ff5568818c8ab69a915d6b6" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "0d27c043bb7e723d435f1425ac34013c0d1bcb778df5a5c705fe173aa73d4fdf"
+    sha256 cellar: :any_skip_relocation, mojave:      "7e7feaaf383d1057390c55fe272a432d401219028caf2a90928733d923beb83d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "821e10a44332317b44e24b1070644791a09fb3ac8ff5568818c8ab69a915d6b6"
   end
 
   depends_on "go" => :build

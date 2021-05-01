@@ -6,14 +6,13 @@ class Pla < Formula
   license "GPL-2.0"
 
   bottle do
-    cellar :any
-    sha256 "a93517a26dab0bab4ab32aff81c7af3b7545ae1be265ce15caacc3772cd6d485" => :catalina
-    sha256 "9d5e86767de6c9a2ac741e9edd32d053da5fde96563446a63d1b0475f4da595a" => :mojave
-    sha256 "af3163cf8322d872694753f3d3352384fb9c8ce923c66f7be82f50bdbbe734bc" => :high_sierra
-    sha256 "c6edebbefcf192ea4bcad704ca5b4c27157f77b4a47e3a993ac2a61e7165c13c" => :sierra
-    sha256 "3fd0d11d1bdfa24e93bf94cb854e28382307c291b25994c82a2a8c1a64ce5072" => :el_capitan
-    sha256 "308920e8bf8642826cd973eaa63e22f0fc3dec43a0152485d358ba575638291f" => :yosemite
-    sha256 "df4b500589672dc1c415866b7da4c678621858f48cbac2cab5765c2b4fb1857d" => :mavericks
+    sha256 cellar: :any, catalina:    "a93517a26dab0bab4ab32aff81c7af3b7545ae1be265ce15caacc3772cd6d485"
+    sha256 cellar: :any, mojave:      "9d5e86767de6c9a2ac741e9edd32d053da5fde96563446a63d1b0475f4da595a"
+    sha256 cellar: :any, high_sierra: "af3163cf8322d872694753f3d3352384fb9c8ce923c66f7be82f50bdbbe734bc"
+    sha256 cellar: :any, sierra:      "c6edebbefcf192ea4bcad704ca5b4c27157f77b4a47e3a993ac2a61e7165c13c"
+    sha256 cellar: :any, el_capitan:  "3fd0d11d1bdfa24e93bf94cb854e28382307c291b25994c82a2a8c1a64ce5072"
+    sha256 cellar: :any, yosemite:    "308920e8bf8642826cd973eaa63e22f0fc3dec43a0152485d358ba575638291f"
+    sha256 cellar: :any, mavericks:   "df4b500589672dc1c415866b7da4c678621858f48cbac2cab5765c2b4fb1857d"
   end
 
   depends_on "pkg-config" => :build

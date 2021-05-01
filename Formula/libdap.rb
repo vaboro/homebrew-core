@@ -11,9 +11,9 @@ class Libdap < Formula
   end
 
   bottle do
-    sha256 "6a0bbd25fd0b5e873d34a46045c6ba72161007b9937d7957790bfc16bf5b05c3" => :catalina
-    sha256 "ce373bf6fbe4f5b28825fcf243633ae7a807d35b1627e985cc231bc722010793" => :mojave
-    sha256 "fbaa33ce89105a9cab0a7d8b22755524a93f39fb2a8e6d3c5a0459c2ded3bdf5" => :high_sierra
+    sha256 catalina:    "6a0bbd25fd0b5e873d34a46045c6ba72161007b9937d7957790bfc16bf5b05c3"
+    sha256 mojave:      "ce373bf6fbe4f5b28825fcf243633ae7a807d35b1627e985cc231bc722010793"
+    sha256 high_sierra: "fbaa33ce89105a9cab0a7d8b22755524a93f39fb2a8e6d3c5a0459c2ded3bdf5"
   end
 
   head do

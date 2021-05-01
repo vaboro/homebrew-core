@@ -11,11 +11,10 @@ class Autossh < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "48e2beb06564ae4715df08b98577b10d01a25750e720b188b863ea8f195278ef" => :catalina
-    sha256 "2674ee43690b5d99490a0979359fdefa52033650b935547a6353de726f916275" => :mojave
-    sha256 "f88fcb32499fff8aa2899c85fc39dc6678ebed2849791a4312d427d9073b6b98" => :high_sierra
-    sha256 "78d258f52bc14a2539da8c6d3ce69db5c062bb70e95130d9f22113720f853c67" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "48e2beb06564ae4715df08b98577b10d01a25750e720b188b863ea8f195278ef"
+    sha256 cellar: :any_skip_relocation, mojave:      "2674ee43690b5d99490a0979359fdefa52033650b935547a6353de726f916275"
+    sha256 cellar: :any_skip_relocation, high_sierra: "f88fcb32499fff8aa2899c85fc39dc6678ebed2849791a4312d427d9073b6b98"
+    sha256 cellar: :any_skip_relocation, sierra:      "78d258f52bc14a2539da8c6d3ce69db5c062bb70e95130d9f22113720f853c67"
   end
 
   patch :DATA

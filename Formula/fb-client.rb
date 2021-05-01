@@ -12,10 +12,9 @@ class FbClient < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "9201e56a1eee16514620d911903281f5594733c83d8b2c765888964ec09b5b0d" => :catalina
-    sha256 "0700fc2248570396bef4fdaf8c4f6f546b1d890e53f2060b67c4a80ef5666d27" => :mojave
-    sha256 "a351bd6b2ebb88a2f93ef88f3c8623c4fcc4d58996be8a21aecdfbe62b5958ea" => :high_sierra
+    sha256 cellar: :any, catalina:    "9201e56a1eee16514620d911903281f5594733c83d8b2c765888964ec09b5b0d"
+    sha256 cellar: :any, mojave:      "0700fc2248570396bef4fdaf8c4f6f546b1d890e53f2060b67c4a80ef5666d27"
+    sha256 cellar: :any, high_sierra: "a351bd6b2ebb88a2f93ef88f3c8623c4fcc4d58996be8a21aecdfbe62b5958ea"
   end
 
   depends_on "pkg-config" => :build

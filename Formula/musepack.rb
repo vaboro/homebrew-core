@@ -11,11 +11,10 @@ class Musepack < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "847cacb946b6289a5fbfbfe4e1a38f1ec5b7f1e32d6c12145aaf1044317e4ce0" => :catalina
-    sha256 "5efee306aff13a0c0b8f98371e3cbe3eab6b73b0e92bdd59237d7db608a17708" => :mojave
-    sha256 "e1b6641d11a5338d395de8f5573464beddb81dc3dce16998e53361b43502844b" => :high_sierra
+    sha256 cellar: :any, catalina:    "847cacb946b6289a5fbfbfe4e1a38f1ec5b7f1e32d6c12145aaf1044317e4ce0"
+    sha256 cellar: :any, mojave:      "5efee306aff13a0c0b8f98371e3cbe3eab6b73b0e92bdd59237d7db608a17708"
+    sha256 cellar: :any, high_sierra: "e1b6641d11a5338d395de8f5573464beddb81dc3dce16998e53361b43502844b"
   end
 
   depends_on "cmake" => :build

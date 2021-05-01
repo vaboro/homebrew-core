@@ -1,5 +1,5 @@
 class Nest < Formula
-  desc "The Neural Simulation Tool (NEST) with Python3 bindings (PyNEST)"
+  desc "Neural Simulation Tool () with Python3 bindings (PyNEST)"
   homepage "https://www.nest-simulator.org/"
   url "https://github.com/nest/nest-simulator/archive/v2.20.0.tar.gz"
   sha256 "40e33187c22d6e843d80095b221fa7fd5ebe4dbc0116765a91fc5c425dd0eca4"
@@ -7,9 +7,9 @@ class Nest < Formula
   revision 1
 
   bottle do
-    sha256 "38bfd492f381cd059a495122d1c3342e8fb5095501c0422e6c9e04e861cc0d31" => :catalina
-    sha256 "fa62ef7c40613906f8c038d40a8ae0bbda04b070943056829d03c5febaed130f" => :mojave
-    sha256 "c69623f995b427d9ea0a4da78011656a76935d9358f1e9f8470d280670a25aac" => :high_sierra
+    sha256 catalina:    "38bfd492f381cd059a495122d1c3342e8fb5095501c0422e6c9e04e861cc0d31"
+    sha256 mojave:      "fa62ef7c40613906f8c038d40a8ae0bbda04b070943056829d03c5febaed130f"
+    sha256 high_sierra: "c69623f995b427d9ea0a4da78011656a76935d9358f1e9f8470d280670a25aac"
   end
 
   depends_on "cmake" => :build
@@ -70,7 +70,7 @@ class Nest < Formula
     # Replace internally accessible gcc with externally accesible version
     # in nest-config if required
     inreplace bin/"nest-config",
-        %r{#{HOMEBREW_REPOSITORY}/Library/Homebrew/shims.*/super},
+        %r{#{HOMEBREW_REPOSITORY}/Library/Homebrew/shims.*/super}o,
         "#{HOMEBREW_PREFIX}/bin"
   end
 

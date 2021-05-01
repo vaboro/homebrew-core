@@ -11,10 +11,9 @@ class Libhdhomerun < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "85109e085bf10c74f5f30e9f472773994bed3ccbdc14b1981a057d857ec71680" => :catalina
-    sha256 "f4a3852863bbfd997c924752b1fbdfa55522e899cde1a2defc2306c29b763e28" => :mojave
-    sha256 "a79cb2c05ae52f5a39ca069f0c4d2c1a9dac57f3f7d3f608fb8b2bf4eb8511e9" => :high_sierra
+    sha256 cellar: :any, catalina:    "85109e085bf10c74f5f30e9f472773994bed3ccbdc14b1981a057d857ec71680"
+    sha256 cellar: :any, mojave:      "f4a3852863bbfd997c924752b1fbdfa55522e899cde1a2defc2306c29b763e28"
+    sha256 cellar: :any, high_sierra: "a79cb2c05ae52f5a39ca069f0c4d2c1a9dac57f3f7d3f608fb8b2bf4eb8511e9"
   end
 
   def install
@@ -27,6 +26,6 @@ class Libhdhomerun < Formula
   test do
     # Devices may be found or not found, with differing return codes
     discover = pipe_output("#{bin}/hdhomerun_config discover")
-    assert_match /no devices found|hdhomerun device|found at/, discover
+    assert_match(/no devices found|hdhomerun device|found at/, discover)
   end
 end

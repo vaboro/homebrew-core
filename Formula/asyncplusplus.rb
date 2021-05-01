@@ -6,10 +6,9 @@ class Asyncplusplus < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "8116d1e5d9aefd7de88cb70633fdc91181460f7f0279bcc356f8d020a590510b" => :catalina
-    sha256 "805297c643ba0c1fe0d774ea606f6e0925112b1a364b74122c877d51f1e729fb" => :mojave
-    sha256 "ac6212a38c5aa391ee1eb547879615437a830967444deb15674e748c63f0b5b1" => :high_sierra
+    sha256 cellar: :any, catalina:    "8116d1e5d9aefd7de88cb70633fdc91181460f7f0279bcc356f8d020a590510b"
+    sha256 cellar: :any, mojave:      "805297c643ba0c1fe0d774ea606f6e0925112b1a364b74122c877d51f1e729fb"
+    sha256 cellar: :any, high_sierra: "ac6212a38c5aa391ee1eb547879615437a830967444deb15674e748c63f0b5b1"
   end
 
   depends_on "cmake" => :build

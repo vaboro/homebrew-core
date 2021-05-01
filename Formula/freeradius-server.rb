@@ -12,9 +12,9 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 "c3174a08eaeabce252f16224d93fcb1503584ac6b2d7733a6e80eb558cfefee5" => :catalina
-    sha256 "4c4dc47fe8af598594c4dd24184f7b5400e383e7649c6f6aa98f1663997b04ec" => :mojave
-    sha256 "2c8d33eddc1311f098175f2854173bbd4181d9f20fa0d1807950a84198fca6e1" => :high_sierra
+    sha256 catalina:    "c3174a08eaeabce252f16224d93fcb1503584ac6b2d7733a6e80eb558cfefee5"
+    sha256 mojave:      "4c4dc47fe8af598594c4dd24184f7b5400e383e7649c6f6aa98f1663997b04ec"
+    sha256 high_sierra: "2c8d33eddc1311f098175f2854173bbd4181d9f20fa0d1807950a84198fca6e1"
   end
 
   depends_on "openssl@1.1"

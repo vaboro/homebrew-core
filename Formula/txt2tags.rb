@@ -12,10 +12,9 @@ class Txt2tags < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5417013a87fca45121b25df471e050f12d611fcab11594ee5b442543eff2c457" => :catalina
-    sha256 "894d7e9c49720ccf3a0c27f0d8c9e46297dd6cbb27f0efbddf41daf5dffbe230" => :mojave
-    sha256 "8aa1a28a1d6697d6b247e360afd13079635404805d31ff9b83afaab9bb23a0b3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "5417013a87fca45121b25df471e050f12d611fcab11594ee5b442543eff2c457"
+    sha256 cellar: :any_skip_relocation, mojave:      "894d7e9c49720ccf3a0c27f0d8c9e46297dd6cbb27f0efbddf41daf5dffbe230"
+    sha256 cellar: :any_skip_relocation, high_sierra: "8aa1a28a1d6697d6b247e360afd13079635404805d31ff9b83afaab9bb23a0b3"
   end
 
   depends_on "python@3.8"

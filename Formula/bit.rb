@@ -13,9 +13,9 @@ class Bit < Formula
   end
 
   bottle do
-    sha256 "bc1b85c6100f4c5166eda34de5a92b66d73f45336536ed08921926dbb90ef6d8" => :catalina
-    sha256 "c9fe18470becb44f6580e36bd3e9bc52219a1d4f111d271382942304c435cd86" => :mojave
-    sha256 "2e2f871d7759adb7d2772a8ec319c3762c3e54e58625172f4ad44132cbdf3b2b" => :high_sierra
+    sha256 catalina:    "bc1b85c6100f4c5166eda34de5a92b66d73f45336536ed08921926dbb90ef6d8"
+    sha256 mojave:      "c9fe18470becb44f6580e36bd3e9bc52219a1d4f111d271382942304c435cd86"
+    sha256 high_sierra: "2e2f871d7759adb7d2772a8ec319c3762c3e54e58625172f4ad44132cbdf3b2b"
   end
 
   depends_on "node"

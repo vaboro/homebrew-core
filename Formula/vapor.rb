@@ -7,8 +7,7 @@ class Vapor < Formula
   head "https://github.com/vapor/toolbox.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f49f6f3ec03a5d17c155c4ea7bb72eecd766c669c32fec89bbd5bb1c65d84226" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "f49f6f3ec03a5d17c155c4ea7bb72eecd766c669c32fec89bbd5bb1c65d84226"
   end
 
   depends_on xcode: "11.4"

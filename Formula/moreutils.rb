@@ -11,10 +11,9 @@ class Moreutils < Formula
   head "https://git.joeyh.name/git/moreutils.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2acce86bfb602b3da4577cf429080a138b7a2e587e394b175889c4d190ef3bae" => :catalina
-    sha256 "e4d2496b670b5f4c8fcac0baaaa41afeced3b04ac962ce4963752cc233d68273" => :mojave
-    sha256 "80057e9363725a85da1200dfe87fe669a5dab3980375ad83330ce4b61cbac13c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2acce86bfb602b3da4577cf429080a138b7a2e587e394b175889c4d190ef3bae"
+    sha256 cellar: :any_skip_relocation, mojave:      "e4d2496b670b5f4c8fcac0baaaa41afeced3b04ac962ce4963752cc233d68273"
+    sha256 cellar: :any_skip_relocation, high_sierra: "80057e9363725a85da1200dfe87fe669a5dab3980375ad83330ce4b61cbac13c"
   end
 
   depends_on "docbook-xsl" => :build

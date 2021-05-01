@@ -7,10 +7,9 @@ class Croaring < Formula
   head "https://github.com/RoaringBitmap/CRoaring.git"
 
   bottle do
-    cellar :any
-    sha256 "755fadb67394a7b031626671412623348a561e290d379592b8c2925aa4e1f671" => :catalina
-    sha256 "b70622cb9515f3702faa0cf8f60a26c5e7481399d1a244a5217bffdf1ab269d3" => :mojave
-    sha256 "aee7d4e0440e29a2a27694bac0326758590bd36d86254de1888e4044b0de576e" => :high_sierra
+    sha256 cellar: :any, catalina:    "755fadb67394a7b031626671412623348a561e290d379592b8c2925aa4e1f671"
+    sha256 cellar: :any, mojave:      "b70622cb9515f3702faa0cf8f60a26c5e7481399d1a244a5217bffdf1ab269d3"
+    sha256 cellar: :any, high_sierra: "aee7d4e0440e29a2a27694bac0326758590bd36d86254de1888e4044b0de576e"
   end
 
   depends_on "cmake" => :build

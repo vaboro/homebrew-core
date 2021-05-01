@@ -14,10 +14,9 @@ class Dgraph < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "eb57d3ff53372468f23d277e0bf0a39d147a2c7a1b0882d32f53c9200d8721f5" => :catalina
-    sha256 "0358f83ea5a545ef452ced5cb123c34d6880bc848ad2006e042801c19e2f0770" => :mojave
-    sha256 "290e72cb04f180ed4a11850d2aff0a42d5cde1c780191f0a920ae7578ef64e5a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "eb57d3ff53372468f23d277e0bf0a39d147a2c7a1b0882d32f53c9200d8721f5"
+    sha256 cellar: :any_skip_relocation, mojave:      "0358f83ea5a545ef452ced5cb123c34d6880bc848ad2006e042801c19e2f0770"
+    sha256 cellar: :any_skip_relocation, high_sierra: "290e72cb04f180ed4a11850d2aff0a42d5cde1c780191f0a920ae7578ef64e5a"
   end
 
   depends_on "go" => :build

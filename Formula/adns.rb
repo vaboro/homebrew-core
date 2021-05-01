@@ -12,10 +12,9 @@ class Adns < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d9cc50eec8ac243148a121049c236cba06af4a0b1156ab397d0a2850aa79c137" => :catalina
-    sha256 "7cf73e25044783cd93ecd28e2e8bfb84f0b2fff3343acf39dff3c5fe68d1c5be" => :mojave
-    sha256 "6cbe64a32b077c9abd61337c51c4e17a2286f9bee04b33f24a5dd762125798d1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d9cc50eec8ac243148a121049c236cba06af4a0b1156ab397d0a2850aa79c137"
+    sha256 cellar: :any_skip_relocation, mojave:      "7cf73e25044783cd93ecd28e2e8bfb84f0b2fff3343acf39dff3c5fe68d1c5be"
+    sha256 cellar: :any_skip_relocation, high_sierra: "6cbe64a32b077c9abd61337c51c4e17a2286f9bee04b33f24a5dd762125798d1"
   end
 
   uses_from_macos "m4" => :build

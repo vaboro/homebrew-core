@@ -19,9 +19,9 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 "74e195304b29ce8ce47fbccc2c58e468a677482a94efecc1cfd9dcc0210c07d1" => :catalina
-    sha256 "bae912aa71182fd91e5e65b38cba3ea162f7d63d4dc4b4b365ef6532c4329a7a" => :mojave
-    sha256 "230f63be05a2dde5fcb4487e7159db758abe984cbc70d495a697c209107fc284" => :high_sierra
+    sha256 catalina:    "74e195304b29ce8ce47fbccc2c58e468a677482a94efecc1cfd9dcc0210c07d1"
+    sha256 mojave:      "bae912aa71182fd91e5e65b38cba3ea162f7d63d4dc4b4b365ef6532c4329a7a"
+    sha256 high_sierra: "230f63be05a2dde5fcb4487e7159db758abe984cbc70d495a697c209107fc284"
   end
 
   depends_on "berkeley-db@4"

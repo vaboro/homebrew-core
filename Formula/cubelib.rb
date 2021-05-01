@@ -5,9 +5,9 @@ class Cubelib < Formula
   sha256 "98f66837b4a834b1aacbcd4480a242d7a8c4a1b8dd44e02e836b8c7a4f0ffd98"
 
   bottle do
-    sha256 "038e4978220fae83b1469f2a22f05c3fa01876c9dd6f9d3f7da13b6bc6335a87" => :catalina
-    sha256 "ff5079cb8ddf09f12f73649cea99460b3fd112ba1dfc8791ed315d7b103031ba" => :mojave
-    sha256 "8147b72304638d649a1416edca7616f68580af6c60a4b29e4ac2f8057ed258d5" => :high_sierra
+    sha256 catalina:    "038e4978220fae83b1469f2a22f05c3fa01876c9dd6f9d3f7da13b6bc6335a87"
+    sha256 mojave:      "ff5079cb8ddf09f12f73649cea99460b3fd112ba1dfc8791ed315d7b103031ba"
+    sha256 high_sierra: "8147b72304638d649a1416edca7616f68580af6c60a4b29e4ac2f8057ed258d5"
   end
 
   def install

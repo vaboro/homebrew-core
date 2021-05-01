@@ -11,9 +11,9 @@ class Coreutils < Formula
   end
 
   bottle do
-    sha256 "67a4452d75a1882bd7fb977b384204edfa2758276d66290e595487922368e093" => :catalina
-    sha256 "5da6cb9dbc0a8144480dde2fb78eb0a5a1710490afc3697174f7e261ec69763f" => :mojave
-    sha256 "caa8cd8965727d0e805eccdc3e306cd0599720cdd0d5417cfcca03bead670663" => :high_sierra
+    sha256 catalina:    "67a4452d75a1882bd7fb977b384204edfa2758276d66290e595487922368e093"
+    sha256 mojave:      "5da6cb9dbc0a8144480dde2fb78eb0a5a1710490afc3697174f7e261ec69763f"
+    sha256 high_sierra: "caa8cd8965727d0e805eccdc3e306cd0599720cdd0d5417cfcca03bead670663"
   end
 
   head do

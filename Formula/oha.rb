@@ -7,10 +7,9 @@ class Oha < Formula
   head "https://github.com/hatoo/oha.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "31e9544f9612b2211bd224d6112da755ed92af8051046f13c518d95e3778a1b3" => :catalina
-    sha256 "087d14cbe0e3972365b71896a7e29a60f95c0a943fb65ee4969ea5e222be34da" => :mojave
-    sha256 "aff27d4b0f0a25c45707ed170b2ff63a32a83a5a48efcb48fd498b924940ffd9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "31e9544f9612b2211bd224d6112da755ed92af8051046f13c518d95e3778a1b3"
+    sha256 cellar: :any_skip_relocation, mojave:      "087d14cbe0e3972365b71896a7e29a60f95c0a943fb65ee4969ea5e222be34da"
+    sha256 cellar: :any_skip_relocation, high_sierra: "aff27d4b0f0a25c45707ed170b2ff63a32a83a5a48efcb48fd498b924940ffd9"
   end
 
   depends_on "rust" => :build

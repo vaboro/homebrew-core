@@ -6,12 +6,11 @@ class Json11 < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8d7a4ff704262d3f47402e0f2be7e94c3e05ab253131673d65daf0f3b23c5561" => :catalina
-    sha256 "fa88a6f0691e52c7b7830f08287c3c8379337b66694161175ec85f1ded4b40ae" => :mojave
-    sha256 "3c6b7776a4702bb90d046f3c6f4ace063ea04d3355c7ce51127824292cb4506f" => :high_sierra
-    sha256 "e7a717f73162477010c156c2e4d281bb4b5f26ea3c53a5aaffc82998954d119c" => :sierra
-    sha256 "d5345ad5224fb7aeda2562d1a46350c44f66cf98486d142bc81b8186e5aa74cc" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "8d7a4ff704262d3f47402e0f2be7e94c3e05ab253131673d65daf0f3b23c5561"
+    sha256 cellar: :any_skip_relocation, mojave:      "fa88a6f0691e52c7b7830f08287c3c8379337b66694161175ec85f1ded4b40ae"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3c6b7776a4702bb90d046f3c6f4ace063ea04d3355c7ce51127824292cb4506f"
+    sha256 cellar: :any_skip_relocation, sierra:      "e7a717f73162477010c156c2e4d281bb4b5f26ea3c53a5aaffc82998954d119c"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "d5345ad5224fb7aeda2562d1a46350c44f66cf98486d142bc81b8186e5aa74cc"
   end
 
   depends_on "cmake" => :build

@@ -14,10 +14,9 @@ class Vdirsyncer < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "68a313f863d08adfb913b5530606ef32c85c2e9ce20dfac6d42185b0d18e4670" => :catalina
-    sha256 "ef27647042f45a65bf2f8ebb0170cea3b124f98ce4a9200d5a6f82b50a2a7de4" => :mojave
-    sha256 "d9f144fba5c2de241806ade0e5141a2ed13cd17aaa00233e2f2397315f65f47e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "68a313f863d08adfb913b5530606ef32c85c2e9ce20dfac6d42185b0d18e4670"
+    sha256 cellar: :any_skip_relocation, mojave:      "ef27647042f45a65bf2f8ebb0170cea3b124f98ce4a9200d5a6f82b50a2a7de4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d9f144fba5c2de241806ade0e5141a2ed13cd17aaa00233e2f2397315f65f47e"
   end
 
   depends_on "python@3.8"
@@ -72,6 +71,6 @@ class Vdirsyncer < Formula
     (testpath/".contacts/b/foo/").mkpath
     system "#{bin}/vdirsyncer", "discover"
     system "#{bin}/vdirsyncer", "sync"
-    assert_match /Ö φ 風 ض/, (testpath/".contacts/b/foo/092a1e3b55.vcf").read
+    assert_match(/Ö φ 風 ض/, (testpath/".contacts/b/foo/092a1e3b55.vcf").read)
   end
 end

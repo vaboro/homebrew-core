@@ -7,10 +7,9 @@ class GitSeries < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "29b2137b70b357be519ea871f44be18286547f1fd1e86ac9d2c0b5ba2f046fc2" => :catalina
-    sha256 "9a30242b1878ddca0dcbb05aae2fade5bbef945563c4a8c64912263e3c31cf5f" => :mojave
-    sha256 "7e57cc878bd7619f8585e5577ec25c51372af77d4189d2c43b520402b3b33447" => :high_sierra
+    sha256 cellar: :any, catalina:    "29b2137b70b357be519ea871f44be18286547f1fd1e86ac9d2c0b5ba2f046fc2"
+    sha256 cellar: :any, mojave:      "9a30242b1878ddca0dcbb05aae2fade5bbef945563c4a8c64912263e3c31cf5f"
+    sha256 cellar: :any, high_sierra: "7e57cc878bd7619f8585e5577ec25c51372af77d4189d2c43b520402b3b33447"
   end
 
   depends_on "cmake" => :build

@@ -8,10 +8,9 @@ class Ffmpegthumbnailer < Formula
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git"
 
   bottle do
-    cellar :any
-    sha256 "28a278ef88da9c423a719558dfc138e8ff15d89559b04250b143e8e0840b1bcd" => :catalina
-    sha256 "66868572e40f91a49b363a8943eeeb9066eb0b8dd510a719070f3997f50b2ea8" => :mojave
-    sha256 "71cea969bdeeb648b9788736e1aea0904bba274df17ecc42ec21cd8c21b18539" => :high_sierra
+    sha256 cellar: :any, catalina:    "28a278ef88da9c423a719558dfc138e8ff15d89559b04250b143e8e0840b1bcd"
+    sha256 cellar: :any, mojave:      "66868572e40f91a49b363a8943eeeb9066eb0b8dd510a719070f3997f50b2ea8"
+    sha256 cellar: :any, high_sierra: "71cea969bdeeb648b9788736e1aea0904bba274df17ecc42ec21cd8c21b18539"
   end
 
   depends_on "cmake" => :build

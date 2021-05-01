@@ -8,10 +8,9 @@ class PassGitHelper < Formula
   license "LGPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "1f3954dd243690c880e3feb3a919e6c2778646ec90e56f0b1e285837c8441c20" => :catalina
-    sha256 "e08a67118a8d49dc0d3088dfd239b7f8869eebd1fcfd833aaa26bf799eb12fde" => :mojave
-    sha256 "1e05bbb2761624c80e9eb1c952f70a97ae6d214bc2e9cee9c17949e3eb099933" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "1f3954dd243690c880e3feb3a919e6c2778646ec90e56f0b1e285837c8441c20"
+    sha256 cellar: :any_skip_relocation, mojave:      "e08a67118a8d49dc0d3088dfd239b7f8869eebd1fcfd833aaa26bf799eb12fde"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1e05bbb2761624c80e9eb1c952f70a97ae6d214bc2e9cee9c17949e3eb099933"
   end
 
   depends_on "gnupg" => :test

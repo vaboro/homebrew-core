@@ -13,10 +13,9 @@ class HttpServer < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "11f0b3f7fc0975e2eb7c911fe1555c13527f75ea5468215e6d6340e11bf36f33" => :catalina
-    sha256 "fcc2086b4000cc47077413c116c09ee4b60fe9b064f7d95ff7c19c966a181d4f" => :mojave
-    sha256 "1b3f5212bc710e5ae053bbd9fb3bd279d763ad03e6c550425ab95534e309a9ef" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "11f0b3f7fc0975e2eb7c911fe1555c13527f75ea5468215e6d6340e11bf36f33"
+    sha256 cellar: :any_skip_relocation, mojave:      "fcc2086b4000cc47077413c116c09ee4b60fe9b064f7d95ff7c19c966a181d4f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "1b3f5212bc710e5ae053bbd9fb3bd279d763ad03e6c550425ab95534e309a9ef"
   end
 
   depends_on "node"
@@ -34,7 +33,7 @@ class HttpServer < Formula
     end
     sleep 1
     output = shell_output("curl -sI http://localhost:#{port}")
-    assert_match /200 OK/m, output
+    assert_match(/200 OK/m, output)
   ensure
     Process.kill("HUP", pid)
   end

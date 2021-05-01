@@ -7,11 +7,10 @@ class Eigen < Formula
   head "https://gitlab.com/libeigen/eigen"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :catalina
-    sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :mojave
-    sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8"
+    sha256 cellar: :any_skip_relocation, mojave:      "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8"
   end
 
   depends_on "cmake" => :build

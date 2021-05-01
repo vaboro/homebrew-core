@@ -9,12 +9,11 @@ class Rkhunter < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e9bfbf9e122295e1fd4ac70dea7502856b3415e0eec187512f196d51a718ab92" => :catalina
-    sha256 "a174d252c029e7336a559e44e5ea7139c943addee52cf11fd1fd4c03d564cf52" => :mojave
-    sha256 "35df7b4e420968fc71fc0fc0217716393c624594ff51245c80a969a5bb1569eb" => :high_sierra
-    sha256 "8d00f31cf5150d841b22dd3c1cdda33dc8705075529f000d41678d05cb733e0f" => :sierra
-    sha256 "1aca76cf8e890112cad63d353ca8369e301e0e990e5380bb5fc4236ded810147" => :el_capitan
+    sha256 cellar: :any_skip_relocation, catalina:    "e9bfbf9e122295e1fd4ac70dea7502856b3415e0eec187512f196d51a718ab92"
+    sha256 cellar: :any_skip_relocation, mojave:      "a174d252c029e7336a559e44e5ea7139c943addee52cf11fd1fd4c03d564cf52"
+    sha256 cellar: :any_skip_relocation, high_sierra: "35df7b4e420968fc71fc0fc0217716393c624594ff51245c80a969a5bb1569eb"
+    sha256 cellar: :any_skip_relocation, sierra:      "8d00f31cf5150d841b22dd3c1cdda33dc8705075529f000d41678d05cb733e0f"
+    sha256 cellar: :any_skip_relocation, el_capitan:  "1aca76cf8e890112cad63d353ca8369e301e0e990e5380bb5fc4236ded810147"
   end
 
   def install

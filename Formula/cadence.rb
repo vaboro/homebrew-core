@@ -7,10 +7,9 @@ class Cadence < Formula
   head "https://github.com/onflow/cadence.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "8f96191e74ee27bead5296a410276600bd38ba2abed8b80cb0e1f12e5135a7c1" => :catalina
-    sha256 "4f1d3a7c45535fac5b3274788c13c4d198058d908cdcd71a4d6c88df91538a3b" => :mojave
-    sha256 "566a56f5a6322c7c34f1ae85e991c8bf86244d7923c47eb61b3da626729890fe" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "8f96191e74ee27bead5296a410276600bd38ba2abed8b80cb0e1f12e5135a7c1"
+    sha256 cellar: :any_skip_relocation, mojave:      "4f1d3a7c45535fac5b3274788c13c4d198058d908cdcd71a4d6c88df91538a3b"
+    sha256 cellar: :any_skip_relocation, high_sierra: "566a56f5a6322c7c34f1ae85e991c8bf86244d7923c47eb61b3da626729890fe"
   end
 
   depends_on "go" => :build

@@ -6,10 +6,10 @@ class Snownews < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 "6829a661dc7dbd01b149a05aff6b81b4ecc22b99f3f06345f029b183bf952c64" => :catalina
-    sha256 "db1d20c1468867a2eeb77b521fdfac4e167393797506afd6bbd603fb40c435bf" => :mojave
-    sha256 "0e1eed435b2c94a95e35ee89c3b68be6cfa9867d75dc9fbb46b19a66ff6da915" => :high_sierra
-    sha256 "6437a67fb63f92f3c4d57b69505cb5146e2d7325da0d6fd73b57ac0f1461c807" => :sierra
+    sha256 catalina:    "6829a661dc7dbd01b149a05aff6b81b4ecc22b99f3f06345f029b183bf952c64"
+    sha256 mojave:      "db1d20c1468867a2eeb77b521fdfac4e167393797506afd6bbd603fb40c435bf"
+    sha256 high_sierra: "0e1eed435b2c94a95e35ee89c3b68be6cfa9867d75dc9fbb46b19a66ff6da915"
+    sha256 sierra:      "6437a67fb63f92f3c4d57b69505cb5146e2d7325da0d6fd73b57ac0f1461c807"
   end
 
   depends_on "coreutils" => :build

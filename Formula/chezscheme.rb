@@ -6,10 +6,9 @@ class Chezscheme < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ec01053507184a4f7974281be6484d44005ad3ee67b0ca76e87c18dda329050e" => :catalina
-    sha256 "2e483db1013a2045e245b81f869c0bbc348998e73463bcb225199c929416ffa2" => :mojave
-    sha256 "062b486d9b8fc1d81716361b5f0267a12599dea779f3cf37e5879c33b41bf568" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "ec01053507184a4f7974281be6484d44005ad3ee67b0ca76e87c18dda329050e"
+    sha256 cellar: :any_skip_relocation, mojave:      "2e483db1013a2045e245b81f869c0bbc348998e73463bcb225199c929416ffa2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "062b486d9b8fc1d81716361b5f0267a12599dea779f3cf37e5879c33b41bf568"
   end
 
   depends_on x11: :build

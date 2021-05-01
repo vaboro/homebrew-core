@@ -7,10 +7,9 @@ class Mruby < Formula
   head "https://github.com/mruby/mruby.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b6a638c04a991a249a737d0ad0d9f7fac31d35a7b2fd3c8507304e68f13bc983" => :catalina
-    sha256 "1f31eadc8801f65d42e2cfec43cda336324daf86978529dfc76338e6b094b16c" => :mojave
-    sha256 "5b5dca177d9fdd6a2b543c9aeb2117e0d112d1578fadbb709d8565d83b21d6a7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b6a638c04a991a249a737d0ad0d9f7fac31d35a7b2fd3c8507304e68f13bc983"
+    sha256 cellar: :any_skip_relocation, mojave:      "1f31eadc8801f65d42e2cfec43cda336324daf86978529dfc76338e6b094b16c"
+    sha256 cellar: :any_skip_relocation, high_sierra: "5b5dca177d9fdd6a2b543c9aeb2117e0d112d1578fadbb709d8565d83b21d6a7"
   end
 
   depends_on "bison" => :build

@@ -13,10 +13,10 @@ class JohnJumbo < Formula
 
   bottle do
     rebuild 1
-    sha256 "e7a19321df5d635dab8f7049d96ee032c7536f1f2bf41b2b1d032e1665bfd127" => :catalina
-    sha256 "51f7b265d83da1db5c2a34e77d2f376e1fa7730ecde5c9cfcda181ccab084f8e" => :mojave
-    sha256 "0719a701b7280ccd2bd1e2f834ffb6518d183f80c5df2afcb956f374e6d032c3" => :high_sierra
-    sha256 "6349fe1f1c0524382ab6ed36a4ceeb795c67cacb310688e2759cf33efab82609" => :sierra
+    sha256 catalina:    "e7a19321df5d635dab8f7049d96ee032c7536f1f2bf41b2b1d032e1665bfd127"
+    sha256 mojave:      "51f7b265d83da1db5c2a34e77d2f376e1fa7730ecde5c9cfcda181ccab084f8e"
+    sha256 high_sierra: "0719a701b7280ccd2bd1e2f834ffb6518d183f80c5df2afcb956f374e6d032c3"
+    sha256 sierra:      "6349fe1f1c0524382ab6ed36a4ceeb795c67cacb310688e2759cf33efab82609"
   end
 
   depends_on "pkg-config" => :build

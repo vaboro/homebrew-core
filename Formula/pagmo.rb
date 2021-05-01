@@ -6,10 +6,9 @@ class Pagmo < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "0f50a88dc4df4c8cabafceb3a96a9fb93d913db185257ca91830345dc7f5e13f" => :catalina
-    sha256 "acd5be5bb4b9fa2b93512c7a480dae7c1a84025330f866157bf0db9640f8948e" => :mojave
-    sha256 "4146ac95f0a01a6901c696cd54808b5834942e39bb10689b8ea6094be45d1582" => :high_sierra
+    sha256 cellar: :any, catalina:    "0f50a88dc4df4c8cabafceb3a96a9fb93d913db185257ca91830345dc7f5e13f"
+    sha256 cellar: :any, mojave:      "acd5be5bb4b9fa2b93512c7a480dae7c1a84025330f866157bf0db9640f8948e"
+    sha256 cellar: :any, high_sierra: "4146ac95f0a01a6901c696cd54808b5834942e39bb10689b8ea6094be45d1582"
   end
 
   depends_on "cmake" => :build

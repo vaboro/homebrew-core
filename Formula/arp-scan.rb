@@ -7,9 +7,9 @@ class ArpScan < Formula
   head "https://github.com/royhills/arp-scan.git"
 
   bottle do
-    sha256 "763b615392ea20ab1900bbc4a21fb0a9a978bbf50d3bbd8d5ff490437defc6f8" => :catalina
-    sha256 "178196ab4312319611ad02c8e086e56fec2217981f9d91d9e7df8cddfeacda4e" => :mojave
-    sha256 "f72f46496eecff4c1a86dbdbf3a295e195310827ef50cdc0b007bd7b6311495d" => :high_sierra
+    sha256 catalina:    "763b615392ea20ab1900bbc4a21fb0a9a978bbf50d3bbd8d5ff490437defc6f8"
+    sha256 mojave:      "178196ab4312319611ad02c8e086e56fec2217981f9d91d9e7df8cddfeacda4e"
+    sha256 high_sierra: "f72f46496eecff4c1a86dbdbf3a295e195310827ef50cdc0b007bd7b6311495d"
   end
 
   depends_on "autoconf" => :build

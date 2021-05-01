@@ -6,10 +6,9 @@ class GolangMigrate < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "3f7cc816130bcb3adf2f2c61dd261e773528ea5b3fa8119fdd2f0559f6ccdf21" => :catalina
-    sha256 "2ba0ad55b3abe5be3387b84f8f087cb264b29ac3adccd289e88b3e215223a21e" => :mojave
-    sha256 "22857667dd2da00e9ad80ae3a48e9bed9fb66ca9d8c54d1f7da8d63b3ee84c2b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "3f7cc816130bcb3adf2f2c61dd261e773528ea5b3fa8119fdd2f0559f6ccdf21"
+    sha256 cellar: :any_skip_relocation, mojave:      "2ba0ad55b3abe5be3387b84f8f087cb264b29ac3adccd289e88b3e215223a21e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "22857667dd2da00e9ad80ae3a48e9bed9fb66ca9d8c54d1f7da8d63b3ee84c2b"
   end
 
   depends_on "go" => :build

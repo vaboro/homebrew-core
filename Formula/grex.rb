@@ -6,10 +6,9 @@ class Grex < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a6a2e903b81404d8637492fdbdea4bd2bafc5b9e2ead89e565ed64ca27a8a9ad" => :catalina
-    sha256 "add77eeff9facb30f56b579ab893bcfafcae43699e629b3780f67b560fb59ad2" => :mojave
-    sha256 "b09e46aabadbb7742e60b942386f994795fcfca48a2834b2dbc4bc7fdb500dcc" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a6a2e903b81404d8637492fdbdea4bd2bafc5b9e2ead89e565ed64ca27a8a9ad"
+    sha256 cellar: :any_skip_relocation, mojave:      "add77eeff9facb30f56b579ab893bcfafcae43699e629b3780f67b560fb59ad2"
+    sha256 cellar: :any_skip_relocation, high_sierra: "b09e46aabadbb7742e60b942386f994795fcfca48a2834b2dbc4bc7fdb500dcc"
   end
 
   depends_on "rust" => :build

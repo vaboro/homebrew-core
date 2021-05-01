@@ -6,10 +6,9 @@ class Julius < Formula
   license "BSD-3-Clause"
 
   bottle do
-    cellar :any
-    sha256 "b06b9ca71df4cccff10e36a4a75a55f7d5bdb009f4dba9f940044da6ba0c258d" => :catalina
-    sha256 "041d7a3185850375ef67148a74ab9513e9a4eb6de05deeb3595f3941c41010d6" => :mojave
-    sha256 "d699dbf645c69f795421569e21c9d676e0db534a8d72fabfb721d5864e391549" => :high_sierra
+    sha256 cellar: :any, catalina:    "b06b9ca71df4cccff10e36a4a75a55f7d5bdb009f4dba9f940044da6ba0c258d"
+    sha256 cellar: :any, mojave:      "041d7a3185850375ef67148a74ab9513e9a4eb6de05deeb3595f3941c41010d6"
+    sha256 cellar: :any, high_sierra: "d699dbf645c69f795421569e21c9d676e0db534a8d72fabfb721d5864e391549"
   end
 
   depends_on "libsndfile"

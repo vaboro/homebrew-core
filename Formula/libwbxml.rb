@@ -7,10 +7,9 @@ class Libwbxml < Formula
   head "https://github.com/libwbxml/libwbxml.git"
 
   bottle do
-    cellar :any
-    sha256 "4adbd8447466f7d3cbad72d5aff2730a87539dacd0638180cd39a9eaee11e174" => :catalina
-    sha256 "9077d1c9669a92c39590de8280678cbe3d50853e76d69fda6a476ba88d170845" => :mojave
-    sha256 "051a666b16d73e92e4910f40559d2bb5681ae4b5028a7f86959ad5f6bdb4e55a" => :high_sierra
+    sha256 cellar: :any, catalina:    "4adbd8447466f7d3cbad72d5aff2730a87539dacd0638180cd39a9eaee11e174"
+    sha256 cellar: :any, mojave:      "9077d1c9669a92c39590de8280678cbe3d50853e76d69fda6a476ba88d170845"
+    sha256 cellar: :any, high_sierra: "051a666b16d73e92e4910f40559d2bb5681ae4b5028a7f86959ad5f6bdb4e55a"
   end
 
   depends_on "cmake" => :build

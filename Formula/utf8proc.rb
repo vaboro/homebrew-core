@@ -6,10 +6,9 @@ class Utf8proc < Formula
   license all_of: ["MIT", "Unicode-DFS-2015"]
 
   bottle do
-    cellar :any
-    sha256 "f215acf62769b7036110950b65285742b6550c631b0606befa12b98f32c53130" => :catalina
-    sha256 "1bd0f29df929fff62b33895ca76162b9d376aefea09115c84a3841793fa7a9a3" => :mojave
-    sha256 "12b05c0477b8f6fd029f3723d74712f267960fb9d212a21520f9a557d3cd516c" => :high_sierra
+    sha256 cellar: :any, catalina:    "f215acf62769b7036110950b65285742b6550c631b0606befa12b98f32c53130"
+    sha256 cellar: :any, mojave:      "1bd0f29df929fff62b33895ca76162b9d376aefea09115c84a3841793fa7a9a3"
+    sha256 cellar: :any, high_sierra: "12b05c0477b8f6fd029f3723d74712f267960fb9d212a21520f9a557d3cd516c"
   end
 
   def install

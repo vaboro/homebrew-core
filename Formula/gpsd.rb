@@ -11,10 +11,9 @@ class Gpsd < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e41f44df2cf96b33b2f62e65ff2ef9154d872bc8fac88b3bdaeb503246d77c2b" => :catalina
-    sha256 "caafc4aea3632fdbe8df1ce265c025430a816d2ad7c26f973c254887ec6a2a8f" => :mojave
-    sha256 "bc0775e450c0129fd71a4abd163a7645ac9b3e1698009b2735fafeb838e09e79" => :high_sierra
+    sha256 cellar: :any, catalina:    "e41f44df2cf96b33b2f62e65ff2ef9154d872bc8fac88b3bdaeb503246d77c2b"
+    sha256 cellar: :any, mojave:      "caafc4aea3632fdbe8df1ce265c025430a816d2ad7c26f973c254887ec6a2a8f"
+    sha256 cellar: :any, high_sierra: "bc0775e450c0129fd71a4abd163a7645ac9b3e1698009b2735fafeb838e09e79"
   end
 
   depends_on "scons" => :build

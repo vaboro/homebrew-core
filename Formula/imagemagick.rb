@@ -13,9 +13,9 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 "b78cb828d6e3652bd84f0cea56778f355c0a73f95a6ea694e44d0376e604ebc8" => :catalina
-    sha256 "e003b972aee4579d626f9b24e40a256b9a192152c6209c48afc2bc8ab2822055" => :mojave
-    sha256 "d7adcdaaa74f9f501e8797da436f497fca809955a0ed62654328e415ea9fafc6" => :high_sierra
+    sha256 catalina:    "b78cb828d6e3652bd84f0cea56778f355c0a73f95a6ea694e44d0376e604ebc8"
+    sha256 mojave:      "e003b972aee4579d626f9b24e40a256b9a192152c6209c48afc2bc8ab2822055"
+    sha256 high_sierra: "d7adcdaaa74f9f501e8797da436f497fca809955a0ed62654328e415ea9fafc6"
   end
 
   depends_on "pkg-config" => :build

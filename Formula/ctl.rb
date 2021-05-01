@@ -7,9 +7,9 @@ class Ctl < Formula
   revision 5
 
   bottle do
-    sha256 "e44cbdbb013b350d22ff4cafeeb2a8e93dd164dc36bb6e181fb5cf086a8345c1" => :catalina
-    sha256 "6c88c03a0826a11e7267bf056e15362d4824cea2291b16af6db172d21f3654ce" => :mojave
-    sha256 "61b7606c62fb60aa86d887084e1cb0aa194ff5c64cb9726208ee364f870d7b43" => :high_sierra
+    sha256 catalina:    "e44cbdbb013b350d22ff4cafeeb2a8e93dd164dc36bb6e181fb5cf086a8345c1"
+    sha256 mojave:      "6c88c03a0826a11e7267bf056e15362d4824cea2291b16af6db172d21f3654ce"
+    sha256 high_sierra: "61b7606c62fb60aa86d887084e1cb0aa194ff5c64cb9726208ee364f870d7b43"
   end
 
   depends_on "cmake" => :build
@@ -41,6 +41,6 @@ class Ctl < Formula
   end
 
   test do
-    assert_match /transforms an image/, shell_output("#{bin}/ctlrender -help", 1)
+    assert_match(/transforms an image/, shell_output("#{bin}/ctlrender -help", 1))
   end
 end

@@ -6,10 +6,9 @@ class Promtail < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "98a8c826668b4ec1af40730cc82f26d293cd33f03cecc4bfba917723de8b3487" => :catalina
-    sha256 "ecec472508439e9b36d2e2f12363371ed3bfbe048115600110be0684bd851398" => :mojave
-    sha256 "add5dc05140a531958e5bb521ed47d0038d442839bc21c75ecbe514f5944887a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "98a8c826668b4ec1af40730cc82f26d293cd33f03cecc4bfba917723de8b3487"
+    sha256 cellar: :any_skip_relocation, mojave:      "ecec472508439e9b36d2e2f12363371ed3bfbe048115600110be0684bd851398"
+    sha256 cellar: :any_skip_relocation, high_sierra: "add5dc05140a531958e5bb521ed47d0038d442839bc21c75ecbe514f5944887a"
   end
 
   depends_on "go" => :build
@@ -27,7 +26,7 @@ class Promtail < Formula
     cp etc/"promtail-local-config.yaml", testpath
     inreplace "promtail-local-config.yaml" do |s|
       s.gsub! "9080", port.to_s
-      s.gsub! /__path__: .+$/, "__path__: #{testpath}"
+      s.gsub!(/__path__: .+$/, "__path__: #{testpath}")
     end
 
     fork { exec bin/"promtail", "-config.file=promtail-local-config.yaml" }

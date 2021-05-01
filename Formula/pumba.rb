@@ -7,10 +7,9 @@ class Pumba < Formula
   head "https://github.com/alexei-led/pumba.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9466bf26ee389122ea63bc3ddd87619052436b81960f321b2ed7eb12ae30dd97" => :catalina
-    sha256 "4d6b6d75185c7c1caa95a6e5cd79513ee579f54c5a2d0bb220f2e9f279ebab2d" => :mojave
-    sha256 "567508d3166f37c6ec5875a9079d8ac7168ce6c17e1274de9a31f3ee58eede94" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "9466bf26ee389122ea63bc3ddd87619052436b81960f321b2ed7eb12ae30dd97"
+    sha256 cellar: :any_skip_relocation, mojave:      "4d6b6d75185c7c1caa95a6e5cd79513ee579f54c5a2d0bb220f2e9f279ebab2d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "567508d3166f37c6ec5875a9079d8ac7168ce6c17e1274de9a31f3ee58eede94"
   end
 
   depends_on "go" => :build

@@ -12,10 +12,9 @@ class Litecli < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "a5c32ad08cf648a27f4227a318fcaa0703ae5997b0eb305ff1b5922825e114df" => :catalina
-    sha256 "dad4c2dc18b9bd8d9902e021fc28772947e1fb99179edffa32218091ca330671" => :mojave
-    sha256 "eb2ebf6ab934ad00fe09c41be58e5bbd6fb347d0f2a79fdf3108587b5a0db639" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "a5c32ad08cf648a27f4227a318fcaa0703ae5997b0eb305ff1b5922825e114df"
+    sha256 cellar: :any_skip_relocation, mojave:      "dad4c2dc18b9bd8d9902e021fc28772947e1fb99179edffa32218091ca330671"
+    sha256 cellar: :any_skip_relocation, high_sierra: "eb2ebf6ab934ad00fe09c41be58e5bbd6fb347d0f2a79fdf3108587b5a0db639"
   end
 
   depends_on "python@3.8"
@@ -104,9 +103,9 @@ class Litecli < Formula
     output = r.read
 
     # remove ANSI colors
-    output.gsub! /\e\[([;\d]+)?m/, ""
+    output.gsub!(/\e\[([;\d]+)?m/, "")
     # normalize line endings
-    output.gsub! /\r\n/, "\n"
+    output.gsub!(/\r\n/, "\n")
 
     expected = <<~EOS
       name

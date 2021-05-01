@@ -11,11 +11,10 @@ class Unar < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 2
-    sha256 "366fc5e1d3587148e089214a91cd23a96eae1b0aefebcd2e9813b1cc2f6593c2" => :catalina
-    sha256 "7bc711ae9affa86d2bc6b29df427dbc900afa6f18bcf13dc4fcf0518f0a50ffa" => :mojave
-    sha256 "311cdc91d8897b3ebe20ea6b9e62bb2e4bc4bc15c9d2f321567cd010031df78a" => :high_sierra
+    sha256 cellar: :any, catalina:    "366fc5e1d3587148e089214a91cd23a96eae1b0aefebcd2e9813b1cc2f6593c2"
+    sha256 cellar: :any, mojave:      "7bc711ae9affa86d2bc6b29df427dbc900afa6f18bcf13dc4fcf0518f0a50ffa"
+    sha256 cellar: :any, high_sierra: "311cdc91d8897b3ebe20ea6b9e62bb2e4bc4bc15c9d2f321567cd010031df78a"
   end
 
   depends_on xcode: :build

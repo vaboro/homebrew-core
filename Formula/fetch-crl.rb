@@ -11,10 +11,9 @@ class FetchCrl < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3" => :catalina
-    sha256 "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3" => :mojave
-    sha256 "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3"
+    sha256 cellar: :any_skip_relocation, mojave:      "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3"
+    sha256 cellar: :any_skip_relocation, high_sierra: "7c4aedc9178b36cf45d9a05ed4213c5c2ede584dc1c2754f2370b91f42a1efe3"
   end
 
   resource "LWP" do

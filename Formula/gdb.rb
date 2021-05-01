@@ -13,9 +13,9 @@ class Gdb < Formula
   end
 
   bottle do
-    sha256 "fbfb5bb6a5f8d7edb33937ebd505fbfe5074db3d49a0403803edafcbcbde297f" => :catalina
-    sha256 "64fdeef2403ae8dad106d4933dc6b5c555d560249a18dccc0a518c53f8ea26b1" => :mojave
-    sha256 "cbf828704099f07e8c863c962ef8deb60b932e3d75146a16b20967e3ddca7cbe" => :high_sierra
+    sha256 catalina:    "fbfb5bb6a5f8d7edb33937ebd505fbfe5074db3d49a0403803edafcbcbde297f"
+    sha256 mojave:      "64fdeef2403ae8dad106d4933dc6b5c555d560249a18dccc0a518c53f8ea26b1"
+    sha256 high_sierra: "cbf828704099f07e8c863c962ef8deb60b932e3d75146a16b20967e3ddca7cbe"
   end
 
   depends_on "python@3.8"

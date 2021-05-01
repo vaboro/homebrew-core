@@ -6,11 +6,10 @@ class Libosmium < Formula
   license "BSL-1.0"
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a" => :catalina
-    sha256 "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a" => :mojave
-    sha256 "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a"
+    sha256 cellar: :any_skip_relocation, mojave:      "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a"
+    sha256 cellar: :any_skip_relocation, high_sierra: "dadd63f6645e8f030f245083218f5a6bfd60bf97a6fa7e8a212010a934fa0b1a"
   end
 
   depends_on "boost" => :build

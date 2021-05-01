@@ -6,10 +6,9 @@ class OryHydra < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "719f44b5ccf00dc1a28f2c0032058ebf126f52fc74417a768c9ced9701e627b5" => :catalina
-    sha256 "003c630ce678f5dc7cdc61bceb11bc130532d2cf3c8bd44fc360de261988631e" => :mojave
-    sha256 "2bad2b83707f7035069cbf0db142c8e6f4ee4c9cb4107da9fd4142d51f6ffce3" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "719f44b5ccf00dc1a28f2c0032058ebf126f52fc74417a768c9ced9701e627b5"
+    sha256 cellar: :any_skip_relocation, mojave:      "003c630ce678f5dc7cdc61bceb11bc130532d2cf3c8bd44fc360de261988631e"
+    sha256 cellar: :any_skip_relocation, high_sierra: "2bad2b83707f7035069cbf0db142c8e6f4ee4c9cb4107da9fd4142d51f6ffce3"
   end
 
   depends_on "go" => :build

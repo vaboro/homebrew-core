@@ -11,9 +11,9 @@ class Etsh < Formula
   end
 
   bottle do
-    sha256 "1bb2f2a1cdb069e4963cba22c6014894a61853644e840341e8fd01f1ca522ea2" => :catalina
-    sha256 "61739a70a6927e119b9f27fe51e24a5bd14f3c5f8cfed1888d1f00682e68c9c8" => :mojave
-    sha256 "dbe3c9f5881aa417660aec6e9469123dde475b33551f7207cb3cb7aaade8c16d" => :high_sierra
+    sha256 catalina:    "1bb2f2a1cdb069e4963cba22c6014894a61853644e840341e8fd01f1ca522ea2"
+    sha256 mojave:      "61739a70a6927e119b9f27fe51e24a5bd14f3c5f8cfed1888d1f00682e68c9c8"
+    sha256 high_sierra: "dbe3c9f5881aa417660aec6e9469123dde475b33551f7207cb3cb7aaade8c16d"
   end
 
   conflicts_with "teleport", because: "both install `tsh` binaries"

@@ -7,10 +7,9 @@ class Volta < Formula
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "de3294c8c06240334e80c62659555ef619ae3c7777565dc15fa4fc8a128adf02" => :catalina
-    sha256 "f6adfe3dc87ee6734499035d7985ae6f56541fa7aad967a69bbb693bd323cabb" => :mojave
-    sha256 "3b3984025f650775ee70133827f93d396bcd20c747c0c998d1add6cae11d7704" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "de3294c8c06240334e80c62659555ef619ae3c7777565dc15fa4fc8a128adf02"
+    sha256 cellar: :any_skip_relocation, mojave:      "f6adfe3dc87ee6734499035d7985ae6f56541fa7aad967a69bbb693bd323cabb"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3b3984025f650775ee70133827f93d396bcd20c747c0c998d1add6cae11d7704"
   end
 
   depends_on "rust" => :build

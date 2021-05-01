@@ -6,13 +6,12 @@ class Plustache < Formula
   license "MIT"
 
   bottle do
-    cellar :any
-    sha256 "e3348a3114faa9ae6a989344d69a594e5cacaacd927b847213f75f97d399bce1" => :catalina
-    sha256 "853b1c9c7d7f1c8cf8b7c6a1d0928a991b9c5646a326fe520d90a2cd28fc42dc" => :mojave
-    sha256 "7be831bc5c4402d088a31cd3e3c55e9e0ae105d969eea9a676744b212bdbc446" => :high_sierra
-    sha256 "5122ac5404ae416955c5f3b64b63bfd617a530e746194590d3779ae61710f281" => :sierra
-    sha256 "d5a98c71ef6162127b0a9017a85e929effff39ce1d75318a75cfca93086ff922" => :el_capitan
-    sha256 "71e6a72ee994c2cabe2639dcd030a2ee577c1ceced012027766e108812bf7505" => :yosemite
+    sha256 cellar: :any, catalina:    "e3348a3114faa9ae6a989344d69a594e5cacaacd927b847213f75f97d399bce1"
+    sha256 cellar: :any, mojave:      "853b1c9c7d7f1c8cf8b7c6a1d0928a991b9c5646a326fe520d90a2cd28fc42dc"
+    sha256 cellar: :any, high_sierra: "7be831bc5c4402d088a31cd3e3c55e9e0ae105d969eea9a676744b212bdbc446"
+    sha256 cellar: :any, sierra:      "5122ac5404ae416955c5f3b64b63bfd617a530e746194590d3779ae61710f281"
+    sha256 cellar: :any, el_capitan:  "d5a98c71ef6162127b0a9017a85e929effff39ce1d75318a75cfca93086ff922"
+    sha256 cellar: :any, yosemite:    "71e6a72ee994c2cabe2639dcd030a2ee577c1ceced012027766e108812bf7505"
   end
 
   depends_on "autoconf" => :build

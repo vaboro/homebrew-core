@@ -12,10 +12,9 @@ class GstLibav < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "6caaaefdbc19002a84ab270be444d611b8602df450eaf8e9e5e71081f2fd1c10" => :catalina
-    sha256 "4b9b3cbff2fa2072fb6b4b9bc65328b5f096e201213e63cc9dc5f7406874d0d7" => :mojave
-    sha256 "ba4f52d9065ac3371ee0f0ea11014dedc2cc16defd068847ca14372d348ee2b5" => :high_sierra
+    sha256 cellar: :any, catalina:    "6caaaefdbc19002a84ab270be444d611b8602df450eaf8e9e5e71081f2fd1c10"
+    sha256 cellar: :any, mojave:      "4b9b3cbff2fa2072fb6b4b9bc65328b5f096e201213e63cc9dc5f7406874d0d7"
+    sha256 cellar: :any, high_sierra: "ba4f52d9065ac3371ee0f0ea11014dedc2cc16defd068847ca14372d348ee2b5"
   end
 
   depends_on "meson" => :build

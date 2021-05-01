@@ -8,9 +8,9 @@ class Zmap < Formula
   head "https://github.com/zmap/zmap.git"
 
   bottle do
-    sha256 "7f3dce955fb01597407317a81e6d1e0b60d66756e64358f11106adf5335b820a" => :catalina
-    sha256 "3014cc393e0d9b5e6705392a10da8588f26d668daa5660aebe252ed514bf176e" => :mojave
-    sha256 "99c0f7e06b2789fb57bd465a5a1fe35628b6d5e624ebba32d7f1199abc78d8bf" => :high_sierra
+    sha256 catalina:    "7f3dce955fb01597407317a81e6d1e0b60d66756e64358f11106adf5335b820a"
+    sha256 mojave:      "3014cc393e0d9b5e6705392a10da8588f26d668daa5660aebe252ed514bf176e"
+    sha256 high_sierra: "99c0f7e06b2789fb57bd465a5a1fe35628b6d5e624ebba32d7f1199abc78d8bf"
   end
 
   depends_on "byacc" => :build

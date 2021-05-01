@@ -10,10 +10,9 @@ class PythonYq < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d460e8631ba100cd9d87866155f5bbb6aeaa8b1052310d3b696c3e0cc43bf7d5" => :catalina
-    sha256 "598a986b32809caf6d72edc96bcb97ab15455ca2b2cba4ed79f659dbbc2ca14d" => :mojave
-    sha256 "3d7976e54dc4614b060ddef4434956c13f1684113cc68a501bbcefc99554559c" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "d460e8631ba100cd9d87866155f5bbb6aeaa8b1052310d3b696c3e0cc43bf7d5"
+    sha256 cellar: :any_skip_relocation, mojave:      "598a986b32809caf6d72edc96bcb97ab15455ca2b2cba4ed79f659dbbc2ca14d"
+    sha256 cellar: :any_skip_relocation, high_sierra: "3d7976e54dc4614b060ddef4434956c13f1684113cc68a501bbcefc99554559c"
   end
 
   depends_on "jq"

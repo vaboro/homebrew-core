@@ -11,10 +11,9 @@ class Hdf5 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "e0990f7a52f3f66fd8d546ff1e1d26d4a0cec5ebc9a45ec21fb5335359d6878a" => :catalina
-    sha256 "3b681a12f21a576b4c80d84d52dbe8ff9380ecc517f9b742dbe26faf5ffc289a" => :mojave
-    sha256 "331f9a49fb5abb3344a6dc7ff626e37d799418d8de507487c30aff91e2b22265" => :high_sierra
+    sha256 cellar: :any, catalina:    "e0990f7a52f3f66fd8d546ff1e1d26d4a0cec5ebc9a45ec21fb5335359d6878a"
+    sha256 cellar: :any, mojave:      "3b681a12f21a576b4c80d84d52dbe8ff9380ecc517f9b742dbe26faf5ffc289a"
+    sha256 cellar: :any, high_sierra: "331f9a49fb5abb3344a6dc7ff626e37d799418d8de507487c30aff91e2b22265"
   end
 
   depends_on "autoconf" => :build

@@ -7,10 +7,9 @@ class Apib < Formula
   head "https://github.com/apigee/apib.git"
 
   bottle do
-    cellar :any
-    sha256 "b925a48cd3a9047184b5373e4718e4142117a487467cea95be9f43f6c9951712" => :catalina
-    sha256 "fd1f74b58c7a51240d463c8ec1203bce33677409aca81ba0ffba9ea718471433" => :mojave
-    sha256 "aee416aff5715b96b81cfeda0be036a2510ffe760187e396c143a64bae2c25c2" => :high_sierra
+    sha256 cellar: :any, catalina:    "b925a48cd3a9047184b5373e4718e4142117a487467cea95be9f43f6c9951712"
+    sha256 cellar: :any, mojave:      "fd1f74b58c7a51240d463c8ec1203bce33677409aca81ba0ffba9ea718471433"
+    sha256 cellar: :any, high_sierra: "aee416aff5715b96b81cfeda0be036a2510ffe760187e396c143a64bae2c25c2"
   end
 
   depends_on "cmake" => :build

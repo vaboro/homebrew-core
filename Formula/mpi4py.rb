@@ -10,10 +10,9 @@ class Mpi4py < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "f32637afaa7a9e9b1de6db1df8707faa1bf3b82f9184f1d4415154c80907fa2d" => :catalina
-    sha256 "0722fb13f9b85970dbdd113d4616ea7c47ea69fdc89747c51fa882adc1fe62d4" => :mojave
-    sha256 "f8cb782c83655a5a97f0016bd519a6528d9f6b73fe61ccd8420f33d4b9a34155" => :high_sierra
+    sha256 cellar: :any, catalina:    "f32637afaa7a9e9b1de6db1df8707faa1bf3b82f9184f1d4415154c80907fa2d"
+    sha256 cellar: :any, mojave:      "0722fb13f9b85970dbdd113d4616ea7c47ea69fdc89747c51fa882adc1fe62d4"
+    sha256 cellar: :any, high_sierra: "f8cb782c83655a5a97f0016bd519a6528d9f6b73fe61ccd8420f33d4b9a34155"
   end
 
   depends_on "cython" => :build

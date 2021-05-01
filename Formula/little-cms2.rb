@@ -18,10 +18,9 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b0fe7486871b0fb0e34012f48bce09e96229e5e2985d64e7a0164c2847e41975" => :catalina
-    sha256 "e05f0a487d2243411eeb9fd9909f875517d7b27feb3cb914117acd9c60b76fcc" => :mojave
-    sha256 "928d1b8b8292a2d7950d0ef1381c70996bcde325f0124d7dcb68059090544dac" => :high_sierra
+    sha256 cellar: :any, catalina:    "b0fe7486871b0fb0e34012f48bce09e96229e5e2985d64e7a0164c2847e41975"
+    sha256 cellar: :any, mojave:      "e05f0a487d2243411eeb9fd9909f875517d7b27feb3cb914117acd9c60b76fcc"
+    sha256 cellar: :any, high_sierra: "928d1b8b8292a2d7950d0ef1381c70996bcde325f0124d7dcb68059090544dac"
   end
 
   depends_on "jpeg"

@@ -13,9 +13,9 @@ class MitScheme < Formula
   end
 
   bottle do
-    sha256 "5ae123ef4a76b34e2b927873991a823b0ab68a5518d1543f1e76bf9d3c36e589" => :catalina
-    sha256 "7f74120df838cc2f4542c73f20b7f3e3473f23a775d249e2b8170e6acfd43ed1" => :mojave
-    sha256 "cf0d2bf18da0dd0454f53f125bcb4d85632619cd8a79f3dd30ddb16a19c0d470" => :high_sierra
+    sha256 catalina:    "5ae123ef4a76b34e2b927873991a823b0ab68a5518d1543f1e76bf9d3c36e589"
+    sha256 mojave:      "7f74120df838cc2f4542c73f20b7f3e3473f23a775d249e2b8170e6acfd43ed1"
+    sha256 high_sierra: "cf0d2bf18da0dd0454f53f125bcb4d85632619cd8a79f3dd30ddb16a19c0d470"
   end
 
   # Has a hardcoded compile check for /Applications/Xcode.app
@@ -63,7 +63,7 @@ class MitScheme < Formula
       s.gsub! "/usr/local", prefix
       # Fixes "configure: error: No MacOSX SDK for version: 10.10"
       # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
-      s.gsub! /SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}"
+      s.gsub!(/SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}")
     end
 
     inreplace "edwin/compile.sh" do |s|

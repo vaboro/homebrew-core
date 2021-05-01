@@ -10,9 +10,9 @@ class Libpeas < Formula
   end
 
   bottle do
-    sha256 "cee4e628ee60bbf6ddd0c4f83dc411b730e8a3f54a80954951cdec06b1f2980f" => :catalina
-    sha256 "c8d4fa64f82751999434fd326c736775e39ce3adfc812dd5c89288266cfbd845" => :mojave
-    sha256 "f6a73c80504d5c846ee9f97495b91bca0d50f4f44e84e79068620f411a116a1d" => :high_sierra
+    sha256 catalina:    "cee4e628ee60bbf6ddd0c4f83dc411b730e8a3f54a80954951cdec06b1f2980f"
+    sha256 mojave:      "c8d4fa64f82751999434fd326c736775e39ce3adfc812dd5c89288266cfbd845"
+    sha256 high_sierra: "f6a73c80504d5c846ee9f97495b91bca0d50f4f44e84e79068620f411a116a1d"
   end
 
   depends_on "meson" => :build

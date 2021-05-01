@@ -6,10 +6,9 @@ class UsbIds < Formula
   license any_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "2994769226c7815ef5eee9ba27f729005fd993341dfbca50f413139ef411ac5c" => :catalina
-    sha256 "8b29c5873a395b8bdff9219dcfafb13d05d7428c8f4d050cb776d332dd7aef1f" => :mojave
-    sha256 "18a048550eae20c48c7af4cc0b93f1da748cae52417e364b1aedc154c27613d5" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "2994769226c7815ef5eee9ba27f729005fd993341dfbca50f413139ef411ac5c"
+    sha256 cellar: :any_skip_relocation, mojave:      "8b29c5873a395b8bdff9219dcfafb13d05d7428c8f4d050cb776d332dd7aef1f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "18a048550eae20c48c7af4cc0b93f1da748cae52417e364b1aedc154c27613d5"
   end
 
   def install

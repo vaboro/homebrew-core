@@ -7,10 +7,9 @@ class Honcho < Formula
   revision 2
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1" => :catalina
-    sha256 "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1" => :mojave
-    sha256 "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1"
+    sha256 cellar: :any_skip_relocation, mojave:      "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1"
+    sha256 cellar: :any_skip_relocation, high_sierra: "986c98221b9bb025b0c8fa8c1f4ca150ee1853488f6060b603c54aa7e02c8be1"
   end
 
   depends_on "python@3.8"
@@ -27,6 +26,6 @@ class Honcho < Formula
   test do
     (testpath/"Procfile").write("talk: echo $MY_VAR")
     (testpath/".env").write("MY_VAR=hi")
-    assert_match /talk\.\d+ \| hi/, shell_output("#{bin}/honcho start")
+    assert_match(/talk\.\d+ \| hi/, shell_output("#{bin}/honcho start"))
   end
 end

@@ -10,11 +10,10 @@ class Dosbox < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "b204c9a07dce5bf4f476c9912f177481a69e8843045ab19d01f3e016d875dceb" => :catalina
-    sha256 "de46ee6c3c638829ba3b9dc3ee009811d26a19359d10804b9ff93706df2a6863" => :mojave
-    sha256 "66b1b073b1ae7db629c64f66249254aefcb8fb6585c065c858a364bd258785d4" => :high_sierra
-    sha256 "3bd2c41c7f76e214c0964acec02723d2a2a611eca92cf5edb93c029333a78adf" => :sierra
+    sha256 cellar: :any, catalina:    "b204c9a07dce5bf4f476c9912f177481a69e8843045ab19d01f3e016d875dceb"
+    sha256 cellar: :any, mojave:      "de46ee6c3c638829ba3b9dc3ee009811d26a19359d10804b9ff93706df2a6863"
+    sha256 cellar: :any, high_sierra: "66b1b073b1ae7db629c64f66249254aefcb8fb6585c065c858a364bd258785d4"
+    sha256 cellar: :any, sierra:      "3bd2c41c7f76e214c0964acec02723d2a2a611eca92cf5edb93c029333a78adf"
   end
 
   head do

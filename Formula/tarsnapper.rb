@@ -9,10 +9,9 @@ class Tarsnapper < Formula
   revision 2
 
   bottle do
-    cellar :any
-    sha256 "1a349c8831f9538426254c7bd811c5144f481728ea259dd5ad8d0af629a1d406" => :catalina
-    sha256 "a153f159001c5be37fcf8ae16e89dc6aa99d752854620d3fb289e8745795a034" => :mojave
-    sha256 "a39196665b10717c42c69bc749e35cee06736e3509e992db950ccd6b248f2e23" => :high_sierra
+    sha256 cellar: :any, catalina:    "1a349c8831f9538426254c7bd811c5144f481728ea259dd5ad8d0af629a1d406"
+    sha256 cellar: :any, mojave:      "a153f159001c5be37fcf8ae16e89dc6aa99d752854620d3fb289e8745795a034"
+    sha256 cellar: :any, high_sierra: "a39196665b10717c42c69bc749e35cee06736e3509e992db950ccd6b248f2e23"
   end
 
   depends_on "libyaml"
@@ -54,6 +53,6 @@ class Tarsnapper < Formula
   end
 
   test do
-    assert_match /usage: tarsnapper/, shell_output("#{bin}/tarsnapper --help")
+    assert_match(/usage: tarsnapper/, shell_output("#{bin}/tarsnapper --help"))
   end
 end

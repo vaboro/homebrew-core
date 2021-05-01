@@ -10,9 +10,9 @@ class Smartmontools < Formula
   end
 
   bottle do
-    sha256 "cc34524c76ff39abb4afc6794fe404e257cf04816c1d2c33f8edd158e5677239" => :catalina
-    sha256 "cce7b82f81c999afcd180dd7fb1ef471bfb24d9934dc3ad326d86db7ea478f2c" => :mojave
-    sha256 "77b4722b7ffc997a2b5482518f291640fcabc45468ae5fca12520943869263be" => :high_sierra
+    sha256 catalina:    "cc34524c76ff39abb4afc6794fe404e257cf04816c1d2c33f8edd158e5677239"
+    sha256 mojave:      "cce7b82f81c999afcd180dd7fb1ef471bfb24d9934dc3ad326d86db7ea478f2c"
+    sha256 high_sierra: "77b4722b7ffc997a2b5482518f291640fcabc45468ae5fca12520943869263be"
   end
 
   def install

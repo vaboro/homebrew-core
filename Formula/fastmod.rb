@@ -6,10 +6,9 @@ class Fastmod < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "73a07dacd6f2c4e2151a848ab7903d12eb8de8328b8f5b796d9c2faeee66e259" => :catalina
-    sha256 "9154f2bf4a78aaa4a40f3c93fd73fc39a385560b996ad927e0bcd8cf363a5308" => :mojave
-    sha256 "ac5cf2b03b103422096feeb6693d252058772c7e06f54442918d48750f54f7e7" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "73a07dacd6f2c4e2151a848ab7903d12eb8de8328b8f5b796d9c2faeee66e259"
+    sha256 cellar: :any_skip_relocation, mojave:      "9154f2bf4a78aaa4a40f3c93fd73fc39a385560b996ad927e0bcd8cf363a5308"
+    sha256 cellar: :any_skip_relocation, high_sierra: "ac5cf2b03b103422096feeb6693d252058772c7e06f54442918d48750f54f7e7"
   end
 
   depends_on "rust" => :build

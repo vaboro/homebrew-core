@@ -7,10 +7,9 @@ class Zimg < Formula
   head "https://github.com/sekrit-twc/zimg.git"
 
   bottle do
-    cellar :any
-    sha256 "1b86d04d346e073a6f1f10de4df32d8ed38639589ab557f1ca926df3710cf7bf" => :catalina
-    sha256 "5e02a6d87423b269cb3068e00fbf133eb0ae5ba519d817fa9b71f76e3d9a24f1" => :mojave
-    sha256 "3aa550e35f7b18561cfcea1dff0c9e0d10fba0563f758b73b52f1767763bbec2" => :high_sierra
+    sha256 cellar: :any, catalina:    "1b86d04d346e073a6f1f10de4df32d8ed38639589ab557f1ca926df3710cf7bf"
+    sha256 cellar: :any, mojave:      "5e02a6d87423b269cb3068e00fbf133eb0ae5ba519d817fa9b71f76e3d9a24f1"
+    sha256 cellar: :any, high_sierra: "3aa550e35f7b18561cfcea1dff0c9e0d10fba0563f758b73b52f1767763bbec2"
   end
 
   depends_on "autoconf" => :build

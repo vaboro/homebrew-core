@@ -11,9 +11,9 @@ class Feh < Formula
   end
 
   bottle do
-    sha256 "9ab3087cc24d59b54e032dd37f6d04ab367f6b4121576bd0c969303e9a341b35" => :catalina
-    sha256 "9240eda39c189b0c0c78d4cc53f11642dec23ea9e58b899ede9fa7dec5101a30" => :mojave
-    sha256 "e73c73c598430c28f998b14191009c237668c17e71f9ce4f32686e504bb21111" => :high_sierra
+    sha256 catalina:    "9ab3087cc24d59b54e032dd37f6d04ab367f6b4121576bd0c969303e9a341b35"
+    sha256 mojave:      "9240eda39c189b0c0c78d4cc53f11642dec23ea9e58b899ede9fa7dec5101a30"
+    sha256 high_sierra: "e73c73c598430c28f998b14191009c237668c17e71f9ce4f32686e504bb21111"
   end
 
   depends_on "imlib2"

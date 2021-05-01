@@ -8,10 +8,9 @@ class Fastd < Formula
   head "https://github.com/NeoRaider/fastd.git"
 
   bottle do
-    cellar :any
-    sha256 "37f5ce56da71775cec3a8d1441a13d5f9ee8c3e903a3605867f46ca6452c8900" => :catalina
-    sha256 "94eb461f5c5cbbadf1a3eec6c647ca34e9bf7897efe37c22c8f4c4eb045311e9" => :mojave
-    sha256 "ec6bf6837faa5900e5e13380ea47b22d1ed317b0c4b7e7282d4c9b467ec1a125" => :high_sierra
+    sha256 cellar: :any, catalina:    "37f5ce56da71775cec3a8d1441a13d5f9ee8c3e903a3605867f46ca6452c8900"
+    sha256 cellar: :any, mojave:      "94eb461f5c5cbbadf1a3eec6c647ca34e9bf7897efe37c22c8f4c4eb045311e9"
+    sha256 cellar: :any, high_sierra: "ec6bf6837faa5900e5e13380ea47b22d1ed317b0c4b7e7282d4c9b467ec1a125"
   end
 
   depends_on "bison" => :build # fastd requires bison >= 2.5

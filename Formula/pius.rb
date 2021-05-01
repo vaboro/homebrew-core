@@ -10,10 +10,9 @@ class Pius < Formula
   head "https://github.com/jaymzh/pius.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e94572eadd5e0adeda1fb16cb05f44afd486b9ba3667c0139ec5588e7f947775" => :catalina
-    sha256 "499e1c8b31c8c1930cc8b6a7d187854302890ba51585fdba92515f0f014069ff" => :mojave
-    sha256 "d0b7237e06c967976ff74ccdf110afe9712cda1b2e0dd870f43599eb337d2eb9" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "e94572eadd5e0adeda1fb16cb05f44afd486b9ba3667c0139ec5588e7f947775"
+    sha256 cellar: :any_skip_relocation, mojave:      "499e1c8b31c8c1930cc8b6a7d187854302890ba51585fdba92515f0f014069ff"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d0b7237e06c967976ff74ccdf110afe9712cda1b2e0dd870f43599eb337d2eb9"
   end
 
   depends_on "gnupg"

@@ -8,10 +8,9 @@ class Qcli < Formula
   head "https://github.com/bavc/qctools.git"
 
   bottle do
-    cellar :any
-    sha256 "a64e0d73cd4a2d8381133b862d8781a63c17380da45ad50fb994560b04430b53" => :catalina
-    sha256 "3a1bf39203f4167a06479c3d03647e275530e87f2ab73bd9edbf539ff119f0dd" => :mojave
-    sha256 "5e69cecec0a4762ce9f17b4fc6c40fcb3d8e22a0e9856309e5b981c98c505fa6" => :high_sierra
+    sha256 cellar: :any, catalina:    "a64e0d73cd4a2d8381133b862d8781a63c17380da45ad50fb994560b04430b53"
+    sha256 cellar: :any, mojave:      "3a1bf39203f4167a06479c3d03647e275530e87f2ab73bd9edbf539ff119f0dd"
+    sha256 cellar: :any, high_sierra: "5e69cecec0a4762ce9f17b4fc6c40fcb3d8e22a0e9856309e5b981c98c505fa6"
   end
 
   depends_on "pkg-config" => :build

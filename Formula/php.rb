@@ -1,42 +1,42 @@
 class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  url "https://www.php.net/distributions/php-7.3.8.tar.xz"
-  sha256 "f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5"
+  # <<<<<<< HEAD
+  # <<<<<<< HEAD
+  # <<<<<<< HEAD
+  #   url "https://www.php.net/distributions/php-7.3.8.tar.xz"
+  #   sha256 "f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5"
 
-  bottle do
-    sha256 "4c5881144895dfdd159a0a9381487dc4e752ee9bf5c7d289db92f1ae80906b15" => :mojave
-    sha256 "8a8a1296f42f350c2c189618bf0b4416ba967d84d2ac5a269b2bd3172934c87c" => :high_sierra
-    sha256 "bf796b6b68efc6a0cebca1b8aa7b20b5cfd06a9d96ddf6ea000805ac4acc9307" => :sierra
-=======
-  url "https://www.php.net/distributions/php-7.3.9.tar.xz"
-  sha256 "4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd"
-  revision 1
+  #   bottle do
+  #     sha256 "4c5881144895dfdd159a0a9381487dc4e752ee9bf5c7d289db92f1ae80906b15" => :mojave
+  #     sha256 "8a8a1296f42f350c2c189618bf0b4416ba967d84d2ac5a269b2bd3172934c87c" => :high_sierra
+  #     sha256 "bf796b6b68efc6a0cebca1b8aa7b20b5cfd06a9d96ddf6ea000805ac4acc9307" => :sierra
+  # =======
+  #   url "https://www.php.net/distributions/php-7.3.9.tar.xz"
+  #   sha256 "4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd"
+  #   revision 1
 
-  bottle do
-<<<<<<< HEAD
-    sha256 "15d3d7caec038605cbc6abfb6692b03f59571443c76cfc7bd35f21bbc6c0baf3" => :mojave
-    sha256 "3c250c361aff4d9c97450cf9b7c8883e1b480d515808347f0fd983b63dc60aeb" => :high_sierra
-    sha256 "ed7c916c3c13dda6ddc0fe2bf951cbe7802a1ac8701409df3f87bf120fca09a9" => :sierra
->>>>>>> upstream/master
-=======
-    sha256 "4b6b3ea4704f2debd9d506e3c8820d2958b7e1eca6daece64796ca9a03e364d1" => :mojave
-    sha256 "8f77f9e4c05467a0464d41ecb5c47f4bd135ac95f320d59426710088615c9bc5" => :high_sierra
-    sha256 "814bd8c3f742749aac8c92cad5505ebfa6349aeb0a80308d3fb1bd2f4c9f7799" => :sierra
->>>>>>> upstream/master
-=======
-  url "https://www.php.net/distributions/php-7.3.10.tar.xz"
-  sha256 "42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906"
+  #   bottle do
+  # <<<<<<< HEAD
+  #     sha256 "15d3d7caec038605cbc6abfb6692b03f59571443c76cfc7bd35f21bbc6c0baf3" => :mojave
+  #     sha256 "3c250c361aff4d9c97450cf9b7c8883e1b480d515808347f0fd983b63dc60aeb" => :high_sierra
+  #     sha256 "ed7c916c3c13dda6ddc0fe2bf951cbe7802a1ac8701409df3f87bf120fca09a9" => :sierra
+  # >>>>>>> upstream/master
+  # =======
+  #     sha256 "4b6b3ea4704f2debd9d506e3c8820d2958b7e1eca6daece64796ca9a03e364d1" => :mojave
+  #     sha256 "8f77f9e4c05467a0464d41ecb5c47f4bd135ac95f320d59426710088615c9bc5" => :high_sierra
+  #     sha256 "814bd8c3f742749aac8c92cad5505ebfa6349aeb0a80308d3fb1bd2f4c9f7799" => :sierra
+  # >>>>>>> upstream/master
+  # =======
+  #   url "https://www.php.net/distributions/php-7.3.10.tar.xz"
+  #   sha256 "42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906"
 
-  bottle do
-    sha256 "7131f58e94e2330ad99e5a5e33f0e3f879c6624219ca8e0d4b6e7ac3e47a68d6" => :catalina
-    sha256 "ee9e72d83af831f2bc3db72b5232d1103480ad3e5a36865fcd1a961d0714744f" => :mojave
-    sha256 "604a1ecf696be0b784b20fc898c9b4913c0b64ed8a9367c20fcbed8afc9c29df" => :high_sierra
->>>>>>> upstream/master
-=======
+  #   bottle do
+  #     sha256 "7131f58e94e2330ad99e5a5e33f0e3f879c6624219ca8e0d4b6e7ac3e47a68d6" => :catalina
+  #     sha256 "ee9e72d83af831f2bc3db72b5232d1103480ad3e5a36865fcd1a961d0714744f" => :mojave
+  #     sha256 "604a1ecf696be0b784b20fc898c9b4913c0b64ed8a9367c20fcbed8afc9c29df" => :high_sierra
+  # >>>>>>> upstream/master
+  # =======
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   url "https://www.php.net/distributions/php-7.4.10.tar.xz"
   mirror "https://fossies.org/linux/www/php-7.4.10.tar.xz"
@@ -49,9 +49,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 "b4bf7b37671bf26dec1986a3be42416fb41e731b6d632f02fb2bc968379d4022" => :catalina
-    sha256 "983da87997888992e345cc5bbae84ab1bd1e20503c5a171a66533744001d1e9e" => :mojave
-    sha256 "7c8107f2c86c99cce71c35a9ce42ab4d88e35c7475a706bef1533d18c0f22982" => :high_sierra
+    sha256 catalina:    "b4bf7b37671bf26dec1986a3be42416fb41e731b6d632f02fb2bc968379d4022"
+    sha256 mojave:      "983da87997888992e345cc5bbae84ab1bd1e20503c5a171a66533744001d1e9e"
+    sha256 high_sierra: "7c8107f2c86c99cce71c35a9ce42ab4d88e35c7475a706bef1533d18c0f22982"
   end
 
   head do
@@ -59,7 +59,7 @@ class Php < Formula
 
     depends_on "bison" => :build # bison >= 3.0.0 required to generate parsers
     depends_on "re2c" => :build # required to generate PHP lexers
->>>>>>> upstream/master
+    # >>>>>>> upstream/master
   end
 
   depends_on "httpd" => [:build, :test]
@@ -361,8 +361,8 @@ class Php < Formula
   end
 
   test do
-    assert_match /^Zend OPcache$/, shell_output("#{bin}/php -i"),
-      "Zend OPCache extension not loaded"
+    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
+      "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
     assert_includes MachO::Tools.dylibs("#{bin}/php"),
@@ -371,8 +371,8 @@ class Php < Formula
     system "#{bin}/phpdbg", "-V"
     system "#{bin}/php-cgi", "-m"
     # Prevent SNMP extension to be added
-    assert_no_match /^snmp$/, shell_output("#{bin}/php -m"),
-      "SNMP extension doesn't work reliably with Homebrew on High Sierra"
+    assert_no_match(/^snmp$/, shell_output("#{bin}/php -m"),
+      "SNMP extension doesn't work reliably with Homebrew on High Sierra")
     begin
       port = free_port
       port_fpm = free_port

@@ -12,9 +12,9 @@ class Nagios < Formula
 
   bottle do
     rebuild 1
-    sha256 "a9c2c8baae137bfbfa46f67d62f7fb29a0fb4327b7a366cfe44a1502207d62fd" => :catalina
-    sha256 "c074419ad5ee9d3446410e7ff05b8454c840771f5cae1246a9de20e33775d4f0" => :mojave
-    sha256 "162b5d50061d7a2ef4bfa8a9899d7fad3558ccfea80e105c43a66061d1780cd9" => :high_sierra
+    sha256 catalina:    "a9c2c8baae137bfbfa46f67d62f7fb29a0fb4327b7a366cfe44a1502207d62fd"
+    sha256 mojave:      "c074419ad5ee9d3446410e7ff05b8454c840771f5cae1246a9de20e33775d4f0"
+    sha256 high_sierra: "162b5d50061d7a2ef4bfa8a9899d7fad3558ccfea80e105c43a66061d1780cd9"
   end
 
   depends_on "gd"

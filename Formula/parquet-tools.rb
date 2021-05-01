@@ -8,10 +8,9 @@ class ParquetTools < Formula
   head "https://github.com/apache/parquet-mr.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "37d87045919ddb7d3f85efd0ad02b2af90b2f6bdb850da7e917b05c0e622aad0" => :catalina
-    sha256 "ebcc402a4b4385cec57dc835142940ceab8233809ff99311ca04a3a81e22a1c4" => :mojave
-    sha256 "e86151377d7008b1674f4cc71b11aabea81d4e2ce3c04b10e90bf197bc36c021" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "37d87045919ddb7d3f85efd0ad02b2af90b2f6bdb850da7e917b05c0e622aad0"
+    sha256 cellar: :any_skip_relocation, mojave:      "ebcc402a4b4385cec57dc835142940ceab8233809ff99311ca04a3a81e22a1c4"
+    sha256 cellar: :any_skip_relocation, high_sierra: "e86151377d7008b1674f4cc71b11aabea81d4e2ce3c04b10e90bf197bc36c021"
   end
 
   depends_on "maven" => :build

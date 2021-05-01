@@ -10,11 +10,10 @@ class Reminiscence < Formula
   end
 
   bottle do
-    cellar :any
     rebuild 1
-    sha256 "a587449c5846115b5bb4100e1ec50af6256e48bc770c35dad4985850ab8e1b3c" => :catalina
-    sha256 "a1a752e53d40822409ea80a273b38d307e6e6afdfc52d856dee8e8dcc6ae32d8" => :mojave
-    sha256 "537b631728a9b8e322cc835d20b3d8bac832c5c14ebc0bdedde43fe0b607bcd2" => :high_sierra
+    sha256 cellar: :any, catalina:    "a587449c5846115b5bb4100e1ec50af6256e48bc770c35dad4985850ab8e1b3c"
+    sha256 cellar: :any, mojave:      "a1a752e53d40822409ea80a273b38d307e6e6afdfc52d856dee8e8dcc6ae32d8"
+    sha256 cellar: :any, high_sierra: "537b631728a9b8e322cc835d20b3d8bac832c5c14ebc0bdedde43fe0b607bcd2"
   end
 
   depends_on "autoconf" => :build

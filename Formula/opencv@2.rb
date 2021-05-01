@@ -12,15 +12,15 @@ class OpencvAT2 < Formula
   end
 
   bottle do
-    sha256 "180d6d38c261fbb8d8a874fe21018c0ad1fa9e9a526e9234ff5645affe04512f" => :catalina
-    sha256 "9beadffa6f23d7c7ea58a501d88e8512a67ac4f0848b8a9920209fc6430ab0ed" => :mojave
-    sha256 "b90a2e7e26ef9d18a2f87a954a786a6bc983047fbcae2280b662df66e254e76c" => :high_sierra
+    sha256 catalina:    "180d6d38c261fbb8d8a874fe21018c0ad1fa9e9a526e9234ff5645affe04512f"
+    sha256 mojave:      "9beadffa6f23d7c7ea58a501d88e8512a67ac4f0848b8a9920209fc6430ab0ed"
+    sha256 high_sierra: "b90a2e7e26ef9d18a2f87a954a786a6bc983047fbcae2280b662df66e254e76c"
   end
 
   # https://www.slideshare.net/EugeneKhvedchenya/opencv-30-latest-news-and-the-roadmap
-  deprecate! date: "2015-02-01", because: :unsupported
-
   keg_only :versioned_formula
+
+  deprecate! date: "2015-02-01", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

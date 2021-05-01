@@ -8,10 +8,9 @@ class Buku < Formula
   license "GPL-3.0"
 
   bottle do
-    cellar :any
-    sha256 "eddbed7b65e27d075deac0c14aaad86714085e02fa8e565a9f34524049c9a9b9" => :catalina
-    sha256 "211a2ba97cba060b7820a7def2d2956224ea21ae56ac9c2a97ee233f055ec4ec" => :mojave
-    sha256 "663b219a77e3005f067e4030633ed9ffbdf9d89213b66b8d1d07ab54df23c078" => :high_sierra
+    sha256 cellar: :any, catalina:    "eddbed7b65e27d075deac0c14aaad86714085e02fa8e565a9f34524049c9a9b9"
+    sha256 cellar: :any, mojave:      "211a2ba97cba060b7820a7def2d2956224ea21ae56ac9c2a97ee233f055ec4ec"
+    sha256 cellar: :any, high_sierra: "663b219a77e3005f067e4030633ed9ffbdf9d89213b66b8d1d07ab54df23c078"
   end
 
   depends_on "openssl@1.1"

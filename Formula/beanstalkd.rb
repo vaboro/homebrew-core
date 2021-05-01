@@ -6,10 +6,9 @@ class Beanstalkd < Formula
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "eb308ce225c6f335a5a27518b63f8ce70caa263e94afbb7d9c2bb9000c12d974" => :catalina
-    sha256 "da06f9b4142a163f26de89e5d67c729fd4edd9fbd2dcf3ada91507f92f45ec93" => :mojave
-    sha256 "d57a1db5de295181c1f5596951160cc65b7f27645806fb35834f6409cbc57a6e" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "eb308ce225c6f335a5a27518b63f8ce70caa263e94afbb7d9c2bb9000c12d974"
+    sha256 cellar: :any_skip_relocation, mojave:      "da06f9b4142a163f26de89e5d67c729fd4edd9fbd2dcf3ada91507f92f45ec93"
+    sha256 cellar: :any_skip_relocation, high_sierra: "d57a1db5de295181c1f5596951160cc65b7f27645806fb35834f6409cbc57a6e"
   end
 
   def install

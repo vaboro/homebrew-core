@@ -17,10 +17,9 @@ class Ponysay < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "77e5eb82496f017ceec2250b454b536964aff0609e3ab2a4a785b9d9b62c5393" => :catalina
-    sha256 "30dbf5ef6f9aed9feaf26557e8c954eef25102e79c4c8c020d98d25bbb737bab" => :mojave
-    sha256 "78743696032607c87bd59c95f765d6e10f2758be4b152728ae3b9ddbfb16e5cd" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "77e5eb82496f017ceec2250b454b536964aff0609e3ab2a4a785b9d9b62c5393"
+    sha256 cellar: :any_skip_relocation, mojave:      "30dbf5ef6f9aed9feaf26557e8c954eef25102e79c4c8c020d98d25bbb737bab"
+    sha256 cellar: :any_skip_relocation, high_sierra: "78743696032607c87bd59c95f765d6e10f2758be4b152728ae3b9ddbfb16e5cd"
   end
 
   depends_on "gzip" => :build

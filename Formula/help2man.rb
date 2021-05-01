@@ -12,10 +12,9 @@ class Help2man < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "0df51bfb13aae7a1cc8fefd2d5853d5659ef29bd676ae1b84de1c5775fd46475" => :catalina
-    sha256 "0c6508b21593f464813e5d0f813801fb26af4792bb8cc4aaee0a4ad9b44350f9" => :mojave
-    sha256 "46f3e7058af47162c5649eed42b2e573b27ac2187f0c397e83357e0ba0724e93" => :high_sierra
+    sha256 cellar: :any, catalina:    "0df51bfb13aae7a1cc8fefd2d5853d5659ef29bd676ae1b84de1c5775fd46475"
+    sha256 cellar: :any, mojave:      "0c6508b21593f464813e5d0f813801fb26af4792bb8cc4aaee0a4ad9b44350f9"
+    sha256 cellar: :any, high_sierra: "46f3e7058af47162c5649eed42b2e573b27ac2187f0c397e83357e0ba0724e93"
   end
 
   depends_on "gettext"

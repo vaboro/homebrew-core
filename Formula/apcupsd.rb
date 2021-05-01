@@ -12,9 +12,9 @@ class Apcupsd < Formula
 
   bottle do
     rebuild 3
-    sha256 "6bdbc101891e5c10b8aead1e1c86ce8ed1560f38b4de96a6c804c73953ad3ac0" => :catalina
-    sha256 "f9e745573abb55d0194e958d48256ace18a8116fc2c7577617de915746e6c18b" => :mojave
-    sha256 "8e604286ac22168ede829d3dff95ac782b458316c3389827c6d6c5168a2552e4" => :high_sierra
+    sha256 catalina:    "6bdbc101891e5c10b8aead1e1c86ce8ed1560f38b4de96a6c804c73953ad3ac0"
+    sha256 mojave:      "f9e745573abb55d0194e958d48256ace18a8116fc2c7577617de915746e6c18b"
+    sha256 high_sierra: "8e604286ac22168ede829d3dff95ac782b458316c3389827c6d6c5168a2552e4"
   end
 
   depends_on "gd"
@@ -93,6 +93,6 @@ class Apcupsd < Formula
 
   test do
     system "#{sbin}/apcupsd", "--version"
-    assert_match /usage/, shell_output("#{sbin}/apctest --help", 1)
+    assert_match(/usage/, shell_output("#{sbin}/apctest --help", 1))
   end
 end

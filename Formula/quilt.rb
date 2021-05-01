@@ -12,11 +12,10 @@ class Quilt < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b7304ce0125f31f6d38f8645d436de553f765b599e4c66f8f659478963bf33f6" => :catalina
-    sha256 "5d7f412108ec8831b8b6bfbc8e41d8b577523ffd66f9d095853a4680ec23b04f" => :mojave
-    sha256 "691a01a091194910f0848aea529b331559fb98d44e9821c1ebafba51d2a2d62c" => :high_sierra
-    sha256 "2305addd5b8f4b256701b2ec89ec9caffa4699dae48e63f8cac0478545b5d860" => :sierra
+    sha256 cellar: :any_skip_relocation, catalina:    "b7304ce0125f31f6d38f8645d436de553f765b599e4c66f8f659478963bf33f6"
+    sha256 cellar: :any_skip_relocation, mojave:      "5d7f412108ec8831b8b6bfbc8e41d8b577523ffd66f9d095853a4680ec23b04f"
+    sha256 cellar: :any_skip_relocation, high_sierra: "691a01a091194910f0848aea529b331559fb98d44e9821c1ebafba51d2a2d62c"
+    sha256 cellar: :any_skip_relocation, sierra:      "2305addd5b8f4b256701b2ec89ec9caffa4699dae48e63f8cac0478545b5d860"
   end
 
   depends_on "coreutils"
